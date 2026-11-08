@@ -1,0 +1,3 @@
+# The SwiftLint build tool plugin only searches for a configuration inside the package
+# directory, so this file pulls in the repository-wide rules.
+parent_config: ../../.swiftlint.yml
