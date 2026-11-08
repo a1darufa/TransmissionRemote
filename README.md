@@ -11,9 +11,10 @@ that keeps transgui's layout: filter sidebar, sortable torrent list, tabbed info
 
 ## Download and install
 
-1. Download `TransmissionRemote-<version>.zip` from the
-   [latest release](https://github.com/a1darufa/TransmissionRemote/releases/latest), unzip it, and move
-   **TransmissionRemote** to your Applications folder.
+1. Download `TransmissionRemote-<version>.dmg` from the
+   [latest release](https://github.com/a1darufa/TransmissionRemote/releases/latest) and open it.
+   Drag **TransmissionRemote** onto the **Applications** folder in the window that appears, then eject
+   the disk image.
 2. Open it. The app isn't signed with an Apple Developer ID or notarized by Apple, so macOS blocks
    the first launch and says it can't verify the app. Click **Done**.
 3. Open **System Settings → Privacy & Security**, scroll down to the message about TransmissionRemote,
@@ -126,9 +127,10 @@ ditto build/DerivedData/Build/Products/Release/TransmissionRemote.app /Applicati
 A copy built and installed this way opens normally on that Mac.
 
 To make a release download, run `Scripts/build-release.sh`. It builds a universal Release app that is
-ad-hoc signed instead of signed with a developer certificate, and zips it into `build/release/`.
-Downloads aren't notarized, so people approve the first launch themselves
-(see [Download and install](#download-and-install)).
+ad-hoc signed instead of signed with a developer certificate, and packs it into a disk image in
+`build/release/` with a drag-to-Applications window (`Scripts/dmg/`). Laying out that window goes through
+Finder, so macOS asks once to let your terminal control Finder. Downloads aren't notarized, so people
+approve the first launch themselves (see [Download and install](#download-and-install)).
 
 Signing uses development team `B48N6YBGWS` and bundle ID `com.a1dar.TransmissionRemote`. Change both under
 *Signing & Capabilities* if needed. Keychain items are tied to the signing identity, so a different
