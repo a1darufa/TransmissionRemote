@@ -25,7 +25,7 @@ struct MenuBarContent: View {
     var body: some View {
         if let stats = connection.stats, connection.isConnected {
             Text("↓ \(stats.downloadSpeed.formattedSpeed)   ↑ \(stats.uploadSpeed.formattedSpeed)")
-            Text("\(stats.activeTorrentCount) active of \(stats.torrentCount)")
+            Text("Active: \(stats.activeTorrentCount) of \(stats.torrentCount)")
         } else {
             Text(connection.isConnected ? "Connected" : "Not connected")
         }

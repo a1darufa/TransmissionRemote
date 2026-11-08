@@ -55,7 +55,8 @@ struct AddTorrentSheet: View {
                         .truncationMode(.middle)
                 }
                 if let size = pending.totalSize {
-                    Text("\(pending.files.count) files · \(size.formattedBytes)")
+                    // Two strings, so translations only have to pluralize "files".
+                    Text(verbatim: "\(String(localized: "\(pending.files.count) files")) · \(size.formattedBytes)")
                         .foregroundStyle(.secondary)
                 }
                 if isDuplicate {

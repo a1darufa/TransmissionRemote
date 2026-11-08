@@ -133,7 +133,7 @@ private struct CountryDatabaseBanner: View {
                 }
                 Spacer()
                 Button("Hide Countries") { showsCountries = false }
-                Button("Download") { Task { await resolver.downloadDatabase() } }
+                Button("Download Database") { Task { await resolver.downloadDatabase() } }
                     .buttonStyle(.borderedProminent)
             }
         }

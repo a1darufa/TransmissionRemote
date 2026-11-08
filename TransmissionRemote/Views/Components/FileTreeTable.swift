@@ -76,8 +76,9 @@ struct FileTreeTable: View {
             fileMenu(for: selected, actions: fileActions)
             Divider()
         }
-        Button("Download") { selected.filter { $0.wantedState != .all }.forEach(onToggleWanted) }
-        Button("Don't Download") { selected.filter { $0.wantedState != .none }.forEach(onToggleWanted) }
+        // Not just "Download": that word is also the Download pane's name, a noun in many languages.
+        Button("Download Selected") { selected.filter { $0.wantedState != .all }.forEach(onToggleWanted) }
+        Button("Don't Download Selected") { selected.filter { $0.wantedState != .none }.forEach(onToggleWanted) }
         if let onSetPriority {
             Divider()
             ForEach(Priority.allCases.reversed(), id: \.self) { priority in

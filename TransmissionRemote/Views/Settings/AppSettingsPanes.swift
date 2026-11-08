@@ -74,7 +74,7 @@ private struct PeerCountrySettings: View {
             LabeledContent("Country database") {
                 HStack {
                     Text(status).foregroundStyle(.secondary)
-                    Button(resolver.databaseMonth == nil ? "Download" : "Update Now") {
+                    Button(resolver.databaseMonth == nil ? "Download Now" : "Update Now") {
                         Task { await resolver.downloadDatabase() }
                     }
                     .disabled(resolver.databaseState == .downloading)

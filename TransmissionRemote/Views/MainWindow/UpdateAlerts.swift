@@ -12,7 +12,7 @@ struct UpdateAlerts: ViewModifier {
                 isPresented: isShowing { if case .available = $0 { true } else { false } },
                 presenting: availableRelease
             ) { release in
-                Button("Download") { updates.openReleasePage(release) }
+                Button("Download Update") { updates.openReleasePage(release) }
                 Button("Skip This Version") { updates.skip(release) }
                 Button("Later", role: .cancel) {}
             } message: { _ in
