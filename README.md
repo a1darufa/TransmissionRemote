@@ -9,6 +9,25 @@ that keeps transgui's layout: filter sidebar, sortable torrent list, tabbed info
 - Works with **Transmission 2.40 through 4.x**, including Transmission 3.00 on Western Digital
   My Cloud and other NAS boxes
 
+## Download and install
+
+1. Download `TransmissionRemote-<version>.zip` from the
+   [latest release](https://github.com/a1darufa/TransmissionRemote/releases/latest), unzip it, and move
+   **TransmissionRemote** to your Applications folder.
+2. Open it. The app isn't signed with an Apple Developer ID or notarized by Apple, so macOS blocks
+   the first launch and says it can't verify the app. Click **Done**.
+3. Open **System Settings → Privacy & Security**, scroll down to the message about TransmissionRemote,
+   and click **Open Anyway**. Confirm with your password. After this, the app opens normally.
+
+If you prefer Terminal, this removes the download flag instead of steps 2–3:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/TransmissionRemote.app
+```
+
+After you update to a new version, macOS may ask once whether the app can use the server passwords it
+saved in your Keychain. Choose **Always Allow**.
+
 ## Features
 
 | Area | What you get |
@@ -104,8 +123,12 @@ built it on, copy it to Applications:
 ditto build/DerivedData/Build/Products/Release/TransmissionRemote.app /Applications/TransmissionRemote.app
 ```
 
-A copy built and installed this way opens normally on that Mac. A copy downloaded from the internet
-needs a Developer ID signature and Apple notarization, which this project doesn't produce yet.
+A copy built and installed this way opens normally on that Mac.
+
+To make a release download, run `Scripts/build-release.sh`. It builds a universal Release app that is
+ad-hoc signed instead of signed with a developer certificate, and zips it into `build/release/`.
+Downloads aren't notarized, so people approve the first launch themselves
+(see [Download and install](#download-and-install)).
 
 Signing uses development team `B48N6YBGWS` and bundle ID `com.a1dar.TransmissionRemote`. Change both under
 *Signing & Capabilities* if needed. Keychain items are tied to the signing identity, so a different
