@@ -20,7 +20,7 @@ struct SidebarView: View {
             if !summary.folders.isEmpty {
                 Section("Folders") {
                     ForEach(summary.folders) { folder in
-                        Label(folder.name.lastPathComponentForDisplay, systemImage: "folder")
+                        Label(folder.displayName, systemImage: "folder")
                             .badge(folder.count)
                             .help(folder.name)
                             .tag(SidebarItem.folder(folder.name))

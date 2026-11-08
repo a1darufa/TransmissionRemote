@@ -75,7 +75,15 @@ struct SidebarSummary {
     struct Entry: Identifiable {
         let name: String
         let count: Int
+        /// What the sidebar shows; for folders, a short form of `name`.
+        var displayName: String
         var id: String { name }
+
+        init(name: String, count: Int, displayName: String? = nil) {
+            self.name = name
+            self.count = count
+            self.displayName = displayName ?? name
+        }
     }
 
     private(set) var statusCounts: [StatusFilter: Int] = [:]
@@ -97,9 +105,27 @@ struct SidebarSummary {
             for label in torrent.labels { labelCounts[label, default: 0] += 1 }
         }
 
-        folders = Self.sortedEntries(folderCounts)
+        folders = Self.folderEntries(folderCounts)
         trackers = Self.sortedEntries(trackerCounts)
         labels = Self.sortedEntries(labelCounts)
+    }
+
+    /// Folders by their last name, sorted the way they're shown. Two folders with the same last
+    /// name get their parent folder added, so they can be told apart (transgui issue #979).
+    private static func folderEntries(_ counts: [String: Int]) -> [Entry] {
+        let paths = counts.filter { !$0.key.isEmpty }
+        let pathsByName = Dictionary(grouping: paths.keys, by: \.lastPathComponentForDisplay)
+        return paths.map { path, count in
+            let name = path.lastPathComponentForDisplay
+            let isAmbiguous = (pathsByName[name]?.count ?? 0) > 1
+            let parent = path.parentComponentForDisplay
+            let displayName = isAmbiguous && !parent.isEmpty ? "\(name) — \(parent)" : name
+            return Entry(name: path, count: count, displayName: displayName)
+        }
+        .sorted { lhs, rhs in
+            let order = lhs.displayName.localizedStandardCompare(rhs.displayName)
+            return order == .orderedSame ? lhs.name < rhs.name : order == .orderedAscending
+        }
     }
 
     private static func sortedEntries(_ counts: [String: Int]) -> [Entry] {
@@ -111,12 +137,22 @@ struct SidebarSummary {
 
 extension String {
     var trimmingTrailingSlash: String {
-        count > 1 && hasSuffix("/") ? String(dropLast()) : self
+        count > 1 && (hasSuffix("/") || hasSuffix("\\")) ? String(dropLast()) : self
     }
 
-    /// The last path component, for showing long remote paths compactly.
+    /// The last path component, for showing long remote paths compactly. Windows daemons
+    /// use backslashes.
     var lastPathComponentForDisplay: String {
-        let component = trimmingTrailingSlash.split(separator: "/").last.map(Self.init)
-        return component ?? self
+        pathComponentsForDisplay.last ?? self
+    }
+
+    /// The folder above the last one, or empty at the top.
+    var parentComponentForDisplay: String {
+        let components = pathComponentsForDisplay
+        return components.count > 1 ? components[components.count - 2] : ""
+    }
+
+    private var pathComponentsForDisplay: [String] {
+        trimmingTrailingSlash.split { $0 == "/" || $0 == "\\" }.map(Self.init)
     }
 }
