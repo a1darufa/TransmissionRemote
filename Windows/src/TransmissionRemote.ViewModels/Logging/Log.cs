@@ -79,4 +79,8 @@ internal static partial class Log
     [LoggerMessage(2306, LogLevel.Information,
         "Checked for updates: the newest release for this PC is {Newest}; this app is {CurrentVersion}")]
     public static partial void UpdateChecked(ILogger logger, string newest, string currentVersion);
+
+    [LoggerMessage(2307, LogLevel.Information,
+        "Downloaded the country database for {Month}: {Size} bytes in {Duration}")]
+    public static partial void CountryDatabaseDownloaded(ILogger logger, string month, int size, TimeSpan duration);
 }
