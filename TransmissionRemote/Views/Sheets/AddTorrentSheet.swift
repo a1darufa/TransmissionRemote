@@ -14,6 +14,7 @@ struct AddTorrentSheet: View {
     @State private var labelsText = ""
     @State private var sequentialDownload = false
     @State private var unwantedFiles: Set<Int> = []
+    @State private var hasServerDefaults = false
     @State private var isAdding = false
     @State private var errorMessage: String?
 
@@ -35,6 +36,7 @@ struct AddTorrentSheet: View {
         .padding(20)
         .frame(width: 640, height: pending.files.isEmpty ? nil : 560)
         .onAppear(perform: applyDefaults)
+        .onChange(of: connection.session != nil) { applyLateServerDefaults() }
     }
 
     private var header: some View {
@@ -180,6 +182,16 @@ struct AddTorrentSheet: View {
         name = pending.name
         destination = model.startingFolder
         startWhenAdded = connection.session?.startAddedTorrents ?? true
+        hasServerDefaults = connection.session != nil
+    }
+
+    /// Opening a .torrent from Finder while the app isn't running shows this sheet before the
+    /// server's settings arrive (transgui issue #790). Fill in what was missing once they do.
+    private func applyLateServerDefaults() {
+        guard !hasServerDefaults, let session = connection.session else { return }
+        if destination.isEmpty { destination = model.startingFolder }
+        startWhenAdded = session.startAddedTorrents ?? startWhenAdded
+        hasServerDefaults = true
     }
 
     private func add() {
