@@ -41,6 +41,16 @@ struct ReconnectingView: View {
                 nextAttemptText
                     .foregroundStyle(.secondary)
                     .monospacedDigit()
+                if isOnLocalNetwork {
+                    // macOS blocks apps without Local Network access, and they only see
+                    // "No route to host" or "offline" (transgui issue #1473, pull request #1614).
+                    Text("""
+                        If your Mac reaches the server otherwise, check that Transmission Remote is turned on \
+                        in System Settings → Privacy & Security → Local Network.
+                        """)
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                }
             }
         } actions: {
             HStack {
@@ -51,6 +61,10 @@ struct ReconnectingView: View {
                 Button("Stop Trying") { model.connection.disconnect() }
             }
         }
+    }
+
+    private var isOnLocalNetwork: Bool {
+        model.connection.profile?.endpoint.transportSecurity == .localNetwork
     }
 
     @ViewBuilder
