@@ -33,6 +33,12 @@ internal sealed class FakeDaemon : HttpMessageHandler
     /// <summary>Make RPC calls other than reads fail with this message.</summary>
     public string? ActionFailure { get; set; }
 
+    /// <summary>The arguments of the latest call to each method.</summary>
+    public Dictionary<string, JsonObject> LastArguments { get; } = [];
+
+    /// <summary>The name torrent-add reports for a newly added torrent.</summary>
+    public string AddedName { get; set; } = "added";
+
     public IReadOnlyList<string> Methods
     {
         get
@@ -82,6 +88,7 @@ internal sealed class FakeDaemon : HttpMessageHandler
         lock (_lock)
         {
             _methods.Add(method);
+            LastArguments[method] = arguments;
         }
         return Answer(method, arguments);
     }
@@ -109,6 +116,12 @@ internal sealed class FakeDaemon : HttpMessageHandler
                 break;
             case "torrent-get":
                 result = TorrentGet(arguments);
+                break;
+            case "torrent-add":
+                result = new JsonObject
+                {
+                    ["torrent-added"] = new JsonObject { ["id"] = 100, ["name"] = AddedName, ["hashString"] = "abc" },
+                };
                 break;
             default:
                 if (ActionFailure is { } failure)
