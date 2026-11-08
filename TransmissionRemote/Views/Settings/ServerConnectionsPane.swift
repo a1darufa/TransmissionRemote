@@ -7,6 +7,8 @@ import TransmissionKit
 struct ServerConnectionsPane: View {
     @Environment(AppModel.self) private var model
     @Binding var selectedID: UUID?
+    @State private var importSummary: TransguiImportSummary?
+    @State private var importError: String?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -15,6 +17,10 @@ struct ServerConnectionsPane: View {
                 Button("Add Server", systemImage: "plus") { addServer() }
                 Button("Remove Server", systemImage: "minus") { removeSelected() }
                     .disabled(selectedID == nil)
+                Button("Import from Transmission Remote GUI…", systemImage: "square.and.arrow.down") {
+                    importFromTransgui()
+                }
+                .help("Import servers from Transmission Remote GUI")
             }
             .labelStyle(.iconOnly)
             .padding()
@@ -25,14 +31,45 @@ struct ServerConnectionsPane: View {
                 ServerEditor(original: server)
                     .id(selectedID)
             } else {
-                ContentUnavailableView(
-                    "No Server Selected",
-                    systemImage: "server.rack",
-                    description: Text("Add a server with the + button.")
-                )
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                ContentUnavailableView {
+                    Label("No Server Selected", systemImage: "server.rack")
+                } description: {
+                    Text("Add a server with the + button, or bring your servers over from Transmission Remote GUI.")
+                } actions: {
+                    Button("Import from Transmission Remote GUI…") { importFromTransgui() }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+        .alert(
+            "Imported from Transmission Remote GUI",
+            isPresented: isShowing($importSummary),
+            presenting: importSummary
+        ) { _ in
+            Button("OK") {}
+        } message: { summary in
+            Text(summary.message)
+        }
+        .alert("Couldn't Import", isPresented: isShowing($importError), presenting: importError) { _ in
+            Button("OK") {}
+        } message: { message in
+            Text(message)
+        }
+    }
+
+    private func importFromTransgui() {
+        guard let url = model.chooseTransguiSettingsFile() else { return }
+        do {
+            let summary = try model.importTransguiSettings(from: url)
+            if let id = summary.firstImportedID { selectedID = id }
+            importSummary = summary
+        } catch {
+            importError = error.localizedDescription
+        }
+    }
+
+    private func isShowing<Value>(_ value: Binding<Value?>) -> Binding<Bool> {
+        Binding { value.wrappedValue != nil } set: { if !$0 { value.wrappedValue = nil } }
     }
 
     private func addServer() {
