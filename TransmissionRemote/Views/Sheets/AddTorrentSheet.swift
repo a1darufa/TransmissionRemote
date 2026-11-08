@@ -144,7 +144,7 @@ struct AddTorrentSheet: View {
 
     /// Only .torrent files: a magnet link's final name isn't known until the daemon fetches
     /// its metadata, and Transmission can't rename a torrent before that.
-    private var canRename: Bool { !pending.files.isEmpty }
+    private var canRename: Bool { !pending.files.isEmpty && connection.serverInfo?.supportsRenaming != false }
 
     /// The new name, or nil to keep the one from the .torrent file.
     private var renamedTo: String? {

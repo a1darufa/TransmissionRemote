@@ -54,7 +54,7 @@ struct TorrentActionsMenu: View {
             Button("Rename…", systemImage: "pencil") {
                 if let singleTorrent { model.router.sheet = .rename(singleTorrent) }
             }
-            .disabled(singleTorrent == nil)
+            .disabled(singleTorrent == nil || connection.serverInfo?.supportsRenaming == false)
             if connection.serverInfo?.supportsLabels ?? true {
                 Button("Labels…", systemImage: "tag") { model.router.sheet = .labels(ids) }
                     .shortcut("l", enabled: showsShortcuts)

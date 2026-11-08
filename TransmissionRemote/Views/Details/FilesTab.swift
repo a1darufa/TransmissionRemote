@@ -46,6 +46,7 @@ struct FilesTab: View {
             open: { model.openLocally(remotePath: serverPath($0)) },
             reveal: { model.revealLocally(remotePaths: $0.map(serverPath)) },
             rename: { model.router.sheet = .renameFile(torrentID: torrent.id, path: $0.relativePath) },
+            canRename: model.connection.serverInfo?.supportsRenaming != false,
             copyPaths: { model.copyPaths($0.map(serverPath)) }
         )
     }

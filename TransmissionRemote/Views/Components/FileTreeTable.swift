@@ -9,6 +9,8 @@ struct FileActions {
     let open: (FileNode) -> Void
     let reveal: ([FileNode]) -> Void
     let rename: (FileNode) -> Void
+    /// False on servers too old to rename (before Transmission 2.80).
+    var canRename = true
     let copyPaths: ([FileNode]) -> Void
 }
 
@@ -99,7 +101,7 @@ struct FileTreeTable: View {
             .disabled(!selected.contains(where: actions.isLocallyAvailable))
         Divider()
         Button("Rename…") { single.map(actions.rename) }
-            .disabled(single == nil)
+            .disabled(single == nil || !actions.canRename)
         Button("Copy Path") { actions.copyPaths(selected) }
             .disabled(selected.isEmpty)
     }

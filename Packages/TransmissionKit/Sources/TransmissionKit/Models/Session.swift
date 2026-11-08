@@ -34,6 +34,9 @@ public struct ServerInfo: Sendable, Equatable, Decodable {
         return major >= 6
     }
 
+    /// torrent-rename-path and free-space arrived in Transmission 2.80; 2.40–2.7x answer
+    /// "method name not recognized" (transgui issue #1023).
+    public var supportsRenaming: Bool { rpcVersion >= 15 }
     public var supportsLabels: Bool { rpcVersion >= 16 }
     public var supportsLabelsOnAdd: Bool { rpcVersion >= 17 }
     public var supportsTrackerList: Bool { rpcVersion >= 17 }
