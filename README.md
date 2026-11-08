@@ -9,6 +9,8 @@ that keeps transgui's layout: filter sidebar, sortable torrent list, tabbed info
 - Works with **Transmission 2.40 through 4.x**, including Transmission 3.00 on Western Digital
   My Cloud and other NAS boxes
 
+![The main window: filters in the sidebar, the torrent list with speeds, and the General tab with the pieces bar](docs/screenshots/main-window.png)
+
 ## Download and install
 
 1. Download `TransmissionRemote-<version>.dmg` from the
@@ -40,6 +42,16 @@ saved in your Keychain. Choose **Always Allow**.
 | Actions | Open and Show in Finder (through path mappings), Start, Start Now, Stop, Verify, Reannounce, Move Data, Rename, Labels, per-torrent limits (also from preset speed menus), Edit Trackers, bandwidth priority, queue moves, Copy Magnet Link, Remove, and Remove and Delete Data |
 | Server | Daemon settings (speed, alternative-speed schedule, folders, port test, encryption, peers, queue, seeding, blocklist), turtle mode, preset global speed limit menus, Start All / Stop All |
 | Mac integration | Menu bar extra with speeds, a completion notification, refresh that slows down in the background, multiple saved servers, each optionally reached through an HTTP or SOCKS 5 proxy |
+
+Settings keep transgui's grouping in a System Settings-style window: app options at the top, the
+connected daemon's options below.
+
+<p align="center">
+  <img src="docs/screenshots/settings-server.png" width="49%"
+       alt="Settings, Transmission pane: the server's name, host, port, RPC path, HTTPS and login">
+  <img src="docs/screenshots/settings-about.png" width="49%"
+       alt="Settings, About pane: the daemon's version, RPC version, protocol and all-time totals">
+</p>
 
 ### Keyboard shortcuts
 
@@ -208,6 +220,7 @@ TransmissionRemote/              the SwiftUI app (default MainActor isolation, S
   Model/                         AppModel, ServerConnection (polling and actions), ServerStore, Keychain
   Views/                         main window, info pane tabs, sheets, settings, menu bar extra
 Config/                          Info.plist additions (torrent and magnet handling) and entitlements
+docs/screenshots/                the screenshots in this README
 ```
 
 ## Not yet implemented
