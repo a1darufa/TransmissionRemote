@@ -1,0 +1,7 @@
+# Text files use LF everywhere, including Windows checkouts, to match .editorconfig and keep
+# `dotnet format --verify-no-changes` passing on Windows runners and PCs.
+* text=auto eol=lf
+
+# Windows scripts need CRLF to run.
+*.cmd text eol=crlf
+*.bat text eol=crlf

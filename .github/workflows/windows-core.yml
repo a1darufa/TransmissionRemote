@@ -1,0 +1,45 @@
+name: Windows core
+
+on:
+  push:
+    branches: [main]
+    paths: ["Windows/**", ".github/workflows/windows-core.yml"]
+  pull_request:
+    paths: ["Windows/**", ".github/workflows/windows-core.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Build and test (${{ matrix.arch }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: x64
+            runner: windows-latest
+          - arch: arm64
+            runner: windows-11-arm
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        working-directory: Windows
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: Windows/global.json
+
+      # Warnings are errors (Directory.Build.props), so this also runs the analyzers.
+      - name: Build
+        run: dotnet build TransmissionRemote.slnx --configuration Release
+
+      # The integration tests report as skipped: CI has no Transmission daemon.
+      - name: Test
+        run: dotnet test TransmissionRemote.slnx --configuration Release --no-build
+
+      - name: Check formatting
+        if: matrix.arch == 'x64'
+        run: dotnet format TransmissionRemote.slnx --verify-no-changes --no-restore
