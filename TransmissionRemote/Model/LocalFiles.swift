@@ -19,6 +19,11 @@ struct LocalFileLocation {
         return body(existingURL)
     }
 
+    /// Whether the file or folder, or its ".part" stand-in, is there right now.
+    var exists: Bool {
+        withAccess { FileManager.default.fileExists(atPath: $0.path(percentEncoded: false)) }
+    }
+
     /// The file as it is on disk. Transmission can add ".part" to files it hasn't finished,
     /// so fall back to that name when the plain one isn't there.
     private var existingURL: URL {
@@ -29,16 +34,6 @@ struct LocalFileLocation {
             return partial
         }
         return url
-    }
-}
-
-extension Torrent {
-    /// The server-side path of the torrent's top-level file or folder.
-    var remotePath: String { remotePath(of: name) }
-
-    /// The server-side path of a file or folder inside the torrent, given relative to its download folder.
-    func remotePath(of relativePath: String) -> String {
-        (downloadDir as NSString).appendingPathComponent(relativePath)
     }
 }
 
@@ -53,14 +48,34 @@ extension AppModel {
         return LocalFileLocation(url: URL(filePath: localPath), folderBookmark: mapping.localBookmark)
     }
 
+    /// The server folder that holds the torrent's data now. With the daemon's incomplete folder
+    /// turned on, unfinished torrents live there and move to their download folder when done
+    /// (transgui issues #304, #1367). Torrents started before the setting stay where they were,
+    /// so the incomplete folder is only used when the data is actually found there.
+    func currentFolder(of torrent: Torrent) -> String {
+        guard !torrent.isComplete, let session = connection.session, session.incompleteDirEnabled == true,
+              let incompleteFolder = session.incompleteDir, !incompleteFolder.isEmpty
+        else { return torrent.downloadDir }
+        let candidate = (incompleteFolder as NSString).appendingPathComponent(torrent.name)
+        guard let location = localFileLocation(forRemotePath: candidate), location.exists else {
+            return torrent.downloadDir
+        }
+        return incompleteFolder
+    }
+
+    /// The server path of the torrent's top-level item, or of a file inside it, where it is now.
+    func currentRemotePath(of torrent: Torrent, relativePath: String? = nil) -> String {
+        (currentFolder(of: torrent) as NSString).appendingPathComponent(relativePath ?? torrent.name)
+    }
+
     /// Where the torrent's data is on this Mac, or nil when no path mapping covers its folder.
     func localFileLocation(for torrent: Torrent) -> LocalFileLocation? {
-        localFileLocation(forRemotePath: torrent.remotePath)
+        localFileLocation(forRemotePath: currentRemotePath(of: torrent))
     }
 
     /// Opens the torrent's file or folder with its default app.
     func openLocally(_ torrent: Torrent) {
-        openLocally(remotePath: torrent.remotePath)
+        openLocally(remotePath: currentRemotePath(of: torrent))
     }
 
     /// Opens a server file or folder with its default app on this Mac.
@@ -77,7 +92,7 @@ extension AppModel {
 
     /// Selects the torrents' files or folders in Finder.
     func revealLocally(_ torrents: [Torrent]) {
-        revealLocally(remotePaths: torrents.map(\.remotePath))
+        revealLocally(remotePaths: torrents.map { currentRemotePath(of: $0) })
     }
 
     /// Selects server files or folders in Finder, skipping those no path mapping covers.

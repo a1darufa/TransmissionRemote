@@ -39,7 +39,8 @@ struct FilesTab: View {
     private var fileActions: FileActions {
         let torrent = torrent
         let model = model
-        let serverPath = { (node: FileNode) in torrent.remotePath(of: node.relativePath) }
+        let folder = model.currentFolder(of: torrent)
+        let serverPath = { (node: FileNode) in (folder as NSString).appendingPathComponent(node.relativePath) }
         return FileActions(
             isLocallyAvailable: { model.localFileLocation(forRemotePath: serverPath($0)) != nil },
             open: { model.openLocally(remotePath: serverPath($0)) },
