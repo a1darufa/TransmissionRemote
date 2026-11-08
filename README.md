@@ -202,3 +202,14 @@ copied unmodified from
 [`macosx/Images/Transmission_Tahoe.icon`](https://github.com/transmission/transmission/tree/147da724531235c3f2d42a5bf63d2d201d347663/macosx/Images/Transmission_Tahoe.icon)
 in the Transmission repository. It is © the Transmission authors and is used under Transmission's
 licence (GNU GPLv2 or GPLv3).
+
+This app is an independent project. It is not made or endorsed by the Transmission team.
+
+## License
+
+Transmission Remote is free software, © 2026 Aidar Abdullin. You can redistribute it and/or modify
+it under the terms of the [GNU General Public License](LICENSE), version 3 or (at your option) any
+later version. It comes with no warranty.
+
+Transmission and Transmission Remote GUI are GPL projects too, and the app icon is used under its
+GPLv3 option.
