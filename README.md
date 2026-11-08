@@ -240,6 +240,7 @@ TransmissionRemote/              the SwiftUI app (default MainActor isolation, S
   *.xcstrings                    String Catalogs: the interface and Info.plist texts in 28 languages
 Config/                          Info.plist additions (torrent and magnet handling) and entitlements
 docs/screenshots/                the screenshots in this README
+docs/transgui-audit.md           transgui's open issues and pull requests, checked against this app
 ```
 
 ## Translations
