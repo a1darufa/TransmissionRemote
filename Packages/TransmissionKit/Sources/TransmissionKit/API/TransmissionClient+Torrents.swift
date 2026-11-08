@@ -129,15 +129,34 @@ extension TransmissionClient {
         current: [TrackerStat],
         with announceURLs: [[String]]
     ) async throws(TransmissionError) {
+        guard let mutation = Self.trackerMutation(
+            for: torrentID, current: current, wanted: announceURLs, rpcVersion: rpcVersion
+        ) else { return }
+        try await apply(mutation)
+    }
+
+    /// The change that turns `current` into `wanted`, or nil when there's nothing to change.
+    ///
+    /// Before Transmission 4.0, `trackerAdd` and `trackerRemove` answer an empty list with
+    /// "invalid argument", and a failed add skips the remove, so only non-empty lists are sent.
+    static func trackerMutation(
+        for torrentID: Int,
+        current: [TrackerStat],
+        wanted announceURLs: [[String]],
+        rpcVersion: Int
+    ) -> TorrentMutation? {
         var mutation = TorrentMutation(ids: [torrentID])
         if rpcVersion >= 17 {
             mutation.trackerList = announceURLs.map { $0.joined(separator: "\n") }.joined(separator: "\n\n")
-        } else {
-            let wanted = Set(announceURLs.joined())
-            let existing = Set(current.map(\.announce))
-            mutation.trackerRemove = current.filter { !wanted.contains($0.announce) }.map(\.id)
-            mutation.trackerAdd = announceURLs.joined().filter { !existing.contains($0) }
+            return mutation
         }
-        try await apply(mutation)
+        let wanted = Set(announceURLs.joined())
+        let existing = Set(current.map(\.announce))
+        let removed = current.filter { !wanted.contains($0.announce) }.map(\.id)
+        let added = announceURLs.joined().filter { !existing.contains($0) }
+        guard !removed.isEmpty || !added.isEmpty else { return nil }
+        mutation.trackerRemove = removed.isEmpty ? nil : removed
+        mutation.trackerAdd = added.isEmpty ? nil : added
+        return mutation
     }
 }
