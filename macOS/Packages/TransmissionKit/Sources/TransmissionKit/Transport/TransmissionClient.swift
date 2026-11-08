@@ -1,5 +1,4 @@
 import Foundation
-import os
 
 public struct Credentials: Sendable, Equatable {
     public var username: String
@@ -40,7 +39,7 @@ public actor TransmissionClient {
     private var csrfToken: String?
     private var nextTag = 1
 
-    private static let logger = Logger(subsystem: "TransmissionKit", category: "RPC")
+    private static let log = DiagnosticLog(category: "RPC", subsystem: "TransmissionKit")
 
     public init(
         endpoint: ServerEndpoint,
@@ -115,23 +114,27 @@ public actor TransmissionClient {
     /// Detects the server version and switches to JSON-RPC when the server supports it.
     @discardableResult
     public func connect() async throws(TransmissionError) -> ServerInfo {
+        Self.log.info("""
+            Connecting to \(url.absoluteString) (security: \(endpoint.transportSecurity), \
+            protocol preference: \(protocolPreference.rawValue))
+            """)
         // Every Transmission release understands a legacy `session-get`, so we always start there.
         dialect = .legacy
         let fields = ServerInfo.fieldNames.map { dialect.wireName(for: $0, scope: .session) }
         let info = try await call(.sessionGet, params: FieldsRequest(fields: fields), returning: ServerInfo.self)
 
         guard info.rpcVersion >= ServerInfo.minimumRPCVersion else {
+            Self.log.warning("Transmission \(info.version) (RPC version \(info.rpcVersion)) is too old")
             throw .unsupportedServer(version: info.version)
         }
         if protocolPreference == .automatic, info.supportsJSONRPC {
             dialect = .jsonRPC
         }
         serverInfo = info
-        let version = info.version
-        let protocolName = dialect.rawValue
-        Self.logger.info(
-            "Connected to Transmission \(version, privacy: .public) using \(protocolName, privacy: .public)"
-        )
+        Self.log.info("""
+            Connected to Transmission \(info.version) (RPC version \(info.rpcVersion), \
+            semver \(info.rpcVersionSemver ?? "none")) using \(dialect.rawValue)
+            """)
         return info
     }
 
@@ -168,7 +171,34 @@ public actor TransmissionClient {
         _ = try await send(method, params: params, scope: scope, timeout: timeout, resultType: Empty.self)
     }
 
+    /// Sends a request and logs its outcome: every failure with its cause, successes only in the
+    /// unified log's debug level because the app polls every few seconds.
     private func send<Params: Encodable, Result: Decodable>(
+        _ method: RPCMethod,
+        params: Params,
+        scope: KeyScope,
+        timeout: Duration?,
+        resultType: Result.Type
+    ) async throws(TransmissionError) -> Result? {
+        let requestDialect = dialect
+        let methodName = requestDialect.wireName(for: method)
+        let started = ContinuousClock.now
+        do throws(TransmissionError) {
+            let result = try await exchange(
+                method, params: params, scope: scope, timeout: timeout, resultType: resultType
+            )
+            Self.log.debug("\(methodName) (\(requestDialect.rawValue)) succeeded in \(started.duration(to: .now))")
+            return result
+        } catch {
+            Self.log.warning("""
+                \(methodName) (\(requestDialect.rawValue)) failed after \(started.duration(to: .now)): \
+                \(error) – \(error.localizedDescription)
+                """)
+            throw error
+        }
+    }
+
+    private func exchange<Params: Encodable, Result: Decodable>(
         _ method: RPCMethod,
         params: Params,
         scope: KeyScope,
@@ -188,6 +218,7 @@ public actor TransmissionClient {
                     throw .invalidResponse(details: "HTTP 409 without a session id")
                 }
                 csrfToken = token
+                Self.log.debug("The server issued a new session ID; repeating the request")
             case 204:
                 return nil
             case 200..<300:
@@ -252,10 +283,15 @@ public actor TransmissionClient {
         do {
             return try await session.data(for: request)
         } catch let error as URLError where error.code == .networkConnectionLost {
+            Self.log.info("The connection closed before the server answered; retrying once on a new connection")
             return try await session.data(for: request)
         }
     }
+}
 
+// MARK: - Encoding and decoding
+
+extension TransmissionClient {
     private func encodeRequest<Params: Encodable>(
         _ method: RPCMethod,
         params: Params,

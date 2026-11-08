@@ -16,6 +16,7 @@ final class ConnectionSecurityDelegate: NSObject, URLSessionDelegate, URLSession
     private let proxyCredentials: Credentials?
     private let clientIdentity: ClientIdentity?
     private let lastRejectedFingerprint = Mutex<String?>(nil)
+    private static let log = DiagnosticLog(category: "TLS", subsystem: "TransmissionKit")
 
     init(pinnedFingerprint: String?, proxyCredentials: Credentials? = nil, clientIdentity: ClientIdentity? = nil) {
         self.pinnedFingerprint = pinnedFingerprint.map(CertificateFingerprint.normalize)
@@ -55,6 +56,7 @@ final class ConnectionSecurityDelegate: NSObject, URLSessionDelegate, URLSession
         if fingerprint == pinnedFingerprint {
             return (.useCredential, URLCredential(trust: trust))
         }
+        Self.log.warning("Rejected the server's untrusted TLS certificate (SHA-256 \(fingerprint))")
 
         lastRejectedFingerprint.withLock { $0 = fingerprint }
         return (.cancelAuthenticationChallenge, nil)
@@ -97,7 +99,10 @@ final class ConnectionSecurityDelegate: NSObject, URLSessionDelegate, URLSession
         willPerformHTTPRedirection response: HTTPURLResponse,
         newRequest request: URLRequest
     ) async -> URLRequest? {
-        nil
+        // Host and path only: a query string could carry a token.
+        let target = request.url.map { "\($0.host() ?? "")\($0.path())" } ?? "an unknown address"
+        Self.log.warning("Refused the server's redirect to \(target)")
+        return nil
     }
 }
 
