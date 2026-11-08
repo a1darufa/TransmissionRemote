@@ -31,7 +31,10 @@ enum FileTree {
     /// Builds a tree from flat `a/b/c.ext` paths. A single top-level folder (the torrent's
     /// own folder) is skipped, so its contents appear directly.
     static func build(from files: [FileEntry]) -> [FileNode] {
-        let items = files.map { (components: $0.path.split(separator: "/").map(String.init), file: $0) }
+        // Padding files only align pieces; nobody needs to see or choose them.
+        let items = files.filter { !$0.isPadding }.map {
+            (components: $0.path.split(separator: "/").map(String.init), file: $0)
+        }
         let nodes = makeNodes(items, parentPath: "")
         if nodes.count == 1, let onlyChildren = nodes[0].children {
             return onlyChildren

@@ -123,6 +123,9 @@ public struct FileEntry: Identifiable, Sendable, Equatable {
     public var bytesCompleted: Int64
     public var wanted: Bool
     public var priority: Priority
+    /// A BEP 47 padding file, which only aligns pieces. Transmission (3.00 through 4.1) lists them
+    /// like real files, so they keep their place in the numbering, but the app hides them.
+    public var isPadding: Bool
 
     public init(
         id: Int,
@@ -130,7 +133,8 @@ public struct FileEntry: Identifiable, Sendable, Equatable {
         length: Int64,
         bytesCompleted: Int64 = 0,
         wanted: Bool = true,
-        priority: Priority = .normal
+        priority: Priority = .normal,
+        isPadding: Bool? = nil
     ) {
         self.id = id
         self.path = path
@@ -138,6 +142,14 @@ public struct FileEntry: Identifiable, Sendable, Equatable {
         self.bytesCompleted = bytesCompleted
         self.wanted = wanted
         self.priority = priority
+        self.isPadding = isPadding ?? Self.looksLikePadding(path)
+    }
+
+    /// The daemon doesn't report the `attr` flag, so padding files are recognized by the names
+    /// clients give them: libtorrent's `.pad/<size>` and BitComet's `_____padding_file_…`.
+    static func looksLikePadding(_ path: String) -> Bool {
+        let components = path.split(separator: "/")
+        return components.dropLast().contains(".pad") || components.last?.hasPrefix("_____padding_file") == true
     }
 
     static func combine(_ files: [FileInfo], _ stats: [FileStat]) -> [Self] {

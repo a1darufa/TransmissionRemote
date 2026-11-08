@@ -56,7 +56,7 @@ struct AddTorrentSheet: View {
                 }
                 if let size = pending.totalSize {
                     // Two strings, so translations only have to pluralize "files".
-                    Text(verbatim: "\(String(localized: "\(pending.files.count) files")) · \(size.formattedBytes)")
+                    Text(verbatim: "\(String(localized: "\(realFiles.count) files")) · \(size.formattedBytes)")
                         .foregroundStyle(.secondary)
                 }
                 if isDuplicate {
@@ -82,7 +82,7 @@ struct AddTorrentSheet: View {
                 Spacer()
                 Text("\(selectedSize.formattedBytes) selected").foregroundStyle(.secondary)
                 Button("All") { unwantedFiles = [] }
-                Button("None") { unwantedFiles = Set(pending.files.map(\.id)) }
+                Button("None") { unwantedFiles = Set(realFiles.map(\.id)) }
             }
             .controlSize(.small)
 
@@ -139,7 +139,7 @@ struct AddTorrentSheet: View {
     }
 
     private var selectedSize: Int64 {
-        pending.files.filter { !unwantedFiles.contains($0.id) }.reduce(0) { $0 + $1.length }
+        realFiles.filter { !unwantedFiles.contains($0.id) }.reduce(0) { $0 + $1.length }
     }
 
     /// Only .torrent files: a magnet link's final name isn't known until the daemon fetches
@@ -152,8 +152,11 @@ struct AddTorrentSheet: View {
         return validName
     }
 
+    /// The files to show and count; padding files are left out.
+    private var realFiles: [FileEntry] { pending.files.filter { !$0.isPadding } }
+
     private var allFilesSkipped: Bool {
-        !pending.files.isEmpty && unwantedFiles.count == pending.files.count
+        !realFiles.isEmpty && realFiles.allSatisfy { unwantedFiles.contains($0.id) }
     }
 
     private var isDuplicate: Bool {
@@ -184,7 +187,8 @@ struct AddTorrentSheet: View {
             downloadDir: destination.trimmingCharacters(in: .whitespaces),
             startWhenAdded: startWhenAdded,
             priority: priority,
-            unwantedFiles: unwantedFiles,
+            // Padding files are never needed on disk, so they're always left unselected.
+            unwantedFiles: unwantedFiles.union(pending.files.filter(\.isPadding).map(\.id)),
             labels: labels,
             sequentialDownload: sequentialDownload
         )

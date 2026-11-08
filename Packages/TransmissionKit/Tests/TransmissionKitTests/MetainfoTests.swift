@@ -15,11 +15,13 @@ struct MetainfoTests {
         Data(("d8:announce23:http://tracker/announce7:comment5:hello4:info" + infoDictionary + "e").utf8)
     }
 
-    @Test func parsesMultiFileTorrentAndSkipsPaddingFiles() throws {
+    @Test func parsesMultiFileTorrentAndKeepsPaddingFilesNumbered() throws {
         let metainfo = try TorrentMetainfo(data: multiFileTorrent)
         #expect(metainfo.name == "Show")
-        #expect(metainfo.files.map(\.path) == ["Show/Season/e01.mkv", "Show/info.nfo"])
-        #expect(metainfo.files.map(\.id) == [0, 1], "indices must match Transmission's, which skips padding")
+        #expect(metainfo.files.map(\.path) == ["Show/Season/e01.mkv", "Show/.pad/24", "Show/info.nfo"])
+        // Transmission 3.00–4.1 ignore BEP 47's attr flag and number padding files like any other.
+        #expect(metainfo.files.map(\.id) == [0, 1, 2])
+        #expect(metainfo.files.map(\.isPadding) == [false, true, false])
         #expect(metainfo.totalSize == 1020)
         #expect(metainfo.comment == "hello")
         #expect(metainfo.isPrivate)
@@ -29,6 +31,19 @@ struct MetainfoTests {
         let metainfo = try TorrentMetainfo(data: multiFileTorrent)
         let expected = Insecure.SHA1.hash(data: Data(infoDictionary.utf8)).map { String(format: "%02x", $0) }.joined()
         #expect(metainfo.infoHash == expected)
+    }
+
+    @Test func recognizesPaddingFilesByNameWhenTheDaemonListsThem() {
+        #expect(FileEntry(id: 0, path: "Show/.pad/16384", length: 16_384).isPadding)
+        #expect(FileEntry(id: 1, path: "Show/_____padding_file_0_if you see this", length: 9).isPadding)
+        #expect(!FileEntry(id: 2, path: "Show/.pad", length: 9).isPadding)
+        #expect(!FileEntry(id: 3, path: "Show/notes.pad", length: 9).isPadding)
+    }
+
+    @Test func prefersTheFileListOverASingleLength() throws {
+        let data = Data("d4:infod5:filesld6:lengthi5e4:pathl1:aeee6:lengthi9e4:name1:Xee".utf8)
+        let metainfo = try TorrentMetainfo(data: data)
+        #expect(metainfo.files.map(\.path) == ["X/a"])
     }
 
     @Test func parsesSingleFileTorrent() throws {

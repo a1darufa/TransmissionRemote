@@ -14,7 +14,8 @@ public struct TorrentMetainfo: Sendable, Equatable {
     public let comment: String?
     public let isPrivate: Bool
 
-    public var totalSize: Int64 { files.reduce(0) { $0 + $1.length } }
+    /// The size of the real files; padding only aligns pieces and isn't kept.
+    public var totalSize: Int64 { files.filter { !$0.isPadding }.reduce(0) { $0 + $1.length } }
 
     public enum ParseError: Error, Equatable {
         case tooLarge
@@ -50,22 +51,23 @@ public struct TorrentMetainfo: Sendable, Equatable {
         (dictionary["\(key).utf-8"] ?? dictionary[key])?.string
     }
 
+    /// The files in the daemon's order, so their numbers match `files-wanted` and friends.
+    /// Like libtransmission, a `files` list wins over a single-file `length`.
     private static func fileEntries(in info: [String: BencodeValue], torrentName: String) -> [FileEntry] {
-        if let length = info["length"]?.integer {
+        guard let fileList = info["files"]?.list else {
+            guard let length = info["length"]?.integer else { return [] }
             return [FileEntry(id: 0, path: torrentName, length: length)]
         }
 
-        guard let fileList = info["files"]?.list else { return [] }
         var entries: [FileEntry] = []
         for file in fileList {
             guard let fields = file.dictionary, let length = fields["length"]?.integer else { continue }
-            // BEP 47 padding files exist only to align pieces; Transmission hides them,
-            // so skipping them keeps our indices in sync with the daemon's.
-            if fields["attr"]?.string?.contains("p") == true { continue }
-
             let components = (fields["path.utf-8"] ?? fields["path"])?.list?.compactMap(\.string) ?? []
             let path = ([torrentName] + components).joined(separator: "/")
-            entries.append(FileEntry(id: entries.count, path: path, length: length))
+            // Padding files stay in the list: Transmission counts them, so skipping them would
+            // shift every later file's number and unselect the wrong files.
+            let isPadding = fields["attr"]?.string?.contains("p") == true || FileEntry.looksLikePadding(path)
+            entries.append(FileEntry(id: entries.count, path: path, length: length, isPadding: isPadding))
         }
         return entries
     }
