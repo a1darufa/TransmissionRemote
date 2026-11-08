@@ -47,3 +47,5 @@ dotnet_naming_symbols.static_readonly.required_modifiers = static, readonly
 [tests/**.cs]
 # Test names describe behavior in words.
 dotnet_diagnostic.CA1707.severity = none
+# Expected values are written inline, next to the assertion that uses them.
+dotnet_diagnostic.CA1861.severity = none
