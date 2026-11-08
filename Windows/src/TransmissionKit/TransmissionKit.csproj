@@ -5,6 +5,8 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>TransmissionKit</RootNamespace>
+    <!-- The app may be trimmed or compiled ahead of time; this turns on the analyzers that keep the core safe for it. -->
+    <IsAotCompatible>true</IsAotCompatible>
   </PropertyGroup>
 
   <ItemGroup>
