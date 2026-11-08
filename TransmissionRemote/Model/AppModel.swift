@@ -47,6 +47,7 @@ final class AppModel {
     let connection = ServerConnection()
     let router = Router()
     let updates = UpdateChecker()
+    let peerInfo = PeerInfoResolver()
     let addFlow: AddTorrentFlow
 
     init() {

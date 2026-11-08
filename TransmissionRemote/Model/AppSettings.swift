@@ -20,6 +20,9 @@ enum AppSettings {
     static let checkForUpdates = "checkForUpdates"
     static let lastUpdateCheck = "lastUpdateCheck"
     static let skippedUpdateVersion = "skippedUpdateVersion"
+    static let resolvePeerHostNames = "resolvePeerHostNames"
+    static let showPeerCountries = "showPeerCountries"
+    static let countryDatabaseMonth = "countryDatabaseMonth"
 
     /// Must run before any view reads `@AppStorage`, so defaults are consistent everywhere.
     static func registerDefaults() {
@@ -34,6 +37,8 @@ enum AppSettings {
             sortAscending: false,
             folderHistoryLimit: 50,
             checkForUpdates: true,
+            resolvePeerHostNames: true,
+            showPeerCountries: true,
             downloadSpeedPresets: SpeedLimitPresets.defaultList,
             uploadSpeedPresets: SpeedLimitPresets.defaultList
         ])
