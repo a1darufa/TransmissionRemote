@@ -56,6 +56,12 @@ final class ServerStore {
         persist()
     }
 
+    func clearFolderHistory(onServer id: UUID) {
+        guard let index = servers.firstIndex(where: { $0.id == id }) else { return }
+        servers[index].recentFolders = []
+        persist()
+    }
+
     /// Applies a lowered folder history limit to every server right away.
     func trimFolderHistories(to limit: Int) {
         for index in servers.indices {

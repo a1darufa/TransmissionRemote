@@ -37,6 +37,9 @@ struct FolderField: View {
                 ForEach(suggestions, id: \.self) { folder in
                     Button(folder) { path = folder }
                 }
+                Divider()
+                // A way out for folders that no longer exist (transgui issues #310, #738).
+                Button("Clear History") { model.clearFolderHistory() }
             } label: {
                 Image(systemName: "clock.arrow.circlepath")
             }

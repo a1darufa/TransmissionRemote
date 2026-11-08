@@ -178,13 +178,13 @@ struct AddTorrentSheet: View {
 
     private func applyDefaults() {
         name = pending.name
-        destination = model.suggestedFolders.first ?? connection.session?.downloadDir ?? ""
+        destination = model.startingFolder
         startWhenAdded = connection.session?.startAddedTorrents ?? true
     }
 
     private func add() {
         let options = AddTorrentOptions(
-            downloadDir: destination.trimmingCharacters(in: .whitespaces),
+            downloadDir: ServerFolder.cleaned(destination),
             startWhenAdded: startWhenAdded,
             priority: priority,
             // Padding files are never needed on disk, so they're always left unselected.

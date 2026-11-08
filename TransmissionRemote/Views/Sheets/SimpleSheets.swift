@@ -62,9 +62,12 @@ struct MoveTorrentSheet: View {
     @State private var movesData = true
 
     var body: some View {
-        SheetScaffold(title: "Move Data", primaryTitle: "Move", isPrimaryDisabled: location.isEmpty) {
-            model.connection.setLocation(ids, to: location, movingData: movesData)
-            model.recordFolderUse(location)
+        SheetScaffold(
+            title: "Move Data", primaryTitle: "Move", isPrimaryDisabled: ServerFolder.cleaned(location).isEmpty
+        ) {
+            let folder = ServerFolder.cleaned(location)
+            model.connection.setLocation(ids, to: folder, movingData: movesData)
+            model.recordFolderUse(folder)
         } content: {
             FolderField(path: $location)
             FreeSpaceLabel(path: location)

@@ -92,6 +92,17 @@ final class AppModel {
         servers.recordFolderUse(path, onServer: id)
     }
 
+    /// Where the Add Torrent sheet starts: the folder used last, else the server's default.
+    var startingFolder: String {
+        connection.profile.flatMap { servers.server(withID: $0.id) }?.lastUsedFolder
+            ?? connection.session?.downloadDir ?? ""
+    }
+
+    func clearFolderHistory() {
+        guard let id = connection.profile?.id else { return }
+        servers.clearFolderHistory(onServer: id)
+    }
+
     /// Download folders to suggest: the server's history, then its default folder.
     var suggestedFolders: [String] {
         let history = connection.profile.flatMap { servers.server(withID: $0.id) }?.suggestedFolders ?? []

@@ -36,12 +36,20 @@ nonisolated struct ServerProfile: Identifiable, Codable, Hashable, Sendable {
             .map(\.path)
     }
 
+    /// The folder used most recently, which the Add Torrent sheet starts with. Starting with the
+    /// most-used one instead kept proposing an old folder long after the user had moved on
+    /// (transgui issues #807, #738).
+    var lastUsedFolder: String? {
+        recentFolders.max { $0.lastUsed < $1.lastUsed }?.path
+    }
+
     /// Remembers a folder for "Save to", keeping at most `limit` folders (Settings → Paths).
     mutating func recordUse(ofFolder path: String, limit: Int) {
-        let path = path.trimmingCharacters(in: .whitespacesAndNewlines)
+        let path = ServerFolder.cleaned(path)
         guard !path.isEmpty else { return }
 
-        if let index = recentFolders.firstIndex(where: { $0.path == path }) {
+        if let index = recentFolders.firstIndex(where: { ServerFolder.cleaned($0.path) == path }) {
+            recentFolders[index].path = path
             recentFolders[index].useCount += 1
             recentFolders[index].lastUsed = .now
         } else {
