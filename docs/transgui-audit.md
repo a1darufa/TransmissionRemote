@@ -39,6 +39,7 @@ Each fix is its own commit.
 | Sidebar folders with the same name looked identical and appeared unsorted | #979 |
 | No hint when macOS's Local Network permission blocks the connection | #1473, PR #1614 |
 | Opening a .torrent from Finder at launch showed the Add sheet without the server's defaults | #790 |
+| Every refresh fetched all torrents, slow with very large libraries: refreshes now fetch only torrents changed in the last minute, with a full list once a minute | #708, #1163, #1422 |
 
 Verified as not affecting this app, among others: magnet links with spaces or non-ASCII names
 (#1485), the table response format (PR #1594), clipboard self-import (PR #1610), duplicate instances
@@ -46,8 +47,6 @@ Verified as not affecting this app, among others: magnet links with spaces or no
 
 ## Not fixed yet
 
-- **Very large libraries** (#708, #1163, #1422): every refresh fetches all torrents. Polling only
-  recently changed torrents would cut the load; worth doing before advertising to big seeders.
 - **Proxies** (#769, #1469): HTTP proxy login on plain-HTTP servers and SOCKS 5 are only unit-tested
   and need a check against a real proxy.
 - Smaller: renaming a single-file torrent can drop its extension (#758, #1010); names with leading or

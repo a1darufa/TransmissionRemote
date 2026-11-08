@@ -99,6 +99,9 @@ final class ServerConnection {
     private var refreshCount = 0
     /// The latest tracker stats per torrent, attached to each list refresh until the next fetch.
     private var trackerSummaries: [Torrent.ID: TrackerSummary] = [:]
+    /// Whether the next refresh may fetch only recently changed torrents.
+    /// Used by ServerConnection+TorrentList.swift.
+    var listPlan = TorrentListRefreshPlan()
     private let notifier = CompletionNotifier()
     private static let log = DiagnosticLog(category: "Connection")
 
@@ -163,6 +166,7 @@ final class ServerConnection {
         serverInfo = nil
         dialect = nil
         torrents = []
+        listPlan = TorrentListRefreshPlan()
         session = nil
         stats = nil
         freeSpace = nil
@@ -266,7 +270,7 @@ final class ServerConnection {
 
     private func refreshOnce(using client: TransmissionClient) async {
         do {
-            async let torrentList = client.allTorrents()
+            async let torrentList = fetchTorrentList(using: client)
             async let sessionStats = client.sessionStats()
             async let sessionSettings = client.sessionSettings()
             let (newTorrents, newStats, newSession) = try await (torrentList, sessionStats, sessionSettings)
