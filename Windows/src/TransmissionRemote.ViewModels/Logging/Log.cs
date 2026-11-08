@@ -75,4 +75,8 @@ internal static partial class Log
 
     [LoggerMessage(2305, LogLevel.Warning, "Couldn't read the Transmission Remote GUI settings at {Path}")]
     public static partial void TransguiFileUnreadable(ILogger logger, Exception exception, string path);
+
+    [LoggerMessage(2306, LogLevel.Information,
+        "Checked for updates: the newest release for this PC is {Newest}; this app is {CurrentVersion}")]
+    public static partial void UpdateChecked(ILogger logger, string newest, string currentVersion);
 }
