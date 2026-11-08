@@ -98,6 +98,8 @@ final class ServerConnection {
     private var isRefreshing = false
     private var isRefreshRequested = false
     private var refreshCount = 0
+    /// The latest tracker stats per torrent, attached to each list refresh until the next fetch.
+    private var trackerSummaries: [Torrent.ID: TrackerSummary] = [:]
     private let notifier = CompletionNotifier()
     private static let logger = Logger(subsystem: "TransmissionRemote", category: "Connection")
 
@@ -164,6 +166,7 @@ final class ServerConnection {
         session = nil
         stats = nil
         freeSpace = nil
+        trackerSummaries = [:]
         details = nil
         selection = []
         speedHistory = SpeedHistory()
@@ -272,7 +275,7 @@ final class ServerConnection {
             guard isCurrent(client) else { return }
 
             notifier.notifyAboutCompletions(previous: torrents, current: newTorrents)
-            torrents = newTorrents
+            torrents = withTrackerSummaries(newTorrents)
             stats = newStats
             session = newSession
             speedHistory.append(download: newStats.downloadSpeed, upload: newStats.uploadSpeed)
@@ -281,7 +284,10 @@ final class ServerConnection {
             lastUpdated = .now
 
             try await loadDetails(using: client)
-            if refreshCount.isMultiple(of: 6) { await loadFreeSpace(using: client) }
+            if refreshCount.isMultiple(of: 6) {
+                await loadFreeSpace(using: client)
+                await loadTrackerSummaries(using: client)
+            }
             refreshCount += 1
         } catch {
             guard isCurrent(client) else { return }
@@ -348,6 +354,26 @@ final class ServerConnection {
             throw TransmissionError.network(code: -1, description: String(localized: "Not connected."))
         }
         return client
+    }
+}
+
+// MARK: - Tracker summaries
+
+private extension ServerConnection {
+    /// Tracker stats are bulky and only change when a tracker is contacted, so they're fetched
+    /// on the same slower cadence as free space.
+    func loadTrackerSummaries(using client: TransmissionClient) async {
+        guard let summaries = try? await client.trackerSummaries(), isCurrent(client) else { return }
+        trackerSummaries = Dictionary(summaries.map { ($0.torrentID, $0) }) { first, _ in first }
+        torrents = withTrackerSummaries(torrents)
+    }
+
+    func withTrackerSummaries(_ list: [Torrent]) -> [Torrent] {
+        list.map { torrent in
+            var torrent = torrent
+            torrent.trackerSummary = trackerSummaries[torrent.id]
+            return torrent
+        }
     }
 }
 

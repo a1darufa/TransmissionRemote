@@ -78,6 +78,8 @@ public struct Torrent: Identifiable, Hashable, Sendable {
     public var addedDate: Date?
     public var doneDate: Date?
     public var activityDate: Date?
+    /// How long the torrent has been seeding, in seconds, across restarts.
+    public var secondsSeeding: Int
     public var downloadDir: String
     public var labels: [String]
     public var queuePosition: Int
@@ -90,13 +92,16 @@ public struct Torrent: Identifiable, Hashable, Sendable {
     public var bandwidthPriority: Priority
     /// Hosts of the torrent's trackers, in tier order.
     public var trackerHosts: [String]
+    /// Swarm sizes and tracker status. Not part of the list request: the app fetches these
+    /// less often with `trackerSummaries()` and attaches them.
+    public var trackerSummary: TrackerSummary?
 
     /// Fields needed to fill a `Torrent`.
     public static let listFields: [TorrentField] = [
         .id, .name, .hashString, .status, .error, .errorString, .totalSize, .sizeWhenDone,
         .leftUntilDone, .percentDone, .metadataPercentComplete, .recheckProgress, .rateDownload,
         .rateUpload, .eta, .uploadRatio, .uploadedEver, .downloadedEver, .addedDate, .doneDate,
-        .activityDate, .downloadDir, .labels, .queuePosition, .peersConnected, .peersSendingToUs,
+        .activityDate, .secondsSeeding, .downloadDir, .labels, .queuePosition, .peersConnected, .peersSendingToUs,
         .peersGettingFromUs, .isFinished, .isStalled, .isPrivate, .bandwidthPriority, .trackers
     ]
 
@@ -110,7 +115,7 @@ extension Torrent: Decodable {
         case id, name, hashString, status, error, errorString, totalSize, sizeWhenDone
         case leftUntilDone, percentDone, metadataPercentComplete, recheckProgress, rateDownload
         case rateUpload, eta, uploadRatio, uploadedEver, downloadedEver, addedDate, doneDate
-        case activityDate, downloadDir, labels, queuePosition, peersConnected, peersSendingToUs
+        case activityDate, secondsSeeding, downloadDir, labels, queuePosition, peersConnected, peersSendingToUs
         case peersGettingFromUs, isFinished, isStalled, isPrivate, bandwidthPriority, trackers
     }
 
@@ -141,6 +146,7 @@ extension Torrent: Decodable {
         addedDate = container.lenientDate(.addedDate)
         doneDate = container.lenientDate(.doneDate)
         activityDate = container.lenientDate(.activityDate)
+        secondsSeeding = container.lenient(.secondsSeeding, default: 0)
         downloadDir = container.lenient(.downloadDir, default: "")
         labels = container.lenientArray(.labels)
         queuePosition = container.lenient(.queuePosition, default: 0)
@@ -154,6 +160,7 @@ extension Torrent: Decodable {
 
         let announceURLs = container.lenientArray(.trackers, of: TrackerInfo.self).map(\.announce)
         trackerHosts = Self.uniqueHosts(in: announceURLs)
+        trackerSummary = nil
     }
 
     static func uniqueHosts(in announceURLs: [String]) -> [String] {

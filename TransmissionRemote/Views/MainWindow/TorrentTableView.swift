@@ -21,6 +21,7 @@ struct TorrentTableView: View {
         ) {
             primaryColumns
             secondaryColumns
+            extraColumns
         }
         .contextMenu(forSelectionType: Torrent.ID.self) { ids in
             TorrentActionsMenu(model: model, ids: ids)
@@ -63,13 +64,13 @@ struct TorrentTableView: View {
             .width(min: 70, ideal: 110)
             .customizationID("status")
 
-        TableColumn("Seeds", value: \.peersSendingToUs) { Text("\($0.peersSendingToUs)").monospacedDigit() }
-            .width(min: 40, ideal: 55)
+        TableColumn("Seeds", value: \.peersSendingToUs) { Text($0.seedsText).monospacedDigit() }
+            .width(min: 40, ideal: 75)
             .alignment(.trailing)
             .customizationID("seeds")
 
-        TableColumn("Peers", value: \.peersGettingFromUs) { Text("\($0.peersGettingFromUs)").monospacedDigit() }
-            .width(min: 40, ideal: 55)
+        TableColumn("Peers", value: \.peersGettingFromUs) { Text($0.peersText).monospacedDigit() }
+            .width(min: 40, ideal: 75)
             .alignment(.trailing)
             .customizationID("peers")
 
@@ -144,6 +145,60 @@ struct TorrentTableView: View {
             .defaultVisibility(.hidden)
     }
 
+    /// Columns transgui has that most people leave off; hidden until chosen from the header menu.
+    @TableColumnBuilder<Torrent, KeyPathComparator<Torrent>>
+    private var extraColumns: some TableColumnContent<Torrent, KeyPathComparator<Torrent>> {
+        TableColumn("Total Size", value: \.totalSize) { Text($0.totalSize.formattedBytes).monospacedDigit() }
+            .width(min: 60, ideal: 80)
+            .alignment(.trailing)
+            .customizationID("totalSize")
+            .defaultVisibility(.hidden)
+
+        TableColumn("Size Left", value: \.leftUntilDone) { Text($0.leftUntilDone.formattedBytes).monospacedDigit() }
+            .width(min: 60, ideal: 80)
+            .alignment(.trailing)
+            .customizationID("sizeLeft")
+            .defaultVisibility(.hidden)
+
+        TableColumn("Last Active", value: \.activitySortKey) { Text(Format.date($0.activityDate)) }
+            .width(min: 90, ideal: 140)
+            .customizationID("lastActive")
+            .defaultVisibility(.hidden)
+
+        TableColumn("Seeding Time", value: \.secondsSeeding) { torrent in
+            Text(torrent.secondsSeeding > 0 ? Format.duration(torrent.secondsSeeding) : "").monospacedDigit()
+        }
+            .width(min: 60, ideal: 85)
+            .alignment(.trailing)
+            .customizationID("seedingTime")
+            .defaultVisibility(.hidden)
+
+        TableColumn("Tracker Status", value: \.trackerStatusText) { torrent in
+            Text(torrent.trackerStatusText).help(torrent.trackerStatusText)
+        }
+            .width(min: 80, ideal: 140)
+            .customizationID("trackerStatus")
+            .defaultVisibility(.hidden)
+
+        TableColumn("Private", value: \.privateSortKey) { torrent in
+            if torrent.isPrivate {
+                Image(systemName: "lock.fill")
+                    .foregroundStyle(.secondary)
+                    .accessibilityLabel("Private")
+            }
+        }
+            .width(min: 40, ideal: 50)
+            .alignment(.center)
+            .customizationID("private")
+            .defaultVisibility(.hidden)
+
+        TableColumn("ID", value: \.id) { Text("\($0.id)").monospacedDigit() }
+            .width(min: 30, ideal: 45)
+            .alignment(.trailing)
+            .customizationID("id")
+            .defaultVisibility(.hidden)
+    }
+
     // MARK: - Persistence
 
     /// The sort column and direction survive relaunches, like in Transmission Remote GUI.
@@ -172,6 +227,7 @@ struct TorrentTableView: View {
 enum TorrentSortColumn: String, CaseIterable {
     case name, size, done, status, seeds, peers, down, up, eta, ratio
     case added, completed, folder, labels, tracker, queue, downloaded, uploaded, priority
+    case totalSize, sizeLeft, lastActive, seedingTime, trackerStatus, isPrivate, id
 
     init?(matching comparator: KeyPathComparator<Torrent>) {
         let matchingColumn = Self.allCases.first { $0.comparator(order: .forward).keyPath == comparator.keyPath }
@@ -202,6 +258,13 @@ enum TorrentSortColumn: String, CaseIterable {
         case .downloaded: KeyPathComparator(\.downloadedEver, order: order)
         case .uploaded: KeyPathComparator(\.uploadedEver, order: order)
         case .priority: KeyPathComparator(\.bandwidthPriority, order: order)
+        case .totalSize: KeyPathComparator(\.totalSize, order: order)
+        case .sizeLeft: KeyPathComparator(\.leftUntilDone, order: order)
+        case .lastActive: KeyPathComparator(\.activitySortKey, order: order)
+        case .seedingTime: KeyPathComparator(\.secondsSeeding, order: order)
+        case .trackerStatus: KeyPathComparator(\.trackerStatusText, order: order)
+        case .isPrivate: KeyPathComparator(\.privateSortKey, order: order)
+        case .id: KeyPathComparator(\.id, order: order)
         }
     }
 }

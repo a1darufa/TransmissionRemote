@@ -106,6 +106,31 @@ nonisolated extension Torrent {
     var doneSortKey: Date { doneDate ?? .distantPast }
     var labelsText: String { labels.joined(separator: ", ") }
     var primaryTracker: String { trackerHosts.first ?? "" }
+    var activitySortKey: Date { activityDate ?? .distantPast }
+    var privateSortKey: Int { isPrivate ? 1 : 0 }
+    var trackerStatusText: String { trackerSummary?.status.text ?? "" }
+
+    /// Connected seeders, then the swarm's seeders when a tracker reported them: "3 (172)",
+    /// like Transmission Remote GUI.
+    var seedsText: String { Self.countText(connected: peersSendingToUs, swarm: trackerSummary?.seeders) }
+    /// Connected downloading peers, then the swarm's leechers when a tracker reported them.
+    var peersText: String { Self.countText(connected: peersGettingFromUs, swarm: trackerSummary?.leechers) }
+
+    private static func countText(connected: Int, swarm: Int?) -> String {
+        guard let swarm else { return connected.formatted() }
+        return "\(connected.formatted()) (\(swarm.formatted()))"
+    }
+}
+
+nonisolated extension TrackerSummary.Status {
+    var text: String {
+        switch self {
+        case .working: String(localized: "Working")
+        case .updating: String(localized: "Updating…")
+        case .failed(let message): message.isEmpty ? String(localized: "Tracker error") : message
+        case .notContacted: ""
+        }
+    }
 }
 
 nonisolated extension Priority {

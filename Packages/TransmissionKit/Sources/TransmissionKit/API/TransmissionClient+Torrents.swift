@@ -58,6 +58,12 @@ extension TransmissionClient {
         try await torrents(Torrent.self, fields: Torrent.listFields)
     }
 
+    /// Swarm sizes and tracker status for every torrent. Tracker stats are large, so the app
+    /// asks for these less often than for the list.
+    public func trackerSummaries() async throws(TransmissionError) -> [TrackerSummary] {
+        try await torrents(TrackerSummary.self, fields: [.id, .trackerStats])
+    }
+
     public func details(
         of torrentID: Int,
         fields: [TorrentField]
