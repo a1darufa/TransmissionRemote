@@ -198,4 +198,31 @@ struct ClientTests {
             try await client.setLocation(ids: [1], to: "/missing", movingData: true)
         }
     }
+
+    @Test func retriesOnceWhenAKeptAliveConnectionWasDropped() async throws {
+        let attempts = Mutex(0)
+        MockURLProtocol.reset { request, _ in
+            let attempt = attempts.withLock { count in
+                count += 1
+                return count
+            }
+            // The proxy closed the idle connection just as the first request went out.
+            if attempt == 1 { return .failing(with: .networkConnectionLost) }
+            guard request.value(forHTTPHeaderField: "X-Transmission-Session-Id") == Self.csrfToken else {
+                return MockResponse(status: 409, headers: ["X-Transmission-Session-Id": Self.csrfToken])
+            }
+            return MockResponse(status: 200, body: Self.transmission300)
+        }
+        let client = try makeClient()
+        let info = try await client.connect()
+        #expect(info.version.hasPrefix("3.00"))
+    }
+
+    @Test func explainsAWebPageInsteadOfTheRPC() async throws {
+        MockURLProtocol.reset { _, _ in
+            MockResponse(status: 200, body: "\n<!DOCTYPE html><html><body>My NAS</body></html>")
+        }
+        let client = try makeClient()
+        await #expect(throws: TransmissionError.notTransmissionRPC) { try await client.connect() }
+    }
 }

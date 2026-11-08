@@ -20,6 +20,8 @@ public enum TransmissionError: Error, Equatable, Sendable {
     case rpcFailure(message: String)
     case unsupportedServer(version: String)
     case invalidResponse(details: String)
+    /// The address answered with a web page rather than Transmission's RPC: wrong port or path.
+    case notTransmissionRPC
     case network(code: Int, description: String)
 }
 
@@ -65,6 +67,11 @@ extension TransmissionError: LocalizedError {
                 localized: "Transmission \(version) is too old. Version 2.40 or newer is required.",
                 bundle: .module
             )
+        case .notTransmissionRPC:
+            String(localized: """
+                The server answered with a web page instead of Transmission. \
+                Check the port and the RPC path, usually /transmission/rpc.
+                """, bundle: .module)
         case .invalidResponse(let details):
             String(
                 localized: "The server sent a response that couldn't be read (\(details)).",
@@ -79,7 +86,7 @@ extension TransmissionError: LocalizedError {
     public var requiresUserAction: Bool {
         switch self {
         case .unauthorized, .ipNotAllowed, .hostNotAllowed, .untrustedCertificate,
-             .redirectRefused, .unsupportedServer, .invalidEndpoint:
+             .redirectRefused, .unsupportedServer, .invalidEndpoint, .notTransmissionRPC:
             true
         // A handshake failure in the middle of a working session is a network hiccup;
         // a failure on the first connection is shown either way.

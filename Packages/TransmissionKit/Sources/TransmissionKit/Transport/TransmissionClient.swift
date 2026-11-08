@@ -86,7 +86,9 @@ public actor TransmissionClient {
     ) -> URLSessionConfiguration {
         let configuration = base.copy() as? URLSessionConfiguration ?? .ephemeral
         configuration.timeoutIntervalForRequest = TimeInterval(timeout.components.seconds)
-        configuration.timeoutIntervalForResource = TimeInterval(timeout.components.seconds) * 4
+        // Long enough for calls the daemon only answers when it's done, such as moving data;
+        // ordinary requests are still cut off by the per-request timeout above.
+        configuration.timeoutIntervalForResource = TimeInterval(Self.slowCallTimeout.components.seconds)
         configuration.tlsMinimumSupportedProtocolVersion = .TLSv12
         configuration.httpCookieStorage = nil
         configuration.httpShouldSetCookies = false
@@ -103,6 +105,10 @@ public actor TransmissionClient {
         }
         return configuration
     }
+
+    /// How long to wait for calls the daemon answers only after finishing the work: moving data
+    /// and deleting it. Large torrents on a NAS can take many minutes.
+    static let slowCallTimeout: Duration = .seconds(30 * 60)
 
     // MARK: - Connecting
 
@@ -145,7 +151,8 @@ public actor TransmissionClient {
         scope: KeyScope = .plain,
         returning resultType: Result.Type
     ) async throws(TransmissionError) -> Result {
-        guard let result = try await send(method, params: params, scope: scope, resultType: resultType) else {
+        guard let result = try await send(method, params: params, scope: scope, timeout: nil, resultType: resultType)
+        else {
             throw .invalidResponse(details: "the response to \(method.rawValue) had no result")
         }
         return result
@@ -155,15 +162,17 @@ public actor TransmissionClient {
     func call<Params: Encodable & Sendable>(
         _ method: RPCMethod,
         params: Params,
-        scope: KeyScope = .plain
+        scope: KeyScope = .plain,
+        timeout: Duration? = nil
     ) async throws(TransmissionError) {
-        _ = try await send(method, params: params, scope: scope, resultType: Empty.self)
+        _ = try await send(method, params: params, scope: scope, timeout: timeout, resultType: Empty.self)
     }
 
     private func send<Params: Encodable, Result: Decodable>(
         _ method: RPCMethod,
         params: Params,
         scope: KeyScope,
+        timeout: Duration?,
         resultType: Result.Type
     ) async throws(TransmissionError) -> Result? {
         let requestDialect = dialect
@@ -172,7 +181,7 @@ public actor TransmissionClient {
         // Transmission answers the first request (and any request after the token expires)
         // with 409 and a fresh CSRF token; retry once with the new token.
         for _ in 0..<2 {
-            let (data, response) = try await post(body)
+            let (data, response) = try await post(body, timeout: timeout)
             switch response.statusCode {
             case 409:
                 guard let token = response.value(forHTTPHeaderField: "X-Transmission-Session-Id") else {
@@ -199,8 +208,11 @@ public actor TransmissionClient {
         throw .invalidResponse(details: "the server rejected its own session id")
     }
 
-    private func post(_ body: Data) async throws(TransmissionError) -> (Data, HTTPURLResponse) {
+    private func post(_ body: Data, timeout: Duration?) async throws(TransmissionError) -> (Data, HTTPURLResponse) {
         var request = URLRequest(url: url)
+        if let timeout {
+            request.timeoutInterval = TimeInterval(timeout.components.seconds)
+        }
         request.httpMethod = "POST"
         request.httpBody = body
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -212,7 +224,7 @@ public actor TransmissionClient {
         }
 
         do {
-            let (data, response) = try await session.data(for: request)
+            let (data, response) = try await dataRetryingDroppedConnection(for: request)
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw TransmissionError.invalidResponse(details: "not an HTTP response")
             }
@@ -229,6 +241,18 @@ public actor TransmissionClient {
                 throw .httpsHandshakeFailed
             }
             throw .network(code: urlError?.errorCode ?? -1, description: error.localizedDescription)
+        }
+    }
+
+    /// Proxies and NAS web servers close idle keep-alive connections, often after 5 seconds,
+    /// the same as the refresh interval. URLSession then fails the next request on that connection
+    /// instead of retrying it, because it's a POST. Transmission's calls are safe to repeat
+    /// (adding a torrent twice reports a duplicate), so one retry on a fresh connection is fine.
+    private func dataRetryingDroppedConnection(for request: URLRequest) async throws -> (Data, URLResponse) {
+        do {
+            return try await session.data(for: request)
+        } catch let error as URLError where error.code == .networkConnectionLost {
+            return try await session.data(for: request)
         }
     }
 
@@ -272,10 +296,19 @@ public actor TransmissionClient {
         } catch let error as TransmissionError {
             throw error
         } catch let error as DecodingError {
+            // A wrong RPC path or port often reaches a web page, such as a NAS's admin site.
+            if Self.looksLikeWebPage(data) { throw .notTransmissionRPC }
             throw .invalidResponse(details: error.shortDescription)
         } catch {
             throw .invalidResponse(details: error.localizedDescription)
         }
+    }
+}
+
+extension TransmissionClient {
+    static func looksLikeWebPage(_ data: Data) -> Bool {
+        guard let start = String(validating: data.prefix(256), as: UTF8.self) else { return false }
+        return start.trimmingCharacters(in: .whitespacesAndNewlines).hasPrefix("<")
     }
 }
 

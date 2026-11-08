@@ -80,10 +80,12 @@ extension TransmissionClient {
     }
 
     public func remove(ids: [Int], deletingData: Bool) async throws(TransmissionError) {
+        // Deleting large torrents on a slow disk can take minutes, and the daemon answers after.
         try await call(
             .torrentRemove,
             params: RemoveRequest(ids: ids, deleteLocalData: deletingData),
-            scope: .torrentArguments
+            scope: .torrentArguments,
+            timeout: deletingData ? Self.slowCallTimeout : nil
         )
     }
 
@@ -97,7 +99,9 @@ extension TransmissionClient {
         try await call(
             .torrentSetLocation,
             params: SetLocationRequest(ids: ids, location: location, move: movingData),
-            scope: .torrentArguments
+            scope: .torrentArguments,
+            // The daemon answers only after copying the data, which can take many minutes.
+            timeout: movingData ? Self.slowCallTimeout : nil
         )
     }
 
