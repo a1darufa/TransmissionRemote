@@ -45,6 +45,9 @@ public sealed class IntegrationTests
         await CheckLabelsAndOptionsAsync(client, added.Id);
         await CheckTrackerReplacementAsync(client, added.Id);
 
+        var recent = await client.GetRecentlyChangedTorrentsAsync(Cancellation);
+        Assert.IsTrue(recent.Changed.Any(torrent => torrent.Id == added.Id), "a torrent just added counts as changed");
+
         await client.MoveInQueueAsync(QueueMove.Top, [added.Id], Cancellation);
         await client.PerformAsync(TorrentAction.Reannounce, [added.Id], Cancellation);
         var summaries = await client.GetTrackerSummariesAsync(Cancellation);
@@ -53,6 +56,8 @@ public sealed class IntegrationTests
         await client.RemoveAsync([added.Id], deletingData: false, Cancellation);
         var remaining = await client.GetAllTorrentsAsync(Cancellation);
         Assert.IsFalse(remaining.Any(torrent => torrent.Id == added.Id));
+        var afterRemoval = await client.GetRecentlyChangedTorrentsAsync(Cancellation);
+        CollectionAssert.Contains(afterRemoval.RemovedIds.ToArray(), added.Id);
     }
 
     [TestMethod]

@@ -27,6 +27,25 @@ public sealed partial class TransmissionClient
         GetTorrentsAsync(Torrent.ListFields, Torrent.FromJson, ids: null, cancellationToken);
 
     /// <summary>
+    /// The torrents changed in the last minute, with the list's fields, and the IDs of torrents removed in
+    /// that time. Apply them to the previous list with <see cref="TorrentChanges.AppliedTo"/>.
+    /// </summary>
+    public Task<TorrentChanges> GetRecentlyChangedTorrentsAsync(CancellationToken cancellationToken = default)
+    {
+        var rpcVersion = RpcVersion;
+        var supportedFields = Torrent.ListFields.Where(field => field.MinimumRpcVersion() <= rpcVersion)
+            .Select(field => field.CamelName());
+        var parameters = new JsonObject
+        {
+            ["fields"] = WireNames(supportedFields, KeyScope.TorrentFields).ToJsonArray(),
+            // A value rather than a key, so the usual key conversion doesn't reach it.
+            ["ids"] = Dialect == RpcDialect.JsonRpc ? "recently_active" : "recently-active",
+        };
+        return CallAsync(
+            RpcMethod.TorrentGet, parameters, KeyScope.TorrentFields, TorrentChanges.FromJson, cancellationToken);
+    }
+
+    /// <summary>
     /// Swarm sizes and tracker status for every torrent. Tracker stats are large, so the app asks
     /// for these less often than for the list.
     /// </summary>
