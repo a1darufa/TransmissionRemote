@@ -67,7 +67,18 @@ struct MainWindowPresentation: ViewModifier {
         switch sheet {
         case .addLink: AddLinkSheet()
         case .move(let ids): MoveTorrentSheet(ids: ids)
-        case .rename(let torrent): RenameTorrentSheet(torrent: torrent)
+        case .rename(let torrent):
+            RenameSheet(
+                title: "Rename Torrent",
+                explanation: "Renames the torrent's top-level file or folder on the server.",
+                currentName: torrent.name
+            ) { model.connection.rename(torrent, to: $0) }
+        case .renameFile(let torrentID, let path):
+            RenameSheet(
+                title: "Rename",
+                explanation: "Renames the file or folder on the server.",
+                currentName: (path as NSString).lastPathComponent
+            ) { model.connection.renameFile(in: torrentID, path: path, to: $0) }
         case .labels(let ids): LabelsSheet(ids: ids)
         case .options(let ids): TorrentOptionsSheet(ids: ids)
         case .editTrackers(let id): EditTrackersSheet(torrentID: id)

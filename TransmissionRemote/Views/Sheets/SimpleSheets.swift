@@ -81,29 +81,32 @@ struct MoveTorrentSheet: View {
     }
 }
 
-struct RenameTorrentSheet: View {
-    @Environment(AppModel.self) private var model
-    let torrent: Torrent
+/// Asks for a new name for a torrent, or for a file or folder inside one.
+struct RenameSheet: View {
+    let title: LocalizedStringResource
+    let explanation: LocalizedStringResource
+    let currentName: String
+    let onRename: (String) -> Void
     @State private var name = ""
 
     var body: some View {
-        SheetScaffold(title: "Rename Torrent", primaryTitle: "Rename", isPrimaryDisabled: !isValid) {
+        SheetScaffold(title: title, primaryTitle: "Rename", isPrimaryDisabled: !isValid) {
             if let newName = TorrentName.validated(name) {
-                model.connection.rename(torrent, to: newName)
+                onRename(newName)
             }
         } content: {
             TextField("Name", text: $name)
                 .textFieldStyle(.roundedBorder)
-            Text("Renames the torrent's top-level file or folder on the server.")
+            Text(explanation)
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
-        .onAppear { name = torrent.name }
+        .onAppear { name = currentName }
     }
 
     private var isValid: Bool {
         guard let newName = TorrentName.validated(name) else { return false }
-        return newName != torrent.name
+        return newName != currentName
     }
 }
 

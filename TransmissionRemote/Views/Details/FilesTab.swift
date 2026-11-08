@@ -18,7 +18,8 @@ struct FilesTab: View {
                     nodes: FileTree.build(from: files),
                     showsProgress: true,
                     onToggleWanted: toggle,
-                    onSetPriority: setPriority
+                    onSetPriority: setPriority,
+                    fileActions: fileActions
                 )
             }
         } else {
@@ -33,5 +34,18 @@ struct FilesTab: View {
 
     private func setPriority(_ priority: Priority, files: [Int]) {
         model.connection.apply(.priority(priority, files: files, in: torrent.id))
+    }
+
+    private var fileActions: FileActions {
+        let torrent = torrent
+        let model = model
+        let serverPath = { (node: FileNode) in torrent.remotePath(of: node.relativePath) }
+        return FileActions(
+            isLocallyAvailable: { model.localFileLocation(forRemotePath: serverPath($0)) != nil },
+            open: { model.openLocally(remotePath: serverPath($0)) },
+            reveal: { model.revealLocally(remotePaths: $0.map(serverPath)) },
+            rename: { model.router.sheet = .renameFile(torrentID: torrent.id, path: $0.relativePath) },
+            copyPaths: { model.copyPaths($0.map(serverPath)) }
+        )
     }
 }

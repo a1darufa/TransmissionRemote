@@ -38,6 +38,11 @@ extension ServerConnection {
         run { try await $0.rename(torrentID: id, path: currentName, to: newName) }
     }
 
+    /// Renames a file or folder inside a torrent; `path` is relative to the torrent's download folder.
+    func renameFile(in torrentID: Torrent.ID, path: String, to newName: String) {
+        run { try await $0.rename(torrentID: torrentID, path: path, to: newName) }
+    }
+
     func apply(_ mutation: TorrentMutation) {
         run { try await $0.apply(mutation) }
     }

@@ -7,6 +7,8 @@ enum MainSheet: Identifiable {
     case addLink
     case move(Set<Torrent.ID>)
     case rename(Torrent)
+    /// A file or folder inside a torrent; `path` is relative to the torrent's download folder.
+    case renameFile(torrentID: Torrent.ID, path: String)
     case labels(Set<Torrent.ID>)
     case options(Set<Torrent.ID>)
     case editTrackers(Torrent.ID)
@@ -16,6 +18,7 @@ enum MainSheet: Identifiable {
         case .addLink: "addLink"
         case .move(let ids): "move-\(ids.sorted())"
         case .rename(let torrent): "rename-\(torrent.id)"
+        case .renameFile(let torrentID, let path): "rename-\(torrentID)-\(path)"
         case .labels(let ids): "labels-\(ids.sorted())"
         case .options(let ids): "options-\(ids.sorted())"
         case .editTrackers(let id): "trackers-\(id)"

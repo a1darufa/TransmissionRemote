@@ -22,6 +22,9 @@ struct FileNode: Identifiable, Hashable {
 
     var isFolder: Bool { children != nil }
     var progress: Double { size > 0 ? Double(bytesCompleted) / Double(size) : 0 }
+    /// The path relative to the torrent's download folder, as Transmission names it.
+    /// Folder IDs end in "/" to keep them apart from files of the same name.
+    var relativePath: String { isFolder ? String(id.dropLast()) : id }
 }
 
 enum FileTree {

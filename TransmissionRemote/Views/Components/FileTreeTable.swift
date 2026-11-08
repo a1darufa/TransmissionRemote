@@ -1,6 +1,17 @@
 import SwiftUI
 import TransmissionKit
 
+/// What the Files tab can do with files besides choosing what to download. The Add Torrent
+/// sheet has none of these, because nothing is on the server yet.
+struct FileActions {
+    /// Whether a path mapping covers the node, so it can be opened or shown in Finder.
+    let isLocallyAvailable: (FileNode) -> Bool
+    let open: (FileNode) -> Void
+    let reveal: ([FileNode]) -> Void
+    let rename: (FileNode) -> Void
+    let copyPaths: ([FileNode]) -> Void
+}
+
 /// A hierarchical file list with download checkboxes. Shared by the Files tab and the
 /// Add Torrent sheet; progress and priority columns are optional.
 struct FileTreeTable: View {
@@ -8,6 +19,7 @@ struct FileTreeTable: View {
     var showsProgress = false
     let onToggleWanted: (FileNode) -> Void
     var onSetPriority: ((Priority, [Int]) -> Void)?
+    var fileActions: FileActions?
 
     @State private var selection: Set<FileNode.ID> = []
 
@@ -52,12 +64,18 @@ struct FileTreeTable: View {
         }
         .contextMenu(forSelectionType: FileNode.ID.self) { ids in
             selectionMenu(for: ids)
+        } primaryAction: { ids in
+            openOnDoubleClick(ids)
         }
     }
 
     @ViewBuilder
     private func selectionMenu(for ids: Set<FileNode.ID>) -> some View {
         let selected = Self.flatten(nodes).filter { ids.contains($0.id) }
+        if let fileActions {
+            fileMenu(for: selected, actions: fileActions)
+            Divider()
+        }
         Button("Download") { selected.filter { $0.wantedState != .all }.forEach(onToggleWanted) }
         Button("Don't Download") { selected.filter { $0.wantedState != .none }.forEach(onToggleWanted) }
         if let onSetPriority {
@@ -68,6 +86,30 @@ struct FileTreeTable: View {
                 }
             }
         }
+    }
+
+    /// Open, Show in Finder, Rename and Copy Path, in the order transgui lists them.
+    @ViewBuilder
+    private func fileMenu(for selected: [FileNode], actions: FileActions) -> some View {
+        let single = selected.count == 1 ? selected.first : nil
+        Button("Open") { single.map(actions.open) }
+            .disabled(single.map(actions.isLocallyAvailable) != true)
+        Button("Show in Finder") { actions.reveal(selected) }
+            .disabled(!selected.contains(where: actions.isLocallyAvailable))
+        Divider()
+        Button("Rename…") { single.map(actions.rename) }
+            .disabled(single == nil)
+        Button("Copy Path") { actions.copyPaths(selected) }
+            .disabled(selected.isEmpty)
+    }
+
+    /// Double-clicking a file opens it, like in Finder. Folders are left alone.
+    private func openOnDoubleClick(_ ids: Set<FileNode.ID>) {
+        guard let fileActions, ids.count == 1,
+              let node = Self.flatten(nodes).first(where: { ids.contains($0.id) }),
+              !node.isFolder, fileActions.isLocallyAvailable(node)
+        else { return }
+        fileActions.open(node)
     }
 
     private static func flatten(_ nodes: [FileNode]) -> [FileNode] {
