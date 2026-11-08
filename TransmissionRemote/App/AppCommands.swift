@@ -9,6 +9,13 @@ struct AppCommands: Commands {
         SidebarCommands()
         ToolbarCommands()
 
+        CommandGroup(after: .appInfo) {
+            Button("Check for Updates…") {
+                Task { await model.updates.check(userInitiated: true) }
+            }
+            .disabled(model.updates.isChecking)
+        }
+
         CommandGroup(replacing: .newItem) {
             Group {
                 Button("Add Torrent File…") { model.router.isImportingTorrentFiles = true }

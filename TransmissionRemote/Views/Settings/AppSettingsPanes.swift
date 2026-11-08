@@ -5,6 +5,8 @@ struct GeneralSettings: View {
     @AppStorage(AppSettings.refreshInterval) private var refreshInterval = 5
     @AppStorage(AppSettings.backgroundRefreshInterval) private var backgroundRefreshInterval = 20
     @AppStorage(AppSettings.showAddTorrentDialog) private var showsAddTorrentDialog = true
+    @AppStorage(AppSettings.checkForUpdates) private var checksForUpdates = true
+    @Environment(AppModel.self) private var model
 
     // Includes 20 s, the default background interval, so that picker never shows blank.
     private let intervals = [1, 2, 3, 5, 10, 15, 20, 30, 60]
@@ -21,6 +23,19 @@ struct GeneralSettings: View {
             }
             Section("Add torrent") {
                 Toggle("Prompt for download options when adding a new torrent", isOn: $showsAddTorrentDialog)
+            }
+            Section {
+                Toggle("Check for updates once a day", isOn: $checksForUpdates)
+                LabeledContent("Version \(UpdateChecker.currentVersionText)") {
+                    Button("Check Now") {
+                        Task { await model.updates.check(userInitiated: true) }
+                    }
+                    .disabled(model.updates.isChecking)
+                }
+            } header: {
+                Text("Updates")
+            } footer: {
+                Text("Asks GitHub for the newest release. Nothing is downloaded or installed automatically.")
             }
         }
         .formStyle(.grouped)

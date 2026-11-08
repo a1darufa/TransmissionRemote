@@ -104,6 +104,7 @@ private struct MainWindowAlerts: ViewModifier {
             } message: { message in
                 Text(message)
             }
+            .modifier(UpdateAlerts(updates: model.updates))
             .alert(
                 "Couldn't Add Torrent",
                 isPresented: Binding { addFlow.problem != nil } set: { if !$0 { addFlow.problem = nil } },

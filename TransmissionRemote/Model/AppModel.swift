@@ -46,6 +46,7 @@ final class AppModel {
     let servers = ServerStore()
     let connection = ServerConnection()
     let router = Router()
+    let updates = UpdateChecker()
     let addFlow: AddTorrentFlow
 
     init() {
@@ -54,6 +55,7 @@ final class AppModel {
 
     func start() {
         connectToActiveServer()
+        updates.startAutomaticChecks()
     }
 
     func connectToActiveServer() {

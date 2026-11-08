@@ -17,6 +17,9 @@ enum AppSettings {
     static let folderHistoryLimit = "folderHistoryLimit"
     static let downloadSpeedPresets = "downloadSpeedPresets"
     static let uploadSpeedPresets = "uploadSpeedPresets"
+    static let checkForUpdates = "checkForUpdates"
+    static let lastUpdateCheck = "lastUpdateCheck"
+    static let skippedUpdateVersion = "skippedUpdateVersion"
 
     /// Must run before any view reads `@AppStorage`, so defaults are consistent everywhere.
     static func registerDefaults() {
@@ -30,6 +33,7 @@ enum AppSettings {
             showDetailPane: true,
             sortAscending: false,
             folderHistoryLimit: 50,
+            checkForUpdates: true,
             downloadSpeedPresets: SpeedLimitPresets.defaultList,
             uploadSpeedPresets: SpeedLimitPresets.defaultList
         ])
