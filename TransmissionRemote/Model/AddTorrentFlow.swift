@@ -23,7 +23,7 @@ struct PendingTorrent: Identifiable {
     let files: [FileEntry]
 
     var totalSize: Int64? {
-        files.isEmpty ? nil : files.reduce(0) { $0 + $1.length }
+        files.isEmpty ? nil : files.filter { !$0.isPadding }.reduce(0) { $0 + $1.length }
     }
 }
 
@@ -34,6 +34,9 @@ final class AddTorrentFlow {
     private(set) var queue: [PendingTorrent] = []
     /// Shown as an alert when something can't be opened.
     var problem: String?
+    /// Torrents added without the sheet, waiting their turn.
+    private var quietQueue: [PendingTorrent] = []
+    private var quietAdding: Task<Void, Never>?
 
     private let connection: ServerConnection
     /// Links typed into the Add Link sheet, held until that sheet has fully closed:
@@ -130,13 +133,22 @@ final class AddTorrentFlow {
     }
 
     /// Skips the sheet: adds to the server's default folder and starts per the server's setting.
+    /// Torrents go to the server one at a time. Dropping hundreds of files at once used to send
+    /// them all together, and the later ones timed out (transgui issue #804).
     private func addWithDefaults(_ pending: PendingTorrent) {
-        Task {
-            do {
-                _ = try await connection.add(AddTorrentRequest(pending, options: AddTorrentOptions()))
-            } catch {
-                problem = error.localizedDescription
+        quietQueue.append(pending)
+        guard quietAdding == nil else { return }
+        quietAdding = Task {
+            while !quietQueue.isEmpty {
+                let next = quietQueue.removeFirst()
+                do {
+                    _ = try await connection.add(AddTorrentRequest(next, options: AddTorrentOptions()))
+                } catch {
+                    // Keep the first failure on screen rather than replacing it with each later one.
+                    problem = problem ?? error.localizedDescription
+                }
             }
+            quietAdding = nil
         }
     }
 }
