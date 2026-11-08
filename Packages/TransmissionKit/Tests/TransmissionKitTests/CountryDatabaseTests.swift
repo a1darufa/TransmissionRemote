@@ -49,7 +49,8 @@ struct CountryDatabaseTests {
 
     @Test func unpacksGzipWithAFileNameHeader() throws {
         let sample = try #require(Data(base64Encoded: """
-            H4sICAAAAAAC/2RiaXAuY3N2ADPQMwBBHQM9I1NTGNaJiuIyhEpAaJCgYyhY0BAqaAwWdPbjMjIwMLQCElZWOnBmGhDgJHS8ArgAO5oVIngAAAA=
+            H4sICAAAAAAC/2RiaXAuY3N2ADPQMwBBHQM9I1NTGNaJiuIyhEpAaJCgYyhY0BAqaAwWdPbjMjIwMLQCElZWOnBm\
+            GhDgJHS8ArgAO5oVIngAAAA=
             """))
         let csv = try Gzip.decompress(sample)
         let database = CountryDatabase(csv: csv)

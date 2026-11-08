@@ -48,14 +48,16 @@ struct ClientIdentityTests {
     @Test func answersAClientCertificateRequest() async throws {
         let identity = try ClientIdentity(pkcs12: #require(Self.testPKCS12), password: Self.testPassword)
         let delegate = ConnectionSecurityDelegate(pinnedFingerprint: nil, clientIdentity: identity)
-        let (disposition, credential) = await delegate.urlSession(.shared, didReceive: Self.clientCertificateChallenge())
+        let challenge = Self.clientCertificateChallenge()
+        let (disposition, credential) = await delegate.urlSession(.shared, didReceive: challenge)
         #expect(disposition == .useCredential)
         #expect(credential?.identity != nil)
     }
 
     @Test func goesOnWithoutACertificateWhenNoneIsChosen() async {
         let delegate = ConnectionSecurityDelegate(pinnedFingerprint: nil)
-        let (disposition, credential) = await delegate.urlSession(.shared, didReceive: Self.clientCertificateChallenge())
+        let challenge = Self.clientCertificateChallenge()
+        let (disposition, credential) = await delegate.urlSession(.shared, didReceive: challenge)
         #expect(disposition == .performDefaultHandling)
         #expect(credential == nil)
     }
