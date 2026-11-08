@@ -128,6 +128,18 @@ Recommended setups for exposing a daemon, from best to worst:
 Also enable `rpc-whitelist` and `rpc-host-whitelist` on the daemon. The app explains the 403 and 421
 errors those settings produce.
 
+## Reporting a problem
+
+The app keeps a log of connections, failed requests and other errors. Choose **Help → Show Log Files**
+and attach the file for the day the problem happened to your
+[issue](https://github.com/a1darufa/TransmissionRemote/issues). Each failed request is logged with the
+command, the protocol, how long it took and the error, which is usually enough to find the cause.
+
+The files are in `~/Library/Containers/com.a1dar.TransmissionRemote/Data/Library/Logs` and are deleted
+after 14 days. They never contain passwords, but they do contain server addresses and torrent names,
+so look them over before posting. If the app crashed, also attach the crash report from Console →
+Crash Reports.
+
 ## Building
 
 This repository holds both apps: the Mac app in `macOS/` and the Windows app in `Windows/` (see
@@ -233,6 +245,7 @@ Run the daemon with `--foreground`. When it forks into the background on macOS, 
 macOS/                           the Mac app
   Packages/TransmissionKit/      UI-free core, unit-tested with Swift Testing
     Transport/                   client actor, protocol dialects, envelopes, endpoint security, TLS pinning
+    Diagnostics/                 DiagnosticLog: unified log plus daily log files
     Models/                      Torrent, TorrentDetails, SessionSettings, request types
     API/                         typed calls: torrents, actions, session, groups, free space, port test
     Metainfo/                    bencode parser, .torrent metainfo, magnet links
@@ -248,6 +261,10 @@ macOS/                           the Mac app
   Config/                        Info.plist additions (torrent and magnet handling) and entitlements
   Scripts/                       release build and disk image
 Windows/                         the Windows app, in development: see Windows/README.md
+  src/TransmissionKit/           the C# port of the core, with the same folders as the Swift package
+  tests/TransmissionKit.Tests/   its MSTest suite
+.github/workflows/               CI for the Windows core on x64 and ARM64
+CLAUDE.md                        working rules for Claude Code in this repository
 docs/screenshots/                the screenshots in this README
 docs/transgui-audit.md           transgui's open issues and pull requests, checked against this app
 ```
