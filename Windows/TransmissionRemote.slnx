@@ -1,8 +1,10 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/TransmissionKit/TransmissionKit.csproj" />
+    <Project Path="src/TransmissionRemote.ViewModels/TransmissionRemote.ViewModels.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/TransmissionKit.Tests/TransmissionKit.Tests.csproj" />
+    <Project Path="tests/TransmissionRemote.ViewModels.Tests/TransmissionRemote.ViewModels.Tests.csproj" />
   </Folder>
 </Solution>
