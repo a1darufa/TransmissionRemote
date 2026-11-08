@@ -191,6 +191,25 @@ public sealed class ClientIdentityTests
     }
 
     [TestMethod]
+    public void UsesACertificateThatAlreadyHasItsKey()
+    {
+        using var identity = ClientIdentity.FromCertificate(MakeCertificate());
+
+        Assert.AreEqual("TransmissionRemote Test", identity.Summary);
+    }
+
+    [TestMethod]
+    public void RefusesACertificateWithoutAKey()
+    {
+        using var certificate = MakeCertificate();
+        using var publicOnly = X509CertificateLoader.LoadCertificate(certificate.RawData);
+
+        var error = Assert.ThrowsExactly<ClientIdentityImportException>(() => ClientIdentity.FromCertificate(publicOnly));
+
+        Assert.AreEqual(ClientIdentityImportError.NoPrivateKey, error.Error);
+    }
+
+    [TestMethod]
     public void FingerprintsAreSha256OfTheCertificate()
     {
         using var certificate = MakeCertificate();

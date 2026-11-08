@@ -75,6 +75,21 @@ public sealed class ClientIdentity : IDisposable
     }
 
     /// <summary>
+    /// Uses a certificate that already has its private key, such as one the Windows app keeps in the user's
+    /// certificate store. The identity takes ownership of <paramref name="certificate"/> and disposes it.
+    /// </summary>
+    /// <exception cref="ClientIdentityImportException">The certificate has no private key.</exception>
+    public static ClientIdentity FromCertificate(X509Certificate2 certificate)
+    {
+        ArgumentNullException.ThrowIfNull(certificate);
+        if (!certificate.HasPrivateKey)
+        {
+            throw new ClientIdentityImportException(ClientIdentityImportError.NoPrivateKey);
+        }
+        return new ClientIdentity(certificate, [certificate]);
+    }
+
+    /// <summary>
     /// Ephemeral keys stay in memory on Windows and Linux. macOS doesn't support them, but there
     /// the library only runs in tests.
     /// </summary>
