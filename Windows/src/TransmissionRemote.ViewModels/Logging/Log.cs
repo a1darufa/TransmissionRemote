@@ -68,4 +68,11 @@ internal static partial class Log
 
     [LoggerMessage(2303, LogLevel.Warning, "Couldn't open {Path} on this PC")]
     public static partial void LocalFileNotOpened(ILogger logger, string path);
+
+    [LoggerMessage(2304, LogLevel.Information,
+        "Imported {ImportedCount} servers from {Path}; {SkippedCount} were already set up")]
+    public static partial void TransguiImported(ILogger logger, int importedCount, int skippedCount, string path);
+
+    [LoggerMessage(2305, LogLevel.Warning, "Couldn't read the Transmission Remote GUI settings at {Path}")]
+    public static partial void TransguiFileUnreadable(ILogger logger, Exception exception, string path);
 }
