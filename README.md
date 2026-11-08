@@ -39,7 +39,7 @@ saved in your Keychain. Choose **Always Allow**.
 
 | Area | What you get |
 |---|---|
-| Torrent list | 27 columns (10 shown by default, the rest via right-click on the header), sortable, with order, widths and visibility remembered. Seeds and Peers show the swarm's size too, like "3 (172)" |
+| Torrent list | 27 columns (11 shown by default, the rest via right-click on the header), sortable, with order, widths and visibility remembered. Seeds and Peers show the swarm's size too, like "3 (172)" |
 | Sidebar | Status filters (All, Downloading, Seeding, Completed, Active, Inactive, Stopped, Waiting, Verifying, Error) plus Folders, Labels and Trackers, each with counts |
 | Info pane | General (with a pieces bar), Trackers, Peers (host names, and countries with flags), Files (tree with checkboxes and priorities; Open, Show in Finder, Rename and Copy Path), Speed (live chart) |
 | Adding | Open dialog, drag and drop, double-click in Finder, browser magnet links, ⌘V paste. The Add sheet shows the file tree, the destination folder (with history ranked by use, like transgui), free space, start, priority, labels and sequential download |
@@ -62,7 +62,7 @@ connected daemon's options below.
 
 | Action | Shortcut | transgui |
 |---|---|---|
-| Add torrent file / link | ⌘O / ⌘U | F5 / Shift+F5 |
+| Add torrent file / link | ⌘O / ⌘U | Insert / ⌘Insert |
 | Start / Start Now / Stop | ⌘/ / ⇧⌘/ / ⌘. | F3 / Shift+F3 / F4 |
 | Start All / Stop All | ⌥⌘/ / ⌥⌘. | ⌘F3 / ⌘F4 |
 | Remove / Remove and Delete Data | ⌘⌫ / ⌥⌘⌫ | Del / Shift+Del |

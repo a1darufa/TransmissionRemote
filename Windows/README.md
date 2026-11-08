@@ -135,9 +135,9 @@ default background on Windows 10.
 
 | Mac app | Windows app |
 |---|---|
-| Sidebar filters (status, folders, labels, trackers, servers) | `NavigationView`, left pane |
+| Sidebar filters (status, folders, labels, trackers) | `NavigationView`, left pane |
 | Torrent list with sortable, reorderable columns | [WinUI.TableView](https://github.com/w-ahmad/WinUI.TableView) (community package, evaluate first) or a `ListView` with a header row |
-| Info pane tabs: General, Trackers, Peers, Files, Options | `SelectorBar` or `TabView` under the list, in a resizable split |
+| Info pane tabs: General, Trackers, Peers, Files, Speed | `SelectorBar` or `TabView` under the list, in a resizable split |
 | Toolbar | `CommandBar` in the custom title bar |
 | Status bar: speeds, limits, free space | A bottom bar in the main window |
 | Settings window | A Settings page built from `SettingsCard` and `SettingsExpander` (CommunityToolkit.WinUI.Controls.SettingsControls) |
