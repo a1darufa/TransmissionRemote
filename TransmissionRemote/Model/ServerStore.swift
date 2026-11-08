@@ -11,11 +11,6 @@ final class ServerStore {
     private let fileURL: URL
     private static let logger = Logger(subsystem: "TransmissionRemote", category: "ServerStore")
 
-    private struct StoredState: Codable {
-        var servers: [ServerProfile]
-        var activeServerID: UUID?
-    }
-
     init(fileURL: URL = ServerStore.defaultFileURL) {
         self.fileURL = fileURL
         load()
@@ -104,14 +99,34 @@ final class ServerStore {
         URL.applicationSupportDirectory.appending(path: "servers.json")
     }
 
+    /// Loads the saved servers. When any part can't be read, for example after going back to an
+    /// older version, a copy of the file is kept first: the next save rewrites servers.json, and
+    /// without the copy the unreadable servers would be gone for good (transgui issue #1344).
     private func load() {
         guard let data = try? Data(contentsOf: fileURL) else { return }
         do {
             let state = try JSONDecoder().decode(StoredState.self, from: data)
             servers = state.servers
             activeServerID = state.activeServerID
+            let storedCount = (try? JSONSerialization.jsonObject(with: data) as? [String: Any])
+                .flatMap { $0["servers"] as? [Any] }?.count ?? servers.count
+            if storedCount > servers.count {
+                keepCopy(of: data, because: "\(storedCount - servers.count) saved servers couldn't be read")
+            }
         } catch {
-            Self.logger.error("Couldn't read saved servers: \(error.localizedDescription, privacy: .public)")
+            keepCopy(of: data, because: error.localizedDescription)
+        }
+    }
+
+    private func keepCopy(of data: Data, because reason: String) {
+        let stamp = Date.now.formatted(.iso8601.year().month().day().time(includingFractionalSeconds: false))
+            .replacingOccurrences(of: ":", with: "-")
+        let copy = fileURL.deletingLastPathComponent().appending(path: "servers-unreadable-\(stamp).json")
+        do {
+            try data.write(to: copy, options: .withoutOverwriting)
+            Self.logger.error("\(reason, privacy: .public). Kept a copy at \(copy.path, privacy: .public)")
+        } catch {
+            Self.logger.error("\(reason, privacy: .public), and the copy failed: \(error.localizedDescription)")
         }
     }
 
@@ -127,4 +142,40 @@ final class ServerStore {
             Self.logger.error("Couldn't save servers: \(error.localizedDescription, privacy: .public)")
         }
     }
+}
+
+/// The saved file: the servers and which one is active.
+private struct StoredState: Codable {
+    var servers: [ServerProfile]
+    var activeServerID: UUID?
+
+    enum CodingKeys: String, CodingKey {
+        case servers, activeServerID
+    }
+
+    init(servers: [ServerProfile], activeServerID: UUID?) {
+        self.servers = servers
+        self.activeServerID = activeServerID
+    }
+
+    /// Reads servers one by one, so a single unreadable entry costs only that entry.
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        activeServerID = try? container.decodeIfPresent(UUID.self, forKey: .activeServerID)
+        var list = try container.nestedUnkeyedContainer(forKey: .servers)
+        var servers: [ServerProfile] = []
+        while !list.isAtEnd {
+            if let server = try? list.decode(ServerProfile.self) {
+                servers.append(server)
+            } else {
+                // A failed decode doesn't move past the element; skipping it does.
+                _ = try list.decode(SkippedEntry.self)
+            }
+        }
+        self.servers = servers
+    }
+}
+
+private struct SkippedEntry: Decodable {
+    init(from decoder: any Decoder) {}
 }

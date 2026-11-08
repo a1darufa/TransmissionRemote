@@ -78,17 +78,18 @@ nonisolated extension ServerProfile {
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? defaults.name
         endpoint = try container.decodeIfPresent(ServerEndpoint.self, forKey: .endpoint) ?? defaults.endpoint
         username = try container.decodeIfPresent(String.self, forKey: .username) ?? defaults.username
-        protocolPreference = try container.decodeIfPresent(ProtocolPreference.self, forKey: .protocolPreference)
-            ?? defaults.protocolPreference
-        pinnedCertificateFingerprint = try container.decodeIfPresent(String.self, forKey: .pinnedCertificateFingerprint)
-        allowsUnencryptedInternetConnection = try container.decodeIfPresent(
-            Bool.self, forKey: .allowsUnencryptedInternetConnection
-        ) ?? defaults.allowsUnencryptedInternetConnection
-        recentFolders = try container.decodeIfPresent([RecentFolder].self, forKey: .recentFolders)
-            ?? defaults.recentFolders
-        pathMappings = try container.decodeIfPresent([PathMapping].self, forKey: .pathMappings)
-            ?? defaults.pathMappings
-        proxy = try container.decodeIfPresent(ProxySettings.self, forKey: .proxy) ?? defaults.proxy
-        clientCertificateName = try container.decodeIfPresent(String.self, forKey: .clientCertificateName)
+        // Settings that can't be read (say, a value a newer version added) fall back to their
+        // defaults rather than making the whole server unreadable.
+        func setting<Value: Decodable>(_ key: CodingKeys) -> Value? {
+            try? container.decodeIfPresent(Value.self, forKey: key)
+        }
+        protocolPreference = setting(.protocolPreference) ?? defaults.protocolPreference
+        pinnedCertificateFingerprint = setting(.pinnedCertificateFingerprint)
+        allowsUnencryptedInternetConnection = setting(.allowsUnencryptedInternetConnection)
+            ?? defaults.allowsUnencryptedInternetConnection
+        recentFolders = setting(.recentFolders) ?? defaults.recentFolders
+        pathMappings = setting(.pathMappings) ?? defaults.pathMappings
+        proxy = setting(.proxy) ?? defaults.proxy
+        clientCertificateName = setting(.clientCertificateName)
     }
 }
