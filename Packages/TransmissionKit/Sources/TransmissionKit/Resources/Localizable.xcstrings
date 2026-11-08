@@ -1,0 +1,2662 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "The server address is invalid: %@" : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Няправільны адрас сервера: %@"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'adreça del servidor no és vàlida: %@"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adresa serveru je neplatná: %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveradressen er ugyldig: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Serveradresse ist ungültig: %@"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η διεύθυνση του διακομιστή δεν είναι έγκυρη: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La dirección del servidor no es válida: %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palvelimen osoite on virheellinen: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’adresse du serveur n’est pas valide : %@"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adresa poslužitelja nije valjana: %@"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A szerver címe érvénytelen: %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'indirizzo del server non è valido: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "서버 주소가 올바르지 않습니다: %@"
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Netinkamas serverio adresas: %@"
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servera adrese nav derīga: %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tjeneradressen er ugyldig: %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het serveradres is ongeldig: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adres serwera jest nieprawidłowy: %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O endereço do servidor é inválido: %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O endereço do servidor é inválido: %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adresa serverului nu este validă: %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неверный адрес сервера: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveradressen är ogiltig: %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunucu adresi geçersiz: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неправильна адреса сервера: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服务器地址无效：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器位址無效：%@"
+          }
+        }
+      }
+    },
+    "The server didn't accept a secure (HTTPS) connection. Transmission's built-in server only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер не прыняў абароненае (HTTPS) падлучэнне. Убудаваны сервер Transmission працуе толькі праз звычайны HTTP, таму выключыце HTTPS для гэтага сервера, калі толькі яго не забяспечвае адваротны проксі перад дэманам. Праз Tailscale звычайны HTTP ужо зашыфраваны тунэлем."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor no ha acceptat una connexió segura (HTTPS). El servidor integrat de Transmission només parla HTTP sense xifrar, així que desactiva HTTPS per a aquest servidor tret que un proxy invers davant del dimoni el proporcioni. Amb Tailscale, l'HTTP sense xifrar ja està xifrat pel túnel."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server nepřijal zabezpečené připojení (HTTPS). Vestavěný server Transmission podporuje jen prosté HTTP, takže pro tento server HTTPS vypněte, pokud ho nezajišťuje reverzní proxy před démonem. V tunelu Tailscale je prosté HTTP už šifrováno."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveren accepterede ikke en sikker (HTTPS-)forbindelse. Transmissions indbyggede server taler kun almindelig HTTP, så slå HTTPS fra for denne server, medmindre en reverse proxy foran daemonen leverer det. Over Tailscale er almindelig HTTP allerede krypteret af tunnelen."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Server hat keine sichere (HTTPS-)Verbindung akzeptiert. Der integrierte Server von Transmission spricht nur einfaches HTTP. Deaktiviere daher HTTPS für diesen Server, außer ein Reverse-Proxy vor dem Daemon stellt es bereit. Über Tailscale ist einfaches HTTP bereits durch den Tunnel verschlüsselt."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο διακομιστής δεν αποδέχτηκε ασφαλή σύνδεση (HTTPS). Ο ενσωματωμένος διακομιστής του Transmission υποστηρίζει μόνο απλό HTTP, οπότε απενεργοποιήστε το HTTPS για αυτόν τον διακομιστή, εκτός αν το παρέχει ένας αντίστροφος διακομιστής proxy μπροστά από τον δαίμονα. Μέσω Tailscale, το απλό HTTP κρυπτογραφείται ήδη από τη σήραγγα."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor no ha aceptado una conexión segura (HTTPS). El servidor integrado de Transmission solo usa HTTP sin cifrar, así que desactiva HTTPS para este servidor, salvo que lo proporcione un proxy inverso delante del daemon. A través de Tailscale, el túnel ya cifra el HTTP."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palvelin ei hyväksynyt suojattua (HTTPS) yhteyttä. Transmissionin sisäänrakennettu palvelin käyttää vain pelkkää HTTP:tä, joten poista HTTPS käytöstä tältä palvelimelta, ellei taustapalvelun edessä oleva käänteisvälityspalvelin tarjoa sitä. Tailscalen kautta pelkkä HTTP on jo valmiiksi tunnelin salaama."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le serveur n’a pas accepté de connexion sécurisée (HTTPS). Le serveur intégré de Transmission ne parle que le HTTP simple : désactivez donc HTTPS pour ce serveur, sauf si un proxy inverse placé devant le démon le fournit. Via Tailscale, le HTTP simple est déjà chiffré par le tunnel."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslužitelj nije prihvatio sigurnu (HTTPS) vezu. Ugrađeni poslužitelj Transmissiona podržava samo običan HTTP, pa isključite HTTPS za ovaj poslužitelj osim ako ga ne pruža obrnuti proxy ispred daemona. Unutar tunela Tailscale običan HTTP već je šifriran."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A szerver nem fogadott el biztonságos (HTTPS) kapcsolatot. A Transmission beépített szervere csak egyszerű HTTP-t ismer, ezért kapcsolja ki a HTTPS-t ennél a szervernél, hacsak nem egy, a démon előtt álló fordított proxy biztosítja. Tailscale-en keresztül az egyszerű HTTP-t már az alagút titkosítja."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il server non ha accettato una connessione sicura (HTTPS). Il server integrato di Transmission usa solo HTTP semplice, quindi disattiva HTTPS per questo server, a meno che non sia fornito da un reverse proxy davanti al demone. Con Tailscale, l'HTTP semplice è già crittografato dal tunnel."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "서버가 보안(HTTPS) 연결을 허용하지 않았습니다. Transmission의 내장 서버는 일반 HTTP만 지원하므로, 데몬 앞의 리버스 프록시가 HTTPS를 제공하는 경우가 아니라면 이 서버의 HTTPS를 끄십시오. Tailscale을 통해 연결하면 일반 HTTP도 이미 터널에 의해 암호화됩니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris nepriėmė saugaus (HTTPS) ryšio. Įtaisytasis Transmission serveris palaiko tik paprastą HTTP, todėl išjunkite HTTPS šiam serveriui, nebent jį teikia prieš tarnybą esantis atvirkštinis tarpinis serveris. Per Tailscale paprastas HTTP jau šifruojamas tunelio."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris nepieņēma drošu (HTTPS) savienojumu. Transmission iebūvētais serveris atbalsta tikai vienkāršu HTTP, tāpēc izslēdziet HTTPS šim serverim, ja vien to nenodrošina reversais proksi serveris dēmona priekšā. Caur Tailscale vienkāršu HTTP jau šifrē tunelis."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tjeneren godtok ikke en sikker (HTTPS-)tilkobling. Transmissions innebygde tjener bruker bare vanlig HTTP, så slå av HTTPS for denne tjeneren med mindre en omvendt proxy foran tjenesten tilbyr det. Over Tailscale er vanlig HTTP allerede kryptert av tunnelen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De server accepteerde geen beveiligde (HTTPS-)verbinding. De ingebouwde server van Transmission spreekt alleen gewone HTTP, dus schakel HTTPS uit voor deze server, tenzij een reverse proxy vóór de daemon het aanbiedt. Via Tailscale wordt gewone HTTP al door de tunnel versleuteld."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serwer nie zaakceptował bezpiecznego połączenia (HTTPS). Wbudowany serwer Transmission obsługuje tylko zwykły HTTP, więc wyłącz HTTPS dla tego serwera, chyba że zapewnia je odwrotny serwer proxy przed demonem. W tunelu Tailscale zwykły HTTP jest już szyfrowany."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor não aceitou uma conexão segura (HTTPS). O servidor integrado do Transmission só usa HTTP sem criptografia, então desative o HTTPS para este servidor, a menos que um proxy reverso na frente do daemon o forneça. Pelo Tailscale, o HTTP já é criptografado pelo túnel."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor não aceitou uma ligação segura (HTTPS). O servidor integrado do Transmission só usa HTTP sem encriptação, por isso desative o HTTPS para este servidor, a menos que um proxy inverso à frente do daemon o forneça. Através do Tailscale, o HTTP já é encriptado pelo túnel."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverul nu a acceptat o conexiune securizată (HTTPS). Serverul integrat al Transmission folosește doar HTTP simplu, așa că dezactivați HTTPS pentru acest server, cu excepția cazului în care îl oferă un proxy invers din fața daemonului. Prin Tailscale, HTTP simplu este deja criptat de tunel."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер не принял защищённое (HTTPS) подключение. Встроенный сервер Transmission работает только по обычному HTTP, поэтому отключите HTTPS для этого сервера, если только HTTPS не обеспечивает обратный прокси перед демоном. При подключении через Tailscale обычный HTTP уже зашифрован туннелем."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servern accepterade inte en säker (HTTPS) anslutning. Transmissions inbyggda server använder bara vanlig HTTP, så stäng av HTTPS för den här servern om inte en omvänd proxy framför tjänsten tillhandahåller det. Via Tailscale är vanlig HTTP redan krypterad av tunneln."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunucu güvenli (HTTPS) bağlantıyı kabul etmedi. Transmission’ın yerleşik sunucusu yalnızca düz HTTP kullanır; bu nedenle daemon önündeki bir ters proxy HTTPS sağlamıyorsa bu sunucu için HTTPS’yi kapatın. Tailscale üzerinden düz HTTP zaten tünel tarafından şifrelenir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер не прийняв захищене (HTTPS) підключення. Вбудований сервер Transmission працює лише через звичайний HTTP, тож вимкніть HTTPS для цього сервера, якщо тільки його не забезпечує зворотний проксі перед демоном. Через Tailscale звичайний HTTP уже зашифровано тунелем."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服务器未接受安全（HTTPS）连接。Transmission 的内置服务器只支持普通 HTTP，因此除非守护进程前设有提供 HTTPS 的反向代理，否则请为此服务器关闭 HTTPS。通过 Tailscale 连接时，普通 HTTP 已由隧道加密。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器未接受安全（HTTPS）連線。Transmission 的內建伺服器只支援一般 HTTP，因此除非背景程式前方設有提供 HTTPS 的反向代理伺服器，否則請為此伺服器關閉 HTTPS。透過 Tailscale 連線時，一般 HTTP 已由通道加密。"
+          }
+        }
+      }
+    },
+    "The server doesn't accept this hostname. Connect by IP address, or add the hostname to “rpc-host-whitelist” in the daemon's settings.json." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер не прымае гэта імя вузла. Падлучыцеся па IP-адрасе або дадайце імя вузла ў «rpc-host-whitelist» у файле settings.json дэмана."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor no accepta aquest nom d'amfitrió. Connecta't per adreça IP o afegeix el nom d'amfitrió a «rpc-host-whitelist» al fitxer settings.json del dimoni."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server nepřijímá tento název hostitele. Připojte se pomocí IP adresy, nebo přidejte název hostitele do „rpc-host-whitelist“ v souboru settings.json démona."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveren accepterer ikke dette værtsnavn. Opret forbindelse via IP-adressen, eller føj værtsnavnet til “rpc-host-whitelist” i daemonens settings.json."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Server akzeptiert diesen Hostnamen nicht. Verbinde dich über die IP-Adresse oder füge den Hostnamen zu „rpc-host-whitelist“ in der settings.json des Daemons hinzu."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο διακομιστής δεν αποδέχεται αυτό το όνομα κεντρικού υπολογιστή. Συνδεθείτε με διεύθυνση IP ή προσθέστε το όνομα στο «rpc-host-whitelist» στο settings.json του δαίμονα."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor no acepta este nombre de host. Conéctate mediante la dirección IP o añade el nombre de host a “rpc-host-whitelist” en el settings.json del daemon."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palvelin ei hyväksy tätä isäntänimeä. Yhdistä IP-osoitteella tai lisää isäntänimi taustapalvelun settings.json-tiedoston kohtaan ”rpc-host-whitelist”."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le serveur n’accepte pas ce nom d’hôte. Connectez-vous par adresse IP, ou ajoutez le nom d’hôte à « rpc-host-whitelist » dans le fichier settings.json du démon."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslužitelj ne prihvaća ovaj naziv hosta. Povežite se putem IP adrese ili dodajte naziv hosta u „rpc-host-whitelist“ u datoteci settings.json daemona."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A szerver nem fogadja el ezt a gazdagépnevet. Csatlakozzon IP-cím alapján, vagy adja hozzá a gazdagépnevet a démon settings.json fájljában az „rpc-host-whitelist” listához."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il server non accetta questo nome host. Connettiti tramite indirizzo IP, oppure aggiungi il nome host a “rpc-host-whitelist” nel file settings.json del demone."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "서버가 이 호스트 이름을 허용하지 않습니다. IP 주소로 연결하거나 데몬의 settings.json에 있는 “rpc-host-whitelist”에 호스트 이름을 추가하십시오."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris nepriima šio mazgo vardo. Junkitės IP adresu arba įtraukite mazgo vardą į „rpc-host-whitelist“ tarnybos faile settings.json."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris nepieņem šo resursdatora nosaukumu. Izveidojiet savienojumu, izmantojot IP adresi, vai pievienojiet resursdatora nosaukumu sarakstam “rpc-host-whitelist” dēmona failā settings.json."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tjeneren godtar ikke dette vertsnavnet. Koble til med IP-adresse, eller legg til vertsnavnet i «rpc-host-whitelist» i tjenestens settings.json."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De server accepteert deze hostnaam niet. Maak verbinding via het IP-adres of voeg de hostnaam toe aan ‘rpc-host-whitelist’ in settings.json van de daemon."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serwer nie akceptuje tej nazwy hosta. Połącz się przez adres IP lub dodaj nazwę hosta do „rpc-host-whitelist” w pliku settings.json demona."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor não aceita este nome de host. Conecte-se pelo endereço IP ou adicione o nome de host a “rpc-host-whitelist” no settings.json do daemon."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor não aceita este nome de host. Ligue-se pelo endereço IP ou adicione o nome de host a “rpc-host-whitelist” no settings.json do daemon."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverul nu acceptă acest nume de gazdă. Conectați-vă prin adresa IP sau adăugați numele de gazdă la „rpc-host-whitelist” în fișierul settings.json al daemonului."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер не принимает это имя узла. Подключитесь по IP-адресу или добавьте имя узла в «rpc-host-whitelist» в файле settings.json демона."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servern accepterar inte det här värdnamnet. Anslut med IP-adress eller lägg till värdnamnet i ”rpc-host-whitelist” i tjänstens settings.json."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunucu bu ana bilgisayar adını kabul etmiyor. IP adresiyle bağlanın veya ana bilgisayar adını daemon’un settings.json dosyasındaki “rpc-host-whitelist” listesine ekleyin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер не приймає це ім’я хоста. Підключіться за IP-адресою або додайте ім’я хоста до «rpc-host-whitelist» у файлі settings.json демона."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服务器不接受此主机名。请通过 IP 地址连接，或将该主机名添加到守护进程 settings.json 中的“rpc-host-whitelist”。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器不接受此主機名稱。請以 IP 位址連線，或將此主機名稱加入背景程式 settings.json 中的「rpc-host-whitelist」。"
+          }
+        }
+      }
+    },
+    "The server refused this computer's IP address. Add it to “rpc-whitelist” in the daemon's settings.json, or disable the whitelist." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер адхіліў IP-адрас гэтага камп’ютара. Дадайце яго ў «rpc-whitelist» у файле settings.json дэмана або адключыце белы спіс."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor ha rebutjat l'adreça IP d'aquest ordinador. Afegeix-la a «rpc-whitelist» al fitxer settings.json del dimoni o desactiva la llista blanca."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server odmítl IP adresu tohoto počítače. Přidejte ji do „rpc-whitelist“ v souboru settings.json démona, nebo whitelist vypněte."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveren afviste denne computers IP-adresse. Føj den til “rpc-whitelist” i daemonens settings.json, eller slå whitelisten fra."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Server hat die IP-Adresse dieses Computers abgelehnt. Füge sie zu „rpc-whitelist“ in der settings.json des Daemons hinzu oder deaktiviere die Whitelist."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο διακομιστής απέρριψε τη διεύθυνση IP αυτού του υπολογιστή. Προσθέστε τη στο «rpc-whitelist» στο settings.json του δαίμονα ή απενεργοποιήστε τη λίστα επιτρεπόμενων."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor ha rechazado la dirección IP de este ordenador. Añádela a “rpc-whitelist” en el settings.json del daemon o desactiva la lista de permitidos."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palvelin hylkäsi tämän tietokoneen IP-osoitteen. Lisää se taustapalvelun settings.json-tiedoston kohtaan ”rpc-whitelist” tai poista sallittujen luettelo käytöstä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le serveur a refusé l’adresse IP de cet ordinateur. Ajoutez-la à « rpc-whitelist » dans le fichier settings.json du démon, ou désactivez la liste blanche."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslužitelj je odbio IP adresu ovog računala. Dodajte je u „rpc-whitelist“ u datoteci settings.json daemona ili isključite popis dopuštenih adresa."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A szerver elutasította ennek a számítógépnek az IP-címét. Adja hozzá az „rpc-whitelist” listához a démon settings.json fájljában, vagy kapcsolja ki az engedélyezési listát."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il server ha rifiutato l'indirizzo IP di questo computer. Aggiungilo a “rpc-whitelist” nel file settings.json del demone, oppure disattiva la whitelist."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "서버가 이 컴퓨터의 IP 주소를 거부했습니다. 데몬의 settings.json에 있는 “rpc-whitelist”에 추가하거나 화이트리스트를 비활성화하십시오."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris atmetė šio kompiuterio IP adresą. Įtraukite jį į „rpc-whitelist“ tarnybos faile settings.json arba išjunkite leidžiamųjų sąrašą."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris noraidīja šī datora IP adresi. Pievienojiet to sarakstam “rpc-whitelist” dēmona failā settings.json vai atspējojiet atļauto sarakstu."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tjeneren avviste IP-adressen til denne datamaskinen. Legg den til i «rpc-whitelist» i tjenestens settings.json, eller slå av hvitelisten."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De server heeft het IP-adres van deze computer geweigerd. Voeg het toe aan ‘rpc-whitelist’ in settings.json van de daemon, of schakel de whitelist uit."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serwer odrzucił adres IP tego komputera. Dodaj go do „rpc-whitelist” w pliku settings.json demona lub wyłącz białą listę."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor recusou o endereço IP deste computador. Adicione-o a “rpc-whitelist” no settings.json do daemon ou desative a lista de permissões."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor recusou o endereço IP deste computador. Adicione-o a “rpc-whitelist” no settings.json do daemon ou desative a lista de permissões."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverul a refuzat adresa IP a acestui computer. Adăugați-o la „rpc-whitelist” în fișierul settings.json al daemonului sau dezactivați lista albă."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер отклонил IP-адрес этого компьютера. Добавьте его в «rpc-whitelist» в файле settings.json демона или отключите белый список."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servern nekade den här datorns IP-adress. Lägg till den i ”rpc-whitelist” i tjänstens settings.json eller stäng av vitlistan."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunucu bu bilgisayarın IP adresini reddetti. Bu adresi daemon’un settings.json dosyasındaki “rpc-whitelist” listesine ekleyin veya beyaz listeyi devre dışı bırakın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер відхилив IP-адресу цього комп’ютера. Додайте її до «rpc-whitelist» у файлі settings.json демона або вимкніть білий список."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服务器拒绝了这台电脑的 IP 地址。请将其添加到守护进程 settings.json 中的“rpc-whitelist”，或停用白名单。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器拒絕了這台電腦的 IP 位址。請將其加入背景程式 settings.json 中的「rpc-whitelist」，或停用白名單。"
+          }
+        }
+      }
+    },
+    "The server rejected the username or password." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер адхіліў імя карыстальніка або пароль."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor ha rebutjat el nom d'usuari o la contrasenya."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server odmítl uživatelské jméno nebo heslo."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveren afviste brugernavnet eller adgangskoden."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Server hat den Benutzernamen oder das Passwort abgelehnt."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο διακομιστής απέρριψε το όνομα χρήστη ή το συνθηματικό."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor ha rechazado el nombre de usuario o la contraseña."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palvelin hylkäsi käyttäjätunnuksen tai salasanan."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le serveur a rejeté le nom d’utilisateur ou le mot de passe."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslužitelj je odbio korisničko ime ili lozinku."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A szerver elutasította a felhasználónevet vagy a jelszót."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il server ha rifiutato il nome utente o la password."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "서버가 사용자 이름 또는 암호를 거부했습니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris atmetė vartotojo vardą arba slaptažodį."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris noraidīja lietotājvārdu vai paroli."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tjeneren avviste brukernavnet eller passordet."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De server heeft de gebruikersnaam of het wachtwoord geweigerd."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serwer odrzucił nazwę użytkownika lub hasło."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor rejeitou o nome de usuário ou a senha."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor rejeitou o nome de utilizador ou a palavra-passe."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverul a respins numele de utilizator sau parola."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер отклонил имя пользователя или пароль."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servern avvisade användarnamnet eller lösenordet."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunucu kullanıcı adını veya parolayı reddetti."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер відхилив ім’я користувача або пароль."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服务器拒绝了用户名或密码。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器拒絕了使用者名稱或密碼。"
+          }
+        }
+      }
+    },
+    "The server responded with HTTP %lld. Check the RPC path and port." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер адказаў кодам HTTP %lld. Праверце шлях RPC і порт."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor ha respost amb HTTP %lld. Comprova la ruta RPC i el port."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server odpověděl kódem HTTP %lld. Zkontrolujte cestu RPC a port."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveren svarede med HTTP %lld. Kontrollér RPC-stien og porten."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Server hat mit HTTP %lld geantwortet. Prüfe RPC-Pfad und Port."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο διακομιστής απάντησε με HTTP %lld. Ελέγξτε το μονοπάτι RPC και τη θύρα."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor ha respondido con HTTP %lld. Comprueba la ruta RPC y el puerto."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palvelin vastasi HTTP-koodilla %lld. Tarkista RPC-polku ja portti."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le serveur a répondu avec le code HTTP %lld. Vérifiez le chemin RPC et le port."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslužitelj je odgovorio kodom HTTP %lld. Provjerite putanju RPC i port."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A szerver HTTP %lld kóddal válaszolt. Ellenőrizze az RPC-útvonalat és a portot."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il server ha risposto con HTTP %lld. Controlla il percorso RPC e la porta."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "서버가 HTTP %lld(으)로 응답했습니다. RPC 경로와 포트를 확인하십시오."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris atsakė HTTP %lld. Patikrinkite RPC kelią ir prievadą."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris atbildēja ar HTTP %lld. Pārbaudiet RPC ceļu un portu."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tjeneren svarte med HTTP %lld. Kontroller RPC-banen og porten."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De server antwoordde met HTTP %lld. Controleer het RPC-pad en de poort."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serwer odpowiedział kodem HTTP %lld. Sprawdź ścieżkę RPC i port."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor respondeu com HTTP %lld. Verifique o caminho RPC e a porta."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor respondeu com HTTP %lld. Verifique o caminho RPC e a porta."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverul a răspuns cu HTTP %lld. Verificați calea RPC și portul."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер ответил кодом HTTP %lld. Проверьте путь RPC и порт."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servern svarade med HTTP %lld. Kontrollera RPC-sökvägen och porten."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunucu HTTP %lld ile yanıt verdi. RPC yolunu ve portu denetleyin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер відповів кодом HTTP %lld. Перевірте шлях RPC і порт."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服务器返回了 HTTP %lld。请检查 RPC 路径和端口。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器回應了 HTTP %lld。請檢查 RPC 路徑和連接埠。"
+          }
+        }
+      }
+    },
+    "The server sent a response that couldn't be read (%@)." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер адправіў адказ, які не ўдалося прачытаць (%@)."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor ha enviat una resposta que no s'ha pogut llegir (%@)."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server poslal odpověď, kterou nelze přečíst (%@)."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveren sendte et svar, der ikke kunne læses (%@)."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Server hat eine Antwort gesendet, die nicht gelesen werden konnte (%@)."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο διακομιστής έστειλε απόκριση που δεν ήταν δυνατό να διαβαστεί (%@)."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor ha enviado una respuesta que no se ha podido leer (%@)."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palvelin lähetti vastauksen, jota ei voitu lukea (%@)."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le serveur a envoyé une réponse illisible (%@)."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslužitelj je poslao odgovor koji nije moguće pročitati (%@)."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A szerver olvashatatlan választ küldött (%@)."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il server ha inviato una risposta illeggibile (%@)."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "서버가 읽을 수 없는 응답을 보냈습니다(%@)."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris atsiuntė atsakymą, kurio nepavyko perskaityti (%@)."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris nosūtīja atbildi, ko neizdevās nolasīt (%@)."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tjeneren sendte et svar som ikke kunne leses (%@)."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De server stuurde een antwoord dat niet kon worden gelezen (%@)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serwer wysłał odpowiedź, której nie można odczytać (%@)."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor enviou uma resposta que não pôde ser lida (%@)."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor enviou uma resposta que não foi possível ler (%@)."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverul a trimis un răspuns care nu a putut fi citit (%@)."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер отправил ответ, который не удалось прочитать (%@)."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servern skickade ett svar som inte kunde läsas (%@)."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunucu okunamayan bir yanıt gönderdi (%@)."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер надіслав відповідь, яку не вдалося прочитати (%@)."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服务器发送了无法读取的响应（%@）。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器傳送了無法讀取的回應（%@）。"
+          }
+        }
+      }
+    },
+    "The server tried to redirect the connection to a different address. The request was blocked to protect your credentials." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер паспрабаваў перанакіраваць падлучэнне на іншы адрас. Запыт заблакіраваны для абароны вашых уліковых даных."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor ha intentat redirigir la connexió a una adreça diferent. S'ha bloquejat la sol·licitud per protegir les teves credencials."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server se pokusil přesměrovat připojení na jinou adresu. Požadavek byl zablokován, aby byly chráněny vaše přihlašovací údaje."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveren forsøgte at omdirigere forbindelsen til en anden adresse. Anmodningen blev blokeret for at beskytte dine loginoplysninger."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Server hat versucht, die Verbindung zu einer anderen Adresse umzuleiten. Die Anfrage wurde blockiert, um deine Anmeldedaten zu schützen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο διακομιστής προσπάθησε να ανακατευθύνει τη σύνδεση σε άλλη διεύθυνση. Το αίτημα αποκλείστηκε για την προστασία των διαπιστευτηρίων σας."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor ha intentado redirigir la conexión a otra dirección. Se ha bloqueado la solicitud para proteger tus credenciales."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palvelin yritti ohjata yhteyden toiseen osoitteeseen. Pyyntö estettiin kirjautumistietojesi suojaamiseksi."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le serveur a tenté de rediriger la connexion vers une autre adresse. La requête a été bloquée pour protéger vos identifiants."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslužitelj je pokušao preusmjeriti vezu na drugu adresu. Zahtjev je blokiran radi zaštite vaših vjerodajnica."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A szerver megpróbálta egy másik címre átirányítani a kapcsolatot. A kérést a hitelesítő adatai védelme érdekében letiltottuk."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il server ha tentato di reindirizzare la connessione a un indirizzo diverso. La richiesta è stata bloccata per proteggere le tue credenziali."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "서버가 연결을 다른 주소로 리디렉션하려고 했습니다. 자격 증명을 보호하기 위해 요청이 차단되었습니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris bandė nukreipti ryšį kitu adresu. Užklausa užblokuota, kad būtų apsaugoti jūsų prisijungimo duomenys."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris mēģināja novirzīt savienojumu uz citu adresi. Pieprasījums tika bloķēts, lai aizsargātu jūsu akreditācijas datus."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tjeneren prøvde å omdirigere tilkoblingen til en annen adresse. Forespørselen ble blokkert for å beskytte påloggingsinformasjonen din."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De server probeerde de verbinding om te leiden naar een ander adres. Het verzoek is geblokkeerd om je inloggegevens te beschermen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serwer próbował przekierować połączenie na inny adres. Żądanie zostało zablokowane w celu ochrony danych logowania."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor tentou redirecionar a conexão para outro endereço. A solicitação foi bloqueada para proteger suas credenciais."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor tentou redirecionar a ligação para outro endereço. O pedido foi bloqueado para proteger as suas credenciais."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverul a încercat să redirecționeze conexiunea către o altă adresă. Cererea a fost blocată pentru a vă proteja datele de autentificare."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер попытался перенаправить подключение на другой адрес. Запрос заблокирован для защиты ваших учётных данных."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servern försökte omdirigera anslutningen till en annan adress. Begäran blockerades för att skydda dina inloggningsuppgifter."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunucu bağlantıyı farklı bir adrese yönlendirmeye çalıştı. Kimlik bilgilerinizi korumak için istek engellendi."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер спробував перенаправити підключення на іншу адресу. Запит заблоковано для захисту ваших облікових даних."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服务器试图将连接重定向到其他地址。为保护你的凭据，该请求已被阻止。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器嘗試將連線重新導向至其他位址。為保護你的登入資訊，已封鎖此要求。"
+          }
+        }
+      }
+    },
+    "The server's TLS certificate isn't trusted." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TLS-сертыфікат сервера не з’яўляецца давераным."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El certificat TLS del servidor no és de confiança."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Certifikát TLS serveru není důvěryhodný."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverens TLS-certifikat er ikke betroet."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dem TLS-Zertifikat des Servers wird nicht vertraut."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το πιστοποιητικό TLS του διακομιστή δεν είναι αξιόπιστο."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El certificado TLS del servidor no es de confianza."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palvelimen TLS-varmenteeseen ei luoteta."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le certificat TLS du serveur n’est pas approuvé."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TLS certifikat poslužitelja nije pouzdan."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A szerver TLS-tanúsítványa nem megbízható."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il certificato TLS del server non è attendibile."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "서버의 TLS 인증서를 신뢰할 수 없습니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverio TLS sertifikatas nėra patikimas."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servera TLS sertifikāts nav uzticams."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tjenerens TLS-sertifikat er ikke klarert."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het TLS-certificaat van de server wordt niet vertrouwd."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Certyfikat TLS serwera nie jest zaufany."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O certificado TLS do servidor não é confiável."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O certificado TLS do servidor não é fidedigno."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Certificatul TLS al serverului nu este de încredere."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TLS-сертификат сервера не является доверенным."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverns TLS-certifikat är inte betrott."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunucunun TLS sertifikasına güvenilmiyor."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TLS-сертифікат сервера не є довіреним."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服务器的 TLS 证书不受信任。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器的 TLS 憑證不受信任。"
+          }
+        }
+      }
+    },
+    "Transmission %@ is too old. Version 2.40 or newer is required." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ занадта стары. Патрабуецца версія 2.40 або навейшая."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ és massa antic. Cal la versió 2.40 o posterior."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ je příliš starý. Je vyžadována verze 2.40 nebo novější."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ er for gammel. Version 2.40 eller nyere er påkrævet."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ ist zu alt. Version 2.40 oder neuer ist erforderlich."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το Transmission %@ είναι πολύ παλιό. Απαιτείται η έκδοση 2.40 ή νεότερη."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ es demasiado antiguo. Se requiere la versión 2.40 o posterior."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ on liian vanha. Vaaditaan versio 2.40 tai uudempi."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ est trop ancien. La version 2.40 ou ultérieure est requise."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ je prestar. Potrebna je verzija 2.40 ili novija."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Transmission %@ túl régi. 2.40-es vagy újabb verzió szükséges."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ è troppo vecchio. È richiesta la versione 2.40 o successiva."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@은(는) 너무 오래되었습니다. 버전 2.40 이상이 필요합니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ versija per sena. Reikia 2.40 arba naujesnės versijos."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ ir pārāk veca versija. Nepieciešama versija 2.40 vai jaunāka."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ er for gammel. Versjon 2.40 eller nyere kreves."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ is te oud. Versie 2.40 of nieuwer is vereist."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ jest zbyt stary. Wymagana jest wersja 2.40 lub nowsza."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Transmission %@ é muito antigo. É necessária a versão 2.40 ou mais recente."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Transmission %@ é demasiado antigo. É necessária a versão 2.40 ou posterior."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ este prea vechi. Este necesară versiunea 2.40 sau una mai nouă."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ слишком старый. Требуется версия 2.40 или новее."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ är för gammal. Version 2.40 eller senare krävs."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ çok eski. 2.40 veya daha yeni bir sürüm gerekir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ застарий. Потрібна версія 2.40 або новіша."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ 版本过旧。需要 2.40 或更高版本。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transmission %@ 版本過舊。需要 2.40 或以上版本。"
+          }
+        }
+      }
+    },
+    "enter just the host name or IP address, without “http://”." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "увядзіце толькі імя вузла або IP-адрас, без «http://»."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "introdueix només el nom d'amfitrió o l'adreça IP, sense «http://»."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zadejte pouze název hostitele nebo IP adresu, bez „http://“."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "angiv kun værtsnavnet eller IP-adressen uden “http://”."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gib nur den Hostnamen oder die IP-Adresse ohne „http://“ ein."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "εισαγάγετε μόνο το όνομα κεντρικού υπολογιστή ή τη διεύθυνση IP, χωρίς «http://»."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "introduce solo el nombre de host o la dirección IP, sin “http://”."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "anna vain isäntänimi tai IP-osoite ilman ”http://”-alkua."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "saisissez uniquement le nom d’hôte ou l’adresse IP, sans « http:// »."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "unesite samo naziv hosta ili IP adresu, bez „http://“."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "csak a gazdagépnevet vagy az IP-címet adja meg, „http://” nélkül."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "inserisci solo il nome host o l'indirizzo IP, senza “http://”."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“http://” 없이 호스트 이름이나 IP 주소만 입력하십시오."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "įveskite tik mazgo vardą arba IP adresą, be „http://“."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ievadiet tikai resursdatora nosaukumu vai IP adresi bez “http://”."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "skriv bare inn vertsnavnet eller IP-adressen, uten «http://»."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "voer alleen de hostnaam of het IP-adres in, zonder ‘http://’."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "wpisz tylko nazwę hosta lub adres IP, bez „http://”."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "digite apenas o nome de host ou o endereço IP, sem “http://”."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "introduza apenas o nome de host ou o endereço IP, sem “http://”."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "introduceți doar numele gazdei sau adresa IP, fără „http://”."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "введите только имя узла или IP-адрес, без «http://»."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ange bara värdnamnet eller IP-adressen, utan ”http://”."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "yalnızca ana bilgisayar adını veya IP adresini “http://” olmadan girin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "введіть лише ім’я хоста або IP-адресу, без «http://»."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "只需输入主机名或 IP 地址，不要包含“http://”。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "只需輸入主機名稱或 IP 位址，不要包含「http://」。"
+          }
+        }
+      }
+    },
+    "the RPC path must start with “/”." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "шлях RPC павінен пачынацца з «/»."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "la ruta RPC ha de començar amb «/»."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cesta RPC musí začínat znakem „/“."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPC-stien skal starte med “/”."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "der RPC-Pfad muss mit „/“ beginnen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "το μονοπάτι RPC πρέπει να ξεκινά με «/»."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "la ruta RPC debe empezar por “/”."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPC-polun on alettava merkillä ”/”."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le chemin RPC doit commencer par « / »."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "putanja RPC mora počinjati znakom „/“."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "az RPC-útvonalnak „/” karakterrel kell kezdődnie."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il percorso RPC deve iniziare con “/”."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPC 경로는 “/”로 시작해야 합니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPC kelias turi prasidėti „/“."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPC ceļam jāsākas ar “/”."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPC-banen må begynne med «/»."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "het RPC-pad moet beginnen met ‘/’."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ścieżka RPC musi zaczynać się od „/”."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "o caminho RPC deve começar com “/”."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "o caminho RPC tem de começar por “/”."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "calea RPC trebuie să înceapă cu „/”."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "путь RPC должен начинаться с «/»."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPC-sökvägen måste börja med ”/”."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPC yolu “/” ile başlamalıdır."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "шлях RPC має починатися з «/»."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPC 路径必须以“/”开头。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPC 路徑必須以「/」開頭。"
+          }
+        }
+      }
+    },
+    "the address couldn't be turned into a URL." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "адрас не ўдалося пераўтварыць у URL."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l'adreça no s'ha pogut convertir en un URL."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "adresu nelze převést na URL."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "adressen kunne ikke omdannes til en URL."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die Adresse konnte nicht in eine URL umgewandelt werden."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "δεν ήταν δυνατή η μετατροπή της διεύθυνσης σε URL."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "la dirección no se ha podido convertir en una URL."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "osoitetta ei voitu muuntaa URL-osoitteeksi."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l’adresse n’a pas pu être convertie en URL."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "adresu nije moguće pretvoriti u URL."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a címből nem sikerült URL-t képezni."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "non è stato possibile convertire l'indirizzo in un URL."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "주소를 URL로 변환할 수 없습니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "adreso nepavyko paversti URL."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "adresi neizdevās pārveidot par URL."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "adressen kunne ikke gjøres om til en URL."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "het adres kan niet worden omgezet in een URL."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nie można przekształcić adresu w URL."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "não foi possível converter o endereço em uma URL."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "não foi possível converter o endereço num URL."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "adresa nu a putut fi transformată într-un URL."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "адрес не удалось преобразовать в URL."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "adressen kunde inte omvandlas till en URL."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "adres bir URL’ye dönüştürülemedi."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "адресу не вдалося перетворити на URL."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法将地址转换为 URL。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法將位址轉換為網址。"
+          }
+        }
+      }
+    },
+    "the host contains characters that aren't allowed." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "імя вузла змяшчае недапушчальныя сімвалы."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l'amfitrió conté caràcters no permesos."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "název hostitele obsahuje nepovolené znaky."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "værten indeholder tegn, der ikke er tilladt."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "der Host enthält unzulässige Zeichen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "το όνομα κεντρικού υπολογιστή περιέχει μη επιτρεπτούς χαρακτήρες."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el host contiene caracteres no permitidos."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "isäntänimessä on merkkejä, jotka eivät ole sallittuja."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l’hôte contient des caractères non autorisés."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "naziv hosta sadrži nedopuštene znakove."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a gazdagépnév nem engedélyezett karaktereket tartalmaz."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l'host contiene caratteri non consentiti."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "호스트에 허용되지 않는 문자가 포함되어 있습니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mazgo varde yra neleistinų simbolių."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "resursdatora nosaukumā ir neatļautas rakstzīmes."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vertsnavnet inneholder ugyldige tegn."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de host bevat tekens die niet zijn toegestaan."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nazwa hosta zawiera niedozwolone znaki."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "o host contém caracteres não permitidos."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "o host contém caracteres não permitidos."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gazda conține caractere nepermise."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "имя узла содержит недопустимые символы."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "värdnamnet innehåller otillåtna tecken."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ana bilgisayar adı izin verilmeyen karakterler içeriyor."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ім’я хоста містить недопустимі символи."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主机名包含不允许的字符。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主機名稱包含不允許的字元。"
+          }
+        }
+      }
+    },
+    "the host is empty." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "вузел не пазначаны."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l'amfitrió és buit."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "název hostitele je prázdný."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "værten er tom."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "der Host ist leer."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ο κεντρικός υπολογιστής δεν έχει οριστεί."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el host está vacío."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "isäntänimi on tyhjä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l’hôte est vide."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "naziv hosta je prazan."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nincs megadva gazdagép."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l'host è vuoto."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "호스트가 비어 있습니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mazgas nenurodytas."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "resursdators nav norādīts."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vertsnavnet er tomt."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de host is leeg."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nazwa hosta jest pusta."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "o host está vazio."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "o host está vazio."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gazda nu este specificată."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "не указан узел."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "värdnamnet är tomt."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ana bilgisayar boş."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "хост не вказано."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主机名为空。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主機名稱為空白。"
+          }
+        }
+      }
+    },
+    "the port must be between 1 and 65535." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "порт павінен быць ад 1 да 65535."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el port ha d'estar entre 1 i 65535."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "port musí být v rozsahu 1 až 65535."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "porten skal være mellem 1 og 65535."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "der Port muss zwischen 1 und 65535 liegen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "η θύρα πρέπει να είναι μεταξύ 1 και 65535."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el puerto debe estar entre 1 y 65535."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "portin on oltava välillä 1–65535."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le port doit être compris entre 1 et 65535."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "port mora biti između 1 i 65535."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a portnak 1 és 65535 között kell lennie."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "la porta deve essere compresa tra 1 e 65535."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "포트는 1에서 65535 사이여야 합니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "prievadas turi būti nuo 1 iki 65535."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "portam jābūt no 1 līdz 65535."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "porten må være mellom 1 og 65535."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de poort moet tussen 1 en 65535 liggen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "port musi mieścić się w zakresie od 1 do 65535."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a porta deve estar entre 1 e 65535."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a porta tem de estar entre 1 e 65535."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "portul trebuie să fie între 1 și 65535."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "порт должен быть от 1 до 65535."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "porten måste vara mellan 1 och 65535."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "port 1 ile 65535 arasında olmalıdır."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "порт має бути від 1 до 65535."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "端口必须介于 1 到 65535 之间。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "連接埠必須介於 1 到 65535 之間。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

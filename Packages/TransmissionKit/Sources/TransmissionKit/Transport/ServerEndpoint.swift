@@ -33,18 +33,31 @@ public struct ServerEndpoint: Sendable, Hashable, Codable {
     /// Validates the endpoint and builds the RPC URL.
     public func url() throws(TransmissionError) -> URL {
         let host = normalizedHost
-        guard !host.isEmpty else { throw .invalidEndpoint(reason: "the host is empty.") }
+        guard !host.isEmpty else {
+            throw .invalidEndpoint(reason: String(localized: "the host is empty.", bundle: .module))
+        }
         guard !host.contains("://") else {
-            throw .invalidEndpoint(reason: "enter just the host name or IP address, without “http://”.")
+            throw .invalidEndpoint(
+                reason: String(
+                    localized: "enter just the host name or IP address, without “http://”.",
+                    bundle: .module
+                )
+            )
         }
         guard host.allSatisfy(Self.isAllowedHostCharacter) else {
-            throw .invalidEndpoint(reason: "the host contains characters that aren't allowed.")
+            throw .invalidEndpoint(
+                reason: String(localized: "the host contains characters that aren't allowed.", bundle: .module)
+            )
         }
         guard (1...65_535).contains(port) else {
-            throw .invalidEndpoint(reason: "the port must be between 1 and 65535.")
+            throw .invalidEndpoint(
+                reason: String(localized: "the port must be between 1 and 65535.", bundle: .module)
+            )
         }
         guard rpcPath.hasPrefix("/") else {
-            throw .invalidEndpoint(reason: "the RPC path must start with “/”.")
+            throw .invalidEndpoint(
+                reason: String(localized: "the RPC path must start with “/”.", bundle: .module)
+            )
         }
 
         var components = URLComponents()
@@ -53,7 +66,9 @@ public struct ServerEndpoint: Sendable, Hashable, Codable {
         components.port = port
         components.path = rpcPath
         guard let url = components.url else {
-            throw .invalidEndpoint(reason: "the address couldn't be turned into a URL.")
+            throw .invalidEndpoint(
+                reason: String(localized: "the address couldn't be turned into a URL.", bundle: .module)
+            )
         }
         return url
     }

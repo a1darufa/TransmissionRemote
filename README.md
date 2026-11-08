@@ -8,6 +8,9 @@ that keeps transgui's layout: filter sidebar, sortable torrent list, tabbed info
 - **macOS 26** or later, Apple silicon or Intel
 - Works with **Transmission 2.40 through 4.x**, including Transmission 3.00 on Western Digital
   My Cloud and other NAS boxes
+- In **28 languages**, the same ones Transmission Remote GUI has
+- Moving from transgui? **Import** your servers, passwords, path mappings and folder history from
+  `transgui.ini` in Settings → Transmission
 
 ![The main window: filters in the sidebar, the torrent list with speeds, and the General tab with the pieces bar](docs/screenshots/main-window.png)
 
@@ -35,13 +38,14 @@ saved in your Keychain. Choose **Always Allow**.
 
 | Area | What you get |
 |---|---|
-| Torrent list | 19 columns (10 shown by default, the rest via right-click on the header), sortable, with order, widths and visibility remembered |
+| Torrent list | 27 columns (10 shown by default, the rest via right-click on the header), sortable, with order, widths and visibility remembered. Seeds and Peers show the swarm's size too, like "3 (172)" |
 | Sidebar | Status filters (All, Downloading, Seeding, Completed, Active, Inactive, Stopped, Waiting, Verifying, Error) plus Folders, Labels and Trackers, each with counts |
-| Info pane | General (with a pieces bar), Trackers, Peers, Files (tree with checkboxes and priorities), Speed (live chart) |
+| Info pane | General (with a pieces bar), Trackers, Peers (host names, and countries with flags), Files (tree with checkboxes and priorities; Open, Show in Finder, Rename and Copy Path), Speed (live chart) |
 | Adding | Open dialog, drag and drop, double-click in Finder, browser magnet links, ⌘V paste. The Add sheet shows the file tree, the destination folder (with history ranked by use, like transgui), free space, start, priority, labels and sequential download |
 | Actions | Open and Show in Finder (through path mappings), Start, Start Now, Stop, Verify, Reannounce, Move Data, Rename, Labels, per-torrent limits (also from preset speed menus), Edit Trackers, bandwidth priority, queue moves, Copy Magnet Link, Remove, and Remove and Delete Data |
-| Server | Daemon settings (speed, alternative-speed schedule, folders, port test, encryption, peers, queue, seeding, blocklist), turtle mode, preset global speed limit menus, Start All / Stop All |
-| Mac integration | Menu bar extra with speeds, a completion notification, refresh that slows down in the background, multiple saved servers, each optionally reached through an HTTP or SOCKS 5 proxy |
+| Server | Daemon settings (speed, alternative-speed schedule, folders, port test, encryption, peers, queue, seeding, blocklist), bandwidth groups (Transmission 4.0+), turtle mode, preset global speed limit menus, Start All / Stop All |
+| Connections | Multiple saved servers, each optionally reached through an HTTP or SOCKS 5 proxy, with a client certificate for HTTPS reverse proxies that ask for one. Import from `transgui.ini` |
+| Mac integration | Menu bar extra with speeds, a completion notification, refresh that slows down in the background, a daily check for new releases |
 
 Settings keep transgui's grouping in a System Settings-style window: app options at the top, the
 connected daemon's options below.
@@ -84,8 +88,8 @@ One set of Swift models covers both protocols:
 - Incoming keys are normalized to camelCase.
 - Outgoing keys are spelled per protocol: snake_case for JSON-RPC, and the documented legacy exceptions
   (`files-wanted`, `peer-limit`, `seedRatioLimit`, …) otherwise. See `RPCDialect.swift`.
-- Fields an older server doesn't know (labels before 3.00, `trackerList` before 4.0, sequential download
-  before 4.1) are never requested. Features that depend on them are hidden or fall back, for example
+- Fields an older server doesn't know (labels before 3.00, `trackerList` and bandwidth groups before 4.0,
+  sequential download before 4.1) are never requested. Features that depend on them are hidden or fall back, for example
   tracker editing through `trackerAdd` / `trackerRemove` on 3.00.
 - Decoding is lenient where releases differ: `wanted` as 0/1, speed limits as doubles in 4.1.0, and
   encryption mode `tolerated` vs `allowed`.
@@ -105,6 +109,14 @@ request. The daemon can't be changed, so the client compensates:
 | App permissions | Unrestricted | App Sandbox + Hardened Runtime: outgoing network and read-only access to files you open, nothing else |
 | `.torrent` parsing | Trusted | Bounded parser with a size limit (32 MB), depth limit and no unchecked lengths |
 | Clipboard | Polled for links | Read only when you paste |
+| Client certificates | File paths and password in `transgui.ini` | The `.p12` file and its password in the Keychain, imported in memory only when connecting |
+
+Besides your Transmission servers, the app contacts only two other places:
+
+- **GitHub**, once a day, to see whether a newer release exists (Settings → General, can be turned off).
+  Nothing is downloaded or installed automatically.
+- **DB-IP**, for the free IP-to-country database behind the Peers tab's flags: only after you click
+  Download there, then once a month. Host names come from your Mac's usual DNS.
 
 Recommended setups for exposing a daemon, from best to worst:
 
@@ -185,6 +197,8 @@ The unit tests cover:
 - Endpoint validation and transport-security classification
 - `.torrent` and magnet parsing, including malformed input
 - The client's CSRF handshake, protocol detection and error mapping (against a mocked network)
+- Tracker summaries, bandwidth groups in both protocols, and client certificates
+- The IP-to-country database, gzip unpacking, release version checks and `transgui.ini` import
 
 The integration suite runs the full lifecycle against a **throwaway** daemon over both JSON-RPC and
 the legacy protocol: add, files, labels, options, verify, trackers, rename, move, queue, remove and
@@ -213,25 +227,31 @@ Run the daemon with `--foreground`. When it forks into the background on macOS, 
 Packages/TransmissionKit/        UI-free core, unit-tested with Swift Testing
   Transport/                     client actor, protocol dialects, envelopes, endpoint security, TLS pinning
   Models/                        Torrent, TorrentDetails, SessionSettings, request types
-  API/                           typed calls: torrents, actions, session, free space, port test
+  API/                           typed calls: torrents, actions, session, groups, free space, port test
   Metainfo/                      bencode parser, .torrent metainfo, magnet links
+  GeoIP/                         IP-to-country lookup and gzip unpacking for peer flags
+  Import/                        transgui.ini reader
+  Updates/                       GitHub release version check
+  Resources/                     the package's String Catalog
 TransmissionRemote/              the SwiftUI app (default MainActor isolation, Swift 6)
   App/                           scenes and menu commands
   Model/                         AppModel, ServerConnection (polling and actions), ServerStore, Keychain
   Views/                         main window, info pane tabs, sheets, settings, menu bar extra
+  *.xcstrings                    String Catalogs: the interface and Info.plist texts in 28 languages
 Config/                          Info.plist additions (torrent and magnet handling) and entitlements
 docs/screenshots/                the screenshots in this README
 ```
 
-## Not yet implemented
+## Translations
 
-Features from Transmission Remote GUI that this app doesn't have yet:
+The app speaks the 28 languages Transmission Remote GUI does: English, Belarusian, Catalan, Chinese
+(Simplified and Traditional), Croatian, Czech, Danish, Dutch, Finnish, French, German, Greek, Hungarian,
+Italian, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Portugal and Brazil), Romanian,
+Russian, Spanish, Swedish, Turkish and Ukrainian. It follows the language chosen in System Settings.
 
-- Peer country flags (GeoIP) and reverse DNS
-- Client certificates (mutual TLS)
-- Importing servers and folder history from `transgui.ini`
-- Russian translation. Strings are ready for a String Catalog.
-- Bandwidth groups (Transmission 4.0+)
+The translations were made with AI help, reusing transgui's own translations for torrent terms so
+they feel familiar, and Apple's wording for macOS features. Native speakers' corrections are very
+welcome: the texts live in `TransmissionRemote/Localizable.xcstrings`, which Xcode edits directly.
 
 ## Credits
 
@@ -246,6 +266,9 @@ copied unmodified from
 [`macosx/Images/Transmission_Tahoe.icon`](https://github.com/transmission/transmission/tree/147da724531235c3f2d42a5bf63d2d201d347663/macosx/Images/Transmission_Tahoe.icon)
 in the Transmission repository. It is © the Transmission authors and is used under Transmission's
 licence (GNU GPLv2 or GPLv3).
+
+Peer countries come from [IP to Country Lite by DB-IP](https://db-ip.com), licensed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The app downloads it only when you ask.
 
 This app is an independent project. It is not made or endorsed by the Transmission team.
 

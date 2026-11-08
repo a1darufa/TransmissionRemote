@@ -27,40 +27,49 @@ extension TransmissionError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .invalidEndpoint(let reason):
-            "The server address is invalid: \(reason)"
+            String(localized: "The server address is invalid: \(reason)", bundle: .module)
         case .unauthorized:
-            "The server rejected the username or password."
+            String(localized: "The server rejected the username or password.", bundle: .module)
         case .ipNotAllowed:
-            """
-            The server refused this computer's IP address. \
-            Add it to “rpc-whitelist” in the daemon's settings.json, or disable the whitelist.
-            """
+            String(localized: """
+                The server refused this computer's IP address. \
+                Add it to “rpc-whitelist” in the daemon's settings.json, or disable the whitelist.
+                """, bundle: .module)
         case .hostNotAllowed:
-            """
-            The server doesn't accept this hostname. Connect by IP address, \
-            or add the hostname to “rpc-host-whitelist” in the daemon's settings.json.
-            """
+            String(localized: """
+                The server doesn't accept this hostname. Connect by IP address, \
+                or add the hostname to “rpc-host-whitelist” in the daemon's settings.json.
+                """, bundle: .module)
         case .httpsHandshakeFailed:
-            """
-            The server didn't accept a secure (HTTPS) connection. Transmission's built-in server \
-            only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front \
-            of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel.
-            """
+            String(localized: """
+                The server didn't accept a secure (HTTPS) connection. Transmission's built-in server \
+                only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front \
+                of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel.
+                """, bundle: .module)
         case .untrustedCertificate:
-            "The server's TLS certificate isn't trusted."
+            String(localized: "The server's TLS certificate isn't trusted.", bundle: .module)
         case .redirectRefused:
-            """
-            The server tried to redirect the connection to a different address. \
-            The request was blocked to protect your credentials.
-            """
+            String(localized: """
+                The server tried to redirect the connection to a different address. \
+                The request was blocked to protect your credentials.
+                """, bundle: .module)
         case .httpStatus(let code):
-            "The server responded with HTTP \(code). Check the RPC path and port."
+            String(
+                localized: "The server responded with HTTP \(code). Check the RPC path and port.",
+                bundle: .module
+            )
         case .rpcFailure(let message):
             message
         case .unsupportedServer(let version):
-            "Transmission \(version) is too old. Version 2.40 or newer is required."
+            String(
+                localized: "Transmission \(version) is too old. Version 2.40 or newer is required.",
+                bundle: .module
+            )
         case .invalidResponse(let details):
-            "The server sent a response that couldn't be read (\(details))."
+            String(
+                localized: "The server sent a response that couldn't be read (\(details)).",
+                bundle: .module
+            )
         case .network(_, let description):
             description
         }

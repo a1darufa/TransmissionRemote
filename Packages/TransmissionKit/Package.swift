@@ -6,6 +6,7 @@ let swiftLint: Target.PluginUsage = .plugin(name: "SwiftLintBuildToolPlugin", pa
 
 let package = Package(
     name: "TransmissionKit",
+    defaultLocalization: "en",
     platforms: [.macOS(.v26)],
     products: [
         .library(name: "TransmissionKit", targets: ["TransmissionKit"])
@@ -16,6 +17,7 @@ let package = Package(
     targets: [
         .target(
             name: "TransmissionKit",
+            resources: [.process("Resources")],
             plugins: [swiftLint]
         ),
         .testTarget(
