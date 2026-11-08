@@ -1,6 +1,5 @@
 import AppKit
 import Observation
-import os
 import TransmissionKit
 
 /// Looks for newer releases on GitHub, like Transmission Remote GUI's "Check for updates".
@@ -21,7 +20,7 @@ final class UpdateChecker {
     private static let latestReleaseURL =
         URL(string: "https://api.github.com/repos/a1darufa/TransmissionRemote/releases/latest")!
     private static let checkInterval: Duration = .seconds(24 * 60 * 60)
-    private static let logger = Logger(subsystem: "TransmissionRemote", category: "Updates")
+    private static let log = DiagnosticLog(category: "Updates")
     private var automaticChecks: Task<Void, Never>?
 
     static var currentVersionText: String {
@@ -60,7 +59,7 @@ final class UpdateChecker {
                 outcome = .upToDate
             }
         } catch {
-            Self.logger.notice("Update check failed: \(error.localizedDescription, privacy: .public)")
+            Self.log.warning("Update check failed: \(error) – \(error.localizedDescription)")
             if userInitiated { outcome = .failed(error.localizedDescription) }
         }
     }

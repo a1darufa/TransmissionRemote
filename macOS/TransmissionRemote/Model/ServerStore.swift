@@ -1,6 +1,6 @@
 import Foundation
 import Observation
-import os
+import TransmissionKit
 
 /// Saved server profiles, persisted as JSON in the app's sandbox container.
 @Observable
@@ -9,7 +9,7 @@ final class ServerStore {
     private(set) var activeServerID: UUID?
 
     private let fileURL: URL
-    private static let logger = Logger(subsystem: "TransmissionRemote", category: "ServerStore")
+    private static let log = DiagnosticLog(category: "ServerStore")
 
     init(fileURL: URL = ServerStore.defaultFileURL) {
         self.fileURL = fileURL
@@ -130,9 +130,9 @@ final class ServerStore {
         let copy = fileURL.deletingLastPathComponent().appending(path: "servers-unreadable-\(stamp).json")
         do {
             try data.write(to: copy, options: .withoutOverwriting)
-            Self.logger.error("\(reason, privacy: .public). Kept a copy at \(copy.path, privacy: .public)")
+            Self.log.error("\(reason). Kept a copy at \(AppDiagnostics.displayPath(of: copy))")
         } catch {
-            Self.logger.error("\(reason, privacy: .public), and the copy failed: \(error.localizedDescription)")
+            Self.log.error("\(reason), and the copy failed: \(error)")
         }
     }
 
@@ -145,7 +145,7 @@ final class ServerStore {
             let data = try JSONEncoder().encode(StoredState(servers: servers, activeServerID: activeServerID))
             try data.write(to: fileURL, options: .atomic)
         } catch {
-            Self.logger.error("Couldn't save servers: \(error.localizedDescription, privacy: .public)")
+            Self.log.error("Couldn't save servers: \(error)")
         }
     }
 }

@@ -1,7 +1,6 @@
 import AppKit
 import Foundation
 import Observation
-import os
 import TransmissionKit
 
 enum DetailTab: String, CaseIterable, Identifiable {
@@ -101,7 +100,7 @@ final class ServerConnection {
     /// The latest tracker stats per torrent, attached to each list refresh until the next fetch.
     private var trackerSummaries: [Torrent.ID: TrackerSummary] = [:]
     private let notifier = CompletionNotifier()
-    private static let logger = Logger(subsystem: "TransmissionRemote", category: "Connection")
+    private static let log = DiagnosticLog(category: "Connection")
 
     init() {
         connectivity.start { [weak self] in self?.retryNow() }
@@ -212,9 +211,7 @@ final class ServerConnection {
                 failures += 1
                 let delay = RetryBackoff.delay(afterFailures: failures)
                 let message = error.localizedDescription
-                Self.logger.info(
-                    "Server unreachable (\(message, privacy: .public)); retrying in \(delay, privacy: .public)"
-                )
+                Self.log.info("Server unreachable (\(error)); retrying in \(delay)")
                 let nextAttempt = Date.now.addingTimeInterval(delay / .seconds(1))
                 state = .reconnecting(ReconnectAttempt(message: message, nextAttempt: nextAttempt))
                 await pause(for: delay)
@@ -246,7 +243,7 @@ final class ServerConnection {
         pollTask = nil
         client = nil
         state = .failed(ConnectionFailure(error))
-        Self.logger.error("Connection failed: \(error.localizedDescription, privacy: .public)")
+        Self.log.error("Connection failed: \(error) – \(error.localizedDescription)")
     }
 
     // MARK: - Refreshing
@@ -343,6 +340,7 @@ final class ServerConnection {
             do {
                 try await operation(client)
             } catch {
+                Self.log.warning("An action failed: \(error) – \(error.localizedDescription)")
                 actionError = error.localizedDescription
             }
             await refresh()

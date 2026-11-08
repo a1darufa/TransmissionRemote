@@ -16,6 +16,10 @@ struct AppCommands: Commands {
             .disabled(model.updates.isChecking)
         }
 
+        CommandGroup(after: .help) {
+            Button("Show Log Files") { AppDiagnostics.showLogFiles() }
+        }
+
         CommandGroup(replacing: .newItem) {
             Group {
                 Button("Add Torrent File…") { model.router.isImportingTorrentFiles = true }

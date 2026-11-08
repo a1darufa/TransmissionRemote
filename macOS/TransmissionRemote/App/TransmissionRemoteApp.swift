@@ -10,6 +10,7 @@ struct TransmissionRemoteApp: App {
     @AppStorage(AppSettings.showMenuBarExtra) private var showsMenuBarExtra = true
 
     init() {
+        AppDiagnostics.start()
         AppSettings.registerDefaults()
         let model = AppModel()
         _model = State(initialValue: model)

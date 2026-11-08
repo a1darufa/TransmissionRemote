@@ -31,6 +31,7 @@ struct PendingTorrent: Identifiable {
 /// magnet links, paste) and queues them for the Add Torrent sheet.
 @Observable
 final class AddTorrentFlow {
+    private static let log = DiagnosticLog(category: "AddTorrent")
     private(set) var queue: [PendingTorrent] = []
     /// Shown as an alert when something can't be opened.
     var problem: String?
@@ -120,6 +121,7 @@ final class AddTorrentFlow {
                 files: metainfo.files
             ))
         } catch {
+            Self.log.warning("Couldn't open \(url.lastPathComponent) as a torrent file: \(error)")
             problem = String(localized: "“\(url.lastPathComponent)” couldn't be opened as a torrent file.")
         }
     }
@@ -144,6 +146,7 @@ final class AddTorrentFlow {
                 do {
                     _ = try await connection.add(AddTorrentRequest(next, options: AddTorrentOptions()))
                 } catch {
+                    Self.log.warning("Couldn't add \(next.name): \(error)")
                     // Keep the first failure on screen rather than replacing it with each later one.
                     problem = problem ?? error.localizedDescription
                 }

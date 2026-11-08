@@ -1,6 +1,5 @@
 import Foundation
 import Observation
-import os
 import TransmissionKit
 
 /// Host names and countries for the Peers tab, like Transmission Remote GUI's "Resolve host
@@ -30,7 +29,7 @@ final class PeerInfoResolver {
     private static let maximumConcurrentLookups = 4
     /// A long session can see many thousands of peers; forget names past this many.
     private static let maximumCachedNames = 5_000
-    private static let logger = Logger(subsystem: "TransmissionRemote", category: "PeerInfo")
+    private static let log = DiagnosticLog(category: "PeerInfo")
 
     // MARK: Countries
 
@@ -67,7 +66,7 @@ final class PeerInfoResolver {
             UserDefaults.standard.set(month, forKey: AppSettings.countryDatabaseMonth)
             databaseState = .ready
         } catch {
-            Self.logger.error("Country database download failed: \(error.localizedDescription, privacy: .public)")
+            Self.log.error("Country database download failed: \(error) – \(error.localizedDescription)")
             // A failed monthly refresh keeps the database that already works.
             databaseState = hadDatabase ? .ready : .failed(error.localizedDescription)
         }
