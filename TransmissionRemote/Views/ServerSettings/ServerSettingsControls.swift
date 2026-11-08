@@ -11,7 +11,7 @@ struct NumberRow: View {
         HStack {
             Text(title)
             Spacer()
-            TextField(String(localized: title), value: $value, format: .number.grouping(.never))
+            NumberField(verbatim: String(localized: title), value: $value, format: .number.grouping(.never))
                 .labelsHidden()
                 .multilineTextAlignment(.trailing)
                 .frame(width: 80)

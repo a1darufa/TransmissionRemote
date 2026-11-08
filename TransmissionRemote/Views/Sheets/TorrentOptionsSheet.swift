@@ -49,7 +49,7 @@ struct TorrentOptionsSheet: View {
             seedingSection(options)
 
             Section("Peers") {
-                TextField("Maximum peers", value: options.peerLimit, format: .number)
+                NumberField("Maximum peers", value: options.peerLimit, format: .number)
                 if model.connection.serverInfo?.supportsSequentialDownload == true {
                     Toggle("Download in order", isOn: Binding(
                         get: { options.wrappedValue.sequentialDownload ?? false },
@@ -96,7 +96,7 @@ struct TorrentOptionsSheet: View {
                 Text("Never").tag(LimitMode.unlimited)
             }
             if options.wrappedValue.seedRatioMode == .single {
-                TextField("Ratio", value: options.seedRatioLimit, format: .number.precision(.fractionLength(0...2)))
+                NumberField("Ratio", value: options.seedRatioLimit, format: .number.precision(.fractionLength(0...2)))
             }
             Picker("Stop when idle", selection: options.seedIdleMode) {
                 Text("Server default").tag(LimitMode.global)
@@ -104,7 +104,7 @@ struct TorrentOptionsSheet: View {
                 Text("Never").tag(LimitMode.unlimited)
             }
             if options.wrappedValue.seedIdleMode == .single {
-                TextField("Idle minutes", value: options.seedIdleLimit, format: .number)
+                NumberField("Idle minutes", value: options.seedIdleLimit, format: .number)
             }
         }
     }
@@ -167,7 +167,7 @@ struct LimitRow: View {
         HStack {
             Toggle(String(localized: title), isOn: $isOn)
             Spacer()
-            TextField(String(localized: title), value: $value, format: .number)
+            NumberField(verbatim: String(localized: title), value: $value, format: .number)
                 .labelsHidden()
                 .multilineTextAlignment(.trailing)
                 .frame(width: 80)

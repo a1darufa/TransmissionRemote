@@ -137,7 +137,7 @@ private struct ServerEditor: View {
                     TextField("Name", text: $draft.name, prompt: Text("My NAS"))
                     TextField("Host", text: $draft.endpoint.host, prompt: Text("192.168.1.10 or nas.tailnet.ts.net"))
                         .autocorrectionDisabled()
-                    TextField("Port", value: $draft.endpoint.port, format: .number.grouping(.never))
+                    NumberField("Port", value: $draft.endpoint.port, format: .number.grouping(.never))
                     TextField("RPC path", text: $draft.endpoint.rpcPath)
                         .autocorrectionDisabled()
                     Toggle(isOn: $draft.endpoint.usesTLS) {
