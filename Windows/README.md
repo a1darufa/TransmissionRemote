@@ -8,7 +8,8 @@ oldest version the Windows App SDK supports.
 
 | Part | State |
 |---|---|
-| `TransmissionKit`: the UI-free core (RPC client, models, .torrent parsing, helpers) | Done, ported from the Mac app's Swift package, 241 tests |
+| `TransmissionKit`: the UI-free core (RPC client, models, .torrent parsing, helpers) | Done, ported from the Mac app's Swift package, 275 tests |
+| `tools/StringCatalogConverter`: the Mac app's translations as `.resw` files | Done, 109 tests. See [Strings](#strings) |
 | `TransmissionRemote.App`: the WinUI 3 app | Not started. Planned below |
 | Installers for x64 and ARM64 | Not started |
 
@@ -67,6 +68,7 @@ Metainfo/    bencode, .torrent files (padding files kept in the numbering), magn
 GeoIP/       the DB-IP country database and gzip unpacking
 Import/      transgui.ini
 Updates/     the GitHub release check
+Localization/ CLDR plural rules for the app's 28 languages (not in the Swift package: macOS has its own)
 Logging/     every log message, generated with [LoggerMessage]
 ```
 
@@ -127,6 +129,76 @@ Never log passwords, the `Authorization` header or request bodies (they can hold
 - Write folder paths with `%LOCALAPPDATA%` or `~` rather than the full user folder, so shared logs
   don't reveal the user's name.
 
+## Strings
+
+The Windows app uses the Mac app's translations, all 28 languages. `tools/StringCatalogConverter` turns
+the Mac String Catalogs into `.resw` files. Run it from `Windows/` whenever the Mac strings change:
+
+```bash
+dotnet run --project tools/StringCatalogConverter -- \
+  --catalog ../macOS/TransmissionRemote/Localizable.xcstrings \
+  --catalog ../macOS/Packages/TransmissionKit/Sources/TransmissionKit/Resources/Localizable.xcstrings \
+  --output src/TransmissionRemote.App/Strings
+```
+
+It writes `Strings/<language>/Resources.resw`: `en-US`, the app's default language, and the catalogs'
+own codes for the rest (`ru`, `pt-BR`, `zh-Hans`, ...), which MRT accepts as language folders.
+`InfoPlist.xcstrings` is Mac-only. Entries are sorted by name, so a rerun shows only real changes. The
+files are generated: a rerun overwrites them, so change the catalogs instead of the `.resw` files.
+
+- **Names.** A `.resw` name can't be a sentence (MRT gives `.` and `/` a meaning), so it's the English
+  text's words in PascalCase: `Show Log Files` is `ShowLogFiles`, and
+  `“%@” couldn't be opened as a torrent file.` is `CouldNotBeOpenedAsATorrentFile`. Placeholders and
+  punctuation are dropped, contractions spelled out, `↓` and `↑` named Down and Up, a trailing `…` kept as `Ellipsis` (`Settings…` is
+  `SettingsEllipsis`), and long texts cut after the last whole word that fits in 40 characters. Names
+  that would clash, including ones that differ only in case, which MRT treats as equal, all get six hex
+  digits of their key's SHA-256: `Total Size` is `TotalSize_9AC7DE` and `Total size` is
+  `TotalSize_51CDF6`. Adding a string whose name clashes with an existing one renames both. Every entry's
+  comment holds the Mac key, so search the `.resw` for the Mac wording to find a name.
+- **Placeholders.** `%@`, `%lld`, `%d` and the like become `{0}`, `{1}`, ... in argument order (`%2$@`
+  is `{1}`) and `%%` becomes `%`. A string with placeholders is a composite format string in every
+  language: pass it to `string.Format(CultureInfo.CurrentCulture, ...)`. Its literal braces are doubled;
+  strings without placeholders are left as they are. Numbers carry no formatting, so format counts, sizes
+  and speeds before inserting them, as the Mac app does. Only fixed decimals keep theirs: `%.1f` is
+  `{0:F1}`.
+- **Plurals.** `.resw` has no plurals, so each form is a resource named `<name>_<category>`: `%lld files`
+  is `Files_One` and `Files_Other` in English, and `Files_One`, `Files_Few`, `Files_Many` and
+  `Files_Other` in Russian. `PluralRules` in TransmissionKit picks the form. If that comes back empty,
+  which happens while a language's translation is missing, use the `_Other` form, which English always
+  has:
+
+  ```csharp
+  string Plural(ResourceLoader loader, string name, string uiLanguage, long count)
+  {
+      var category = PluralRules.CategoryFor(uiLanguage, count);
+      var form = loader.GetString(PluralRules.ResourceName(name, category));
+      if (form.Length == 0)
+      {
+          form = loader.GetString(PluralRules.ResourceName(name, PluralCategory.Other));
+      }
+      return string.Format(CultureInfo.CurrentCulture, form, count.ToString("N0", CultureInfo.CurrentCulture));
+  }
+  ```
+
+- **Missing translations.** Only finished translations (`"state": "translated"`) are written. A string a
+  language lacks is left out of that language's file, and MRT falls back to `en-US` for that string
+  alone, the way macOS falls back to English. A plural string is written only once all its forms are
+  finished. Strings marked `shouldTranslate: false`, such as `%@ %@`, are only in `en-US`.
+- **Code, not `x:Uid`.** The names have no property part (`ShowLogFiles.Text`), so load them from code
+  with `ResourceLoader.GetString` or through a small markup extension.
+- **Markdown.** SwiftUI renders Markdown in strings, and one string has a link to DB-IP in Markdown:
+  `RightClickThePeerListToTurnHostNamesAnd`. It's kept as it is, so show the link with a `Hyperlink`.
+
+Anything the converter can't carry over faithfully stops it with the catalog, key and language: plural
+substitutions, device variations, specifier widths and flags, or a translation that uses an argument the
+English text doesn't. `MacCatalogTests` convert the real catalogs, so CI catches these, and check that
+every language has each plural form `PluralRules` can ask for.
+
+**New strings** need all 28 languages, on Windows as on the Mac. A string both apps show goes into the
+Mac catalog and then through the converter. Strings only the Windows app needs go into a Windows-only
+String Catalog, for example `src/TransmissionRemote.App/Strings/Windows.xcstrings`, passed as one more
+`--catalog`, so that one tool and one format keep every translation.
+
 ## The app: plan
 
 Same layout and features as the Mac app, drawn the Windows 11 way: Fluent 2 controls, Mica, Segoe
@@ -146,7 +218,7 @@ default background on Windows 10.
 | Notifications when a download finishes | `AppNotificationManager` (Windows App SDK) |
 | Keychain | Windows Credential Manager through `Windows.Security.Credentials.PasswordVault` |
 | .torrent and magnet handling | File and `magnet:` protocol registration by the installer, single instance with `AppInstance.FindOrRegisterForKey` and `RedirectActivationToAsync` |
-| String Catalogs, 28 languages | `.resw` files per language under `Strings/`, `x:Uid` in XAML. Convert the Mac app's `.xcstrings` with a script so both apps share the translations |
+| String Catalogs, 28 languages | `.resw` files per language under `Strings/`, generated from the Mac app's `.xcstrings` (see [Strings](#strings)) |
 | Peer country flags | Flag images: Windows' emoji font shows regional-indicator flags as letters |
 
 Suggested structure: `src/TransmissionRemote.App` (WinUI 3, MVVM with CommunityToolkit.Mvvm),
