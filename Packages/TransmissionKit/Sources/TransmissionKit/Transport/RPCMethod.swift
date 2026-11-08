@@ -25,4 +25,8 @@ public enum RPCMethod: String, Sendable {
     case queueMoveUp = "queue_move_up"
     case queueMoveDown = "queue_move_down"
     case queueMoveBottom = "queue_move_bottom"
+
+    /// Bandwidth groups, Transmission 4.0+.
+    case groupGet = "group_get"
+    case groupSet = "group_set"
 }

@@ -29,7 +29,7 @@ public enum Priority: Int, Sendable, Codable, CaseIterable, Comparable {
 public enum TorrentField: String, Sendable, CaseIterable {
     case activityDate, addedDate, bandwidthPriority, comment, corruptEver, creator, dateCreated
     case desiredAvailable, doneDate, downloadDir, downloadedEver, downloadLimit, downloadLimited
-    case error, errorString, eta, fileStats, files, hashString, haveUnchecked, haveValid
+    case error, errorString, eta, fileStats, files, group, hashString, haveUnchecked, haveValid
     case honorsSessionLimits, id, isFinished, isPrivate, isStalled, labels, leftUntilDone
     case magnetLink, metadataPercentComplete, name, peerLimit, peers, peersConnected, peersFrom
     case peersGettingFromUs, peersSendingToUs, percentDone, pieceCount, pieceSize, pieces
@@ -45,7 +45,7 @@ public enum TorrentField: String, Sendable, CaseIterable {
     public var minimumRPCVersion: Int {
         switch self {
         case .labels: 16 // Transmission 3.00
-        case .trackerList: 17 // Transmission 4.0
+        case .trackerList, .group: 17 // Transmission 4.0
         case .sequentialDownload: 18 // Transmission 4.1
         default: ServerInfo.minimumRPCVersion
         }
@@ -90,6 +90,8 @@ public struct Torrent: Identifiable, Hashable, Sendable {
     public var isStalled: Bool
     public var isPrivate: Bool
     public var bandwidthPriority: Priority
+    /// The bandwidth group's name, or empty when the torrent isn't in one (or the server predates groups).
+    public var bandwidthGroup: String
     /// Hosts of the torrent's trackers, in tier order.
     public var trackerHosts: [String]
     /// Swarm sizes and tracker status. Not part of the list request: the app fetches these
@@ -102,7 +104,7 @@ public struct Torrent: Identifiable, Hashable, Sendable {
         .leftUntilDone, .percentDone, .metadataPercentComplete, .recheckProgress, .rateDownload,
         .rateUpload, .eta, .uploadRatio, .uploadedEver, .downloadedEver, .addedDate, .doneDate,
         .activityDate, .secondsSeeding, .downloadDir, .labels, .queuePosition, .peersConnected, .peersSendingToUs,
-        .peersGettingFromUs, .isFinished, .isStalled, .isPrivate, .bandwidthPriority, .trackers
+        .peersGettingFromUs, .isFinished, .isStalled, .isPrivate, .bandwidthPriority, .trackers, .group
     ]
 
     public var hasError: Bool { errorCode != 0 }
@@ -116,7 +118,7 @@ extension Torrent: Decodable {
         case leftUntilDone, percentDone, metadataPercentComplete, recheckProgress, rateDownload
         case rateUpload, eta, uploadRatio, uploadedEver, downloadedEver, addedDate, doneDate
         case activityDate, secondsSeeding, downloadDir, labels, queuePosition, peersConnected, peersSendingToUs
-        case peersGettingFromUs, isFinished, isStalled, isPrivate, bandwidthPriority, trackers
+        case peersGettingFromUs, isFinished, isStalled, isPrivate, bandwidthPriority, trackers, group
     }
 
     private struct TrackerInfo: Decodable {
@@ -157,6 +159,7 @@ extension Torrent: Decodable {
         isStalled = container.lenient(.isStalled, default: false)
         isPrivate = container.lenient(.isPrivate, default: false)
         bandwidthPriority = Priority(rawValue: container.lenient(.bandwidthPriority, default: 0)) ?? .normal
+        bandwidthGroup = container.lenient(.group, default: "")
 
         let announceURLs = container.lenientArray(.trackers, of: TrackerInfo.self).map(\.announce)
         trackerHosts = Self.uniqueHosts(in: announceURLs)

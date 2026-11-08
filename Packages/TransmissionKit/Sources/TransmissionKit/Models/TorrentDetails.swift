@@ -42,6 +42,8 @@ public struct TorrentDetails: Identifiable, Sendable, Equatable {
     public var sequentialDownload: Bool?
     public var trackerList: String?
     public var webseedsSendingToUs: Int
+    /// Transmission 4.0+; nil on older servers.
+    public var bandwidthGroup: String?
 
     /// Always requested, cheap fields for the General tab.
     public static let generalFields: [TorrentField] = [
@@ -55,7 +57,7 @@ public struct TorrentDetails: Identifiable, Sendable, Equatable {
     public static let optionFields: [TorrentField] = [
         .id, .downloadLimit, .downloadLimited, .uploadLimit, .uploadLimited, .seedRatioLimit,
         .seedRatioMode, .seedIdleLimit, .seedIdleMode, .honorsSessionLimits, .peerLimit,
-        .bandwidthPriority, .sequentialDownload
+        .bandwidthPriority, .sequentialDownload, .group
     ]
 }
 
@@ -65,7 +67,7 @@ extension TorrentDetails: Decodable {
         case creator, dateCreated, startDate, magnetLink, haveValid, haveUnchecked, corruptEver
         case desiredAvailable, secondsDownloading, secondsSeeding, downloadLimit, downloadLimited
         case uploadLimit, uploadLimited, seedRatioLimit, seedRatioMode, seedIdleLimit, seedIdleMode
-        case honorsSessionLimits, peerLimit, sequentialDownload, trackerList, webseedsSendingToUs
+        case honorsSessionLimits, peerLimit, sequentialDownload, trackerList, webseedsSendingToUs, group
     }
 
     public init(from decoder: any Decoder) throws {
@@ -105,6 +107,7 @@ extension TorrentDetails: Decodable {
         sequentialDownload = container.lenient(.sequentialDownload)
         trackerList = container.lenient(.trackerList)
         webseedsSendingToUs = container.lenient(.webseedsSendingToUs, default: 0)
+        bandwidthGroup = container.lenient(.group)
     }
 }
 

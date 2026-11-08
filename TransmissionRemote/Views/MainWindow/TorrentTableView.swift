@@ -192,6 +192,11 @@ struct TorrentTableView: View {
             .customizationID("private")
             .defaultVisibility(.hidden)
 
+        TableColumn("Bandwidth Group", value: \.bandwidthGroup) { Text($0.bandwidthGroup) }
+            .width(min: 60, ideal: 110)
+            .customizationID("bandwidthGroup")
+            .defaultVisibility(.hidden)
+
         TableColumn("ID", value: \.id) { Text("\($0.id)").monospacedDigit() }
             .width(min: 30, ideal: 45)
             .alignment(.trailing)
@@ -227,7 +232,7 @@ struct TorrentTableView: View {
 enum TorrentSortColumn: String, CaseIterable {
     case name, size, done, status, seeds, peers, down, up, eta, ratio
     case added, completed, folder, labels, tracker, queue, downloaded, uploaded, priority
-    case totalSize, sizeLeft, lastActive, seedingTime, trackerStatus, isPrivate, id
+    case totalSize, sizeLeft, lastActive, seedingTime, trackerStatus, isPrivate, id, bandwidthGroup
 
     init?(matching comparator: KeyPathComparator<Torrent>) {
         let matchingColumn = Self.allCases.first { $0.comparator(order: .forward).keyPath == comparator.keyPath }
@@ -265,6 +270,7 @@ enum TorrentSortColumn: String, CaseIterable {
         case .trackerStatus: KeyPathComparator(\.trackerStatusText, order: order)
         case .isPrivate: KeyPathComparator(\.privateSortKey, order: order)
         case .id: KeyPathComparator(\.id, order: order)
+        case .bandwidthGroup: KeyPathComparator(\.bandwidthGroup, order: order)
         }
     }
 }

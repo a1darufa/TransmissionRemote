@@ -38,6 +38,18 @@ extension ServerConnection {
         run { try await $0.rename(torrentID: id, path: currentName, to: newName) }
     }
 
+    /// Transmission 4.0 and later have bandwidth groups.
+    var supportsBandwidthGroups: Bool { (serverInfo?.rpcVersion ?? 0) >= 17 }
+
+    func bandwidthGroups() async throws -> [BandwidthGroup] {
+        try await requireClient().bandwidthGroups()
+    }
+
+    func saveBandwidthGroup(_ group: BandwidthGroup) async throws {
+        try await requireClient().save(group)
+        await refresh()
+    }
+
     /// Renames a file or folder inside a torrent; `path` is relative to the torrent's download folder.
     func renameFile(in torrentID: Torrent.ID, path: String, to newName: String) {
         run { try await $0.rename(torrentID: torrentID, path: path, to: newName) }

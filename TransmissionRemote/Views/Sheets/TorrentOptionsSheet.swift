@@ -10,6 +10,9 @@ struct TorrentOptionsSheet: View {
     @State private var options: TorrentDetails?
     @State private var original: TorrentDetails?
     @State private var bandwidthPriority = Priority.normal
+    /// Empty means no group. Nil until loaded, or on servers without groups.
+    @State private var bandwidthGroup: String?
+    @State private var groupNames: [String] = []
     @State private var loadError: String?
 
     var body: some View {
@@ -42,43 +45,8 @@ struct TorrentOptionsSheet: View {
 
     private func form(_ options: Binding<TorrentDetails>) -> some View {
         Form {
-            Section("Speed") {
-                LimitRow(
-                    title: "Limit download speed",
-                    isOn: options.downloadLimited,
-                    value: options.downloadLimit,
-                    unit: "kB/s"
-                )
-                LimitRow(
-                    title: "Limit upload speed",
-                    isOn: options.uploadLimited,
-                    value: options.uploadLimit,
-                    unit: "kB/s"
-                )
-                Toggle("Follow the server's global limits", isOn: options.honorsSessionLimits)
-                Picker("Bandwidth priority", selection: $bandwidthPriority) {
-                    ForEach(Priority.allCases.reversed(), id: \.self) { Text($0.title).tag($0) }
-                }
-            }
-
-            Section("Seeding") {
-                Picker("Stop at ratio", selection: options.seedRatioMode) {
-                    Text("Server default").tag(LimitMode.global)
-                    Text("Custom").tag(LimitMode.single)
-                    Text("Never").tag(LimitMode.unlimited)
-                }
-                if options.wrappedValue.seedRatioMode == .single {
-                    TextField("Ratio", value: options.seedRatioLimit, format: .number.precision(.fractionLength(0...2)))
-                }
-                Picker("Stop when idle", selection: options.seedIdleMode) {
-                    Text("Server default").tag(LimitMode.global)
-                    Text("Custom").tag(LimitMode.single)
-                    Text("Never").tag(LimitMode.unlimited)
-                }
-                if options.wrappedValue.seedIdleMode == .single {
-                    TextField("Idle minutes", value: options.seedIdleLimit, format: .number)
-                }
-            }
+            speedSection(options)
+            seedingSection(options)
 
             Section("Peers") {
                 TextField("Maximum peers", value: options.peerLimit, format: .number)
@@ -93,6 +61,60 @@ struct TorrentOptionsSheet: View {
         .formStyle(.grouped)
     }
 
+    private func speedSection(_ options: Binding<TorrentDetails>) -> some View {
+        Section("Speed") {
+            LimitRow(
+                title: "Limit download speed",
+                isOn: options.downloadLimited,
+                value: options.downloadLimit,
+                unit: "kB/s"
+            )
+            LimitRow(
+                title: "Limit upload speed",
+                isOn: options.uploadLimited,
+                value: options.uploadLimit,
+                unit: "kB/s"
+            )
+            Toggle("Follow the server's global limits", isOn: options.honorsSessionLimits)
+            Picker("Bandwidth priority", selection: $bandwidthPriority) {
+                ForEach(Priority.allCases.reversed(), id: \.self) { Text($0.title).tag($0) }
+            }
+            if let selectedGroup = Binding($bandwidthGroup) {
+                Picker("Bandwidth group", selection: selectedGroup) {
+                    Text("None").tag("")
+                    ForEach(groupChoices, id: \.self) { Text($0).tag($0) }
+                }
+            }
+        }
+    }
+
+    private func seedingSection(_ options: Binding<TorrentDetails>) -> some View {
+        Section("Seeding") {
+            Picker("Stop at ratio", selection: options.seedRatioMode) {
+                Text("Server default").tag(LimitMode.global)
+                Text("Custom").tag(LimitMode.single)
+                Text("Never").tag(LimitMode.unlimited)
+            }
+            if options.wrappedValue.seedRatioMode == .single {
+                TextField("Ratio", value: options.seedRatioLimit, format: .number.precision(.fractionLength(0...2)))
+            }
+            Picker("Stop when idle", selection: options.seedIdleMode) {
+                Text("Server default").tag(LimitMode.global)
+                Text("Custom").tag(LimitMode.single)
+                Text("Never").tag(LimitMode.unlimited)
+            }
+            if options.wrappedValue.seedIdleMode == .single {
+                TextField("Idle minutes", value: options.seedIdleLimit, format: .number)
+            }
+        }
+    }
+
+    /// The server's groups, plus the torrent's current one in case the list couldn't be read.
+    private var groupChoices: [String] {
+        let current = bandwidthGroup.map { $0.isEmpty ? [] : [$0] } ?? []
+        return Array(Set(groupNames + current)).sorted { $0.localizedStandardCompare($1) == .orderedAscending }
+    }
+
     private func load() async {
         guard let firstID = ids.min() else { return }
         do {
@@ -100,6 +122,10 @@ struct TorrentOptionsSheet: View {
             options = loaded
             original = loaded
             bandwidthPriority = model.connection.torrents.first { $0.id == firstID }?.bandwidthPriority ?? .normal
+            if model.connection.supportsBandwidthGroups {
+                groupNames = (try? await model.connection.bandwidthGroups().map(\.name)) ?? []
+                bandwidthGroup = loaded?.bandwidthGroup ?? ""
+            }
         } catch {
             loadError = error.localizedDescription
         }
@@ -121,6 +147,9 @@ struct TorrentOptionsSheet: View {
         mutation.peerLimit = options.peerLimit
         if options.sequentialDownload != original?.sequentialDownload {
             mutation.sequentialDownload = options.sequentialDownload
+        }
+        if let bandwidthGroup, bandwidthGroup != (original?.bandwidthGroup ?? "") || ids.count > 1 {
+            mutation.group = bandwidthGroup
         }
         model.connection.apply(mutation)
         dismiss()

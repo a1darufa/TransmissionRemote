@@ -256,6 +256,8 @@ struct BandwidthSettings: View {
                 }
                 .disabled(settings.altSpeedTimeEnabled != true)
             }
+
+            BandwidthGroupsSection()
         }
         .formStyle(.grouped)
     }

@@ -26,6 +26,8 @@ public struct TorrentMutation: Encodable, Sendable, Equatable {
     /// Pre-4.0 tracker editing.
     public var trackerAdd: [String]?
     public var trackerRemove: [Int]?
+    /// Transmission 4.0+: the bandwidth group's name; an empty name takes the torrent out of its group.
+    public var group: String?
 
     public init(ids: [Int]) {
         self.ids = ids

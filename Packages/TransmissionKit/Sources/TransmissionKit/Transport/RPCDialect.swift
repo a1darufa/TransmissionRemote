@@ -21,6 +21,8 @@ public enum KeyScope: Sendable {
     case torrentArguments
     /// Field names and arguments for `session-get` / `session-set` (kebab-case in legacy).
     case session
+    /// Keys of a bandwidth group for `group-set` (kebab-case in legacy, except `honorsSessionLimits`).
+    case bandwidthGroup
     /// Single-word keys that are spelled the same everywhere (`ids`, `path`, `name`).
     case plain
 }
@@ -65,6 +67,8 @@ enum LegacyKeys {
             kebabTorrentArguments.contains(camelName) ? KeyCase.kebabCase(camelName) : camelName
         case .session:
             camelSessionKeys.contains(camelName) ? camelName : KeyCase.kebabCase(camelName)
+        case .bandwidthGroup:
+            camelName == "honorsSessionLimits" ? camelName : KeyCase.kebabCase(camelName)
         case .plain:
             camelName
         }
