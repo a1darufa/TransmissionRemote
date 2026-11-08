@@ -81,7 +81,10 @@ extension AppModel {
     /// Opens a server file or folder with its default app on this Mac.
     func openLocally(remotePath: String) {
         guard let location = localFileLocation(forRemotePath: remotePath) else { return }
-        let opened = location.withAccess { NSWorkspace.shared.open($0) }
+        let opened = location.withAccess { url in
+            guard RunnableFile.confirmOpening(url) else { return true }
+            return NSWorkspace.shared.open(url)
+        }
         if !opened {
             connection.actionError = String(localized: """
                 Couldn't open \(location.url.path(percentEncoded: false)). \
