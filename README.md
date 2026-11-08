@@ -11,6 +11,7 @@ that keeps transgui's layout: filter sidebar, sortable torrent list, tabbed info
 - In **28 languages**, the same ones Transmission Remote GUI has
 - Moving from transgui? **Import** your servers, passwords, path mappings and folder history from
   `transgui.ini` in Settings → Transmission
+- A native **Windows 11** version (x64 and ARM64) is in development in [`Windows/`](Windows/)
 
 ![The main window: filters in the sidebar, the torrent list with speeds, and the General tab with the pieces bar](docs/screenshots/main-window.png)
 
@@ -129,13 +130,17 @@ errors those settings produce.
 
 ## Building
 
-Open `TransmissionRemote.xcodeproj` in Xcode 26 or later and run. The project uses folder-synchronized
+This repository holds both apps: the Mac app in `macOS/` and the Windows app in `Windows/` (see
+[its README](Windows/README.md)). The commands below run from `macOS/`.
+
+Open `macOS/TransmissionRemote.xcodeproj` in Xcode 26 or later and run. The project uses folder-synchronized
 groups, so new files in `TransmissionRemote/` are picked up automatically. On the first build, Xcode asks
 you to trust the SwiftLint plugin (see [Code style](#code-style)); choose *Trust & Enable*.
 
 From the command line:
 
 ```bash
+cd macOS
 xcodebuild -project TransmissionRemote.xcodeproj -scheme TransmissionRemote -configuration Release \
   -destination 'generic/platform=macOS' -derivedDataPath build/DerivedData -skipPackagePluginValidation build
 ```
@@ -150,9 +155,9 @@ ditto build/DerivedData/Build/Products/Release/TransmissionRemote.app /Applicati
 
 A copy built and installed this way opens normally on that Mac.
 
-To make a release download, run `Scripts/build-release.sh`. It builds a universal Release app that is
+To make a release download, run `macOS/Scripts/build-release.sh`. It builds a universal Release app that is
 ad-hoc signed instead of signed with a developer certificate, and packs it into a disk image in
-`build/release/` with a drag-to-Applications window (`Scripts/dmg/`). Laying out that window goes through
+`macOS/build/release/` with a drag-to-Applications window (`macOS/Scripts/dmg/`). Laying out that window goes through
 Finder, so macOS asks once to let your terminal control Finder. Downloads aren't notarized, so people
 approve the first launch themselves (see [Download and install](#download-and-install)).
 
@@ -167,15 +172,16 @@ team means re-entering server passwords.
 `swift build` / `swift test`. Violations show up as build warnings. The version is pinned in
 `Package.resolved`, so nobody needs to install SwiftLint.
 
-- `.swiftlint.yml` holds the rules: SwiftLint's defaults plus opt-in rules for safety (no force unwraps),
+- `macOS/.swiftlint.yml` holds the rules: SwiftLint's defaults plus opt-in rules for safety (no force unwraps),
   collection idioms, modern Swift and consistent formatting.
-- `Packages/TransmissionKit/.swiftlint.yml` only points to that file, because the plugin looks for a
+- `macOS/Packages/TransmissionKit/.swiftlint.yml` only points to that file, because the plugin looks for a
   configuration inside the package directory.
 - Where a rule doesn't fit, the code disables it for one line and says why, as in `Bencode.swift`.
 
 To lint or autocorrect from the terminal with the pinned version:
 
 ```bash
+cd macOS
 swift package --package-path Packages/TransmissionKit resolve
 Packages/TransmissionKit/.build/artifacts/swiftlintplugins/SwiftLintBinary/SwiftLintBinary.artifactbundle/macos/swiftlint lint
 ```
@@ -187,7 +193,7 @@ care: the `#expect` macro can't take a key-path argument such as `allSatisfy(\.w
 ## Testing
 
 ```bash
-cd Packages/TransmissionKit && swift test
+cd macOS/Packages/TransmissionKit && swift test
 ```
 
 The unit tests cover:
@@ -224,21 +230,24 @@ Run the daemon with `--foreground`. When it forks into the background on macOS, 
 ## Project layout
 
 ```
-Packages/TransmissionKit/        UI-free core, unit-tested with Swift Testing
-  Transport/                     client actor, protocol dialects, envelopes, endpoint security, TLS pinning
-  Models/                        Torrent, TorrentDetails, SessionSettings, request types
-  API/                           typed calls: torrents, actions, session, groups, free space, port test
-  Metainfo/                      bencode parser, .torrent metainfo, magnet links
-  GeoIP/                         IP-to-country lookup and gzip unpacking for peer flags
-  Import/                        transgui.ini reader
-  Updates/                       GitHub release version check
-  Resources/                     the package's String Catalog
-TransmissionRemote/              the SwiftUI app (default MainActor isolation, Swift 6)
-  App/                           scenes and menu commands
-  Model/                         AppModel, ServerConnection (polling and actions), ServerStore, Keychain
-  Views/                         main window, info pane tabs, sheets, settings, menu bar extra
-  *.xcstrings                    String Catalogs: the interface and Info.plist texts in 28 languages
-Config/                          Info.plist additions (torrent and magnet handling) and entitlements
+macOS/                           the Mac app
+  Packages/TransmissionKit/      UI-free core, unit-tested with Swift Testing
+    Transport/                   client actor, protocol dialects, envelopes, endpoint security, TLS pinning
+    Models/                      Torrent, TorrentDetails, SessionSettings, request types
+    API/                         typed calls: torrents, actions, session, groups, free space, port test
+    Metainfo/                    bencode parser, .torrent metainfo, magnet links
+    GeoIP/                       IP-to-country lookup and gzip unpacking for peer flags
+    Import/                      transgui.ini reader
+    Updates/                     GitHub release version check
+    Resources/                   the package's String Catalog
+  TransmissionRemote/            the SwiftUI app (default MainActor isolation, Swift 6)
+    App/                         scenes and menu commands
+    Model/                       AppModel, ServerConnection (polling and actions), ServerStore, Keychain
+    Views/                       main window, info pane tabs, sheets, settings, menu bar extra
+    *.xcstrings                  String Catalogs: the interface and Info.plist texts in 28 languages
+  Config/                        Info.plist additions (torrent and magnet handling) and entitlements
+  Scripts/                       release build and disk image
+Windows/                         the Windows app, in development: see Windows/README.md
 docs/screenshots/                the screenshots in this README
 docs/transgui-audit.md           transgui's open issues and pull requests, checked against this app
 ```
@@ -252,7 +261,7 @@ Russian, Spanish, Swedish, Turkish and Ukrainian. It follows the language chosen
 
 The translations were made with AI help, reusing transgui's own translations for torrent terms so
 they feel familiar, and Apple's wording for macOS features. Native speakers' corrections are very
-welcome: the texts live in `TransmissionRemote/Localizable.xcstrings`, which Xcode edits directly.
+welcome: the texts live in `macOS/TransmissionRemote/Localizable.xcstrings`, which Xcode edits directly.
 
 ## Credits
 
