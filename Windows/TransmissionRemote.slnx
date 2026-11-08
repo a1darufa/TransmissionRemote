@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TransmissionKit/TransmissionKit.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TransmissionKit.Tests/TransmissionKit.Tests.csproj" />
+  </Folder>
+</Solution>

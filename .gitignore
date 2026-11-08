@@ -9,3 +9,12 @@ xcuserdata/
 .DS_Store
 # Claude Code local settings
 .claude/settings.local.json
+# .NET (Windows app)
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+TestResults/
+AppPackages/
+BundleArtifacts/
