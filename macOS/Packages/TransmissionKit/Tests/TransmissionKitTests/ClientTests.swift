@@ -218,6 +218,27 @@ struct ClientTests {
         #expect(info.version.hasPrefix("3.00"))
     }
 
+    @Test(arguments: [(transmission300, "recently-active"), (transmission411, "recently_active")])
+    func asksForRecentlyChangedTorrentsInEachDialect(sessionInfo: String, expectedIDs: String) async throws {
+        simulateDaemon(sessionInfo: sessionInfo, otherwise: Self.recentlyActiveAnswer(for: sessionInfo))
+        let client = try makeClient()
+        try await client.connect()
+
+        let changes = try await client.recentlyChangedTorrents()
+
+        #expect(changes.changed.map(\.id) == [4])
+        #expect(changes.removedIDs == [9])
+        let lastBody = try #require(MockURLProtocol.requests.withLock { $0.last?.body })
+        let body = try #require(String(validating: lastBody, as: UTF8.self))
+        #expect(body.contains(#""ids":"\#(expectedIDs)""#))
+    }
+
+    private static func recentlyActiveAnswer(for sessionInfo: String) -> String {
+        sessionInfo == transmission411
+            ? #"{"jsonrpc":"2.0","id":2,"result":{"torrents":[{"id":4}],"removed":[9]}}"#
+            : #"{"result":"success","arguments":{"torrents":[{"id":4}],"removed":[9]}}"#
+    }
+
     @Test func explainsAWebPageInsteadOfTheRPC() async throws {
         MockURLProtocol.reset { _, _ in
             MockResponse(status: 200, body: "\n<!DOCTYPE html><html><body>My NAS</body></html>")

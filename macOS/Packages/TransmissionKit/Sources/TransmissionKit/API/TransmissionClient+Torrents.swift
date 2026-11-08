@@ -58,6 +58,23 @@ extension TransmissionClient {
         try await torrents(Torrent.self, fields: Torrent.listFields)
     }
 
+    /// The torrents changed in the last minute, with the list's fields, and the IDs of torrents
+    /// removed in that time. Apply them to the previous list with `TorrentChanges.applied(to:)`.
+    public func recentlyChangedTorrents() async throws(TransmissionError) -> TorrentChanges {
+        let supportedFields = Torrent.listFields.filter { $0.minimumRPCVersion <= rpcVersion }
+        let request = RecentlyActiveRequest(
+            fields: wireNames(supportedFields.map(\.rawValue), scope: .torrentFields),
+            ids: dialect.recentlyActiveIDs
+        )
+        let response = try await call(
+            .torrentGet,
+            params: request,
+            scope: .torrentFields,
+            returning: RecentlyActiveResponse.self
+        )
+        return TorrentChanges(changed: response.torrents, removedIDs: response.removed)
+    }
+
     /// Swarm sizes and tracker status for every torrent. Tracker stats are large, so the app
     /// asks for these less often than for the list.
     public func trackerSummaries() async throws(TransmissionError) -> [TrackerSummary] {
