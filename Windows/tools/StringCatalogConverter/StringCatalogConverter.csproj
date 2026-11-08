@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Converts the Mac app's String Catalogs (.xcstrings) into the Windows app's .resw files, so both apps share
+       one set of translations. How to run it: README.md, "Strings". -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>StringCatalogConverter</RootNamespace>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- PluralCategory and the plural resource names, so the converter and the app's lookups can't disagree. -->
+    <ProjectReference Include="..\..\src\TransmissionKit\TransmissionKit.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="StringCatalogConverter.Tests" />
+  </ItemGroup>
+
+</Project>
