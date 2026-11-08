@@ -14938,6 +14938,172 @@
         }
       }
     },
+    "Clear History" : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ачысціць гісторыю"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esborrar l'historial"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vymazat historii"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ryd historik"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verlauf löschen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Εκκαθάριση ιστορικού"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar historial"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tyhjennä historia"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effacer l’historique"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Očisti povijest"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Előzmények törlése"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancella cronologia"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기록 지우기"
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Išvalyti istoriją"
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notīrīt vēsturi"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tøm historikk"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wis geschiedenis"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyczyść historię"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limpar histórico"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limpar histórico"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Șterge istoricul"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очистить историю"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rensa historik"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geçmişi temizle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очистити історію"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除历史记录"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除歷史記錄"
+          }
+        }
+      }
+    },
     "Client" : {
       "localizations" : {
         "be" : {
@@ -34200,6 +34366,172 @@
         }
       }
     },
+    "If your Mac reaches the server otherwise, check that Transmission Remote is turned on in System Settings → Privacy & Security → Local Network." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Калі Mac можа дастукацца да сервера іншым чынам, праверце, што Transmission Remote уключаны ў Сістэмныя налады → Прыватнасць і бяспека → Лакальная сетка."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si el Mac arriba al servidor d'una altra manera, comprova que el Transmission Remote estigui activat a Configuració del Sistema → Privacitat i seguretat → Xarxa local."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokud se Mac k serveru jinak dostane, zkontrolujte, že je Transmission Remote zapnutý v Nastavení systému → Soukromí a zabezpečení → Místní síť."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvis din Mac ellers kan nå serveren, så tjek, at Transmission Remote er slået til i Systemindstillinger → Anonymitet og sikkerhed → Lokalt netværk."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn dein Mac den Server sonst erreicht, prüfe, ob Transmission Remote in Systemeinstellungen → Datenschutz & Sicherheit → Lokales Netzwerk eingeschaltet ist."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αν ο Mac σας φτάνει στον διακομιστή με άλλον τρόπο, ελέγξτε ότι το Transmission Remote είναι ενεργοποιημένο στις Ρυθμίσεις συστήματος → Απόρρητο και ασφάλεια → Τοπικό δίκτυο."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu Mac llega al servidor de otra forma, comprueba que Transmission Remote esté activado en Ajustes del Sistema → Privacidad y seguridad → Red local."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jos Mac tavoittaa palvelimen muuten, tarkista, että Transmission Remote on päällä kohdassa Järjestelmäasetukset → Yksityisyys ja suojaus → Paikallisverkko."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si votre Mac atteint le serveur autrement, vérifiez que Transmission Remote est activé dans Réglages Système → Confidentialité et sécurité → Réseau local."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ako vaš Mac inače dolazi do poslužitelja, provjerite je li Transmission Remote uključen u Postavke sustava → Privatnost i sigurnost → Lokalna mreža."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ha a Mac egyébként eléri a szervert, ellenőrizze, hogy a Transmission Remote be van-e kapcsolva itt: Rendszerbeállítások → Adatvédelem és biztonság → Helyi hálózat."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se il Mac raggiunge il server in altri modi, controlla che Transmission Remote sia attivo in Impostazioni di Sistema → Privacy e sicurezza → Rete locale."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다른 방법으로는 Mac이 서버에 연결된다면, 시스템 설정 → 개인정보 보호 및 보안 → 로컬 네트워크에서 Transmission Remote가 켜져 있는지 확인하십시오."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jei jūsų Mac kitaip pasiekia serverį, patikrinkite, ar Transmission Remote įjungta: Sistemos nustatymai → Privatumas ir sauga → Vietinis tinklas."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ja jūsu Mac citādi sasniedz serveri, pārbaudiet, vai Transmission Remote ir ieslēgta sadaļā Sistēmas iestatījumi → Privātums un drošība → Lokālais tīkls."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvis Macen din ellers når tjeneren, sjekk at Transmission Remote er slått på i Systeminnstillinger → Personvern og sikkerhet → Lokalt nettverk."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je Mac de server op een andere manier bereikt, controleer dan of Transmission Remote is ingeschakeld in Systeeminstellingen → Privacy en beveiliging → Lokaal netwerk."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli Mac łączy się z serwerem w inny sposób, sprawdź, czy Transmission Remote jest włączony w Ustawieniach systemowych → Prywatność i ochrona → Sieć lokalna."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se o seu Mac acessa o servidor de outra forma, verifique se o Transmission Remote está ativado em Ajustes do Sistema → Privacidade e Segurança → Rede Local."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se o Mac chega ao servidor de outra forma, verifique se o Transmission Remote está ativado em Definições do Sistema → Privacidade e segurança → Rede local."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dacă Mac-ul ajunge altfel la server, verificați dacă Transmission Remote este activat în Configurări sistem → Confidențialitate și securitate → Rețea locală."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Если Mac иначе может достучаться до сервера, проверьте, что Transmission Remote включён в разделе «Системные настройки» → «Конфиденциальность и безопасность» → «Локальная сеть»."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Om datorn når servern på annat sätt, kontrollera att Transmission Remote är påslaget i Systeminställningar → Integritet och säkerhet → Lokalt nätverk."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac'iniz sunucuya başka yoldan ulaşabiliyorsa, Sistem Ayarları → Gizlilik ve Güvenlik → Yerel Ağ bölümünde Transmission Remote'un açık olduğunu denetleyin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Якщо Mac інакше досягає сервера, перевірте, чи увімкнено Transmission Remote у Системних параметрах → Приватність і безпека → Локальна мережа."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "如果 Mac 能通过其他方式访问服务器，请检查“系统设置”→“隐私与安全性”→“本地网络”中是否已打开 Transmission Remote。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "如果 Mac 能以其他方式連到伺服器，請檢查「系統設定」→「隱私權與安全性」→「區域網路」中是否已開啟 Transmission Remote。"
+          }
+        }
+      }
+    },
     "Import" : {
       "localizations" : {
         "be" : {
@@ -35690,6 +36022,172 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未完成檔案的檔案夾"
+          }
+        }
+      }
+    },
+    "It came from a torrent, and macOS hasn't checked it the way it checks downloads. Open it only if you trust where it came from." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ён атрыманы з торэнта, і macOS не правярала яго так, як правярае запампаваныя файлы. Адкрывайце, толькі калі давяраеце крыніцы."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prové d'un torrent, i el macOS no l'ha comprovat com fa amb les baixades. Obre'l només si confies en l'origen."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pochází z torrentu a macOS jej neověřil tak, jako ověřuje stažené soubory. Otevřete jej, jen pokud zdroji důvěřujete."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den kommer fra en torrent, og macOS har ikke kontrolleret den, som den kontrollerer downloads. Åbn den kun, hvis du stoler på kilden."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es stammt aus einem Torrent, und macOS hat es nicht wie Downloads geprüft. Öffne es nur, wenn du der Quelle vertraust."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Προέρχεται από torrent και το macOS δεν το έχει ελέγξει όπως ελέγχει τις λήψεις. Ανοίξτε το μόνο αν εμπιστεύεστε την προέλευσή του."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viene de un torrent y macOS no lo ha comprobado como comprueba las descargas. Ábrelo solo si confías en su origen."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se on peräisin torrentista, eikä macOS ole tarkistanut sitä samoin kuin lataukset. Avaa se vain, jos luotat lähteeseen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il provient d’un torrent et macOS ne l’a pas vérifié comme il vérifie les téléchargements. Ne l’ouvrez que si vous faites confiance à sa provenance."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dolazi iz torrenta i macOS ga nije provjerio kao što provjerava preuzimanja. Otvorite ga samo ako vjerujete izvoru."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Egy torrentből származik, és a macOS nem ellenőrizte úgy, ahogy a letöltéseket. Csak akkor nyissa meg, ha megbízik a forrásában."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proviene da un torrent e macOS non l’ha controllato come controlla i download. Aprilo solo se ti fidi della provenienza."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "토렌트에서 받은 파일이며, macOS가 다운로드 파일처럼 검사하지 않았습니다. 출처를 신뢰하는 경우에만 여십시오."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jis gautas iš torento, ir macOS jo nepatikrino taip, kaip tikrina atsisiuntimus. Atidarykite jį tik tada, jei pasitikite šaltiniu."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tas iegūts no torrenta, un macOS to nav pārbaudījusi tā, kā pārbauda lejupielādes. Atveriet to tikai tad, ja uzticaties avotam."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den kommer fra en torrent, og macOS har ikke sjekket den slik nedlastinger sjekkes. Åpne den bare hvis du stoler på kilden."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het komt uit een torrent en macOS heeft het niet gecontroleerd zoals downloads. Open het alleen als je de bron vertrouwt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pochodzi z torrenta, a macOS nie sprawdził go tak, jak sprawdza pobrane pliki. Otwórz go tylko wtedy, gdy ufasz jego źródłu."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ele veio de um torrent e o macOS não o verificou como verifica os downloads. Abra-o somente se você confiar na origem."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veio de um torrent e o macOS não o verificou como verifica as transferências. Abra-o apenas se confiar na origem."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Provine dintr-un torent, iar macOS nu l-a verificat așa cum verifică descărcările. Deschideți-l doar dacă aveți încredere în sursă."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Он получен из торрента, и macOS не проверяла его так, как проверяет загрузки. Открывайте, только если доверяете источнику."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den kommer från en torrent, och macOS har inte kontrollerat den som den kontrollerar hämtningar. Öppna den bara om du litar på källan."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir torrentten geldi ve macOS onu indirmeleri denetlediği gibi denetlemedi. Yalnızca kaynağına güveniyorsanız açın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Його отримано з торрента, і macOS не перевіряла його так, як перевіряє завантаження. Відкривайте, лише якщо довіряєте джерелу."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "它来自 Torrent，macOS 没有像检查下载内容那样检查它。只有在信任其来源时才打开。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "它來自 Torrent，macOS 沒有像檢查下載項目那樣檢查它。只有在信任其來源時才打開。"
           }
         }
       }
@@ -46148,6 +46646,172 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "打開"
+          }
+        }
+      }
+    },
+    "Open Anyway" : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Усё роўна адкрыць"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obrir igualment"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přesto otevřít"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åbn alligevel"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trotzdem öffnen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Άνοιγμα ούτως ή άλλως"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir de todos modos"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaa silti"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir quand même"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ipak otvori"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Megnyitás mégis"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri comunque"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "그래도 열기"
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis tiek atidaryti"
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tomēr atvērt"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åpne likevel"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open toch"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwórz mimo to"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir mesmo assim"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir mesmo assim"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deschide oricum"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всё равно открыть"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öppna ändå"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yine de aç"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Усе одно відкрити"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仍要打开"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仍要打開"
           }
         }
       }
@@ -66854,6 +67518,172 @@
         }
       }
     },
+    "This torrent is no longer on the server." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Гэтага торэнта ўжо няма на серверы."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aquest torrent ja no és al servidor."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tento torrent už na serveru není."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denne torrent findes ikke længere på serveren."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieser Torrent ist nicht mehr auf dem Server."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αυτό το torrent δεν υπάρχει πλέον στον διακομιστή."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este torrent ya no está en el servidor."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tätä torrentia ei ole enää palvelimella."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce torrent n’est plus sur le serveur."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ovaj torrent više nije na poslužitelju."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ez a torrent már nincs a szerveren."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questo torrent non è più sul server."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 토렌트는 더 이상 서버에 없습니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Šio torento serveryje nebėra."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Šis torrents serverī vairs nav."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denne torrenten er ikke lenger på tjeneren."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze torrent staat niet meer op de server."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tego torrenta nie ma już na serwerze."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este torrent não está mais no servidor."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este torrent já não está no servidor."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acest torent nu mai este pe server."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Этого торрента больше нет на сервере."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den här torrenten finns inte längre på servern."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu torrent artık sunucuda değil."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цього торрента вже немає на сервері."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此 Torrent 已不在服务器上。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此 Torrent 已不在伺服器上。"
+          }
+        }
+      }
+    },
     "Tier" : {
       "localizations" : {
         "be" : {
@@ -78588,6 +79418,172 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "無法將「%@」作為 Torrent 檔案打開。"
+          }
+        }
+      }
+    },
+    "“%@” is an app or script" : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«%@» — праграма або скрыпт"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«%@» és una app o un script"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„%@“ je aplikace nebo skript"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” er et program eller et script"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„%@“ ist ein Programm oder Skript"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το «%@» είναι εφαρμογή ή σενάριο"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” es una app o un script"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "”%@” on ohjelma tai skripti"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« %@ » est une app ou un script"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„%@“ je aplikacija ili skripta"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„%@” egy alkalmazás vagy szkript"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” è un’app o uno script"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "‘%@’은(는) 앱 또는 스크립트입니다"
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„%@“ yra programa arba scenarijus"
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” ir lietotne vai skripts"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«%@» er et program eller skript"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "‘%@’ is een app of script"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„%@” to aplikacja lub skrypt"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” é um app ou script"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” é uma aplicação ou script"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„%@” este o aplicație sau un script"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«%@» — это приложение или скрипт"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "”%@” är ett program eller skript"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” bir uygulama veya betik"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«%@» — це програма або скрипт"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@”是应用或脚本"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」是 App 或腳本"
           }
         }
       }

@@ -167,6 +167,172 @@
         }
       }
     },
+    "The server answered with a web page instead of Transmission. Check the port and the RPC path, usually /transmission/rpc." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер адказаў вэб-старонкай замест Transmission. Праверце порт і шлях RPC, звычайна /transmission/rpc."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor ha respost amb una pàgina web en lloc del Transmission. Comprova el port i el camí RPC, normalment /transmission/rpc."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server odpověděl webovou stránkou místo Transmissionu. Zkontrolujte port a cestu RPC, obvykle /transmission/rpc."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveren svarede med en webside i stedet for Transmission. Tjek porten og RPC-stien, normalt /transmission/rpc."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Server hat statt Transmission mit einer Webseite geantwortet. Prüfe den Port und den RPC-Pfad, meist /transmission/rpc."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο διακομιστής απάντησε με ιστοσελίδα αντί για το Transmission. Ελέγξτε τη θύρα και τη διαδρομή RPC, συνήθως /transmission/rpc."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El servidor respondió con una página web en lugar de Transmission. Comprueba el puerto y la ruta RPC, normalmente /transmission/rpc."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palvelin vastasi verkkosivulla Transmissionin sijaan. Tarkista portti ja RPC-polku, yleensä /transmission/rpc."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le serveur a répondu par une page web au lieu de Transmission. Vérifiez le port et le chemin RPC, généralement /transmission/rpc."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslužitelj je odgovorio web-stranicom umjesto Transmissiona. Provjerite port i RPC putanju, obično /transmission/rpc."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A szerver a Transmission helyett egy weboldallal válaszolt. Ellenőrizze a portot és az RPC útvonalat, általában /transmission/rpc."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il server ha risposto con una pagina web invece che con Transmission. Controlla la porta e il percorso RPC, di solito /transmission/rpc."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "서버가 Transmission 대신 웹 페이지로 응답했습니다. 포트와 RPC 경로(보통 /transmission/rpc)를 확인하십시오."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris vietoj Transmission atsakė tinklalapiu. Patikrinkite prievadą ir RPC kelią, paprastai /transmission/rpc."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serveris Transmission vietā atbildēja ar tīmekļa lapu. Pārbaudiet portu un RPC ceļu, parasti /transmission/rpc."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tjeneren svarte med en nettside i stedet for Transmission. Sjekk porten og RPC-banen, vanligvis /transmission/rpc."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De server antwoordde met een webpagina in plaats van Transmission. Controleer de poort en het RPC-pad, meestal /transmission/rpc."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serwer odpowiedział stroną internetową zamiast Transmission. Sprawdź port i ścieżkę RPC, zwykle /transmission/rpc."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor respondeu com uma página web em vez do Transmission. Verifique a porta e o caminho RPC, geralmente /transmission/rpc."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O servidor respondeu com uma página web em vez do Transmission. Verifique a porta e o caminho RPC, normalmente /transmission/rpc."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverul a răspuns cu o pagină web în loc de Transmission. Verificați portul și calea RPC, de obicei /transmission/rpc."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер ответил веб-страницей вместо Transmission. Проверьте порт и путь RPC, обычно /transmission/rpc."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servern svarade med en webbsida i stället för Transmission. Kontrollera porten och RPC-sökvägen, vanligtvis /transmission/rpc."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunucu Transmission yerine bir web sayfasıyla yanıt verdi. Bağlantı noktasını ve RPC yolunu denetleyin, genellikle /transmission/rpc."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер відповів вебсторінкою замість Transmission. Перевірте порт і шлях RPC, зазвичай /transmission/rpc."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服务器返回的是网页而不是 Transmission。请检查端口和 RPC 路径（通常为 /transmission/rpc）。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伺服器回應的是網頁而非 Transmission。請檢查連接埠和 RPC 路徑（通常為 /transmission/rpc）。"
+          }
+        }
+      }
+    },
     "The server didn't accept a secure (HTTPS) connection. Transmission's built-in server only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel." : {
       "localizations" : {
         "be" : {
