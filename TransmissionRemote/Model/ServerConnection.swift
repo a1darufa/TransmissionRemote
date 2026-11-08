@@ -144,7 +144,8 @@ final class ServerConnection {
                 credentials: credentials,
                 pinnedCertificateFingerprint: profile.pinnedCertificateFingerprint,
                 protocolPreference: profile.protocolPreference,
-                proxy: profile.proxy.configuration(password: Keychain.proxyPassword(for: profile.id))
+                proxy: profile.proxy.configuration(password: Keychain.proxyPassword(for: profile.id)),
+                clientIdentity: try ClientCertificates.identity(for: profile)
             )
             self.client = client
             state = .connecting

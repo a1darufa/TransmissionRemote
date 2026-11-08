@@ -18,6 +18,8 @@ nonisolated struct ServerProfile: Identifiable, Codable, Hashable, Sendable {
     var pathMappings: [PathMapping] = []
     /// An optional proxy to reach this server through.
     var proxy = ProxySettings()
+    /// The chosen client certificate's subject, for display. The certificate itself is in the Keychain.
+    var clientCertificateName: String?
 
     var displayName: String {
         name.isEmpty ? endpoint.host : name
@@ -64,7 +66,7 @@ nonisolated struct RecentFolder: Codable, Hashable, Sendable {
 nonisolated extension ServerProfile {
     enum CodingKeys: String, CodingKey {
         case id, name, endpoint, username, protocolPreference, pinnedCertificateFingerprint
-        case allowsUnencryptedInternetConnection, recentFolders, pathMappings, proxy
+        case allowsUnencryptedInternetConnection, recentFolders, pathMappings, proxy, clientCertificateName
     }
 
     /// Missing keys fall back to the defaults. Without this, adding a setting would make profiles
@@ -87,5 +89,6 @@ nonisolated extension ServerProfile {
         pathMappings = try container.decodeIfPresent([PathMapping].self, forKey: .pathMappings)
             ?? defaults.pathMappings
         proxy = try container.decodeIfPresent(ProxySettings.self, forKey: .proxy) ?? defaults.proxy
+        clientCertificateName = try container.decodeIfPresent(String.self, forKey: .clientCertificateName)
     }
 }

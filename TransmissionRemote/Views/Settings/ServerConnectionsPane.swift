@@ -83,6 +83,7 @@ private struct ServerEditor: View {
 
     @State private var draft = ServerProfile()
     @State private var password = ""
+    @State private var certificateChange: ClientCertificateChange?
     @State private var testResult: TestResult?
     @State private var isTesting = false
     @State private var saveError: String?
@@ -117,6 +118,7 @@ private struct ServerEditor: View {
                         .autocorrectionDisabled()
                     SecureField("Password", text: $password)
                         .textContentType(.password)
+                    ClientCertificateRow(certificateName: $draft.clientCertificateName, change: $certificateChange)
                 }
 
                 Section("Security") {
@@ -209,13 +211,33 @@ private struct ServerEditor: View {
         profile.protocolPreference = draft.protocolPreference
         profile.pinnedCertificateFingerprint = draft.pinnedCertificateFingerprint
         profile.allowsUnencryptedInternetConnection = draft.allowsUnencryptedInternetConnection
+        profile.clientCertificateName = draft.clientCertificateName
         do {
             try model.servers.setPassword(password, for: profile)
+            try saveCertificateChange(for: profile)
             model.servers.save(profile)
             model.switchToServer(profile.id)
             saveError = nil
         } catch {
             saveError = error.localizedDescription
+        }
+    }
+
+    private func saveCertificateChange(for profile: ServerProfile) throws {
+        switch certificateChange {
+        case .replace(let certificate): try model.servers.setClientCertificate(certificate, for: profile)
+        case .remove: try model.servers.setClientCertificate(nil, for: profile)
+        case nil: return
+        }
+        certificateChange = nil
+    }
+
+    /// The certificate the editor would save: a newly chosen one, or the stored one.
+    private func certificateForTest() throws -> ClientIdentity? {
+        switch certificateChange {
+        case .replace(let certificate): try ClientCertificates.identity(from: certificate)
+        case .remove: nil
+        case nil: try ClientCertificates.identity(for: draft)
         }
     }
 
@@ -239,7 +261,8 @@ private struct ServerEditor: View {
                     pinnedCertificateFingerprint: profile.pinnedCertificateFingerprint,
                     protocolPreference: profile.protocolPreference,
                     timeout: .seconds(10),
-                    proxy: profile.proxy.configuration(password: model.servers.proxyPassword(for: profile.id))
+                    proxy: profile.proxy.configuration(password: model.servers.proxyPassword(for: profile.id)),
+                    clientIdentity: try certificateForTest()
                 )
                 let info = try await client.connect()
                 let dialect = await client.dialect

@@ -49,6 +49,7 @@ public actor TransmissionClient {
         protocolPreference: ProtocolPreference = .automatic,
         timeout: Duration = .seconds(30),
         proxy: ProxyConfiguration? = nil,
+        clientIdentity: ClientIdentity? = nil,
         baseConfiguration: URLSessionConfiguration = .ephemeral
     ) throws(TransmissionError) {
         self.endpoint = endpoint
@@ -57,7 +58,8 @@ public actor TransmissionClient {
         self.protocolPreference = protocolPreference
         self.securityDelegate = ConnectionSecurityDelegate(
             pinnedFingerprint: pinnedCertificateFingerprint,
-            proxyCredentials: proxy?.httpProxyCredentials
+            proxyCredentials: proxy?.httpProxyCredentials,
+            clientIdentity: clientIdentity
         )
         self.session = URLSession(
             configuration: Self.hardenedConfiguration(

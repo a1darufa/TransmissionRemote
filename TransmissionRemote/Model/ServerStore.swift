@@ -45,6 +45,7 @@ final class ServerStore {
         servers.removeAll { $0.id == id }
         try? Keychain.deletePassword(for: id)
         try? Keychain.deleteProxyPassword(for: id)
+        try? Keychain.deleteClientCertificate(for: id)
         if activeServerID == id { activeServerID = servers.first?.id }
         persist()
     }
@@ -82,6 +83,19 @@ final class ServerStore {
 
     func setProxyPassword(_ password: String, for profile: ServerProfile) throws {
         try Keychain.setProxyPassword(password, for: profile.id, label: profile.displayName)
+    }
+
+    func clientCertificate(for id: UUID) -> Keychain.StoredCertificate? {
+        Keychain.clientCertificate(for: id)
+    }
+
+    /// Saves the certificate, or removes the stored one when `certificate` is nil.
+    func setClientCertificate(_ certificate: Keychain.StoredCertificate?, for profile: ServerProfile) throws {
+        if let certificate {
+            try Keychain.setClientCertificate(certificate, for: profile.id, label: profile.displayName)
+        } else {
+            try Keychain.deleteClientCertificate(for: profile.id)
+        }
     }
 
     // MARK: - Persistence
