@@ -222,6 +222,12 @@ Features from Transmission Remote GUI that this app doesn't have yet:
 
 ## Credits
 
+Transmission Remote is made by **Aidar Abdullin** ([a1darufa](https://github.com/a1darufa)). Aidar came up
+with the app, designed how it looks and works, made the product decisions and tested every build
+against real Transmission servers. The code was written together with
+[Claude](https://www.anthropic.com/claude) by Anthropic as an AI pair programmer, which is why commits
+list Claude as co-author.
+
 The app icon is the [Transmission](https://transmissionbt.com) project's own Liquid Glass icon,
 copied unmodified from
 [`macosx/Images/Transmission_Tahoe.icon`](https://github.com/transmission/transmission/tree/147da724531235c3f2d42a5bf63d2d201d347663/macosx/Images/Transmission_Tahoe.icon)
