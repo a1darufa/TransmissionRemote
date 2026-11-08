@@ -107,6 +107,12 @@ nonisolated extension Torrent {
     var labelsText: String { labels.joined(separator: ", ") }
     var primaryTracker: String { trackerHosts.first ?? "" }
     var activitySortKey: Date { activityDate ?? .distantPast }
+    /// Connected peers first, then the swarm's size, so idle torrents still sort by popularity
+    /// instead of all tying at zero (transgui issue #1180).
+    var seedsSortKey: PeerCountSortKey { PeerCountSortKey(connected: peersSendingToUs, swarm: trackerSummary?.seeders) }
+    var peersSortKey: PeerCountSortKey {
+        PeerCountSortKey(connected: peersGettingFromUs, swarm: trackerSummary?.leechers)
+    }
     var privateSortKey: Int { isPrivate ? 1 : 0 }
     var trackerStatusText: String { trackerSummary?.status.text ?? "" }
 
@@ -119,6 +125,15 @@ nonisolated extension Torrent {
     private static func countText(connected: Int, swarm: Int?) -> String {
         guard let swarm else { return connected.formatted() }
         return "\(connected.formatted()) (\(swarm.formatted()))"
+    }
+}
+
+nonisolated struct PeerCountSortKey: Comparable {
+    let connected: Int
+    let swarm: Int?
+
+    static func < (lhs: Self, rhs: Self) -> Bool {
+        (lhs.connected, lhs.swarm ?? -1) < (rhs.connected, rhs.swarm ?? -1)
     }
 }
 

@@ -64,12 +64,12 @@ struct TorrentTableView: View {
             .width(min: 70, ideal: 110)
             .customizationID("status")
 
-        TableColumn("Seeds", value: \.peersSendingToUs) { Text($0.seedsText).monospacedDigit() }
+        TableColumn("Seeds", value: \.seedsSortKey) { Text($0.seedsText).monospacedDigit() }
             .width(min: 40, ideal: 75)
             .alignment(.trailing)
             .customizationID("seeds")
 
-        TableColumn("Peers", value: \.peersGettingFromUs) { Text($0.peersText).monospacedDigit() }
+        TableColumn("Peers", value: \.peersSortKey) { Text($0.peersText).monospacedDigit() }
             .width(min: 40, ideal: 75)
             .alignment(.trailing)
             .customizationID("peers")
@@ -248,8 +248,8 @@ enum TorrentSortColumn: String, CaseIterable {
         case .size: KeyPathComparator(\.sizeWhenDone, order: order)
         case .done: KeyPathComparator(\.percentDone, order: order)
         case .status: KeyPathComparator(\.statusText, order: order)
-        case .seeds: KeyPathComparator(\.peersSendingToUs, order: order)
-        case .peers: KeyPathComparator(\.peersGettingFromUs, order: order)
+        case .seeds: KeyPathComparator(\.seedsSortKey, order: order)
+        case .peers: KeyPathComparator(\.peersSortKey, order: order)
         case .down: KeyPathComparator(\.rateDownload, order: order)
         case .up: KeyPathComparator(\.rateUpload, order: order)
         case .eta: KeyPathComparator(\.etaSortKey, order: order)
