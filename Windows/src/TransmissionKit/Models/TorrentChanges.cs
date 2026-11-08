@@ -65,11 +65,14 @@ public sealed record TorrentChanges(IReadOnlyList<Torrent> Changed, IReadOnlyLis
 /// Transmission reports what changed in the last 60 seconds, so the previous fetch must have started
 /// less than that ago, with a margin for slow answers and Transmission's whole-second clock. The full
 /// list is also fetched at least once a minute, so anything a daemon version doesn't count as a change
-/// still gets refreshed. Times are <see cref="Stopwatch.GetTimestamp"/> values, which don't jump when
-/// the clock is changed.
+/// still gets refreshed. Times are timestamps from the plan's <see cref="TimeProvider"/>
+/// (<see cref="Stopwatch.GetTimestamp"/> by default), which don't jump when the clock is changed.
 /// </remarks>
-public sealed class TorrentListRefreshPlan
+/// <param name="time">Where timestamps come from; tests pass a fake one.</param>
+public sealed class TorrentListRefreshPlan(TimeProvider? time = null)
 {
+    private readonly TimeProvider _time = time ?? TimeProvider.System;
+
     internal static readonly TimeSpan MaximumGap = TimeSpan.FromSeconds(40);
     internal static readonly TimeSpan FullListInterval = TimeSpan.FromSeconds(60);
 
@@ -82,8 +85,8 @@ public sealed class TorrentListRefreshPlan
         {
             return true;
         }
-        return Stopwatch.GetElapsedTime(lastFetch, now) > MaximumGap
-            || Stopwatch.GetElapsedTime(lastFullFetch, now) > FullListInterval;
+        return _time.GetElapsedTime(lastFetch, now) > MaximumGap
+            || _time.GetElapsedTime(lastFullFetch, now) > FullListInterval;
     }
 
     /// <summary>Call after a fetch succeeded, with the time it started.</summary>

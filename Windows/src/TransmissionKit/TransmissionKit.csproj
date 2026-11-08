@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="TransmissionKit.Tests" />
+    <!-- Its tests drive TransmissionClient over a fake network through the internal constructor. -->
+    <InternalsVisibleTo Include="TransmissionRemote.ViewModels.Tests" />
   </ItemGroup>
 
 </Project>
