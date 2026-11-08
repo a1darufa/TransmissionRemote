@@ -4,6 +4,7 @@
     <Project Path="src/TransmissionRemote.ViewModels/TransmissionRemote.ViewModels.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/StringCatalogConverter.Tests/StringCatalogConverter.Tests.csproj" />
     <Project Path="tests/TransmissionKit.Tests/TransmissionKit.Tests.csproj" />
     <Project Path="tests/TransmissionRemote.ViewModels.Tests/TransmissionRemote.ViewModels.Tests.csproj" />
   </Folder>
