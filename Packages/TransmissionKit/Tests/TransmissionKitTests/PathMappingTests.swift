@@ -40,4 +40,19 @@ struct PathMappingTests {
         #expect(mappings.localPath(forRemote: "/mnt/HD/HD_a2/Music/Song.flac") == "/Volumes/HD_a2/Music/Song.flac")
         #expect(mappings.localPath(forRemote: "/srv/other") == nil)
     }
+
+    @Test func windowsDaemonPathsMapInsideTheirFolder() {
+        let drive = PathMapping(remotePath: #"D:\Torrents"#, localPath: "/Volumes/Torrents")
+        #expect(drive.localPath(forRemote: #"D:\Torrents\TV\Show"#) == "/Volumes/Torrents/TV/Show")
+        // Joining a torrent's name onto its folder adds a forward slash.
+        #expect(drive.localPath(forRemote: #"D:\Torrents/Film.mkv"#) == "/Volumes/Torrents/Film.mkv")
+        // Windows ignores case.
+        #expect(drive.localPath(forRemote: #"d:\torrents\tv"#) == "/Volumes/Torrents/tv")
+        #expect(drive.localPath(forRemote: #"D:\TorrentsOld\x"#) == nil)
+    }
+
+    @Test func aWholeWindowsDriveCanBeMapped() {
+        let drive = PathMapping(remotePath: #"E:\"#, localPath: "/Volumes/E")
+        #expect(drive.localPath(forRemote: #"E:\Downloads\a.iso"#) == "/Volumes/E/Downloads/a.iso")
+    }
 }
