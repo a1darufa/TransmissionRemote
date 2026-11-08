@@ -58,6 +58,13 @@ struct CountryDatabaseTests {
         #expect(database.countryCode(for: "2001:200::5") == "JP")
     }
 
+    @Test func rejectsHeadersThatPointPastTheEnd() {
+        // FEXTRA claims 65,535 bytes of extras in a short file, followed by the FNAME flag.
+        var header: [UInt8] = [0x1F, 0x8B, 8, 0x04 | 0x08, 0, 0, 0, 0, 0, 3, 0xFF, 0xFF]
+        header += [UInt8](repeating: 0x41, count: 12)
+        #expect(throws: Gzip.Failure.truncated) { try Gzip.decompress(Data(header)) }
+    }
+
     @Test func rejectsDataThatIsNotGzip() {
         #expect(throws: Gzip.Failure.notGzip) { try Gzip.decompress(Data(repeating: 0, count: 40)) }
     }

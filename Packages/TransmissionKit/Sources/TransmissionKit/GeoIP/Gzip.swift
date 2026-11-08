@@ -25,6 +25,7 @@ public enum Gzip {
         if flags & HeaderFlag.extraField != 0 {
             guard offset + 2 <= bytes.count else { throw .truncated }
             offset += 2 + Int(bytes[offset]) + Int(bytes[offset + 1]) << 8
+            guard offset <= bytes.count else { throw .truncated }
         }
         if flags & HeaderFlag.fileName != 0 { offset = try skipZeroTerminated(bytes, from: offset) }
         if flags & HeaderFlag.comment != 0 { offset = try skipZeroTerminated(bytes, from: offset) }
@@ -41,7 +42,7 @@ public enum Gzip {
     }
 
     private static func skipZeroTerminated(_ bytes: [UInt8], from offset: Int) throws(Failure) -> Int {
-        guard let end = bytes[offset...].firstIndex(of: 0) else { throw .truncated }
+        guard offset < bytes.count, let end = bytes[offset...].firstIndex(of: 0) else { throw .truncated }
         return end + 1
     }
 }
