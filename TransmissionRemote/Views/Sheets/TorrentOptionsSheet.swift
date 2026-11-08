@@ -118,13 +118,17 @@ struct TorrentOptionsSheet: View {
     private func load() async {
         guard let firstID = ids.min() else { return }
         do {
-            let loaded = try await model.connection.options(of: firstID)
+            guard let loaded = try await model.connection.options(of: firstID) else {
+                // Removed on the server while the sheet opened (transgui pull request #1593).
+                loadError = String(localized: "This torrent is no longer on the server.")
+                return
+            }
             options = loaded
             original = loaded
             bandwidthPriority = model.connection.torrents.first { $0.id == firstID }?.bandwidthPriority ?? .normal
             if model.connection.supportsBandwidthGroups {
                 groupNames = (try? await model.connection.bandwidthGroups().map(\.name)) ?? []
-                bandwidthGroup = loaded?.bandwidthGroup ?? ""
+                bandwidthGroup = loaded.bandwidthGroup ?? ""
             }
         } catch {
             loadError = error.localizedDescription

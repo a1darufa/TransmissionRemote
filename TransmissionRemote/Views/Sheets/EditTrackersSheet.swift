@@ -67,9 +67,13 @@ struct EditTrackersSheet: View {
 
     private func load() async {
         do {
-            let details = try await model.connection.trackers(of: torrentID)
-            current = details?.trackerStats ?? []
-            if let list = details?.trackerList, !list.isEmpty {
+            guard let details = try await model.connection.trackers(of: torrentID) else {
+                // Without this, an empty editor would offer to save over nothing.
+                loadError = String(localized: "This torrent is no longer on the server.")
+                return
+            }
+            current = details.trackerStats
+            if let list = details.trackerList, !list.isEmpty {
                 text = list.trimmingCharacters(in: .whitespacesAndNewlines)
             } else {
                 // Transmission before 4.0 has no trackerList; rebuild it from the tiers.
