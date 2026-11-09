@@ -9,10 +9,10 @@ oldest version the Windows App SDK supports.
 | Part | State |
 |---|---|
 | `TransmissionKit`: the UI-free core (RPC client, models, .torrent parsing, helpers) | Done, ported from the Mac app's Swift package, 288 tests |
-| `TransmissionRemote.ViewModels`: the app's logic without its interface | Done, ported from the Mac app's models, 200 tests. See [below](#the-apps-logic-srctransmissionremoteviewmodels) |
-| `tools/StringCatalogConverter`: the Mac app's translations as `.resw` files | Done, 124 tests. See [Strings](#strings) |
+| `TransmissionRemote.ViewModels`: the app's logic without its interface | Done, ported from the Mac app's models, 229 tests. See [below](#the-apps-logic-srctransmissionremoteviewmodels) |
+| `tools/StringCatalogConverter`: the Mac app's translations as `.resw` files | Done, 133 tests. See [Strings](#strings) |
 | App icon: `assets/AppIcon/` (`AppIcon.ico` with 9 sizes, and PNGs) | Done, exported from the Mac build |
-| `TransmissionRemote.App`: the WinUI 3 app | In progress: the skeleton (startup, logging, single instance, strings, an empty window). Planned below |
+| `TransmissionRemote.App`: the WinUI 3 app | In progress: the skeleton and the shell (menus, command row, sidebar status filters, connection pages, window placement, keyboard shortcuts). Planned below |
 | Installers for x64 and ARM64 | Not started |
 
 The core builds and tests on any OS, so it was written on a Mac. The app needs Windows: the XAML
@@ -123,11 +123,14 @@ Services/       ServerStore and SettingsStore (JSON files in %LOCALAPPDATA%\Tran
                 UpdateChecker, PeerInfoService (countries and host names), LocalFiles and
                 RunnableFile (open downloaded files through path mappings, asking first for
                 programs and scripts)
-Presentation/   sidebar filters and counts, the file tree, list columns, natural sorting,
-                DisplayFormatter (sizes, speeds, durations, ratios, dates with the app's own
-                localized unit labels) and the torrent status as an enum
-ViewModels/     MainViewModel, AddTorrentViewModel, SessionSettingsViewModel,
+Presentation/   sidebar filters and counts, "Filter by name", the file tree, list columns, natural
+                sorting, DisplayFormatter (sizes, speeds, durations, ratios, dates and countdowns
+                with the app's own localized unit labels), the torrent status as an enum, speed
+                limit menu items, and KeyboardShortcuts, the table of every command's keys
+ViewModels/     MainViewModel, ConnectionStateViewModel (the page shown while not connected, with
+                the countdown to the next attempt), AddTorrentViewModel, SessionSettingsViewModel,
                 TorrentOptionsViewModel, EditTrackersViewModel, ServerEditorViewModel, torrent rows
+                and the sidebar's status items
 ```
 
 Ground rules:
@@ -166,7 +169,8 @@ Anyone should be able to tell from the log which part of the app failed and why.
 | 2100s | | The connection: connecting, server unreachable (with the retry delay), stopped, refresh and action failures |
 | 2200s | | Adding torrents: unreadable files, refused torrents |
 | 2300s | | Other services: update check, country database, opening local files |
-| 3000s | | `TransmissionRemote.App`: startup and exit, errors nothing else caught, hand-overs between copies of the app |
+| 3000s | | `TransmissionRemote.App`: startup and exit (including failing to create its services), errors nothing else caught, hand-overs between copies of the app |
+| 3030s | | Credential Manager and client certificates: passwords that couldn't be read, saved or deleted (never the password itself), missing certificates |
 
 Never log passwords, the `Authorization` header or request bodies (they can hold whole .torrent files).
 `Credentials`, `TransmissionClientOptions` and `AddTorrentRequest` hide those when printed, and
@@ -186,7 +190,7 @@ Never log passwords, the `Authorization` header or request bodies (they can hold
   folder in a Windows message box (XAML may be what failed): `Application.UnhandledException` (UI
   thread) and `AppDomain.CurrentDomain.UnhandledException` end the app,
   `TaskScheduler.UnobservedTaskException` doesn't. `Log.CloseAndFlush()` on exit.
-- **Help → Open Logs Folder**, like the Mac app's Help → Show Log Files (to do).
+- **Help → Open logs folder**, like the Mac app's Help → Show Log Files.
 - Write folder paths with `LogPath.Display`, which writes the user folder as `%USERPROFILE%`, so
   shared logs don't reveal the user's name.
 
@@ -292,7 +296,23 @@ default background on Windows 10.
 Structure: `src/TransmissionRemote.App` (WinUI 3), referencing `TransmissionRemote.ViewModels` and
 `TransmissionKit`, with `assets/AppIcon/AppIcon.ico` as its icon. Its own code is the XAML, the
 implementations of the interfaces in `Abstractions/`, startup (dependency injection, logging,
-single instance, activation) and the tray icon.
+single instance, activation) and the tray icon:
+
+```
+Startup/        Program's helpers: folders, services, single instance, errors nothing else caught
+Platform/       ICredentialStore (Credential Manager), IClientCertificateProvider (certificate store)
+Presentation/   states into words and pictures for x:Bind: error messages, sidebar labels and glyphs,
+                the two Fluent UI System Icons Segoe lacks (turtle, server; MIT)
+Shell/          the main window's plumbing: placement, keyboard shortcuts, the sidebar's templates,
+                the logs folder
+Controls/       EmptyStateView, the centred message used for every empty or connection page
+Views/          ConnectionStateView, the pages shown while not connected
+Strings/        the catalogs, the generated .resw files and Strings.g.cs
+```
+
+Keyboard shortcuts come from `KeyboardShortcuts` in the view model library, where tests check that no
+key does two things and none uses Ctrl+Alt (AltGr on many layouts). Each command's keys sit on its menu
+item, so they work with the menu closed and the menu shows the first one in the user's language.
 
 ### Packaging
 
