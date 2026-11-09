@@ -70,8 +70,27 @@ public sealed class CatalogConverterTests
         var english = Convert(Catalog)["en-US"];
 
         CollectionAssert.AreEqual(
-            new[] { "Cancel", "ConnectedToTransmissionUsing", "Files_One", "Files_Other", "ShowBraces", "Text" },
+            new[]
+            {
+                "Cancel", "ConnectedToTransmissionUsing", "Files_Few", "Files_Many", "Files_One", "Files_Other",
+                "ShowBraces", "Text",
+            },
             english.Select(resource => resource.Name).ToList());
+    }
+
+    [TestMethod]
+    public void EnglishHasEveryPluralFormOtherLanguagesUseSoMrtAlwaysFindsADefault()
+    {
+        var files = Convert(Catalog);
+
+        // Russian's "few" and "many" forms exist in en-US with English's "other" text.
+        var few = files["en-US"].Single(resource => resource.Name == "Files_Few");
+        Assert.AreEqual("{0} files", few.Value);
+        StringAssert.Contains(few.Comment, "Mac key: %lld files");
+        StringAssert.Contains(few.Comment, "English never uses this plural form");
+        Assert.AreEqual("{0} files", Value(files, "en-US", "Files_Many"));
+        // Languages other than English don't get forms they lack.
+        Assert.IsNull(Value(files, "de", "Files_Few"));
     }
 
     [TestMethod]

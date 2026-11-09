@@ -35,12 +35,52 @@ internal static class CatalogConverter
             }
         }
 
+        AddDefaultLanguagePluralForms(files);
+
         var sorted = new SortedDictionary<string, IReadOnlyList<ResourceString>>(StringComparer.Ordinal);
         foreach (var (language, file) in files)
         {
             sorted[language] = [.. file.Values.OrderBy(resource => resource.Name, StringComparer.Ordinal)];
         }
         return sorted;
+    }
+
+    /// <summary>"Files" for "Files_Few"; null for a name that isn't a plural form.</summary>
+    public static string? PluralFamily(string name) => Enum.GetValues<PluralCategory>()
+        .Select(category => $"_{category}")
+        .Where(suffix => name.EndsWith(suffix, StringComparison.Ordinal))
+        .Select(suffix => name[..^suffix.Length])
+        .FirstOrDefault();
+
+    /// <summary>
+    /// MRT wants every name to exist in the default language, or it warns at build time (PRI263) and may throw
+    /// for some language setups. English has fewer plural forms than Russian or Polish, so the forms only other
+    /// languages use (Files_Few) get English's "other" text in en-US. English never reads them: its plural rules
+    /// only pick One and Other.
+    /// </summary>
+    private static void AddDefaultLanguagePluralForms(Dictionary<string, Dictionary<string, ResourceString>> files)
+    {
+        if (!files.TryGetValue(DefaultLanguage, out var english))
+        {
+            return;
+        }
+        var formNames = files.Values
+            .SelectMany(file => file.Keys)
+            .Where(name => PluralFamily(name) is not null)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToList();
+        foreach (var name in formNames.Where(name => !english.ContainsKey(name)))
+        {
+            var otherName = PluralRules.ResourceName(PluralFamily(name)!, PluralCategory.Other);
+            if (english.TryGetValue(otherName, out var other))
+            {
+                english[name] = other with
+                {
+                    Name = name,
+                    Comment = other.Comment + "\nOnly a default for MRT: English never uses this plural form.",
+                };
+            }
+        }
     }
 
     private static IReadOnlyList<CatalogEntry> EnglishSourceEntries(StringCatalog catalog) =>

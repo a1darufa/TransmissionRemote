@@ -32,7 +32,8 @@ internal static class CodeWriter
                     public static string {family}{PluralMethodSuffix}(long count) => StringResources.PluralForm("{family}", count);
                 """);
         }
-        foreach (var resource in englishResources.Where(resource => PluralFamily(resource.Name) is null))
+        var singleResources = englishResources.Where(resource => CatalogConverter.PluralFamily(resource.Name) is null);
+        foreach (var resource in singleResources)
         {
             Add(members, resource.Name,
                 $"""
@@ -60,19 +61,12 @@ internal static class CodeWriter
         return code.ToString().ReplaceLineEndings("\n");
     }
 
-    /// <summary>"Files" for "Files_Few"; null for a name that isn't a plural form.</summary>
-    internal static string? PluralFamily(string name) => Enum.GetValues<PluralCategory>()
-        .Select(category => $"_{category}")
-        .Where(suffix => name.EndsWith(suffix, StringComparison.Ordinal))
-        .Select(suffix => name[..^suffix.Length])
-        .FirstOrDefault();
-
     /// <summary>Each plural family with its "other" form, which English always has, for the doc comment.</summary>
     private static IEnumerable<(string Family, ResourceString Other)> PluralFamilies(
         IReadOnlyList<ResourceString> resources) =>
         resources
             .Where(resource => resource.Name.EndsWith($"_{PluralCategory.Other}", StringComparison.Ordinal))
-            .Select(resource => (PluralFamily(resource.Name)!, resource));
+            .Select(resource => (CatalogConverter.PluralFamily(resource.Name)!, resource));
 
     private static void Add(SortedDictionary<string, string> members, string name, string member)
     {
