@@ -2,7 +2,10 @@ using System.Text;
 
 namespace StringCatalogConverter;
 
-/// <summary>Reads the catalogs and writes &lt;output&gt;/&lt;language&gt;/Resources.resw for every language.</summary>
+/// <summary>
+/// Reads the catalogs and writes &lt;output&gt;/&lt;language&gt;/Resources.resw for every language, plus the C# names
+/// file when one is asked for.
+/// </summary>
 internal static class ReswExport
 {
     public const string FileName = "Resources.resw";
@@ -21,6 +24,8 @@ internal static class ReswExport
         // Converting everything before writing anything means a bad catalog leaves the old files untouched.
         var files = CatalogConverter.Convert(catalogs);
 
+        var code = options.CodePath is null ? null : CodeWriter.Write(files[CatalogConverter.DefaultLanguage]);
+
         foreach (var (language, resources) in files)
         {
             var folder = Path.Combine(options.OutputFolder, language);
@@ -28,6 +33,11 @@ internal static class ReswExport
             var path = Path.Combine(folder, FileName);
             File.WriteAllText(path, ReswWriter.Write(resources), Utf8WithoutBom);
             log.WriteLine($"{path}: {resources.Count} strings");
+        }
+        if (options.CodePath is not null)
+        {
+            File.WriteAllText(options.CodePath, code, Utf8WithoutBom);
+            log.WriteLine($"{options.CodePath}: names for the app's code");
         }
     }
 }

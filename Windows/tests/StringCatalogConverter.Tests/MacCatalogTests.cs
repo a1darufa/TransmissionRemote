@@ -29,6 +29,14 @@ public sealed class MacCatalogTests
     }
 
     [TestMethod]
+    public void EveryStringGetsAMemberInTheNamesFile()
+    {
+        var code = CodeWriter.Write(ConvertMacCatalogs()[LanguageWithAllStrings]);
+
+        StringAssert.Contains(code, "public static string ShowLogFiles =>");
+    }
+
+    [TestMethod]
     public void TranslationsOnlyUseNamesEnglishHas()
     {
         var files = ConvertMacCatalogs();

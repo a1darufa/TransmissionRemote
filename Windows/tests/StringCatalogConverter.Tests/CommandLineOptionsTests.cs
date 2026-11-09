@@ -15,6 +15,19 @@ public sealed class CommandLineOptionsTests
         Assert.IsTrue(parsed, error);
         CollectionAssert.AreEqual(new[] { "App.xcstrings", "Kit.xcstrings" }, options!.CatalogPaths.ToList());
         Assert.AreEqual("Strings", options.OutputFolder);
+        Assert.IsNull(options.CodePath);
+    }
+
+    [TestMethod]
+    public void ReadsTheOptionalCodeFile()
+    {
+        var parsed = CommandLineOptions.TryParse(
+            ["--catalog", "App.xcstrings", "--output", "Strings", "--code", "Strings.g.cs"],
+            out var options,
+            out var error);
+
+        Assert.IsTrue(parsed, error);
+        Assert.AreEqual("Strings.g.cs", options!.CodePath);
     }
 
     [TestMethod]
@@ -24,6 +37,8 @@ public sealed class CommandLineOptionsTests
     [DataRow(new[] { "--catalog", "--output", "Strings" }, "--catalog needs a path")]
     [DataRow(new[] { "--catalog", "App.xcstrings", "--output" }, "--output needs a path")]
     [DataRow(new[] { "--catalog", "App.xcstrings", "--output", "A", "--output", "B" }, "once")]
+    [DataRow(new[] { "--catalog", "App.xcstrings", "--output", "A", "--code", "B", "--code", "C" }, "--code can only")]
+    [DataRow(new[] { "--catalog", "App.xcstrings", "--output", "A", "--code" }, "--code needs a path")]
     [DataRow(new[] { "App.xcstrings" }, "Unknown argument")]
     public void MistakesAreExplained(string[] arguments, string expectedError)
     {

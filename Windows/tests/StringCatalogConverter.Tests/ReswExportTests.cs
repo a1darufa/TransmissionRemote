@@ -45,6 +45,27 @@ public sealed class ReswExportTests
     }
 
     [TestMethod]
+    public void WritesTheNamesFileWhenAskedTo()
+    {
+        var folder = Directory.CreateTempSubdirectory("StringCatalogConverterTests");
+        try
+        {
+            var catalog = Path.Combine(folder.FullName, "Localizable.xcstrings");
+            File.WriteAllText(catalog, Catalog);
+            var code = Path.Combine(folder.FullName, "Strings.g.cs");
+
+            ReswExport.Run(
+                new CommandLineOptions([catalog], Path.Combine(folder.FullName, "Strings"), code), TextWriter.Null);
+
+            StringAssert.Contains(File.ReadAllText(code), "public static string Cancel =>");
+        }
+        finally
+        {
+            folder.Delete(recursive: true);
+        }
+    }
+
+    [TestMethod]
     public void ACatalogThatCantBeConvertedWritesNothing()
     {
         var folder = Directory.CreateTempSubdirectory("StringCatalogConverterTests");
