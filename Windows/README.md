@@ -65,7 +65,19 @@ $env:TRANSMISSION_IT_PASSWORD_FILE = "C:\path\to\test-password.txt"
 dotnet test TransmissionRemote.slnx --filter "FullyQualifiedName~IntegrationTests"
 ```
 
-They pass against Transmission 4.1.4 over both JSON-RPC and the legacy protocol.
+They pass against Transmission 4.1.4 over both JSON-RPC and the legacy protocol, and against 4.0.5
+(legacy RPC only).
+
+A WSL distribution of its own keeps the test daemon apart from anything else on the PC, and can be
+deleted afterwards with `wsl --unregister TransmissionTest`. Ubuntu 24.04 ships Transmission 4.0.5:
+
+```powershell
+wsl --install Ubuntu-24.04 --name TransmissionTest
+wsl -d TransmissionTest -u root -- sh -c "apt-get update && apt-get install -y transmission-daemon && systemctl disable --now transmission-daemon"
+```
+
+Turning off the package's own service keeps a daemon from running at every boot; start one by hand when
+testing, with DHT, peer exchange, local peer discovery and port forwarding off in its `settings.json`.
 
 ## The core: `src/TransmissionKit`
 
