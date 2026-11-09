@@ -21,6 +21,7 @@ public static class Program
     {
         WinRT.ComWrappersSupport.InitializeComWrappers();
         AppLogging.Start(AppFolders.Logs);
+        DevelopmentOverrides.ApplyLanguage();
 
         var services = BuildServices();
         var logger = services.GetRequiredService<ILoggerFactory>().CreateLogger("TransmissionRemote.App");

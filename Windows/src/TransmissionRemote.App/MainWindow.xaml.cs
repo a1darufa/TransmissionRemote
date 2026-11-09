@@ -305,12 +305,10 @@ public sealed partial class MainWindow : Window
     [System.Diagnostics.Conditional("DEBUG")]
     private void ApplyDevelopmentTheme()
     {
-        if (!Enum.TryParse<ElementTheme>(Environment.GetEnvironmentVariable("TRANSMISSIONREMOTE_THEME"), out var theme)
-            || theme == ElementTheme.Default)
+        // The app's own theme is set on the Application (DevelopmentOverrides); the caption buttons follow here.
+        if (Startup.DevelopmentOverrides.Theme is { } theme)
         {
-            return;
+            AppWindow.TitleBar.PreferredTheme = theme == ApplicationTheme.Light ? TitleBarTheme.Light : TitleBarTheme.Dark;
         }
-        Root.RequestedTheme = theme;
-        AppWindow.TitleBar.PreferredTheme = theme == ElementTheme.Light ? TitleBarTheme.Light : TitleBarTheme.Dark;
     }
 }

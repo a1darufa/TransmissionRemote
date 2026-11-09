@@ -16,6 +16,10 @@ public sealed partial class App : Application
     {
         _services = services;
         services.GetRequiredService<UnhandledErrors>().WatchApplication(this);
+        if (DevelopmentOverrides.Theme is { } theme)
+        {
+            RequestedTheme = theme;
+        }
         InitializeComponent();
     }
 
