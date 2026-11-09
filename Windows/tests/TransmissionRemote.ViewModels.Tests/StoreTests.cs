@@ -181,6 +181,38 @@ public sealed class SettingsStoreTests
     }
 
     [TestMethod]
+    public void TheWindowLayoutIsRemembered()
+    {
+        var store = new SettingsStore(new AppEnvironment(_directory, "1.0"));
+        Assert.IsTrue(store.Current.ShowSidebar);
+        Assert.AreEqual(220, store.Current.EffectiveSidebarWidth);
+        Assert.IsNull(store.Current.MainWindowPlacement);
+
+        var placement = new WindowPlacement(-1700, 100, -300, 980, IsMaximized: true);
+        store.Update(settings => settings with { ShowSidebar = false, SidebarWidth = 260, MainWindowPlacement = placement });
+
+        var reloaded = new SettingsStore(new AppEnvironment(_directory, "1.0")).Current;
+        Assert.IsFalse(reloaded.ShowSidebar);
+        Assert.AreEqual(260, reloaded.EffectiveSidebarWidth);
+        Assert.AreEqual(placement, reloaded.MainWindowPlacement, "a monitor left of the main one has negative coordinates");
+    }
+
+    [TestMethod]
+    public void TheSidebarWidthStaysWithinTheMacAppsRange()
+    {
+        Assert.AreEqual(180, new AppSettings { SidebarWidth = 20 }.EffectiveSidebarWidth);
+        Assert.AreEqual(340, new AppSettings { SidebarWidth = 5000 }.EffectiveSidebarWidth);
+        Assert.AreEqual(220, new AppSettings { SidebarWidth = double.NaN }.EffectiveSidebarWidth);
+    }
+
+    [TestMethod]
+    public void AnEmptyWindowPlacementIsNotUsed()
+    {
+        Assert.IsTrue(new WindowPlacement(0, 0, 1280, 820, IsMaximized: false).IsUsable);
+        Assert.IsFalse(new WindowPlacement(100, 100, 100, 900, IsMaximized: false).IsUsable);
+    }
+
+    [TestMethod]
     public void UnreadableSettingsResetAndKeepACopy()
     {
         File.WriteAllText(Path.Combine(_directory, "settings.json"), "{ not json");

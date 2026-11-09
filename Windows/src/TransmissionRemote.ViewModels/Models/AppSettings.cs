@@ -26,6 +26,14 @@ public sealed record AppSettings
 
     public bool ShowDetailPane { get; set; } = true;
 
+    public bool ShowSidebar { get; set; } = true;
+
+    /// <summary>The sidebar's width in effective pixels; see <see cref="EffectiveSidebarWidth"/>.</summary>
+    public double SidebarWidth { get; set; } = DefaultSidebarWidth;
+
+    /// <summary>Where the main window was when it last closed; null until then.</summary>
+    public WindowPlacement? MainWindowPlacement { get; set; }
+
     /// <summary>Visible list columns in order, by <see cref="TorrentColumn"/> name; empty means the default set.</summary>
     public IReadOnlyList<string> TorrentColumns { get; set; } = [];
 
@@ -57,4 +65,23 @@ public sealed record AppSettings
         TimeSpan.FromSeconds(Math.Max(isInForeground ? RefreshIntervalSeconds : BackgroundRefreshIntervalSeconds, 1));
 
     public int EffectiveFolderHistoryLimit => Math.Max(FolderHistoryLimit, 1);
+
+    /// <summary>The Mac app's sidebar sizes: 220 to start with, between 180 and 340.</summary>
+    public const double DefaultSidebarWidth = 220;
+    public const double MinimumSidebarWidth = 180;
+    public const double MaximumSidebarWidth = 340;
+
+    /// <summary>The saved width within the allowed range, so an edited or old file can't hide the list.</summary>
+    public double EffectiveSidebarWidth =>
+        double.IsFinite(SidebarWidth) ? Math.Clamp(SidebarWidth, MinimumSidebarWidth, MaximumSidebarWidth) : DefaultSidebarWidth;
+}
+
+/// <summary>
+/// A window's restored position and size in physical pixels, and whether it was maximized, as Windows reports
+/// them (<c>GetWindowPlacement</c>), so it comes back on the same monitor.
+/// </summary>
+public sealed record WindowPlacement(int Left, int Top, int Right, int Bottom, bool IsMaximized)
+{
+    /// <summary>False for a placement no window can have, such as one from an edited file.</summary>
+    public bool IsUsable => Right > Left && Bottom > Top;
 }
