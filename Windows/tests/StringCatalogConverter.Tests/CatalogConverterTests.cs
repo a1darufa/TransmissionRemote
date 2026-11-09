@@ -236,6 +236,9 @@ public sealed class CatalogConverterTests
         Assert.AreEqual("Connected to Transmission {0} over {1}.", Value(files, "en-US", "ConnectedToTransmissionUsing"));
         Assert.AreEqual("已使用 {1} 连接到 Transmission {0}。", Value(files, "zh-Hans", "ConnectedToTransmissionUsing"));
         StringAssert.Contains(Resource(files, "en-US", "ConnectedToTransmissionUsing")!.Comment, "English overrides");
+        Assert.DoesNotContain(
+            "English overrides", Resource(files, "zh-Hans", "ConnectedToTransmissionUsing")!.Comment,
+            "the translations still follow the Mac");
     }
 
     [TestMethod]

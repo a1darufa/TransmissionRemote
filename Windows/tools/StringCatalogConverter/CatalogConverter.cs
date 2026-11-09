@@ -171,7 +171,9 @@ internal static class CatalogConverter
     private static IEnumerable<(string Language, ResourceString Resource)> Resources(
         CatalogEntry entry, string baseName, CatalogEntry? englishOverride)
     {
-        var comment = Comment(entry, isEnglishOverridden: englishOverride is not null);
+        var comment = Comment(entry, isEnglishOverridden: false);
+        // Only the English file says its text was reworded: the translations still follow the Mac.
+        var englishComment = Comment(entry, isEnglishOverridden: englishOverride is not null);
         var english = Parsed(EnglishTexts(entry, baseName), entry.Key, DefaultLanguage);
         if (englishOverride is not null)
         {
@@ -183,7 +185,7 @@ internal static class CatalogConverter
 
         foreach (var (name, format) in english)
         {
-            yield return (DefaultLanguage, new ResourceString(name, format.ToDotNet(isFormatString), comment));
+            yield return (DefaultLanguage, new ResourceString(name, format.ToDotNet(isFormatString), englishComment));
         }
         if (!entry.ShouldTranslate)
         {
