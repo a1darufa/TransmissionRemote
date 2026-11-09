@@ -31,6 +31,7 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         SortColumn = Enum.TryParse<TorrentColumn>(current.SortColumn, out var column) ? column : TorrentColumn.Added;
         SortAscending = current.SortAscending;
         StatusItems = [.. Enum.GetValues<StatusFilter>().Select(filter => new StatusSidebarItem(filter))];
+        SidebarItems = [new SidebarHeaderItem(SidebarSection.Status), .. StatusItems];
         Connection.PropertyChanged += OnConnectionChanged;
         Servers.Changed += OnServersChanged;
     }
@@ -54,6 +55,13 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
     /// change, so the selection and Narrator's place don't jump on every refresh.
     /// </summary>
     public IReadOnlyList<StatusSidebarItem> StatusItems { get; }
+
+    /// <summary>
+    /// Everything the sidebar lists, for its navigation pane: <see cref="SidebarHeaderItem"/>s, the
+    /// <see cref="StatusItems"/>, then <see cref="EntrySidebarItem"/>s for folders, labels and trackers, the sections
+    /// only while they have entries. Updated in place.
+    /// </summary>
+    public ObservableCollection<object> SidebarItems { get; }
 
     [ObservableProperty]
     public partial SidebarFilter SelectedFilter { get; set; } = new StatusSidebarFilter(StatusFilter.All);
@@ -267,7 +275,12 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         ConnectionState.Dispose();
     }
 
-    partial void OnSelectedFilterChanged(SidebarFilter value) => UpdateRows();
+    partial void OnSelectedFilterChanged(SidebarFilter value)
+    {
+        // A folder kept only because it was selected goes once something else is.
+        SidebarItemsSync.Apply(SidebarItems, Sidebar, value);
+        UpdateRows();
+    }
 
     partial void OnSearchTextChanged(string value) => UpdateRows();
 
@@ -287,7 +300,7 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         {
             case nameof(ServerConnection.Torrents):
                 Sidebar = new SidebarSummary(Connection.Torrents);
-                UpdateStatusCounts();
+                UpdateSidebar();
                 UpdateRows();
                 break;
             case nameof(ServerConnection.Selection):
@@ -328,12 +341,13 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         ReconnectCommand.NotifyCanExecuteChanged();
     }
 
-    private void UpdateStatusCounts()
+    private void UpdateSidebar()
     {
         foreach (var item in StatusItems)
         {
             item.Count = Sidebar.CountFor(item.Filter);
         }
+        SidebarItemsSync.Apply(SidebarItems, Sidebar, SelectedFilter);
     }
 
     private void UpdateRows()

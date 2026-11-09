@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.Globalization;
 using TransmissionKit;
 
@@ -55,6 +56,90 @@ public sealed class SidebarTests
         Assert.IsTrue(new TrackerSidebarFilter("t").Matches(torrent));
         Assert.IsFalse(new StatusSidebarFilter(StatusFilter.Stopped).Matches(torrent));
     }
+}
+
+[TestClass]
+public sealed class SidebarItemsSyncTests
+{
+    private static readonly SidebarFilter All = new StatusSidebarFilter(StatusFilter.All);
+
+    [TestMethod]
+    public void SectionsAppearInOrderOnlyWhileTheyHaveEntries()
+    {
+        var items = StatusOnly();
+
+        SidebarItemsSync.Apply(items, Summary(
+            new Torrent { Id = 1, DownloadDir = "/data/tv", TrackerHosts = ["b.example"] },
+            new Torrent { Id = 2, DownloadDir = "/data/movies", TrackerHosts = ["a.example"] }), All);
+
+        CollectionAssert.AreEqual(
+            new object[] { "Status", "Folders", "movies", "tv", "Trackers", "a.example", "b.example" },
+            Describe(items));
+
+        SidebarItemsSync.Apply(items, Summary(new Torrent { Id = 3, Labels = ["hd"] }), All);
+
+        CollectionAssert.AreEqual(new object[] { "Status", "Labels", "hd" }, Describe(items));
+    }
+
+    [TestMethod]
+    public void EntriesKeepTheirIdentityAndOnlyTheirCountsChange()
+    {
+        var items = StatusOnly();
+        SidebarItemsSync.Apply(items, Summary(new Torrent { Id = 1, Labels = ["hd"] }), All);
+        var hd = items.OfType<EntrySidebarItem>().Single();
+
+        SidebarItemsSync.Apply(items, Summary(new Torrent { Id = 1, Labels = ["hd"] }, new Torrent { Id = 2, Labels = ["hd", "4k"] }), All);
+
+        Assert.AreSame(hd, items.OfType<EntrySidebarItem>().Single(item => item.Name == "hd"));
+        Assert.AreEqual(2, hd.Count);
+        CollectionAssert.AreEqual(new object[] { "Status", "Labels", "4k", "hd" }, Describe(items), "natural order");
+        Assert.AreEqual(new LabelSidebarFilter("hd"), hd.SidebarFilter);
+    }
+
+    [TestMethod]
+    public void ASelectedFolderStaysWithNoTorrentsUntilSomethingElseIsSelected()
+    {
+        var items = StatusOnly();
+        var tv = new FolderSidebarFilter("/data/tv");
+
+        SidebarItemsSync.Apply(items, Summary(new Torrent { Id = 1, DownloadDir = "/data/movies" }), tv);
+
+        var kept = items.OfType<EntrySidebarItem>().Single(item => item.Name == "/data/tv");
+        Assert.AreEqual(0, kept.Count);
+        Assert.AreEqual("tv", kept.DisplayName);
+
+        SidebarItemsSync.Apply(items, Summary(new Torrent { Id = 1, DownloadDir = "/data/movies" }), All);
+
+        Assert.IsFalse(items.OfType<EntrySidebarItem>().Any(item => item.Name == "/data/tv"));
+    }
+
+    [TestMethod]
+    public async Task TheMainViewModelKeepsTheSidebarInStep()
+    {
+        using var app = new TestApp(daemon => daemon.AddTorrent(1, "a"));
+
+        await app.ConnectAsync(expectedTorrents: 1);
+
+        Assert.IsInstanceOfType<SidebarHeaderItem>(app.Main.SidebarItems[0]);
+        Assert.AreSame(app.Main.StatusItems[0], app.Main.SidebarItems[1]);
+        Assert.IsTrue(app.Main.SidebarItems.OfType<SidebarHeaderItem>().Any(header => header.Section == SidebarSection.Folders));
+    }
+
+    private static ObservableCollection<object> StatusOnly() =>
+        [new SidebarHeaderItem(SidebarSection.Status), .. Enum.GetValues<StatusFilter>().Select(filter => new StatusSidebarItem(filter))];
+
+    private static SidebarSummary Summary(params Torrent[] torrents) => new(torrents);
+
+    /// <summary>Section names for headers and display names for entries; the status items are left out.</summary>
+    private static object[] Describe(IEnumerable<object> items) => items
+        .Where(item => item is not StatusSidebarItem)
+        .Select(item => item switch
+        {
+            SidebarHeaderItem header => (object)header.Section.ToString(),
+            EntrySidebarItem entry => entry.DisplayName,
+            _ => item,
+        })
+        .ToArray();
 }
 
 [TestClass]
