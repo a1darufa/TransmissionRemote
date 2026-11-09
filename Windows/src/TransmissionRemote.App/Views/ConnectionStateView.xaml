@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- What the content area shows while not connected (brief 4.1; Mac: ConnectionStateViews.swift). One page is
+     visible at a time; ConnectionStateView.xaml.cs picks it from MainViewModel.ConnectionState.Page.
+     "Edit server…" and "Add server…" open Settings, which arrives in milestone M5: until then they're off. -->
+<UserControl
+    x:Class="TransmissionRemote.App.Views.ConnectionStateView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:TransmissionRemote.App"
+    xmlns:controls="using:TransmissionRemote.App.Controls"
+    xmlns:presentation="using:TransmissionRemote.App.Presentation">
+
+    <Grid>
+        <StackPanel
+            x:Name="ConnectingPage"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Spacing="16"
+            Visibility="Collapsed">
+            <ProgressRing Width="48" Height="48" IsActive="True" />
+            <TextBlock
+                x:Name="ConnectingText"
+                Text="{x:Bind presentation:ConnectionText.Connecting(ViewModel.ConnectionState.ServerName), Mode=OneWay}"
+                TextAlignment="Center"
+                TextWrapping="Wrap"
+                AutomationProperties.LiveSetting="Polite" />
+        </StackPanel>
+
+        <controls:EmptyStateView
+            x:Name="ReconnectingPage"
+            Title="{x:Bind app:Strings.CannotReachTheServer}"
+            Description="{x:Bind presentation:ErrorMessages.For(ViewModel.ConnectionState.Error), Mode=OneWay}"
+            Visibility="Collapsed">
+            <controls:EmptyStateView.Icon>
+                <FontIcon FontSize="48" Glyph="&#xEB63;" />
+            </controls:EmptyStateView.Icon>
+            <controls:EmptyStateView.Details>
+                <TextBlock
+                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                    Text="{x:Bind presentation:ConnectionText.Retry(ViewModel.ConnectionState.RetryCountdown), Mode=OneWay}"
+                    TextAlignment="Center"
+                    Typography.NumeralAlignment="Tabular"
+                    AutomationProperties.LiveSetting="Off" />
+            </controls:EmptyStateView.Details>
+            <controls:EmptyStateView.Actions>
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Button
+                        Click="OnTryNow"
+                        Content="{x:Bind app:Strings.TryNow}"
+                        IsEnabled="{x:Bind ViewModel.ConnectionState.CanRetryNow, Mode=OneWay}"
+                        Style="{StaticResource AccentButtonStyle}" />
+                    <Button Content="{x:Bind app:Strings.EditServerEllipsis}" IsEnabled="False" />
+                    <Button Command="{x:Bind ViewModel.DisconnectCommand}" Content="{x:Bind app:Strings.StopTrying}" />
+                </StackPanel>
+            </controls:EmptyStateView.Actions>
+        </controls:EmptyStateView>
+
+        <controls:EmptyStateView
+            x:Name="UntrustedCertificatePage"
+            Title="{x:Bind app:Strings.UntrustedCertificate}"
+            Description="{x:Bind presentation:ErrorMessages.For(ViewModel.ConnectionState.Error), Mode=OneWay}"
+            Visibility="Collapsed">
+            <controls:EmptyStateView.Icon>
+                <FontIcon FontSize="48" Glyph="&#xEB95;" />
+            </controls:EmptyStateView.Icon>
+            <controls:EmptyStateView.Details>
+                <StackPanel MaxWidth="420" Spacing="4">
+                    <TextBlock
+                        Text="{x:Bind app:Strings.SHA256FingerprintPresentedByTheServer}"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        FontFamily="Cascadia Mono, Consolas"
+                        Style="{StaticResource CaptionTextBlockStyle}"
+                        Text="{x:Bind ViewModel.ConnectionState.CertificateFingerprint, Mode=OneWay}"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap"
+                        IsTextSelectionEnabled="True" />
+                    <TextBlock
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                        Style="{StaticResource CaptionTextBlockStyle}"
+                        Text="{x:Bind app:Strings.OnlyTrustItIfItMatchesTheCertificateYou}"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                </StackPanel>
+            </controls:EmptyStateView.Details>
+            <controls:EmptyStateView.Actions>
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Button
+                        Command="{x:Bind ViewModel.TrustCertificateCommand}"
+                        Content="{x:Bind app:Strings.TrustThisCertificate}"
+                        Style="{StaticResource AccentButtonStyle}" />
+                    <Button Command="{x:Bind ViewModel.ReconnectCommand}" Content="{x:Bind app:Strings.TryAgain}" />
+                    <Button Content="{x:Bind app:Strings.EditServerEllipsis}" IsEnabled="False" />
+                </StackPanel>
+            </controls:EmptyStateView.Actions>
+        </controls:EmptyStateView>
+
+        <controls:EmptyStateView
+            x:Name="UnencryptedConnectionBlockedPage"
+            Title="{x:Bind app:Strings.UnencryptedConnectionBlocked}"
+            Description="{x:Bind app:Strings.ThisServerUsesPlainHTTPOverTheInternetSo}"
+            Visibility="Collapsed">
+            <controls:EmptyStateView.Icon>
+                <FontIcon FontSize="48" Foreground="{ThemeResource SystemFillColorCriticalBrush}" Glyph="&#xE785;" />
+            </controls:EmptyStateView.Icon>
+            <controls:EmptyStateView.Actions>
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <!-- Not the accent style: allowing it lowers security, as the Mac marks it destructive. -->
+                    <Button
+                        Command="{x:Bind ViewModel.AllowUnencryptedConnectionCommand}"
+                        Content="{x:Bind app:Strings.AllowUnencryptedConnection}" />
+                    <Button Command="{x:Bind ViewModel.ReconnectCommand}" Content="{x:Bind app:Strings.TryAgain}" />
+                    <Button Content="{x:Bind app:Strings.EditServerEllipsis}" IsEnabled="False" />
+                </StackPanel>
+            </controls:EmptyStateView.Actions>
+        </controls:EmptyStateView>
+
+        <controls:EmptyStateView
+            x:Name="CouldNotConnectPage"
+            Title="{x:Bind app:Strings.CouldNotConnect}"
+            Description="{x:Bind presentation:ErrorMessages.For(ViewModel.ConnectionState.Error), Mode=OneWay}"
+            Visibility="Collapsed">
+            <controls:EmptyStateView.Icon>
+                <FontIcon FontSize="48" Glyph="&#xE7BA;" />
+            </controls:EmptyStateView.Icon>
+            <controls:EmptyStateView.Actions>
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Button Command="{x:Bind ViewModel.ReconnectCommand}" Content="{x:Bind app:Strings.TryAgain}" />
+                    <Button Content="{x:Bind app:Strings.EditServerEllipsis}" IsEnabled="False" />
+                </StackPanel>
+            </controls:EmptyStateView.Actions>
+        </controls:EmptyStateView>
+
+        <controls:EmptyStateView
+            x:Name="NoServerPage"
+            Title="{x:Bind app:Strings.NoServer}"
+            Description="{x:Bind app:Strings.AddTheAddressOfYourTransmissionDaemonTo}"
+            Visibility="Collapsed">
+            <controls:EmptyStateView.Icon>
+                <Viewbox Width="48" Height="48">
+                    <PathIcon Data="{x:Bind presentation:FluentIcons.Server24()}" />
+                </Viewbox>
+            </controls:EmptyStateView.Icon>
+            <controls:EmptyStateView.Actions>
+                <Button Content="{x:Bind app:Strings.AddServerEllipsis}" IsEnabled="False" Style="{StaticResource AccentButtonStyle}" />
+            </controls:EmptyStateView.Actions>
+        </controls:EmptyStateView>
+
+        <controls:EmptyStateView x:Name="NotConnectedPage" Title="{x:Bind app:Strings.NotConnected_87D82C}" Visibility="Collapsed">
+            <controls:EmptyStateView.Icon>
+                <FontIcon FontSize="48" Glyph="&#xE945;" />
+            </controls:EmptyStateView.Icon>
+            <controls:EmptyStateView.Actions>
+                <Button
+                    Command="{x:Bind ViewModel.ReconnectCommand}"
+                    Content="{x:Bind app:Strings.Connect}"
+                    Style="{StaticResource AccentButtonStyle}" />
+            </controls:EmptyStateView.Actions>
+        </controls:EmptyStateView>
+    </Grid>
+</UserControl>
