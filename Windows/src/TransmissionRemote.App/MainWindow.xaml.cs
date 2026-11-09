@@ -44,6 +44,7 @@ public sealed partial class MainWindow : Window
         Sidebar.SelectedItem = viewModel.StatusItems[0];
         ShowSidebarItem.IsChecked = viewModel.ShowSidebar;
         AssignQueueCommands();
+        AttachShortcuts();
         UpdateSpeedLimitMenus();
         UpdateServerChoices();
 
@@ -154,6 +155,51 @@ public sealed partial class MainWindow : Window
             sender.IsPaneOpen = ViewModel.ShowSidebar;
         }
         ShowSidebarItem.IsChecked = sender.IsPaneOpen;
+    }
+
+    // Keyboard shortcuts ----------------------------------------------------------------------------------------
+
+    /// <summary>
+    /// The menu items carry their keys (brief 3.5). The list's own keys (Enter, Ctrl+A, Ctrl+V) come with the list
+    /// in M2; until then, the keys that only work in the list are scoped to the area it will fill.
+    /// </summary>
+    private void AttachShortcuts()
+    {
+        (UIElement Item, AppCommand Command)[] menuItems =
+        [
+            (AddTorrentFileItem, AppCommand.AddTorrentFile),
+            (AddTorrentLinkItem, AppCommand.AddTorrentLink),
+            (SettingsItem, AppCommand.Settings),
+            (ShowInFolderItem, AppCommand.ShowInFolder),
+            (StartItem, AppCommand.Start),
+            (StartNowItem, AppCommand.StartNow),
+            (StopItem, AppCommand.Stop),
+            (AskTrackersItem, AppCommand.AskTrackersForMorePeers),
+            (MoveDataItem, AppCommand.MoveData),
+            (RenameItem, AppCommand.Rename),
+            (LabelsItem, AppCommand.Labels),
+            (TorrentOptionsItem, AppCommand.TorrentOptions),
+            (MoveToTopItem, AppCommand.MoveToTopOfQueue),
+            (MoveUpItem, AppCommand.MoveUpInQueue),
+            (MoveDownItem, AppCommand.MoveDownInQueue),
+            (MoveToBottomItem, AppCommand.MoveToBottomOfQueue),
+            (CopyMagnetLinkItem, AppCommand.CopyMagnetLink),
+            (RemoveItem, AppCommand.Remove),
+            (RemoveAndDeleteDataItem, AppCommand.RemoveAndDeleteData),
+            (StartAllItem, AppCommand.StartAll),
+            (StopAllItem, AppCommand.StopAll),
+            (AlternativeSpeedItem, AppCommand.AlternativeSpeedLimits),
+            (ServerSettingsItem, AppCommand.ServerSettings),
+            (ReconnectItem, AppCommand.Reconnect),
+            (ShowSidebarItem, AppCommand.ShowSidebar),
+            (ShowInfoPaneItem, AppCommand.ShowInfoPane),
+        ];
+        foreach (var (item, command) in menuItems)
+        {
+            Shortcuts.Attach(item, command, TorrentListHost);
+        }
+        Shortcuts.AttachHidden(Root, AppCommand.FilterByName, () => FilterBox.Focus(FocusState.Keyboard));
+        Shortcuts.AttachHidden(Root, AppCommand.Exit, Close);
     }
 
     // Menus built from data -------------------------------------------------------------------------------------
