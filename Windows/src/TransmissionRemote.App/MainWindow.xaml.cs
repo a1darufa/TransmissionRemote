@@ -29,7 +29,6 @@ public sealed partial class MainWindow : Window
     {
         ViewModel = viewModel;
         _logger = logger;
-        SidebarItems = [new SidebarHeader(Strings.Status), .. viewModel.StatusItems];
         InitializeComponent();
         ConnectionPages.ViewModel = viewModel;
         Torrents.Bind(viewModel, cellText);
@@ -69,9 +68,6 @@ public sealed partial class MainWindow : Window
     }
 
     public MainViewModel ViewModel { get; }
-
-    /// <summary>The sidebar's entries: the Status header and the ten status filters.</summary>
-    public IReadOnlyList<object> SidebarItems { get; }
 
     /// <summary>Shows the window in front of others, also when it was minimized or hidden in the tray.</summary>
     public void BringToFront()
@@ -241,9 +237,15 @@ public sealed partial class MainWindow : Window
 
     private void OnSidebarSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
     {
-        if (args.SelectedItem is StatusSidebarItem item)
+        var filter = args.SelectedItem switch
         {
-            ViewModel.SelectedFilter = item.SidebarFilter;
+            StatusSidebarItem status => status.SidebarFilter,
+            EntrySidebarItem entry => entry.SidebarFilter,
+            _ => null,
+        };
+        if (filter is not null)
+        {
+            ViewModel.SelectedFilter = filter;
         }
     }
 

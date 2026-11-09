@@ -37,6 +37,28 @@ internal static class SidebarText
         _ => "",
     };
 
+    public static string SectionTitle(SidebarSection section) => section switch
+    {
+        SidebarSection.Status => Strings.Status,
+        SidebarSection.Folders => Strings.Folders_C4D6BB,
+        SidebarSection.Labels => Strings.Labels,
+        _ => Strings.Trackers,
+    };
+
+    /// <summary>Folder, tag and antenna, as the Mac's folder, tag and antenna symbols.</summary>
+    public static string EntryGlyph(SidebarSection section) => section switch
+    {
+        SidebarSection.Folders => "",
+        SidebarSection.Labels => "",
+        _ => "",
+    };
+
+    /// <summary>The full folder path as the tooltip; labels and trackers show their whole name already.</summary>
+    public static string? EntryToolTip(SidebarSection section, string name) => section == SidebarSection.Folders ? name : null;
+
+    public static string EntryAccessibleName(string displayName, int count) =>
+        StringResources.Format(Strings.SidebarItemNameCount, displayName, Count(count));
+
     /// <summary>A count with the user's digit grouping, as the list shows it.</summary>
     public static string Count(int count) => count.ToString("N0", CultureInfo.CurrentCulture);
 

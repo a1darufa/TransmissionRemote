@@ -21,8 +21,32 @@
 
     <Grid x:Name="Root">
         <Grid.Resources>
-            <DataTemplate x:Key="SidebarHeaderTemplate" x:DataType="shell:SidebarHeader">
-                <NavigationViewItemHeader Content="{x:Bind Title}" AutomationProperties.HeadingLevel="Level2" />
+            <DataTemplate x:Key="SidebarHeaderTemplate" x:DataType="viewmodels:SidebarHeaderItem">
+                <NavigationViewItemHeader
+                    Content="{x:Bind presentation:SidebarText.SectionTitle(Section)}"
+                    AutomationProperties.HeadingLevel="Level2" />
+            </DataTemplate>
+            <DataTemplate x:Key="EntryItemTemplate" x:DataType="viewmodels:EntrySidebarItem">
+                <NavigationViewItem
+                    HorizontalContentAlignment="Stretch"
+                    ToolTipService.ToolTip="{x:Bind presentation:SidebarText.EntryToolTip(Section, Name)}"
+                    AutomationProperties.Name="{x:Bind presentation:SidebarText.EntryAccessibleName(DisplayName, Count), Mode=OneWay}">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="{x:Bind presentation:SidebarText.EntryGlyph(Section)}" />
+                    </NavigationViewItem.Icon>
+                    <Grid ColumnSpacing="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{x:Bind DisplayName, Mode=OneWay}" TextTrimming="CharacterEllipsis" />
+                        <TextBlock
+                            Grid.Column="1"
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                            Text="{x:Bind presentation:SidebarText.Count(Count), Mode=OneWay}"
+                            Typography.NumeralAlignment="Tabular" />
+                    </Grid>
+                </NavigationViewItem>
             </DataTemplate>
             <DataTemplate x:Key="StatusItemTemplate" x:DataType="viewmodels:StatusSidebarItem">
                 <NavigationViewItem
@@ -47,6 +71,7 @@
             </DataTemplate>
             <shell:SidebarTemplateSelector
                 x:Key="SidebarTemplates"
+                EntryTemplate="{StaticResource EntryItemTemplate}"
                 HeaderTemplate="{StaticResource SidebarHeaderTemplate}"
                 StatusTemplate="{StaticResource StatusItemTemplate}" />
         </Grid.Resources>
@@ -229,7 +254,7 @@
             IsPaneToggleButtonVisible="False"
             IsSettingsVisible="False"
             MenuItemTemplateSelector="{StaticResource SidebarTemplates}"
-            MenuItemsSource="{x:Bind SidebarItems}"
+            MenuItemsSource="{x:Bind ViewModel.SidebarItems}"
             PaneClosed="OnSidebarPaneChanged"
             PaneDisplayMode="Auto"
             PaneOpened="OnSidebarPaneChanged"
