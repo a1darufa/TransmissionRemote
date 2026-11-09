@@ -237,6 +237,11 @@ Mac comment: Windows only. Help menu: the dialog with the version, licence and c
     <value>Прыярытэт</value>
     <comment>Mac key: Bandwidth Priority</comment>
   </data>
+  <data name="BetweenDurationUnits" xml:space="preserve">
+    <value> </value>
+    <comment>Mac key: Between duration units
+Mac comment: Windows only. What goes between the two units of a short duration ("2h 5m"): a space in most languages, nothing in Chinese.</comment>
+  </data>
   <data name="BlocklistURL" xml:space="preserve">
     <value>URL спіса блакіровак</value>
     <comment>Mac key: Blocklist URL</comment>
@@ -244,6 +249,11 @@ Mac comment: Windows only. Help menu: the dialog with the version, licence and c
   <data name="BrowseFoldersOnTheServer" xml:space="preserve">
     <value>Агляд тэчак на серверы</value>
     <comment>Mac key: Browse folders on the server</comment>
+  </data>
+  <data name="BytesSizeUnit" xml:space="preserve">
+    <value>байт</value>
+    <comment>Mac key: bytes (size unit)
+Mac comment: Windows only. A size unit in the torrent list and status bar, after a number: "532 bytes", "1.34 KB". Decimal units (1 KB = 1000 bytes), as Transmission reports them. Use the abbreviation File Explorer uses in your language.</comment>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Скасаваць</value>
@@ -357,6 +367,11 @@ Mac comment: Windows only. Help menu: the dialog with the version, licence and c
     <value>Падлучэнне да гэтага Mac.</value>
     <comment>Mac key: Connection to this Mac.</comment>
   </data>
+  <data name="ConnectionToThisPC" xml:space="preserve">
+    <value>Падлучэнне да гэтага камп’ютара.</value>
+    <comment>Mac key: Connection to this PC.
+Mac comment: Windows only. Status bar tooltip for a server on this computer (localhost); the Mac says "Connection to this Mac." Use the word Windows uses for the computer in your language.</comment>
+  </data>
   <data name="ConsiderActiveTorrentsAsStalledWhenIdle" xml:space="preserve">
     <value>Лічыць актыўныя торэнты завіслымі, калі яны неактыўныя больш за</value>
     <comment>Mac key: Consider active torrents as stalled when idle for</comment>
@@ -450,6 +465,11 @@ Mac comment: Windows only. Shown when the server can't be reached (the Mac shows
   <data name="Days" xml:space="preserve">
     <value>Дні</value>
     <comment>Mac key: Days</comment>
+  </data>
+  <data name="DaysNarrow" xml:space="preserve">
+    <value>{0} д</value>
+    <comment>Mac key: Days, narrow (%lld)
+Mac comment: Windows only. One unit of a short duration in the torrent list, such as an ETA of "2h 5m": the number is %lld. Use the narrow unit (CLDR "narrow" style) and the spacing your language uses.</comment>
   </data>
   <data name="Default" xml:space="preserve">
     <value>Па змаўчанні</value>
@@ -778,6 +798,11 @@ Mac comment: Windows only. The letter that opens this menu with Alt, one charact
     <value>З</value>
     <comment>Mac key: From</comment>
   </data>
+  <data name="GBSizeUnit" xml:space="preserve">
+    <value>ГБ</value>
+    <comment>Mac key: GB (size unit)
+Mac comment: Windows only. A size unit in the torrent list and status bar, after a number: "532 bytes", "1.34 KB". Decimal units (1 KB = 1000 bytes), as Transmission reports them. Use the abbreviation File Explorer uses in your language.</comment>
+  </data>
   <data name="General" xml:space="preserve">
     <value>Агульнае</value>
     <comment>Mac key: General</comment>
@@ -819,6 +844,11 @@ Mac comment: Windows only. The letter that opens this menu with Alt, one charact
   <data name="Host" xml:space="preserve">
     <value>Вузел</value>
     <comment>Mac key: Host</comment>
+  </data>
+  <data name="HoursNarrow" xml:space="preserve">
+    <value>{0} гадз</value>
+    <comment>Mac key: Hours, narrow (%lld)
+Mac comment: Windows only. One unit of a short duration in the torrent list, such as an ETA of "2h 5m": the number is %lld. Use the narrow unit (CLDR "narrow" style) and the spacing your language uses.</comment>
   </data>
   <data name="HowManyDownloadFoldersEachServer" xml:space="preserve">
     <value>Колькі тэчак для запампоўкі запамінаць для кожнага сервера ў полі «Захаваць у».</value>
@@ -904,6 +934,11 @@ Mac comment: Windows only. The letter that opens this menu with Alt, one charact
     <value>КБ/с</value>
     <comment>Mac key: kB/s</comment>
   </data>
+  <data name="KBSizeUnit" xml:space="preserve">
+    <value>КБ</value>
+    <comment>Mac key: KB (size unit)
+Mac comment: Windows only. A size unit in the torrent list and status bar, after a number: "532 bytes", "1.34 KB". Decimal units (1 KB = 1000 bytes), as Transmission reports them. Use the abbreviation File Explorer uses in your language.</comment>
+  </data>
   <data name="Labels" xml:space="preserve">
     <value>Меткі</value>
     <comment>Mac key: Labels</comment>
@@ -964,6 +999,11 @@ Mac comment: Windows only. The letter that opens this menu with Alt, one charact
     <value>МБ</value>
     <comment>Mac key: MB</comment>
   </data>
+  <data name="MBSizeUnit" xml:space="preserve">
+    <value>МБ</value>
+    <comment>Mac key: MB (size unit)
+Mac comment: Windows only. A size unit in the torrent list and status bar, after a number: "532 bytes", "1.34 KB". Decimal units (1 KB = 1000 bytes), as Transmission reports them. Use the abbreviation File Explorer uses in your language.</comment>
+  </data>
   <data name="MagnetLink" xml:space="preserve">
     <value>Magnet-спасылка</value>
     <comment>Mac key: Magnet link</comment>
@@ -995,6 +1035,11 @@ Mac comment: Windows only. The letter that opens this menu with Alt, one charact
   <data name="Minutes" xml:space="preserve">
     <value>хв</value>
     <comment>Mac key: minutes</comment>
+  </data>
+  <data name="MinutesNarrow" xml:space="preserve">
+    <value>{0} хв</value>
+    <comment>Mac key: Minutes, narrow (%lld)
+Mac comment: Windows only. One unit of a short duration in the torrent list, such as an ETA of "2h 5m": the number is %lld. Use the narrow unit (CLDR "narrow" style) and the spacing your language uses.</comment>
   </data>
   <data name="Misc" xml:space="preserve">
     <value>Рознае</value>
@@ -1224,6 +1269,11 @@ Mac comment: Windows only. Help menu: opens the folder with the app's log files 
   <data name="Peers_Other" xml:space="preserve">
     <value>{0} піра</value>
     <comment>Mac key: %lld peers</comment>
+  </data>
+  <data name="PerSecondSpeedUnitSuffix" xml:space="preserve">
+    <value>/с</value>
+    <comment>Mac key: Per second (speed unit suffix)
+Mac comment: Windows only. Added to a size to make a speed: "1.50 MB" becomes "1.50 MB/s".</comment>
   </data>
   <data name="PerTorrentPeerLimit" xml:space="preserve">
     <value>Ліміт піраў на торэнт</value>
@@ -1481,6 +1531,11 @@ Mac comment: Windows only. Help menu: opens the folder with the app's log files 
     <value>Захаваць у</value>
     <comment>Mac key: Save to</comment>
   </data>
+  <data name="SecondsNarrow" xml:space="preserve">
+    <value>{0} с</value>
+    <comment>Mac key: Seconds, narrow (%lld)
+Mac comment: Windows only. One unit of a short duration in the torrent list, such as an ETA of "2h 5m": the number is %lld. Use the narrow unit (CLDR "narrow" style) and the spacing your language uses.</comment>
+  </data>
   <data name="Security" xml:space="preserve">
     <value>Бяспека</value>
     <comment>Mac key: Security</comment>
@@ -1614,6 +1669,11 @@ Mac comment: Windows only. The connection stopped because of an error the app di
     <value>Хуткасць</value>
     <comment>Mac key: Speed</comment>
   </data>
+  <data name="SpeedLimitInForce" xml:space="preserve">
+    <value>({0})</value>
+    <comment>Mac key: (%@) (speed limit in force)
+Mac comment: Windows only. Status bar: the speed limit in force after the current speed, such as "1.20 MB/s (500 KB/s)".</comment>
+  </data>
   <data name="SpeedLimitMenuItems" xml:space="preserve">
     <value>Элементы меню абмежавання хуткасці</value>
     <comment>Mac key: Speed limit menu items</comment>
@@ -1681,6 +1741,11 @@ Mac comment: Windows only. The connection stopped because of an error the app di
   <data name="SwitchServer" xml:space="preserve">
     <value>Змяніць сервер</value>
     <comment>Mac key: Switch server</comment>
+  </data>
+  <data name="TBSizeUnit" xml:space="preserve">
+    <value>ТБ</value>
+    <comment>Mac key: TB (size unit)
+Mac comment: Windows only. A size unit in the torrent list and status bar, after a number: "532 bytes", "1.34 KB". Decimal units (1 KB = 1000 bytes), as Transmission reports them. Use the abbreviation File Explorer uses in your language.</comment>
   </data>
   <data name="TestConnection" xml:space="preserve">
     <value>Праверыць падлучэнне</value>
@@ -1839,6 +1904,11 @@ Mac comment: Windows only. Shown when the server can't be reached (the Mac shows
     <value>Час</value>
     <comment>Mac key: Time</comment>
   </data>
+  <data name="TimeAgo" xml:space="preserve">
+    <value>{0} таму</value>
+    <comment>Mac key: Time ago (%@)
+Mac comment: Windows only. How long ago something happened, with a short duration as %@ ("5m"); the status bar shows it as "Updated %@", such as "Updated 5m ago".</comment>
+  </data>
   <data name="To" xml:space="preserve">
     <value>Да</value>
     <comment>Mac key: To</comment>
@@ -1859,6 +1929,11 @@ Mac comment: Windows only. The letter that opens this menu with Alt, one charact
   <data name="TorrentOptionsEllipsis" xml:space="preserve">
     <value>Параметры торэнта…</value>
     <comment>Mac key: Torrent Options…</comment>
+  </data>
+  <data name="TorrentRowNameStatusProgress" xml:space="preserve">
+    <value>{0}, {1}, {2}</value>
+    <comment>Mac key: %1$@, %2$@, %3$@ (torrent row: name, status, progress)
+Mac comment: Windows only. What Narrator reads for a row of the torrent list: its name, status and progress, such as "ubuntu.iso, Downloading, 45.3%". Use the list separator your language uses.</comment>
   </data>
   <data name="Torrents" xml:space="preserve">
     <value>торэнтаў</value>

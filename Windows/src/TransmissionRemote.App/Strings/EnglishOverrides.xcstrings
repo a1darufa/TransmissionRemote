@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Action Failed" : {
+      "comment" : "Windows writes its interface in sentence case.",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Action failed" } }
+      }
+    },
     "Add Link" : {
       "comment" : "Windows writes its interface in sentence case.",
       "localizations" : {
@@ -49,6 +55,12 @@
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Ask trackers for more peers" } }
       }
     },
+    "Bandwidth Group" : {
+      "comment" : "Windows writes its interface in sentence case.",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Bandwidth group" } }
+      }
+    },
     "Bandwidth Priority" : {
       "comment" : "Windows writes its interface in sentence case.",
       "localizations" : {
@@ -73,6 +85,12 @@
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Copy magnet link" } }
       }
     },
+    "Couldn't Add Torrent" : {
+      "comment" : "Windows writes its interface in sentence case.",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Couldn't add torrent" } }
+      }
+    },
     "Couldn't Connect" : {
       "comment" : "Windows writes its interface in sentence case.",
       "localizations" : {
@@ -95,6 +113,12 @@
       "comment" : "Windows writes its interface in sentence case.",
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Edit trackers…" } }
+      }
+    },
+    "Last Active" : {
+      "comment" : "Windows writes its interface in sentence case.",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Last active" } }
       }
     },
     "Manage Servers…" : {
@@ -151,10 +175,22 @@
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Not connected" } }
       }
     },
+    "Remove and Delete Data" : {
+      "comment" : "Windows writes its interface in sentence case.",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Remove and delete data" } }
+      }
+    },
     "Remove and Delete Data…" : {
       "comment" : "Windows writes its interface in sentence case.",
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Remove and delete data…" } }
+      }
+    },
+    "Seeding Time" : {
+      "comment" : "Windows writes its interface in sentence case.",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Seeding time" } }
       }
     },
     "Server Settings…" : {
@@ -167,6 +203,12 @@
       "comment" : "Windows writes its interface in sentence case.",
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Show info pane" } }
+      }
+    },
+    "Size Left" : {
+      "comment" : "Windows writes its interface in sentence case.",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Size left" } }
       }
     },
     "Start All" : {
@@ -197,6 +239,18 @@
       "comment" : "Windows writes its interface in sentence case.",
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Torrent options…" } }
+      }
+    },
+    "Total Size" : {
+      "comment" : "Windows writes its interface in sentence case.",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Total size" } }
+      }
+    },
+    "Tracker Status" : {
+      "comment" : "Windows writes its interface in sentence case.",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tracker status" } }
       }
     },
     "Trust This Certificate" : {

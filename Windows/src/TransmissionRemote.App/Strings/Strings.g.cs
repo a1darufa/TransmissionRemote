@@ -17,7 +17,7 @@ internal static class Strings
     /// <summary>About Transmission Remote</summary>
     public static string AboutTransmissionRemote => StringResources.Get("AboutTransmissionRemote");
 
-    /// <summary>Action Failed</summary>
+    /// <summary>Action failed</summary>
     public static string ActionFailed => StringResources.Get("ActionFailed");
 
     /// <summary>Active</summary>
@@ -158,7 +158,7 @@ internal static class Strings
     /// <summary>Bandwidth</summary>
     public static string Bandwidth => StringResources.Get("Bandwidth");
 
-    /// <summary>Bandwidth Group</summary>
+    /// <summary>Bandwidth group</summary>
     public static string BandwidthGroup_319062 => StringResources.Get("BandwidthGroup_319062");
 
     /// <summary>Bandwidth group</summary>
@@ -176,11 +176,17 @@ internal static class Strings
     /// <summary>Bandwidth priority</summary>
     public static string BandwidthPriority_5262E0 => StringResources.Get("BandwidthPriority_5262E0");
 
+    /// <summary> </summary>
+    public static string BetweenDurationUnits => StringResources.Get("BetweenDurationUnits");
+
     /// <summary>Blocklist URL</summary>
     public static string BlocklistURL => StringResources.Get("BlocklistURL");
 
     /// <summary>Browse folders on the server</summary>
     public static string BrowseFoldersOnTheServer => StringResources.Get("BrowseFoldersOnTheServer");
+
+    /// <summary>bytes</summary>
+    public static string BytesSizeUnit => StringResources.Get("BytesSizeUnit");
 
     /// <summary>Cancel</summary>
     public static string Cancel => StringResources.Get("Cancel");
@@ -266,6 +272,9 @@ internal static class Strings
     /// <summary>Connection to this Mac.</summary>
     public static string ConnectionToThisMac => StringResources.Get("ConnectionToThisMac");
 
+    /// <summary>Connection to this PC.</summary>
+    public static string ConnectionToThisPC => StringResources.Get("ConnectionToThisPC");
+
     /// <summary>Consider active torrents as stalled when idle for</summary>
     public static string ConsiderActiveTorrentsAsStalledWhenIdle => StringResources.Get("ConsiderActiveTorrentsAsStalledWhenIdle");
 
@@ -281,7 +290,7 @@ internal static class Strings
     /// <summary>Corrupt</summary>
     public static string Corrupt => StringResources.Get("Corrupt");
 
-    /// <summary>Couldn&apos;t Add Torrent</summary>
+    /// <summary>Couldn&apos;t add torrent</summary>
     public static string CouldNotAddTorrent => StringResources.Get("CouldNotAddTorrent");
 
     /// <summary>“{0}” couldn&apos;t be opened as a torrent file.</summary>
@@ -334,6 +343,9 @@ internal static class Strings
 
     /// <summary>Days</summary>
     public static string Days => StringResources.Get("Days");
+
+    /// <summary>{0}d</summary>
+    public static string DaysNarrow => StringResources.Get("DaysNarrow");
 
     /// <summary>Default</summary>
     public static string Default => StringResources.Get("Default");
@@ -575,6 +587,9 @@ internal static class Strings
     /// <summary>From</summary>
     public static string From => StringResources.Get("From");
 
+    /// <summary>GB</summary>
+    public static string GBSizeUnit => StringResources.Get("GBSizeUnit");
+
     /// <summary>General</summary>
     public static string General => StringResources.Get("General");
 
@@ -604,6 +619,9 @@ internal static class Strings
 
     /// <summary>Host</summary>
     public static string Host => StringResources.Get("Host");
+
+    /// <summary>{0}h</summary>
+    public static string HoursNarrow => StringResources.Get("HoursNarrow");
 
     /// <summary>How many download folders each server remembers for “Save to”.</summary>
     public static string HowManyDownloadFoldersEachServer => StringResources.Get("HowManyDownloadFoldersEachServer");
@@ -668,6 +686,9 @@ internal static class Strings
     /// <summary>kB/s</summary>
     public static string KBS_56B829 => StringResources.Get("KBS_56B829");
 
+    /// <summary>KB</summary>
+    public static string KBSizeUnit => StringResources.Get("KBSizeUnit");
+
     /// <summary>Labels</summary>
     public static string Labels => StringResources.Get("Labels");
 
@@ -677,7 +698,7 @@ internal static class Strings
     /// <summary>Labels…</summary>
     public static string LabelsEllipsis => StringResources.Get("LabelsEllipsis");
 
-    /// <summary>Last Active</summary>
+    /// <summary>Last active</summary>
     public static string LastActive => StringResources.Get("LastActive");
 
     /// <summary>Last Announce</summary>
@@ -713,6 +734,9 @@ internal static class Strings
     /// <summary>MB</summary>
     public static string MB => StringResources.Get("MB");
 
+    /// <summary>MB</summary>
+    public static string MBSizeUnit => StringResources.Get("MBSizeUnit");
+
     /// <summary>Magnet link</summary>
     public static string MagnetLink => StringResources.Get("MagnetLink");
 
@@ -736,6 +760,9 @@ internal static class Strings
 
     /// <summary>minutes</summary>
     public static string Minutes => StringResources.Get("Minutes");
+
+    /// <summary>{0}m</summary>
+    public static string MinutesNarrow => StringResources.Get("MinutesNarrow");
 
     /// <summary>Misc</summary>
     public static string Misc => StringResources.Get("Misc");
@@ -899,6 +926,9 @@ internal static class Strings
     /// <summary>The form for a count of: {0} peers</summary>
     public static string PeersFor(long count) => StringResources.PluralForm("Peers", count);
 
+    /// <summary>/s</summary>
+    public static string PerSecondSpeedUnitSuffix => StringResources.Get("PerSecondSpeedUnitSuffix");
+
     /// <summary>Per torrent peer limit</summary>
     public static string PerTorrentPeerLimit => StringResources.Get("PerTorrentPeerLimit");
 
@@ -1013,7 +1043,7 @@ internal static class Strings
     /// <summary>Remove</summary>
     public static string Remove => StringResources.Get("Remove");
 
-    /// <summary>Remove and Delete Data</summary>
+    /// <summary>Remove and delete data</summary>
     public static string RemoveAndDeleteData => StringResources.Get("RemoveAndDeleteData");
 
     /// <summary>Remove and delete data…</summary>
@@ -1082,6 +1112,9 @@ internal static class Strings
     /// <summary>Save to</summary>
     public static string SaveTo => StringResources.Get("SaveTo");
 
+    /// <summary>{0}s</summary>
+    public static string SecondsNarrow => StringResources.Get("SecondsNarrow");
+
     /// <summary>Security</summary>
     public static string Security => StringResources.Get("Security");
 
@@ -1094,7 +1127,7 @@ internal static class Strings
     /// <summary>Seeding for</summary>
     public static string SeedingFor => StringResources.Get("SeedingFor");
 
-    /// <summary>Seeding Time</summary>
+    /// <summary>Seeding time</summary>
     public static string SeedingTime => StringResources.Get("SeedingTime");
 
     /// <summary>Seeds</summary>
@@ -1163,7 +1196,7 @@ internal static class Strings
     /// <summary>Size</summary>
     public static string Size => StringResources.Get("Size");
 
-    /// <summary>Size Left</summary>
+    /// <summary>Size left</summary>
     public static string SizeLeft => StringResources.Get("SizeLeft");
 
     /// <summary>Skip This Version</summary>
@@ -1177,6 +1210,9 @@ internal static class Strings
 
     /// <summary>Speed</summary>
     public static string Speed => StringResources.Get("Speed");
+
+    /// <summary>({0})</summary>
+    public static string SpeedLimitInForce => StringResources.Get("SpeedLimitInForce");
 
     /// <summary>Speed limit menu items</summary>
     public static string SpeedLimitMenuItems => StringResources.Get("SpeedLimitMenuItems");
@@ -1228,6 +1264,9 @@ internal static class Strings
 
     /// <summary>Switch server</summary>
     public static string SwitchServer => StringResources.Get("SwitchServer");
+
+    /// <summary>TB</summary>
+    public static string TBSizeUnit => StringResources.Get("TBSizeUnit");
 
     /// <summary>Test Connection</summary>
     public static string TestConnection => StringResources.Get("TestConnection");
@@ -1352,6 +1391,9 @@ internal static class Strings
     /// <summary>Time</summary>
     public static string Time => StringResources.Get("Time");
 
+    /// <summary>{0} ago</summary>
+    public static string TimeAgo => StringResources.Get("TimeAgo");
+
     /// <summary>To</summary>
     public static string To => StringResources.Get("To");
 
@@ -1366,6 +1408,9 @@ internal static class Strings
 
     /// <summary>Torrent options…</summary>
     public static string TorrentOptionsEllipsis => StringResources.Get("TorrentOptionsEllipsis");
+
+    /// <summary>{0}, {1}, {2}</summary>
+    public static string TorrentRowNameStatusProgress => StringResources.Get("TorrentRowNameStatusProgress");
 
     /// <summary>torrents</summary>
     public static string Torrents => StringResources.Get("Torrents");
@@ -1385,7 +1430,7 @@ internal static class Strings
     /// <summary>Total size</summary>
     public static string TotalSize_51CDF6 => StringResources.Get("TotalSize_51CDF6");
 
-    /// <summary>Total Size</summary>
+    /// <summary>Total size</summary>
     public static string TotalSize_9AC7DE => StringResources.Get("TotalSize_9AC7DE");
 
     /// <summary>Tracker</summary>
@@ -1394,7 +1439,7 @@ internal static class Strings
     /// <summary>Tracker error</summary>
     public static string TrackerError => StringResources.Get("TrackerError");
 
-    /// <summary>Tracker Status</summary>
+    /// <summary>Tracker status</summary>
     public static string TrackerStatus => StringResources.Get("TrackerStatus");
 
     /// <summary>Trackers</summary>
