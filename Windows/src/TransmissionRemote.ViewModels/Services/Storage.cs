@@ -47,13 +47,7 @@ internal static class StorageFiles
     }
 
     /// <summary>A path with the user's folder written as %USERPROFILE%, so shared logs don't reveal the user's name.</summary>
-    public static string DisplayPath(string path)
-    {
-        var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        return home.Length > 0 && path.StartsWith(home, StringComparison.OrdinalIgnoreCase)
-            ? "%USERPROFILE%" + path[home.Length..]
-            : path;
-    }
+    public static string DisplayPath(string path) => LogPath.Display(path);
 
     public static JsonException? TryParse(byte[] contents, out JsonDocument? document)
     {
