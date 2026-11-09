@@ -1,5 +1,6 @@
 using System.Globalization;
 using TransmissionKit;
+using TransmissionRemote.ViewModels;
 
 namespace TransmissionRemote.App.Presentation;
 
@@ -16,6 +17,19 @@ internal static class ErrorMessages
         TransmissionException transmission => For(transmission),
         _ => Strings.SomethingUnexpectedWentWrongTheLogFiles,
     };
+
+    /// <summary>Why a file or link couldn't be added, naming it, as the Mac's "Couldn't Add Torrent" alert.</summary>
+    public static string For(AddProblem problem)
+    {
+        ArgumentNullException.ThrowIfNull(problem);
+        return problem.Kind switch
+        {
+            AddProblemKind.FileTooLarge => Format(Strings.IsTooLargeToBeATorrentFile, problem.Subject),
+            AddProblemKind.NotATorrentFile => Format(Strings.CouldNotBeOpenedAsATorrentFile, problem.Subject),
+            AddProblemKind.NotALink => Format(Strings.IsNotAMagnetLinkOrATorrentURL, problem.Subject),
+            _ => For(problem.Error),
+        };
+    }
 
     private static string For(TransmissionException error) => error.Kind switch
     {

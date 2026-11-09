@@ -239,13 +239,27 @@
                     x:Name="ConnectionPages"
                     Visibility="{x:Bind presentation:Visible.Unless(ViewModel.IsConnected), Mode=OneWay}" />
 
-                <!-- Connected (brief 3.1): the torrent list over the status bar. -->
-                <Grid x:Name="TorrentListHost" Visibility="{x:Bind presentation:Visible.When(ViewModel.IsConnected), Mode=OneWay}">
+                <!-- Connected (brief 3.1): errors from actions and adds, the torrent list, the status bar. The list area
+                     takes dropped .torrent files and links. -->
+                <Grid
+                    x:Name="TorrentListHost"
+                    AllowDrop="True"
+                    DragOver="OnDragOver"
+                    Drop="OnDrop"
+                    Visibility="{x:Bind presentation:Visible.When(ViewModel.IsConnected), Mode=OneWay}">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Grid>
+                    <InfoBar
+                        x:Name="ProblemBar"
+                        Margin="12,8,12,4"
+                        Closed="OnProblemBarClosed"
+                        IsOpen="False"
+                        Severity="Error"
+                        AutomationProperties.LiveSetting="Polite" />
+                    <Grid Grid.Row="1">
                         <controls:TorrentTable x:Name="Torrents" />
                         <controls:EmptyStateView
                             Title="{x:Bind app:Strings.NoTorrents}"
@@ -257,7 +271,7 @@
                             </controls:EmptyStateView.Icon>
                         </controls:EmptyStateView>
                     </Grid>
-                    <controls:StatusBarView x:Name="StatusBar" Grid.Row="1" />
+                    <controls:StatusBarView x:Name="StatusBar" Grid.Row="2" />
                 </Grid>
 
                 <!-- Drag the sidebar's edge: between the Mac's 180 and 340 epx. A pointer affordance, as on the Mac: off the

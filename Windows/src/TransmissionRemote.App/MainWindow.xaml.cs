@@ -9,6 +9,7 @@ using TransmissionRemote.App.Controls;
 using TransmissionRemote.App.Presentation;
 using TransmissionRemote.App.Shell;
 using TransmissionRemote.ViewModels;
+using Windows.ApplicationModel.DataTransfer;
 
 namespace TransmissionRemote.App;
 
@@ -61,6 +62,7 @@ public sealed partial class MainWindow : Window
         viewModel.Connection.PropertyChanged += OnConnectionChanged;
         viewModel.Servers.Changed += (_, _) => UpdateServerChoices();
         viewModel.Settings.Changed += (_, _) => UpdateSpeedLimitMenus();
+        viewModel.AddQueue.PropertyChanged += OnAddQueueChanged;
         Activated += OnActivated;
         Closed += OnClosed;
         ApplyDevelopmentTheme();
@@ -100,10 +102,39 @@ public sealed partial class MainWindow : Window
             case nameof(ServerConnection.Profile):
                 UpdateServerChoices();
                 break;
+            case nameof(ServerConnection.ActionError) when ViewModel.Connection.ActionError is { } error:
+                ShowProblem(Strings.ActionFailed, ErrorMessages.For(error));
+                break;
         }
     }
 
-    // Removing ---------------------------------------------------------------------------------------------------
+    private void OnAddQueueChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(AddTorrentFlow.Problem) && ViewModel.AddQueue.Problem is { } problem)
+        {
+            ShowProblem(Strings.CouldNotAddTorrent, ErrorMessages.For(problem));
+        }
+    }
+
+    // Errors, adding and removing --------------------------------------------------------------------------------
+
+    /// <summary>
+    /// A failed action or add in the bar above the list (brief 4.7.10): non-modal, so it never collides with a dialog.
+    /// The newest problem replaces an older one.
+    /// </summary>
+    private void ShowProblem(string title, string message)
+    {
+        ProblemBar.Title = title;
+        ProblemBar.Message = message;
+        ProblemBar.IsOpen = true;
+    }
+
+    /// <summary>Closing the bar clears what it showed, so the same problem can be reported again.</summary>
+    private void OnProblemBarClosed(InfoBar sender, InfoBarClosedEventArgs args)
+    {
+        ViewModel.Connection.ActionError = null;
+        ViewModel.AddQueue.Problem = null;
+    }
 
     private async void OnRemoveClicked(object sender, RoutedEventArgs e) => await RemoveSelectionAsync(deletingData: false);
 
@@ -114,6 +145,68 @@ public sealed partial class MainWindow : Window
         if (count > 0 && await RemoveConfirmation.AskAsync(Root.XamlRoot, count, deletingData))
         {
             await ViewModel.RemoveSelectionAsync(deletingData);
+        }
+    }
+
+    /// <summary>
+    /// Ctrl+V or Shift+Insert in the list: magnet links and torrent URLs from the clipboard's text, one per line, or
+    /// .torrent files copied in File Explorer. The clipboard is read only now, never watched.
+    /// </summary>
+    private async Task PasteAsync()
+    {
+        if (!ViewModel.IsConnected)
+        {
+            return;
+        }
+        var content = Clipboard.GetContent();
+        if (content.Contains(StandardDataFormats.StorageItems))
+        {
+            var items = await content.GetStorageItemsAsync();
+            ViewModel.AddQueue.Open(items.Select(item => item.Path).Where(path => path.Length > 0));
+        }
+        else if (content.Contains(StandardDataFormats.Text))
+        {
+            ViewModel.AddQueue.OpenLinks(await content.GetTextAsync());
+        }
+    }
+
+    /// <summary>Files, links and text dragged over the list area can be dropped there while connected.</summary>
+    private void OnDragOver(object sender, DragEventArgs e)
+    {
+        var data = e.DataView;
+        var canAdd = ViewModel.IsConnected && (data.Contains(StandardDataFormats.StorageItems)
+            || data.Contains(StandardDataFormats.Text) || data.Contains(StandardDataFormats.WebLink));
+        e.AcceptedOperation = canAdd ? DataPackageOperation.Copy : DataPackageOperation.None;
+        if (canAdd)
+        {
+            e.DragUIOverride.Caption = Strings.Add;
+        }
+    }
+
+    /// <summary>Dropped .torrent files and links go to the add flow; other files come back as "couldn't be opened".</summary>
+    private async void OnDrop(object sender, DragEventArgs e)
+    {
+        var data = e.DataView;
+        var deferral = e.GetDeferral();
+        try
+        {
+            if (data.Contains(StandardDataFormats.StorageItems))
+            {
+                var items = await data.GetStorageItemsAsync();
+                ViewModel.AddQueue.Open(items.Select(item => item.Path).Where(path => path.Length > 0));
+            }
+            else if (data.Contains(StandardDataFormats.WebLink))
+            {
+                ViewModel.AddQueue.OpenLinks((await data.GetWebLinkAsync()).ToString());
+            }
+            else if (data.Contains(StandardDataFormats.Text))
+            {
+                ViewModel.AddQueue.OpenLinks(await data.GetTextAsync());
+            }
+        }
+        finally
+        {
+            deferral.Complete();
         }
     }
 
@@ -184,7 +277,7 @@ public sealed partial class MainWindow : Window
 
     /// <summary>
     /// The menu items carry their keys (brief 3.5); the Torrent menu's are attached where it's built. The list has
-    /// a few keys of its own with no menu item: Enter and Ctrl+A.
+    /// a few keys of its own with no menu item: Enter, Ctrl+A and paste.
     /// </summary>
     private void AttachShortcuts()
     {
@@ -209,6 +302,7 @@ public sealed partial class MainWindow : Window
         Shortcuts.AttachHidden(Root, AppCommand.Exit, Close, Torrents.List);
         Shortcuts.AttachHidden(Torrents.List, AppCommand.ShowInfoForRow, ViewModel.ShowInfoForSelection, Torrents.List);
         Shortcuts.AttachHidden(Torrents.List, AppCommand.SelectAllTorrents, Torrents.List.SelectAll, Torrents.List);
+        Shortcuts.AttachHidden(Torrents.List, AppCommand.Paste, () => _ = PasteAsync(), Torrents.List);
     }
 
     // Menus built from data -------------------------------------------------------------------------------------
