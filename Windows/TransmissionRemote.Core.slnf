@@ -1,0 +1,13 @@
+{
+  "solution": {
+    "path": "TransmissionRemote.slnx",
+    "projects": [
+      "src/TransmissionKit/TransmissionKit.csproj",
+      "src/TransmissionRemote.ViewModels/TransmissionRemote.ViewModels.csproj",
+      "tests/StringCatalogConverter.Tests/StringCatalogConverter.Tests.csproj",
+      "tests/TransmissionKit.Tests/TransmissionKit.Tests.csproj",
+      "tests/TransmissionRemote.ViewModels.Tests/TransmissionRemote.ViewModels.Tests.csproj",
+      "tools/StringCatalogConverter/StringCatalogConverter.csproj"
+    ]
+  }
+}
