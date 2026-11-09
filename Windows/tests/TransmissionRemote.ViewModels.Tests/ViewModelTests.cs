@@ -67,6 +67,8 @@ public sealed class MainViewModelTests
             daemon.AddTorrent(3, "Done", percentDone: 1, status: 6);
         });
         await app.ConnectAsync(expectedTorrents: 3);
+        app.Main.SortBy(TorrentColumn.Name);
+        app.Main.SortAscending = true;
 
         CollectionAssert.AreEqual(new[] { "Done", "Season 2", "Season 10" }, Names(app.Main.Rows));
 
@@ -80,6 +82,15 @@ public sealed class MainViewModelTests
         app.Main.SortBy(TorrentColumn.Name);
         CollectionAssert.AreEqual(new[] { "Season 10", "Season 2" }, Names(app.Main.Rows), "the same column flips the order");
         Assert.AreEqual(1, app.Main.Sidebar.CountFor(StatusFilter.Completed));
+    }
+
+    [TestMethod]
+    public void NewestTorrentsComeFirstUntilTheUserPicksAColumn()
+    {
+        using var app = new TestApp();
+
+        Assert.AreEqual(TorrentColumn.Added, app.Main.SortColumn);
+        Assert.IsFalse(app.Main.SortAscending);
     }
 
     [TestMethod]

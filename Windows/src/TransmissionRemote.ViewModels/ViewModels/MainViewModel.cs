@@ -20,10 +20,9 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         AddQueue = addQueue ?? throw new ArgumentNullException(nameof(addQueue));
         Sidebar = new SidebarSummary([]);
         var current = settings.Current;
-        // Until the user picks a column, the list is sorted by name, A to Z.
-        var hasSavedSort = Enum.TryParse<TorrentColumn>(current.SortColumn, out var column);
-        SortColumn = hasSavedSort ? column : TorrentColumn.Name;
-        SortAscending = !hasSavedSort || current.SortAscending;
+        // Until the user picks a column, the newest torrents come first, as in the Mac app.
+        SortColumn = Enum.TryParse<TorrentColumn>(current.SortColumn, out var column) ? column : TorrentColumn.Added;
+        SortAscending = current.SortAscending;
         Connection.PropertyChanged += OnConnectionChanged;
     }
 
