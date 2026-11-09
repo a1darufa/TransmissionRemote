@@ -227,12 +227,66 @@ public sealed class CatalogConverterTests
     }
 
     [TestMethod]
+    public void AnEnglishOverrideChangesOnlyTheEnglishText()
+    {
+        var overrides = SingleEntry("Connected to Transmission %@ using %@.", "en", "Connected to Transmission %1$@ over %2$@.");
+
+        var files = ConvertWithOverrides(overrides, Catalog);
+
+        Assert.AreEqual("Connected to Transmission {0} over {1}.", Value(files, "en-US", "ConnectedToTransmissionUsing"));
+        Assert.AreEqual("已使用 {1} 连接到 Transmission {0}。", Value(files, "zh-Hans", "ConnectedToTransmissionUsing"));
+        StringAssert.Contains(Resource(files, "en-US", "ConnectedToTransmissionUsing")!.Comment, "English overrides");
+    }
+
+    [TestMethod]
+    public void AnEnglishOverrideCanChangeEachPluralForm()
+    {
+        const string Overrides = """
+            {
+              "sourceLanguage": "en",
+              "strings": {
+                "%lld files": { "localizations": { "en": { "variations": { "plural": {
+                  "one": { "stringUnit": { "state": "translated", "value": "%lld item" } },
+                  "other": { "stringUnit": { "state": "translated", "value": "%lld items" } }
+                } } } } }
+              }
+            }
+            """;
+
+        var files = ConvertWithOverrides(Overrides, Catalog);
+
+        Assert.AreEqual("{0} item", Value(files, "en-US", "Files_One"));
+        Assert.AreEqual("{0} items", Value(files, "en-US", "Files_Few"), "the default for MRT follows the override");
+        Assert.AreEqual("{0} файла", Value(files, "ru", "Files_Few"));
+    }
+
+    [TestMethod]
+    [DataRow("Nowhere", "en", "Nowhere else", "isn't in any catalog")]
+    [DataRow("Cancel", "de", "Abbruch", "may only have English text")]
+    [DataRow("Connected to Transmission %@ using %@.", "en", "Connected to %1$@.", "placeholders")]
+    [DataRow("Cancel", "en", "Cancel", "the same as the original")]
+    [DataRow("%lld files", "en", "Files", "plural forms")]
+    public void AnEnglishOverrideMustFitTheString(string key, string language, string value, string expectedError)
+    {
+        var overrides = SingleEntry(key, language, value);
+
+        var error = Assert.ThrowsExactly<InvalidDataException>(() => ConvertWithOverrides(overrides, Catalog));
+        StringAssert.Contains(error.Message, expectedError);
+    }
+
+    [TestMethod]
     public void CatalogsMustBeWrittenInEnglish() =>
         Assert.ThrowsExactly<InvalidDataException>(() => Convert(Catalog.Replace(
             "\"sourceLanguage\" : \"en\"", "\"sourceLanguage\" : \"de\"", StringComparison.Ordinal)));
 
     private static IReadOnlyDictionary<string, IReadOnlyList<ResourceString>> Convert(params string[] catalogs) =>
         CatalogConverter.Convert(catalogs.Select(json => StringCatalogReader.Parse(json, "Test.xcstrings")));
+
+    private static IReadOnlyDictionary<string, IReadOnlyList<ResourceString>> ConvertWithOverrides(
+        string overrides, params string[] catalogs) =>
+        CatalogConverter.Convert(
+            catalogs.Select(json => StringCatalogReader.Parse(json, "Test.xcstrings")),
+            StringCatalogReader.Parse(overrides, "EnglishOverrides.xcstrings"));
 
     private static ResourceString? Resource(
         IReadOnlyDictionary<string, IReadOnlyList<ResourceString>> files, string language, string name) =>

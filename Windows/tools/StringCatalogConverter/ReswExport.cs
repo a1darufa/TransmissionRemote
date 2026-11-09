@@ -18,11 +18,10 @@ internal static class ReswExport
     /// <exception cref="IOException">A file can't be read or written.</exception>
     public static void Run(CommandLineOptions options, TextWriter log)
     {
-        var catalogs = options.CatalogPaths
-            .Select(path => StringCatalogReader.Parse(File.ReadAllText(path), path))
-            .ToList();
+        var catalogs = options.CatalogPaths.Select(Read).ToList();
+        var englishOverrides = options.EnglishOverridesPath is { } overridesPath ? Read(overridesPath) : null;
         // Converting everything before writing anything means a bad catalog leaves the old files untouched.
-        var files = CatalogConverter.Convert(catalogs);
+        var files = CatalogConverter.Convert(catalogs, englishOverrides);
 
         var code = options.CodePath is null ? null : CodeWriter.Write(files[CatalogConverter.DefaultLanguage]);
 
@@ -40,4 +39,6 @@ internal static class ReswExport
             log.WriteLine($"{options.CodePath}: names for the app's code");
         }
     }
+
+    private static StringCatalog Read(string path) => StringCatalogReader.Parse(File.ReadAllText(path), path);
 }

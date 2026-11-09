@@ -28,6 +28,20 @@ public sealed class CommandLineOptionsTests
 
         Assert.IsTrue(parsed, error);
         Assert.AreEqual("Strings.g.cs", options!.CodePath);
+        Assert.IsNull(options.EnglishOverridesPath);
+    }
+
+    [TestMethod]
+    public void ReadsTheOptionalEnglishOverrides()
+    {
+        var parsed = CommandLineOptions.TryParse(
+            ["--catalog", "App.xcstrings", "--english-overrides", "EnglishOverrides.xcstrings", "--output", "Strings"],
+            out var options,
+            out var error);
+
+        Assert.IsTrue(parsed, error);
+        Assert.AreEqual("EnglishOverrides.xcstrings", options!.EnglishOverridesPath);
+        CollectionAssert.AreEqual(new[] { "App.xcstrings" }, options.CatalogPaths.ToList(), "the overrides aren't a catalog");
     }
 
     [TestMethod]
@@ -39,6 +53,7 @@ public sealed class CommandLineOptionsTests
     [DataRow(new[] { "--catalog", "App.xcstrings", "--output", "A", "--output", "B" }, "once")]
     [DataRow(new[] { "--catalog", "App.xcstrings", "--output", "A", "--code", "B", "--code", "C" }, "--code can only")]
     [DataRow(new[] { "--catalog", "App.xcstrings", "--output", "A", "--code" }, "--code needs a path")]
+    [DataRow(new[] { "--catalog", "App.xcstrings", "--output", "A", "--english-overrides", "B", "--english-overrides", "C" }, "--english-overrides can only")]
     [DataRow(new[] { "App.xcstrings" }, "Unknown argument")]
     public void MistakesAreExplained(string[] arguments, string expectedError)
     {

@@ -20,16 +20,22 @@ internal static class CatalogConverter
 
     private const string SourceLanguage = "en";
 
+    /// <param name="englishOverrides">
+    /// English texts the Windows app words differently, such as in sentence case. Each entry changes the English
+    /// text of a string from <paramref name="catalogs"/>; the other languages keep their translations.
+    /// </param>
     /// <exception cref="InvalidDataException">A catalog can't be converted faithfully.</exception>
     public static IReadOnlyDictionary<string, IReadOnlyList<ResourceString>> Convert(
-        IEnumerable<StringCatalog> catalogs)
+        IEnumerable<StringCatalog> catalogs, StringCatalog? englishOverrides = null)
     {
         var entries = catalogs.SelectMany(EnglishSourceEntries).ToList();
+        var overrides = englishOverrides is null ? [] : OverridesByKey(EnglishSourceEntries(englishOverrides), entries);
         var names = ResourceNamer.AssignNames(PluralAgreement(entries));
         var files = new Dictionary<string, Dictionary<string, ResourceString>>(StringComparer.Ordinal);
         foreach (var entry in entries)
         {
-            foreach (var (language, resource) in Resources(entry, names[entry.Key]))
+            var englishOverride = overrides.GetValueOrDefault(entry.Key);
+            foreach (var (language, resource) in Resources(entry, names[entry.Key], englishOverride))
             {
                 Add(files, language, resource, entry.Key);
             }
@@ -106,12 +112,71 @@ internal static class CatalogConverter
         }
     }
 
+    /// <summary>
+    /// The override entries by key. An override may only change the English text of a string the catalogs have:
+    /// a translation in it would compete with the catalog's.
+    /// </summary>
+    private static Dictionary<string, CatalogEntry> OverridesByKey(
+        IReadOnlyList<CatalogEntry> overrides, List<CatalogEntry> entries)
+    {
+        var keys = entries.Select(entry => entry.Key).ToHashSet(StringComparer.Ordinal);
+        var result = new Dictionary<string, CatalogEntry>(StringComparer.Ordinal);
+        foreach (var entry in overrides)
+        {
+            if (!keys.Contains(entry.Key))
+            {
+                throw new InvalidDataException($"The English override \"{entry.Key}\" isn't in any catalog.");
+            }
+            if (entry.Localizations.Keys.Any(language => language != SourceLanguage))
+            {
+                throw new InvalidDataException(
+                    $"The English override \"{entry.Key}\" may only have English text; translations belong in the " +
+                    "catalog that has the string.");
+            }
+            result[entry.Key] = entry;
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// The override's English in place of the original. It must keep the original's plural forms and placeholders,
+    /// or the translations, which stay, would no longer fit.
+    /// </summary>
+    private static Dictionary<string, AppleFormat> OverriddenEnglish(
+        Dictionary<string, AppleFormat> original, CatalogEntry englishOverride, string baseName)
+    {
+        var key = englishOverride.Key;
+        var replacement = Parsed(EnglishTexts(englishOverride, baseName), key, DefaultLanguage);
+        if (!replacement.Keys.ToHashSet(StringComparer.Ordinal).SetEquals(original.Keys))
+        {
+            throw new InvalidDataException($"The English override \"{key}\" doesn't have the original's plural forms.");
+        }
+        foreach (var (name, format) in replacement)
+        {
+            if (!format.PlaceholderIndices.SetEquals(original[name].PlaceholderIndices))
+            {
+                throw new InvalidDataException($"The English override \"{key}\" doesn't have the original's placeholders.");
+            }
+        }
+        if (replacement.All(pair => Text(pair.Value) == Text(original[pair.Key])))
+        {
+            throw new InvalidDataException($"The English override \"{key}\" is the same as the original.");
+        }
+        return replacement;
+
+        static string Text(AppleFormat format) => format.ToDotNet(asFormatString: true);
+    }
+
     /// <summary>Every language's resources for one entry: always English, then each finished translation.</summary>
     private static IEnumerable<(string Language, ResourceString Resource)> Resources(
-        CatalogEntry entry, string baseName)
+        CatalogEntry entry, string baseName, CatalogEntry? englishOverride)
     {
-        var comment = Comment(entry);
+        var comment = Comment(entry, isEnglishOverridden: englishOverride is not null);
         var english = Parsed(EnglishTexts(entry, baseName), entry.Key, DefaultLanguage);
+        if (englishOverride is not null)
+        {
+            english = OverriddenEnglish(english, englishOverride, baseName);
+        }
         // A string with placeholders is a format string in every language: the app passes it to string.Format.
         var isFormatString = entry.IsPlural || english.Values.Any(format => format.PlaceholderIndices.Count > 0);
         var englishPlaceholders = english.Values.SelectMany(format => format.PlaceholderIndices).ToHashSet();
@@ -217,9 +282,13 @@ internal static class CatalogConverter
     /// <summary>
     /// The Mac key, so the Windows developer can search for the Mac wording, plus anything the catalog says.
     /// </summary>
-    private static string Comment(CatalogEntry entry)
+    private static string Comment(CatalogEntry entry, bool isEnglishOverridden)
     {
         List<string> lines = [$"Mac key: {entry.Key}"];
+        if (isEnglishOverridden)
+        {
+            lines.Add("English worded for Windows by the English overrides catalog.");
+        }
         if (!entry.ShouldTranslate)
         {
             lines.Add("Not translated: the Mac catalog marks it shouldTranslate = false.");
