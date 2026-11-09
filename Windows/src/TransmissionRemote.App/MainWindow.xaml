@@ -17,7 +17,7 @@
 
         <TitleBar x:Name="AppTitleBar" Title="{x:Bind app:Strings.TransmissionRemote}">
             <TitleBar.IconSource>
-                <ImageIconSource ImageSource="ms-appx:///Assets/AppIcon.ico" />
+                <ImageIconSource ImageSource="ms-appx:///Assets/TitleBarIcon.png" />
             </TitleBar.IconSource>
         </TitleBar>
     </Grid>

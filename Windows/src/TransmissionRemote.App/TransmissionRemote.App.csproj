@@ -61,8 +61,16 @@
 
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
-    <!-- The window and title bar icon; the .exe gets the same file through ApplicationIcon. -->
+    <!-- The taskbar icon; the .exe gets the same file through ApplicationIcon. -->
     <Content Include="..\..\assets\AppIcon\AppIcon.ico" Link="Assets\AppIcon.ico" CopyToOutputDirectory="PreserveNewest" />
+    <!-- The 16 epx title bar icon at each display scale, so MRT picks a sharp frame rather than a scaled one. -->
+    <Content Include="..\..\assets\AppIcon\AppIcon-16.png" Link="Assets\TitleBarIcon.scale-100.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\assets\AppIcon\AppIcon-20.png" Link="Assets\TitleBarIcon.scale-125.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\assets\AppIcon\AppIcon-24.png" Link="Assets\TitleBarIcon.scale-150.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\assets\AppIcon\AppIcon-32.png" Link="Assets\TitleBarIcon.scale-200.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\assets\AppIcon\AppIcon-40.png" Link="Assets\TitleBarIcon.scale-250.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\assets\AppIcon\AppIcon-48.png" Link="Assets\TitleBarIcon.scale-300.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\assets\AppIcon\AppIcon-64.png" Link="Assets\TitleBarIcon.scale-400.png" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>
