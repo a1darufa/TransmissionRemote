@@ -8,8 +8,10 @@ oldest version the Windows App SDK supports.
 
 | Part | State |
 |---|---|
-| `TransmissionKit`: the UI-free core (RPC client, models, .torrent parsing, helpers) | Done, ported from the Mac app's Swift package, 275 tests |
+| `TransmissionKit`: the UI-free core (RPC client, models, .torrent parsing, helpers) | Done, ported from the Mac app's Swift package, 288 tests |
+| `TransmissionRemote.ViewModels`: the app's logic without its interface | Done, ported from the Mac app's models, 195 tests. See [below](#the-apps-logic-srctransmissionremoteviewmodels) |
 | `tools/StringCatalogConverter`: the Mac app's translations as `.resw` files | Done, 109 tests. See [Strings](#strings) |
+| App icon: `assets/AppIcon/` (`AppIcon.ico` with 9 sizes, and PNGs) | Done, exported from the Mac build |
 | `TransmissionRemote.App`: the WinUI 3 app | Not started. Planned below |
 | Installers for x64 and ARM64 | Not started |
 
@@ -89,6 +91,44 @@ How it differs from the Swift version, and why:
 - **Gzip**: a cut-off file is detected through the gzip trailer's length, so a file with several gzip
   members counts as truncated. The Swift version only reads single-member files too.
 
+## The app's logic: `src/TransmissionRemote.ViewModels`
+
+Everything the Windows app does except drawing it: saved servers and settings, the live connection,
+the sidebar filters, the torrent list, adding torrents, and a view model for each window and dialog.
+It's platform-neutral (CommunityToolkit.Mvvm with partial properties), so it builds and is tested on
+any OS, against a fake Transmission. The WinUI app binds to it and adds only the interface.
+
+```
+Abstractions/   interfaces the app implements with Windows APIs: ICredentialStore (Credential
+                Manager), IClientCertificateProvider (certificate store), INotificationService
+                (app notifications), IShell (open, show in File Explorer, clipboard)
+Models/         ServerProfile, ProxySettings, AppSettings
+Services/       ServerStore and SettingsStore (JSON files in %LOCALAPPDATA%\TransmissionRemote),
+                ServerConnection (connect, retry, poll, actions), AddTorrentFlow, TransguiImporter
+                (transgui.ini from %LOCALAPPDATA%\Transmission Remote GUI or a portable copy),
+                UpdateChecker, PeerInfoService (countries and host names), LocalFiles and
+                RunnableFile (open downloaded files through path mappings, asking first for
+                programs and scripts)
+Presentation/   sidebar filters and counts, the file tree, list columns, natural sorting,
+                DisplayFormatter (sizes, speeds, durations, ratios, dates with the app's own
+                localized unit labels) and the torrent status as an enum
+ViewModels/     MainViewModel, AddTorrentViewModel, SessionSettingsViewModel,
+                TorrentOptionsViewModel, EditTrackersViewModel, ServerEditorViewModel, torrent rows
+```
+
+Ground rules:
+
+- **Use it from the UI thread.** Awaits resume on WinUI's synchronization context, so properties
+  change on the UI thread and bindings update safely.
+- **No sentences.** It exposes states as enums and errors as exceptions (`TransmissionException.Kind`,
+  `ConnectionFailure.Remedy`, `AddProblemKind`…); the app picks the localized text. That keeps all
+  wording in the `.resw` files.
+- **New logic goes here, with a test**, not into code-behind, so it keeps building and testing on a Mac
+  and in CI.
+- Same behavior as the Mac app, including its fixes for transgui issues; comments name them.
+- Saved files are read leniently: an unreadable server costs only that entry, settings missing from an
+  older file keep their defaults, and an unreadable file is copied aside before the next save.
+
 ## Logging and error handling
 
 Anyone should be able to tell from the log which part of the app failed and why.
@@ -108,6 +148,10 @@ Anyone should be able to tell from the log which part of the app failed and why.
 | 1104 | Warning | A redirect was refused |
 | 1200 | Warning | An untrusted TLS certificate was rejected (with its fingerprint) |
 | 1201 | Debug | A pinned certificate was accepted |
+| 2000s | | `TransmissionRemote.ViewModels`, saved data: unreadable or unsaved servers and settings |
+| 2100s | | The connection: connecting, server unreachable (with the retry delay), stopped, refresh and action failures |
+| 2200s | | Adding torrents: unreadable files, refused torrents |
+| 2300s | | Other services: update check, country database, opening local files |
 
 Never log passwords, the `Authorization` header or request bodies (they can hold whole .torrent files).
 `Credentials`, `TransmissionClientOptions` and `AddTorrentRequest` hide those when printed, and
@@ -216,15 +260,15 @@ default background on Windows 10.
 | Sheets (Add torrent, Options, Trackers) | `ContentDialog`; Add torrent may need its own window |
 | Menu bar extra | Tray icon with a menu ([H.NotifyIcon.WinUI](https://github.com/HavenDV/H.NotifyIcon)) |
 | Notifications when a download finishes | `AppNotificationManager` (Windows App SDK) |
-| Keychain | Windows Credential Manager through `Windows.Security.Credentials.PasswordVault` |
+| Keychain | Passwords in Credential Manager (`PasswordVault`, which holds at most 2,560 bytes per entry); client certificates in the user's certificate store, found by thumbprint (`ClientIdentity.FromCertificate`) |
 | .torrent and magnet handling | File and `magnet:` protocol registration by the installer, single instance with `AppInstance.FindOrRegisterForKey` and `RedirectActivationToAsync` |
 | String Catalogs, 28 languages | `.resw` files per language under `Strings/`, generated from the Mac app's `.xcstrings` (see [Strings](#strings)) |
 | Peer country flags | Flag images: Windows' emoji font shows regional-indicator flags as letters |
 
-Suggested structure: `src/TransmissionRemote.App` (WinUI 3, MVVM with CommunityToolkit.Mvvm),
-referencing `TransmissionKit`. Port the Mac app's `ServerConnection` (polling, backoff, coalesced
-refreshes, completion notifications), `ServerStore` (servers as JSON, kept safe when unreadable) and
-`AddTorrentFlow` as view models and services. They're in `macOS/TransmissionRemote/Model/`.
+Structure: `src/TransmissionRemote.App` (WinUI 3), referencing `TransmissionRemote.ViewModels` and
+`TransmissionKit`, with `assets/AppIcon/AppIcon.ico` as its icon. Its own code is the XAML, the
+implementations of the interfaces in `Abstractions/`, startup (dependency injection, logging,
+single instance, activation) and the tray icon.
 
 ### Packaging
 
@@ -234,3 +278,8 @@ refreshes, completion notifications), `ServerStore` (servers as JSON, kept safe 
   plus a zip for people who don't want an installer.
 - Unsigned at first, so SmartScreen warns on first run (**More info → Run anyway**), the same trade-off
   as the unnotarized Mac app. Signing (for example Azure Trusted Signing) can come later.
+- Name the downloads so the update check finds them: the file name without its extension ends in
+  `-win-x64` or `-win-arm64`, such as `TransmissionRemote-1.3-win-x64.exe` and
+  `TransmissionRemote-1.3-win-arm64.zip`. The Mac and Windows apps share this repository's releases;
+  `UpdateChecker` offers the newest release with a download for the PC's architecture, so a Mac-only
+  release never shows up on Windows.

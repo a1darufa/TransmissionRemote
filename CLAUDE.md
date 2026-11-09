@@ -41,9 +41,13 @@ daemon, enabled by `TRANSMISSION_IT_*` environment variables (see `README.md` an
   long it took and the error with its cause. Never log passwords, `Authorization` headers or request
   bodies. Mac: `DiagnosticLog` (unified log plus daily files, Help → Show Log Files). Windows core:
   `[LoggerMessage]` methods in `Logging/Log.cs` with stable event IDs.
-- **Translate every new interface string into all 28 languages** in the same change: the Mac app's
-  `.xcstrings` String Catalogs, and the Windows app's `.resw` files once they exist. Reuse transgui's
-  terms for torrent concepts and the platform's own wording for system features.
+- **Translate every new interface string into all 28 languages** in the same change, in String
+  Catalogs: the Mac app's `.xcstrings`, plus a Windows-only catalog for strings only Windows shows. The
+  Windows `.resw` files are generated from them by `Windows/tools/StringCatalogConverter`: never edit
+  the `.resw` files. Reuse transgui's terms for torrent concepts and the platform's own wording for
+  system features.
+- **Windows: logic goes into `TransmissionRemote.ViewModels` with a test**, not into WinUI code-behind,
+  so it builds and tests on any OS. The view models expose states and errors, never sentences.
 - **Code**: readable first, small functions, comments that explain why. The latest stable APIs, no
   deprecated ones. Security by default: validate input, no secrets in code or logs.
 - **Commits**: small and reviewable, one purpose each, as Aidar Abdullin <a1dar.ufa@gmail.com> (the
