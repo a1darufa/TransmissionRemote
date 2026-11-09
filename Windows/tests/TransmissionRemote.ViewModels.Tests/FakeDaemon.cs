@@ -65,6 +65,7 @@ internal sealed class FakeDaemon : HttpMessageHandler
             ["leftUntilDone"] = percentDone >= 1 ? 0 : 1000,
             ["downloadDir"] = "/data/downloads",
             ["rateDownload"] = 1000,
+            ["magnetLink"] = $"magnet:?xt=urn:btih:{id:x40}&dn={name}",
         };
 
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)

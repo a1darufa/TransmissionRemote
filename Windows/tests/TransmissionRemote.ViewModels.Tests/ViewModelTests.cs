@@ -231,7 +231,64 @@ public sealed class MainViewModelTests
         Assert.Contains(nameof(MainViewModel.VisibleColumns), announced);
     }
 
+    [TestMethod]
+    public async Task CopyMagnetLinkPutsTheSelectionsLinksOnTheClipboard()
+    {
+        using var app = new TestApp(daemon =>
+        {
+            daemon.AddTorrent(1, "a");
+            daemon.AddTorrent(2, "b");
+        });
+        await app.ConnectAsync(expectedTorrents: 2);
+        var shell = new RecordingShell();
+
+        app.Connection.Selection = new HashSet<int> { 2, 1 };
+        await app.Main.CopyMagnetLinksAsync(shell);
+
+        Assert.AreEqual(
+            $"magnet:?xt=urn:btih:{1:x40}&dn=a{Environment.NewLine}magnet:?xt=urn:btih:{2:x40}&dn=b", shell.Copied);
+    }
+
+    [TestMethod]
+    public async Task AFailedCopyBecomesTheActionError()
+    {
+        using var app = new TestApp(daemon => daemon.AddTorrent(1, "a"));
+        await app.ConnectAsync(expectedTorrents: 1);
+        app.Connection.Selection = new HashSet<int> { 1 };
+        var shell = new RecordingShell();
+
+        app.Daemon.FailWith = System.Net.HttpStatusCode.InternalServerError;
+        await app.Main.CopyMagnetLinksAsync(shell);
+
+        Assert.IsNull(shell.Copied);
+        Assert.IsInstanceOfType<TransmissionException>(app.Connection.ActionError);
+    }
+
+    [TestMethod]
+    public void EnterOnARowShowsTheInfoPane()
+    {
+        using var app = new TestApp();
+        app.Main.ShowInfoPane = false;
+
+        app.Main.ShowInfoForSelection();
+
+        Assert.IsTrue(app.Settings.Current.ShowDetailPane);
+    }
+
     private static string[] Names(IEnumerable<TorrentRow> rows) => rows.Select(row => row.Torrent.Name).ToArray();
+
+    private sealed class RecordingShell : IShell
+    {
+        public string? Copied { get; private set; }
+
+        public bool Open(string localPath) => false;
+
+        public void Reveal(IReadOnlyList<string> localPaths)
+        {
+        }
+
+        public void CopyText(string text) => Copied = text;
+    }
 }
 
 [TestClass]

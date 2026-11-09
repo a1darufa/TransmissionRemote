@@ -259,6 +259,30 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
     [RelayCommand(CanExecute = nameof(CanActOnSelection))]
     private Task MoveInQueueAsync(QueueMove move) => Connection.MoveInQueueAsync(move, Connection.Selection);
 
+    /// <summary>
+    /// Copy Magnet Link: the selected torrents' links, one per line. A failure becomes the action error, as the
+    /// Mac app shows it.
+    /// </summary>
+    public async Task CopyMagnetLinksAsync(IShell shell)
+    {
+        ArgumentNullException.ThrowIfNull(shell);
+        try
+        {
+            var links = await Connection.GetMagnetLinksAsync(Connection.Selection);
+            if (links.Count > 0)
+            {
+                shell.CopyText(string.Join(Environment.NewLine, links));
+            }
+        }
+        catch (TransmissionException error)
+        {
+            Connection.ActionError = error;
+        }
+    }
+
+    /// <summary>Double-click or Enter on a row: show the info pane if it's hidden, as the Mac's primary action.</summary>
+    public void ShowInfoForSelection() => ShowInfoPane = true;
+
     /// <summary>Removes the selection; ask the user first, as the Mac app does.</summary>
     public Task RemoveSelectionAsync(bool deletingData) => Connection.RemoveAsync(Connection.Selection, deletingData);
 
