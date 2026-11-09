@@ -10,4 +10,8 @@ internal static class Visible
     public static Visibility Unless(bool condition) => When(!condition);
 
     public static Visibility WhenText(string? text) => When(!string.IsNullOrEmpty(text));
+
+    public static Visibility WhenNone(int count) => When(count == 0);
+
+    public static Visibility WhenAny(int count) => When(count > 0);
 }

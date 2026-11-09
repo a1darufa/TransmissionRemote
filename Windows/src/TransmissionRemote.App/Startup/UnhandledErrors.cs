@@ -1,8 +1,8 @@
-using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
 using TransmissionRemote.App.Logging;
+using TransmissionRemote.App.Shell;
 using TransmissionRemote.ViewModels;
 using Windows.Win32;
 using Windows.Win32.Foundation;
@@ -82,24 +82,12 @@ internal sealed class UnhandledErrors(ILogger<UnhandledErrors> logger)
                 | MESSAGEBOX_STYLE.MB_SETFOREGROUND;
             if (PInvoke.MessageBox(HWND.Null, message, _title, style) == MESSAGEBOX_RESULT.IDYES)
             {
-                OpenLogsFolder();
+                LogsFolder.Open(logger);
             }
         }
         finally
         {
             Volatile.Write(ref _isShowingMessage, 0);
-        }
-    }
-
-    private void OpenLogsFolder()
-    {
-        try
-        {
-            Process.Start(new ProcessStartInfo(AppFolders.Logs) { UseShellExecute = true })?.Dispose();
-        }
-        catch (Exception error) when (error is System.ComponentModel.Win32Exception or InvalidOperationException)
-        {
-            Log.LogsFolderNotOpened(logger, error, LogPath.Display(AppFolders.Logs));
         }
     }
 }

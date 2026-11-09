@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.UI.Xaml;
 using TransmissionRemote.App.Logging;
 using TransmissionRemote.App.Startup;
+using TransmissionRemote.ViewModels;
 
 namespace TransmissionRemote.App;
 
@@ -22,6 +23,7 @@ public sealed partial class App : Application
     {
         var mainWindow = _services.GetRequiredService<MainWindow>();
         mainWindow.Activate();
+        _services.GetRequiredService<MainViewModel>().Start();
 
         var logger = _services.GetRequiredService<ILogger<App>>();
         _services.GetRequiredService<RedirectedActivations>().DeliverTo(activation =>
