@@ -25,6 +25,7 @@ public static class Program
         var logger = services.GetRequiredService<ILoggerFactory>().CreateLogger("TransmissionRemote.App");
         try
         {
+            services.GetRequiredService<UnhandledErrors>().WatchProcess();
             LogStartup(logger);
             FollowDetailedLoggingSetting(services.GetRequiredService<SettingsStore>());
 

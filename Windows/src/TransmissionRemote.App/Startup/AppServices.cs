@@ -14,6 +14,7 @@ internal static class AppServices
         services.AddLogging(logging => logging.AddProvider(new SerilogLoggerProvider(dispose: false)));
         services.AddSingleton(TimeProvider.System);
         services.AddSingleton(environment);
+        services.AddSingleton<UnhandledErrors>();
         services.AddSingleton<SettingsStore>();
         services.AddSingleton<MainWindow>();
 

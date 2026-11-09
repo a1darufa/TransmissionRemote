@@ -17,4 +17,16 @@ internal static partial class Log
 
     [LoggerMessage(3001, LogLevel.Information, "Transmission Remote is exiting")]
     public static partial void Exiting(ILogger logger);
+
+    [LoggerMessage(3010, LogLevel.Critical, "An error nothing caught on the UI thread; the app exits")]
+    public static partial void UnhandledUiError(ILogger logger, Exception exception);
+
+    [LoggerMessage(3011, LogLevel.Critical, "An error nothing caught on a background thread; the app exits")]
+    public static partial void UnhandledBackgroundError(ILogger logger, Exception? exception);
+
+    [LoggerMessage(3012, LogLevel.Critical, "A background task failed and nothing observed its error")]
+    public static partial void UnobservedTaskError(ILogger logger, Exception exception);
+
+    [LoggerMessage(3013, LogLevel.Error, "Couldn't open the logs folder {Path}")]
+    public static partial void LogsFolderNotOpened(ILogger logger, Exception exception, string path);
 }

@@ -23,6 +23,8 @@
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
     <SelfContained>true</SelfContained>
     <DefaultLanguage>en-US</DefaultLanguage>
+    <!-- CsWin32 generates the Win32 declarations listed in NativeMethods.txt as unsafe code. -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- Program.Main does the single-instance check before any XAML starts. -->
     <DefineConstants>$(DefineConstants);DISABLE_XAML_GENERATED_MAIN</DefineConstants>
   </PropertyGroup>

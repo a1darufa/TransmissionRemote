@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
+using TransmissionRemote.App.Startup;
 
 namespace TransmissionRemote.App;
 
@@ -11,6 +12,7 @@ public sealed partial class App : Application
     internal App(IServiceProvider services)
     {
         _services = services;
+        services.GetRequiredService<UnhandledErrors>().WatchApplication(this);
         InitializeComponent();
     }
 
