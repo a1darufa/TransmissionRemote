@@ -172,6 +172,52 @@ public sealed class ServerConnectionTests : IDisposable
     }
 
     [TestMethod]
+    public async Task AfterTheDaemonRestartsTheSelectionIsClearedAndTheWholeListReloaded()
+    {
+        _daemon.SecondsActive = 5000;
+        _daemon.AddTorrent(1, "a");
+        _daemon.AddTorrent(2, "b");
+        _daemon.AddTorrent(3, "c");
+        using var connection = MakeConnection();
+        connection.Connect(Profile(), password: null);
+        await WaitUntil(() => connection.Torrents.Count == 3);
+        connection.Selection = new HashSet<int> { 2 };
+
+        // Restarted without "a": the daemon numbered the others afresh, so ID 2 is now "c", and its recent
+        // changes know nothing of the earlier run.
+        _daemon.Torrents.Clear();
+        _daemon.AddTorrent(1, "b", percentDone: 1, status: 6);
+        _daemon.AddTorrent(2, "c");
+        _daemon.RecentlyChanged = [];
+        _daemon.SecondsActive = 2;
+        _time.Advance(TimeSpan.FromSeconds(3));
+        await connection.RefreshAsync();
+        await WaitUntil(() => connection.Torrents.Count == 2);
+
+        CollectionAssert.AreEqual(new[] { "b", "c" }, connection.Torrents.Select(torrent => torrent.Name).ToArray());
+        Assert.IsEmpty(connection.Selection, "the selected ID now means another torrent");
+        Assert.IsEmpty(_notifications.Completed, "\"b\" had finished before; it only took over an unfinished one's ID");
+    }
+
+    [TestMethod]
+    public async Task TheSelectionStaysWhileTheDaemonKeepsRunning()
+    {
+        _daemon.SecondsActive = 5000;
+        _daemon.AddTorrent(1, "a");
+        using var connection = MakeConnection();
+        connection.Connect(Profile(), password: null);
+        await WaitUntil(() => connection.Torrents.Count == 1);
+        connection.Selection = new HashSet<int> { 1 };
+
+        _daemon.SecondsActive = 5003;
+        _time.Advance(TimeSpan.FromSeconds(3));
+        await connection.RefreshAsync();
+        await WaitUntil(() => connection.LastUpdated == _time.GetUtcNow());
+
+        CollectionAssert.AreEquivalent(new[] { 1 }, connection.Selection.ToArray());
+    }
+
+    [TestMethod]
     public async Task DisconnectingClearsEverything()
     {
         _daemon.AddTorrent(1, "a");

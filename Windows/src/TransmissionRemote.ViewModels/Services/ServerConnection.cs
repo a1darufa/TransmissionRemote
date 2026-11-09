@@ -23,6 +23,7 @@ public sealed partial class ServerConnection : ObservableObject, IDisposable
     private readonly Func<TransmissionClientOptions, TransmissionClient> _createClient;
     private readonly CompletionDetector _completions;
     private readonly TorrentListRefreshPlan _listPlan;
+    private readonly DaemonRestartDetector _restartDetector;
 
     private TransmissionClient? _client;
     private CancellationTokenSource? _pollCancellation;
@@ -60,6 +61,7 @@ public sealed partial class ServerConnection : ObservableObject, IDisposable
         _logger = _loggerFactory.CreateLogger<ServerConnection>();
         _time = time ?? TimeProvider.System;
         _listPlan = new TorrentListRefreshPlan(_time);
+        _restartDetector = new DaemonRestartDetector(_time);
         _createClient = createClient ?? (options => new TransmissionClient(options, _loggerFactory));
     }
 
@@ -197,6 +199,7 @@ public sealed partial class ServerConnection : ObservableObject, IDisposable
         _client = null;
         _completions.Reset();
         _listPlan.Reset();
+        _restartDetector.Reset();
         _trackerSummaries = [];
         _refreshCount = 0;
         Status = ConnectionStatus.Disconnected;

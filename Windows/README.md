@@ -8,8 +8,8 @@ oldest version the Windows App SDK supports.
 
 | Part | State |
 |---|---|
-| `TransmissionKit`: the UI-free core (RPC client, models, .torrent parsing, helpers) | Done, ported from the Mac app's Swift package, 288 tests |
-| `TransmissionRemote.ViewModels`: the app's logic without its interface | Done, ported from the Mac app's models, 283 tests. See [below](#the-apps-logic-srctransmissionremoteviewmodels) |
+| `TransmissionKit`: the UI-free core (RPC client, models, .torrent parsing, helpers) | Done, ported from the Mac app's Swift package, 296 tests |
+| `TransmissionRemote.ViewModels`: the app's logic without its interface | Done, ported from the Mac app's models, 285 tests. See [below](#the-apps-logic-srctransmissionremoteviewmodels) |
 | `tools/StringCatalogConverter`: the Mac app's translations as `.resw` files | Done, 133 tests. See [Strings](#strings) |
 | App icon: `assets/AppIcon/` (`AppIcon.ico` with 9 sizes, and PNGs) | Done, exported from the Mac build |
 | `TransmissionRemote.App`: the WinUI 3 app | In progress: the shell (menus, command row, connection pages, window placement, keyboard shortcuts) and the torrent list (all columns, sorting, the column chooser, the actions menus, paste and drop, the sidebar's folders, labels and trackers, the status bar). See [the plan](#the-app-plan) and [the torrent list](#the-torrent-list) |
@@ -180,7 +180,7 @@ Anyone should be able to tell from the log which part of the app failed and why.
 | 1200 | Warning | An untrusted TLS certificate was rejected (with its fingerprint) |
 | 1201 | Debug | A pinned certificate was accepted |
 | 2000s | | `TransmissionRemote.ViewModels`, saved data: unreadable or unsaved servers and settings |
-| 2100s | | The connection: connecting, server unreachable (with the retry delay), stopped, refresh and action failures |
+| 2100s | | The connection: connecting, server unreachable (with the retry delay), stopped, refresh and action failures, a daemon restart |
 | 2200s | | Adding torrents: unreadable files, refused torrents |
 | 2300s | | Other services: update check, country database, opening local files |
 | 3000s | | `TransmissionRemote.App`: startup and exit (including failing to create its services), errors nothing else caught, hand-overs between copies of the app |
@@ -355,14 +355,17 @@ the arrow keys didn't move the selection, and UI Automation exposed no column he
   2.5 to 4.5 s, and an idle refresh about 0.2 s of CPU every 5 seconds.
 - The Torrent menu and the list's context menu are the same items (`TorrentActionsMenu`). The menu bar's
   copy owns the keys; the context menu shows them with its accelerators switched off.
+- A restarted daemon numbers its torrents anew, so a selected ID could quietly mean another torrent.
+  `DaemonRestartDetector` in the core (in both apps) notices the restart: the uptime in `session-stats`
+  grew by less than the time that passed. `ServerConnection` then clears the selection and everything
+  else kept by ID, as when reconnecting, and fetches the whole list again.
 
 **Known gaps.**
 - Narrator reads each row as a list item named "name, status, progress"; it doesn't get the columns as
   a table. A custom automation peer with the Grid and Table patterns could add them (M7).
 - The header row works only with the mouse: there's no keyboard way to sort, move or choose columns yet.
-- When the daemon restarts, it numbers its torrents anew. Until the next full list (at most 60 seconds),
-  the list can show a removed torrent, and the selection can point at other torrents. The Mac app does
-  the same; neither notices the restart yet.
+- An action in the seconds between a daemon restart and the next refresh still goes by the old IDs. The
+  first refresh after the restart notices it.
 
 ### Packaging
 

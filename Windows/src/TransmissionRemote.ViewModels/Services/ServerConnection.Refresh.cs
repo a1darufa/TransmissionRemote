@@ -39,6 +39,7 @@ public sealed partial class ServerConnection
     {
         try
         {
+            var requestedAt = _time.GetTimestamp();
             var listTask = FetchTorrentListAsync(client);
             var statsTask = client.GetSessionStatsAsync();
             var sessionTask = client.GetSessionSettingsAsync();
@@ -48,8 +49,17 @@ public sealed partial class ServerConnection
                 return;
             }
 
-            var torrents = WithTrackerSummaries(await listTask);
             var stats = await statsTask;
+            var list = await listTask;
+            if (_restartDetector.Observe(stats, requestedAt, _time.GetTimestamp()))
+            {
+                list = await ReloadAfterRestartAsync(client, stats);
+                if (!IsCurrent(client))
+                {
+                    return;
+                }
+            }
+            var torrents = WithTrackerSummaries(list);
             _completions.Compare(Torrents, torrents, _settings.Current.NotifyOnCompletion);
             Torrents = torrents;
             Stats = stats;
@@ -98,6 +108,23 @@ public sealed partial class ServerConnection
             : (await client.GetRecentlyChangedTorrentsAsync()).AppliedTo(Torrents);
         _listPlan.RecordFetch(started, isFullList);
         return list;
+    }
+
+    /// <summary>
+    /// A restarted daemon numbers its torrents afresh, so a torrent kept by ID from its earlier run may now be
+    /// another one: the user could remove the wrong torrent. Everything kept by ID is dropped as when
+    /// reconnecting, and the whole list is fetched again, since recent changes can't be applied to the old one.
+    /// </summary>
+    private async Task<IReadOnlyList<Torrent>> ReloadAfterRestartAsync(TransmissionClient client, SessionStats stats)
+    {
+        var uptime = TimeSpan.FromSeconds(stats.CurrentStats?.SecondsActive ?? 0);
+        Log.DaemonRestarted(_logger, Profile?.DisplayName ?? "?", uptime);
+        _listPlan.Reset();
+        _completions.Reset(); // the old list is no baseline for finished downloads
+        _trackerSummaries = [];
+        _refreshCount = 0; // loads the tracker summaries again in this refresh
+        Selection = new HashSet<int>();
+        return await FetchTorrentListAsync(client);
     }
 
     private async Task LoadDetailsAsync(TransmissionClient client)

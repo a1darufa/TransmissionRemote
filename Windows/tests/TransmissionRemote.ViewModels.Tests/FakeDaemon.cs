@@ -39,6 +39,9 @@ internal sealed class FakeDaemon : HttpMessageHandler
     /// <summary>Whether the session's 100 kB/s download limit is on.</summary>
     public bool DownloadLimitEnabled { get; set; }
 
+    /// <summary>The uptime session-stats reports, in seconds; null leaves out the current session's stats.</summary>
+    public int? SecondsActive { get; set; }
+
     /// <summary>The name torrent-add reports for a newly added torrent.</summary>
     public string AddedName { get; set; } = "added";
 
@@ -114,6 +117,10 @@ internal sealed class FakeDaemon : HttpMessageHandler
                 break;
             case "session-stats":
                 result = new JsonObject { ["torrentCount"] = Torrents.Count, ["downloadSpeed"] = 2000, ["uploadSpeed"] = 50 };
+                if (SecondsActive is { } uptime)
+                {
+                    result["current-stats"] = new JsonObject { ["secondsActive"] = uptime, ["sessionCount"] = 1 };
+                }
                 break;
             case "free-space":
                 result = new JsonObject { ["path"] = arguments["path"]?.DeepClone(), ["size-bytes"] = 123_456_789 };

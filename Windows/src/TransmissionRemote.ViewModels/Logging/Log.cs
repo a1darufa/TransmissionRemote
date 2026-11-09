@@ -51,6 +51,11 @@ internal static partial class Log
     [LoggerMessage(2105, LogLevel.Warning, "The connection to {Server} is blocked: plain HTTP over the internet")]
     public static partial void BlockedByTransportPolicy(ILogger logger, string server);
 
+    [LoggerMessage(
+        2106, LogLevel.Information,
+        "The daemon on {Server} restarted {Uptime} ago; reloading its torrents and clearing the selection")]
+    public static partial void DaemonRestarted(ILogger logger, string server, TimeSpan uptime);
+
     [LoggerMessage(2200, LogLevel.Warning, "Couldn't open {FileName} as a torrent file")]
     public static partial void TorrentFileUnreadable(ILogger logger, Exception exception, string fileName);
 
