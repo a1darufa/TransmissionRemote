@@ -1,15 +1,43 @@
 <Solution>
+  <!-- "Any CPU" builds the app for this PC's architecture; x64 and ARM64 pick one (-p:Platform=ARM64). The
+       libraries and tools are architecture-neutral in every case. -->
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+  </Configurations>
   <Folder Name="/src/">
-    <Project Path="src/TransmissionKit/TransmissionKit.csproj" />
-    <Project Path="src/TransmissionRemote.App/TransmissionRemote.App.csproj" />
-    <Project Path="src/TransmissionRemote.ViewModels/TransmissionRemote.ViewModels.csproj" />
+    <Project Path="src/TransmissionKit/TransmissionKit.csproj">
+      <Platform Solution="*|ARM64" Project="Any CPU" />
+      <Platform Solution="*|x64" Project="Any CPU" />
+    </Project>
+    <Project Path="src/TransmissionRemote.App/TransmissionRemote.App.csproj">
+      <Platform Solution="*|ARM64" Project="ARM64" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="src/TransmissionRemote.ViewModels/TransmissionRemote.ViewModels.csproj">
+      <Platform Solution="*|ARM64" Project="Any CPU" />
+      <Platform Solution="*|x64" Project="Any CPU" />
+    </Project>
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/StringCatalogConverter.Tests/StringCatalogConverter.Tests.csproj" />
-    <Project Path="tests/TransmissionKit.Tests/TransmissionKit.Tests.csproj" />
-    <Project Path="tests/TransmissionRemote.ViewModels.Tests/TransmissionRemote.ViewModels.Tests.csproj" />
+    <Project Path="tests/StringCatalogConverter.Tests/StringCatalogConverter.Tests.csproj">
+      <Platform Solution="*|ARM64" Project="Any CPU" />
+      <Platform Solution="*|x64" Project="Any CPU" />
+    </Project>
+    <Project Path="tests/TransmissionKit.Tests/TransmissionKit.Tests.csproj">
+      <Platform Solution="*|ARM64" Project="Any CPU" />
+      <Platform Solution="*|x64" Project="Any CPU" />
+    </Project>
+    <Project Path="tests/TransmissionRemote.ViewModels.Tests/TransmissionRemote.ViewModels.Tests.csproj">
+      <Platform Solution="*|ARM64" Project="Any CPU" />
+      <Platform Solution="*|x64" Project="Any CPU" />
+    </Project>
   </Folder>
   <Folder Name="/tools/">
-    <Project Path="tools/StringCatalogConverter/StringCatalogConverter.csproj" />
+    <Project Path="tools/StringCatalogConverter/StringCatalogConverter.csproj">
+      <Platform Solution="*|ARM64" Project="Any CPU" />
+      <Platform Solution="*|x64" Project="Any CPU" />
+    </Project>
   </Folder>
 </Solution>
