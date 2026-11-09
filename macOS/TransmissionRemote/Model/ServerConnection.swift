@@ -96,14 +96,15 @@ final class ServerConnection {
     private let connectivity = ConnectivityMonitor()
     private var isRefreshing = false
     private var isRefreshRequested = false
-    private var refreshCount = 0
+    // Also used by ServerConnection+TorrentList.swift, which checks for daemon restarts.
+    var refreshCount = 0
     /// The latest tracker stats per torrent, attached to each list refresh until the next fetch.
-    private var trackerSummaries: [Torrent.ID: TrackerSummary] = [:]
+    var trackerSummaries: [Torrent.ID: TrackerSummary] = [:]
     /// Whether the next refresh may fetch only recently changed torrents.
-    /// Used by ServerConnection+TorrentList.swift.
     var listPlan = TorrentListRefreshPlan()
-    private let notifier = CompletionNotifier()
-    private static let log = DiagnosticLog(category: "Connection")
+    var restartDetector = DaemonRestartDetector()
+    let notifier = CompletionNotifier()
+    static let log = DiagnosticLog(category: "Connection")
 
     init() {
         connectivity.start { [weak self] in self?.retryNow() }
@@ -161,18 +162,16 @@ final class ServerConnection {
         pollTask?.cancel()
         pollTask = nil
         client = nil
-        notifier.reset()
+        forgetTorrentIDs()
+        restartDetector = DaemonRestartDetector()
         state = .disconnected
         serverInfo = nil
         dialect = nil
         torrents = []
-        listPlan = TorrentListRefreshPlan()
         session = nil
         stats = nil
         freeSpace = nil
-        trackerSummaries = [:]
         details = nil
-        selection = []
         speedHistory = SpeedHistory()
         pollingProblem = nil
         lastUpdated = nil
@@ -238,7 +237,7 @@ final class ServerConnection {
     }
 
     /// Guards against results from a connection that was replaced while a request was in flight.
-    private func isCurrent(_ client: TransmissionClient) -> Bool {
+    func isCurrent(_ client: TransmissionClient) -> Bool {
         self.client === client
     }
 
@@ -270,10 +269,9 @@ final class ServerConnection {
 
     private func refreshOnce(using client: TransmissionClient) async {
         do {
-            async let torrentList = fetchTorrentList(using: client)
-            async let sessionStats = client.sessionStats()
+            async let torrentsAndStats = fetchTorrentsAndStats(using: client)
             async let sessionSettings = client.sessionSettings()
-            let (newTorrents, newStats, newSession) = try await (torrentList, sessionStats, sessionSettings)
+            let ((newTorrents, newStats), newSession) = try await (torrentsAndStats, sessionSettings)
             guard isCurrent(client) else { return }
 
             notifier.notifyAboutCompletions(previous: torrents, current: newTorrents)
