@@ -156,6 +156,29 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         OnPropertyChanged(nameof(VisibleColumns));
     }
 
+    /// <summary>The column chooser: the visible columns in their order, then the hidden ones.</summary>
+    public IReadOnlyList<ColumnChoice> ColumnChoices => TorrentColumns.Choices(VisibleColumns);
+
+    /// <summary>Dragging a header to another place.</summary>
+    public void MoveColumn(TorrentColumn column, int index) => SetVisibleColumns(TorrentColumns.Moved(VisibleColumns, column, index));
+
+    /// <summary>The column chooser's check box. Name can't be hidden.</summary>
+    public void SetColumnVisible(TorrentColumn column, bool isVisible) =>
+        SetVisibleColumns(TorrentColumns.WithVisibility(VisibleColumns, column, isVisible));
+
+    public double ColumnWidth(TorrentColumn column) => TorrentColumns.Width(Settings.Current, column);
+
+    /// <summary>Remembers a width the user dragged a column to, never below the column's minimum.</summary>
+    public void SetColumnWidth(TorrentColumn column, double width)
+    {
+        var kept = Math.Round(Math.Max(width, TorrentColumns.Spec(column).MinimumWidth));
+        Settings.Update(settings =>
+        {
+            var widths = new Dictionary<string, double>(settings.TorrentColumnWidths) { [column.ToString()] = kept };
+            return settings with { TorrentColumnWidths = widths };
+        });
+    }
+
     /// <summary>Clicking a column header: the same column flips the order, another sorts by it.</summary>
     public void SortBy(TorrentColumn column)
     {

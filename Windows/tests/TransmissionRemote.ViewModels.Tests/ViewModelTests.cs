@@ -208,6 +208,28 @@ public sealed class MainViewModelTests
         Assert.HasCount(12, upload, "Unlimited and the 11 default speeds");
     }
 
+    [TestMethod]
+    public void TheColumnLayoutIsRemembered()
+    {
+        using var app = new TestApp();
+        var announced = new List<string?>();
+        app.Main.PropertyChanged += (_, e) => announced.Add(e.PropertyName);
+
+        app.Main.SetColumnVisible(TorrentColumn.Id, isVisible: true);
+        app.Main.MoveColumn(TorrentColumn.Id, 0);
+        app.Main.SetColumnVisible(TorrentColumn.Eta, isVisible: false);
+        app.Main.SetColumnWidth(TorrentColumn.Name, 412.4);
+        app.Main.SetColumnWidth(TorrentColumn.Size, 3);
+
+        var reloaded = new SettingsStore(new AppEnvironment(app.Directory, "1.0")).Current;
+        Assert.AreEqual("Id", reloaded.TorrentColumns[0]);
+        Assert.DoesNotContain("Eta", reloaded.TorrentColumns.ToList());
+        Assert.AreEqual(412, TorrentColumns.Width(reloaded, TorrentColumn.Name));
+        Assert.AreEqual(60, TorrentColumns.Width(reloaded, TorrentColumn.Size), "kept at the minimum");
+        Assert.AreEqual(TorrentColumn.Id, app.Main.ColumnChoices[0].Column);
+        Assert.Contains(nameof(MainViewModel.VisibleColumns), announced);
+    }
+
     private static string[] Names(IEnumerable<TorrentRow> rows) => rows.Select(row => row.Torrent.Name).ToArray();
 }
 

@@ -155,4 +155,70 @@ public sealed class TorrentColumnTests
     [TestMethod]
     public void NoSavedColumnsMeansTheDefaults() =>
         Assert.AreSame(TorrentColumns.Default, TorrentColumns.FromSettings(new AppSettings()));
+
+    [TestMethod]
+    public void EveryColumnHasTheMacAppsWidthsAndOnlyNameCannotBeHidden()
+    {
+        foreach (var column in Enum.GetValues<TorrentColumn>())
+        {
+            var spec = TorrentColumns.Spec(column);
+            Assert.IsGreaterThanOrEqualTo(spec.MinimumWidth, spec.IdealWidth, $"{column}");
+            Assert.AreEqual(column != TorrentColumn.Name, spec.CanHide, $"{column}");
+        }
+        Assert.AreEqual(ColumnAlignment.Trailing, TorrentColumns.Spec(TorrentColumn.Size).Alignment);
+        Assert.AreEqual(340, TorrentColumns.Spec(TorrentColumn.Name).IdealWidth);
+    }
+
+    [TestMethod]
+    public void AWidthIsTheSavedOneButNeverBelowTheMinimum()
+    {
+        var settings = new AppSettings
+        {
+            TorrentColumnWidths = new Dictionary<string, double> { ["Size"] = 120, ["Eta"] = 5, ["Ratio"] = double.NaN },
+        };
+
+        Assert.AreEqual(120, TorrentColumns.Width(settings, TorrentColumn.Size));
+        Assert.AreEqual(50, TorrentColumns.Width(settings, TorrentColumn.Eta), "the minimum");
+        Assert.AreEqual(55, TorrentColumns.Width(settings, TorrentColumn.Ratio), "the ideal, for a broken value");
+        Assert.AreEqual(340, TorrentColumns.Width(settings, TorrentColumn.Name), "the ideal, when nothing is saved");
+    }
+
+    [TestMethod]
+    public void MovingAColumnPutsItAtTheNewPlace()
+    {
+        TorrentColumn[] visible = [TorrentColumn.Name, TorrentColumn.Size, TorrentColumn.Done, TorrentColumn.Status];
+
+        CollectionAssert.AreEqual(
+            new[] { TorrentColumn.Done, TorrentColumn.Name, TorrentColumn.Size, TorrentColumn.Status },
+            TorrentColumns.Moved(visible, TorrentColumn.Done, 0).ToArray());
+        CollectionAssert.AreEqual(
+            new[] { TorrentColumn.Size, TorrentColumn.Done, TorrentColumn.Status, TorrentColumn.Name },
+            TorrentColumns.Moved(visible, TorrentColumn.Name, 99).ToArray(), "past the end means last");
+        Assert.AreSame(visible, TorrentColumns.Moved(visible, TorrentColumn.Eta, 0), "a hidden column doesn't move");
+    }
+
+    [TestMethod]
+    public void ShownColumnsGoLastAndNameStays()
+    {
+        TorrentColumn[] visible = [TorrentColumn.Name, TorrentColumn.Size];
+
+        CollectionAssert.AreEqual(
+            new[] { TorrentColumn.Name, TorrentColumn.Size, TorrentColumn.Id },
+            TorrentColumns.WithVisibility(visible, TorrentColumn.Id, isVisible: true).ToArray());
+        CollectionAssert.AreEqual(
+            new[] { TorrentColumn.Name },
+            TorrentColumns.WithVisibility(visible, TorrentColumn.Size, isVisible: false).ToArray());
+        Assert.AreSame(visible, TorrentColumns.WithVisibility(visible, TorrentColumn.Name, isVisible: false));
+    }
+
+    [TestMethod]
+    public void TheChooserListsVisibleColumnsInOrderThenTheHiddenOnes()
+    {
+        var choices = TorrentColumns.Choices([TorrentColumn.Size, TorrentColumn.Name]);
+
+        Assert.HasCount(27, choices);
+        Assert.AreEqual(new ColumnChoice(TorrentColumn.Size, IsVisible: true, CanHide: true), choices[0]);
+        Assert.AreEqual(new ColumnChoice(TorrentColumn.Name, IsVisible: true, CanHide: false), choices[1]);
+        Assert.AreEqual(new ColumnChoice(TorrentColumn.Done, IsVisible: false, CanHide: true), choices[2]);
+    }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using TransmissionKit;
 
 namespace TransmissionRemote.ViewModels;
@@ -36,6 +37,9 @@ public sealed record AppSettings
 
     /// <summary>Visible list columns in order, by <see cref="TorrentColumn"/> name; empty means the default set.</summary>
     public IReadOnlyList<string> TorrentColumns { get; set; } = [];
+
+    /// <summary>Column widths the user set, in effective pixels, by <see cref="TorrentColumn"/> name.</summary>
+    public IReadOnlyDictionary<string, double> TorrentColumnWidths { get; set; } = ImmutableDictionary<string, double>.Empty;
 
     public string? SortColumn { get; set; }
     public bool SortAscending { get; set; }
