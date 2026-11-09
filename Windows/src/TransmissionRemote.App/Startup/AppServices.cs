@@ -15,6 +15,7 @@ internal static class AppServices
         services.AddSingleton(TimeProvider.System);
         services.AddSingleton(environment);
         services.AddSingleton<UnhandledErrors>();
+        services.AddSingleton<RedirectedActivations>();
         services.AddSingleton<SettingsStore>();
         services.AddSingleton<MainWindow>();
 

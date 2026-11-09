@@ -19,4 +19,15 @@ public sealed partial class MainWindow : Window
         // The taskbar and Alt+Tab icon; the .exe's own icon only covers File Explorer and shortcuts.
         AppWindow.SetIcon(Path.Combine(AppContext.BaseDirectory, "Assets", "AppIcon.ico"));
     }
+
+    /// <summary>Shows the window in front of others, also when it was minimized or hidden in the tray.</summary>
+    public void BringToFront()
+    {
+        if (AppWindow.Presenter is OverlappedPresenter { State: OverlappedPresenterState.Minimized } presenter)
+        {
+            presenter.Restore();
+        }
+        AppWindow.Show();
+        Activate();
+    }
 }

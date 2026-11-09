@@ -29,4 +29,16 @@ internal static partial class Log
 
     [LoggerMessage(3013, LogLevel.Error, "Couldn't open the logs folder {Path}")]
     public static partial void LogsFolderNotOpened(ILogger logger, Exception exception, string path);
+
+    [LoggerMessage(3020, LogLevel.Information,
+        "Handed this launch ({Kind}) to the copy already running (process {ProcessId}) and exiting")]
+    public static partial void LaunchHandedOver(
+        ILogger logger, Microsoft.Windows.AppLifecycle.ExtendedActivationKind kind, uint processId);
+
+    [LoggerMessage(3021, LogLevel.Warning,
+        "Couldn't hand this launch to the copy already running (process {ProcessId}); starting a second copy")]
+    public static partial void LaunchNotHandedOver(ILogger logger, Exception exception, uint processId);
+
+    [LoggerMessage(3022, LogLevel.Information, "Another launch ({Kind}) was handed to this copy")]
+    public static partial void LaunchReceived(ILogger logger, Microsoft.Windows.AppLifecycle.ExtendedActivationKind kind);
 }

@@ -26,6 +26,10 @@ public static class Program
         try
         {
             services.GetRequiredService<UnhandledErrors>().WatchProcess();
+            if (!SingleInstance.TryBecomeMainInstance(services.GetRequiredService<RedirectedActivations>(), logger))
+            {
+                return;
+            }
             LogStartup(logger);
             FollowDetailedLoggingSetting(services.GetRequiredService<SettingsStore>());
 

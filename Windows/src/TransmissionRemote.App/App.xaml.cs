@@ -1,5 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.UI.Xaml;
+using TransmissionRemote.App.Logging;
 using TransmissionRemote.App.Startup;
 
 namespace TransmissionRemote.App;
@@ -18,6 +20,14 @@ public sealed partial class App : Application
 
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        _services.GetRequiredService<MainWindow>().Activate();
+        var mainWindow = _services.GetRequiredService<MainWindow>();
+        mainWindow.Activate();
+
+        var logger = _services.GetRequiredService<ILogger<App>>();
+        _services.GetRequiredService<RedirectedActivations>().DeliverTo(activation =>
+        {
+            Log.LaunchReceived(logger, activation.Kind);
+            mainWindow.BringToFront();
+        });
     }
 }
