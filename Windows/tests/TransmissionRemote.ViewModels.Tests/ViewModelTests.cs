@@ -126,6 +126,88 @@ public sealed class MainViewModelTests
         Assert.AreEqual("Transmission 3.00 · legacy RPC", app.Main.ServerSummary);
     }
 
+    [TestMethod]
+    public async Task StatusCountsChangeInPlace()
+    {
+        using var app = new TestApp(daemon =>
+        {
+            daemon.AddTorrent(1, "a");
+            daemon.AddTorrent(2, "b", percentDone: 1, status: 6);
+        });
+        var items = app.Main.StatusItems;
+        var all = items[0];
+        Assert.HasCount(10, items);
+        Assert.AreEqual(StatusFilter.All, all.Filter);
+        Assert.AreEqual(0, all.Count);
+
+        await app.ConnectAsync(expectedTorrents: 2);
+
+        Assert.AreSame(all, app.Main.StatusItems[0], "the items stay the same objects");
+        Assert.AreEqual(2, all.Count);
+        Assert.AreEqual(1, items.Single(item => item.Filter == StatusFilter.Seeding).Count);
+        Assert.AreEqual(new StatusSidebarFilter(StatusFilter.Seeding), items.Single(item => item.Filter == StatusFilter.Seeding).SidebarFilter);
+    }
+
+    [TestMethod]
+    public void TheSidebarAndInfoPaneTogglesAreRemembered()
+    {
+        using var app = new TestApp();
+        var changed = new List<string?>();
+        app.Main.PropertyChanged += (_, e) => changed.Add(e.PropertyName);
+
+        app.Main.ShowSidebar = false;
+        app.Main.ShowInfoPane = false;
+
+        Assert.IsFalse(app.Settings.Current.ShowSidebar);
+        Assert.IsFalse(app.Settings.Current.ShowDetailPane);
+        CollectionAssert.AreEqual(new[] { nameof(MainViewModel.ShowSidebar), nameof(MainViewModel.ShowInfoPane) }, changed);
+    }
+
+    [TestMethod]
+    public async Task ServerWideCommandsWaitForAConnection()
+    {
+        using var app = new TestApp();
+        Assert.IsFalse(app.Main.StartAllCommand.CanExecute(null));
+        Assert.IsFalse(app.Main.ToggleAlternativeSpeedCommand.CanExecute(null));
+        Assert.IsFalse(app.Main.DisconnectCommand.CanExecute(null), "already disconnected");
+        Assert.IsTrue(app.Main.ReconnectCommand.CanExecute(null), "a server is set up");
+
+        await app.ConnectAsync(expectedTorrents: 0);
+
+        Assert.IsTrue(app.Main.IsConnected);
+        Assert.IsTrue(app.Main.StartAllCommand.CanExecute(null));
+        Assert.IsTrue(app.Main.StopAllCommand.CanExecute(null));
+        Assert.IsTrue(app.Main.DisconnectCommand.CanExecute(null));
+        Assert.AreEqual("Test", app.Main.ServerName);
+    }
+
+    [TestMethod]
+    public void ReconnectingNeedsAServer()
+    {
+        using var app = new TestApp();
+
+        app.Servers.Remove(app.Servers.Servers.Single().Id);
+
+        Assert.IsFalse(app.Main.HasActiveServer);
+        Assert.IsFalse(app.Main.ReconnectCommand.CanExecute(null));
+    }
+
+    [TestMethod]
+    public async Task TheSpeedLimitMenuChecksTheLimitInForce()
+    {
+        using var app = new TestApp(daemon => daemon.DownloadLimitEnabled = true);
+        app.Settings.Update(settings => settings with { DownloadSpeedPresets = "0, 250, 100, 100, x" });
+        await app.ConnectAsync(expectedTorrents: 0);
+
+        var download = app.Main.GlobalSpeedLimitChoices(TransferDirection.Download);
+        var upload = app.Main.GlobalSpeedLimitChoices(TransferDirection.Upload);
+
+        CollectionAssert.AreEqual(
+            new SpeedLimitChoice[] { new(null, false), new(100, true), new(250, false) }, download.ToArray());
+        Assert.IsTrue(upload[0].IsCurrent, "no upload limit: Unlimited is checked");
+        Assert.HasCount(12, upload, "Unlimited and the 11 default speeds");
+    }
+
     private static string[] Names(IEnumerable<TorrentRow> rows) => rows.Select(row => row.Torrent.Name).ToArray();
 }
 

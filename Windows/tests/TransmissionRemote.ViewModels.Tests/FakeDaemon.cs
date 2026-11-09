@@ -36,6 +36,9 @@ internal sealed class FakeDaemon : HttpMessageHandler
     /// <summary>The arguments of the latest call to each method.</summary>
     public Dictionary<string, JsonObject> LastArguments { get; } = [];
 
+    /// <summary>Whether the session's 100 kB/s download limit is on.</summary>
+    public bool DownloadLimitEnabled { get; set; }
+
     /// <summary>The name torrent-add reports for a newly added torrent.</summary>
     public string AddedName { get; set; } = "added";
 
@@ -105,7 +108,7 @@ internal sealed class FakeDaemon : HttpMessageHandler
                     ["rpc-version"] = 16,
                     ["download-dir"] = "/data/downloads",
                     ["speed-limit-down"] = 100,
-                    ["speed-limit-down-enabled"] = false,
+                    ["speed-limit-down-enabled"] = DownloadLimitEnabled,
                 };
                 break;
             case "session-stats":
