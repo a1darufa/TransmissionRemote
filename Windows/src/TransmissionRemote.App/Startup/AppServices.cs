@@ -23,6 +23,7 @@ internal static class AppServices
         services.AddSingleton<ICredentialStore, CredentialManagerStore>();
         services.AddSingleton<IClientCertificateProvider, CertificateStoreIdentities>();
         services.AddSingleton<INotificationService, NoNotificationsYet>();
+        services.AddSingleton<IShell, WindowsShell>();
 
         // The view models and the services behind them. Their constructors take optional loggers and clocks,
         // so they're created here explicitly with the app's.

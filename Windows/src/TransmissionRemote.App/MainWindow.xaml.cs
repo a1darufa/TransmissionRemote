@@ -19,11 +19,12 @@ namespace TransmissionRemote.App;
 public sealed partial class MainWindow : Window
 {
     private readonly ILogger _logger;
+    private readonly TorrentActionsMenu _torrentActions;
     private IReadOnlyList<SpeedLimitChoice> _downloadChoices = [];
     private IReadOnlyList<SpeedLimitChoice> _uploadChoices = [];
 
     public MainWindow(
-        MainViewModel viewModel, TorrentCellText cellText, DisplayFormatter format, ILogger<MainWindow> logger)
+        MainViewModel viewModel, TorrentCellText cellText, DisplayFormatter format, IShell shell, ILogger<MainWindow> logger)
     {
         ViewModel = viewModel;
         _logger = logger;
@@ -32,6 +33,11 @@ public sealed partial class MainWindow : Window
         ConnectionPages.ViewModel = viewModel;
         Torrents.Bind(viewModel, cellText);
         StatusBar.Bind(viewModel, format);
+        _torrentActions = new TorrentActionsMenu(viewModel, shell, RemoveSelectionAsync);
+        _torrentActions.Fill(TorrentMenu.Items, Torrents.List, declareKeys: true);
+        var rowMenu = new MenuFlyout();
+        _torrentActions.Fill(rowMenu.Items, Torrents.List, declareKeys: false);
+        Torrents.RowMenu = rowMenu;
 
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(AppTitleBar);
@@ -47,7 +53,6 @@ public sealed partial class MainWindow : Window
         Sidebar.IsPaneOpen = viewModel.ShowSidebar;
         Sidebar.SelectedItem = viewModel.StatusItems[0];
         ShowSidebarItem.IsChecked = viewModel.ShowSidebar;
-        AssignQueueCommands();
         AttachShortcuts();
         UpdateSpeedLimitMenus();
         UpdateServerChoices();
@@ -95,6 +100,20 @@ public sealed partial class MainWindow : Window
             case nameof(ServerConnection.Profile):
                 UpdateServerChoices();
                 break;
+        }
+    }
+
+    // Removing ---------------------------------------------------------------------------------------------------
+
+    private async void OnRemoveClicked(object sender, RoutedEventArgs e) => await RemoveSelectionAsync(deletingData: false);
+
+    /// <summary>Remove… and Remove and Delete Data…: ask first, then remove what's selected.</summary>
+    private async Task RemoveSelectionAsync(bool deletingData)
+    {
+        var count = ViewModel.Connection.Selection.Count;
+        if (count > 0 && await RemoveConfirmation.AskAsync(Root.XamlRoot, count, deletingData))
+        {
+            await ViewModel.RemoveSelectionAsync(deletingData);
         }
     }
 
@@ -164,8 +183,8 @@ public sealed partial class MainWindow : Window
     // Keyboard shortcuts ----------------------------------------------------------------------------------------
 
     /// <summary>
-    /// The menu items carry their keys (brief 3.5). The list has a few keys of its own with no menu item: Enter
-    /// and Ctrl+A.
+    /// The menu items carry their keys (brief 3.5); the Torrent menu's are attached where it's built. The list has
+    /// a few keys of its own with no menu item: Enter and Ctrl+A.
     /// </summary>
     private void AttachShortcuts()
     {
@@ -174,22 +193,6 @@ public sealed partial class MainWindow : Window
             (AddTorrentFileItem, AppCommand.AddTorrentFile),
             (AddTorrentLinkItem, AppCommand.AddTorrentLink),
             (SettingsItem, AppCommand.Settings),
-            (ShowInFolderItem, AppCommand.ShowInFolder),
-            (StartItem, AppCommand.Start),
-            (StartNowItem, AppCommand.StartNow),
-            (StopItem, AppCommand.Stop),
-            (AskTrackersItem, AppCommand.AskTrackersForMorePeers),
-            (MoveDataItem, AppCommand.MoveData),
-            (RenameItem, AppCommand.Rename),
-            (LabelsItem, AppCommand.Labels),
-            (TorrentOptionsItem, AppCommand.TorrentOptions),
-            (MoveToTopItem, AppCommand.MoveToTopOfQueue),
-            (MoveUpItem, AppCommand.MoveUpInQueue),
-            (MoveDownItem, AppCommand.MoveDownInQueue),
-            (MoveToBottomItem, AppCommand.MoveToBottomOfQueue),
-            (CopyMagnetLinkItem, AppCommand.CopyMagnetLink),
-            (RemoveItem, AppCommand.Remove),
-            (RemoveAndDeleteDataItem, AppCommand.RemoveAndDeleteData),
             (StartAllItem, AppCommand.StartAll),
             (StopAllItem, AppCommand.StopAll),
             (AlternativeSpeedItem, AppCommand.AlternativeSpeedLimits),
@@ -209,20 +212,6 @@ public sealed partial class MainWindow : Window
     }
 
     // Menus built from data -------------------------------------------------------------------------------------
-
-    private void AssignQueueCommands()
-    {
-        (MenuFlyoutItem Item, QueueMove Move)[] items =
-        [
-            (MoveToTopItem, QueueMove.Top), (MoveUpItem, QueueMove.Up),
-            (MoveDownItem, QueueMove.Down), (MoveToBottomItem, QueueMove.Bottom),
-        ];
-        foreach (var (item, move) in items)
-        {
-            item.Command = ViewModel.MoveInQueueCommand;
-            item.CommandParameter = move;
-        }
-    }
 
     /// <summary>
     /// The Server menu's speed limit submenus. Rebuilt only when their items change, so a refresh doesn't replace

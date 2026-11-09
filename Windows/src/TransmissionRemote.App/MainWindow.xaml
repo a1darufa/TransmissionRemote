@@ -81,81 +81,11 @@
                         <MenuFlyoutItem x:Name="ExitItem" Click="OnExit" Text="{x:Bind app:Strings.Exit}" />
                     </MenuBarItem>
 
-                    <!-- The torrent actions (brief 4.4), for the selection in the list (M2). -->
-                    <MenuBarItem Title="{x:Bind app:Strings.Torrent}" AccessKey="{x:Bind app:Strings.TorrentMenuAccessKey}">
-                        <MenuFlyoutItem x:Name="OpenItem" IsEnabled="False" Text="{x:Bind app:Strings.Open}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE8A7;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem x:Name="ShowInFolderItem" IsEnabled="False" Text="{x:Bind app:Strings.ShowInFolder}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE838;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutSeparator />
-                        <MenuFlyoutItem x:Name="StartItem" Command="{x:Bind ViewModel.StartCommand}" Text="{x:Bind app:Strings.Start}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE768;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem x:Name="StartNowItem" Command="{x:Bind ViewModel.StartNowCommand}" Text="{x:Bind app:Strings.StartNow}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xEB9D;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem x:Name="StopItem" Command="{x:Bind ViewModel.StopCommand}" Text="{x:Bind app:Strings.Stop}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE769;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutSeparator />
-                        <MenuFlyoutItem Command="{x:Bind ViewModel.VerifyCommand}" Text="{x:Bind app:Strings.VerifyLocalData}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xEA18;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem
-                            x:Name="AskTrackersItem"
-                            Command="{x:Bind ViewModel.ReannounceCommand}"
-                            Text="{x:Bind app:Strings.AskTrackersForMorePeers}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xEC05;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutSeparator />
-                        <MenuFlyoutItem x:Name="MoveDataItem" IsEnabled="False" Text="{x:Bind app:Strings.MoveDataEllipsis}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE8DE;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem x:Name="RenameItem" IsEnabled="False" Text="{x:Bind app:Strings.RenameEllipsis}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE8AC;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem x:Name="LabelsItem" IsEnabled="False" Text="{x:Bind app:Strings.LabelsEllipsis}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE8EC;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem x:Name="TorrentOptionsItem" IsEnabled="False" Text="{x:Bind app:Strings.TorrentOptionsEllipsis}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE9E9;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutSubItem IsEnabled="False" Text="{x:Bind app:Strings.DownloadSpeedLimit}">
-                            <MenuFlyoutSubItem.Icon><FontIcon Glyph="&#xE896;" /></MenuFlyoutSubItem.Icon>
-                        </MenuFlyoutSubItem>
-                        <MenuFlyoutSubItem IsEnabled="False" Text="{x:Bind app:Strings.UploadSpeedLimit}">
-                            <MenuFlyoutSubItem.Icon><FontIcon Glyph="&#xE898;" /></MenuFlyoutSubItem.Icon>
-                        </MenuFlyoutSubItem>
-                        <MenuFlyoutItem IsEnabled="False" Text="{x:Bind app:Strings.EditTrackersEllipsis}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE8FD;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutSubItem IsEnabled="False" Text="{x:Bind app:Strings.BandwidthPriority_5262E0}">
-                            <MenuFlyoutSubItem.Icon><FontIcon Glyph="&#xEC49;" /></MenuFlyoutSubItem.Icon>
-                            <MenuFlyoutItem Text="{x:Bind app:Strings.High}" />
-                            <MenuFlyoutItem Text="{x:Bind app:Strings.Normal}" />
-                            <MenuFlyoutItem Text="{x:Bind app:Strings.Low}" />
-                        </MenuFlyoutSubItem>
-                        <MenuFlyoutSubItem IsEnabled="{x:Bind ViewModel.CanActOnSelection, Mode=OneWay}" Text="{x:Bind app:Strings.Queue}">
-                            <MenuFlyoutSubItem.Icon><FontIcon Glyph="&#xE8FD;" /></MenuFlyoutSubItem.Icon>
-                            <MenuFlyoutItem x:Name="MoveToTopItem" Text="{x:Bind app:Strings.MoveToTop}" />
-                            <MenuFlyoutItem x:Name="MoveUpItem" Text="{x:Bind app:Strings.MoveUp}" />
-                            <MenuFlyoutItem x:Name="MoveDownItem" Text="{x:Bind app:Strings.MoveDown}" />
-                            <MenuFlyoutItem x:Name="MoveToBottomItem" Text="{x:Bind app:Strings.MoveToBottom}" />
-                        </MenuFlyoutSubItem>
-                        <MenuFlyoutSeparator />
-                        <MenuFlyoutItem x:Name="CopyMagnetLinkItem" IsEnabled="False" Text="{x:Bind app:Strings.CopyMagnetLink}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE71B;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutSeparator />
-                        <MenuFlyoutItem x:Name="RemoveItem" IsEnabled="False" Text="{x:Bind app:Strings.RemoveEllipsis}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE738;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem x:Name="RemoveAndDeleteDataItem" IsEnabled="False" Text="{x:Bind app:Strings.RemoveAndDeleteDataEllipsis}">
-                            <MenuFlyoutItem.Icon><FontIcon Glyph="&#xE74D;" /></MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                    </MenuBarItem>
+                    <!-- The torrent actions (brief 4.4), filled in code: the same items as the list's context menu. -->
+                    <MenuBarItem
+                        x:Name="TorrentMenu"
+                        Title="{x:Bind app:Strings.Torrent}"
+                        AccessKey="{x:Bind app:Strings.TorrentMenuAccessKey}" />
 
                     <MenuBarItem Title="{x:Bind app:Strings.Server}" AccessKey="{x:Bind app:Strings.ServerMenuAccessKey}">
                         <MenuFlyoutItem x:Name="StartAllItem" Command="{x:Bind ViewModel.StartAllCommand}" Text="{x:Bind app:Strings.StartAll}" />
@@ -244,7 +174,8 @@
                 </AppBarButton>
                 <AppBarButton
                     x:Name="RemoveButton"
-                    IsEnabled="False"
+                    Click="OnRemoveClicked"
+                    IsEnabled="{x:Bind ViewModel.CanActOnSelection, Mode=OneWay}"
                     Label="{x:Bind app:Strings.Remove}"
                     ToolTipService.ToolTip="{x:Bind app:Strings.RemoveTheSelectedTorrents}">
                     <AppBarButton.Icon><FontIcon Glyph="&#xE74D;" /></AppBarButton.Icon>
