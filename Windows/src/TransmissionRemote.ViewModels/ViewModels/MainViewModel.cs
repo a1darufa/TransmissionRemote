@@ -51,6 +51,16 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
     /// <summary>The torrents the list shows: filtered, searched and sorted, updated in place.</summary>
     public ObservableCollection<TorrentRow> Rows { get; } = [];
 
+    /// <summary>
+    /// Raised before and after <see cref="Rows"/> is brought up to date. A list control may drop the selection of
+    /// rows that move; in between, the window ignores that, and afterwards it selects
+    /// <see cref="ServerConnection.Selection"/> again.
+    /// </summary>
+    public event EventHandler? RowsUpdating;
+
+    /// <inheritdoc cref="RowsUpdating"/>
+    public event EventHandler? RowsUpdated;
+
     [ObservableProperty]
     public partial SidebarSummary Sidebar { get; private set; }
 
@@ -386,7 +396,15 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
             .Where(torrent => NameSearch.Matches(torrent.Name, SearchText, CultureInfo.CurrentCulture))
             .Order(TorrentSorting.Comparer(SortColumn, SortAscending))
             .ToList();
-        TorrentRowSync.Apply(Rows, visible);
+        RowsUpdating?.Invoke(this, EventArgs.Empty);
+        try
+        {
+            TorrentRowSync.Apply(Rows, visible);
+        }
+        finally
+        {
+            RowsUpdated?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     private void NotifySelectionCommands()

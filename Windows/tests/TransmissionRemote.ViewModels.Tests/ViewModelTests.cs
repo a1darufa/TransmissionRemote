@@ -265,6 +265,27 @@ public sealed class MainViewModelTests
     }
 
     [TestMethod]
+    public async Task RowChangesAreAnnouncedBeforeAndAfter()
+    {
+        using var app = new TestApp(daemon =>
+        {
+            daemon.AddTorrent(1, "b");
+            daemon.AddTorrent(2, "a");
+        });
+        await app.ConnectAsync(expectedTorrents: 2);
+        var events = new List<string>();
+        app.Main.RowsUpdating += (_, _) => events.Add($"updating {app.Main.Rows[0].Torrent.Name}");
+        app.Main.RowsUpdated += (_, _) => events.Add($"updated {app.Main.Rows[0].Torrent.Name}");
+
+        app.Main.SortBy(TorrentColumn.Name);
+        app.Main.SortAscending = true;
+
+        CollectionAssert.Contains(events, "updated a");
+        Assert.StartsWith("updating", events[0]);
+        Assert.AreEqual(events.Count(e => e.StartsWith("updating", StringComparison.Ordinal)), events.Count(e => e.StartsWith("updated", StringComparison.Ordinal)));
+    }
+
+    [TestMethod]
     public void EnterOnARowShowsTheInfoPane()
     {
         using var app = new TestApp();
