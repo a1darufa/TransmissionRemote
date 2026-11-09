@@ -16,6 +16,9 @@ internal static partial class Log
     public static partial void Started(
         ILogger logger, string version, string windows, string architecture, string dotNet, string dataFolder);
 
+    [LoggerMessage(3002, LogLevel.Critical, "Couldn't create the app's services; the app exits")]
+    public static partial void ServicesNotCreated(ILogger logger, Exception exception);
+
     [LoggerMessage(3001, LogLevel.Information, "Transmission Remote is exiting")]
     public static partial void Exiting(ILogger logger);
 
