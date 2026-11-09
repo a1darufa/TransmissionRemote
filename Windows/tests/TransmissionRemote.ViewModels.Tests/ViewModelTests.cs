@@ -92,6 +92,9 @@ public sealed class MainViewModelTests
 
         Assert.AreEqual(TorrentColumn.Added, app.Main.SortColumn);
         Assert.IsFalse(app.Main.SortAscending);
+
+        app.Main.SortBy(TorrentColumn.Name);
+        Assert.IsTrue(app.Main.SortAscending, "another column starts A to Z, not in the order of the one before");
     }
 
     [TestMethod]

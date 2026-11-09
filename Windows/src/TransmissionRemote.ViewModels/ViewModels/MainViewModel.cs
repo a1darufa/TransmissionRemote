@@ -201,7 +201,10 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         });
     }
 
-    /// <summary>Clicking a column header: the same column flips the order, another sorts by it.</summary>
+    /// <summary>
+    /// Clicking a column header: the same column flips the order; another starts ascending (A to Z, smallest first),
+    /// as on the Mac and in Explorer, whatever the order of the column before.
+    /// </summary>
     public void SortBy(TorrentColumn column)
     {
         if (column == SortColumn)
@@ -210,6 +213,7 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         }
         else
         {
+            SortAscending = true;
             SortColumn = column;
         }
     }
