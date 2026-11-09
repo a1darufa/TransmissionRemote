@@ -308,8 +308,12 @@
                     x:Name="ConnectionPages"
                     Visibility="{x:Bind presentation:Visible.Unless(ViewModel.IsConnected), Mode=OneWay}" />
 
-                <!-- Connected (brief 3.1): the torrent list. -->
+                <!-- Connected (brief 3.1): the torrent list over the status bar. -->
                 <Grid x:Name="TorrentListHost" Visibility="{x:Bind presentation:Visible.When(ViewModel.IsConnected), Mode=OneWay}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
                     <Grid>
                         <controls:TorrentTable x:Name="Torrents" />
                         <controls:EmptyStateView
@@ -322,6 +326,7 @@
                             </controls:EmptyStateView.Icon>
                         </controls:EmptyStateView>
                     </Grid>
+                    <controls:StatusBarView x:Name="StatusBar" Grid.Row="1" />
                 </Grid>
 
                 <!-- Drag the sidebar's edge: between the Mac's 180 and 340 epx. A pointer affordance, as on the Mac: off the

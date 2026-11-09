@@ -22,7 +22,8 @@ public sealed partial class MainWindow : Window
     private IReadOnlyList<SpeedLimitChoice> _downloadChoices = [];
     private IReadOnlyList<SpeedLimitChoice> _uploadChoices = [];
 
-    public MainWindow(MainViewModel viewModel, TorrentCellText cellText, ILogger<MainWindow> logger)
+    public MainWindow(
+        MainViewModel viewModel, TorrentCellText cellText, DisplayFormatter format, ILogger<MainWindow> logger)
     {
         ViewModel = viewModel;
         _logger = logger;
@@ -30,6 +31,7 @@ public sealed partial class MainWindow : Window
         InitializeComponent();
         ConnectionPages.ViewModel = viewModel;
         Torrents.Bind(viewModel, cellText);
+        StatusBar.Bind(viewModel, format);
 
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(AppTitleBar);
