@@ -58,10 +58,11 @@ public sealed partial class ConnectionStateViewModel : ObservableObject, IDispos
 
     /// <summary>
     /// Time left until the next automatic attempt in whole seconds, rounded up the way a countdown shows it.
-    /// Null while an attempt is under way: "Trying again…".
+    /// Zero once it's due or under way, which reads "Trying again…".
     /// </summary>
+    /// <remarks>Zero rather than null because x:Bind doesn't call a function whose argument is null.</remarks>
     [ObservableProperty]
-    public partial TimeSpan? RetryCountdown { get; private set; }
+    public partial TimeSpan RetryCountdown { get; private set; }
 
     /// <summary>The server being connected to, for "Connecting to %@…".</summary>
     public string ServerName => _connection.Profile?.DisplayName ?? "";
@@ -134,7 +135,7 @@ public sealed partial class ConnectionStateViewModel : ObservableObject, IDispos
         }
         else
         {
-            RetryCountdown = null;
+            RetryCountdown = TimeSpan.Zero;
         }
     }
 
@@ -155,7 +156,7 @@ public sealed partial class ConnectionStateViewModel : ObservableObject, IDispos
                 var remaining = nextAttempt - _time.GetUtcNow();
                 if (remaining <= TimeSpan.Zero)
                 {
-                    RetryCountdown = null;
+                    RetryCountdown = TimeSpan.Zero;
                     return;
                 }
                 var shownSeconds = Math.Ceiling(remaining.TotalSeconds);

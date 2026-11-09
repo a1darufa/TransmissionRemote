@@ -73,7 +73,7 @@ public sealed class ConnectionStateViewModelTests : IDisposable
         _daemon.UnreachableRequests = 1;
 
         _connection.Connect(Profile(), password: null);
-        await WaitUntil(() => _state.RetryCountdown is not null);
+        await WaitUntil(() => _state.RetryCountdown > TimeSpan.Zero);
 
         Assert.AreEqual(ConnectionPage.Reconnecting, _state.Page);
         Assert.AreEqual(TimeSpan.FromSeconds(2), _state.RetryCountdown);
@@ -85,7 +85,7 @@ public sealed class ConnectionStateViewModelTests : IDisposable
 
         _time.Advance(TimeSpan.FromSeconds(1));
         await WaitUntil(() => _state.Page == ConnectionPage.Connected);
-        Assert.IsNull(_state.RetryCountdown);
+        Assert.AreEqual(TimeSpan.Zero, _state.RetryCountdown);
         Assert.IsNull(_state.Error);
     }
 
@@ -94,7 +94,7 @@ public sealed class ConnectionStateViewModelTests : IDisposable
     {
         _daemon.UnreachableRequests = 1;
         _connection.Connect(Profile(), password: null);
-        await WaitUntil(() => _state.RetryCountdown is not null);
+        await WaitUntil(() => _state.RetryCountdown > TimeSpan.Zero);
 
         _time.Advance(TimeSpan.FromMilliseconds(1500));
         await Task.Delay(50);
