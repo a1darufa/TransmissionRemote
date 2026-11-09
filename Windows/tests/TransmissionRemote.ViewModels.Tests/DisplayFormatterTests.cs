@@ -98,6 +98,17 @@ public sealed class DisplayFormatterTests
     }
 
     [TestMethod]
+    [DataRow(12, "0:12")]
+    [DataRow(60, "1:00")]
+    [DataRow(725, "12:05")]
+    [DataRow(3_723, "1:02:03")]
+    [DataRow(-5, "0:00")]
+    public void WritesCountdownsLikeAClock(int seconds, string expected)
+    {
+        Assert.AreEqual(expected, DisplayFormatter.Countdown(TimeSpan.FromSeconds(seconds)));
+    }
+
+    [TestMethod]
     public void PlacesDurationUnitsTheWayTheLanguageDoes()
     {
         var units = new DurationUnitLabels { Days = "{0} д", Hours = "{0} ч", Minutes = "{0} мин", Seconds = "{0} с" };

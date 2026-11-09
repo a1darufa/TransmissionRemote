@@ -13,12 +13,18 @@ namespace TransmissionRemote.ViewModels;
 /// </summary>
 public sealed partial class MainViewModel : ObservableObject, IDisposable
 {
-    public MainViewModel(ServerStore servers, SettingsStore settings, ServerConnection connection, AddTorrentFlow addQueue)
+    public MainViewModel(
+        ServerStore servers,
+        SettingsStore settings,
+        ServerConnection connection,
+        AddTorrentFlow addQueue,
+        TimeProvider? time = null)
     {
         Servers = servers ?? throw new ArgumentNullException(nameof(servers));
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
         Connection = connection ?? throw new ArgumentNullException(nameof(connection));
         AddQueue = addQueue ?? throw new ArgumentNullException(nameof(addQueue));
+        ConnectionState = new ConnectionStateViewModel(connection, servers, time);
         Sidebar = new SidebarSummary([]);
         var current = settings.Current;
         // Until the user picks a column, the newest torrents come first, as in the Mac app.
@@ -31,6 +37,9 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
     public SettingsStore Settings { get; }
     public ServerConnection Connection { get; }
     public AddTorrentFlow AddQueue { get; }
+
+    /// <summary>The page shown instead of the list while not connected.</summary>
+    public ConnectionStateViewModel ConnectionState { get; }
 
     /// <summary>The torrents the list shows: filtered, searched and sorted, updated in place.</summary>
     public ObservableCollection<TorrentRow> Rows { get; } = [];
@@ -161,7 +170,11 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
     private Task ToggleAlternativeSpeedAsync() =>
         Connection.SetAlternativeSpeedEnabledAsync(Connection.Session?.AltSpeedEnabled != true);
 
-    public void Dispose() => Connection.PropertyChanged -= OnConnectionChanged;
+    public void Dispose()
+    {
+        Connection.PropertyChanged -= OnConnectionChanged;
+        ConnectionState.Dispose();
+    }
 
     partial void OnSelectedFilterChanged(SidebarFilter value) => UpdateRows();
 

@@ -172,6 +172,19 @@ public sealed class DisplayFormatter
         return text;
     }
 
+    /// <summary>
+    /// A countdown like a clock's, as the Mac app shows "Trying again in 0:12": minutes and seconds, with hours
+    /// in front once there are any ("1:02:03"). Whole seconds; less than none shows "0:00".
+    /// </summary>
+    public static string Countdown(TimeSpan remaining)
+    {
+        var seconds = Math.Max((long)remaining.TotalSeconds, 0);
+        var (hours, minutes, rest) = (seconds / 3_600, seconds / 60 % 60, seconds % 60);
+        return hours > 0
+            ? string.Create(CultureInfo.InvariantCulture, $"{hours}:{minutes:00}:{rest:00}")
+            : string.Create(CultureInfo.InvariantCulture, $"{minutes}:{rest:00}");
+    }
+
     /// <summary>Transmission uses -1 for "not available" and -2 for "infinite".</summary>
     public string Ratio(double ratio) => ratio switch
     {
