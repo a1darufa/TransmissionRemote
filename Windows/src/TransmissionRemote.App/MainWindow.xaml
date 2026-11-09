@@ -330,8 +330,10 @@
                     </ListView>
                 </Grid>
 
-                <!-- Drag the sidebar's edge: between the Mac's 180 and 340 epx. -->
+                <!-- Drag the sidebar's edge: between the Mac's 180 and 340 epx. A pointer affordance, as on the Mac: off the
+                     tab order, so the focus never lands on it when a focused button disappears. -->
                 <toolkit:PropertySizer
+                    IsTabStop="False"
                     HorizontalAlignment="Left"
                     Binding="{x:Bind Sidebar.OpenPaneLength, Mode=TwoWay}"
                     Maximum="340"

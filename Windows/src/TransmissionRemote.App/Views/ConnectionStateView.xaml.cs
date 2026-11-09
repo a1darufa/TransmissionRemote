@@ -2,6 +2,8 @@ using System.ComponentModel;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation.Peers;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media;
 using TransmissionRemote.App.Controls;
 using TransmissionRemote.ViewModels;
 
@@ -52,11 +54,35 @@ public sealed partial class ConnectionStateView : UserControl
             ConnectingPage, ReconnectingPage, UntrustedCertificatePage, UnencryptedConnectionBlockedPage,
             CouldNotConnectPage, NoServerPage, NotConnectedPage,
         ];
+        var focus = FocusInside();
         foreach (var candidate in pages)
         {
             candidate.Visibility = candidate == visible ? Visibility.Visible : Visibility.Collapsed;
         }
+        // The focused button left with its page; hand the focus to the new page's first button instead of
+        // letting it fall to whatever comes next in the window.
+        if (focus is { } state && visible is EmptyStateView emptyState)
+        {
+            emptyState.FocusFirstAction(state);
+        }
         Announce(visible);
+    }
+
+    /// <summary>How the focus got here (keyboard, pointer…) when it's on one of these pages; null when it's elsewhere.</summary>
+    private FocusState? FocusInside()
+    {
+        if (XamlRoot is null || FocusManager.GetFocusedElement(XamlRoot) is not Control focused)
+        {
+            return null;
+        }
+        for (DependencyObject? element = focused; element is not null; element = VisualTreeHelper.GetParent(element))
+        {
+            if (element == this)
+            {
+                return focused.FocusState == FocusState.Unfocused ? FocusState.Programmatic : focused.FocusState;
+            }
+        }
+        return null;
     }
 
     /// <summary>Narrator reads the new page's title, since the page changes without the user doing anything.</summary>

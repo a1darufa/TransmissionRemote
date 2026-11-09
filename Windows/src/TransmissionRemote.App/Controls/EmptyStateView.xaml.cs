@@ -57,6 +57,18 @@ public sealed partial class EmptyStateView : UserControl
         set => SetValue(ActionsProperty, value);
     }
 
+    /// <summary>Focuses the first enabled button, so the keyboard focus has somewhere to go when a page is replaced.</summary>
+    public void FocusFirstAction(FocusState state)
+    {
+        var buttons = Actions switch
+        {
+            Button button => [button],
+            Panel panel => panel.Children.OfType<Button>(),
+            _ => [],
+        };
+        buttons.FirstOrDefault(button => button.IsEnabled)?.Focus(state);
+    }
+
     /// <summary>Has Narrator read the title, for a message that just appeared in place of another.</summary>
     public void AnnounceTitle()
     {
