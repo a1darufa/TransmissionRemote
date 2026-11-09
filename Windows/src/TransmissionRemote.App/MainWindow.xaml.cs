@@ -18,6 +18,7 @@ public sealed partial class MainWindow : Window
         AppWindow.TitleBar.PreferredHeightOption = TitleBarHeightOption.Tall;
         // The taskbar and Alt+Tab icon; the .exe's own icon only covers File Explorer and shortcuts.
         AppWindow.SetIcon(Path.Combine(AppContext.BaseDirectory, "Assets", "AppIcon.ico"));
+        ApplyDevelopmentTheme();
     }
 
     /// <summary>Shows the window in front of others, also when it was minimized or hidden in the tray.</summary>
@@ -29,5 +30,21 @@ public sealed partial class MainWindow : Window
         }
         AppWindow.Show();
         Activate();
+    }
+
+    /// <summary>
+    /// Debug builds only: TRANSMISSIONREMOTE_THEME=Light or Dark overrides the Windows theme, to take review
+    /// screenshots in both without changing the PC's settings. The app itself always follows Windows.
+    /// </summary>
+    [System.Diagnostics.Conditional("DEBUG")]
+    private void ApplyDevelopmentTheme()
+    {
+        if (!Enum.TryParse<ElementTheme>(Environment.GetEnvironmentVariable("TRANSMISSIONREMOTE_THEME"), out var theme)
+            || theme == ElementTheme.Default || Content is not FrameworkElement root)
+        {
+            return;
+        }
+        root.RequestedTheme = theme;
+        AppWindow.TitleBar.PreferredTheme = theme == ElementTheme.Light ? TitleBarTheme.Light : TitleBarTheme.Dark;
     }
 }
