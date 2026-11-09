@@ -1,0 +1,2001 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AGroupWithThisNameAlreadyExists" xml:space="preserve">
+    <value>Bu ada sahip bir grup zaten var.</value>
+    <comment>Mac key: A group with this name already exists.</comment>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Hakkında</value>
+    <comment>Mac key: About</comment>
+  </data>
+  <data name="ActionFailed" xml:space="preserve">
+    <value>İşlem başarısız oldu</value>
+    <comment>Mac key: Action Failed</comment>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Aktif</value>
+    <comment>Mac key: Active</comment>
+  </data>
+  <data name="ActiveFor" xml:space="preserve">
+    <value>Aktif süre</value>
+    <comment>Mac key: Active for</comment>
+  </data>
+  <data name="ActiveOf" xml:space="preserve">
+    <value>Aktif: {0} / {1}</value>
+    <comment>Mac key: Active: %lld of %lld</comment>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Ekle</value>
+    <comment>Mac key: Add</comment>
+  </data>
+  <data name="AddAMagnetLinkOrTorrentURL" xml:space="preserve">
+    <value>Magnet bağlantısı veya torrent URL’si ekle</value>
+    <comment>Mac key: Add a magnet link or torrent URL</comment>
+  </data>
+  <data name="AddAServerInSettingsTransmissionFirst" xml:space="preserve">
+    <value>Önce Ayarlar → Transmission bölümünde bir sunucu ekleyin.</value>
+    <comment>Mac key: Add a server in Settings → Transmission first.</comment>
+  </data>
+  <data name="AddAServerWithTheButtonOrBringYour" xml:space="preserve">
+    <value>+ düğmesiyle bir sunucu ekleyin veya sunucularınızı Transmission Remote GUI’den aktarın.</value>
+    <comment>Mac key: Add a server with the + button, or bring your servers over from Transmission Remote GUI.</comment>
+  </data>
+  <data name="AddATorrentFile" xml:space="preserve">
+    <value>.torrent dosyası ekle</value>
+    <comment>Mac key: Add a .torrent file</comment>
+  </data>
+  <data name="AddGroupEllipsis" xml:space="preserve">
+    <value>Grup ekle…</value>
+    <comment>Mac key: Add Group…</comment>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>Bağlantı ekle</value>
+    <comment>Mac key: Add Link</comment>
+  </data>
+  <data name="AddMapping" xml:space="preserve">
+    <value>Atama ekle</value>
+    <comment>Mac key: Add Mapping</comment>
+  </data>
+  <data name="AddPartExtensionToIncompleteFiles" xml:space="preserve">
+    <value>Tamamlanmamış dosyalara .part uzantısı ekle</value>
+    <comment>Mac key: Add .part extension to incomplete files</comment>
+  </data>
+  <data name="AddServer" xml:space="preserve">
+    <value>Sunucu ekle</value>
+    <comment>Mac key: Add Server</comment>
+  </data>
+  <data name="AddServerEllipsis" xml:space="preserve">
+    <value>Sunucu ekle…</value>
+    <comment>Mac key: Add Server…</comment>
+  </data>
+  <data name="AddTheAddressOfYourTransmissionDaemonTo" xml:space="preserve">
+    <value>Başlamak için Transmission daemon adresini ekleyin.</value>
+    <comment>Mac key: Add the address of your Transmission daemon to get started.</comment>
+  </data>
+  <data name="AddTorrent" xml:space="preserve">
+    <value>Torrent ekleme</value>
+    <comment>Mac key: Add torrent</comment>
+  </data>
+  <data name="AddTorrentFile" xml:space="preserve">
+    <value>Torrent dosyası ekle</value>
+    <comment>Mac key: Add Torrent File</comment>
+  </data>
+  <data name="AddTorrentFileEllipsis" xml:space="preserve">
+    <value>Torrent dosyası ekle…</value>
+    <comment>Mac key: Add Torrent File…</comment>
+  </data>
+  <data name="AddTorrentLink" xml:space="preserve">
+    <value>Torrent bağlantısı ekle</value>
+    <comment>Mac key: Add Torrent Link</comment>
+  </data>
+  <data name="AddTorrentLinkEllipsis" xml:space="preserve">
+    <value>Torrent bağlantısı ekle…</value>
+    <comment>Mac key: Add Torrent Link…</comment>
+  </data>
+  <data name="Added" xml:space="preserve">
+    <value>Eklenme tarihi</value>
+    <comment>Mac key: Added</comment>
+  </data>
+  <data name="AddedWithPasswordsProxiesAndFolder" xml:space="preserve">
+    <value>{0} eklendi; parolalar, proxy’ler ve klasör geçmişi de aktarıldı.</value>
+    <comment>Mac key: Added %@, with passwords, proxies and folder history.</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adres</value>
+    <comment>Mac key: Address</comment>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Gelişmiş</value>
+    <comment>Mac key: Advanced</comment>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Tümü</value>
+    <comment>Mac key: All</comment>
+  </data>
+  <data name="AllTimeTotals" xml:space="preserve">
+    <value>Tüm zamanların toplamı</value>
+    <comment>Mac key: All-time totals</comment>
+  </data>
+  <data name="AllowEncryption" xml:space="preserve">
+    <value>Şifrelemeye izin ver</value>
+    <comment>Mac key: Allow encryption</comment>
+  </data>
+  <data name="AllowUnencryptedConnection" xml:space="preserve">
+    <value>Şifrelenmemiş bağlantıya izin ver</value>
+    <comment>Mac key: Allow Unencrypted Connection</comment>
+  </data>
+  <data name="AllowUnencryptedConnectionAnyway" xml:space="preserve">
+    <value>Yine de şifrelenmemiş bağlantıya izin ver</value>
+    <comment>Mac key: Allow unencrypted connection anyway</comment>
+  </data>
+  <data name="AlsoFollowTheServersGlobalLimits" xml:space="preserve">
+    <value>Sunucunun genel limitlerine de uy</value>
+    <comment>Mac key: Also follow the server's global limits</comment>
+  </data>
+  <data name="AlternateBandwidthSettings" xml:space="preserve">
+    <value>Alternatif bant genişliği ayarları</value>
+    <comment>Mac key: Alternate bandwidth settings</comment>
+  </data>
+  <data name="AlternativeSpeedLimitsAreOn" xml:space="preserve">
+    <value>Alternatif hız limitleri açık</value>
+    <comment>Mac key: Alternative speed limits are on</comment>
+  </data>
+  <data name="AlternativeSpeedLimits_392B4B" xml:space="preserve">
+    <value>Alternatif hız limitleri</value>
+    <comment>Mac key: Alternative speed limits</comment>
+  </data>
+  <data name="AlternativeSpeedLimits_5A9C91" xml:space="preserve">
+    <value>Alternatif hız limitleri</value>
+    <comment>Mac key: Alternative Speed Limits</comment>
+  </data>
+  <data name="ApplicationOptions" xml:space="preserve">
+    <value>Uygulama ayarları</value>
+    <comment>Mac key: Application Options</comment>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Uygula</value>
+    <comment>Mac key: Apply</comment>
+  </data>
+  <data name="ApplyAlternateBandwidthSettings" xml:space="preserve">
+    <value>Alternatif bant genişliği ayarlarını otomatik uygula</value>
+    <comment>Mac key: Apply alternate bandwidth settings automatically</comment>
+  </data>
+  <data name="AskForMorePeers" xml:space="preserve">
+    <value>Daha fazla eş iste</value>
+    <comment>Mac key: Ask for More Peers</comment>
+  </data>
+  <data name="AskTrackersForMorePeers" xml:space="preserve">
+    <value>İzleyicilerden daha fazla eş iste</value>
+    <comment>Mac key: Ask Trackers for More Peers</comment>
+  </data>
+  <data name="AsksGitHubForTheNewestReleaseNothingIs" xml:space="preserve">
+    <value>En yeni sürümü GitHub’dan sorgular. Hiçbir şey otomatik olarak indirilmez veya yüklenmez.</value>
+    <comment>Mac key: Asks GitHub for the newest release. Nothing is downloaded or installed automatically.</comment>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>Kimlik doğrulama</value>
+    <comment>Mac key: Authentication</comment>
+  </data>
+  <data name="AuthenticationRequired" xml:space="preserve">
+    <value>Kimlik doğrulama gerekli</value>
+    <comment>Mac key: Authentication required</comment>
+  </data>
+  <data name="Automatic" xml:space="preserve">
+    <value>Otomatik</value>
+    <comment>Mac key: Automatic</comment>
+  </data>
+  <data name="AutomaticUsesJSONRPC20OnTransmission41" xml:space="preserve">
+    <value>Otomatik seçeneği Transmission 4.1 ve sonrasında JSON-RPC 2.0’ı, 3.00 gibi eski sürümlerde ise eski protokolü kullanır.</value>
+    <comment>Mac key: Automatic uses JSON-RPC 2.0 on Transmission 4.1 and later, and the legacy protocol on older versions such as 3.00.</comment>
+  </data>
+  <data name="Backup" xml:space="preserve">
+    <value>Yedek</value>
+    <comment>Mac key: Backup</comment>
+  </data>
+  <data name="Bandwidth" xml:space="preserve">
+    <value>Bant genişliği</value>
+    <comment>Mac key: Bandwidth</comment>
+  </data>
+  <data name="BandwidthGroup_319062" xml:space="preserve">
+    <value>Bant genişliği grubu</value>
+    <comment>Mac key: Bandwidth Group</comment>
+  </data>
+  <data name="BandwidthGroup_71D067" xml:space="preserve">
+    <value>Bant genişliği grubu</value>
+    <comment>Mac key: Bandwidth group</comment>
+  </data>
+  <data name="BandwidthGroups" xml:space="preserve">
+    <value>Bant genişliği grupları</value>
+    <comment>Mac key: Bandwidth groups</comment>
+  </data>
+  <data name="BandwidthGroupsNeedTransmission40OrLater" xml:space="preserve">
+    <value>Bant genişliği grupları için Transmission 4.0 veya üstü gerekir.</value>
+    <comment>Mac key: Bandwidth groups need Transmission 4.0 or later.</comment>
+  </data>
+  <data name="BandwidthPriority_33C88A" xml:space="preserve">
+    <value>Bant genişliği önceliği</value>
+    <comment>Mac key: Bandwidth priority</comment>
+  </data>
+  <data name="BandwidthPriority_5262E0" xml:space="preserve">
+    <value>Bant genişliği önceliği</value>
+    <comment>Mac key: Bandwidth Priority</comment>
+  </data>
+  <data name="BlocklistURL" xml:space="preserve">
+    <value>Engelleme listesi URL’si</value>
+    <comment>Mac key: Blocklist URL</comment>
+  </data>
+  <data name="BrowseFoldersOnTheServer" xml:space="preserve">
+    <value>Sunucudaki klasörlere göz at</value>
+    <comment>Mac key: Browse folders on the server</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Vazgeç</value>
+    <comment>Mac key: Cancel</comment>
+  </data>
+  <data name="CannotReachTheServer" xml:space="preserve">
+    <value>Sunucuya ulaşılamıyor</value>
+    <comment>Mac key: Can't Reach the Server</comment>
+  </data>
+  <data name="CertificatePassword" xml:space="preserve">
+    <value>Sertifika parolası</value>
+    <comment>Mac key: Certificate Password</comment>
+  </data>
+  <data name="ChangesAreSentToTheServerWhenYouClick" xml:space="preserve">
+    <value>Değişiklikler, Uygula’yı tıkladığınızda sunucuya gönderilir.</value>
+    <comment>Mac key: Changes are sent to the server when you click Apply.</comment>
+  </data>
+  <data name="CheckForUpdatesEllipsis" xml:space="preserve">
+    <value>Güncellemeleri denetle…</value>
+    <comment>Mac key: Check for Updates…</comment>
+  </data>
+  <data name="CheckForUpdatesOnceADay" xml:space="preserve">
+    <value>Güncellemeleri günde bir kez denetle</value>
+    <comment>Mac key: Check for updates once a day</comment>
+  </data>
+  <data name="CheckNow" xml:space="preserve">
+    <value>Şimdi denetle</value>
+    <comment>Mac key: Check Now</comment>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Seç</value>
+    <comment>Mac key: Choose</comment>
+  </data>
+  <data name="ChooseEllipsis" xml:space="preserve">
+    <value>Seç…</value>
+    <comment>Mac key: Choose…</comment>
+  </data>
+  <data name="ChooseTransguiIniTransmissionRemoteGUI" xml:space="preserve">
+    <value>transgui.ini dosyasını seçin. Transmission Remote GUI bu dosyayı ~/.config klasöründe tutar.</value>
+    <comment>Mac key: Choose transgui.ini. Transmission Remote GUI keeps it in ~/.config.</comment>
+  </data>
+  <data name="ClearHistory" xml:space="preserve">
+    <value>Geçmişi temizle</value>
+    <comment>Mac key: Clear History</comment>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>İstemci</value>
+    <comment>Mac key: Client</comment>
+  </data>
+  <data name="ClientCertificate" xml:space="preserve">
+    <value>İstemci sertifikası</value>
+    <comment>Mac key: Client certificate</comment>
+  </data>
+  <data name="ClientCertificatesWereNotImportedChoose" xml:space="preserve">
+    <value>İstemci sertifikaları içe aktarılmadı. Bunları Ayarlar → Transmission bölümünde seçin.</value>
+    <comment>Mac key: Client certificates weren't imported. Choose them in Settings → Transmission.</comment>
+  </data>
+  <data name="CollectingSpeedData" xml:space="preserve">
+    <value>Hız verileri toplanıyor</value>
+    <comment>Mac key: Collecting Speed Data</comment>
+  </data>
+  <data name="CommaSeparatedSpeedsForTheSpeedLimit" xml:space="preserve">
+    <value>Torrent ve Sunucu menülerindeki hız limiti alt menüleri için virgülle ayrılmış hızlar. Limitsiz her zaman sunulur.</value>
+    <comment>Mac key: Comma-separated speeds for the Speed Limit menus in the torrent menu and the Server menu. Unlimited is always offered.</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Yorum</value>
+    <comment>Mac key: Comment</comment>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Tamamlandı</value>
+    <comment>Mac key: Completed</comment>
+  </data>
+  <data name="ConfigFolder" xml:space="preserve">
+    <value>Yapılandırma klasörü</value>
+    <comment>Mac key: Config folder</comment>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Bağlan</value>
+    <comment>Mac key: Connect</comment>
+  </data>
+  <data name="ConnectToATransmissionServerToChangeIts" xml:space="preserve">
+    <value>Seçeneklerini değiştirmek için bir Transmission sunucusuna bağlanın.</value>
+    <comment>Mac key: Connect to a Transmission server to change its options.</comment>
+  </data>
+  <data name="ConnectToTransmissionUsingProxyServer" xml:space="preserve">
+    <value>Transmission’a proxy sunucusu üzerinden bağlan</value>
+    <comment>Mac key: Connect to Transmission using proxy server</comment>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>Bağlı</value>
+    <comment>Mac key: Connected</comment>
+  </data>
+  <data name="ConnectedOverUTP" xml:space="preserve">
+    <value>µTP üzerinden bağlı</value>
+    <comment>Mac key: Connected over µTP</comment>
+  </data>
+  <data name="ConnectedToTransmissionUsing" xml:space="preserve">
+    <value>{1} kullanılarak Transmission {0} sürümüne bağlanıldı.</value>
+    <comment>Mac key: Connected to Transmission %@ using %@.</comment>
+  </data>
+  <data name="ConnectingToEllipsis" xml:space="preserve">
+    <value>{0} sunucusuna bağlanılıyor…</value>
+    <comment>Mac key: Connecting to %@…</comment>
+  </data>
+  <data name="Connection" xml:space="preserve">
+    <value>Bağlantı</value>
+    <comment>Mac key: Connection</comment>
+  </data>
+  <data name="ConnectionToThisMac" xml:space="preserve">
+    <value>Bu Mac’e bağlantı.</value>
+    <comment>Mac key: Connection to this Mac.</comment>
+  </data>
+  <data name="ConsiderActiveTorrentsAsStalledWhenIdle" xml:space="preserve">
+    <value>Aktif torrentleri şu kadar süre boşta kalınca takılmış say</value>
+    <comment>Mac key: Consider active torrents as stalled when idle for</comment>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Devam</value>
+    <comment>Mac key: Continue</comment>
+  </data>
+  <data name="CopyMagnetLink" xml:space="preserve">
+    <value>Magnet bağlantısını kopyala</value>
+    <comment>Mac key: Copy Magnet Link</comment>
+  </data>
+  <data name="CopyPath" xml:space="preserve">
+    <value>Yolu kopyala</value>
+    <comment>Mac key: Copy Path</comment>
+  </data>
+  <data name="Corrupt" xml:space="preserve">
+    <value>Bozuk</value>
+    <comment>Mac key: Corrupt</comment>
+  </data>
+  <data name="CouldNotAddTorrent" xml:space="preserve">
+    <value>Torrent eklenemedi</value>
+    <comment>Mac key: Couldn't Add Torrent</comment>
+  </data>
+  <data name="CouldNotBeOpenedAsATorrentFile" xml:space="preserve">
+    <value>“{0}” torrent dosyası olarak açılamadı.</value>
+    <comment>Mac key: “%@” couldn't be opened as a torrent file.</comment>
+  </data>
+  <data name="CouldNotCheckForUpdates" xml:space="preserve">
+    <value>Güncellemeler denetlenemedi</value>
+    <comment>Mac key: Couldn't Check for Updates</comment>
+  </data>
+  <data name="CouldNotConnect" xml:space="preserve">
+    <value>Bağlanılamadı</value>
+    <comment>Mac key: Couldn't Connect</comment>
+  </data>
+  <data name="CouldNotImport" xml:space="preserve">
+    <value>İçe aktarılamadı</value>
+    <comment>Mac key: Couldn't Import</comment>
+  </data>
+  <data name="CouldNotLoadOptions" xml:space="preserve">
+    <value>Seçenekler yüklenemedi</value>
+    <comment>Mac key: Couldn't Load Options</comment>
+  </data>
+  <data name="CouldNotOpenCheckThatTheShareIsMounted" xml:space="preserve">
+    <value>{0} açılamadı. Paylaşımın bağlı olduğunu denetleyin ve klasörünü Ayarlar → Yollar bölümünde yeniden seçin.</value>
+    <comment>Mac key: Couldn't open %@. Check that the share is mounted, and choose its folder again in Settings → Paths.</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Ülke</value>
+    <comment>Mac key: Country</comment>
+  </data>
+  <data name="CountryDatabase" xml:space="preserve">
+    <value>Ülke veritabanı</value>
+    <comment>Mac key: Country database</comment>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Oluşturan</value>
+    <comment>Mac key: Created by</comment>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>Oluşturulma tarihi</value>
+    <comment>Mac key: Created on</comment>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>Özel</value>
+    <comment>Mac key: Custom</comment>
+  </data>
+  <data name="DataDisplay" xml:space="preserve">
+    <value>Veri görünümü</value>
+    <comment>Mac key: Data display</comment>
+  </data>
+  <data name="DataRefreshInterval" xml:space="preserve">
+    <value>Veri yenileme aralığı</value>
+    <comment>Mac key: Data refresh interval</comment>
+  </data>
+  <data name="DataRefreshIntervalInTheBackground" xml:space="preserve">
+    <value>Arka planda veri yenileme aralığı</value>
+    <comment>Mac key: Data refresh interval in the background</comment>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Günler</value>
+    <comment>Mac key: Days</comment>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Varsayılan</value>
+    <comment>Mac key: Default</comment>
+  </data>
+  <data name="DefaultDownloadFolderOnRemoteHost" xml:space="preserve">
+    <value>Uzak sunucudaki varsayılan indirme klasörü</value>
+    <comment>Mac key: Default download folder on remote host</comment>
+  </data>
+  <data name="DeleteTorrentFilesFromTheWatchFolder" xml:space="preserve">
+    <value>Ekledikten sonra .torrent dosyalarını izlenen klasörden sil</value>
+    <comment>Mac key: Delete .torrent files from the watch folder after adding</comment>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Ayrıntı</value>
+    <comment>Mac key: Detail</comment>
+  </data>
+  <data name="Direction" xml:space="preserve">
+    <value>Yön</value>
+    <comment>Mac key: Direction</comment>
+  </data>
+  <data name="DirectoryForIncompleteFiles" xml:space="preserve">
+    <value>Tamamlanmamış dosyalar klasörü</value>
+    <comment>Mac key: Directory for incomplete files</comment>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Bağlantıyı kes</value>
+    <comment>Mac key: Disconnect</comment>
+  </data>
+  <data name="DiskCacheSize" xml:space="preserve">
+    <value>Disk önbellek boyutu</value>
+    <comment>Mac key: Disk cache size</comment>
+  </data>
+  <data name="DoNotDownloadSelected" xml:space="preserve">
+    <value>Seçilenleri indirme</value>
+    <comment>Mac key: Don't Download Selected</comment>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Tamamlanan</value>
+    <comment>Mac key: Done</comment>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>İndirme</value>
+    <comment>Mac key: Down</comment>
+  </data>
+  <data name="DownKBS" xml:space="preserve">
+    <value>↓ {0} kB/s</value>
+    <comment>Mac key: ↓ %@ kB/s</comment>
+  </data>
+  <data name="DownUnlimited" xml:space="preserve">
+    <value>↓ limitsiz</value>
+    <comment>Mac key: ↓ unlimited</comment>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>İndirme</value>
+    <comment>Mac key: Download</comment>
+  </data>
+  <data name="DownloadComplete" xml:space="preserve">
+    <value>İndirme tamamlandı</value>
+    <comment>Mac key: Download complete</comment>
+  </data>
+  <data name="DownloadDatabase" xml:space="preserve">
+    <value>Veritabanını indir</value>
+    <comment>Mac key: Download Database</comment>
+  </data>
+  <data name="DownloadFailed_EAE34C" xml:space="preserve">
+    <value>İndirme başarısız oldu</value>
+    <comment>Mac key: Download failed</comment>
+  </data>
+  <data name="DownloadFailed_F37242" xml:space="preserve">
+    <value>İndirme başarısız oldu: {0}</value>
+    <comment>Mac key: Download failed: %@</comment>
+  </data>
+  <data name="DownloadInOrder" xml:space="preserve">
+    <value>Sırayla indir</value>
+    <comment>Mac key: Download in order</comment>
+  </data>
+  <data name="DownloadNow" xml:space="preserve">
+    <value>Şimdi indir</value>
+    <comment>Mac key: Download Now</comment>
+  </data>
+  <data name="DownloadPiecesInOrderByDefault" xml:space="preserve">
+    <value>Parçaları varsayılan olarak sırayla indir</value>
+    <comment>Mac key: Download pieces in order by default</comment>
+  </data>
+  <data name="DownloadQueueSize" xml:space="preserve">
+    <value>İndirme sırası boyutu</value>
+    <comment>Mac key: Download queue size</comment>
+  </data>
+  <data name="DownloadSelected" xml:space="preserve">
+    <value>Seçilenleri indir</value>
+    <comment>Mac key: Download Selected</comment>
+  </data>
+  <data name="DownloadSpeedLimit" xml:space="preserve">
+    <value>İndirme hızı limiti</value>
+    <comment>Mac key: Download Speed Limit</comment>
+  </data>
+  <data name="DownloadSpeedsKBS" xml:space="preserve">
+    <value>İndirme hızları (kB/s)</value>
+    <comment>Mac key: Download speeds (kB/s)</comment>
+  </data>
+  <data name="DownloadUpdate" xml:space="preserve">
+    <value>Güncellemeyi indir</value>
+    <comment>Mac key: Download Update</comment>
+  </data>
+  <data name="Downloaded" xml:space="preserve">
+    <value>İndirilen</value>
+    <comment>Mac key: Downloaded</comment>
+  </data>
+  <data name="DownloadedFilesStayOnTheServer" xml:space="preserve">
+    <value>İndirilen dosyalar sunucuda kalır.</value>
+    <comment>Mac key: Downloaded files stay on the server.</comment>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>İndiriliyor</value>
+    <comment>Mac key: Downloading</comment>
+  </data>
+  <data name="DownloadingEllipsis" xml:space="preserve">
+    <value>İndiriliyor…</value>
+    <comment>Mac key: Downloading…</comment>
+  </data>
+  <data name="DownloadingFor" xml:space="preserve">
+    <value>İndirme süresi</value>
+    <comment>Mac key: Downloading for</comment>
+  </data>
+  <data name="DownloadingFromThisPeer" xml:space="preserve">
+    <value>Bu eşten indiriliyor</value>
+    <comment>Mac key: Downloading from this peer</comment>
+  </data>
+  <data name="DownloadingTheCountryDatabaseEllipsis" xml:space="preserve">
+    <value>Ülke veritabanı indiriliyor…</value>
+    <comment>Mac key: Downloading the country database…</comment>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>İndirmeler</value>
+    <comment>Mac key: Downloads</comment>
+  </data>
+  <data name="DropTorrentFilesOrMagnetLinksHereOrUse" xml:space="preserve">
+    <value>.torrent dosyalarını veya magnet bağlantılarını buraya bırakın ya da Torrent ekle komutunu kullanın.</value>
+    <comment>Mac key: Drop .torrent files or magnet links here, or use Add Torrent.</comment>
+  </data>
+  <data name="ETA" xml:space="preserve">
+    <value>Tahmini süre</value>
+    <comment>Mac key: ETA</comment>
+  </data>
+  <data name="EditEllipsis" xml:space="preserve">
+    <value>Düzenle…</value>
+    <comment>Mac key: Edit…</comment>
+  </data>
+  <data name="EditServerEllipsis" xml:space="preserve">
+    <value>Sunucuyu düzenle…</value>
+    <comment>Mac key: Edit Server…</comment>
+  </data>
+  <data name="EditTrackers" xml:space="preserve">
+    <value>İzleyicileri düzenle</value>
+    <comment>Mac key: Edit Trackers</comment>
+  </data>
+  <data name="EditTrackersEllipsis" xml:space="preserve">
+    <value>İzleyicileri düzenle…</value>
+    <comment>Mac key: Edit Trackers…</comment>
+  </data>
+  <data name="EnableBlocklist" xml:space="preserve">
+    <value>Engelleme listesini etkinleştir</value>
+    <comment>Mac key: Enable blocklist</comment>
+  </data>
+  <data name="EnableDHT" xml:space="preserve">
+    <value>DHT’yi etkinleştir</value>
+    <comment>Mac key: Enable DHT</comment>
+  </data>
+  <data name="EnableLocalPeerDiscovery" xml:space="preserve">
+    <value>Yerel eş bulmayı etkinleştir</value>
+    <comment>Mac key: Enable Local Peer Discovery</comment>
+  </data>
+  <data name="EnablePeerExchange" xml:space="preserve">
+    <value>Eş takasını etkinleştir</value>
+    <comment>Mac key: Enable Peer Exchange</comment>
+  </data>
+  <data name="EnablePortForwarding" xml:space="preserve">
+    <value>Port yönlendirmeyi etkinleştir</value>
+    <comment>Mac key: Enable port forwarding</comment>
+  </data>
+  <data name="EnableUTP" xml:space="preserve">
+    <value>µTP’yi etkinleştir</value>
+    <comment>Mac key: Enable µTP</comment>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Şifreli</value>
+    <comment>Mac key: Encrypted</comment>
+  </data>
+  <data name="EncryptedConnection" xml:space="preserve">
+    <value>Şifreli bağlantı</value>
+    <comment>Mac key: Encrypted connection</comment>
+  </data>
+  <data name="EncryptedWithHTTPS" xml:space="preserve">
+    <value>HTTPS ile şifrelenmiş.</value>
+    <comment>Mac key: Encrypted with HTTPS.</comment>
+  </data>
+  <data name="Encryption" xml:space="preserve">
+    <value>Şifreleme</value>
+    <comment>Mac key: Encryption</comment>
+  </data>
+  <data name="EnterJustTheHostNameOrIPAddressWithout" xml:space="preserve">
+    <value>yalnızca ana bilgisayar adını veya IP adresini “http://” olmadan girin.</value>
+    <comment>Mac key: enter just the host name or IP address, without “http://”.</comment>
+  </data>
+  <data name="EnterThePasswordThatProtects" xml:space="preserve">
+    <value>{0} dosyasını koruyan parolayı girin.</value>
+    <comment>Mac key: Enter the password that protects %@.</comment>
+  </data>
+  <data name="EnterTheProxyServersAddress" xml:space="preserve">
+    <value>Proxy sunucusunun adresini girin.</value>
+    <comment>Mac key: Enter the proxy server's address.</comment>
+  </data>
+  <data name="Error_1100F4" xml:space="preserve">
+    <value>Hata: {0}</value>
+    <comment>Mac key: Error: %@</comment>
+  </data>
+  <data name="Error_54A0E8" xml:space="preserve">
+    <value>Hata</value>
+    <comment>Mac key: Error</comment>
+  </data>
+  <data name="EveryS" xml:space="preserve">
+    <value>{0} saniyede bir</value>
+    <comment>Mac key: Every %lld s</comment>
+  </data>
+  <data name="EveryServerInTransguiIniIsAlreadySetUp" xml:space="preserve">
+    <value>transgui.ini dosyasındaki tüm sunucular burada zaten ayarlı.</value>
+    <comment>Mac key: Every server in transgui.ini is already set up here.</comment>
+  </data>
+  <data name="ExistingLabels" xml:space="preserve">
+    <value>Mevcut etiketler</value>
+    <comment>Mac key: Existing labels</comment>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Dosyalar</value>
+    <comment>Mac key: Files</comment>
+  </data>
+  <data name="Files_One" xml:space="preserve">
+    <value>{0} dosya</value>
+    <comment>Mac key: %lld files</comment>
+  </data>
+  <data name="Files_Other" xml:space="preserve">
+    <value>{0} dosya</value>
+    <comment>Mac key: %lld files</comment>
+  </data>
+  <data name="FilterByName" xml:space="preserve">
+    <value>Ada göre filtrele</value>
+    <comment>Mac key: Filter by name</comment>
+  </data>
+  <data name="Finished" xml:space="preserve">
+    <value>Tamamlandı</value>
+    <comment>Mac key: Finished</comment>
+  </data>
+  <data name="Flags" xml:space="preserve">
+    <value>Bayraklar</value>
+    <comment>Mac key: Flags</comment>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Klasör</value>
+    <comment>Mac key: Folder</comment>
+  </data>
+  <data name="FolderOnTheServer" xml:space="preserve">
+    <value>Sunucudaki klasör</value>
+    <comment>Mac key: Folder on the server</comment>
+  </data>
+  <data name="FolderOnThisMac" xml:space="preserve">
+    <value>Bu Mac’teki klasör</value>
+    <comment>Mac key: Folder on this Mac</comment>
+  </data>
+  <data name="FoldersAppearHereOnceTorrentsAreSavedOn" xml:space="preserve">
+    <value>Bu sunucuya torrentler kaydedildiğinde klasörler burada görünür.</value>
+    <comment>Mac key: Folders appear here once torrents are saved on this server.</comment>
+  </data>
+  <data name="Folders_63B853" xml:space="preserve">
+    <value>klasör</value>
+    <comment>Mac key: folders</comment>
+  </data>
+  <data name="Folders_C4D6BB" xml:space="preserve">
+    <value>Klasörler</value>
+    <comment>Mac key: Folders</comment>
+  </data>
+  <data name="FollowTheServersGlobalLimits" xml:space="preserve">
+    <value>Sunucunun genel limitlerine uy</value>
+    <comment>Mac key: Follow the server's global limits</comment>
+  </data>
+  <data name="ForExampleMntHDHDA2OnTheServerIsVolumes" xml:space="preserve">
+    <value>Örneğin NAS paylaşımı bu Mac’te /Volumes/HD_a2 konumuna bağlandığında, sunucudaki /mnt/HD/HD_a2 burada /Volumes/HD_a2 olur. Aç ve Finder’da göster komutları bunları kullanır.</value>
+    <comment>Mac key: For example, /mnt/HD/HD_a2 on the server is /Volumes/HD_a2 on this Mac when the NAS share is mounted there. Open and Show in Finder use these.</comment>
+  </data>
+  <data name="Forget" xml:space="preserve">
+    <value>Unut</value>
+    <comment>Mac key: Forget</comment>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>{0} boş</value>
+    <comment>Mac key: %@ free</comment>
+  </data>
+  <data name="FreeOnTheServer" xml:space="preserve">
+    <value>Sunucuda {0} boş</value>
+    <comment>Mac key: %@ free on the server</comment>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Başlangıç</value>
+    <comment>Mac key: From</comment>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Genel</value>
+    <comment>Mac key: General</comment>
+  </data>
+  <data name="GettingMetadata" xml:space="preserve">
+    <value>Meta veriler alınıyor</value>
+    <comment>Mac key: Getting metadata</comment>
+  </data>
+  <data name="GlobalBandwidthSettings" xml:space="preserve">
+    <value>Genel bant genişliği ayarları</value>
+    <comment>Mac key: Global bandwidth settings</comment>
+  </data>
+  <data name="GlobalPeerLimit" xml:space="preserve">
+    <value>Genel eş limiti</value>
+    <comment>Mac key: Global peer limit</comment>
+  </data>
+  <data name="Hash" xml:space="preserve">
+    <value>Hash</value>
+    <comment>Mac key: Hash</comment>
+  </data>
+  <data name="HideCountries" xml:space="preserve">
+    <value>Ülkeleri gizle</value>
+    <comment>Mac key: Hide Countries</comment>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>Yüksek</value>
+    <comment>Mac key: High</comment>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>Ana bilgisayar</value>
+    <comment>Mac key: Host</comment>
+  </data>
+  <data name="HowManyDownloadFoldersEachServer" xml:space="preserve">
+    <value>Her sunucunun “Kaydetme yeri” için kaç indirme klasörünü hatırlayacağı.</value>
+    <comment>Mac key: How many download folders each server remembers for “Save to”.</comment>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>Kimlik</value>
+    <comment>Mac key: ID</comment>
+  </data>
+  <data name="IdleMinutes" xml:space="preserve">
+    <value>Boşta kalma dakikası</value>
+    <comment>Mac key: Idle minutes</comment>
+  </data>
+  <data name="IfYourMacReachesTheServerOtherwiseCheck" xml:space="preserve">
+    <value>Mac'iniz sunucuya başka yoldan ulaşabiliyorsa, Sistem Ayarları → Gizlilik ve Güvenlik → Yerel Ağ bölümünde Transmission Remote'un açık olduğunu denetleyin.</value>
+    <comment>Mac key: If your Mac reaches the server otherwise, check that Transmission Remote is turned on in System Settings → Privacy &amp; Security → Local Network.</comment>
+  </data>
+  <data name="IgnoresGlobalLimits" xml:space="preserve">
+    <value>genel limitleri yok sayar</value>
+    <comment>Mac key: ignores global limits</comment>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>İçe aktar</value>
+    <comment>Mac key: Import</comment>
+  </data>
+  <data name="ImportFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Transmission Remote GUI’den içe aktar</value>
+    <comment>Mac key: Import from Transmission Remote GUI</comment>
+  </data>
+  <data name="ImportFromTransmissionRemoteGUIEllipsis" xml:space="preserve">
+    <value>Transmission Remote GUI’den içe aktar…</value>
+    <comment>Mac key: Import from Transmission Remote GUI…</comment>
+  </data>
+  <data name="ImportServersFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Sunucuları Transmission Remote GUI’den içe aktar</value>
+    <comment>Mac key: Import servers from Transmission Remote GUI</comment>
+  </data>
+  <data name="ImportedFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Transmission Remote GUI’den içe aktarıldı</value>
+    <comment>Mac key: Imported from Transmission Remote GUI</comment>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Pasif</value>
+    <comment>Mac key: Inactive</comment>
+  </data>
+  <data name="IncomingConnection" xml:space="preserve">
+    <value>Gelen bağlantı</value>
+    <comment>Mac key: Incoming connection</comment>
+  </data>
+  <data name="IncomingPort" xml:space="preserve">
+    <value>Gelen port</value>
+    <comment>Mac key: Incoming port</comment>
+  </data>
+  <data name="IncompleteFilesFolder" xml:space="preserve">
+    <value>Tamamlanmamış dosyalar klasörü</value>
+    <comment>Mac key: Incomplete files folder</comment>
+  </data>
+  <data name="IsAnAppOrScript" xml:space="preserve">
+    <value>“{0}” bir uygulama veya betik</value>
+    <comment>Mac key: “%@” is an app or script</comment>
+  </data>
+  <data name="IsNotAMagnetLinkOrATorrentURL" xml:space="preserve">
+    <value>“{0}” bir magnet bağlantısı veya torrent URL’si değil.</value>
+    <comment>Mac key: “%@” isn't a magnet link or a torrent URL.</comment>
+  </data>
+  <data name="IsNotAValidTrackerURL" xml:space="preserve">
+    <value>“{0}” geçerli bir izleyici URL’si değil.</value>
+    <comment>Mac key: “%@” isn't a valid tracker URL.</comment>
+  </data>
+  <data name="IsTooLargeToBeATorrentFile" xml:space="preserve">
+    <value>“{0}” bir torrent dosyası olamayacak kadar büyük.</value>
+    <comment>Mac key: “%@” is too large to be a torrent file.</comment>
+  </data>
+  <data name="ItCameFromATorrentAndMacOSHasNotChecked" xml:space="preserve">
+    <value>Bir torrentten geldi ve macOS onu indirmeleri denetlediği gibi denetlemedi. Yalnızca kaynağına güveniyorsanız açın.</value>
+    <comment>Mac key: It came from a torrent, and macOS hasn't checked it the way it checks downloads. Open it only if you trust where it came from.</comment>
+  </data>
+  <data name="KBS_22B85B" xml:space="preserve">
+    <value>{0} kB/s</value>
+    <comment>Mac key: %lld kB/s</comment>
+  </data>
+  <data name="KBS_56B829" xml:space="preserve">
+    <value>kB/s</value>
+    <comment>Mac key: kB/s</comment>
+  </data>
+  <data name="Labels" xml:space="preserve">
+    <value>Etiketler</value>
+    <comment>Mac key: Labels</comment>
+  </data>
+  <data name="LabelsCommaSeparated" xml:space="preserve">
+    <value>Etiketler, virgülle ayrılmış</value>
+    <comment>Mac key: Labels, comma-separated</comment>
+  </data>
+  <data name="LabelsEllipsis" xml:space="preserve">
+    <value>Etiketler…</value>
+    <comment>Mac key: Labels…</comment>
+  </data>
+  <data name="LastActive" xml:space="preserve">
+    <value>Son aktif zaman</value>
+    <comment>Mac key: Last Active</comment>
+  </data>
+  <data name="LastAnnounce" xml:space="preserve">
+    <value>Son anons</value>
+    <comment>Mac key: Last Announce</comment>
+  </data>
+  <data name="Later" xml:space="preserve">
+    <value>Daha sonra</value>
+    <comment>Mac key: Later</comment>
+  </data>
+  <data name="Leechers" xml:space="preserve">
+    <value>İndirenler</value>
+    <comment>Mac key: Leechers</comment>
+  </data>
+  <data name="LegacyRPCOnly" xml:space="preserve">
+    <value>Yalnızca eski RPC</value>
+    <comment>Mac key: Legacy RPC only</comment>
+  </data>
+  <data name="LegacyRPC_CE8968" xml:space="preserve">
+    <value>Eski RPC</value>
+    <comment>Mac key: Legacy RPC</comment>
+  </data>
+  <data name="LegacyRPC_FB73DE" xml:space="preserve">
+    <value>eski RPC</value>
+    <comment>Mac key: legacy RPC</comment>
+  </data>
+  <data name="LimitDownloadSpeed" xml:space="preserve">
+    <value>İndirme hızını sınırla</value>
+    <comment>Mac key: Limit download speed</comment>
+  </data>
+  <data name="LimitUploadSpeed" xml:space="preserve">
+    <value>Gönderme hızını sınırla</value>
+    <comment>Mac key: Limit upload speed</comment>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Konum</value>
+    <comment>Mac key: Location</comment>
+  </data>
+  <data name="Low" xml:space="preserve">
+    <value>Düşük</value>
+    <comment>Mac key: Low</comment>
+  </data>
+  <data name="MB" xml:space="preserve">
+    <value>MB</value>
+    <comment>Mac key: MB</comment>
+  </data>
+  <data name="MagnetLink" xml:space="preserve">
+    <value>Magnet bağlantısı</value>
+    <comment>Mac key: Magnet link</comment>
+  </data>
+  <data name="ManageServersEllipsis" xml:space="preserve">
+    <value>Sunucuları yönet…</value>
+    <comment>Mac key: Manage Servers…</comment>
+  </data>
+  <data name="MaximumDownloadSpeed" xml:space="preserve">
+    <value>Azami indirme hızı</value>
+    <comment>Mac key: Maximum download speed</comment>
+  </data>
+  <data name="MaximumFolderHistory" xml:space="preserve">
+    <value>Azami klasör geçmişi</value>
+    <comment>Mac key: Maximum folder history</comment>
+  </data>
+  <data name="MaximumPeers" xml:space="preserve">
+    <value>Azami eş sayısı</value>
+    <comment>Mac key: Maximum peers</comment>
+  </data>
+  <data name="MaximumUploadSpeed" xml:space="preserve">
+    <value>Azami gönderme hızı</value>
+    <comment>Mac key: Maximum upload speed</comment>
+  </data>
+  <data name="MenuBarIcon" xml:space="preserve">
+    <value>Menü çubuğu simgesi</value>
+    <comment>Mac key: Menu bar icon</comment>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>dakika</value>
+    <comment>Mac key: minutes</comment>
+  </data>
+  <data name="Misc" xml:space="preserve">
+    <value>Diğer</value>
+    <comment>Mac key: Misc</comment>
+  </data>
+  <data name="Mixed" xml:space="preserve">
+    <value>Karışık</value>
+    <comment>Mac key: Mixed</comment>
+  </data>
+  <data name="MntHDHDA2" xml:space="preserve">
+    <value>/mnt/HD/HD_a2</value>
+    <comment>Mac key: /mnt/HD/HD_a2</comment>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Taşı</value>
+    <comment>Mac key: Move</comment>
+  </data>
+  <data name="MoveData" xml:space="preserve">
+    <value>Verileri taşı</value>
+    <comment>Mac key: Move Data</comment>
+  </data>
+  <data name="MoveDataEllipsis" xml:space="preserve">
+    <value>Verileri taşı…</value>
+    <comment>Mac key: Move Data…</comment>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Aşağı çek</value>
+    <comment>Mac key: Move Down</comment>
+  </data>
+  <data name="MoveTheDownloadedFilesToTheNewFolder" xml:space="preserve">
+    <value>İndirilen dosyaları yeni klasöre taşı</value>
+    <comment>Mac key: Move the downloaded files to the new folder</comment>
+  </data>
+  <data name="MoveToBottom" xml:space="preserve">
+    <value>En alta çek</value>
+    <comment>Mac key: Move to Bottom</comment>
+  </data>
+  <data name="MoveToTop" xml:space="preserve">
+    <value>En üste çek</value>
+    <comment>Mac key: Move to Top</comment>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Yukarı çek</value>
+    <comment>Mac key: Move Up</comment>
+  </data>
+  <data name="MyNAS" xml:space="preserve">
+    <value>NAS’ım</value>
+    <comment>Mac key: My NAS</comment>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Ad</value>
+    <comment>Mac key: Name</comment>
+  </data>
+  <data name="NetworkWAN" xml:space="preserve">
+    <value>Ağ (WAN)</value>
+    <comment>Mac key: Network (WAN)</comment>
+  </data>
+  <data name="Never" xml:space="preserve">
+    <value>Hiçbir zaman</value>
+    <comment>Mac key: Never</comment>
+  </data>
+  <data name="NewServer" xml:space="preserve">
+    <value>Yeni sunucu</value>
+    <comment>Mac key: New Server</comment>
+  </data>
+  <data name="NextAnnounce" xml:space="preserve">
+    <value>Sonraki anons</value>
+    <comment>Mac key: Next Announce</comment>
+  </data>
+  <data name="NoConnectedPeers" xml:space="preserve">
+    <value>Bağlı eş yok</value>
+    <comment>Mac key: No Connected Peers</comment>
+  </data>
+  <data name="NoFiles" xml:space="preserve">
+    <value>Dosya yok</value>
+    <comment>Mac key: No Files</comment>
+  </data>
+  <data name="NoGroupsYet" xml:space="preserve">
+    <value>Henüz grup yok.</value>
+    <comment>Mac key: No groups yet.</comment>
+  </data>
+  <data name="NoKnownFolders" xml:space="preserve">
+    <value>Bilinen klasör yok</value>
+    <comment>Mac key: No Known Folders</comment>
+  </data>
+  <data name="NoServer" xml:space="preserve">
+    <value>Sunucu yok</value>
+    <comment>Mac key: No Server</comment>
+  </data>
+  <data name="NoServerSelected" xml:space="preserve">
+    <value>Sunucu seçilmedi</value>
+    <comment>Mac key: No Server Selected</comment>
+  </data>
+  <data name="NoServersWereFoundInThisFileChoose" xml:space="preserve">
+    <value>Bu dosyada sunucu bulunamadı. Transmission Remote GUI’nin transgui.ini dosyasını seçin.</value>
+    <comment>Mac key: No servers were found in this file. Choose transgui.ini from Transmission Remote GUI.</comment>
+  </data>
+  <data name="NoTorrentSelected" xml:space="preserve">
+    <value>Torrent seçilmedi</value>
+    <comment>Mac key: No Torrent Selected</comment>
+  </data>
+  <data name="NoTorrents" xml:space="preserve">
+    <value>Torrent yok</value>
+    <comment>Mac key: No Torrents</comment>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Yok</value>
+    <comment>Mac key: None</comment>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Normal</value>
+    <comment>Mac key: Normal</comment>
+  </data>
+  <data name="NotChosen" xml:space="preserve">
+    <value>Seçilmedi</value>
+    <comment>Mac key: Not chosen</comment>
+  </data>
+  <data name="NotConnected_0303E1" xml:space="preserve">
+    <value>Bağlı değil</value>
+    <comment>Mac key: Not connected</comment>
+  </data>
+  <data name="NotConnected_3B3D27" xml:space="preserve">
+    <value>Bağlı değil.</value>
+    <comment>Mac key: Not connected.</comment>
+  </data>
+  <data name="NotConnected_87D82C" xml:space="preserve">
+    <value>Bağlı değil</value>
+    <comment>Mac key: Not Connected</comment>
+  </data>
+  <data name="NotDownloaded" xml:space="preserve">
+    <value>İndirilmedi</value>
+    <comment>Mac key: Not downloaded</comment>
+  </data>
+  <data name="NotDownloading" xml:space="preserve">
+    <value>İndirilmiyor</value>
+    <comment>Mac key: Not downloading</comment>
+  </data>
+  <data name="NotYetAnnounced" xml:space="preserve">
+    <value>Henüz anons edilmedi</value>
+    <comment>Mac key: Not yet announced</comment>
+  </data>
+  <data name="NotifyWhenADownloadCompletes" xml:space="preserve">
+    <value>İndirme tamamlandığında bildir</value>
+    <comment>Mac key: Notify when a download completes</comment>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Tamam</value>
+    <comment>Mac key: OK</comment>
+  </data>
+  <data name="OneAnnounceURLPerLineSeparateTiersWithA" xml:space="preserve">
+    <value>Her satıra bir anons URL’si. Katmanları boş bir satırla ayırın.</value>
+    <comment>Mac key: One announce URL per line. Separate tiers with a blank line.</comment>
+  </data>
+  <data name="OnlyFoldersAlreadyUsedOnThisServerAre" xml:space="preserve">
+    <value>Yalnızca bu sunucuda daha önce kullanılmış klasörler listelenir. Yeni bir klasör kullanmak için yolunu yazın.</value>
+    <comment>Mac key: Only folders already used on this server are listed. To use a new one, type its path.</comment>
+  </data>
+  <data name="OnlyForHTTPSReverseProxiesThatAskForOne" xml:space="preserve">
+    <value>Yalnızca bunu isteyen HTTPS ters proxy’leri için. Sertifikayı ve anahtarını içeren bir .p12 dosyası seçin.</value>
+    <comment>Mac key: Only for HTTPS reverse proxies that ask for one. Choose a .p12 file with the certificate and its key.</comment>
+  </data>
+  <data name="OnlyTrustItIfItMatchesTheCertificateYou" xml:space="preserve">
+    <value>Yalnızca sunucunuza yüklediğiniz sertifikayla eşleşiyorsa güvenin.</value>
+    <comment>Mac key: Only trust it if it matches the certificate you installed on your server.</comment>
+  </data>
+  <data name="OnlyWithAReverseProxyInFrontOfTheDaemon" xml:space="preserve">
+    <value>Yalnızca daemon önünde bir ters proxy varsa. Transmission’ın kendisi düz HTTP sunar.</value>
+    <comment>Mac key: Only with a reverse proxy in front of the daemon. Transmission itself serves plain HTTP.</comment>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Aç</value>
+    <comment>Mac key: Open</comment>
+  </data>
+  <data name="OpenAnyway" xml:space="preserve">
+    <value>Yine de aç</value>
+    <comment>Mac key: Open Anyway</comment>
+  </data>
+  <data name="OptimisticUnchoke" xml:space="preserve">
+    <value>İyimser engel kaldırma</value>
+    <comment>Mac key: Optimistic unchoke</comment>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Parola</value>
+    <comment>Mac key: Password</comment>
+  </data>
+  <data name="PasteMagnetLinksOrTorrentURLsOnePerLine" xml:space="preserve">
+    <value>Magnet bağlantılarını veya .torrent URL’lerini her satıra bir tane olacak şekilde yapıştırın.</value>
+    <comment>Mac key: Paste magnet links or .torrent URLs, one per line.</comment>
+  </data>
+  <data name="Paths" xml:space="preserve">
+    <value>Yollar</value>
+    <comment>Mac key: Paths</comment>
+  </data>
+  <data name="PeerFoundThroughDHT" xml:space="preserve">
+    <value>DHT aracılığıyla bulunan eş</value>
+    <comment>Mac key: Peer found through DHT</comment>
+  </data>
+  <data name="PeerFoundThroughPeerExchangePEX" xml:space="preserve">
+    <value>Eş takası (PEX) aracılığıyla bulunan eş</value>
+    <comment>Mac key: Peer found through peer exchange (PEX)</comment>
+  </data>
+  <data name="PeerHasUnchokedUsButWeAreNotInterested" xml:space="preserve">
+    <value>Eş bizim engelimizi kaldırdı ama ilgilenmiyoruz</value>
+    <comment>Mac key: Peer has unchoked us, but we're not interested</comment>
+  </data>
+  <data name="Peers" xml:space="preserve">
+    <value>Eşler</value>
+    <comment>Mac key: Peers</comment>
+  </data>
+  <data name="Peers_One" xml:space="preserve">
+    <value>{0} eş</value>
+    <comment>Mac key: %lld peers</comment>
+  </data>
+  <data name="Peers_Other" xml:space="preserve">
+    <value>{0} eş</value>
+    <comment>Mac key: %lld peers</comment>
+  </data>
+  <data name="PerTorrentPeerLimit" xml:space="preserve">
+    <value>Torrent başına eş limiti</value>
+    <comment>Mac key: Per torrent peer limit</comment>
+  </data>
+  <data name="PickRandomPortOnTransmissionLaunch" xml:space="preserve">
+    <value>Transmission başlangıcında rastgele port seç</value>
+    <comment>Mac key: Pick random port on Transmission launch</comment>
+  </data>
+  <data name="PieceAvailability" xml:space="preserve">
+    <value>Parça kullanılabilirliği</value>
+    <comment>Mac key: Piece availability</comment>
+  </data>
+  <data name="Pieces" xml:space="preserve">
+    <value>Parçalar</value>
+    <comment>Mac key: Pieces</comment>
+  </data>
+  <data name="PlainHTTPInsideATailscaleTunnelWhich" xml:space="preserve">
+    <value>Trafiği şifreleyen bir Tailscale tüneli içinde düz HTTP.</value>
+    <comment>Mac key: Plain HTTP inside a Tailscale tunnel, which encrypts the traffic.</comment>
+  </data>
+  <data name="PlainHTTPOnAPrivateNetworkDevicesOnThe" xml:space="preserve">
+    <value>Özel ağda düz HTTP. Aynı ağdaki aygıtlar parolayı okuyabilir.</value>
+    <comment>Mac key: Plain HTTP on a private network. Devices on the same network could read the password.</comment>
+  </data>
+  <data name="PlainHTTPOverTheInternetIsBlockedForThis" xml:space="preserve">
+    <value>Bu sunucu için internet üzerinden düz HTTP engellendi.</value>
+    <comment>Mac key: Plain HTTP over the internet is blocked for this server.</comment>
+  </data>
+  <data name="PlainHTTPOverTheInternetThePasswordAnd" xml:space="preserve">
+    <value>İnternet üzerinden düz HTTP. Parola ve tüm trafik yol boyunca herkes tarafından okunabilir.</value>
+    <comment>Mac key: Plain HTTP over the internet. The password and all traffic can be read by anyone along the way.</comment>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>Port</value>
+    <comment>Mac key: Port</comment>
+  </data>
+  <data name="PortIsClosed" xml:space="preserve">
+    <value>Port kapalı</value>
+    <comment>Mac key: Port is closed</comment>
+  </data>
+  <data name="PortIsOpen" xml:space="preserve">
+    <value>Port açık</value>
+    <comment>Mac key: Port is open</comment>
+  </data>
+  <data name="PreferEncryption" xml:space="preserve">
+    <value>Şifrelemeyi tercih et</value>
+    <comment>Mac key: Prefer encryption</comment>
+  </data>
+  <data name="Priority_D60DBB" xml:space="preserve">
+    <value>Öncelik</value>
+    <comment>Mac key: Priority</comment>
+  </data>
+  <data name="Priority_DD3948" xml:space="preserve">
+    <value>{0} öncelik</value>
+    <comment>Mac key: %@ Priority</comment>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Özel</value>
+    <comment>Mac key: Private</comment>
+  </data>
+  <data name="PrivateTrackers" xml:space="preserve">
+    <value>Özel izleyiciler</value>
+    <comment>Mac key: Private trackers</comment>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>İlerleme</value>
+    <comment>Mac key: Progress</comment>
+  </data>
+  <data name="PromptForDownloadOptionsWhenAddingANew" xml:space="preserve">
+    <value>Yeni bir torrent eklendiğinde indirme seçeneklerini göster</value>
+    <comment>Mac key: Prompt for download options when adding a new torrent</comment>
+  </data>
+  <data name="Protocol" xml:space="preserve">
+    <value>Protokol</value>
+    <comment>Mac key: Protocol</comment>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy</value>
+    <comment>Mac key: Proxy</comment>
+  </data>
+  <data name="ProxyExampleCom" xml:space="preserve">
+    <value>proxy.example.com</value>
+    <comment>Mac key: proxy.example.com</comment>
+  </data>
+  <data name="ProxyPassword" xml:space="preserve">
+    <value>Proxy parolası</value>
+    <comment>Mac key: Proxy password</comment>
+  </data>
+  <data name="ProxyPort" xml:space="preserve">
+    <value>Proxy portu</value>
+    <comment>Mac key: Proxy port</comment>
+  </data>
+  <data name="ProxyServer" xml:space="preserve">
+    <value>Proxy sunucusu</value>
+    <comment>Mac key: Proxy server</comment>
+  </data>
+  <data name="ProxyUserName" xml:space="preserve">
+    <value>Proxy kullanıcı adı</value>
+    <comment>Mac key: Proxy user name</comment>
+  </data>
+  <data name="Queue" xml:space="preserve">
+    <value>Sıralama</value>
+    <comment>Mac key: Queue</comment>
+  </data>
+  <data name="Queued" xml:space="preserve">
+    <value>Sırada</value>
+    <comment>Mac key: Queued</comment>
+  </data>
+  <data name="QueuedToSeed" xml:space="preserve">
+    <value>Gönderim için sırada</value>
+    <comment>Mac key: Queued to seed</comment>
+  </data>
+  <data name="QueuedToVerify" xml:space="preserve">
+    <value>Kontrol için sırada</value>
+    <comment>Mac key: Queued to verify</comment>
+  </data>
+  <data name="QuitTransmissionRemote" xml:space="preserve">
+    <value>Transmission Remote’tan çık</value>
+    <comment>Mac key: Quit Transmission Remote</comment>
+  </data>
+  <data name="RPCPath" xml:space="preserve">
+    <value>RPC yolu</value>
+    <comment>Mac key: RPC path</comment>
+  </data>
+  <data name="RPCVersion" xml:space="preserve">
+    <value>RPC sürümü</value>
+    <comment>Mac key: RPC version</comment>
+  </data>
+  <data name="Ratio" xml:space="preserve">
+    <value>Oran</value>
+    <comment>Mac key: Ratio</comment>
+  </data>
+  <data name="RecentFolders" xml:space="preserve">
+    <value>Son klasörler</value>
+    <comment>Mac key: Recent folders</comment>
+  </data>
+  <data name="Reconnect" xml:space="preserve">
+    <value>Yeniden bağlan</value>
+    <comment>Mac key: Reconnect</comment>
+  </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>Kalan</value>
+    <comment>Mac key: Remaining</comment>
+  </data>
+  <data name="RemoteToLocalPathMappings" xml:space="preserve">
+    <value>Uzak klasöre yerel yol atama</value>
+    <comment>Mac key: Remote to local path mappings</comment>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Kaldır</value>
+    <comment>Mac key: Remove</comment>
+  </data>
+  <data name="RemoveAndDeleteData" xml:space="preserve">
+    <value>Kaldır ve verileri sil</value>
+    <comment>Mac key: Remove and Delete Data</comment>
+  </data>
+  <data name="RemoveAndDeleteDataEllipsis" xml:space="preserve">
+    <value>Kaldır ve verileri sil…</value>
+    <comment>Mac key: Remove and Delete Data…</comment>
+  </data>
+  <data name="RemoveEllipsis" xml:space="preserve">
+    <value>Kaldır…</value>
+    <comment>Mac key: Remove…</comment>
+  </data>
+  <data name="RemoveMapping" xml:space="preserve">
+    <value>Atamayı kaldır</value>
+    <comment>Mac key: Remove Mapping</comment>
+  </data>
+  <data name="RemoveServer" xml:space="preserve">
+    <value>Sunucuyu kaldır</value>
+    <comment>Mac key: Remove Server</comment>
+  </data>
+  <data name="RemoveTheSelectedTorrents" xml:space="preserve">
+    <value>Seçili torrentleri kaldır</value>
+    <comment>Mac key: Remove the selected torrents</comment>
+  </data>
+  <data name="RemoveTorrent_One" xml:space="preserve">
+    <value>{0} torrent kaldırılsın mı?</value>
+    <comment>Mac key: Remove ^[%lld torrent](inflect: true)?</comment>
+  </data>
+  <data name="RemoveTorrent_Other" xml:space="preserve">
+    <value>{0} torrent kaldırılsın mı?</value>
+    <comment>Mac key: Remove ^[%lld torrent](inflect: true)?</comment>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Yeniden adlandır</value>
+    <comment>Mac key: Rename</comment>
+  </data>
+  <data name="RenameEllipsis" xml:space="preserve">
+    <value>Yeniden adlandır…</value>
+    <comment>Mac key: Rename…</comment>
+  </data>
+  <data name="RenameTorrent" xml:space="preserve">
+    <value>Torrenti yeniden adlandır</value>
+    <comment>Mac key: Rename Torrent</comment>
+  </data>
+  <data name="RenamesTheFileOrFolderOnTheServer" xml:space="preserve">
+    <value>Sunucudaki dosyayı veya klasörü yeniden adlandırır.</value>
+    <comment>Mac key: Renames the file or folder on the server.</comment>
+  </data>
+  <data name="RenamesTheTorrentsTopLevelFileOrFolderOn" xml:space="preserve">
+    <value>Torrentin sunucudaki en üst düzey dosyasını veya klasörünü yeniden adlandırır.</value>
+    <comment>Mac key: Renames the torrent's top-level file or folder on the server.</comment>
+  </data>
+  <data name="RequireEncryption" xml:space="preserve">
+    <value>Şifreleme gerektir</value>
+    <comment>Mac key: Require encryption</comment>
+  </data>
+  <data name="ResolveHostNames" xml:space="preserve">
+    <value>Ana bilgisayar adlarını çözümle</value>
+    <comment>Mac key: Resolve Host Names</comment>
+  </data>
+  <data name="Revert" xml:space="preserve">
+    <value>Geri al</value>
+    <comment>Mac key: Revert</comment>
+  </data>
+  <data name="RightClickThePeerListToTurnHostNamesAnd" xml:space="preserve">
+    <value>Ana bilgisayar adlarını ve ülkeleri açmak veya kapatmak için eş listesini sağ tıklayın. Ülke verileri [DB-IP’nin IP to Country Lite veritabanından](https://db-ip.com) alınır, CC BY 4.0 lisansı altındadır ve her ay güncellenir.</value>
+    <comment>Mac key: Right-click the peer list to turn host names and countries on or off. Country data is [IP to Country Lite by DB-IP](https://db-ip.com), licensed under CC BY 4.0, and updates monthly.</comment>
+  </data>
+  <data name="Rules" xml:space="preserve">
+    <value>Kurallar</value>
+    <comment>Mac key: Rules</comment>
+  </data>
+  <data name="SHA256FingerprintPresentedByTheServer" xml:space="preserve">
+    <value>Sunucunun sunduğu SHA-256 parmak izi:</value>
+    <comment>Mac key: SHA-256 fingerprint presented by the server:</comment>
+  </data>
+  <data name="SOCKS5" xml:space="preserve">
+    <value>SOCKS 5</value>
+    <comment>Mac key: SOCKS 5</comment>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Kaydet</value>
+    <comment>Mac key: Save</comment>
+  </data>
+  <data name="SaveAndConnect" xml:space="preserve">
+    <value>Kaydet ve bağlan</value>
+    <comment>Mac key: Save and Connect</comment>
+  </data>
+  <data name="SaveTheURLFirstIfYouChangedItTheServer" xml:space="preserve">
+    <value>URL’yi değiştirdiyseniz önce kaydedin; listeyi sunucunun kendisi indirir.</value>
+    <comment>Mac key: Save the URL first if you changed it; the server downloads the list itself.</comment>
+  </data>
+  <data name="SaveTo" xml:space="preserve">
+    <value>Kaydetme yeri</value>
+    <comment>Mac key: Save to</comment>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Güvenlik</value>
+    <comment>Mac key: Security</comment>
+  </data>
+  <data name="SeedRatio" xml:space="preserve">
+    <value>Kaynak kalma oranı</value>
+    <comment>Mac key: Seed ratio</comment>
+  </data>
+  <data name="Seeding" xml:space="preserve">
+    <value>Gönderiliyor</value>
+    <comment>Mac key: Seeding</comment>
+  </data>
+  <data name="SeedingFor" xml:space="preserve">
+    <value>Kaynak zamanı</value>
+    <comment>Mac key: Seeding for</comment>
+  </data>
+  <data name="SeedingTime" xml:space="preserve">
+    <value>Kaynak zamanı</value>
+    <comment>Mac key: Seeding Time</comment>
+  </data>
+  <data name="Seeds" xml:space="preserve">
+    <value>Kaynaklar</value>
+    <comment>Mac key: Seeds</comment>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>{0} seçili</value>
+    <comment>Mac key: %@ selected</comment>
+  </data>
+  <data name="SequentialDownloadUsefulForPreviewing" xml:space="preserve">
+    <value>Sıralı indirme; medya dosyalarını inerken önizlemek için kullanışlı</value>
+    <comment>Mac key: Sequential download, useful for previewing media while it downloads</comment>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Sunucu</value>
+    <comment>Mac key: Server</comment>
+  </data>
+  <data name="ServerDefault" xml:space="preserve">
+    <value>Sunucu varsayılanı</value>
+    <comment>Mac key: Server default</comment>
+  </data>
+  <data name="ServerSettingsEllipsis" xml:space="preserve">
+    <value>Sunucu ayarları…</value>
+    <comment>Mac key: Server Settings…</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ayarlar</value>
+    <comment>Mac key: Settings</comment>
+  </data>
+  <data name="SettingsEllipsis" xml:space="preserve">
+    <value>Ayarlar…</value>
+    <comment>Mac key: Settings…</comment>
+  </data>
+  <data name="SettingsForThisAppAndTheConnected" xml:space="preserve">
+    <value>Bu uygulamanın ve bağlı Transmission sunucusunun ayarları</value>
+    <comment>Mac key: Settings for this app and the connected Transmission server</comment>
+  </data>
+  <data name="ShowCountries" xml:space="preserve">
+    <value>Ülkeleri göster</value>
+    <comment>Mac key: Show Countries</comment>
+  </data>
+  <data name="ShowInFinder" xml:space="preserve">
+    <value>Finder’da göster</value>
+    <comment>Mac key: Show in Finder</comment>
+  </data>
+  <data name="ShowInMenuBar" xml:space="preserve">
+    <value>Menü çubuğunda göster</value>
+    <comment>Mac key: Show in menu bar</comment>
+  </data>
+  <data name="ShowInfoPane" xml:space="preserve">
+    <value>Bilgi panelini göster</value>
+    <comment>Mac key: Show Info Pane</comment>
+  </data>
+  <data name="ShowLogFiles" xml:space="preserve">
+    <value>Günlük dosyalarını göster</value>
+    <comment>Mac key: Show Log Files</comment>
+  </data>
+  <data name="ShowTransferSpeedsInTheMenuBar" xml:space="preserve">
+    <value>Aktarım hızlarını menü çubuğunda göster</value>
+    <comment>Mac key: Show transfer speeds in the menu bar</comment>
+  </data>
+  <data name="ShowTransmissionRemote" xml:space="preserve">
+    <value>Transmission Remote’u göster</value>
+    <comment>Mac key: Show Transmission Remote</comment>
+  </data>
+  <data name="ShowWherePeersAreFromWithDBIPsFree" xml:space="preserve">
+    <value>Eşlerin nereden bağlandığını DB-IP’nin ücretsiz ülke veritabanıyla (yaklaşık 5 MB) gösterin.</value>
+    <comment>Mac key: Show where peers are from with DB-IP's free country database, about 5 MB.</comment>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Boyut</value>
+    <comment>Mac key: Size</comment>
+  </data>
+  <data name="SizeLeft" xml:space="preserve">
+    <value>Kalan boyut</value>
+    <comment>Mac key: Size Left</comment>
+  </data>
+  <data name="SkipThisVersion" xml:space="preserve">
+    <value>Bu sürümü atla</value>
+    <comment>Mac key: Skip This Version</comment>
+  </data>
+  <data name="SkippedAlreadySetUpHere" xml:space="preserve">
+    <value>{0} atlandı, çünkü burada zaten ayarlı.</value>
+    <comment>Mac key: Skipped %@, already set up here.</comment>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Hız</value>
+    <comment>Mac key: Speed</comment>
+  </data>
+  <data name="SpeedLimitMenuItems" xml:space="preserve">
+    <value>Hız limiti menü öğeleri</value>
+    <comment>Mac key: Speed limit menu items</comment>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Başlat</value>
+    <comment>Mac key: Start</comment>
+  </data>
+  <data name="StartAll" xml:space="preserve">
+    <value>Tümünü başlat</value>
+    <comment>Mac key: Start All</comment>
+  </data>
+  <data name="StartNow" xml:space="preserve">
+    <value>Şimdi başlat</value>
+    <comment>Mac key: Start Now</comment>
+  </data>
+  <data name="StartTheSelectedTorrents" xml:space="preserve">
+    <value>Seçili torrentleri başlat</value>
+    <comment>Mac key: Start the selected torrents</comment>
+  </data>
+  <data name="StartTorrentsWhenAdded" xml:space="preserve">
+    <value>Torrentleri eklenince başlat</value>
+    <comment>Mac key: Start torrents when added</comment>
+  </data>
+  <data name="StartWhenAdded" xml:space="preserve">
+    <value>Eklenince başlat</value>
+    <comment>Mac key: Start when added</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Durum</value>
+    <comment>Mac key: Status</comment>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Durdur</value>
+    <comment>Mac key: Stop</comment>
+  </data>
+  <data name="StopAll" xml:space="preserve">
+    <value>Tümünü durdur</value>
+    <comment>Mac key: Stop All</comment>
+  </data>
+  <data name="StopAtRatio" xml:space="preserve">
+    <value>Oranda durdur</value>
+    <comment>Mac key: Stop at ratio</comment>
+  </data>
+  <data name="StopSeedingWhenInactiveFor" xml:space="preserve">
+    <value>Şu kadar süre boşta kalınca göndermeyi durdur</value>
+    <comment>Mac key: Stop seeding when inactive for</comment>
+  </data>
+  <data name="StopTheSelectedTorrents" xml:space="preserve">
+    <value>Seçili torrentleri durdur</value>
+    <comment>Mac key: Stop the selected torrents</comment>
+  </data>
+  <data name="StopTrying" xml:space="preserve">
+    <value>Denemeyi bırak</value>
+    <comment>Mac key: Stop Trying</comment>
+  </data>
+  <data name="StopWhenIdle" xml:space="preserve">
+    <value>Boşta kalınca durdur</value>
+    <comment>Mac key: Stop when idle</comment>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Durduruldu</value>
+    <comment>Mac key: Stopped</comment>
+  </data>
+  <data name="SwitchServer" xml:space="preserve">
+    <value>Sunucu değiştir</value>
+    <comment>Mac key: Switch server</comment>
+  </data>
+  <data name="TestConnection" xml:space="preserve">
+    <value>Bağlantıyı test et</value>
+    <comment>Mac key: Test Connection</comment>
+  </data>
+  <data name="TestPort" xml:space="preserve">
+    <value>Portu test et</value>
+    <comment>Mac key: Test Port</comment>
+  </data>
+  <data name="Text192168110OrNasTailnetTsNet" xml:space="preserve">
+    <value>192.168.1.10 veya nas.tailnet.ts.net</value>
+    <comment>Mac key: 192.168.1.10 or nas.tailnet.ts.net</comment>
+  </data>
+  <data name="Text_DAEA45" xml:space="preserve">
+    <value>{0}</value>
+    <comment>Mac key: %lld</comment>
+  </data>
+  <data name="TheAddressCouldNotBeTurnedIntoAURL" xml:space="preserve">
+    <value>adres bir URL’ye dönüştürülemedi.</value>
+    <comment>Mac key: the address couldn't be turned into a URL.</comment>
+  </data>
+  <data name="TheCertificateFilesPasswordIsWrong" xml:space="preserve">
+    <value>Sertifika dosyasının parolası yanlış.</value>
+    <comment>Mac key: The certificate file's password is wrong.</comment>
+  </data>
+  <data name="TheDownloadedFilesWillBeDeletedFromThe" xml:space="preserve">
+    <value>İndirilen dosyalar sunucudan silinecek. Bu işlem geri alınamaz.</value>
+    <comment>Mac key: The downloaded files will be deleted from the server. This can't be undone.</comment>
+  </data>
+  <data name="TheFileHasNoPrivateKeyExportThe" xml:space="preserve">
+    <value>Dosyada özel anahtar yok. Sertifikayı anahtarıyla birlikte dışa aktarın.</value>
+    <comment>Mac key: The file has no private key. Export the certificate together with its key.</comment>
+  </data>
+  <data name="TheHostContainsCharactersThatAreNot" xml:space="preserve">
+    <value>ana bilgisayar adı izin verilmeyen karakterler içeriyor.</value>
+    <comment>Mac key: the host contains characters that aren't allowed.</comment>
+  </data>
+  <data name="TheHostIsEmpty" xml:space="preserve">
+    <value>ana bilgisayar boş.</value>
+    <comment>Mac key: the host is empty.</comment>
+  </data>
+  <data name="TheNameOfTheTorrentsFolderOrOfTheFileFor" xml:space="preserve">
+    <value>Torrentin klasörünün adı ya da tek dosyalı torrentlerde dosyanın adı</value>
+    <comment>Mac key: The name of the torrent's folder, or of the file for a single-file torrent</comment>
+  </data>
+  <data name="ThePortMustBeBetween1And65535" xml:space="preserve">
+    <value>port 1 ile 65535 arasında olmalıdır.</value>
+    <comment>Mac key: the port must be between 1 and 65535.</comment>
+  </data>
+  <data name="TheProxyPortMustBeBetween1And65535" xml:space="preserve">
+    <value>Proxy portu 1 ile 65535 arasında olmalıdır.</value>
+    <comment>Mac key: The proxy port must be between 1 and 65535.</comment>
+  </data>
+  <data name="TheRPCPathMustStartWith" xml:space="preserve">
+    <value>RPC yolu “/” ile başlamalıdır.</value>
+    <comment>Mac key: the RPC path must start with “/”.</comment>
+  </data>
+  <data name="TheServerAddressIsInvalid" xml:space="preserve">
+    <value>Sunucu adresi geçersiz: {0}</value>
+    <comment>Mac key: The server address is invalid: %@</comment>
+  </data>
+  <data name="TheServerAnsweredWithAWebPageInsteadOf" xml:space="preserve">
+    <value>Sunucu Transmission yerine bir web sayfasıyla yanıt verdi. Bağlantı noktasını ve RPC yolunu denetleyin, genellikle /transmission/rpc.</value>
+    <comment>Mac key: The server answered with a web page instead of Transmission. Check the port and the RPC path, usually /transmission/rpc.</comment>
+  </data>
+  <data name="TheServerDidNotAcceptASecureHTTPS" xml:space="preserve">
+    <value>Sunucu güvenli (HTTPS) bağlantıyı kabul etmedi. Transmission’ın yerleşik sunucusu yalnızca düz HTTP kullanır; bu nedenle daemon önündeki bir ters proxy HTTPS sağlamıyorsa bu sunucu için HTTPS’yi kapatın. Tailscale üzerinden düz HTTP zaten tünel tarafından şifrelenir.</value>
+    <comment>Mac key: The server didn't accept a secure (HTTPS) connection. Transmission's built-in server only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel.</comment>
+  </data>
+  <data name="TheServerDoesNotAcceptThisHostname" xml:space="preserve">
+    <value>Sunucu bu ana bilgisayar adını kabul etmiyor. IP adresiyle bağlanın veya ana bilgisayar adını daemon’un settings.json dosyasındaki “rpc-host-whitelist” listesine ekleyin.</value>
+    <comment>Mac key: The server doesn't accept this hostname. Connect by IP address, or add the hostname to “rpc-host-whitelist” in the daemon's settings.json.</comment>
+  </data>
+  <data name="TheServerLooksForTheFilesInTheNewFolder" xml:space="preserve">
+    <value>Sunucu dosyaları taşımak yerine yeni klasörde arar.</value>
+    <comment>Mac key: The server looks for the files in the new folder instead of moving them.</comment>
+  </data>
+  <data name="TheServerMovesExistingFiles" xml:space="preserve">
+    <value>Sunucu mevcut dosyaları taşır.</value>
+    <comment>Mac key: The server moves existing files.</comment>
+  </data>
+  <data name="TheServerRefusedThisComputersIPAddress" xml:space="preserve">
+    <value>Sunucu bu bilgisayarın IP adresini reddetti. Bu adresi daemon’un settings.json dosyasındaki “rpc-whitelist” listesine ekleyin veya beyaz listeyi devre dışı bırakın.</value>
+    <comment>Mac key: The server refused this computer's IP address. Add it to “rpc-whitelist” in the daemon's settings.json, or disable the whitelist.</comment>
+  </data>
+  <data name="TheServerRejectedTheUsernameOrPassword" xml:space="preserve">
+    <value>Sunucu kullanıcı adını veya parolayı reddetti.</value>
+    <comment>Mac key: The server rejected the username or password.</comment>
+  </data>
+  <data name="TheServerRespondedWithHTTPCheckTheRPC" xml:space="preserve">
+    <value>Sunucu HTTP {0} ile yanıt verdi. RPC yolunu ve portu denetleyin.</value>
+    <comment>Mac key: The server responded with HTTP %lld. Check the RPC path and port.</comment>
+  </data>
+  <data name="TheServerSentAResponseThatCouldNotBeRead" xml:space="preserve">
+    <value>Sunucu okunamayan bir yanıt gönderdi ({0}).</value>
+    <comment>Mac key: The server sent a response that couldn't be read (%@).</comment>
+  </data>
+  <data name="TheServerTriedToRedirectTheConnectionToA" xml:space="preserve">
+    <value>Sunucu bağlantıyı farklı bir adrese yönlendirmeye çalıştı. Kimlik bilgilerinizi korumak için istek engellendi.</value>
+    <comment>Mac key: The server tried to redirect the connection to a different address. The request was blocked to protect your credentials.</comment>
+  </data>
+  <data name="TheServersTLSCertificateIsNotTrusted" xml:space="preserve">
+    <value>Sunucunun TLS sertifikasına güvenilmiyor.</value>
+    <comment>Mac key: The server's TLS certificate isn't trusted.</comment>
+  </data>
+  <data name="ThisIsNotACertificateFileInPKCS12P12" xml:space="preserve">
+    <value>Bu, PKCS #12 (.p12) biçiminde bir sertifika dosyası değil.</value>
+    <comment>Mac key: This isn't a certificate file in PKCS #12 (.p12) format.</comment>
+  </data>
+  <data name="ThisServerUsesPlainHTTPOverTheInternetSo" xml:space="preserve">
+    <value>Bu sunucu internet üzerinden düz HTTP kullanıyor, bu yüzden parolanız şifrelenmeden gönderilir. HTTPS ya da Tailscale gibi bir VPN kullanın veya bu sunucu için şifrelenmemiş bağlantıya izin verin.</value>
+    <comment>Mac key: This server uses plain HTTP over the internet, so your password would be sent unencrypted. Use HTTPS, a VPN such as Tailscale, or allow the unencrypted connection for this server.</comment>
+  </data>
+  <data name="ThisServersClientCertificateIsMissing" xml:space="preserve">
+    <value>Bu sunucunun istemci sertifikası Anahtar Zinciri’nde yok. Ayarlar → Transmission bölümünde yeniden seçin.</value>
+    <comment>Mac key: This server's client certificate is missing from the Keychain. Choose it again in Settings → Transmission.</comment>
+  </data>
+  <data name="ThisTorrentIsAlreadyOnTheServer" xml:space="preserve">
+    <value>Bu torrent zaten sunucuda.</value>
+    <comment>Mac key: This torrent is already on the server.</comment>
+  </data>
+  <data name="ThisTorrentIsNoLongerOnTheServer" xml:space="preserve">
+    <value>Bu torrent artık sunucuda değil.</value>
+    <comment>Mac key: This torrent is no longer on the server.</comment>
+  </data>
+  <data name="Tier" xml:space="preserve">
+    <value>Katman</value>
+    <comment>Mac key: Tier</comment>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Zaman</value>
+    <comment>Mac key: Time</comment>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Bitiş</value>
+    <comment>Mac key: To</comment>
+  </data>
+  <data name="ToOpenDownloadedFilesChooseEachLocal" xml:space="preserve">
+    <value>İndirilen dosyaları açmak için her yerel klasörü Ayarlar → Yollar bölümünde bir kez seçin; böylece macOS uygulamanın o klasörü açmasına izin verir.</value>
+    <comment>Mac key: To open downloaded files, choose each local folder once in Settings → Paths, so macOS lets the app open it.</comment>
+  </data>
+  <data name="Torrent" xml:space="preserve">
+    <value>Torrent</value>
+    <comment>Mac key: Torrent</comment>
+  </data>
+  <data name="TorrentOptionsEllipsis" xml:space="preserve">
+    <value>Torrent seçenekleri…</value>
+    <comment>Mac key: Torrent Options…</comment>
+  </data>
+  <data name="Torrents" xml:space="preserve">
+    <value>torrent</value>
+    <comment>Mac key: torrents</comment>
+  </data>
+  <data name="TorrentsInAGroupShareItsLimitsChooseA" xml:space="preserve">
+    <value>Bir gruptaki torrentler grubun limitlerini paylaşır. Bir torrentin grubunu Torrent seçenekleri’nden seçin. Transmission, uzak uygulamaların grup silmesine izin vermez.</value>
+    <comment>Mac key: Torrents in a group share its limits. Choose a torrent's group in Torrent Options. Transmission doesn't let remote apps delete groups.</comment>
+  </data>
+  <data name="TorrentsSavedInThisFolder" xml:space="preserve">
+    <value>Bu klasöre kaydedilen torrentler: {0}</value>
+    <comment>Mac key: Torrents saved in this folder: %lld</comment>
+  </data>
+  <data name="TorrentsSelected_One" xml:space="preserve">
+    <value>{0} torrent seçili</value>
+    <comment>Mac key: %lld Torrents Selected</comment>
+  </data>
+  <data name="TorrentsSelected_Other" xml:space="preserve">
+    <value>{0} torrent seçili</value>
+    <comment>Mac key: %lld Torrents Selected</comment>
+  </data>
+  <data name="Torrents_One" xml:space="preserve">
+    <value>{0} torrent</value>
+    <comment>Mac key: %lld torrents</comment>
+  </data>
+  <data name="Torrents_Other" xml:space="preserve">
+    <value>{0} torrent</value>
+    <comment>Mac key: %lld torrents</comment>
+  </data>
+  <data name="TotalSize_51CDF6" xml:space="preserve">
+    <value>Toplam boyut</value>
+    <comment>Mac key: Total size</comment>
+  </data>
+  <data name="TotalSize_9AC7DE" xml:space="preserve">
+    <value>Toplam boyut</value>
+    <comment>Mac key: Total Size</comment>
+  </data>
+  <data name="Tracker" xml:space="preserve">
+    <value>İzleyici</value>
+    <comment>Mac key: Tracker</comment>
+  </data>
+  <data name="TrackerError" xml:space="preserve">
+    <value>İzleyici hatası</value>
+    <comment>Mac key: Tracker error</comment>
+  </data>
+  <data name="TrackerStatus" xml:space="preserve">
+    <value>İzleyici durumu</value>
+    <comment>Mac key: Tracker Status</comment>
+  </data>
+  <data name="Trackers" xml:space="preserve">
+    <value>İzleyiciler</value>
+    <comment>Mac key: Trackers</comment>
+  </data>
+  <data name="Transmission" xml:space="preserve">
+    <value>Transmission</value>
+    <comment>Mac key: Transmission</comment>
+  </data>
+  <data name="TransmissionIsTooOldVersion240OrNewerIs" xml:space="preserve">
+    <value>Transmission {0} çok eski. 2.40 veya daha yeni bir sürüm gerekir.</value>
+    <comment>Mac key: Transmission %@ is too old. Version 2.40 or newer is required.</comment>
+  </data>
+  <data name="TransmissionOptions" xml:space="preserve">
+    <value>Transmission ayarları</value>
+    <comment>Mac key: Transmission Options</comment>
+  </data>
+  <data name="TransmissionRemote" xml:space="preserve">
+    <value>Transmission Remote</value>
+    <comment>Mac key: Transmission Remote</comment>
+  </data>
+  <data name="TransmissionRemoteIsAvailable" xml:space="preserve">
+    <value>Transmission Remote {0} kullanılabilir</value>
+    <comment>Mac key: Transmission Remote %@ Is Available</comment>
+  </data>
+  <data name="TransmissionRemoteIsTheNewestVersion" xml:space="preserve">
+    <value>Transmission Remote {0} en yeni sürümdür.</value>
+    <comment>Mac key: Transmission Remote %@ is the newest version.</comment>
+  </data>
+  <data name="TransmissionRemoteRanIntoAProblemAndHas" xml:space="preserve">
+    <value>Transmission Remote bir sorunla karşılaştı ve kapatılması gerekiyor. Neyin yanlış gittiğini görmek için günlük dosyalarının klasörü açılsın mı?</value>
+    <comment>Mac key: Transmission Remote ran into a problem and has to close. Open the logs folder to see what went wrong?
+Mac comment: Windows only. Message box after an error nothing else caught; the app exits after it. Yes opens the logs folder.</comment>
+  </data>
+  <data name="TransmissionRemoteRanIntoAProblemInThe" xml:space="preserve">
+    <value>Transmission Remote arka planda bir sorunla karşılaştı. Neyin yanlış gittiğini görmek için günlük dosyalarının klasörü açılsın mı?</value>
+    <comment>Mac key: Transmission Remote ran into a problem in the background. Open the logs folder to see what went wrong?
+Mac comment: Windows only. Message box after an error in background work nothing else caught; the app keeps running. Yes opens the logs folder.</comment>
+  </data>
+  <data name="TrustThisCertificate" xml:space="preserve">
+    <value>Bu sertifikaya güven</value>
+    <comment>Mac key: Trust This Certificate</comment>
+  </data>
+  <data name="TrustedCertificate" xml:space="preserve">
+    <value>Güvenilen sertifika</value>
+    <comment>Mac key: Trusted certificate</comment>
+  </data>
+  <data name="TryAgain" xml:space="preserve">
+    <value>Yeniden dene</value>
+    <comment>Mac key: Try Again</comment>
+  </data>
+  <data name="TryNow" xml:space="preserve">
+    <value>Şimdi dene</value>
+    <comment>Mac key: Try Now</comment>
+  </data>
+  <data name="TryingAgainEllipsis" xml:space="preserve">
+    <value>Yeniden deneniyor…</value>
+    <comment>Mac key: Trying again…</comment>
+  </data>
+  <data name="TryingAgainIn" xml:space="preserve">
+    <value>{0} sonra yeniden denenecek</value>
+    <comment>Mac key: Trying again in %@</comment>
+  </data>
+  <data name="TurnOnAlternativeSpeedLimits" xml:space="preserve">
+    <value>Alternatif hız limitlerini aç</value>
+    <comment>Mac key: Turn on alternative speed limits</comment>
+  </data>
+  <data name="UTP" xml:space="preserve">
+    <value>µTP</value>
+    <comment>Mac key: µTP</comment>
+  </data>
+  <data name="UnencryptedConnectionBlocked" xml:space="preserve">
+    <value>Şifrelenmemiş bağlantı engellendi</value>
+    <comment>Mac key: Unencrypted Connection Blocked</comment>
+  </data>
+  <data name="Unlimited" xml:space="preserve">
+    <value>Limitsiz</value>
+    <comment>Mac key: Unlimited</comment>
+  </data>
+  <data name="UntrustedCertificate" xml:space="preserve">
+    <value>Güvenilmeyen sertifika</value>
+    <comment>Mac key: Untrusted Certificate</comment>
+  </data>
+  <data name="UntrustedCertificateConnectFromTheMain" xml:space="preserve">
+    <value>Güvenilmeyen sertifika. İncelemek ve güvenmek için ana pencereden bağlanın ({0}…).</value>
+    <comment>Mac key: Untrusted certificate. Connect from the main window to review and trust it (%@…).</comment>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Gönderme</value>
+    <comment>Mac key: Up</comment>
+  </data>
+  <data name="UpKBS" xml:space="preserve">
+    <value>↑ {0} kB/s</value>
+    <comment>Mac key: ↑ %@ kB/s</comment>
+  </data>
+  <data name="UpUnlimited" xml:space="preserve">
+    <value>↑ limitsiz</value>
+    <comment>Mac key: ↑ unlimited</comment>
+  </data>
+  <data name="UpdateNow" xml:space="preserve">
+    <value>Şimdi güncelle</value>
+    <comment>Mac key: Update Now</comment>
+  </data>
+  <data name="Updated" xml:space="preserve">
+    <value>{0} güncellendi</value>
+    <comment>Mac key: Updated %@</comment>
+  </data>
+  <data name="UpdatedRules_One" xml:space="preserve">
+    <value>Güncellendi: {0} kural</value>
+    <comment>Mac key: Updated: %lld rules</comment>
+  </data>
+  <data name="UpdatedRules_Other" xml:space="preserve">
+    <value>Güncellendi: {0} kural</value>
+    <comment>Mac key: Updated: %lld rules</comment>
+  </data>
+  <data name="Updates" xml:space="preserve">
+    <value>Güncellemeler</value>
+    <comment>Mac key: Updates</comment>
+  </data>
+  <data name="UpdatingEllipsis" xml:space="preserve">
+    <value>Güncelleniyor…</value>
+    <comment>Mac key: Updating…</comment>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Gönderme</value>
+    <comment>Mac key: Upload</comment>
+  </data>
+  <data name="UploadQueueSize" xml:space="preserve">
+    <value>Gönderme sırası boyutu</value>
+    <comment>Mac key: Upload queue size</comment>
+  </data>
+  <data name="UploadSpeedLimit" xml:space="preserve">
+    <value>Gönderme hızı limiti</value>
+    <comment>Mac key: Upload Speed Limit</comment>
+  </data>
+  <data name="UploadSpeedsKBS" xml:space="preserve">
+    <value>Gönderme hızları (kB/s)</value>
+    <comment>Mac key: Upload speeds (kB/s)</comment>
+  </data>
+  <data name="Uploaded" xml:space="preserve">
+    <value>Gönderilen</value>
+    <comment>Mac key: Uploaded</comment>
+  </data>
+  <data name="UploadingToPeer" xml:space="preserve">
+    <value>Eşe gönderiliyor</value>
+    <comment>Mac key: Uploading to peer</comment>
+  </data>
+  <data name="UseAlternateBandwidthSettings" xml:space="preserve">
+    <value>Alternatif bant genişliği ayarlarını kullan</value>
+    <comment>Mac key: Use alternate bandwidth settings</comment>
+  </data>
+  <data name="UseCertificate" xml:space="preserve">
+    <value>Sertifikayı kullan</value>
+    <comment>Mac key: Use Certificate</comment>
+  </data>
+  <data name="UseHTTPS" xml:space="preserve">
+    <value>HTTPS kullan</value>
+    <comment>Mac key: Use HTTPS</comment>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Kullanıcı adı</value>
+    <comment>Mac key: Username</comment>
+  </data>
+  <data name="VerifyLocalData" xml:space="preserve">
+    <value>Yerel verileri kontrol et</value>
+    <comment>Mac key: Verify Local Data</comment>
+  </data>
+  <data name="Verifying_9A7FA7" xml:space="preserve">
+    <value>Kontrol ediliyor ({0})</value>
+    <comment>Mac key: Verifying %@</comment>
+  </data>
+  <data name="Verifying_A7D4A9" xml:space="preserve">
+    <value>Kontrol ediliyor</value>
+    <comment>Mac key: Verifying</comment>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Sürüm {0}</value>
+    <comment>Mac key: Version %@</comment>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Bekliyor</value>
+    <comment>Mac key: Waiting</comment>
+  </data>
+  <data name="WaitingForMetadata" xml:space="preserve">
+    <value>Meta veriler bekleniyor</value>
+    <comment>Mac key: Waiting for Metadata</comment>
+  </data>
+  <data name="WeUnchokedThisPeerButTheyAreNot" xml:space="preserve">
+    <value>Bu eşin engelini kaldırdık ama ilgilenmiyor</value>
+    <comment>Mac key: We unchoked this peer, but they're not interested</comment>
+  </data>
+  <data name="WeWouldDownloadFromThisPeerIfTheyWould" xml:space="preserve">
+    <value>Bu eş izin verse ondan indirirdik</value>
+    <comment>Mac key: We would download from this peer if they'd let us</comment>
+  </data>
+  <data name="WeWouldUploadToThisPeerIfTheyWouldAsk" xml:space="preserve">
+    <value>Bu eş isterse ona gönderirdik</value>
+    <comment>Mac key: We would upload to this peer if they'd ask</comment>
+  </data>
+  <data name="Working" xml:space="preserve">
+    <value>Çalışıyor</value>
+    <comment>Mac key: Working</comment>
+  </data>
+  <data name="YesDHTAndPEXDisabled" xml:space="preserve">
+    <value>Evet (DHT ve PEX devre dışı)</value>
+    <comment>Mac key: Yes (DHT and PEX disabled)</comment>
+  </data>
+  <data name="YouAreUpToDate" xml:space="preserve">
+    <value>Uygulama güncel</value>
+    <comment>Mac key: You're Up to Date</comment>
+  </data>
+  <data name="YouHaveVersionDownloadTheNewDiskImage" xml:space="preserve">
+    <value>Sizdeki sürüm: {0}. Yeni disk görüntüsünü GitHub’dan indirin ve bunun yerine geçmesi için uygulamayı Uygulamalar klasörüne sürükleyin.</value>
+    <comment>Mac key: You have version %@. Download the new disk image from GitHub and drag the app into Applications to replace this one.</comment>
+  </data>
+</root>

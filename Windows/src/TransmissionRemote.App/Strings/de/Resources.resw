@@ -1,0 +1,2001 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AGroupWithThisNameAlreadyExists" xml:space="preserve">
+    <value>Es gibt bereits eine Gruppe mit diesem Namen.</value>
+    <comment>Mac key: A group with this name already exists.</comment>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Info</value>
+    <comment>Mac key: About</comment>
+  </data>
+  <data name="ActionFailed" xml:space="preserve">
+    <value>Aktion fehlgeschlagen</value>
+    <comment>Mac key: Action Failed</comment>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Aktiv</value>
+    <comment>Mac key: Active</comment>
+  </data>
+  <data name="ActiveFor" xml:space="preserve">
+    <value>Aktive Zeit</value>
+    <comment>Mac key: Active for</comment>
+  </data>
+  <data name="ActiveOf" xml:space="preserve">
+    <value>Aktiv: {0} von {1}</value>
+    <comment>Mac key: Active: %lld of %lld</comment>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Hinzufügen</value>
+    <comment>Mac key: Add</comment>
+  </data>
+  <data name="AddAMagnetLinkOrTorrentURL" xml:space="preserve">
+    <value>Einen Magnet-Link oder eine Torrent-URL hinzufügen</value>
+    <comment>Mac key: Add a magnet link or torrent URL</comment>
+  </data>
+  <data name="AddAServerInSettingsTransmissionFirst" xml:space="preserve">
+    <value>Füge zuerst unter Einstellungen → Transmission einen Server hinzu.</value>
+    <comment>Mac key: Add a server in Settings → Transmission first.</comment>
+  </data>
+  <data name="AddAServerWithTheButtonOrBringYour" xml:space="preserve">
+    <value>Füge mit der Taste „+“ einen Server hinzu oder übernimm deine Server aus Transmission Remote GUI.</value>
+    <comment>Mac key: Add a server with the + button, or bring your servers over from Transmission Remote GUI.</comment>
+  </data>
+  <data name="AddATorrentFile" xml:space="preserve">
+    <value>Eine .torrent-Datei hinzufügen</value>
+    <comment>Mac key: Add a .torrent file</comment>
+  </data>
+  <data name="AddGroupEllipsis" xml:space="preserve">
+    <value>Gruppe hinzufügen …</value>
+    <comment>Mac key: Add Group…</comment>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>Link hinzufügen</value>
+    <comment>Mac key: Add Link</comment>
+  </data>
+  <data name="AddMapping" xml:space="preserve">
+    <value>Zuordnung hinzufügen</value>
+    <comment>Mac key: Add Mapping</comment>
+  </data>
+  <data name="AddPartExtensionToIncompleteFiles" xml:space="preserve">
+    <value>Unfertige Dateien mit der Endung .part versehen</value>
+    <comment>Mac key: Add .part extension to incomplete files</comment>
+  </data>
+  <data name="AddServer" xml:space="preserve">
+    <value>Server hinzufügen</value>
+    <comment>Mac key: Add Server</comment>
+  </data>
+  <data name="AddServerEllipsis" xml:space="preserve">
+    <value>Server hinzufügen …</value>
+    <comment>Mac key: Add Server…</comment>
+  </data>
+  <data name="AddTheAddressOfYourTransmissionDaemonTo" xml:space="preserve">
+    <value>Gib die Adresse deines Transmission-Daemons ein, um loszulegen.</value>
+    <comment>Mac key: Add the address of your Transmission daemon to get started.</comment>
+  </data>
+  <data name="AddTorrent" xml:space="preserve">
+    <value>Torrent hinzufügen</value>
+    <comment>Mac key: Add torrent</comment>
+  </data>
+  <data name="AddTorrentFile" xml:space="preserve">
+    <value>Torrent-Datei hinzufügen</value>
+    <comment>Mac key: Add Torrent File</comment>
+  </data>
+  <data name="AddTorrentFileEllipsis" xml:space="preserve">
+    <value>Torrent-Datei hinzufügen …</value>
+    <comment>Mac key: Add Torrent File…</comment>
+  </data>
+  <data name="AddTorrentLink" xml:space="preserve">
+    <value>Torrent-Link hinzufügen</value>
+    <comment>Mac key: Add Torrent Link</comment>
+  </data>
+  <data name="AddTorrentLinkEllipsis" xml:space="preserve">
+    <value>Torrent-Link hinzufügen …</value>
+    <comment>Mac key: Add Torrent Link…</comment>
+  </data>
+  <data name="Added" xml:space="preserve">
+    <value>Hinzugefügt</value>
+    <comment>Mac key: Added</comment>
+  </data>
+  <data name="AddedWithPasswordsProxiesAndFolder" xml:space="preserve">
+    <value>{0} hinzugefügt, mit Passwörtern, Proxys und Ordnerverlauf.</value>
+    <comment>Mac key: Added %@, with passwords, proxies and folder history.</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adresse</value>
+    <comment>Mac key: Address</comment>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Erweitert</value>
+    <comment>Mac key: Advanced</comment>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Alle</value>
+    <comment>Mac key: All</comment>
+  </data>
+  <data name="AllTimeTotals" xml:space="preserve">
+    <value>Gesamtwerte</value>
+    <comment>Mac key: All-time totals</comment>
+  </data>
+  <data name="AllowEncryption" xml:space="preserve">
+    <value>Verschlüsselung erlauben</value>
+    <comment>Mac key: Allow encryption</comment>
+  </data>
+  <data name="AllowUnencryptedConnection" xml:space="preserve">
+    <value>Unverschlüsselte Verbindung erlauben</value>
+    <comment>Mac key: Allow Unencrypted Connection</comment>
+  </data>
+  <data name="AllowUnencryptedConnectionAnyway" xml:space="preserve">
+    <value>Unverschlüsselte Verbindung trotzdem erlauben</value>
+    <comment>Mac key: Allow unencrypted connection anyway</comment>
+  </data>
+  <data name="AlsoFollowTheServersGlobalLimits" xml:space="preserve">
+    <value>Auch die globalen Limits des Servers beachten</value>
+    <comment>Mac key: Also follow the server's global limits</comment>
+  </data>
+  <data name="AlternateBandwidthSettings" xml:space="preserve">
+    <value>Alternative Bandbreiteneinstellungen</value>
+    <comment>Mac key: Alternate bandwidth settings</comment>
+  </data>
+  <data name="AlternativeSpeedLimitsAreOn" xml:space="preserve">
+    <value>Alternative Geschwindigkeitslimits sind aktiv</value>
+    <comment>Mac key: Alternative speed limits are on</comment>
+  </data>
+  <data name="AlternativeSpeedLimits_392B4B" xml:space="preserve">
+    <value>Alternative Geschwindigkeitslimits</value>
+    <comment>Mac key: Alternative speed limits</comment>
+  </data>
+  <data name="AlternativeSpeedLimits_5A9C91" xml:space="preserve">
+    <value>Alternative Geschwindigkeitslimits</value>
+    <comment>Mac key: Alternative Speed Limits</comment>
+  </data>
+  <data name="ApplicationOptions" xml:space="preserve">
+    <value>Anwendungsoptionen</value>
+    <comment>Mac key: Application Options</comment>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Anwenden</value>
+    <comment>Mac key: Apply</comment>
+  </data>
+  <data name="ApplyAlternateBandwidthSettings" xml:space="preserve">
+    <value>Alternative Bandbreiteneinstellungen automatisch anwenden</value>
+    <comment>Mac key: Apply alternate bandwidth settings automatically</comment>
+  </data>
+  <data name="AskForMorePeers" xml:space="preserve">
+    <value>Mehr Peers anfordern</value>
+    <comment>Mac key: Ask for More Peers</comment>
+  </data>
+  <data name="AskTrackersForMorePeers" xml:space="preserve">
+    <value>Tracker nach mehr Peers fragen</value>
+    <comment>Mac key: Ask Trackers for More Peers</comment>
+  </data>
+  <data name="AsksGitHubForTheNewestReleaseNothingIs" xml:space="preserve">
+    <value>Fragt bei GitHub nach der neuesten Version. Es wird nichts automatisch heruntergeladen oder installiert.</value>
+    <comment>Mac key: Asks GitHub for the newest release. Nothing is downloaded or installed automatically.</comment>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>Authentifizierung</value>
+    <comment>Mac key: Authentication</comment>
+  </data>
+  <data name="AuthenticationRequired" xml:space="preserve">
+    <value>Authentifizierung erforderlich</value>
+    <comment>Mac key: Authentication required</comment>
+  </data>
+  <data name="Automatic" xml:space="preserve">
+    <value>Automatisch</value>
+    <comment>Mac key: Automatic</comment>
+  </data>
+  <data name="AutomaticUsesJSONRPC20OnTransmission41" xml:space="preserve">
+    <value>„Automatisch“ verwendet JSON-RPC 2.0 ab Transmission 4.1 und das alte Protokoll bei älteren Versionen wie 3.00.</value>
+    <comment>Mac key: Automatic uses JSON-RPC 2.0 on Transmission 4.1 and later, and the legacy protocol on older versions such as 3.00.</comment>
+  </data>
+  <data name="Backup" xml:space="preserve">
+    <value>Reserve</value>
+    <comment>Mac key: Backup</comment>
+  </data>
+  <data name="Bandwidth" xml:space="preserve">
+    <value>Bandbreite</value>
+    <comment>Mac key: Bandwidth</comment>
+  </data>
+  <data name="BandwidthGroup_319062" xml:space="preserve">
+    <value>Bandbreitengruppe</value>
+    <comment>Mac key: Bandwidth Group</comment>
+  </data>
+  <data name="BandwidthGroup_71D067" xml:space="preserve">
+    <value>Bandbreitengruppe</value>
+    <comment>Mac key: Bandwidth group</comment>
+  </data>
+  <data name="BandwidthGroups" xml:space="preserve">
+    <value>Bandbreitengruppen</value>
+    <comment>Mac key: Bandwidth groups</comment>
+  </data>
+  <data name="BandwidthGroupsNeedTransmission40OrLater" xml:space="preserve">
+    <value>Bandbreitengruppen erfordern Transmission 4.0 oder neuer.</value>
+    <comment>Mac key: Bandwidth groups need Transmission 4.0 or later.</comment>
+  </data>
+  <data name="BandwidthPriority_33C88A" xml:space="preserve">
+    <value>Bandbreitenpriorität</value>
+    <comment>Mac key: Bandwidth priority</comment>
+  </data>
+  <data name="BandwidthPriority_5262E0" xml:space="preserve">
+    <value>Bandbreitenpriorität</value>
+    <comment>Mac key: Bandwidth Priority</comment>
+  </data>
+  <data name="BlocklistURL" xml:space="preserve">
+    <value>Blocklisten-URL</value>
+    <comment>Mac key: Blocklist URL</comment>
+  </data>
+  <data name="BrowseFoldersOnTheServer" xml:space="preserve">
+    <value>Ordner auf dem Server durchsuchen</value>
+    <comment>Mac key: Browse folders on the server</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+    <comment>Mac key: Cancel</comment>
+  </data>
+  <data name="CannotReachTheServer" xml:space="preserve">
+    <value>Server nicht erreichbar</value>
+    <comment>Mac key: Can't Reach the Server</comment>
+  </data>
+  <data name="CertificatePassword" xml:space="preserve">
+    <value>Zertifikatpasswort</value>
+    <comment>Mac key: Certificate Password</comment>
+  </data>
+  <data name="ChangesAreSentToTheServerWhenYouClick" xml:space="preserve">
+    <value>Änderungen werden an den Server gesendet, wenn du auf „Anwenden“ klickst.</value>
+    <comment>Mac key: Changes are sent to the server when you click Apply.</comment>
+  </data>
+  <data name="CheckForUpdatesEllipsis" xml:space="preserve">
+    <value>Nach Updates suchen …</value>
+    <comment>Mac key: Check for Updates…</comment>
+  </data>
+  <data name="CheckForUpdatesOnceADay" xml:space="preserve">
+    <value>Einmal täglich nach Updates suchen</value>
+    <comment>Mac key: Check for updates once a day</comment>
+  </data>
+  <data name="CheckNow" xml:space="preserve">
+    <value>Jetzt suchen</value>
+    <comment>Mac key: Check Now</comment>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Auswählen</value>
+    <comment>Mac key: Choose</comment>
+  </data>
+  <data name="ChooseEllipsis" xml:space="preserve">
+    <value>Auswählen …</value>
+    <comment>Mac key: Choose…</comment>
+  </data>
+  <data name="ChooseTransguiIniTransmissionRemoteGUI" xml:space="preserve">
+    <value>Wähle die Datei transgui.ini aus. Transmission Remote GUI speichert sie in ~/.config.</value>
+    <comment>Mac key: Choose transgui.ini. Transmission Remote GUI keeps it in ~/.config.</comment>
+  </data>
+  <data name="ClearHistory" xml:space="preserve">
+    <value>Verlauf löschen</value>
+    <comment>Mac key: Clear History</comment>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Client</value>
+    <comment>Mac key: Client</comment>
+  </data>
+  <data name="ClientCertificate" xml:space="preserve">
+    <value>Client-Zertifikat</value>
+    <comment>Mac key: Client certificate</comment>
+  </data>
+  <data name="ClientCertificatesWereNotImportedChoose" xml:space="preserve">
+    <value>Client-Zertifikate wurden nicht importiert. Wähle sie unter Einstellungen → Transmission aus.</value>
+    <comment>Mac key: Client certificates weren't imported. Choose them in Settings → Transmission.</comment>
+  </data>
+  <data name="CollectingSpeedData" xml:space="preserve">
+    <value>Geschwindigkeitsdaten werden gesammelt</value>
+    <comment>Mac key: Collecting Speed Data</comment>
+  </data>
+  <data name="CommaSeparatedSpeedsForTheSpeedLimit" xml:space="preserve">
+    <value>Durch Kommas getrennte Geschwindigkeiten für die Geschwindigkeitslimit-Menüs im Menü „Torrent“ und im Menü „Server“. „Unbegrenzt“ wird immer angeboten.</value>
+    <comment>Mac key: Comma-separated speeds for the Speed Limit menus in the torrent menu and the Server menu. Unlimited is always offered.</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Kommentar</value>
+    <comment>Mac key: Comment</comment>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Abgeschlossen</value>
+    <comment>Mac key: Completed</comment>
+  </data>
+  <data name="ConfigFolder" xml:space="preserve">
+    <value>Konfigurationsordner</value>
+    <comment>Mac key: Config folder</comment>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Verbinden</value>
+    <comment>Mac key: Connect</comment>
+  </data>
+  <data name="ConnectToATransmissionServerToChangeIts" xml:space="preserve">
+    <value>Verbinde dich mit einem Transmission-Server, um seine Optionen zu ändern.</value>
+    <comment>Mac key: Connect to a Transmission server to change its options.</comment>
+  </data>
+  <data name="ConnectToTransmissionUsingProxyServer" xml:space="preserve">
+    <value>Über Proxyserver mit Transmission verbinden</value>
+    <comment>Mac key: Connect to Transmission using proxy server</comment>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>Verbunden</value>
+    <comment>Mac key: Connected</comment>
+  </data>
+  <data name="ConnectedOverUTP" xml:space="preserve">
+    <value>Über µTP verbunden</value>
+    <comment>Mac key: Connected over µTP</comment>
+  </data>
+  <data name="ConnectedToTransmissionUsing" xml:space="preserve">
+    <value>Mit Transmission {0} über {1} verbunden.</value>
+    <comment>Mac key: Connected to Transmission %@ using %@.</comment>
+  </data>
+  <data name="ConnectingToEllipsis" xml:space="preserve">
+    <value>Verbindung zu {0} wird hergestellt …</value>
+    <comment>Mac key: Connecting to %@…</comment>
+  </data>
+  <data name="Connection" xml:space="preserve">
+    <value>Verbindung</value>
+    <comment>Mac key: Connection</comment>
+  </data>
+  <data name="ConnectionToThisMac" xml:space="preserve">
+    <value>Verbindung zu diesem Mac.</value>
+    <comment>Mac key: Connection to this Mac.</comment>
+  </data>
+  <data name="ConsiderActiveTorrentsAsStalledWhenIdle" xml:space="preserve">
+    <value>Aktive Torrents gelten als blockiert, wenn inaktiv für</value>
+    <comment>Mac key: Consider active torrents as stalled when idle for</comment>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Fortfahren</value>
+    <comment>Mac key: Continue</comment>
+  </data>
+  <data name="CopyMagnetLink" xml:space="preserve">
+    <value>Magnet-Link kopieren</value>
+    <comment>Mac key: Copy Magnet Link</comment>
+  </data>
+  <data name="CopyPath" xml:space="preserve">
+    <value>Pfad kopieren</value>
+    <comment>Mac key: Copy Path</comment>
+  </data>
+  <data name="Corrupt" xml:space="preserve">
+    <value>Beschädigt</value>
+    <comment>Mac key: Corrupt</comment>
+  </data>
+  <data name="CouldNotAddTorrent" xml:space="preserve">
+    <value>Torrent konnte nicht hinzugefügt werden</value>
+    <comment>Mac key: Couldn't Add Torrent</comment>
+  </data>
+  <data name="CouldNotBeOpenedAsATorrentFile" xml:space="preserve">
+    <value>„{0}“ konnte nicht als Torrent-Datei geöffnet werden.</value>
+    <comment>Mac key: “%@” couldn't be opened as a torrent file.</comment>
+  </data>
+  <data name="CouldNotCheckForUpdates" xml:space="preserve">
+    <value>Suche nach Updates fehlgeschlagen</value>
+    <comment>Mac key: Couldn't Check for Updates</comment>
+  </data>
+  <data name="CouldNotConnect" xml:space="preserve">
+    <value>Verbindung fehlgeschlagen</value>
+    <comment>Mac key: Couldn't Connect</comment>
+  </data>
+  <data name="CouldNotImport" xml:space="preserve">
+    <value>Import fehlgeschlagen</value>
+    <comment>Mac key: Couldn't Import</comment>
+  </data>
+  <data name="CouldNotLoadOptions" xml:space="preserve">
+    <value>Optionen konnten nicht geladen werden</value>
+    <comment>Mac key: Couldn't Load Options</comment>
+  </data>
+  <data name="CouldNotOpenCheckThatTheShareIsMounted" xml:space="preserve">
+    <value>{0} konnte nicht geöffnet werden. Prüfe, ob die Freigabe eingebunden ist, und wähle ihren Ordner unter Einstellungen → Pfade erneut aus.</value>
+    <comment>Mac key: Couldn't open %@. Check that the share is mounted, and choose its folder again in Settings → Paths.</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Land</value>
+    <comment>Mac key: Country</comment>
+  </data>
+  <data name="CountryDatabase" xml:space="preserve">
+    <value>Länderdatenbank</value>
+    <comment>Mac key: Country database</comment>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Erstellt von</value>
+    <comment>Mac key: Created by</comment>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>Erstellt am</value>
+    <comment>Mac key: Created on</comment>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>Benutzerdefiniert</value>
+    <comment>Mac key: Custom</comment>
+  </data>
+  <data name="DataDisplay" xml:space="preserve">
+    <value>Datenanzeige</value>
+    <comment>Mac key: Data display</comment>
+  </data>
+  <data name="DataRefreshInterval" xml:space="preserve">
+    <value>Aktualisierungsintervall</value>
+    <comment>Mac key: Data refresh interval</comment>
+  </data>
+  <data name="DataRefreshIntervalInTheBackground" xml:space="preserve">
+    <value>Aktualisierungsintervall im Hintergrund</value>
+    <comment>Mac key: Data refresh interval in the background</comment>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Tage</value>
+    <comment>Mac key: Days</comment>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Standard</value>
+    <comment>Mac key: Default</comment>
+  </data>
+  <data name="DefaultDownloadFolderOnRemoteHost" xml:space="preserve">
+    <value>Standard-Downloadordner auf dem Server</value>
+    <comment>Mac key: Default download folder on remote host</comment>
+  </data>
+  <data name="DeleteTorrentFilesFromTheWatchFolder" xml:space="preserve">
+    <value>.torrent-Dateien nach dem Hinzufügen aus dem überwachten Ordner löschen</value>
+    <comment>Mac key: Delete .torrent files from the watch folder after adding</comment>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Details</value>
+    <comment>Mac key: Detail</comment>
+  </data>
+  <data name="Direction" xml:space="preserve">
+    <value>Richtung</value>
+    <comment>Mac key: Direction</comment>
+  </data>
+  <data name="DirectoryForIncompleteFiles" xml:space="preserve">
+    <value>Ordner für unfertige Dateien</value>
+    <comment>Mac key: Directory for incomplete files</comment>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Trennen</value>
+    <comment>Mac key: Disconnect</comment>
+  </data>
+  <data name="DiskCacheSize" xml:space="preserve">
+    <value>Größe des Festplattenpuffers</value>
+    <comment>Mac key: Disk cache size</comment>
+  </data>
+  <data name="DoNotDownloadSelected" xml:space="preserve">
+    <value>Ausgewählte nicht herunterladen</value>
+    <comment>Mac key: Don't Download Selected</comment>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Fertig</value>
+    <comment>Mac key: Done</comment>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Download</value>
+    <comment>Mac key: Down</comment>
+  </data>
+  <data name="DownKBS" xml:space="preserve">
+    <value>↓ {0} kB/s</value>
+    <comment>Mac key: ↓ %@ kB/s</comment>
+  </data>
+  <data name="DownUnlimited" xml:space="preserve">
+    <value>↓ unbegrenzt</value>
+    <comment>Mac key: ↓ unlimited</comment>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+    <comment>Mac key: Download</comment>
+  </data>
+  <data name="DownloadComplete" xml:space="preserve">
+    <value>Download abgeschlossen</value>
+    <comment>Mac key: Download complete</comment>
+  </data>
+  <data name="DownloadDatabase" xml:space="preserve">
+    <value>Datenbank herunterladen</value>
+    <comment>Mac key: Download Database</comment>
+  </data>
+  <data name="DownloadFailed_EAE34C" xml:space="preserve">
+    <value>Download fehlgeschlagen</value>
+    <comment>Mac key: Download failed</comment>
+  </data>
+  <data name="DownloadFailed_F37242" xml:space="preserve">
+    <value>Download fehlgeschlagen: {0}</value>
+    <comment>Mac key: Download failed: %@</comment>
+  </data>
+  <data name="DownloadInOrder" xml:space="preserve">
+    <value>Der Reihe nach herunterladen</value>
+    <comment>Mac key: Download in order</comment>
+  </data>
+  <data name="DownloadNow" xml:space="preserve">
+    <value>Jetzt herunterladen</value>
+    <comment>Mac key: Download Now</comment>
+  </data>
+  <data name="DownloadPiecesInOrderByDefault" xml:space="preserve">
+    <value>Teile standardmäßig der Reihe nach herunterladen</value>
+    <comment>Mac key: Download pieces in order by default</comment>
+  </data>
+  <data name="DownloadQueueSize" xml:space="preserve">
+    <value>Größe der Download-Warteschlange</value>
+    <comment>Mac key: Download queue size</comment>
+  </data>
+  <data name="DownloadSelected" xml:space="preserve">
+    <value>Ausgewählte herunterladen</value>
+    <comment>Mac key: Download Selected</comment>
+  </data>
+  <data name="DownloadSpeedLimit" xml:space="preserve">
+    <value>Download-Geschwindigkeitslimit</value>
+    <comment>Mac key: Download Speed Limit</comment>
+  </data>
+  <data name="DownloadSpeedsKBS" xml:space="preserve">
+    <value>Download-Geschwindigkeiten (kB/s)</value>
+    <comment>Mac key: Download speeds (kB/s)</comment>
+  </data>
+  <data name="DownloadUpdate" xml:space="preserve">
+    <value>Update herunterladen</value>
+    <comment>Mac key: Download Update</comment>
+  </data>
+  <data name="Downloaded" xml:space="preserve">
+    <value>Heruntergeladen</value>
+    <comment>Mac key: Downloaded</comment>
+  </data>
+  <data name="DownloadedFilesStayOnTheServer" xml:space="preserve">
+    <value>Heruntergeladene Dateien bleiben auf dem Server.</value>
+    <comment>Mac key: Downloaded files stay on the server.</comment>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>Lädt herunter</value>
+    <comment>Mac key: Downloading</comment>
+  </data>
+  <data name="DownloadingEllipsis" xml:space="preserve">
+    <value>Wird heruntergeladen …</value>
+    <comment>Mac key: Downloading…</comment>
+  </data>
+  <data name="DownloadingFor" xml:space="preserve">
+    <value>Download-Dauer</value>
+    <comment>Mac key: Downloading for</comment>
+  </data>
+  <data name="DownloadingFromThisPeer" xml:space="preserve">
+    <value>Lädt von diesem Peer herunter</value>
+    <comment>Mac key: Downloading from this peer</comment>
+  </data>
+  <data name="DownloadingTheCountryDatabaseEllipsis" xml:space="preserve">
+    <value>Länderdatenbank wird heruntergeladen …</value>
+    <comment>Mac key: Downloading the country database…</comment>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>Downloads</value>
+    <comment>Mac key: Downloads</comment>
+  </data>
+  <data name="DropTorrentFilesOrMagnetLinksHereOrUse" xml:space="preserve">
+    <value>Lege .torrent-Dateien oder Magnet-Links hier ab oder verwende „Torrent hinzufügen“.</value>
+    <comment>Mac key: Drop .torrent files or magnet links here, or use Add Torrent.</comment>
+  </data>
+  <data name="ETA" xml:space="preserve">
+    <value>ETA</value>
+    <comment>Mac key: ETA</comment>
+  </data>
+  <data name="EditEllipsis" xml:space="preserve">
+    <value>Bearbeiten …</value>
+    <comment>Mac key: Edit…</comment>
+  </data>
+  <data name="EditServerEllipsis" xml:space="preserve">
+    <value>Server bearbeiten …</value>
+    <comment>Mac key: Edit Server…</comment>
+  </data>
+  <data name="EditTrackers" xml:space="preserve">
+    <value>Tracker bearbeiten</value>
+    <comment>Mac key: Edit Trackers</comment>
+  </data>
+  <data name="EditTrackersEllipsis" xml:space="preserve">
+    <value>Tracker bearbeiten …</value>
+    <comment>Mac key: Edit Trackers…</comment>
+  </data>
+  <data name="EnableBlocklist" xml:space="preserve">
+    <value>Blockliste aktivieren</value>
+    <comment>Mac key: Enable blocklist</comment>
+  </data>
+  <data name="EnableDHT" xml:space="preserve">
+    <value>DHT aktivieren</value>
+    <comment>Mac key: Enable DHT</comment>
+  </data>
+  <data name="EnableLocalPeerDiscovery" xml:space="preserve">
+    <value>Local Peer Discovery aktivieren</value>
+    <comment>Mac key: Enable Local Peer Discovery</comment>
+  </data>
+  <data name="EnablePeerExchange" xml:space="preserve">
+    <value>Peer Exchange aktivieren</value>
+    <comment>Mac key: Enable Peer Exchange</comment>
+  </data>
+  <data name="EnablePortForwarding" xml:space="preserve">
+    <value>Portweiterleitung aktivieren</value>
+    <comment>Mac key: Enable port forwarding</comment>
+  </data>
+  <data name="EnableUTP" xml:space="preserve">
+    <value>µTP aktivieren</value>
+    <comment>Mac key: Enable µTP</comment>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Verschlüsselt</value>
+    <comment>Mac key: Encrypted</comment>
+  </data>
+  <data name="EncryptedConnection" xml:space="preserve">
+    <value>Verschlüsselte Verbindung</value>
+    <comment>Mac key: Encrypted connection</comment>
+  </data>
+  <data name="EncryptedWithHTTPS" xml:space="preserve">
+    <value>Mit HTTPS verschlüsselt.</value>
+    <comment>Mac key: Encrypted with HTTPS.</comment>
+  </data>
+  <data name="Encryption" xml:space="preserve">
+    <value>Verschlüsselung</value>
+    <comment>Mac key: Encryption</comment>
+  </data>
+  <data name="EnterJustTheHostNameOrIPAddressWithout" xml:space="preserve">
+    <value>gib nur den Hostnamen oder die IP-Adresse ohne „http://“ ein.</value>
+    <comment>Mac key: enter just the host name or IP address, without “http://”.</comment>
+  </data>
+  <data name="EnterThePasswordThatProtects" xml:space="preserve">
+    <value>Gib das Passwort ein, das {0} schützt.</value>
+    <comment>Mac key: Enter the password that protects %@.</comment>
+  </data>
+  <data name="EnterTheProxyServersAddress" xml:space="preserve">
+    <value>Gib die Adresse des Proxyservers ein.</value>
+    <comment>Mac key: Enter the proxy server's address.</comment>
+  </data>
+  <data name="Error_1100F4" xml:space="preserve">
+    <value>Fehler: {0}</value>
+    <comment>Mac key: Error: %@</comment>
+  </data>
+  <data name="Error_54A0E8" xml:space="preserve">
+    <value>Fehler</value>
+    <comment>Mac key: Error</comment>
+  </data>
+  <data name="EveryS" xml:space="preserve">
+    <value>Alle {0} s</value>
+    <comment>Mac key: Every %lld s</comment>
+  </data>
+  <data name="EveryServerInTransguiIniIsAlreadySetUp" xml:space="preserve">
+    <value>Alle Server aus transgui.ini sind hier bereits eingerichtet.</value>
+    <comment>Mac key: Every server in transgui.ini is already set up here.</comment>
+  </data>
+  <data name="ExistingLabels" xml:space="preserve">
+    <value>Vorhandene Beschriftungen</value>
+    <comment>Mac key: Existing labels</comment>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Dateien</value>
+    <comment>Mac key: Files</comment>
+  </data>
+  <data name="Files_One" xml:space="preserve">
+    <value>{0} Datei</value>
+    <comment>Mac key: %lld files</comment>
+  </data>
+  <data name="Files_Other" xml:space="preserve">
+    <value>{0} Dateien</value>
+    <comment>Mac key: %lld files</comment>
+  </data>
+  <data name="FilterByName" xml:space="preserve">
+    <value>Nach Name filtern</value>
+    <comment>Mac key: Filter by name</comment>
+  </data>
+  <data name="Finished" xml:space="preserve">
+    <value>Fertig</value>
+    <comment>Mac key: Finished</comment>
+  </data>
+  <data name="Flags" xml:space="preserve">
+    <value>Kennzeichen</value>
+    <comment>Mac key: Flags</comment>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Ordner</value>
+    <comment>Mac key: Folder</comment>
+  </data>
+  <data name="FolderOnTheServer" xml:space="preserve">
+    <value>Ordner auf dem Server</value>
+    <comment>Mac key: Folder on the server</comment>
+  </data>
+  <data name="FolderOnThisMac" xml:space="preserve">
+    <value>Ordner auf diesem Mac</value>
+    <comment>Mac key: Folder on this Mac</comment>
+  </data>
+  <data name="FoldersAppearHereOnceTorrentsAreSavedOn" xml:space="preserve">
+    <value>Ordner erscheinen hier, sobald Torrents auf diesem Server gespeichert werden.</value>
+    <comment>Mac key: Folders appear here once torrents are saved on this server.</comment>
+  </data>
+  <data name="Folders_63B853" xml:space="preserve">
+    <value>Ordner</value>
+    <comment>Mac key: folders</comment>
+  </data>
+  <data name="Folders_C4D6BB" xml:space="preserve">
+    <value>Ordner</value>
+    <comment>Mac key: Folders</comment>
+  </data>
+  <data name="FollowTheServersGlobalLimits" xml:space="preserve">
+    <value>Globale Limits des Servers beachten</value>
+    <comment>Mac key: Follow the server's global limits</comment>
+  </data>
+  <data name="ForExampleMntHDHDA2OnTheServerIsVolumes" xml:space="preserve">
+    <value>Beispiel: /mnt/HD/HD_a2 auf dem Server ist /Volumes/HD_a2 auf diesem Mac, wenn die NAS-Freigabe dort eingebunden ist. „Öffnen“ und „Im Finder anzeigen“ verwenden diese Zuordnungen.</value>
+    <comment>Mac key: For example, /mnt/HD/HD_a2 on the server is /Volumes/HD_a2 on this Mac when the NAS share is mounted there. Open and Show in Finder use these.</comment>
+  </data>
+  <data name="Forget" xml:space="preserve">
+    <value>Vergessen</value>
+    <comment>Mac key: Forget</comment>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>{0} frei</value>
+    <comment>Mac key: %@ free</comment>
+  </data>
+  <data name="FreeOnTheServer" xml:space="preserve">
+    <value>{0} frei auf dem Server</value>
+    <comment>Mac key: %@ free on the server</comment>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Von</value>
+    <comment>Mac key: From</comment>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Allgemein</value>
+    <comment>Mac key: General</comment>
+  </data>
+  <data name="GettingMetadata" xml:space="preserve">
+    <value>Metadaten werden abgerufen</value>
+    <comment>Mac key: Getting metadata</comment>
+  </data>
+  <data name="GlobalBandwidthSettings" xml:space="preserve">
+    <value>Globale Bandbreiteneinstellungen</value>
+    <comment>Mac key: Global bandwidth settings</comment>
+  </data>
+  <data name="GlobalPeerLimit" xml:space="preserve">
+    <value>Globales Peer-Limit</value>
+    <comment>Mac key: Global peer limit</comment>
+  </data>
+  <data name="Hash" xml:space="preserve">
+    <value>Prüfsumme</value>
+    <comment>Mac key: Hash</comment>
+  </data>
+  <data name="HideCountries" xml:space="preserve">
+    <value>Länder ausblenden</value>
+    <comment>Mac key: Hide Countries</comment>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>Hoch</value>
+    <comment>Mac key: High</comment>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>Host</value>
+    <comment>Mac key: Host</comment>
+  </data>
+  <data name="HowManyDownloadFoldersEachServer" xml:space="preserve">
+    <value>Wie viele Downloadordner sich jeder Server für „Speichern in“ merkt.</value>
+    <comment>Mac key: How many download folders each server remembers for “Save to”.</comment>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+    <comment>Mac key: ID</comment>
+  </data>
+  <data name="IdleMinutes" xml:space="preserve">
+    <value>Minuten inaktiv</value>
+    <comment>Mac key: Idle minutes</comment>
+  </data>
+  <data name="IfYourMacReachesTheServerOtherwiseCheck" xml:space="preserve">
+    <value>Wenn dein Mac den Server sonst erreicht, prüfe, ob Transmission Remote in Systemeinstellungen → Datenschutz &amp; Sicherheit → Lokales Netzwerk eingeschaltet ist.</value>
+    <comment>Mac key: If your Mac reaches the server otherwise, check that Transmission Remote is turned on in System Settings → Privacy &amp; Security → Local Network.</comment>
+  </data>
+  <data name="IgnoresGlobalLimits" xml:space="preserve">
+    <value>ignoriert globale Limits</value>
+    <comment>Mac key: ignores global limits</comment>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importieren</value>
+    <comment>Mac key: Import</comment>
+  </data>
+  <data name="ImportFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Aus Transmission Remote GUI importieren</value>
+    <comment>Mac key: Import from Transmission Remote GUI</comment>
+  </data>
+  <data name="ImportFromTransmissionRemoteGUIEllipsis" xml:space="preserve">
+    <value>Aus Transmission Remote GUI importieren …</value>
+    <comment>Mac key: Import from Transmission Remote GUI…</comment>
+  </data>
+  <data name="ImportServersFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Server aus Transmission Remote GUI importieren</value>
+    <comment>Mac key: Import servers from Transmission Remote GUI</comment>
+  </data>
+  <data name="ImportedFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Aus Transmission Remote GUI importiert</value>
+    <comment>Mac key: Imported from Transmission Remote GUI</comment>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inaktiv</value>
+    <comment>Mac key: Inactive</comment>
+  </data>
+  <data name="IncomingConnection" xml:space="preserve">
+    <value>Eingehende Verbindung</value>
+    <comment>Mac key: Incoming connection</comment>
+  </data>
+  <data name="IncomingPort" xml:space="preserve">
+    <value>Eingehender Port</value>
+    <comment>Mac key: Incoming port</comment>
+  </data>
+  <data name="IncompleteFilesFolder" xml:space="preserve">
+    <value>Ordner für unfertige Dateien</value>
+    <comment>Mac key: Incomplete files folder</comment>
+  </data>
+  <data name="IsAnAppOrScript" xml:space="preserve">
+    <value>„{0}“ ist ein Programm oder Skript</value>
+    <comment>Mac key: “%@” is an app or script</comment>
+  </data>
+  <data name="IsNotAMagnetLinkOrATorrentURL" xml:space="preserve">
+    <value>„{0}“ ist weder ein Magnet-Link noch eine Torrent-URL.</value>
+    <comment>Mac key: “%@” isn't a magnet link or a torrent URL.</comment>
+  </data>
+  <data name="IsNotAValidTrackerURL" xml:space="preserve">
+    <value>„{0}“ ist keine gültige Tracker-URL.</value>
+    <comment>Mac key: “%@” isn't a valid tracker URL.</comment>
+  </data>
+  <data name="IsTooLargeToBeATorrentFile" xml:space="preserve">
+    <value>„{0}“ ist zu groß für eine Torrent-Datei.</value>
+    <comment>Mac key: “%@” is too large to be a torrent file.</comment>
+  </data>
+  <data name="ItCameFromATorrentAndMacOSHasNotChecked" xml:space="preserve">
+    <value>Es stammt aus einem Torrent, und macOS hat es nicht wie Downloads geprüft. Öffne es nur, wenn du der Quelle vertraust.</value>
+    <comment>Mac key: It came from a torrent, and macOS hasn't checked it the way it checks downloads. Open it only if you trust where it came from.</comment>
+  </data>
+  <data name="KBS_22B85B" xml:space="preserve">
+    <value>{0} kB/s</value>
+    <comment>Mac key: %lld kB/s</comment>
+  </data>
+  <data name="KBS_56B829" xml:space="preserve">
+    <value>kB/s</value>
+    <comment>Mac key: kB/s</comment>
+  </data>
+  <data name="Labels" xml:space="preserve">
+    <value>Beschriftungen</value>
+    <comment>Mac key: Labels</comment>
+  </data>
+  <data name="LabelsCommaSeparated" xml:space="preserve">
+    <value>Beschriftungen, durch Kommas getrennt</value>
+    <comment>Mac key: Labels, comma-separated</comment>
+  </data>
+  <data name="LabelsEllipsis" xml:space="preserve">
+    <value>Beschriftungen …</value>
+    <comment>Mac key: Labels…</comment>
+  </data>
+  <data name="LastActive" xml:space="preserve">
+    <value>Zuletzt aktiv</value>
+    <comment>Mac key: Last Active</comment>
+  </data>
+  <data name="LastAnnounce" xml:space="preserve">
+    <value>Letzte Meldung</value>
+    <comment>Mac key: Last Announce</comment>
+  </data>
+  <data name="Later" xml:space="preserve">
+    <value>Später</value>
+    <comment>Mac key: Later</comment>
+  </data>
+  <data name="Leechers" xml:space="preserve">
+    <value>Leecher</value>
+    <comment>Mac key: Leechers</comment>
+  </data>
+  <data name="LegacyRPCOnly" xml:space="preserve">
+    <value>Nur Legacy-RPC</value>
+    <comment>Mac key: Legacy RPC only</comment>
+  </data>
+  <data name="LegacyRPC_CE8968" xml:space="preserve">
+    <value>Legacy-RPC</value>
+    <comment>Mac key: Legacy RPC</comment>
+  </data>
+  <data name="LegacyRPC_FB73DE" xml:space="preserve">
+    <value>Legacy-RPC</value>
+    <comment>Mac key: legacy RPC</comment>
+  </data>
+  <data name="LimitDownloadSpeed" xml:space="preserve">
+    <value>Downloadgeschwindigkeit begrenzen</value>
+    <comment>Mac key: Limit download speed</comment>
+  </data>
+  <data name="LimitUploadSpeed" xml:space="preserve">
+    <value>Uploadgeschwindigkeit begrenzen</value>
+    <comment>Mac key: Limit upload speed</comment>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Speicherort</value>
+    <comment>Mac key: Location</comment>
+  </data>
+  <data name="Low" xml:space="preserve">
+    <value>Niedrig</value>
+    <comment>Mac key: Low</comment>
+  </data>
+  <data name="MB" xml:space="preserve">
+    <value>MB</value>
+    <comment>Mac key: MB</comment>
+  </data>
+  <data name="MagnetLink" xml:space="preserve">
+    <value>Magnet-Link</value>
+    <comment>Mac key: Magnet link</comment>
+  </data>
+  <data name="ManageServersEllipsis" xml:space="preserve">
+    <value>Server verwalten …</value>
+    <comment>Mac key: Manage Servers…</comment>
+  </data>
+  <data name="MaximumDownloadSpeed" xml:space="preserve">
+    <value>Maximale Downloadgeschwindigkeit</value>
+    <comment>Mac key: Maximum download speed</comment>
+  </data>
+  <data name="MaximumFolderHistory" xml:space="preserve">
+    <value>Maximaler Ordnerverlauf</value>
+    <comment>Mac key: Maximum folder history</comment>
+  </data>
+  <data name="MaximumPeers" xml:space="preserve">
+    <value>Maximale Peers</value>
+    <comment>Mac key: Maximum peers</comment>
+  </data>
+  <data name="MaximumUploadSpeed" xml:space="preserve">
+    <value>Maximale Uploadgeschwindigkeit</value>
+    <comment>Mac key: Maximum upload speed</comment>
+  </data>
+  <data name="MenuBarIcon" xml:space="preserve">
+    <value>Symbol in der Menüleiste</value>
+    <comment>Mac key: Menu bar icon</comment>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minuten</value>
+    <comment>Mac key: minutes</comment>
+  </data>
+  <data name="Misc" xml:space="preserve">
+    <value>Verschiedenes</value>
+    <comment>Mac key: Misc</comment>
+  </data>
+  <data name="Mixed" xml:space="preserve">
+    <value>Gemischt</value>
+    <comment>Mac key: Mixed</comment>
+  </data>
+  <data name="MntHDHDA2" xml:space="preserve">
+    <value>/mnt/HD/HD_a2</value>
+    <comment>Mac key: /mnt/HD/HD_a2</comment>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Verschieben</value>
+    <comment>Mac key: Move</comment>
+  </data>
+  <data name="MoveData" xml:space="preserve">
+    <value>Daten verschieben</value>
+    <comment>Mac key: Move Data</comment>
+  </data>
+  <data name="MoveDataEllipsis" xml:space="preserve">
+    <value>Daten verschieben …</value>
+    <comment>Mac key: Move Data…</comment>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Nach unten</value>
+    <comment>Mac key: Move Down</comment>
+  </data>
+  <data name="MoveTheDownloadedFilesToTheNewFolder" xml:space="preserve">
+    <value>Heruntergeladene Dateien in den neuen Ordner verschieben</value>
+    <comment>Mac key: Move the downloaded files to the new folder</comment>
+  </data>
+  <data name="MoveToBottom" xml:space="preserve">
+    <value>Ganz nach unten</value>
+    <comment>Mac key: Move to Bottom</comment>
+  </data>
+  <data name="MoveToTop" xml:space="preserve">
+    <value>Ganz nach oben</value>
+    <comment>Mac key: Move to Top</comment>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Nach oben</value>
+    <comment>Mac key: Move Up</comment>
+  </data>
+  <data name="MyNAS" xml:space="preserve">
+    <value>Mein NAS</value>
+    <comment>Mac key: My NAS</comment>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+    <comment>Mac key: Name</comment>
+  </data>
+  <data name="NetworkWAN" xml:space="preserve">
+    <value>Netzwerk (WAN)</value>
+    <comment>Mac key: Network (WAN)</comment>
+  </data>
+  <data name="Never" xml:space="preserve">
+    <value>Nie</value>
+    <comment>Mac key: Never</comment>
+  </data>
+  <data name="NewServer" xml:space="preserve">
+    <value>Neuer Server</value>
+    <comment>Mac key: New Server</comment>
+  </data>
+  <data name="NextAnnounce" xml:space="preserve">
+    <value>Nächste Meldung</value>
+    <comment>Mac key: Next Announce</comment>
+  </data>
+  <data name="NoConnectedPeers" xml:space="preserve">
+    <value>Keine verbundenen Peers</value>
+    <comment>Mac key: No Connected Peers</comment>
+  </data>
+  <data name="NoFiles" xml:space="preserve">
+    <value>Keine Dateien</value>
+    <comment>Mac key: No Files</comment>
+  </data>
+  <data name="NoGroupsYet" xml:space="preserve">
+    <value>Noch keine Gruppen.</value>
+    <comment>Mac key: No groups yet.</comment>
+  </data>
+  <data name="NoKnownFolders" xml:space="preserve">
+    <value>Keine bekannten Ordner</value>
+    <comment>Mac key: No Known Folders</comment>
+  </data>
+  <data name="NoServer" xml:space="preserve">
+    <value>Kein Server</value>
+    <comment>Mac key: No Server</comment>
+  </data>
+  <data name="NoServerSelected" xml:space="preserve">
+    <value>Kein Server ausgewählt</value>
+    <comment>Mac key: No Server Selected</comment>
+  </data>
+  <data name="NoServersWereFoundInThisFileChoose" xml:space="preserve">
+    <value>In dieser Datei wurden keine Server gefunden. Wähle die Datei transgui.ini von Transmission Remote GUI aus.</value>
+    <comment>Mac key: No servers were found in this file. Choose transgui.ini from Transmission Remote GUI.</comment>
+  </data>
+  <data name="NoTorrentSelected" xml:space="preserve">
+    <value>Kein Torrent ausgewählt</value>
+    <comment>Mac key: No Torrent Selected</comment>
+  </data>
+  <data name="NoTorrents" xml:space="preserve">
+    <value>Keine Torrents</value>
+    <comment>Mac key: No Torrents</comment>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Keines</value>
+    <comment>Mac key: None</comment>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Normal</value>
+    <comment>Mac key: Normal</comment>
+  </data>
+  <data name="NotChosen" xml:space="preserve">
+    <value>Nicht ausgewählt</value>
+    <comment>Mac key: Not chosen</comment>
+  </data>
+  <data name="NotConnected_0303E1" xml:space="preserve">
+    <value>Nicht verbunden</value>
+    <comment>Mac key: Not connected</comment>
+  </data>
+  <data name="NotConnected_3B3D27" xml:space="preserve">
+    <value>Nicht verbunden.</value>
+    <comment>Mac key: Not connected.</comment>
+  </data>
+  <data name="NotConnected_87D82C" xml:space="preserve">
+    <value>Nicht verbunden</value>
+    <comment>Mac key: Not Connected</comment>
+  </data>
+  <data name="NotDownloaded" xml:space="preserve">
+    <value>Nicht heruntergeladen</value>
+    <comment>Mac key: Not downloaded</comment>
+  </data>
+  <data name="NotDownloading" xml:space="preserve">
+    <value>Wird nicht heruntergeladen</value>
+    <comment>Mac key: Not downloading</comment>
+  </data>
+  <data name="NotYetAnnounced" xml:space="preserve">
+    <value>Noch nicht gemeldet</value>
+    <comment>Mac key: Not yet announced</comment>
+  </data>
+  <data name="NotifyWhenADownloadCompletes" xml:space="preserve">
+    <value>Benachrichtigen, wenn ein Download abgeschlossen ist</value>
+    <comment>Mac key: Notify when a download completes</comment>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+    <comment>Mac key: OK</comment>
+  </data>
+  <data name="OneAnnounceURLPerLineSeparateTiersWithA" xml:space="preserve">
+    <value>Eine Announce-URL pro Zeile. Stufen durch eine Leerzeile trennen.</value>
+    <comment>Mac key: One announce URL per line. Separate tiers with a blank line.</comment>
+  </data>
+  <data name="OnlyFoldersAlreadyUsedOnThisServerAre" xml:space="preserve">
+    <value>Es werden nur Ordner angezeigt, die auf diesem Server bereits verwendet wurden. Gib den Pfad ein, um einen neuen zu verwenden.</value>
+    <comment>Mac key: Only folders already used on this server are listed. To use a new one, type its path.</comment>
+  </data>
+  <data name="OnlyForHTTPSReverseProxiesThatAskForOne" xml:space="preserve">
+    <value>Nur für HTTPS-Reverse-Proxys, die eines verlangen. Wähle eine .p12-Datei mit dem Zertifikat und seinem Schlüssel aus.</value>
+    <comment>Mac key: Only for HTTPS reverse proxies that ask for one. Choose a .p12 file with the certificate and its key.</comment>
+  </data>
+  <data name="OnlyTrustItIfItMatchesTheCertificateYou" xml:space="preserve">
+    <value>Vertraue ihm nur, wenn es mit dem Zertifikat übereinstimmt, das du auf deinem Server installiert hast.</value>
+    <comment>Mac key: Only trust it if it matches the certificate you installed on your server.</comment>
+  </data>
+  <data name="OnlyWithAReverseProxyInFrontOfTheDaemon" xml:space="preserve">
+    <value>Nur mit einem Reverse-Proxy vor dem Daemon. Transmission selbst stellt nur einfaches HTTP bereit.</value>
+    <comment>Mac key: Only with a reverse proxy in front of the daemon. Transmission itself serves plain HTTP.</comment>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Öffnen</value>
+    <comment>Mac key: Open</comment>
+  </data>
+  <data name="OpenAnyway" xml:space="preserve">
+    <value>Trotzdem öffnen</value>
+    <comment>Mac key: Open Anyway</comment>
+  </data>
+  <data name="OptimisticUnchoke" xml:space="preserve">
+    <value>Optimistisches Unchoking</value>
+    <comment>Mac key: Optimistic unchoke</comment>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Passwort</value>
+    <comment>Mac key: Password</comment>
+  </data>
+  <data name="PasteMagnetLinksOrTorrentURLsOnePerLine" xml:space="preserve">
+    <value>Füge Magnet-Links oder .torrent-URLs ein, einen pro Zeile.</value>
+    <comment>Mac key: Paste magnet links or .torrent URLs, one per line.</comment>
+  </data>
+  <data name="Paths" xml:space="preserve">
+    <value>Pfade</value>
+    <comment>Mac key: Paths</comment>
+  </data>
+  <data name="PeerFoundThroughDHT" xml:space="preserve">
+    <value>Peer über DHT gefunden</value>
+    <comment>Mac key: Peer found through DHT</comment>
+  </data>
+  <data name="PeerFoundThroughPeerExchangePEX" xml:space="preserve">
+    <value>Peer über Peer Exchange (PEX) gefunden</value>
+    <comment>Mac key: Peer found through peer exchange (PEX)</comment>
+  </data>
+  <data name="PeerHasUnchokedUsButWeAreNotInterested" xml:space="preserve">
+    <value>Peer hat uns freigegeben (unchoked), aber wir sind nicht interessiert</value>
+    <comment>Mac key: Peer has unchoked us, but we're not interested</comment>
+  </data>
+  <data name="Peers" xml:space="preserve">
+    <value>Peers</value>
+    <comment>Mac key: Peers</comment>
+  </data>
+  <data name="Peers_One" xml:space="preserve">
+    <value>{0} Peer</value>
+    <comment>Mac key: %lld peers</comment>
+  </data>
+  <data name="Peers_Other" xml:space="preserve">
+    <value>{0} Peers</value>
+    <comment>Mac key: %lld peers</comment>
+  </data>
+  <data name="PerTorrentPeerLimit" xml:space="preserve">
+    <value>Peer-Limit pro Torrent</value>
+    <comment>Mac key: Per torrent peer limit</comment>
+  </data>
+  <data name="PickRandomPortOnTransmissionLaunch" xml:space="preserve">
+    <value>Zufälligen Port beim Start von Transmission wählen</value>
+    <comment>Mac key: Pick random port on Transmission launch</comment>
+  </data>
+  <data name="PieceAvailability" xml:space="preserve">
+    <value>Verfügbarkeit der Teile</value>
+    <comment>Mac key: Piece availability</comment>
+  </data>
+  <data name="Pieces" xml:space="preserve">
+    <value>Teile</value>
+    <comment>Mac key: Pieces</comment>
+  </data>
+  <data name="PlainHTTPInsideATailscaleTunnelWhich" xml:space="preserve">
+    <value>Einfaches HTTP in einem Tailscale-Tunnel, der den Datenverkehr verschlüsselt.</value>
+    <comment>Mac key: Plain HTTP inside a Tailscale tunnel, which encrypts the traffic.</comment>
+  </data>
+  <data name="PlainHTTPOnAPrivateNetworkDevicesOnThe" xml:space="preserve">
+    <value>Einfaches HTTP in einem privaten Netzwerk. Geräte im selben Netzwerk könnten das Passwort mitlesen.</value>
+    <comment>Mac key: Plain HTTP on a private network. Devices on the same network could read the password.</comment>
+  </data>
+  <data name="PlainHTTPOverTheInternetIsBlockedForThis" xml:space="preserve">
+    <value>Einfaches HTTP über das Internet ist für diesen Server blockiert.</value>
+    <comment>Mac key: Plain HTTP over the internet is blocked for this server.</comment>
+  </data>
+  <data name="PlainHTTPOverTheInternetThePasswordAnd" xml:space="preserve">
+    <value>Einfaches HTTP über das Internet. Das Passwort und der gesamte Datenverkehr können unterwegs von jedem mitgelesen werden.</value>
+    <comment>Mac key: Plain HTTP over the internet. The password and all traffic can be read by anyone along the way.</comment>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>Port</value>
+    <comment>Mac key: Port</comment>
+  </data>
+  <data name="PortIsClosed" xml:space="preserve">
+    <value>Port ist geschlossen</value>
+    <comment>Mac key: Port is closed</comment>
+  </data>
+  <data name="PortIsOpen" xml:space="preserve">
+    <value>Port ist offen</value>
+    <comment>Mac key: Port is open</comment>
+  </data>
+  <data name="PreferEncryption" xml:space="preserve">
+    <value>Verschlüsselung bevorzugen</value>
+    <comment>Mac key: Prefer encryption</comment>
+  </data>
+  <data name="Priority_D60DBB" xml:space="preserve">
+    <value>Priorität</value>
+    <comment>Mac key: Priority</comment>
+  </data>
+  <data name="Priority_DD3948" xml:space="preserve">
+    <value>Priorität: {0}</value>
+    <comment>Mac key: %@ Priority</comment>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Privat</value>
+    <comment>Mac key: Private</comment>
+  </data>
+  <data name="PrivateTrackers" xml:space="preserve">
+    <value>Private Tracker</value>
+    <comment>Mac key: Private trackers</comment>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>Fortschritt</value>
+    <comment>Mac key: Progress</comment>
+  </data>
+  <data name="PromptForDownloadOptionsWhenAddingANew" xml:space="preserve">
+    <value>Beim Hinzufügen eines neuen Torrents nach Download-Optionen fragen</value>
+    <comment>Mac key: Prompt for download options when adding a new torrent</comment>
+  </data>
+  <data name="Protocol" xml:space="preserve">
+    <value>Protokoll</value>
+    <comment>Mac key: Protocol</comment>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy</value>
+    <comment>Mac key: Proxy</comment>
+  </data>
+  <data name="ProxyExampleCom" xml:space="preserve">
+    <value>proxy.example.com</value>
+    <comment>Mac key: proxy.example.com</comment>
+  </data>
+  <data name="ProxyPassword" xml:space="preserve">
+    <value>Proxy-Passwort</value>
+    <comment>Mac key: Proxy password</comment>
+  </data>
+  <data name="ProxyPort" xml:space="preserve">
+    <value>Proxy-Port</value>
+    <comment>Mac key: Proxy port</comment>
+  </data>
+  <data name="ProxyServer" xml:space="preserve">
+    <value>Proxyserver</value>
+    <comment>Mac key: Proxy server</comment>
+  </data>
+  <data name="ProxyUserName" xml:space="preserve">
+    <value>Proxy-Benutzername</value>
+    <comment>Mac key: Proxy user name</comment>
+  </data>
+  <data name="Queue" xml:space="preserve">
+    <value>Warteschlange</value>
+    <comment>Mac key: Queue</comment>
+  </data>
+  <data name="Queued" xml:space="preserve">
+    <value>In Warteschlange</value>
+    <comment>Mac key: Queued</comment>
+  </data>
+  <data name="QueuedToSeed" xml:space="preserve">
+    <value>Wartet auf Seeden</value>
+    <comment>Mac key: Queued to seed</comment>
+  </data>
+  <data name="QueuedToVerify" xml:space="preserve">
+    <value>Wartet auf Überprüfung</value>
+    <comment>Mac key: Queued to verify</comment>
+  </data>
+  <data name="QuitTransmissionRemote" xml:space="preserve">
+    <value>Transmission Remote beenden</value>
+    <comment>Mac key: Quit Transmission Remote</comment>
+  </data>
+  <data name="RPCPath" xml:space="preserve">
+    <value>RPC-Pfad</value>
+    <comment>Mac key: RPC path</comment>
+  </data>
+  <data name="RPCVersion" xml:space="preserve">
+    <value>RPC-Version</value>
+    <comment>Mac key: RPC version</comment>
+  </data>
+  <data name="Ratio" xml:space="preserve">
+    <value>Ratio</value>
+    <comment>Mac key: Ratio</comment>
+  </data>
+  <data name="RecentFolders" xml:space="preserve">
+    <value>Letzte Ordner</value>
+    <comment>Mac key: Recent folders</comment>
+  </data>
+  <data name="Reconnect" xml:space="preserve">
+    <value>Neu verbinden</value>
+    <comment>Mac key: Reconnect</comment>
+  </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>Verbleibend</value>
+    <comment>Mac key: Remaining</comment>
+  </data>
+  <data name="RemoteToLocalPathMappings" xml:space="preserve">
+    <value>Pfadzuordnungen von Remote zu lokal</value>
+    <comment>Mac key: Remote to local path mappings</comment>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Entfernen</value>
+    <comment>Mac key: Remove</comment>
+  </data>
+  <data name="RemoveAndDeleteData" xml:space="preserve">
+    <value>Entfernen und Daten löschen</value>
+    <comment>Mac key: Remove and Delete Data</comment>
+  </data>
+  <data name="RemoveAndDeleteDataEllipsis" xml:space="preserve">
+    <value>Entfernen und Daten löschen …</value>
+    <comment>Mac key: Remove and Delete Data…</comment>
+  </data>
+  <data name="RemoveEllipsis" xml:space="preserve">
+    <value>Entfernen …</value>
+    <comment>Mac key: Remove…</comment>
+  </data>
+  <data name="RemoveMapping" xml:space="preserve">
+    <value>Zuordnung entfernen</value>
+    <comment>Mac key: Remove Mapping</comment>
+  </data>
+  <data name="RemoveServer" xml:space="preserve">
+    <value>Server entfernen</value>
+    <comment>Mac key: Remove Server</comment>
+  </data>
+  <data name="RemoveTheSelectedTorrents" xml:space="preserve">
+    <value>Ausgewählte Torrents entfernen</value>
+    <comment>Mac key: Remove the selected torrents</comment>
+  </data>
+  <data name="RemoveTorrent_One" xml:space="preserve">
+    <value>{0} Torrent entfernen?</value>
+    <comment>Mac key: Remove ^[%lld torrent](inflect: true)?</comment>
+  </data>
+  <data name="RemoveTorrent_Other" xml:space="preserve">
+    <value>{0} Torrents entfernen?</value>
+    <comment>Mac key: Remove ^[%lld torrent](inflect: true)?</comment>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Umbenennen</value>
+    <comment>Mac key: Rename</comment>
+  </data>
+  <data name="RenameEllipsis" xml:space="preserve">
+    <value>Umbenennen …</value>
+    <comment>Mac key: Rename…</comment>
+  </data>
+  <data name="RenameTorrent" xml:space="preserve">
+    <value>Torrent umbenennen</value>
+    <comment>Mac key: Rename Torrent</comment>
+  </data>
+  <data name="RenamesTheFileOrFolderOnTheServer" xml:space="preserve">
+    <value>Benennt die Datei oder den Ordner auf dem Server um.</value>
+    <comment>Mac key: Renames the file or folder on the server.</comment>
+  </data>
+  <data name="RenamesTheTorrentsTopLevelFileOrFolderOn" xml:space="preserve">
+    <value>Benennt die oberste Datei oder den obersten Ordner des Torrents auf dem Server um.</value>
+    <comment>Mac key: Renames the torrent's top-level file or folder on the server.</comment>
+  </data>
+  <data name="RequireEncryption" xml:space="preserve">
+    <value>Verschlüsselung erzwingen</value>
+    <comment>Mac key: Require encryption</comment>
+  </data>
+  <data name="ResolveHostNames" xml:space="preserve">
+    <value>Hostnamen auflösen</value>
+    <comment>Mac key: Resolve Host Names</comment>
+  </data>
+  <data name="Revert" xml:space="preserve">
+    <value>Zurücksetzen</value>
+    <comment>Mac key: Revert</comment>
+  </data>
+  <data name="RightClickThePeerListToTurnHostNamesAnd" xml:space="preserve">
+    <value>Klicke mit der rechten Maustaste auf die Peer-Liste, um Hostnamen und Länder ein- oder auszublenden. Die Länderdaten stammen aus [IP to Country Lite von DB-IP](https://db-ip.com), lizenziert unter CC BY 4.0, und werden monatlich aktualisiert.</value>
+    <comment>Mac key: Right-click the peer list to turn host names and countries on or off. Country data is [IP to Country Lite by DB-IP](https://db-ip.com), licensed under CC BY 4.0, and updates monthly.</comment>
+  </data>
+  <data name="Rules" xml:space="preserve">
+    <value>Regeln</value>
+    <comment>Mac key: Rules</comment>
+  </data>
+  <data name="SHA256FingerprintPresentedByTheServer" xml:space="preserve">
+    <value>Vom Server vorgelegter SHA-256-Fingerabdruck:</value>
+    <comment>Mac key: SHA-256 fingerprint presented by the server:</comment>
+  </data>
+  <data name="SOCKS5" xml:space="preserve">
+    <value>SOCKS 5</value>
+    <comment>Mac key: SOCKS 5</comment>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Sichern</value>
+    <comment>Mac key: Save</comment>
+  </data>
+  <data name="SaveAndConnect" xml:space="preserve">
+    <value>Sichern und verbinden</value>
+    <comment>Mac key: Save and Connect</comment>
+  </data>
+  <data name="SaveTheURLFirstIfYouChangedItTheServer" xml:space="preserve">
+    <value>Sichere zuerst die URL, falls du sie geändert hast. Der Server lädt die Liste selbst herunter.</value>
+    <comment>Mac key: Save the URL first if you changed it; the server downloads the list itself.</comment>
+  </data>
+  <data name="SaveTo" xml:space="preserve">
+    <value>Speichern in</value>
+    <comment>Mac key: Save to</comment>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Sicherheit</value>
+    <comment>Mac key: Security</comment>
+  </data>
+  <data name="SeedRatio" xml:space="preserve">
+    <value>Seed-Ratio</value>
+    <comment>Mac key: Seed ratio</comment>
+  </data>
+  <data name="Seeding" xml:space="preserve">
+    <value>Seeden</value>
+    <comment>Mac key: Seeding</comment>
+  </data>
+  <data name="SeedingFor" xml:space="preserve">
+    <value>Seed-Dauer</value>
+    <comment>Mac key: Seeding for</comment>
+  </data>
+  <data name="SeedingTime" xml:space="preserve">
+    <value>Seed-Dauer</value>
+    <comment>Mac key: Seeding Time</comment>
+  </data>
+  <data name="Seeds" xml:space="preserve">
+    <value>Seeds</value>
+    <comment>Mac key: Seeds</comment>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>{0} ausgewählt</value>
+    <comment>Mac key: %@ selected</comment>
+  </data>
+  <data name="SequentialDownloadUsefulForPreviewing" xml:space="preserve">
+    <value>Sequenzieller Download, nützlich für die Vorschau von Medien während des Downloads</value>
+    <comment>Mac key: Sequential download, useful for previewing media while it downloads</comment>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Server</value>
+    <comment>Mac key: Server</comment>
+  </data>
+  <data name="ServerDefault" xml:space="preserve">
+    <value>Server-Standard</value>
+    <comment>Mac key: Server default</comment>
+  </data>
+  <data name="ServerSettingsEllipsis" xml:space="preserve">
+    <value>Servereinstellungen …</value>
+    <comment>Mac key: Server Settings…</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+    <comment>Mac key: Settings</comment>
+  </data>
+  <data name="SettingsEllipsis" xml:space="preserve">
+    <value>Einstellungen …</value>
+    <comment>Mac key: Settings…</comment>
+  </data>
+  <data name="SettingsForThisAppAndTheConnected" xml:space="preserve">
+    <value>Einstellungen für diese App und den verbundenen Transmission-Server</value>
+    <comment>Mac key: Settings for this app and the connected Transmission server</comment>
+  </data>
+  <data name="ShowCountries" xml:space="preserve">
+    <value>Länder anzeigen</value>
+    <comment>Mac key: Show Countries</comment>
+  </data>
+  <data name="ShowInFinder" xml:space="preserve">
+    <value>Im Finder anzeigen</value>
+    <comment>Mac key: Show in Finder</comment>
+  </data>
+  <data name="ShowInMenuBar" xml:space="preserve">
+    <value>In der Menüleiste anzeigen</value>
+    <comment>Mac key: Show in menu bar</comment>
+  </data>
+  <data name="ShowInfoPane" xml:space="preserve">
+    <value>Infobereich anzeigen</value>
+    <comment>Mac key: Show Info Pane</comment>
+  </data>
+  <data name="ShowLogFiles" xml:space="preserve">
+    <value>Protokolldateien anzeigen</value>
+    <comment>Mac key: Show Log Files</comment>
+  </data>
+  <data name="ShowTransferSpeedsInTheMenuBar" xml:space="preserve">
+    <value>Übertragungsgeschwindigkeiten in der Menüleiste anzeigen</value>
+    <comment>Mac key: Show transfer speeds in the menu bar</comment>
+  </data>
+  <data name="ShowTransmissionRemote" xml:space="preserve">
+    <value>Transmission Remote anzeigen</value>
+    <comment>Mac key: Show Transmission Remote</comment>
+  </data>
+  <data name="ShowWherePeersAreFromWithDBIPsFree" xml:space="preserve">
+    <value>Mit der kostenlosen Länderdatenbank von DB-IP (ca. 5 MB) anzeigen, woher Peers kommen.</value>
+    <comment>Mac key: Show where peers are from with DB-IP's free country database, about 5 MB.</comment>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Größe</value>
+    <comment>Mac key: Size</comment>
+  </data>
+  <data name="SizeLeft" xml:space="preserve">
+    <value>Verbleibende Größe</value>
+    <comment>Mac key: Size Left</comment>
+  </data>
+  <data name="SkipThisVersion" xml:space="preserve">
+    <value>Diese Version überspringen</value>
+    <comment>Mac key: Skip This Version</comment>
+  </data>
+  <data name="SkippedAlreadySetUpHere" xml:space="preserve">
+    <value>{0} übersprungen, bereits hier eingerichtet.</value>
+    <comment>Mac key: Skipped %@, already set up here.</comment>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Geschwindigkeit</value>
+    <comment>Mac key: Speed</comment>
+  </data>
+  <data name="SpeedLimitMenuItems" xml:space="preserve">
+    <value>Menüpunkte für Geschwindigkeitslimits</value>
+    <comment>Mac key: Speed limit menu items</comment>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Starten</value>
+    <comment>Mac key: Start</comment>
+  </data>
+  <data name="StartAll" xml:space="preserve">
+    <value>Alle starten</value>
+    <comment>Mac key: Start All</comment>
+  </data>
+  <data name="StartNow" xml:space="preserve">
+    <value>Sofort starten</value>
+    <comment>Mac key: Start Now</comment>
+  </data>
+  <data name="StartTheSelectedTorrents" xml:space="preserve">
+    <value>Ausgewählte Torrents starten</value>
+    <comment>Mac key: Start the selected torrents</comment>
+  </data>
+  <data name="StartTorrentsWhenAdded" xml:space="preserve">
+    <value>Torrents beim Hinzufügen starten</value>
+    <comment>Mac key: Start torrents when added</comment>
+  </data>
+  <data name="StartWhenAdded" xml:space="preserve">
+    <value>Nach dem Hinzufügen starten</value>
+    <comment>Mac key: Start when added</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+    <comment>Mac key: Status</comment>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Anhalten</value>
+    <comment>Mac key: Stop</comment>
+  </data>
+  <data name="StopAll" xml:space="preserve">
+    <value>Alle anhalten</value>
+    <comment>Mac key: Stop All</comment>
+  </data>
+  <data name="StopAtRatio" xml:space="preserve">
+    <value>Bei Ratio anhalten</value>
+    <comment>Mac key: Stop at ratio</comment>
+  </data>
+  <data name="StopSeedingWhenInactiveFor" xml:space="preserve">
+    <value>Seeden anhalten, wenn inaktiv für</value>
+    <comment>Mac key: Stop seeding when inactive for</comment>
+  </data>
+  <data name="StopTheSelectedTorrents" xml:space="preserve">
+    <value>Ausgewählte Torrents anhalten</value>
+    <comment>Mac key: Stop the selected torrents</comment>
+  </data>
+  <data name="StopTrying" xml:space="preserve">
+    <value>Nicht mehr versuchen</value>
+    <comment>Mac key: Stop Trying</comment>
+  </data>
+  <data name="StopWhenIdle" xml:space="preserve">
+    <value>Bei Inaktivität anhalten</value>
+    <comment>Mac key: Stop when idle</comment>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Angehalten</value>
+    <comment>Mac key: Stopped</comment>
+  </data>
+  <data name="SwitchServer" xml:space="preserve">
+    <value>Server wechseln</value>
+    <comment>Mac key: Switch server</comment>
+  </data>
+  <data name="TestConnection" xml:space="preserve">
+    <value>Verbindung testen</value>
+    <comment>Mac key: Test Connection</comment>
+  </data>
+  <data name="TestPort" xml:space="preserve">
+    <value>Port testen</value>
+    <comment>Mac key: Test Port</comment>
+  </data>
+  <data name="Text192168110OrNasTailnetTsNet" xml:space="preserve">
+    <value>192.168.1.10 oder nas.tailnet.ts.net</value>
+    <comment>Mac key: 192.168.1.10 or nas.tailnet.ts.net</comment>
+  </data>
+  <data name="Text_DAEA45" xml:space="preserve">
+    <value>{0}</value>
+    <comment>Mac key: %lld</comment>
+  </data>
+  <data name="TheAddressCouldNotBeTurnedIntoAURL" xml:space="preserve">
+    <value>die Adresse konnte nicht in eine URL umgewandelt werden.</value>
+    <comment>Mac key: the address couldn't be turned into a URL.</comment>
+  </data>
+  <data name="TheCertificateFilesPasswordIsWrong" xml:space="preserve">
+    <value>Das Passwort der Zertifikatsdatei ist falsch.</value>
+    <comment>Mac key: The certificate file's password is wrong.</comment>
+  </data>
+  <data name="TheDownloadedFilesWillBeDeletedFromThe" xml:space="preserve">
+    <value>Die heruntergeladenen Dateien werden vom Server gelöscht. Dieser Vorgang kann nicht widerrufen werden.</value>
+    <comment>Mac key: The downloaded files will be deleted from the server. This can't be undone.</comment>
+  </data>
+  <data name="TheFileHasNoPrivateKeyExportThe" xml:space="preserve">
+    <value>Die Datei enthält keinen privaten Schlüssel. Exportiere das Zertifikat zusammen mit seinem Schlüssel.</value>
+    <comment>Mac key: The file has no private key. Export the certificate together with its key.</comment>
+  </data>
+  <data name="TheHostContainsCharactersThatAreNot" xml:space="preserve">
+    <value>der Host enthält unzulässige Zeichen.</value>
+    <comment>Mac key: the host contains characters that aren't allowed.</comment>
+  </data>
+  <data name="TheHostIsEmpty" xml:space="preserve">
+    <value>der Host ist leer.</value>
+    <comment>Mac key: the host is empty.</comment>
+  </data>
+  <data name="TheNameOfTheTorrentsFolderOrOfTheFileFor" xml:space="preserve">
+    <value>Der Name des Torrent-Ordners oder, bei einem Torrent mit nur einer Datei, der Name der Datei</value>
+    <comment>Mac key: The name of the torrent's folder, or of the file for a single-file torrent</comment>
+  </data>
+  <data name="ThePortMustBeBetween1And65535" xml:space="preserve">
+    <value>der Port muss zwischen 1 und 65535 liegen.</value>
+    <comment>Mac key: the port must be between 1 and 65535.</comment>
+  </data>
+  <data name="TheProxyPortMustBeBetween1And65535" xml:space="preserve">
+    <value>Der Proxy-Port muss zwischen 1 und 65535 liegen.</value>
+    <comment>Mac key: The proxy port must be between 1 and 65535.</comment>
+  </data>
+  <data name="TheRPCPathMustStartWith" xml:space="preserve">
+    <value>der RPC-Pfad muss mit „/“ beginnen.</value>
+    <comment>Mac key: the RPC path must start with “/”.</comment>
+  </data>
+  <data name="TheServerAddressIsInvalid" xml:space="preserve">
+    <value>Die Serveradresse ist ungültig: {0}</value>
+    <comment>Mac key: The server address is invalid: %@</comment>
+  </data>
+  <data name="TheServerAnsweredWithAWebPageInsteadOf" xml:space="preserve">
+    <value>Der Server hat statt Transmission mit einer Webseite geantwortet. Prüfe den Port und den RPC-Pfad, meist /transmission/rpc.</value>
+    <comment>Mac key: The server answered with a web page instead of Transmission. Check the port and the RPC path, usually /transmission/rpc.</comment>
+  </data>
+  <data name="TheServerDidNotAcceptASecureHTTPS" xml:space="preserve">
+    <value>Der Server hat keine sichere (HTTPS-)Verbindung akzeptiert. Der integrierte Server von Transmission spricht nur einfaches HTTP. Deaktiviere daher HTTPS für diesen Server, außer ein Reverse-Proxy vor dem Daemon stellt es bereit. Über Tailscale ist einfaches HTTP bereits durch den Tunnel verschlüsselt.</value>
+    <comment>Mac key: The server didn't accept a secure (HTTPS) connection. Transmission's built-in server only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel.</comment>
+  </data>
+  <data name="TheServerDoesNotAcceptThisHostname" xml:space="preserve">
+    <value>Der Server akzeptiert diesen Hostnamen nicht. Verbinde dich über die IP-Adresse oder füge den Hostnamen zu „rpc-host-whitelist“ in der settings.json des Daemons hinzu.</value>
+    <comment>Mac key: The server doesn't accept this hostname. Connect by IP address, or add the hostname to “rpc-host-whitelist” in the daemon's settings.json.</comment>
+  </data>
+  <data name="TheServerLooksForTheFilesInTheNewFolder" xml:space="preserve">
+    <value>Der Server sucht die Dateien im neuen Ordner, statt sie zu verschieben.</value>
+    <comment>Mac key: The server looks for the files in the new folder instead of moving them.</comment>
+  </data>
+  <data name="TheServerMovesExistingFiles" xml:space="preserve">
+    <value>Der Server verschiebt vorhandene Dateien.</value>
+    <comment>Mac key: The server moves existing files.</comment>
+  </data>
+  <data name="TheServerRefusedThisComputersIPAddress" xml:space="preserve">
+    <value>Der Server hat die IP-Adresse dieses Computers abgelehnt. Füge sie zu „rpc-whitelist“ in der settings.json des Daemons hinzu oder deaktiviere die Whitelist.</value>
+    <comment>Mac key: The server refused this computer's IP address. Add it to “rpc-whitelist” in the daemon's settings.json, or disable the whitelist.</comment>
+  </data>
+  <data name="TheServerRejectedTheUsernameOrPassword" xml:space="preserve">
+    <value>Der Server hat den Benutzernamen oder das Passwort abgelehnt.</value>
+    <comment>Mac key: The server rejected the username or password.</comment>
+  </data>
+  <data name="TheServerRespondedWithHTTPCheckTheRPC" xml:space="preserve">
+    <value>Der Server hat mit HTTP {0} geantwortet. Prüfe RPC-Pfad und Port.</value>
+    <comment>Mac key: The server responded with HTTP %lld. Check the RPC path and port.</comment>
+  </data>
+  <data name="TheServerSentAResponseThatCouldNotBeRead" xml:space="preserve">
+    <value>Der Server hat eine Antwort gesendet, die nicht gelesen werden konnte ({0}).</value>
+    <comment>Mac key: The server sent a response that couldn't be read (%@).</comment>
+  </data>
+  <data name="TheServerTriedToRedirectTheConnectionToA" xml:space="preserve">
+    <value>Der Server hat versucht, die Verbindung zu einer anderen Adresse umzuleiten. Die Anfrage wurde blockiert, um deine Anmeldedaten zu schützen.</value>
+    <comment>Mac key: The server tried to redirect the connection to a different address. The request was blocked to protect your credentials.</comment>
+  </data>
+  <data name="TheServersTLSCertificateIsNotTrusted" xml:space="preserve">
+    <value>Dem TLS-Zertifikat des Servers wird nicht vertraut.</value>
+    <comment>Mac key: The server's TLS certificate isn't trusted.</comment>
+  </data>
+  <data name="ThisIsNotACertificateFileInPKCS12P12" xml:space="preserve">
+    <value>Dies ist keine Zertifikatsdatei im Format PKCS #12 (.p12).</value>
+    <comment>Mac key: This isn't a certificate file in PKCS #12 (.p12) format.</comment>
+  </data>
+  <data name="ThisServerUsesPlainHTTPOverTheInternetSo" xml:space="preserve">
+    <value>Dieser Server verwendet einfaches HTTP über das Internet, dein Passwort würde also unverschlüsselt gesendet. Verwende HTTPS, ein VPN wie Tailscale oder erlaube die unverschlüsselte Verbindung für diesen Server.</value>
+    <comment>Mac key: This server uses plain HTTP over the internet, so your password would be sent unencrypted. Use HTTPS, a VPN such as Tailscale, or allow the unencrypted connection for this server.</comment>
+  </data>
+  <data name="ThisServersClientCertificateIsMissing" xml:space="preserve">
+    <value>Das Client-Zertifikat dieses Servers fehlt im Schlüsselbund. Wähle es unter Einstellungen → Transmission erneut aus.</value>
+    <comment>Mac key: This server's client certificate is missing from the Keychain. Choose it again in Settings → Transmission.</comment>
+  </data>
+  <data name="ThisTorrentIsAlreadyOnTheServer" xml:space="preserve">
+    <value>Dieser Torrent ist bereits auf dem Server.</value>
+    <comment>Mac key: This torrent is already on the server.</comment>
+  </data>
+  <data name="ThisTorrentIsNoLongerOnTheServer" xml:space="preserve">
+    <value>Dieser Torrent ist nicht mehr auf dem Server.</value>
+    <comment>Mac key: This torrent is no longer on the server.</comment>
+  </data>
+  <data name="Tier" xml:space="preserve">
+    <value>Stufe</value>
+    <comment>Mac key: Tier</comment>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Zeit</value>
+    <comment>Mac key: Time</comment>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Bis</value>
+    <comment>Mac key: To</comment>
+  </data>
+  <data name="ToOpenDownloadedFilesChooseEachLocal" xml:space="preserve">
+    <value>Um heruntergeladene Dateien zu öffnen, wähle jeden lokalen Ordner einmal unter Einstellungen → Pfade aus, damit macOS der App den Zugriff erlaubt.</value>
+    <comment>Mac key: To open downloaded files, choose each local folder once in Settings → Paths, so macOS lets the app open it.</comment>
+  </data>
+  <data name="Torrent" xml:space="preserve">
+    <value>Torrent</value>
+    <comment>Mac key: Torrent</comment>
+  </data>
+  <data name="TorrentOptionsEllipsis" xml:space="preserve">
+    <value>Torrent-Optionen …</value>
+    <comment>Mac key: Torrent Options…</comment>
+  </data>
+  <data name="Torrents" xml:space="preserve">
+    <value>Torrents</value>
+    <comment>Mac key: torrents</comment>
+  </data>
+  <data name="TorrentsInAGroupShareItsLimitsChooseA" xml:space="preserve">
+    <value>Torrents in einer Gruppe teilen sich deren Limits. Die Gruppe eines Torrents wählst du in den Torrent-Optionen. Transmission erlaubt Remote-Apps nicht, Gruppen zu löschen.</value>
+    <comment>Mac key: Torrents in a group share its limits. Choose a torrent's group in Torrent Options. Transmission doesn't let remote apps delete groups.</comment>
+  </data>
+  <data name="TorrentsSavedInThisFolder" xml:space="preserve">
+    <value>In diesem Ordner gespeicherte Torrents: {0}</value>
+    <comment>Mac key: Torrents saved in this folder: %lld</comment>
+  </data>
+  <data name="TorrentsSelected_One" xml:space="preserve">
+    <value>{0} Torrent ausgewählt</value>
+    <comment>Mac key: %lld Torrents Selected</comment>
+  </data>
+  <data name="TorrentsSelected_Other" xml:space="preserve">
+    <value>{0} Torrents ausgewählt</value>
+    <comment>Mac key: %lld Torrents Selected</comment>
+  </data>
+  <data name="Torrents_One" xml:space="preserve">
+    <value>{0} Torrent</value>
+    <comment>Mac key: %lld torrents</comment>
+  </data>
+  <data name="Torrents_Other" xml:space="preserve">
+    <value>{0} Torrents</value>
+    <comment>Mac key: %lld torrents</comment>
+  </data>
+  <data name="TotalSize_51CDF6" xml:space="preserve">
+    <value>Gesamtgröße</value>
+    <comment>Mac key: Total size</comment>
+  </data>
+  <data name="TotalSize_9AC7DE" xml:space="preserve">
+    <value>Gesamtgröße</value>
+    <comment>Mac key: Total Size</comment>
+  </data>
+  <data name="Tracker" xml:space="preserve">
+    <value>Tracker</value>
+    <comment>Mac key: Tracker</comment>
+  </data>
+  <data name="TrackerError" xml:space="preserve">
+    <value>Tracker-Fehler</value>
+    <comment>Mac key: Tracker error</comment>
+  </data>
+  <data name="TrackerStatus" xml:space="preserve">
+    <value>Tracker-Status</value>
+    <comment>Mac key: Tracker Status</comment>
+  </data>
+  <data name="Trackers" xml:space="preserve">
+    <value>Tracker</value>
+    <comment>Mac key: Trackers</comment>
+  </data>
+  <data name="Transmission" xml:space="preserve">
+    <value>Transmission</value>
+    <comment>Mac key: Transmission</comment>
+  </data>
+  <data name="TransmissionIsTooOldVersion240OrNewerIs" xml:space="preserve">
+    <value>Transmission {0} ist zu alt. Version 2.40 oder neuer ist erforderlich.</value>
+    <comment>Mac key: Transmission %@ is too old. Version 2.40 or newer is required.</comment>
+  </data>
+  <data name="TransmissionOptions" xml:space="preserve">
+    <value>Transmission-Optionen</value>
+    <comment>Mac key: Transmission Options</comment>
+  </data>
+  <data name="TransmissionRemote" xml:space="preserve">
+    <value>Transmission Remote</value>
+    <comment>Mac key: Transmission Remote</comment>
+  </data>
+  <data name="TransmissionRemoteIsAvailable" xml:space="preserve">
+    <value>Transmission Remote {0} ist verfügbar</value>
+    <comment>Mac key: Transmission Remote %@ Is Available</comment>
+  </data>
+  <data name="TransmissionRemoteIsTheNewestVersion" xml:space="preserve">
+    <value>Transmission Remote {0} ist die neueste Version.</value>
+    <comment>Mac key: Transmission Remote %@ is the newest version.</comment>
+  </data>
+  <data name="TransmissionRemoteRanIntoAProblemAndHas" xml:space="preserve">
+    <value>Bei Transmission Remote ist ein Problem aufgetreten, und die App muss geschlossen werden. Den Ordner mit den Protokolldateien öffnen, um zu sehen, was schiefgelaufen ist?</value>
+    <comment>Mac key: Transmission Remote ran into a problem and has to close. Open the logs folder to see what went wrong?
+Mac comment: Windows only. Message box after an error nothing else caught; the app exits after it. Yes opens the logs folder.</comment>
+  </data>
+  <data name="TransmissionRemoteRanIntoAProblemInThe" xml:space="preserve">
+    <value>Bei Transmission Remote ist im Hintergrund ein Problem aufgetreten. Den Ordner mit den Protokolldateien öffnen, um zu sehen, was schiefgelaufen ist?</value>
+    <comment>Mac key: Transmission Remote ran into a problem in the background. Open the logs folder to see what went wrong?
+Mac comment: Windows only. Message box after an error in background work nothing else caught; the app keeps running. Yes opens the logs folder.</comment>
+  </data>
+  <data name="TrustThisCertificate" xml:space="preserve">
+    <value>Diesem Zertifikat vertrauen</value>
+    <comment>Mac key: Trust This Certificate</comment>
+  </data>
+  <data name="TrustedCertificate" xml:space="preserve">
+    <value>Vertrauenswürdiges Zertifikat</value>
+    <comment>Mac key: Trusted certificate</comment>
+  </data>
+  <data name="TryAgain" xml:space="preserve">
+    <value>Erneut versuchen</value>
+    <comment>Mac key: Try Again</comment>
+  </data>
+  <data name="TryNow" xml:space="preserve">
+    <value>Jetzt versuchen</value>
+    <comment>Mac key: Try Now</comment>
+  </data>
+  <data name="TryingAgainEllipsis" xml:space="preserve">
+    <value>Neuer Versuch …</value>
+    <comment>Mac key: Trying again…</comment>
+  </data>
+  <data name="TryingAgainIn" xml:space="preserve">
+    <value>Neuer Versuch in {0}</value>
+    <comment>Mac key: Trying again in %@</comment>
+  </data>
+  <data name="TurnOnAlternativeSpeedLimits" xml:space="preserve">
+    <value>Alternative Geschwindigkeitslimits aktivieren</value>
+    <comment>Mac key: Turn on alternative speed limits</comment>
+  </data>
+  <data name="UTP" xml:space="preserve">
+    <value>µTP</value>
+    <comment>Mac key: µTP</comment>
+  </data>
+  <data name="UnencryptedConnectionBlocked" xml:space="preserve">
+    <value>Unverschlüsselte Verbindung blockiert</value>
+    <comment>Mac key: Unencrypted Connection Blocked</comment>
+  </data>
+  <data name="Unlimited" xml:space="preserve">
+    <value>Unbegrenzt</value>
+    <comment>Mac key: Unlimited</comment>
+  </data>
+  <data name="UntrustedCertificate" xml:space="preserve">
+    <value>Nicht vertrauenswürdiges Zertifikat</value>
+    <comment>Mac key: Untrusted Certificate</comment>
+  </data>
+  <data name="UntrustedCertificateConnectFromTheMain" xml:space="preserve">
+    <value>Nicht vertrauenswürdiges Zertifikat. Stelle die Verbindung im Hauptfenster her, um es zu prüfen und ihm zu vertrauen ({0}…).</value>
+    <comment>Mac key: Untrusted certificate. Connect from the main window to review and trust it (%@…).</comment>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Upload</value>
+    <comment>Mac key: Up</comment>
+  </data>
+  <data name="UpKBS" xml:space="preserve">
+    <value>↑ {0} kB/s</value>
+    <comment>Mac key: ↑ %@ kB/s</comment>
+  </data>
+  <data name="UpUnlimited" xml:space="preserve">
+    <value>↑ unbegrenzt</value>
+    <comment>Mac key: ↑ unlimited</comment>
+  </data>
+  <data name="UpdateNow" xml:space="preserve">
+    <value>Jetzt aktualisieren</value>
+    <comment>Mac key: Update Now</comment>
+  </data>
+  <data name="Updated" xml:space="preserve">
+    <value>Aktualisiert {0}</value>
+    <comment>Mac key: Updated %@</comment>
+  </data>
+  <data name="UpdatedRules_One" xml:space="preserve">
+    <value>Aktualisiert: {0} Regel</value>
+    <comment>Mac key: Updated: %lld rules</comment>
+  </data>
+  <data name="UpdatedRules_Other" xml:space="preserve">
+    <value>Aktualisiert: {0} Regeln</value>
+    <comment>Mac key: Updated: %lld rules</comment>
+  </data>
+  <data name="Updates" xml:space="preserve">
+    <value>Updates</value>
+    <comment>Mac key: Updates</comment>
+  </data>
+  <data name="UpdatingEllipsis" xml:space="preserve">
+    <value>Wird aktualisiert …</value>
+    <comment>Mac key: Updating…</comment>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+    <comment>Mac key: Upload</comment>
+  </data>
+  <data name="UploadQueueSize" xml:space="preserve">
+    <value>Größe der Upload-Warteschlange</value>
+    <comment>Mac key: Upload queue size</comment>
+  </data>
+  <data name="UploadSpeedLimit" xml:space="preserve">
+    <value>Upload-Geschwindigkeitslimit</value>
+    <comment>Mac key: Upload Speed Limit</comment>
+  </data>
+  <data name="UploadSpeedsKBS" xml:space="preserve">
+    <value>Upload-Geschwindigkeiten (kB/s)</value>
+    <comment>Mac key: Upload speeds (kB/s)</comment>
+  </data>
+  <data name="Uploaded" xml:space="preserve">
+    <value>Hochgeladen</value>
+    <comment>Mac key: Uploaded</comment>
+  </data>
+  <data name="UploadingToPeer" xml:space="preserve">
+    <value>Lädt zum Peer hoch</value>
+    <comment>Mac key: Uploading to peer</comment>
+  </data>
+  <data name="UseAlternateBandwidthSettings" xml:space="preserve">
+    <value>Alternative Bandbreiteneinstellungen verwenden</value>
+    <comment>Mac key: Use alternate bandwidth settings</comment>
+  </data>
+  <data name="UseCertificate" xml:space="preserve">
+    <value>Zertifikat verwenden</value>
+    <comment>Mac key: Use Certificate</comment>
+  </data>
+  <data name="UseHTTPS" xml:space="preserve">
+    <value>HTTPS verwenden</value>
+    <comment>Mac key: Use HTTPS</comment>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Benutzername</value>
+    <comment>Mac key: Username</comment>
+  </data>
+  <data name="VerifyLocalData" xml:space="preserve">
+    <value>Lokale Daten überprüfen</value>
+    <comment>Mac key: Verify Local Data</comment>
+  </data>
+  <data name="Verifying_9A7FA7" xml:space="preserve">
+    <value>Überprüfung {0}</value>
+    <comment>Mac key: Verifying %@</comment>
+  </data>
+  <data name="Verifying_A7D4A9" xml:space="preserve">
+    <value>Wird überprüft</value>
+    <comment>Mac key: Verifying</comment>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version {0}</value>
+    <comment>Mac key: Version %@</comment>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Wartet</value>
+    <comment>Mac key: Waiting</comment>
+  </data>
+  <data name="WaitingForMetadata" xml:space="preserve">
+    <value>Warten auf Metadaten</value>
+    <comment>Mac key: Waiting for Metadata</comment>
+  </data>
+  <data name="WeUnchokedThisPeerButTheyAreNot" xml:space="preserve">
+    <value>Wir haben diesen Peer freigegeben (unchoked), aber er ist nicht interessiert</value>
+    <comment>Mac key: We unchoked this peer, but they're not interested</comment>
+  </data>
+  <data name="WeWouldDownloadFromThisPeerIfTheyWould" xml:space="preserve">
+    <value>Wir würden von diesem Peer herunterladen, wenn er uns ließe</value>
+    <comment>Mac key: We would download from this peer if they'd let us</comment>
+  </data>
+  <data name="WeWouldUploadToThisPeerIfTheyWouldAsk" xml:space="preserve">
+    <value>Wir würden zu diesem Peer hochladen, wenn er danach fragen würde</value>
+    <comment>Mac key: We would upload to this peer if they'd ask</comment>
+  </data>
+  <data name="Working" xml:space="preserve">
+    <value>Funktioniert</value>
+    <comment>Mac key: Working</comment>
+  </data>
+  <data name="YesDHTAndPEXDisabled" xml:space="preserve">
+    <value>Ja (DHT und PEX deaktiviert)</value>
+    <comment>Mac key: Yes (DHT and PEX disabled)</comment>
+  </data>
+  <data name="YouAreUpToDate" xml:space="preserve">
+    <value>Du bist auf dem neuesten Stand</value>
+    <comment>Mac key: You're Up to Date</comment>
+  </data>
+  <data name="YouHaveVersionDownloadTheNewDiskImage" xml:space="preserve">
+    <value>Du hast Version {0}. Lade das neue Festplattenimage von GitHub herunter und ziehe die App in den Ordner „Programme“, um diese Version zu ersetzen.</value>
+    <comment>Mac key: You have version %@. Download the new disk image from GitHub and drag the app into Applications to replace this one.</comment>
+  </data>
+</root>

@@ -1,0 +1,70 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Transmission Remote ran into a problem and has to close. Open the logs folder to see what went wrong?" : {
+      "comment" : "Windows only. Message box after an error nothing else caught; the app exits after it. Yes opens the logs folder.",
+      "localizations" : {
+        "be" : { "stringUnit" : { "state" : "translated", "value" : "У Transmission Remote узнікла праблема, і праграма будзе закрыта. Адкрыць папку з файламі журнала, каб даведацца, што здарылася?" } },
+        "ca" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote ha trobat un problema i s’ha de tancar. Voleu obrir la carpeta dels fitxers de registre per veure què ha passat?" } },
+        "cs" : { "stringUnit" : { "state" : "translated", "value" : "V aplikaci Transmission Remote došlo k potížím a musí se ukončit. Otevřít složku se soubory protokolu a zjistit, co se stalo?" } },
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote stødte på et problem og skal lukkes. Vil du åbne mappen med logfiler for at se, hvad der gik galt?" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Bei Transmission Remote ist ein Problem aufgetreten, und die App muss geschlossen werden. Den Ordner mit den Protokolldateien öffnen, um zu sehen, was schiefgelaufen ist?" } },
+        "el" : { "stringUnit" : { "state" : "translated", "value" : "Το Transmission Remote αντιμετώπισε πρόβλημα και πρέπει να κλείσει. Άνοιγμα του φακέλου με τα αρχεία καταγραφής για να δείτε τι πήγε στραβά;" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote ha tenido un problema y debe cerrarse. ¿Quieres abrir la carpeta de archivos de registro para ver qué ha fallado?" } },
+        "fi" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote kohtasi ongelman, ja se on suljettava. Avataanko lokitiedostojen kansio, jotta näet, mikä meni vikaan?" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote a rencontré un problème et doit se fermer. Ouvrir le dossier des fichiers journaux pour voir ce qui s’est passé ?" } },
+        "hr" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote naišao je na problem i mora se zatvoriti. Otvoriti mapu s datotekama zapisnika da biste vidjeli što je pošlo po zlu?" } },
+        "hu" : { "stringUnit" : { "state" : "translated", "value" : "A Transmission Remote hibába ütközött, és bezárul. Megnyitja a naplófájlok mappáját, hogy megnézze, mi történt?" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote ha riscontrato un problema e deve essere chiuso. Aprire la cartella dei file di log per vedere cosa è andato storto?" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote에 문제가 발생하여 종료해야 합니다. 로그 파일 폴더를 열어 무엇이 잘못되었는지 확인하시겠습니까?" } },
+        "lt" : { "stringUnit" : { "state" : "translated", "value" : "Programoje Transmission Remote įvyko klaida ir ją reikia uždaryti. Atidaryti žurnalo failų aplanką ir pažiūrėti, kas nutiko?" } },
+        "lv" : { "stringUnit" : { "state" : "translated", "value" : "Lietotnē Transmission Remote radās problēma, un tā ir jāaizver. Vai atvērt žurnāla failu mapi, lai redzētu, kas notika?" } },
+        "nb" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote støtte på et problem og må lukkes. Vil du åpne mappen med loggfiler for å se hva som gikk galt?" } },
+        "nl" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote heeft een probleem gehad en moet worden afgesloten. De map met logbestanden openen om te zien wat er misging?" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "W aplikacji Transmission Remote wystąpił problem i musi ona zostać zamknięta. Otworzyć folder z plikami dziennika, aby sprawdzić, co poszło nie tak?" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O Transmission Remote encontrou um problema e precisa ser fechado. Abrir a pasta de arquivos de registro para ver o que deu errado?" } },
+        "pt-PT" : { "stringUnit" : { "state" : "translated", "value" : "O Transmission Remote encontrou um problema e tem de ser fechado. Abrir a pasta dos ficheiros de registo para ver o que correu mal?" } },
+        "ro" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote a întâmpinat o problemă și trebuie închis. Doriți să deschideți folderul cu fișierele jurnal pentru a vedea ce s-a întâmplat?" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "В Transmission Remote возникла проблема, и приложение будет закрыто. Открыть папку с файлами журнала, чтобы узнать, что произошло?" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote stötte på ett problem och måste stängas. Vill du öppna mappen med loggfiler för att se vad som gick fel?" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote bir sorunla karşılaştı ve kapatılması gerekiyor. Neyin yanlış gittiğini görmek için günlük dosyalarının klasörü açılsın mı?" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "У Transmission Remote виникла проблема, і програму буде закрито. Відкрити папку з файлами журналу, щоб дізнатися, що сталося?" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote 遇到问题，需要关闭。要打开日志文件所在的文件夹，查看出了什么问题吗？" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote 發生問題，必須關閉。要開啟記錄檔所在的資料夾，查看發生了什麼問題嗎？" } }
+      }
+    },
+    "Transmission Remote ran into a problem in the background. Open the logs folder to see what went wrong?" : {
+      "comment" : "Windows only. Message box after an error in background work nothing else caught; the app keeps running. Yes opens the logs folder.",
+      "localizations" : {
+        "be" : { "stringUnit" : { "state" : "translated", "value" : "У Transmission Remote узнікла праблема ў фонавым рэжыме. Адкрыць папку з файламі журнала, каб даведацца, што здарылася?" } },
+        "ca" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote ha trobat un problema en segon pla. Voleu obrir la carpeta dels fitxers de registre per veure què ha passat?" } },
+        "cs" : { "stringUnit" : { "state" : "translated", "value" : "V aplikaci Transmission Remote došlo na pozadí k potížím. Otevřít složku se soubory protokolu a zjistit, co se stalo?" } },
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote stødte på et problem i baggrunden. Vil du åbne mappen med logfiler for at se, hvad der gik galt?" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Bei Transmission Remote ist im Hintergrund ein Problem aufgetreten. Den Ordner mit den Protokolldateien öffnen, um zu sehen, was schiefgelaufen ist?" } },
+        "el" : { "stringUnit" : { "state" : "translated", "value" : "Το Transmission Remote αντιμετώπισε πρόβλημα στο παρασκήνιο. Άνοιγμα του φακέλου με τα αρχεία καταγραφής για να δείτε τι πήγε στραβά;" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote ha tenido un problema en segundo plano. ¿Quieres abrir la carpeta de archivos de registro para ver qué ha fallado?" } },
+        "fi" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote kohtasi ongelman taustalla. Avataanko lokitiedostojen kansio, jotta näet, mikä meni vikaan?" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote a rencontré un problème en arrière-plan. Ouvrir le dossier des fichiers journaux pour voir ce qui s’est passé ?" } },
+        "hr" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote naišao je na problem u pozadini. Otvoriti mapu s datotekama zapisnika da biste vidjeli što je pošlo po zlu?" } },
+        "hu" : { "stringUnit" : { "state" : "translated", "value" : "A Transmission Remote hibába ütközött a háttérben. Megnyitja a naplófájlok mappáját, hogy megnézze, mi történt?" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote ha riscontrato un problema in background. Aprire la cartella dei file di log per vedere cosa è andato storto?" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote의 백그라운드 작업에서 문제가 발생했습니다. 로그 파일 폴더를 열어 무엇이 잘못되었는지 확인하시겠습니까?" } },
+        "lt" : { "stringUnit" : { "state" : "translated", "value" : "Programoje Transmission Remote fone įvyko klaida. Atidaryti žurnalo failų aplanką ir pažiūrėti, kas nutiko?" } },
+        "lv" : { "stringUnit" : { "state" : "translated", "value" : "Lietotnē Transmission Remote fonā radās problēma. Vai atvērt žurnāla failu mapi, lai redzētu, kas notika?" } },
+        "nb" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote støtte på et problem i bakgrunnen. Vil du åpne mappen med loggfiler for å se hva som gikk galt?" } },
+        "nl" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote heeft op de achtergrond een probleem gehad. De map met logbestanden openen om te zien wat er misging?" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "W aplikacji Transmission Remote wystąpił problem w tle. Otworzyć folder z plikami dziennika, aby sprawdzić, co poszło nie tak?" } },
+        "pt-BR" : { "stringUnit" : { "state" : "translated", "value" : "O Transmission Remote encontrou um problema em segundo plano. Abrir a pasta de arquivos de registro para ver o que deu errado?" } },
+        "pt-PT" : { "stringUnit" : { "state" : "translated", "value" : "O Transmission Remote encontrou um problema em segundo plano. Abrir a pasta dos ficheiros de registo para ver o que correu mal?" } },
+        "ro" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote a întâmpinat o problemă în fundal. Doriți să deschideți folderul cu fișierele jurnal pentru a vedea ce s-a întâmplat?" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "В Transmission Remote возникла проблема в фоновом режиме. Открыть папку с файлами журнала, чтобы узнать, что произошло?" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote stötte på ett problem i bakgrunden. Vill du öppna mappen med loggfiler för att se vad som gick fel?" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote arka planda bir sorunla karşılaştı. Neyin yanlış gittiğini görmek için günlük dosyalarının klasörü açılsın mı?" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "У Transmission Remote виникла проблема у фоновому режимі. Відкрити папку з файлами журналу, щоб дізнатися, що сталося?" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote 在后台遇到问题。要打开日志文件所在的文件夹，查看出了什么问题吗？" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "Transmission Remote 在背景發生問題。要開啟記錄檔所在的資料夾，查看發生了什麼問題嗎？" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}

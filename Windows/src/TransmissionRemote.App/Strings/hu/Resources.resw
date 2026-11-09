@@ -1,0 +1,2001 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AGroupWithThisNameAlreadyExists" xml:space="preserve">
+    <value>Már létezik ilyen nevű csoport.</value>
+    <comment>Mac key: A group with this name already exists.</comment>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Névjegy</value>
+    <comment>Mac key: About</comment>
+  </data>
+  <data name="ActionFailed" xml:space="preserve">
+    <value>A művelet nem sikerült</value>
+    <comment>Mac key: Action Failed</comment>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Aktív</value>
+    <comment>Mac key: Active</comment>
+  </data>
+  <data name="ActiveFor" xml:space="preserve">
+    <value>Aktív idő</value>
+    <comment>Mac key: Active for</comment>
+  </data>
+  <data name="ActiveOf" xml:space="preserve">
+    <value>Aktív: {0} / {1}</value>
+    <comment>Mac key: Active: %lld of %lld</comment>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Hozzáadás</value>
+    <comment>Mac key: Add</comment>
+  </data>
+  <data name="AddAMagnetLinkOrTorrentURL" xml:space="preserve">
+    <value>Mágneslink vagy torrent-URL hozzáadása</value>
+    <comment>Mac key: Add a magnet link or torrent URL</comment>
+  </data>
+  <data name="AddAServerInSettingsTransmissionFirst" xml:space="preserve">
+    <value>Először adjon hozzá egy szervert a Beállítások → Transmission panelen.</value>
+    <comment>Mac key: Add a server in Settings → Transmission first.</comment>
+  </data>
+  <data name="AddAServerWithTheButtonOrBringYour" xml:space="preserve">
+    <value>Adjon hozzá egy szervert a + gombbal, vagy hozza át a szervereit a Transmission Remote GUI-ból.</value>
+    <comment>Mac key: Add a server with the + button, or bring your servers over from Transmission Remote GUI.</comment>
+  </data>
+  <data name="AddATorrentFile" xml:space="preserve">
+    <value>.torrent fájl hozzáadása</value>
+    <comment>Mac key: Add a .torrent file</comment>
+  </data>
+  <data name="AddGroupEllipsis" xml:space="preserve">
+    <value>Csoport hozzáadása…</value>
+    <comment>Mac key: Add Group…</comment>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>Link hozzáadása</value>
+    <comment>Mac key: Add Link</comment>
+  </data>
+  <data name="AddMapping" xml:space="preserve">
+    <value>Összekapcsolás hozzáadása</value>
+    <comment>Mac key: Add Mapping</comment>
+  </data>
+  <data name="AddPartExtensionToIncompleteFiles" xml:space="preserve">
+    <value>A .part kiterjesztés hozzáadása a félkész fájlokhoz</value>
+    <comment>Mac key: Add .part extension to incomplete files</comment>
+  </data>
+  <data name="AddServer" xml:space="preserve">
+    <value>Szerver hozzáadása</value>
+    <comment>Mac key: Add Server</comment>
+  </data>
+  <data name="AddServerEllipsis" xml:space="preserve">
+    <value>Szerver hozzáadása…</value>
+    <comment>Mac key: Add Server…</comment>
+  </data>
+  <data name="AddTheAddressOfYourTransmissionDaemonTo" xml:space="preserve">
+    <value>A kezdéshez adja meg a Transmission démon címét.</value>
+    <comment>Mac key: Add the address of your Transmission daemon to get started.</comment>
+  </data>
+  <data name="AddTorrent" xml:space="preserve">
+    <value>Torrent hozzáadása</value>
+    <comment>Mac key: Add torrent</comment>
+  </data>
+  <data name="AddTorrentFile" xml:space="preserve">
+    <value>Torrentfájl hozzáadása</value>
+    <comment>Mac key: Add Torrent File</comment>
+  </data>
+  <data name="AddTorrentFileEllipsis" xml:space="preserve">
+    <value>Torrentfájl hozzáadása…</value>
+    <comment>Mac key: Add Torrent File…</comment>
+  </data>
+  <data name="AddTorrentLink" xml:space="preserve">
+    <value>Torrentlink hozzáadása</value>
+    <comment>Mac key: Add Torrent Link</comment>
+  </data>
+  <data name="AddTorrentLinkEllipsis" xml:space="preserve">
+    <value>Torrentlink hozzáadása…</value>
+    <comment>Mac key: Add Torrent Link…</comment>
+  </data>
+  <data name="Added" xml:space="preserve">
+    <value>Hozzáadva</value>
+    <comment>Mac key: Added</comment>
+  </data>
+  <data name="AddedWithPasswordsProxiesAndFolder" xml:space="preserve">
+    <value>Hozzáadva: {0}, a jelszavakkal, proxykkal és mappaelőzményekkel együtt.</value>
+    <comment>Mac key: Added %@, with passwords, proxies and folder history.</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Cím</value>
+    <comment>Mac key: Address</comment>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Haladó</value>
+    <comment>Mac key: Advanced</comment>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Összes</value>
+    <comment>Mac key: All</comment>
+  </data>
+  <data name="AllTimeTotals" xml:space="preserve">
+    <value>Mindenkori összesítés</value>
+    <comment>Mac key: All-time totals</comment>
+  </data>
+  <data name="AllowEncryption" xml:space="preserve">
+    <value>Titkosítás engedélyezése</value>
+    <comment>Mac key: Allow encryption</comment>
+  </data>
+  <data name="AllowUnencryptedConnection" xml:space="preserve">
+    <value>Titkosítatlan kapcsolat engedélyezése</value>
+    <comment>Mac key: Allow Unencrypted Connection</comment>
+  </data>
+  <data name="AllowUnencryptedConnectionAnyway" xml:space="preserve">
+    <value>Titkosítatlan kapcsolat engedélyezése ennek ellenére</value>
+    <comment>Mac key: Allow unencrypted connection anyway</comment>
+  </data>
+  <data name="AlsoFollowTheServersGlobalLimits" xml:space="preserve">
+    <value>A szerver globális korlátait is kövesse</value>
+    <comment>Mac key: Also follow the server's global limits</comment>
+  </data>
+  <data name="AlternateBandwidthSettings" xml:space="preserve">
+    <value>Alternatív sávszélesség-beállítások</value>
+    <comment>Mac key: Alternate bandwidth settings</comment>
+  </data>
+  <data name="AlternativeSpeedLimitsAreOn" xml:space="preserve">
+    <value>Az alternatív sebességkorlátok be vannak kapcsolva</value>
+    <comment>Mac key: Alternative speed limits are on</comment>
+  </data>
+  <data name="AlternativeSpeedLimits_392B4B" xml:space="preserve">
+    <value>Alternatív sebességkorlátok</value>
+    <comment>Mac key: Alternative speed limits</comment>
+  </data>
+  <data name="AlternativeSpeedLimits_5A9C91" xml:space="preserve">
+    <value>Alternatív sebességkorlátok</value>
+    <comment>Mac key: Alternative Speed Limits</comment>
+  </data>
+  <data name="ApplicationOptions" xml:space="preserve">
+    <value>Alkalmazás beállításai</value>
+    <comment>Mac key: Application Options</comment>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Alkalmaz</value>
+    <comment>Mac key: Apply</comment>
+  </data>
+  <data name="ApplyAlternateBandwidthSettings" xml:space="preserve">
+    <value>Alternatív sávszélesség-beállítások automatikus alkalmazása</value>
+    <comment>Mac key: Apply alternate bandwidth settings automatically</comment>
+  </data>
+  <data name="AskForMorePeers" xml:space="preserve">
+    <value>További partnerek kérése</value>
+    <comment>Mac key: Ask for More Peers</comment>
+  </data>
+  <data name="AskTrackersForMorePeers" xml:space="preserve">
+    <value>További partnerek kérése a trackerektől</value>
+    <comment>Mac key: Ask Trackers for More Peers</comment>
+  </data>
+  <data name="AsksGitHubForTheNewestReleaseNothingIs" xml:space="preserve">
+    <value>A legújabb kiadást a GitHubról kérdezi le. Semmi sem töltődik le és nem települ automatikusan.</value>
+    <comment>Mac key: Asks GitHub for the newest release. Nothing is downloaded or installed automatically.</comment>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>Hitelesítés</value>
+    <comment>Mac key: Authentication</comment>
+  </data>
+  <data name="AuthenticationRequired" xml:space="preserve">
+    <value>Hitelesítés szükséges</value>
+    <comment>Mac key: Authentication required</comment>
+  </data>
+  <data name="Automatic" xml:space="preserve">
+    <value>Automatikus</value>
+    <comment>Mac key: Automatic</comment>
+  </data>
+  <data name="AutomaticUsesJSONRPC20OnTransmission41" xml:space="preserve">
+    <value>Az Automatikus beállítás a Transmission 4.1-es és újabb verzióinál JSON-RPC 2.0-t, a régebbieknél (például 3.00) a régi protokollt használja.</value>
+    <comment>Mac key: Automatic uses JSON-RPC 2.0 on Transmission 4.1 and later, and the legacy protocol on older versions such as 3.00.</comment>
+  </data>
+  <data name="Backup" xml:space="preserve">
+    <value>Tartalék</value>
+    <comment>Mac key: Backup</comment>
+  </data>
+  <data name="Bandwidth" xml:space="preserve">
+    <value>Sávszélesség</value>
+    <comment>Mac key: Bandwidth</comment>
+  </data>
+  <data name="BandwidthGroup_319062" xml:space="preserve">
+    <value>Sávszélesség-csoport</value>
+    <comment>Mac key: Bandwidth Group</comment>
+  </data>
+  <data name="BandwidthGroup_71D067" xml:space="preserve">
+    <value>Sávszélesség-csoport</value>
+    <comment>Mac key: Bandwidth group</comment>
+  </data>
+  <data name="BandwidthGroups" xml:space="preserve">
+    <value>Sávszélesség-csoportok</value>
+    <comment>Mac key: Bandwidth groups</comment>
+  </data>
+  <data name="BandwidthGroupsNeedTransmission40OrLater" xml:space="preserve">
+    <value>A sávszélesség-csoportokhoz Transmission 4.0 vagy újabb szükséges.</value>
+    <comment>Mac key: Bandwidth groups need Transmission 4.0 or later.</comment>
+  </data>
+  <data name="BandwidthPriority_33C88A" xml:space="preserve">
+    <value>Sávszélesség-prioritás</value>
+    <comment>Mac key: Bandwidth priority</comment>
+  </data>
+  <data name="BandwidthPriority_5262E0" xml:space="preserve">
+    <value>Sávszélesség-prioritás</value>
+    <comment>Mac key: Bandwidth Priority</comment>
+  </data>
+  <data name="BlocklistURL" xml:space="preserve">
+    <value>Tiltólista URL-je</value>
+    <comment>Mac key: Blocklist URL</comment>
+  </data>
+  <data name="BrowseFoldersOnTheServer" xml:space="preserve">
+    <value>Mappák tallózása a szerveren</value>
+    <comment>Mac key: Browse folders on the server</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Mégsem</value>
+    <comment>Mac key: Cancel</comment>
+  </data>
+  <data name="CannotReachTheServer" xml:space="preserve">
+    <value>A szerver nem érhető el</value>
+    <comment>Mac key: Can't Reach the Server</comment>
+  </data>
+  <data name="CertificatePassword" xml:space="preserve">
+    <value>Tanúsítvány jelszava</value>
+    <comment>Mac key: Certificate Password</comment>
+  </data>
+  <data name="ChangesAreSentToTheServerWhenYouClick" xml:space="preserve">
+    <value>A módosítások az Alkalmaz gombra kattintáskor kerülnek a szerverre.</value>
+    <comment>Mac key: Changes are sent to the server when you click Apply.</comment>
+  </data>
+  <data name="CheckForUpdatesEllipsis" xml:space="preserve">
+    <value>Frissítések keresése…</value>
+    <comment>Mac key: Check for Updates…</comment>
+  </data>
+  <data name="CheckForUpdatesOnceADay" xml:space="preserve">
+    <value>Frissítések keresése naponta egyszer</value>
+    <comment>Mac key: Check for updates once a day</comment>
+  </data>
+  <data name="CheckNow" xml:space="preserve">
+    <value>Keresés most</value>
+    <comment>Mac key: Check Now</comment>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Kiválasztás</value>
+    <comment>Mac key: Choose</comment>
+  </data>
+  <data name="ChooseEllipsis" xml:space="preserve">
+    <value>Kiválasztás…</value>
+    <comment>Mac key: Choose…</comment>
+  </data>
+  <data name="ChooseTransguiIniTransmissionRemoteGUI" xml:space="preserve">
+    <value>Válassza ki a transgui.ini fájlt. A Transmission Remote GUI a ~/.config mappában tárolja.</value>
+    <comment>Mac key: Choose transgui.ini. Transmission Remote GUI keeps it in ~/.config.</comment>
+  </data>
+  <data name="ClearHistory" xml:space="preserve">
+    <value>Előzmények törlése</value>
+    <comment>Mac key: Clear History</comment>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Kliens</value>
+    <comment>Mac key: Client</comment>
+  </data>
+  <data name="ClientCertificate" xml:space="preserve">
+    <value>Klienstanúsítvány</value>
+    <comment>Mac key: Client certificate</comment>
+  </data>
+  <data name="ClientCertificatesWereNotImportedChoose" xml:space="preserve">
+    <value>A klienstanúsítványok nem lettek importálva. Válassza ki őket a Beállítások → Transmission panelen.</value>
+    <comment>Mac key: Client certificates weren't imported. Choose them in Settings → Transmission.</comment>
+  </data>
+  <data name="CollectingSpeedData" xml:space="preserve">
+    <value>Sebességadatok gyűjtése</value>
+    <comment>Mac key: Collecting Speed Data</comment>
+  </data>
+  <data name="CommaSeparatedSpeedsForTheSpeedLimit" xml:space="preserve">
+    <value>Vesszővel elválasztott sebességek a Torrent és a Szerver menü sebességkorlát-almenüihez. A Korlátlan mindig elérhető.</value>
+    <comment>Mac key: Comma-separated speeds for the Speed Limit menus in the torrent menu and the Server menu. Unlimited is always offered.</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Megjegyzés</value>
+    <comment>Mac key: Comment</comment>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Befejezve</value>
+    <comment>Mac key: Completed</comment>
+  </data>
+  <data name="ConfigFolder" xml:space="preserve">
+    <value>Konfigurációs mappa</value>
+    <comment>Mac key: Config folder</comment>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Csatlakozás</value>
+    <comment>Mac key: Connect</comment>
+  </data>
+  <data name="ConnectToATransmissionServerToChangeIts" xml:space="preserve">
+    <value>A beállítások módosításához csatlakozzon egy Transmission szerverhez.</value>
+    <comment>Mac key: Connect to a Transmission server to change its options.</comment>
+  </data>
+  <data name="ConnectToTransmissionUsingProxyServer" xml:space="preserve">
+    <value>Kapcsolódás a Transmissionhöz proxyszerveren keresztül</value>
+    <comment>Mac key: Connect to Transmission using proxy server</comment>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>Csatlakozva</value>
+    <comment>Mac key: Connected</comment>
+  </data>
+  <data name="ConnectedOverUTP" xml:space="preserve">
+    <value>µTP-n keresztül csatlakozva</value>
+    <comment>Mac key: Connected over µTP</comment>
+  </data>
+  <data name="ConnectedToTransmissionUsing" xml:space="preserve">
+    <value>Csatlakozva a Transmission {0} verzióhoz, protokoll: {1}.</value>
+    <comment>Mac key: Connected to Transmission %@ using %@.</comment>
+  </data>
+  <data name="ConnectingToEllipsis" xml:space="preserve">
+    <value>Csatlakozás: {0}…</value>
+    <comment>Mac key: Connecting to %@…</comment>
+  </data>
+  <data name="Connection" xml:space="preserve">
+    <value>Kapcsolat</value>
+    <comment>Mac key: Connection</comment>
+  </data>
+  <data name="ConnectionToThisMac" xml:space="preserve">
+    <value>Kapcsolat ezzel a Mackel.</value>
+    <comment>Mac key: Connection to this Mac.</comment>
+  </data>
+  <data name="ConsiderActiveTorrentsAsStalledWhenIdle" xml:space="preserve">
+    <value>Aktív torrentek elakadtnak tekintése ennyi tétlenség után</value>
+    <comment>Mac key: Consider active torrents as stalled when idle for</comment>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Folytatás</value>
+    <comment>Mac key: Continue</comment>
+  </data>
+  <data name="CopyMagnetLink" xml:space="preserve">
+    <value>Mágneslink másolása</value>
+    <comment>Mac key: Copy Magnet Link</comment>
+  </data>
+  <data name="CopyPath" xml:space="preserve">
+    <value>Elérési út másolása</value>
+    <comment>Mac key: Copy Path</comment>
+  </data>
+  <data name="Corrupt" xml:space="preserve">
+    <value>Sérült</value>
+    <comment>Mac key: Corrupt</comment>
+  </data>
+  <data name="CouldNotAddTorrent" xml:space="preserve">
+    <value>Nem sikerült hozzáadni a torrentet</value>
+    <comment>Mac key: Couldn't Add Torrent</comment>
+  </data>
+  <data name="CouldNotBeOpenedAsATorrentFile" xml:space="preserve">
+    <value>„{0}” nem nyitható meg torrentfájlként.</value>
+    <comment>Mac key: “%@” couldn't be opened as a torrent file.</comment>
+  </data>
+  <data name="CouldNotCheckForUpdates" xml:space="preserve">
+    <value>Nem sikerült frissítéseket keresni</value>
+    <comment>Mac key: Couldn't Check for Updates</comment>
+  </data>
+  <data name="CouldNotConnect" xml:space="preserve">
+    <value>Nem sikerült csatlakozni</value>
+    <comment>Mac key: Couldn't Connect</comment>
+  </data>
+  <data name="CouldNotImport" xml:space="preserve">
+    <value>Nem sikerült importálni</value>
+    <comment>Mac key: Couldn't Import</comment>
+  </data>
+  <data name="CouldNotLoadOptions" xml:space="preserve">
+    <value>Nem sikerült betölteni a beállításokat</value>
+    <comment>Mac key: Couldn't Load Options</comment>
+  </data>
+  <data name="CouldNotOpenCheckThatTheShareIsMounted" xml:space="preserve">
+    <value>Nem sikerült megnyitni: {0}. Ellenőrizze, hogy a megosztás csatolva van-e, és válassza ki újra a mappáját a Beállítások → Elérési utak panelen.</value>
+    <comment>Mac key: Couldn't open %@. Check that the share is mounted, and choose its folder again in Settings → Paths.</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Ország</value>
+    <comment>Mac key: Country</comment>
+  </data>
+  <data name="CountryDatabase" xml:space="preserve">
+    <value>Országadatbázis</value>
+    <comment>Mac key: Country database</comment>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Létrehozta</value>
+    <comment>Mac key: Created by</comment>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>Létrehozva</value>
+    <comment>Mac key: Created on</comment>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>Egyéni</value>
+    <comment>Mac key: Custom</comment>
+  </data>
+  <data name="DataDisplay" xml:space="preserve">
+    <value>Adatok kijelzése</value>
+    <comment>Mac key: Data display</comment>
+  </data>
+  <data name="DataRefreshInterval" xml:space="preserve">
+    <value>Adatfrissítési gyakoriság</value>
+    <comment>Mac key: Data refresh interval</comment>
+  </data>
+  <data name="DataRefreshIntervalInTheBackground" xml:space="preserve">
+    <value>Adatfrissítési gyakoriság a háttérben</value>
+    <comment>Mac key: Data refresh interval in the background</comment>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Napok</value>
+    <comment>Mac key: Days</comment>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Alapértelmezett</value>
+    <comment>Mac key: Default</comment>
+  </data>
+  <data name="DefaultDownloadFolderOnRemoteHost" xml:space="preserve">
+    <value>Alapértelmezett letöltési mappa a távoli gépen</value>
+    <comment>Mac key: Default download folder on remote host</comment>
+  </data>
+  <data name="DeleteTorrentFilesFromTheWatchFolder" xml:space="preserve">
+    <value>A .torrent fájlok törlése a figyelt mappából hozzáadás után</value>
+    <comment>Mac key: Delete .torrent files from the watch folder after adding</comment>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Részletek</value>
+    <comment>Mac key: Detail</comment>
+  </data>
+  <data name="Direction" xml:space="preserve">
+    <value>Irány</value>
+    <comment>Mac key: Direction</comment>
+  </data>
+  <data name="DirectoryForIncompleteFiles" xml:space="preserve">
+    <value>A félkész fájlok mappája</value>
+    <comment>Mac key: Directory for incomplete files</comment>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Kapcsolat bontása</value>
+    <comment>Mac key: Disconnect</comment>
+  </data>
+  <data name="DiskCacheSize" xml:space="preserve">
+    <value>Lemezgyorsítótár mérete</value>
+    <comment>Mac key: Disk cache size</comment>
+  </data>
+  <data name="DoNotDownloadSelected" xml:space="preserve">
+    <value>Kijelöltek kihagyása</value>
+    <comment>Mac key: Don't Download Selected</comment>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Kész</value>
+    <comment>Mac key: Done</comment>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Le</value>
+    <comment>Mac key: Down</comment>
+  </data>
+  <data name="DownKBS" xml:space="preserve">
+    <value>↓ {0} kB/s</value>
+    <comment>Mac key: ↓ %@ kB/s</comment>
+  </data>
+  <data name="DownUnlimited" xml:space="preserve">
+    <value>↓ korlátlan</value>
+    <comment>Mac key: ↓ unlimited</comment>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Letöltés</value>
+    <comment>Mac key: Download</comment>
+  </data>
+  <data name="DownloadComplete" xml:space="preserve">
+    <value>Letöltés kész</value>
+    <comment>Mac key: Download complete</comment>
+  </data>
+  <data name="DownloadDatabase" xml:space="preserve">
+    <value>Adatbázis letöltése</value>
+    <comment>Mac key: Download Database</comment>
+  </data>
+  <data name="DownloadFailed_EAE34C" xml:space="preserve">
+    <value>Sikertelen letöltés</value>
+    <comment>Mac key: Download failed</comment>
+  </data>
+  <data name="DownloadFailed_F37242" xml:space="preserve">
+    <value>Sikertelen letöltés: {0}</value>
+    <comment>Mac key: Download failed: %@</comment>
+  </data>
+  <data name="DownloadInOrder" xml:space="preserve">
+    <value>Letöltés sorrendben</value>
+    <comment>Mac key: Download in order</comment>
+  </data>
+  <data name="DownloadNow" xml:space="preserve">
+    <value>Letöltés most</value>
+    <comment>Mac key: Download Now</comment>
+  </data>
+  <data name="DownloadPiecesInOrderByDefault" xml:space="preserve">
+    <value>A darabok sorrendben történő letöltése alapértelmezés szerint</value>
+    <comment>Mac key: Download pieces in order by default</comment>
+  </data>
+  <data name="DownloadQueueSize" xml:space="preserve">
+    <value>Letöltési sor hossza</value>
+    <comment>Mac key: Download queue size</comment>
+  </data>
+  <data name="DownloadSelected" xml:space="preserve">
+    <value>Kijelöltek letöltése</value>
+    <comment>Mac key: Download Selected</comment>
+  </data>
+  <data name="DownloadSpeedLimit" xml:space="preserve">
+    <value>Letöltési sebességkorlát</value>
+    <comment>Mac key: Download Speed Limit</comment>
+  </data>
+  <data name="DownloadSpeedsKBS" xml:space="preserve">
+    <value>Letöltési sebességek (kB/s)</value>
+    <comment>Mac key: Download speeds (kB/s)</comment>
+  </data>
+  <data name="DownloadUpdate" xml:space="preserve">
+    <value>Frissítés letöltése</value>
+    <comment>Mac key: Download Update</comment>
+  </data>
+  <data name="Downloaded" xml:space="preserve">
+    <value>Letöltve</value>
+    <comment>Mac key: Downloaded</comment>
+  </data>
+  <data name="DownloadedFilesStayOnTheServer" xml:space="preserve">
+    <value>A letöltött fájlok a szerveren maradnak.</value>
+    <comment>Mac key: Downloaded files stay on the server.</comment>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>Letöltés alatt</value>
+    <comment>Mac key: Downloading</comment>
+  </data>
+  <data name="DownloadingEllipsis" xml:space="preserve">
+    <value>Letöltés…</value>
+    <comment>Mac key: Downloading…</comment>
+  </data>
+  <data name="DownloadingFor" xml:space="preserve">
+    <value>Letöltési idő</value>
+    <comment>Mac key: Downloading for</comment>
+  </data>
+  <data name="DownloadingFromThisPeer" xml:space="preserve">
+    <value>Letöltés ettől a partnertől</value>
+    <comment>Mac key: Downloading from this peer</comment>
+  </data>
+  <data name="DownloadingTheCountryDatabaseEllipsis" xml:space="preserve">
+    <value>Az országadatbázis letöltése…</value>
+    <comment>Mac key: Downloading the country database…</comment>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>Letöltések</value>
+    <comment>Mac key: Downloads</comment>
+  </data>
+  <data name="DropTorrentFilesOrMagnetLinksHereOrUse" xml:space="preserve">
+    <value>Húzzon ide .torrent fájlokat vagy mágneslinkeket, vagy használja a Torrent hozzáadása parancsot.</value>
+    <comment>Mac key: Drop .torrent files or magnet links here, or use Add Torrent.</comment>
+  </data>
+  <data name="ETA" xml:space="preserve">
+    <value>Hátravan</value>
+    <comment>Mac key: ETA</comment>
+  </data>
+  <data name="EditEllipsis" xml:space="preserve">
+    <value>Szerkesztés…</value>
+    <comment>Mac key: Edit…</comment>
+  </data>
+  <data name="EditServerEllipsis" xml:space="preserve">
+    <value>Szerver szerkesztése…</value>
+    <comment>Mac key: Edit Server…</comment>
+  </data>
+  <data name="EditTrackers" xml:space="preserve">
+    <value>Trackerek szerkesztése</value>
+    <comment>Mac key: Edit Trackers</comment>
+  </data>
+  <data name="EditTrackersEllipsis" xml:space="preserve">
+    <value>Trackerek szerkesztése…</value>
+    <comment>Mac key: Edit Trackers…</comment>
+  </data>
+  <data name="EnableBlocklist" xml:space="preserve">
+    <value>Tiltólista engedélyezése</value>
+    <comment>Mac key: Enable blocklist</comment>
+  </data>
+  <data name="EnableDHT" xml:space="preserve">
+    <value>DHT engedélyezése</value>
+    <comment>Mac key: Enable DHT</comment>
+  </data>
+  <data name="EnableLocalPeerDiscovery" xml:space="preserve">
+    <value>Helyi partnerfelderítés engedélyezése</value>
+    <comment>Mac key: Enable Local Peer Discovery</comment>
+  </data>
+  <data name="EnablePeerExchange" xml:space="preserve">
+    <value>Partnercsere engedélyezése</value>
+    <comment>Mac key: Enable Peer Exchange</comment>
+  </data>
+  <data name="EnablePortForwarding" xml:space="preserve">
+    <value>Porttovábbítás engedélyezése</value>
+    <comment>Mac key: Enable port forwarding</comment>
+  </data>
+  <data name="EnableUTP" xml:space="preserve">
+    <value>µTP engedélyezése</value>
+    <comment>Mac key: Enable µTP</comment>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>Titkosított</value>
+    <comment>Mac key: Encrypted</comment>
+  </data>
+  <data name="EncryptedConnection" xml:space="preserve">
+    <value>Titkosított kapcsolat</value>
+    <comment>Mac key: Encrypted connection</comment>
+  </data>
+  <data name="EncryptedWithHTTPS" xml:space="preserve">
+    <value>HTTPS-sel titkosítva.</value>
+    <comment>Mac key: Encrypted with HTTPS.</comment>
+  </data>
+  <data name="Encryption" xml:space="preserve">
+    <value>Titkosítás</value>
+    <comment>Mac key: Encryption</comment>
+  </data>
+  <data name="EnterJustTheHostNameOrIPAddressWithout" xml:space="preserve">
+    <value>csak a gazdagépnevet vagy az IP-címet adja meg, „http://” nélkül.</value>
+    <comment>Mac key: enter just the host name or IP address, without “http://”.</comment>
+  </data>
+  <data name="EnterThePasswordThatProtects" xml:space="preserve">
+    <value>Adja meg a(z) {0} fájlt védő jelszót.</value>
+    <comment>Mac key: Enter the password that protects %@.</comment>
+  </data>
+  <data name="EnterTheProxyServersAddress" xml:space="preserve">
+    <value>Adja meg a proxyszerver címét.</value>
+    <comment>Mac key: Enter the proxy server's address.</comment>
+  </data>
+  <data name="Error_1100F4" xml:space="preserve">
+    <value>Hiba: {0}</value>
+    <comment>Mac key: Error: %@</comment>
+  </data>
+  <data name="Error_54A0E8" xml:space="preserve">
+    <value>Hiba</value>
+    <comment>Mac key: Error</comment>
+  </data>
+  <data name="EveryS" xml:space="preserve">
+    <value>{0} másodpercenként</value>
+    <comment>Mac key: Every %lld s</comment>
+  </data>
+  <data name="EveryServerInTransguiIniIsAlreadySetUp" xml:space="preserve">
+    <value>A transgui.ini összes szervere már be van állítva itt.</value>
+    <comment>Mac key: Every server in transgui.ini is already set up here.</comment>
+  </data>
+  <data name="ExistingLabels" xml:space="preserve">
+    <value>Meglévő címkék</value>
+    <comment>Mac key: Existing labels</comment>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Fájlok</value>
+    <comment>Mac key: Files</comment>
+  </data>
+  <data name="Files_One" xml:space="preserve">
+    <value>{0} fájl</value>
+    <comment>Mac key: %lld files</comment>
+  </data>
+  <data name="Files_Other" xml:space="preserve">
+    <value>{0} fájl</value>
+    <comment>Mac key: %lld files</comment>
+  </data>
+  <data name="FilterByName" xml:space="preserve">
+    <value>Szűrés név szerint</value>
+    <comment>Mac key: Filter by name</comment>
+  </data>
+  <data name="Finished" xml:space="preserve">
+    <value>Befejezve</value>
+    <comment>Mac key: Finished</comment>
+  </data>
+  <data name="Flags" xml:space="preserve">
+    <value>Jelzők</value>
+    <comment>Mac key: Flags</comment>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Mappa</value>
+    <comment>Mac key: Folder</comment>
+  </data>
+  <data name="FolderOnTheServer" xml:space="preserve">
+    <value>Mappa a szerveren</value>
+    <comment>Mac key: Folder on the server</comment>
+  </data>
+  <data name="FolderOnThisMac" xml:space="preserve">
+    <value>Mappa ezen a Macen</value>
+    <comment>Mac key: Folder on this Mac</comment>
+  </data>
+  <data name="FoldersAppearHereOnceTorrentsAreSavedOn" xml:space="preserve">
+    <value>A mappák akkor jelennek meg itt, ha erre a szerverre torrenteket ment.</value>
+    <comment>Mac key: Folders appear here once torrents are saved on this server.</comment>
+  </data>
+  <data name="Folders_63B853" xml:space="preserve">
+    <value>mappa</value>
+    <comment>Mac key: folders</comment>
+  </data>
+  <data name="Folders_C4D6BB" xml:space="preserve">
+    <value>Mappák</value>
+    <comment>Mac key: Folders</comment>
+  </data>
+  <data name="FollowTheServersGlobalLimits" xml:space="preserve">
+    <value>A szerver globális korlátainak követése</value>
+    <comment>Mac key: Follow the server's global limits</comment>
+  </data>
+  <data name="ForExampleMntHDHDA2OnTheServerIsVolumes" xml:space="preserve">
+    <value>Például a szerveren lévő /mnt/HD/HD_a2 ezen a Macen /Volumes/HD_a2, ha a NAS-megosztás oda van csatolva. A Megnyitás és a Megjelenítés a Finderben parancs ezeket használja.</value>
+    <comment>Mac key: For example, /mnt/HD/HD_a2 on the server is /Volumes/HD_a2 on this Mac when the NAS share is mounted there. Open and Show in Finder use these.</comment>
+  </data>
+  <data name="Forget" xml:space="preserve">
+    <value>Elfelejtés</value>
+    <comment>Mac key: Forget</comment>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>{0} szabad</value>
+    <comment>Mac key: %@ free</comment>
+  </data>
+  <data name="FreeOnTheServer" xml:space="preserve">
+    <value>{0} szabad a szerveren</value>
+    <comment>Mac key: %@ free on the server</comment>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Ettől</value>
+    <comment>Mac key: From</comment>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Általános</value>
+    <comment>Mac key: General</comment>
+  </data>
+  <data name="GettingMetadata" xml:space="preserve">
+    <value>Metaadatok lekérése</value>
+    <comment>Mac key: Getting metadata</comment>
+  </data>
+  <data name="GlobalBandwidthSettings" xml:space="preserve">
+    <value>Általános sávszélesség-beállítások</value>
+    <comment>Mac key: Global bandwidth settings</comment>
+  </data>
+  <data name="GlobalPeerLimit" xml:space="preserve">
+    <value>Globális partnerkorlát</value>
+    <comment>Mac key: Global peer limit</comment>
+  </data>
+  <data name="Hash" xml:space="preserve">
+    <value>Hash</value>
+    <comment>Mac key: Hash</comment>
+  </data>
+  <data name="HideCountries" xml:space="preserve">
+    <value>Országok elrejtése</value>
+    <comment>Mac key: Hide Countries</comment>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>Magas</value>
+    <comment>Mac key: High</comment>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>Gazdagép</value>
+    <comment>Mac key: Host</comment>
+  </data>
+  <data name="HowManyDownloadFoldersEachServer" xml:space="preserve">
+    <value>Szerverenként ennyi letöltési mappát jegyez meg a „Mentés ide” lista.</value>
+    <comment>Mac key: How many download folders each server remembers for “Save to”.</comment>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+    <comment>Mac key: ID</comment>
+  </data>
+  <data name="IdleMinutes" xml:space="preserve">
+    <value>Tétlen percek</value>
+    <comment>Mac key: Idle minutes</comment>
+  </data>
+  <data name="IfYourMacReachesTheServerOtherwiseCheck" xml:space="preserve">
+    <value>Ha a Mac egyébként eléri a szervert, ellenőrizze, hogy a Transmission Remote be van-e kapcsolva itt: Rendszerbeállítások → Adatvédelem és biztonság → Helyi hálózat.</value>
+    <comment>Mac key: If your Mac reaches the server otherwise, check that Transmission Remote is turned on in System Settings → Privacy &amp; Security → Local Network.</comment>
+  </data>
+  <data name="IgnoresGlobalLimits" xml:space="preserve">
+    <value>figyelmen kívül hagyja a globális korlátokat</value>
+    <comment>Mac key: ignores global limits</comment>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importálás</value>
+    <comment>Mac key: Import</comment>
+  </data>
+  <data name="ImportFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Importálás a Transmission Remote GUI-ból</value>
+    <comment>Mac key: Import from Transmission Remote GUI</comment>
+  </data>
+  <data name="ImportFromTransmissionRemoteGUIEllipsis" xml:space="preserve">
+    <value>Importálás a Transmission Remote GUI-ból…</value>
+    <comment>Mac key: Import from Transmission Remote GUI…</comment>
+  </data>
+  <data name="ImportServersFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Szerverek importálása a Transmission Remote GUI-ból</value>
+    <comment>Mac key: Import servers from Transmission Remote GUI</comment>
+  </data>
+  <data name="ImportedFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Importálva a Transmission Remote GUI-ból</value>
+    <comment>Mac key: Imported from Transmission Remote GUI</comment>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inaktív</value>
+    <comment>Mac key: Inactive</comment>
+  </data>
+  <data name="IncomingConnection" xml:space="preserve">
+    <value>Bejövő kapcsolat</value>
+    <comment>Mac key: Incoming connection</comment>
+  </data>
+  <data name="IncomingPort" xml:space="preserve">
+    <value>Bejövő port</value>
+    <comment>Mac key: Incoming port</comment>
+  </data>
+  <data name="IncompleteFilesFolder" xml:space="preserve">
+    <value>Félkész fájlok mappája</value>
+    <comment>Mac key: Incomplete files folder</comment>
+  </data>
+  <data name="IsAnAppOrScript" xml:space="preserve">
+    <value>„{0}” egy alkalmazás vagy szkript</value>
+    <comment>Mac key: “%@” is an app or script</comment>
+  </data>
+  <data name="IsNotAMagnetLinkOrATorrentURL" xml:space="preserve">
+    <value>„{0}” nem mágneslink és nem is torrent-URL.</value>
+    <comment>Mac key: “%@” isn't a magnet link or a torrent URL.</comment>
+  </data>
+  <data name="IsNotAValidTrackerURL" xml:space="preserve">
+    <value>„{0}” nem érvényes tracker-URL.</value>
+    <comment>Mac key: “%@” isn't a valid tracker URL.</comment>
+  </data>
+  <data name="IsTooLargeToBeATorrentFile" xml:space="preserve">
+    <value>„{0}” túl nagy ahhoz, hogy torrentfájl legyen.</value>
+    <comment>Mac key: “%@” is too large to be a torrent file.</comment>
+  </data>
+  <data name="ItCameFromATorrentAndMacOSHasNotChecked" xml:space="preserve">
+    <value>Egy torrentből származik, és a macOS nem ellenőrizte úgy, ahogy a letöltéseket. Csak akkor nyissa meg, ha megbízik a forrásában.</value>
+    <comment>Mac key: It came from a torrent, and macOS hasn't checked it the way it checks downloads. Open it only if you trust where it came from.</comment>
+  </data>
+  <data name="KBS_22B85B" xml:space="preserve">
+    <value>{0} kB/s</value>
+    <comment>Mac key: %lld kB/s</comment>
+  </data>
+  <data name="KBS_56B829" xml:space="preserve">
+    <value>kB/s</value>
+    <comment>Mac key: kB/s</comment>
+  </data>
+  <data name="Labels" xml:space="preserve">
+    <value>Címkék</value>
+    <comment>Mac key: Labels</comment>
+  </data>
+  <data name="LabelsCommaSeparated" xml:space="preserve">
+    <value>Címkék, vesszővel elválasztva</value>
+    <comment>Mac key: Labels, comma-separated</comment>
+  </data>
+  <data name="LabelsEllipsis" xml:space="preserve">
+    <value>Címkék…</value>
+    <comment>Mac key: Labels…</comment>
+  </data>
+  <data name="LastActive" xml:space="preserve">
+    <value>Utoljára aktív</value>
+    <comment>Mac key: Last Active</comment>
+  </data>
+  <data name="LastAnnounce" xml:space="preserve">
+    <value>Utolsó bejelentés</value>
+    <comment>Mac key: Last Announce</comment>
+  </data>
+  <data name="Later" xml:space="preserve">
+    <value>Később</value>
+    <comment>Mac key: Later</comment>
+  </data>
+  <data name="Leechers" xml:space="preserve">
+    <value>Letöltők</value>
+    <comment>Mac key: Leechers</comment>
+  </data>
+  <data name="LegacyRPCOnly" xml:space="preserve">
+    <value>Csak régi RPC</value>
+    <comment>Mac key: Legacy RPC only</comment>
+  </data>
+  <data name="LegacyRPC_CE8968" xml:space="preserve">
+    <value>Régi RPC</value>
+    <comment>Mac key: Legacy RPC</comment>
+  </data>
+  <data name="LegacyRPC_FB73DE" xml:space="preserve">
+    <value>régi RPC</value>
+    <comment>Mac key: legacy RPC</comment>
+  </data>
+  <data name="LimitDownloadSpeed" xml:space="preserve">
+    <value>Letöltési sebesség korlátozása</value>
+    <comment>Mac key: Limit download speed</comment>
+  </data>
+  <data name="LimitUploadSpeed" xml:space="preserve">
+    <value>Feltöltési sebesség korlátozása</value>
+    <comment>Mac key: Limit upload speed</comment>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Hely</value>
+    <comment>Mac key: Location</comment>
+  </data>
+  <data name="Low" xml:space="preserve">
+    <value>Alacsony</value>
+    <comment>Mac key: Low</comment>
+  </data>
+  <data name="MB" xml:space="preserve">
+    <value>MB</value>
+    <comment>Mac key: MB</comment>
+  </data>
+  <data name="MagnetLink" xml:space="preserve">
+    <value>Mágneslink</value>
+    <comment>Mac key: Magnet link</comment>
+  </data>
+  <data name="ManageServersEllipsis" xml:space="preserve">
+    <value>Szerverek kezelése…</value>
+    <comment>Mac key: Manage Servers…</comment>
+  </data>
+  <data name="MaximumDownloadSpeed" xml:space="preserve">
+    <value>Maximális letöltési sebesség</value>
+    <comment>Mac key: Maximum download speed</comment>
+  </data>
+  <data name="MaximumFolderHistory" xml:space="preserve">
+    <value>Mappaelőzmények maximális száma</value>
+    <comment>Mac key: Maximum folder history</comment>
+  </data>
+  <data name="MaximumPeers" xml:space="preserve">
+    <value>Partnerek maximális száma</value>
+    <comment>Mac key: Maximum peers</comment>
+  </data>
+  <data name="MaximumUploadSpeed" xml:space="preserve">
+    <value>Maximális feltöltési sebesség</value>
+    <comment>Mac key: Maximum upload speed</comment>
+  </data>
+  <data name="MenuBarIcon" xml:space="preserve">
+    <value>Menüsor-ikon</value>
+    <comment>Mac key: Menu bar icon</comment>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>perc</value>
+    <comment>Mac key: minutes</comment>
+  </data>
+  <data name="Misc" xml:space="preserve">
+    <value>Egyéb</value>
+    <comment>Mac key: Misc</comment>
+  </data>
+  <data name="Mixed" xml:space="preserve">
+    <value>Vegyes</value>
+    <comment>Mac key: Mixed</comment>
+  </data>
+  <data name="MntHDHDA2" xml:space="preserve">
+    <value>/mnt/HD/HD_a2</value>
+    <comment>Mac key: /mnt/HD/HD_a2</comment>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Áthelyezés</value>
+    <comment>Mac key: Move</comment>
+  </data>
+  <data name="MoveData" xml:space="preserve">
+    <value>Adatok áthelyezése</value>
+    <comment>Mac key: Move Data</comment>
+  </data>
+  <data name="MoveDataEllipsis" xml:space="preserve">
+    <value>Adatok áthelyezése…</value>
+    <comment>Mac key: Move Data…</comment>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Lefelé</value>
+    <comment>Mac key: Move Down</comment>
+  </data>
+  <data name="MoveTheDownloadedFilesToTheNewFolder" xml:space="preserve">
+    <value>A letöltött fájlok áthelyezése az új mappába</value>
+    <comment>Mac key: Move the downloaded files to the new folder</comment>
+  </data>
+  <data name="MoveToBottom" xml:space="preserve">
+    <value>Legaljára</value>
+    <comment>Mac key: Move to Bottom</comment>
+  </data>
+  <data name="MoveToTop" xml:space="preserve">
+    <value>Legfelülre</value>
+    <comment>Mac key: Move to Top</comment>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Felfelé</value>
+    <comment>Mac key: Move Up</comment>
+  </data>
+  <data name="MyNAS" xml:space="preserve">
+    <value>Saját NAS</value>
+    <comment>Mac key: My NAS</comment>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Név</value>
+    <comment>Mac key: Name</comment>
+  </data>
+  <data name="NetworkWAN" xml:space="preserve">
+    <value>Hálózat (WAN)</value>
+    <comment>Mac key: Network (WAN)</comment>
+  </data>
+  <data name="Never" xml:space="preserve">
+    <value>Soha</value>
+    <comment>Mac key: Never</comment>
+  </data>
+  <data name="NewServer" xml:space="preserve">
+    <value>Új szerver</value>
+    <comment>Mac key: New Server</comment>
+  </data>
+  <data name="NextAnnounce" xml:space="preserve">
+    <value>Következő bejelentés</value>
+    <comment>Mac key: Next Announce</comment>
+  </data>
+  <data name="NoConnectedPeers" xml:space="preserve">
+    <value>Nincsenek csatlakozott partnerek</value>
+    <comment>Mac key: No Connected Peers</comment>
+  </data>
+  <data name="NoFiles" xml:space="preserve">
+    <value>Nincsenek fájlok</value>
+    <comment>Mac key: No Files</comment>
+  </data>
+  <data name="NoGroupsYet" xml:space="preserve">
+    <value>Még nincsenek csoportok.</value>
+    <comment>Mac key: No groups yet.</comment>
+  </data>
+  <data name="NoKnownFolders" xml:space="preserve">
+    <value>Nincsenek ismert mappák</value>
+    <comment>Mac key: No Known Folders</comment>
+  </data>
+  <data name="NoServer" xml:space="preserve">
+    <value>Nincs szerver</value>
+    <comment>Mac key: No Server</comment>
+  </data>
+  <data name="NoServerSelected" xml:space="preserve">
+    <value>Nincs kijelölt szerver</value>
+    <comment>Mac key: No Server Selected</comment>
+  </data>
+  <data name="NoServersWereFoundInThisFileChoose" xml:space="preserve">
+    <value>Ebben a fájlban nem található szerver. Válassza ki a Transmission Remote GUI transgui.ini fájlját.</value>
+    <comment>Mac key: No servers were found in this file. Choose transgui.ini from Transmission Remote GUI.</comment>
+  </data>
+  <data name="NoTorrentSelected" xml:space="preserve">
+    <value>Nincs kijelölt torrent</value>
+    <comment>Mac key: No Torrent Selected</comment>
+  </data>
+  <data name="NoTorrents" xml:space="preserve">
+    <value>Nincsenek torrentek</value>
+    <comment>Mac key: No Torrents</comment>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Nincs</value>
+    <comment>Mac key: None</comment>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Normál</value>
+    <comment>Mac key: Normal</comment>
+  </data>
+  <data name="NotChosen" xml:space="preserve">
+    <value>Nincs kiválasztva</value>
+    <comment>Mac key: Not chosen</comment>
+  </data>
+  <data name="NotConnected_0303E1" xml:space="preserve">
+    <value>Nincs kapcsolat</value>
+    <comment>Mac key: Not connected</comment>
+  </data>
+  <data name="NotConnected_3B3D27" xml:space="preserve">
+    <value>Nincs kapcsolat.</value>
+    <comment>Mac key: Not connected.</comment>
+  </data>
+  <data name="NotConnected_87D82C" xml:space="preserve">
+    <value>Nincs kapcsolat</value>
+    <comment>Mac key: Not Connected</comment>
+  </data>
+  <data name="NotDownloaded" xml:space="preserve">
+    <value>Nincs letöltve</value>
+    <comment>Mac key: Not downloaded</comment>
+  </data>
+  <data name="NotDownloading" xml:space="preserve">
+    <value>Nem töltődik le</value>
+    <comment>Mac key: Not downloading</comment>
+  </data>
+  <data name="NotYetAnnounced" xml:space="preserve">
+    <value>Még nincs bejelentve</value>
+    <comment>Mac key: Not yet announced</comment>
+  </data>
+  <data name="NotifyWhenADownloadCompletes" xml:space="preserve">
+    <value>Értesítés, ha egy letöltés befejeződik</value>
+    <comment>Mac key: Notify when a download completes</comment>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+    <comment>Mac key: OK</comment>
+  </data>
+  <data name="OneAnnounceURLPerLineSeparateTiersWithA" xml:space="preserve">
+    <value>Soronként egy bejelentési URL. A szinteket üres sorral válassza el.</value>
+    <comment>Mac key: One announce URL per line. Separate tiers with a blank line.</comment>
+  </data>
+  <data name="OnlyFoldersAlreadyUsedOnThisServerAre" xml:space="preserve">
+    <value>Csak a szerveren már használt mappák jelennek meg. Új mappa használatához írja be az elérési útját.</value>
+    <comment>Mac key: Only folders already used on this server are listed. To use a new one, type its path.</comment>
+  </data>
+  <data name="OnlyForHTTPSReverseProxiesThatAskForOne" xml:space="preserve">
+    <value>Csak olyan HTTPS fordított proxykhoz, amelyek ezt kérik. Válasszon egy .p12 fájlt, amely a tanúsítványt és a kulcsát is tartalmazza.</value>
+    <comment>Mac key: Only for HTTPS reverse proxies that ask for one. Choose a .p12 file with the certificate and its key.</comment>
+  </data>
+  <data name="OnlyTrustItIfItMatchesTheCertificateYou" xml:space="preserve">
+    <value>Csak akkor bízzon meg benne, ha egyezik a szerverére telepített tanúsítvánnyal.</value>
+    <comment>Mac key: Only trust it if it matches the certificate you installed on your server.</comment>
+  </data>
+  <data name="OnlyWithAReverseProxyInFrontOfTheDaemon" xml:space="preserve">
+    <value>Csak ha fordított proxy van a démon előtt. A Transmission maga egyszerű HTTP-t szolgáltat.</value>
+    <comment>Mac key: Only with a reverse proxy in front of the daemon. Transmission itself serves plain HTTP.</comment>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Megnyitás</value>
+    <comment>Mac key: Open</comment>
+  </data>
+  <data name="OpenAnyway" xml:space="preserve">
+    <value>Megnyitás mégis</value>
+    <comment>Mac key: Open Anyway</comment>
+  </data>
+  <data name="OptimisticUnchoke" xml:space="preserve">
+    <value>Optimista feloldás</value>
+    <comment>Mac key: Optimistic unchoke</comment>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Jelszó</value>
+    <comment>Mac key: Password</comment>
+  </data>
+  <data name="PasteMagnetLinksOrTorrentURLsOnePerLine" xml:space="preserve">
+    <value>Illesszen be mágneslinkeket vagy .torrent URL-eket, soronként egyet.</value>
+    <comment>Mac key: Paste magnet links or .torrent URLs, one per line.</comment>
+  </data>
+  <data name="Paths" xml:space="preserve">
+    <value>Elérési utak</value>
+    <comment>Mac key: Paths</comment>
+  </data>
+  <data name="PeerFoundThroughDHT" xml:space="preserve">
+    <value>DHT-n keresztül talált partner</value>
+    <comment>Mac key: Peer found through DHT</comment>
+  </data>
+  <data name="PeerFoundThroughPeerExchangePEX" xml:space="preserve">
+    <value>Partnercserén (PEX) keresztül talált partner</value>
+    <comment>Mac key: Peer found through peer exchange (PEX)</comment>
+  </data>
+  <data name="PeerHasUnchokedUsButWeAreNotInterested" xml:space="preserve">
+    <value>A partner feloldott minket, de nem vagyunk érdekeltek</value>
+    <comment>Mac key: Peer has unchoked us, but we're not interested</comment>
+  </data>
+  <data name="Peers" xml:space="preserve">
+    <value>Partnerek</value>
+    <comment>Mac key: Peers</comment>
+  </data>
+  <data name="Peers_One" xml:space="preserve">
+    <value>{0} partner</value>
+    <comment>Mac key: %lld peers</comment>
+  </data>
+  <data name="Peers_Other" xml:space="preserve">
+    <value>{0} partner</value>
+    <comment>Mac key: %lld peers</comment>
+  </data>
+  <data name="PerTorrentPeerLimit" xml:space="preserve">
+    <value>Torrentenkénti partnerkorlát</value>
+    <comment>Mac key: Per torrent peer limit</comment>
+  </data>
+  <data name="PickRandomPortOnTransmissionLaunch" xml:space="preserve">
+    <value>Véletlenszerű portválasztás a Transmission indításakor</value>
+    <comment>Mac key: Pick random port on Transmission launch</comment>
+  </data>
+  <data name="PieceAvailability" xml:space="preserve">
+    <value>Darabok elérhetősége</value>
+    <comment>Mac key: Piece availability</comment>
+  </data>
+  <data name="Pieces" xml:space="preserve">
+    <value>Darabok</value>
+    <comment>Mac key: Pieces</comment>
+  </data>
+  <data name="PlainHTTPInsideATailscaleTunnelWhich" xml:space="preserve">
+    <value>Egyszerű HTTP egy Tailscale-alagúton belül, amely titkosítja a forgalmat.</value>
+    <comment>Mac key: Plain HTTP inside a Tailscale tunnel, which encrypts the traffic.</comment>
+  </data>
+  <data name="PlainHTTPOnAPrivateNetworkDevicesOnThe" xml:space="preserve">
+    <value>Egyszerű HTTP magánhálózaton. Az azonos hálózaton lévő eszközök elolvashatják a jelszót.</value>
+    <comment>Mac key: Plain HTTP on a private network. Devices on the same network could read the password.</comment>
+  </data>
+  <data name="PlainHTTPOverTheInternetIsBlockedForThis" xml:space="preserve">
+    <value>Ennél a szervernél az interneten keresztüli egyszerű HTTP le van tiltva.</value>
+    <comment>Mac key: Plain HTTP over the internet is blocked for this server.</comment>
+  </data>
+  <data name="PlainHTTPOverTheInternetThePasswordAnd" xml:space="preserve">
+    <value>Egyszerű HTTP az interneten keresztül. A jelszót és a teljes forgalmat útközben bárki elolvashatja.</value>
+    <comment>Mac key: Plain HTTP over the internet. The password and all traffic can be read by anyone along the way.</comment>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>Port</value>
+    <comment>Mac key: Port</comment>
+  </data>
+  <data name="PortIsClosed" xml:space="preserve">
+    <value>A port zárva van</value>
+    <comment>Mac key: Port is closed</comment>
+  </data>
+  <data name="PortIsOpen" xml:space="preserve">
+    <value>A port nyitva van</value>
+    <comment>Mac key: Port is open</comment>
+  </data>
+  <data name="PreferEncryption" xml:space="preserve">
+    <value>Titkosítás előnyben részesítése</value>
+    <comment>Mac key: Prefer encryption</comment>
+  </data>
+  <data name="Priority_D60DBB" xml:space="preserve">
+    <value>Prioritás</value>
+    <comment>Mac key: Priority</comment>
+  </data>
+  <data name="Priority_DD3948" xml:space="preserve">
+    <value>{0} prioritás</value>
+    <comment>Mac key: %@ Priority</comment>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>Privát</value>
+    <comment>Mac key: Private</comment>
+  </data>
+  <data name="PrivateTrackers" xml:space="preserve">
+    <value>Privát trackerek</value>
+    <comment>Mac key: Private trackers</comment>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>Előrehaladás</value>
+    <comment>Mac key: Progress</comment>
+  </data>
+  <data name="PromptForDownloadOptionsWhenAddingANew" xml:space="preserve">
+    <value>Letöltési beállítások kérése új torrent hozzáadásakor</value>
+    <comment>Mac key: Prompt for download options when adding a new torrent</comment>
+  </data>
+  <data name="Protocol" xml:space="preserve">
+    <value>Protokoll</value>
+    <comment>Mac key: Protocol</comment>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy</value>
+    <comment>Mac key: Proxy</comment>
+  </data>
+  <data name="ProxyExampleCom" xml:space="preserve">
+    <value>proxy.example.com</value>
+    <comment>Mac key: proxy.example.com</comment>
+  </data>
+  <data name="ProxyPassword" xml:space="preserve">
+    <value>Proxyjelszó</value>
+    <comment>Mac key: Proxy password</comment>
+  </data>
+  <data name="ProxyPort" xml:space="preserve">
+    <value>Proxyport</value>
+    <comment>Mac key: Proxy port</comment>
+  </data>
+  <data name="ProxyServer" xml:space="preserve">
+    <value>Proxyszerver</value>
+    <comment>Mac key: Proxy server</comment>
+  </data>
+  <data name="ProxyUserName" xml:space="preserve">
+    <value>Proxy-felhasználónév</value>
+    <comment>Mac key: Proxy user name</comment>
+  </data>
+  <data name="Queue" xml:space="preserve">
+    <value>Sor</value>
+    <comment>Mac key: Queue</comment>
+  </data>
+  <data name="Queued" xml:space="preserve">
+    <value>Sorban áll</value>
+    <comment>Mac key: Queued</comment>
+  </data>
+  <data name="QueuedToSeed" xml:space="preserve">
+    <value>Megosztásra vár</value>
+    <comment>Mac key: Queued to seed</comment>
+  </data>
+  <data name="QueuedToVerify" xml:space="preserve">
+    <value>Ellenőrzésre vár</value>
+    <comment>Mac key: Queued to verify</comment>
+  </data>
+  <data name="QuitTransmissionRemote" xml:space="preserve">
+    <value>Kilépés a Transmission Remote alkalmazásból</value>
+    <comment>Mac key: Quit Transmission Remote</comment>
+  </data>
+  <data name="RPCPath" xml:space="preserve">
+    <value>RPC-útvonal</value>
+    <comment>Mac key: RPC path</comment>
+  </data>
+  <data name="RPCVersion" xml:space="preserve">
+    <value>RPC-verzió</value>
+    <comment>Mac key: RPC version</comment>
+  </data>
+  <data name="Ratio" xml:space="preserve">
+    <value>Arány</value>
+    <comment>Mac key: Ratio</comment>
+  </data>
+  <data name="RecentFolders" xml:space="preserve">
+    <value>Legutóbbi mappák</value>
+    <comment>Mac key: Recent folders</comment>
+  </data>
+  <data name="Reconnect" xml:space="preserve">
+    <value>Újracsatlakozás</value>
+    <comment>Mac key: Reconnect</comment>
+  </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>Hátravan</value>
+    <comment>Mac key: Remaining</comment>
+  </data>
+  <data name="RemoteToLocalPathMappings" xml:space="preserve">
+    <value>Távoli és helyi elérési utak összekapcsolása</value>
+    <comment>Mac key: Remote to local path mappings</comment>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Eltávolítás</value>
+    <comment>Mac key: Remove</comment>
+  </data>
+  <data name="RemoveAndDeleteData" xml:space="preserve">
+    <value>Eltávolítás és az adatok törlése</value>
+    <comment>Mac key: Remove and Delete Data</comment>
+  </data>
+  <data name="RemoveAndDeleteDataEllipsis" xml:space="preserve">
+    <value>Eltávolítás és az adatok törlése…</value>
+    <comment>Mac key: Remove and Delete Data…</comment>
+  </data>
+  <data name="RemoveEllipsis" xml:space="preserve">
+    <value>Eltávolítás…</value>
+    <comment>Mac key: Remove…</comment>
+  </data>
+  <data name="RemoveMapping" xml:space="preserve">
+    <value>Összekapcsolás eltávolítása</value>
+    <comment>Mac key: Remove Mapping</comment>
+  </data>
+  <data name="RemoveServer" xml:space="preserve">
+    <value>Szerver eltávolítása</value>
+    <comment>Mac key: Remove Server</comment>
+  </data>
+  <data name="RemoveTheSelectedTorrents" xml:space="preserve">
+    <value>A kijelölt torrentek eltávolítása</value>
+    <comment>Mac key: Remove the selected torrents</comment>
+  </data>
+  <data name="RemoveTorrent_One" xml:space="preserve">
+    <value>{0} torrent eltávolítása?</value>
+    <comment>Mac key: Remove ^[%lld torrent](inflect: true)?</comment>
+  </data>
+  <data name="RemoveTorrent_Other" xml:space="preserve">
+    <value>{0} torrent eltávolítása?</value>
+    <comment>Mac key: Remove ^[%lld torrent](inflect: true)?</comment>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Átnevezés</value>
+    <comment>Mac key: Rename</comment>
+  </data>
+  <data name="RenameEllipsis" xml:space="preserve">
+    <value>Átnevezés…</value>
+    <comment>Mac key: Rename…</comment>
+  </data>
+  <data name="RenameTorrent" xml:space="preserve">
+    <value>Torrent átnevezése</value>
+    <comment>Mac key: Rename Torrent</comment>
+  </data>
+  <data name="RenamesTheFileOrFolderOnTheServer" xml:space="preserve">
+    <value>Átnevezi a fájlt vagy mappát a szerveren.</value>
+    <comment>Mac key: Renames the file or folder on the server.</comment>
+  </data>
+  <data name="RenamesTheTorrentsTopLevelFileOrFolderOn" xml:space="preserve">
+    <value>Átnevezi a torrent legfelső szintű fájlját vagy mappáját a szerveren.</value>
+    <comment>Mac key: Renames the torrent's top-level file or folder on the server.</comment>
+  </data>
+  <data name="RequireEncryption" xml:space="preserve">
+    <value>Titkosítás megkövetelése</value>
+    <comment>Mac key: Require encryption</comment>
+  </data>
+  <data name="ResolveHostNames" xml:space="preserve">
+    <value>Gazdagépnevek feloldása</value>
+    <comment>Mac key: Resolve Host Names</comment>
+  </data>
+  <data name="Revert" xml:space="preserve">
+    <value>Visszaállítás</value>
+    <comment>Mac key: Revert</comment>
+  </data>
+  <data name="RightClickThePeerListToTurnHostNamesAnd" xml:space="preserve">
+    <value>A gazdagépnevek és az országok be- vagy kikapcsolásához kattintson a jobb gombbal a partnerlistára. Az országadatok a [DB-IP IP to Country Lite adatbázisából](https://db-ip.com) származnak, CC BY 4.0 licenc alatt érhetők el, és havonta frissülnek.</value>
+    <comment>Mac key: Right-click the peer list to turn host names and countries on or off. Country data is [IP to Country Lite by DB-IP](https://db-ip.com), licensed under CC BY 4.0, and updates monthly.</comment>
+  </data>
+  <data name="Rules" xml:space="preserve">
+    <value>Szabályok</value>
+    <comment>Mac key: Rules</comment>
+  </data>
+  <data name="SHA256FingerprintPresentedByTheServer" xml:space="preserve">
+    <value>A szerver által bemutatott SHA-256 ujjlenyomat:</value>
+    <comment>Mac key: SHA-256 fingerprint presented by the server:</comment>
+  </data>
+  <data name="SOCKS5" xml:space="preserve">
+    <value>SOCKS 5</value>
+    <comment>Mac key: SOCKS 5</comment>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Mentés</value>
+    <comment>Mac key: Save</comment>
+  </data>
+  <data name="SaveAndConnect" xml:space="preserve">
+    <value>Mentés és csatlakozás</value>
+    <comment>Mac key: Save and Connect</comment>
+  </data>
+  <data name="SaveTheURLFirstIfYouChangedItTheServer" xml:space="preserve">
+    <value>Ha módosította az URL-t, előbb mentse el; a listát maga a szerver tölti le.</value>
+    <comment>Mac key: Save the URL first if you changed it; the server downloads the list itself.</comment>
+  </data>
+  <data name="SaveTo" xml:space="preserve">
+    <value>Mentés ide</value>
+    <comment>Mac key: Save to</comment>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Biztonság</value>
+    <comment>Mac key: Security</comment>
+  </data>
+  <data name="SeedRatio" xml:space="preserve">
+    <value>Megosztás eddig az arányig</value>
+    <comment>Mac key: Seed ratio</comment>
+  </data>
+  <data name="Seeding" xml:space="preserve">
+    <value>Megosztva</value>
+    <comment>Mac key: Seeding</comment>
+  </data>
+  <data name="SeedingFor" xml:space="preserve">
+    <value>Megosztási idő</value>
+    <comment>Mac key: Seeding for</comment>
+  </data>
+  <data name="SeedingTime" xml:space="preserve">
+    <value>Megosztási idő</value>
+    <comment>Mac key: Seeding Time</comment>
+  </data>
+  <data name="Seeds" xml:space="preserve">
+    <value>Megosztók</value>
+    <comment>Mac key: Seeds</comment>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>{0} kijelölve</value>
+    <comment>Mac key: %@ selected</comment>
+  </data>
+  <data name="SequentialDownloadUsefulForPreviewing" xml:space="preserve">
+    <value>Sorrendi letöltés, hasznos a médiafájlok letöltés közbeni előnézetéhez</value>
+    <comment>Mac key: Sequential download, useful for previewing media while it downloads</comment>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Szerver</value>
+    <comment>Mac key: Server</comment>
+  </data>
+  <data name="ServerDefault" xml:space="preserve">
+    <value>Szerver alapértelmezése</value>
+    <comment>Mac key: Server default</comment>
+  </data>
+  <data name="ServerSettingsEllipsis" xml:space="preserve">
+    <value>Szerverbeállítások…</value>
+    <comment>Mac key: Server Settings…</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Beállítások</value>
+    <comment>Mac key: Settings</comment>
+  </data>
+  <data name="SettingsEllipsis" xml:space="preserve">
+    <value>Beállítások…</value>
+    <comment>Mac key: Settings…</comment>
+  </data>
+  <data name="SettingsForThisAppAndTheConnected" xml:space="preserve">
+    <value>Az alkalmazás és a csatlakoztatott Transmission szerver beállításai</value>
+    <comment>Mac key: Settings for this app and the connected Transmission server</comment>
+  </data>
+  <data name="ShowCountries" xml:space="preserve">
+    <value>Országok megjelenítése</value>
+    <comment>Mac key: Show Countries</comment>
+  </data>
+  <data name="ShowInFinder" xml:space="preserve">
+    <value>Megjelenítés a Finderben</value>
+    <comment>Mac key: Show in Finder</comment>
+  </data>
+  <data name="ShowInMenuBar" xml:space="preserve">
+    <value>Megjelenítés a menüsorban</value>
+    <comment>Mac key: Show in menu bar</comment>
+  </data>
+  <data name="ShowInfoPane" xml:space="preserve">
+    <value>Infópanel megjelenítése</value>
+    <comment>Mac key: Show Info Pane</comment>
+  </data>
+  <data name="ShowLogFiles" xml:space="preserve">
+    <value>Naplófájlok megjelenítése</value>
+    <comment>Mac key: Show Log Files</comment>
+  </data>
+  <data name="ShowTransferSpeedsInTheMenuBar" xml:space="preserve">
+    <value>Átviteli sebességek megjelenítése a menüsorban</value>
+    <comment>Mac key: Show transfer speeds in the menu bar</comment>
+  </data>
+  <data name="ShowTransmissionRemote" xml:space="preserve">
+    <value>A Transmission Remote megjelenítése</value>
+    <comment>Mac key: Show Transmission Remote</comment>
+  </data>
+  <data name="ShowWherePeersAreFromWithDBIPsFree" xml:space="preserve">
+    <value>Megmutatja, honnan származnak a partnerek, a DB-IP ingyenes országadatbázisával (kb. 5 MB).</value>
+    <comment>Mac key: Show where peers are from with DB-IP's free country database, about 5 MB.</comment>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Méret</value>
+    <comment>Mac key: Size</comment>
+  </data>
+  <data name="SizeLeft" xml:space="preserve">
+    <value>Maradék méret</value>
+    <comment>Mac key: Size Left</comment>
+  </data>
+  <data name="SkipThisVersion" xml:space="preserve">
+    <value>Verzió kihagyása</value>
+    <comment>Mac key: Skip This Version</comment>
+  </data>
+  <data name="SkippedAlreadySetUpHere" xml:space="preserve">
+    <value>Kihagyva: {0}, mert már be van állítva itt.</value>
+    <comment>Mac key: Skipped %@, already set up here.</comment>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Sebesség</value>
+    <comment>Mac key: Speed</comment>
+  </data>
+  <data name="SpeedLimitMenuItems" xml:space="preserve">
+    <value>Sebességkorlát-menüpontok</value>
+    <comment>Mac key: Speed limit menu items</comment>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Indítás</value>
+    <comment>Mac key: Start</comment>
+  </data>
+  <data name="StartAll" xml:space="preserve">
+    <value>Összes indítása</value>
+    <comment>Mac key: Start All</comment>
+  </data>
+  <data name="StartNow" xml:space="preserve">
+    <value>Indítás azonnal</value>
+    <comment>Mac key: Start Now</comment>
+  </data>
+  <data name="StartTheSelectedTorrents" xml:space="preserve">
+    <value>A kijelölt torrentek indítása</value>
+    <comment>Mac key: Start the selected torrents</comment>
+  </data>
+  <data name="StartTorrentsWhenAdded" xml:space="preserve">
+    <value>Torrentek indítása hozzáadáskor</value>
+    <comment>Mac key: Start torrents when added</comment>
+  </data>
+  <data name="StartWhenAdded" xml:space="preserve">
+    <value>Indítás hozzáadáskor</value>
+    <comment>Mac key: Start when added</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Állapot</value>
+    <comment>Mac key: Status</comment>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Leállítás</value>
+    <comment>Mac key: Stop</comment>
+  </data>
+  <data name="StopAll" xml:space="preserve">
+    <value>Összes leállítása</value>
+    <comment>Mac key: Stop All</comment>
+  </data>
+  <data name="StopAtRatio" xml:space="preserve">
+    <value>Leállítás adott aránynál</value>
+    <comment>Mac key: Stop at ratio</comment>
+  </data>
+  <data name="StopSeedingWhenInactiveFor" xml:space="preserve">
+    <value>Megosztás leállítása, ha tétlen ennyi ideig</value>
+    <comment>Mac key: Stop seeding when inactive for</comment>
+  </data>
+  <data name="StopTheSelectedTorrents" xml:space="preserve">
+    <value>A kijelölt torrentek leállítása</value>
+    <comment>Mac key: Stop the selected torrents</comment>
+  </data>
+  <data name="StopTrying" xml:space="preserve">
+    <value>Próbálkozás leállítása</value>
+    <comment>Mac key: Stop Trying</comment>
+  </data>
+  <data name="StopWhenIdle" xml:space="preserve">
+    <value>Leállítás tétlenség esetén</value>
+    <comment>Mac key: Stop when idle</comment>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Leállítva</value>
+    <comment>Mac key: Stopped</comment>
+  </data>
+  <data name="SwitchServer" xml:space="preserve">
+    <value>Szerverváltás</value>
+    <comment>Mac key: Switch server</comment>
+  </data>
+  <data name="TestConnection" xml:space="preserve">
+    <value>Kapcsolat tesztelése</value>
+    <comment>Mac key: Test Connection</comment>
+  </data>
+  <data name="TestPort" xml:space="preserve">
+    <value>Port tesztelése</value>
+    <comment>Mac key: Test Port</comment>
+  </data>
+  <data name="Text192168110OrNasTailnetTsNet" xml:space="preserve">
+    <value>192.168.1.10 vagy nas.tailnet.ts.net</value>
+    <comment>Mac key: 192.168.1.10 or nas.tailnet.ts.net</comment>
+  </data>
+  <data name="Text_DAEA45" xml:space="preserve">
+    <value>{0}</value>
+    <comment>Mac key: %lld</comment>
+  </data>
+  <data name="TheAddressCouldNotBeTurnedIntoAURL" xml:space="preserve">
+    <value>a címből nem sikerült URL-t képezni.</value>
+    <comment>Mac key: the address couldn't be turned into a URL.</comment>
+  </data>
+  <data name="TheCertificateFilesPasswordIsWrong" xml:space="preserve">
+    <value>A tanúsítványfájl jelszava helytelen.</value>
+    <comment>Mac key: The certificate file's password is wrong.</comment>
+  </data>
+  <data name="TheDownloadedFilesWillBeDeletedFromThe" xml:space="preserve">
+    <value>A letöltött fájlok törlődnek a szerverről. Ez nem vonható vissza.</value>
+    <comment>Mac key: The downloaded files will be deleted from the server. This can't be undone.</comment>
+  </data>
+  <data name="TheFileHasNoPrivateKeyExportThe" xml:space="preserve">
+    <value>A fájl nem tartalmaz privát kulcsot. Exportálja a tanúsítványt a kulcsával együtt.</value>
+    <comment>Mac key: The file has no private key. Export the certificate together with its key.</comment>
+  </data>
+  <data name="TheHostContainsCharactersThatAreNot" xml:space="preserve">
+    <value>a gazdagépnév nem engedélyezett karaktereket tartalmaz.</value>
+    <comment>Mac key: the host contains characters that aren't allowed.</comment>
+  </data>
+  <data name="TheHostIsEmpty" xml:space="preserve">
+    <value>nincs megadva gazdagép.</value>
+    <comment>Mac key: the host is empty.</comment>
+  </data>
+  <data name="TheNameOfTheTorrentsFolderOrOfTheFileFor" xml:space="preserve">
+    <value>A torrent mappájának neve, egyfájlos torrent esetén a fájl neve</value>
+    <comment>Mac key: The name of the torrent's folder, or of the file for a single-file torrent</comment>
+  </data>
+  <data name="ThePortMustBeBetween1And65535" xml:space="preserve">
+    <value>a portnak 1 és 65535 között kell lennie.</value>
+    <comment>Mac key: the port must be between 1 and 65535.</comment>
+  </data>
+  <data name="TheProxyPortMustBeBetween1And65535" xml:space="preserve">
+    <value>A proxyportnak 1 és 65535 között kell lennie.</value>
+    <comment>Mac key: The proxy port must be between 1 and 65535.</comment>
+  </data>
+  <data name="TheRPCPathMustStartWith" xml:space="preserve">
+    <value>az RPC-útvonalnak „/” karakterrel kell kezdődnie.</value>
+    <comment>Mac key: the RPC path must start with “/”.</comment>
+  </data>
+  <data name="TheServerAddressIsInvalid" xml:space="preserve">
+    <value>A szerver címe érvénytelen: {0}</value>
+    <comment>Mac key: The server address is invalid: %@</comment>
+  </data>
+  <data name="TheServerAnsweredWithAWebPageInsteadOf" xml:space="preserve">
+    <value>A szerver a Transmission helyett egy weboldallal válaszolt. Ellenőrizze a portot és az RPC útvonalat, általában /transmission/rpc.</value>
+    <comment>Mac key: The server answered with a web page instead of Transmission. Check the port and the RPC path, usually /transmission/rpc.</comment>
+  </data>
+  <data name="TheServerDidNotAcceptASecureHTTPS" xml:space="preserve">
+    <value>A szerver nem fogadott el biztonságos (HTTPS) kapcsolatot. A Transmission beépített szervere csak egyszerű HTTP-t ismer, ezért kapcsolja ki a HTTPS-t ennél a szervernél, hacsak nem egy, a démon előtt álló fordított proxy biztosítja. Tailscale-en keresztül az egyszerű HTTP-t már az alagút titkosítja.</value>
+    <comment>Mac key: The server didn't accept a secure (HTTPS) connection. Transmission's built-in server only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel.</comment>
+  </data>
+  <data name="TheServerDoesNotAcceptThisHostname" xml:space="preserve">
+    <value>A szerver nem fogadja el ezt a gazdagépnevet. Csatlakozzon IP-cím alapján, vagy adja hozzá a gazdagépnevet a démon settings.json fájljában az „rpc-host-whitelist” listához.</value>
+    <comment>Mac key: The server doesn't accept this hostname. Connect by IP address, or add the hostname to “rpc-host-whitelist” in the daemon's settings.json.</comment>
+  </data>
+  <data name="TheServerLooksForTheFilesInTheNewFolder" xml:space="preserve">
+    <value>A szerver az új mappában keresi a fájlokat ahelyett, hogy áthelyezné őket.</value>
+    <comment>Mac key: The server looks for the files in the new folder instead of moving them.</comment>
+  </data>
+  <data name="TheServerMovesExistingFiles" xml:space="preserve">
+    <value>A szerver áthelyezi a meglévő fájlokat.</value>
+    <comment>Mac key: The server moves existing files.</comment>
+  </data>
+  <data name="TheServerRefusedThisComputersIPAddress" xml:space="preserve">
+    <value>A szerver elutasította ennek a számítógépnek az IP-címét. Adja hozzá az „rpc-whitelist” listához a démon settings.json fájljában, vagy kapcsolja ki az engedélyezési listát.</value>
+    <comment>Mac key: The server refused this computer's IP address. Add it to “rpc-whitelist” in the daemon's settings.json, or disable the whitelist.</comment>
+  </data>
+  <data name="TheServerRejectedTheUsernameOrPassword" xml:space="preserve">
+    <value>A szerver elutasította a felhasználónevet vagy a jelszót.</value>
+    <comment>Mac key: The server rejected the username or password.</comment>
+  </data>
+  <data name="TheServerRespondedWithHTTPCheckTheRPC" xml:space="preserve">
+    <value>A szerver HTTP {0} kóddal válaszolt. Ellenőrizze az RPC-útvonalat és a portot.</value>
+    <comment>Mac key: The server responded with HTTP %lld. Check the RPC path and port.</comment>
+  </data>
+  <data name="TheServerSentAResponseThatCouldNotBeRead" xml:space="preserve">
+    <value>A szerver olvashatatlan választ küldött ({0}).</value>
+    <comment>Mac key: The server sent a response that couldn't be read (%@).</comment>
+  </data>
+  <data name="TheServerTriedToRedirectTheConnectionToA" xml:space="preserve">
+    <value>A szerver megpróbálta egy másik címre átirányítani a kapcsolatot. A kérést a hitelesítő adatai védelme érdekében letiltottuk.</value>
+    <comment>Mac key: The server tried to redirect the connection to a different address. The request was blocked to protect your credentials.</comment>
+  </data>
+  <data name="TheServersTLSCertificateIsNotTrusted" xml:space="preserve">
+    <value>A szerver TLS-tanúsítványa nem megbízható.</value>
+    <comment>Mac key: The server's TLS certificate isn't trusted.</comment>
+  </data>
+  <data name="ThisIsNotACertificateFileInPKCS12P12" xml:space="preserve">
+    <value>Ez nem PKCS #12 (.p12) formátumú tanúsítványfájl.</value>
+    <comment>Mac key: This isn't a certificate file in PKCS #12 (.p12) format.</comment>
+  </data>
+  <data name="ThisServerUsesPlainHTTPOverTheInternetSo" xml:space="preserve">
+    <value>Ez a szerver egyszerű HTTP-t használ az interneten keresztül, így a jelszava titkosítatlanul kerülne elküldésre. Használjon HTTPS-t, VPN-t (például Tailscale-t), vagy engedélyezze a titkosítatlan kapcsolatot ennél a szervernél.</value>
+    <comment>Mac key: This server uses plain HTTP over the internet, so your password would be sent unencrypted. Use HTTPS, a VPN such as Tailscale, or allow the unencrypted connection for this server.</comment>
+  </data>
+  <data name="ThisServersClientCertificateIsMissing" xml:space="preserve">
+    <value>A szerver klienstanúsítványa hiányzik a Kulcskarikából. Válassza ki újra a Beállítások → Transmission panelen.</value>
+    <comment>Mac key: This server's client certificate is missing from the Keychain. Choose it again in Settings → Transmission.</comment>
+  </data>
+  <data name="ThisTorrentIsAlreadyOnTheServer" xml:space="preserve">
+    <value>Ez a torrent már megtalálható a szerveren.</value>
+    <comment>Mac key: This torrent is already on the server.</comment>
+  </data>
+  <data name="ThisTorrentIsNoLongerOnTheServer" xml:space="preserve">
+    <value>Ez a torrent már nincs a szerveren.</value>
+    <comment>Mac key: This torrent is no longer on the server.</comment>
+  </data>
+  <data name="Tier" xml:space="preserve">
+    <value>Szint</value>
+    <comment>Mac key: Tier</comment>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Idő</value>
+    <comment>Mac key: Time</comment>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Eddig</value>
+    <comment>Mac key: To</comment>
+  </data>
+  <data name="ToOpenDownloadedFilesChooseEachLocal" xml:space="preserve">
+    <value>A letöltött fájlok megnyitásához válassza ki egyszer az egyes helyi mappákat a Beállítások → Elérési utak panelen, hogy a macOS engedélyezze az alkalmazásnak a megnyitásukat.</value>
+    <comment>Mac key: To open downloaded files, choose each local folder once in Settings → Paths, so macOS lets the app open it.</comment>
+  </data>
+  <data name="Torrent" xml:space="preserve">
+    <value>Torrent</value>
+    <comment>Mac key: Torrent</comment>
+  </data>
+  <data name="TorrentOptionsEllipsis" xml:space="preserve">
+    <value>Torrent beállításai…</value>
+    <comment>Mac key: Torrent Options…</comment>
+  </data>
+  <data name="Torrents" xml:space="preserve">
+    <value>torrent</value>
+    <comment>Mac key: torrents</comment>
+  </data>
+  <data name="TorrentsInAGroupShareItsLimitsChooseA" xml:space="preserve">
+    <value>Egy csoport torrentjei osztoznak a csoport korlátain. A torrent csoportját a Torrent beállításai ablakban választhatja ki. A Transmission nem engedi, hogy távoli alkalmazások csoportokat töröljenek.</value>
+    <comment>Mac key: Torrents in a group share its limits. Choose a torrent's group in Torrent Options. Transmission doesn't let remote apps delete groups.</comment>
+  </data>
+  <data name="TorrentsSavedInThisFolder" xml:space="preserve">
+    <value>Ebbe a mappába mentett torrentek: {0}</value>
+    <comment>Mac key: Torrents saved in this folder: %lld</comment>
+  </data>
+  <data name="TorrentsSelected_One" xml:space="preserve">
+    <value>{0} torrent kijelölve</value>
+    <comment>Mac key: %lld Torrents Selected</comment>
+  </data>
+  <data name="TorrentsSelected_Other" xml:space="preserve">
+    <value>{0} torrent kijelölve</value>
+    <comment>Mac key: %lld Torrents Selected</comment>
+  </data>
+  <data name="Torrents_One" xml:space="preserve">
+    <value>{0} torrent</value>
+    <comment>Mac key: %lld torrents</comment>
+  </data>
+  <data name="Torrents_Other" xml:space="preserve">
+    <value>{0} torrent</value>
+    <comment>Mac key: %lld torrents</comment>
+  </data>
+  <data name="TotalSize_51CDF6" xml:space="preserve">
+    <value>Teljes méret</value>
+    <comment>Mac key: Total size</comment>
+  </data>
+  <data name="TotalSize_9AC7DE" xml:space="preserve">
+    <value>Teljes méret</value>
+    <comment>Mac key: Total Size</comment>
+  </data>
+  <data name="Tracker" xml:space="preserve">
+    <value>Tracker</value>
+    <comment>Mac key: Tracker</comment>
+  </data>
+  <data name="TrackerError" xml:space="preserve">
+    <value>Trackerhiba</value>
+    <comment>Mac key: Tracker error</comment>
+  </data>
+  <data name="TrackerStatus" xml:space="preserve">
+    <value>Tracker állapota</value>
+    <comment>Mac key: Tracker Status</comment>
+  </data>
+  <data name="Trackers" xml:space="preserve">
+    <value>Trackerek</value>
+    <comment>Mac key: Trackers</comment>
+  </data>
+  <data name="Transmission" xml:space="preserve">
+    <value>Transmission</value>
+    <comment>Mac key: Transmission</comment>
+  </data>
+  <data name="TransmissionIsTooOldVersion240OrNewerIs" xml:space="preserve">
+    <value>A Transmission {0} túl régi. 2.40-es vagy újabb verzió szükséges.</value>
+    <comment>Mac key: Transmission %@ is too old. Version 2.40 or newer is required.</comment>
+  </data>
+  <data name="TransmissionOptions" xml:space="preserve">
+    <value>Transmission beállítások</value>
+    <comment>Mac key: Transmission Options</comment>
+  </data>
+  <data name="TransmissionRemote" xml:space="preserve">
+    <value>Transmission Remote</value>
+    <comment>Mac key: Transmission Remote</comment>
+  </data>
+  <data name="TransmissionRemoteIsAvailable" xml:space="preserve">
+    <value>Elérhető a Transmission Remote {0}</value>
+    <comment>Mac key: Transmission Remote %@ Is Available</comment>
+  </data>
+  <data name="TransmissionRemoteIsTheNewestVersion" xml:space="preserve">
+    <value>A Transmission Remote {0} a legújabb verzió.</value>
+    <comment>Mac key: Transmission Remote %@ is the newest version.</comment>
+  </data>
+  <data name="TransmissionRemoteRanIntoAProblemAndHas" xml:space="preserve">
+    <value>A Transmission Remote hibába ütközött, és bezárul. Megnyitja a naplófájlok mappáját, hogy megnézze, mi történt?</value>
+    <comment>Mac key: Transmission Remote ran into a problem and has to close. Open the logs folder to see what went wrong?
+Mac comment: Windows only. Message box after an error nothing else caught; the app exits after it. Yes opens the logs folder.</comment>
+  </data>
+  <data name="TransmissionRemoteRanIntoAProblemInThe" xml:space="preserve">
+    <value>A Transmission Remote hibába ütközött a háttérben. Megnyitja a naplófájlok mappáját, hogy megnézze, mi történt?</value>
+    <comment>Mac key: Transmission Remote ran into a problem in the background. Open the logs folder to see what went wrong?
+Mac comment: Windows only. Message box after an error in background work nothing else caught; the app keeps running. Yes opens the logs folder.</comment>
+  </data>
+  <data name="TrustThisCertificate" xml:space="preserve">
+    <value>Tanúsítvány megbízhatónak jelölése</value>
+    <comment>Mac key: Trust This Certificate</comment>
+  </data>
+  <data name="TrustedCertificate" xml:space="preserve">
+    <value>Megbízható tanúsítvány</value>
+    <comment>Mac key: Trusted certificate</comment>
+  </data>
+  <data name="TryAgain" xml:space="preserve">
+    <value>Újrapróbálás</value>
+    <comment>Mac key: Try Again</comment>
+  </data>
+  <data name="TryNow" xml:space="preserve">
+    <value>Próbálkozás most</value>
+    <comment>Mac key: Try Now</comment>
+  </data>
+  <data name="TryingAgainEllipsis" xml:space="preserve">
+    <value>Újrapróbálkozás…</value>
+    <comment>Mac key: Trying again…</comment>
+  </data>
+  <data name="TryingAgainIn" xml:space="preserve">
+    <value>Újrapróbálkozás {0} múlva</value>
+    <comment>Mac key: Trying again in %@</comment>
+  </data>
+  <data name="TurnOnAlternativeSpeedLimits" xml:space="preserve">
+    <value>Alternatív sebességkorlátok bekapcsolása</value>
+    <comment>Mac key: Turn on alternative speed limits</comment>
+  </data>
+  <data name="UTP" xml:space="preserve">
+    <value>µTP</value>
+    <comment>Mac key: µTP</comment>
+  </data>
+  <data name="UnencryptedConnectionBlocked" xml:space="preserve">
+    <value>Titkosítatlan kapcsolat letiltva</value>
+    <comment>Mac key: Unencrypted Connection Blocked</comment>
+  </data>
+  <data name="Unlimited" xml:space="preserve">
+    <value>Korlátlan</value>
+    <comment>Mac key: Unlimited</comment>
+  </data>
+  <data name="UntrustedCertificate" xml:space="preserve">
+    <value>Nem megbízható tanúsítvány</value>
+    <comment>Mac key: Untrusted Certificate</comment>
+  </data>
+  <data name="UntrustedCertificateConnectFromTheMain" xml:space="preserve">
+    <value>Nem megbízható tanúsítvány. Csatlakozzon a főablakból, hogy megtekinthesse és megbízhatónak jelölhesse ({0}…).</value>
+    <comment>Mac key: Untrusted certificate. Connect from the main window to review and trust it (%@…).</comment>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Fel</value>
+    <comment>Mac key: Up</comment>
+  </data>
+  <data name="UpKBS" xml:space="preserve">
+    <value>↑ {0} kB/s</value>
+    <comment>Mac key: ↑ %@ kB/s</comment>
+  </data>
+  <data name="UpUnlimited" xml:space="preserve">
+    <value>↑ korlátlan</value>
+    <comment>Mac key: ↑ unlimited</comment>
+  </data>
+  <data name="UpdateNow" xml:space="preserve">
+    <value>Frissítés most</value>
+    <comment>Mac key: Update Now</comment>
+  </data>
+  <data name="Updated" xml:space="preserve">
+    <value>Frissítve: {0}</value>
+    <comment>Mac key: Updated %@</comment>
+  </data>
+  <data name="UpdatedRules_One" xml:space="preserve">
+    <value>Frissítve: {0} szabály</value>
+    <comment>Mac key: Updated: %lld rules</comment>
+  </data>
+  <data name="UpdatedRules_Other" xml:space="preserve">
+    <value>Frissítve: {0} szabály</value>
+    <comment>Mac key: Updated: %lld rules</comment>
+  </data>
+  <data name="Updates" xml:space="preserve">
+    <value>Frissítések</value>
+    <comment>Mac key: Updates</comment>
+  </data>
+  <data name="UpdatingEllipsis" xml:space="preserve">
+    <value>Frissítés…</value>
+    <comment>Mac key: Updating…</comment>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Feltöltés</value>
+    <comment>Mac key: Upload</comment>
+  </data>
+  <data name="UploadQueueSize" xml:space="preserve">
+    <value>Feltöltési sor hossza</value>
+    <comment>Mac key: Upload queue size</comment>
+  </data>
+  <data name="UploadSpeedLimit" xml:space="preserve">
+    <value>Feltöltési sebességkorlát</value>
+    <comment>Mac key: Upload Speed Limit</comment>
+  </data>
+  <data name="UploadSpeedsKBS" xml:space="preserve">
+    <value>Feltöltési sebességek (kB/s)</value>
+    <comment>Mac key: Upload speeds (kB/s)</comment>
+  </data>
+  <data name="Uploaded" xml:space="preserve">
+    <value>Feltöltve</value>
+    <comment>Mac key: Uploaded</comment>
+  </data>
+  <data name="UploadingToPeer" xml:space="preserve">
+    <value>Feltöltés a partnernek</value>
+    <comment>Mac key: Uploading to peer</comment>
+  </data>
+  <data name="UseAlternateBandwidthSettings" xml:space="preserve">
+    <value>Alternatív sávszélesség-beállítások használata</value>
+    <comment>Mac key: Use alternate bandwidth settings</comment>
+  </data>
+  <data name="UseCertificate" xml:space="preserve">
+    <value>Tanúsítvány használata</value>
+    <comment>Mac key: Use Certificate</comment>
+  </data>
+  <data name="UseHTTPS" xml:space="preserve">
+    <value>HTTPS használata</value>
+    <comment>Mac key: Use HTTPS</comment>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Felhasználónév</value>
+    <comment>Mac key: Username</comment>
+  </data>
+  <data name="VerifyLocalData" xml:space="preserve">
+    <value>Helyi adatok ellenőrzése</value>
+    <comment>Mac key: Verify Local Data</comment>
+  </data>
+  <data name="Verifying_9A7FA7" xml:space="preserve">
+    <value>Ellenőrzés: {0}</value>
+    <comment>Mac key: Verifying %@</comment>
+  </data>
+  <data name="Verifying_A7D4A9" xml:space="preserve">
+    <value>Ellenőrzés</value>
+    <comment>Mac key: Verifying</comment>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Verzió: {0}</value>
+    <comment>Mac key: Version %@</comment>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Várakozás</value>
+    <comment>Mac key: Waiting</comment>
+  </data>
+  <data name="WaitingForMetadata" xml:space="preserve">
+    <value>Várakozás a metaadatokra</value>
+    <comment>Mac key: Waiting for Metadata</comment>
+  </data>
+  <data name="WeUnchokedThisPeerButTheyAreNot" xml:space="preserve">
+    <value>Feloldottuk ezt a partnert, de nem érdeklődik</value>
+    <comment>Mac key: We unchoked this peer, but they're not interested</comment>
+  </data>
+  <data name="WeWouldDownloadFromThisPeerIfTheyWould" xml:space="preserve">
+    <value>Letöltenénk ettől a partnertől, ha engedné</value>
+    <comment>Mac key: We would download from this peer if they'd let us</comment>
+  </data>
+  <data name="WeWouldUploadToThisPeerIfTheyWouldAsk" xml:space="preserve">
+    <value>Feltöltenénk ennek a partnernek, ha kérné</value>
+    <comment>Mac key: We would upload to this peer if they'd ask</comment>
+  </data>
+  <data name="Working" xml:space="preserve">
+    <value>Működik</value>
+    <comment>Mac key: Working</comment>
+  </data>
+  <data name="YesDHTAndPEXDisabled" xml:space="preserve">
+    <value>Igen (DHT és PEX letiltva)</value>
+    <comment>Mac key: Yes (DHT and PEX disabled)</comment>
+  </data>
+  <data name="YouAreUpToDate" xml:space="preserve">
+    <value>Az alkalmazás naprakész</value>
+    <comment>Mac key: You're Up to Date</comment>
+  </data>
+  <data name="YouHaveVersionDownloadTheNewDiskImage" xml:space="preserve">
+    <value>Az Ön verziója: {0}. Töltse le az új lemezképet a GitHubról, majd a jelenlegi lecseréléséhez húzza az alkalmazást az Alkalmazások mappába.</value>
+    <comment>Mac key: You have version %@. Download the new disk image from GitHub and drag the app into Applications to replace this one.</comment>
+  </data>
+</root>

@@ -1,0 +1,1977 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AGroupWithThisNameAlreadyExists" xml:space="preserve">
+    <value>이 이름을 가진 그룹이 이미 있습니다.</value>
+    <comment>Mac key: A group with this name already exists.</comment>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>정보</value>
+    <comment>Mac key: About</comment>
+  </data>
+  <data name="ActionFailed" xml:space="preserve">
+    <value>작업 실패</value>
+    <comment>Mac key: Action Failed</comment>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>활성</value>
+    <comment>Mac key: Active</comment>
+  </data>
+  <data name="ActiveFor" xml:space="preserve">
+    <value>활성 시간</value>
+    <comment>Mac key: Active for</comment>
+  </data>
+  <data name="ActiveOf" xml:space="preserve">
+    <value>활성: {1}개 중 {0}개</value>
+    <comment>Mac key: Active: %lld of %lld</comment>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>추가</value>
+    <comment>Mac key: Add</comment>
+  </data>
+  <data name="AddAMagnetLinkOrTorrentURL" xml:space="preserve">
+    <value>마그넷 링크 또는 토렌트 URL 추가</value>
+    <comment>Mac key: Add a magnet link or torrent URL</comment>
+  </data>
+  <data name="AddAServerInSettingsTransmissionFirst" xml:space="preserve">
+    <value>먼저 설정 → Transmission에서 서버를 추가하십시오.</value>
+    <comment>Mac key: Add a server in Settings → Transmission first.</comment>
+  </data>
+  <data name="AddAServerWithTheButtonOrBringYour" xml:space="preserve">
+    <value>+ 버튼으로 서버를 추가하거나 Transmission Remote GUI에서 서버를 가져오십시오.</value>
+    <comment>Mac key: Add a server with the + button, or bring your servers over from Transmission Remote GUI.</comment>
+  </data>
+  <data name="AddATorrentFile" xml:space="preserve">
+    <value>.torrent 파일 추가</value>
+    <comment>Mac key: Add a .torrent file</comment>
+  </data>
+  <data name="AddGroupEllipsis" xml:space="preserve">
+    <value>그룹 추가…</value>
+    <comment>Mac key: Add Group…</comment>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>링크 추가</value>
+    <comment>Mac key: Add Link</comment>
+  </data>
+  <data name="AddMapping" xml:space="preserve">
+    <value>매핑 추가</value>
+    <comment>Mac key: Add Mapping</comment>
+  </data>
+  <data name="AddPartExtensionToIncompleteFiles" xml:space="preserve">
+    <value>완료되지 않은 파일에 .part 확장자 추가</value>
+    <comment>Mac key: Add .part extension to incomplete files</comment>
+  </data>
+  <data name="AddServer" xml:space="preserve">
+    <value>서버 추가</value>
+    <comment>Mac key: Add Server</comment>
+  </data>
+  <data name="AddServerEllipsis" xml:space="preserve">
+    <value>서버 추가…</value>
+    <comment>Mac key: Add Server…</comment>
+  </data>
+  <data name="AddTheAddressOfYourTransmissionDaemonTo" xml:space="preserve">
+    <value>시작하려면 Transmission 데몬의 주소를 추가하십시오.</value>
+    <comment>Mac key: Add the address of your Transmission daemon to get started.</comment>
+  </data>
+  <data name="AddTorrent" xml:space="preserve">
+    <value>토렌트 추가</value>
+    <comment>Mac key: Add torrent</comment>
+  </data>
+  <data name="AddTorrentFile" xml:space="preserve">
+    <value>토렌트 파일 추가</value>
+    <comment>Mac key: Add Torrent File</comment>
+  </data>
+  <data name="AddTorrentFileEllipsis" xml:space="preserve">
+    <value>토렌트 파일 추가…</value>
+    <comment>Mac key: Add Torrent File…</comment>
+  </data>
+  <data name="AddTorrentLink" xml:space="preserve">
+    <value>토렌트 링크 추가</value>
+    <comment>Mac key: Add Torrent Link</comment>
+  </data>
+  <data name="AddTorrentLinkEllipsis" xml:space="preserve">
+    <value>토렌트 링크 추가…</value>
+    <comment>Mac key: Add Torrent Link…</comment>
+  </data>
+  <data name="Added" xml:space="preserve">
+    <value>추가된 날짜</value>
+    <comment>Mac key: Added</comment>
+  </data>
+  <data name="AddedWithPasswordsProxiesAndFolder" xml:space="preserve">
+    <value>{0}을(를) 암호, 프록시, 폴더 기록과 함께 추가했습니다.</value>
+    <comment>Mac key: Added %@, with passwords, proxies and folder history.</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>주소</value>
+    <comment>Mac key: Address</comment>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>고급</value>
+    <comment>Mac key: Advanced</comment>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>전체</value>
+    <comment>Mac key: All</comment>
+  </data>
+  <data name="AllTimeTotals" xml:space="preserve">
+    <value>누적 합계</value>
+    <comment>Mac key: All-time totals</comment>
+  </data>
+  <data name="AllowEncryption" xml:space="preserve">
+    <value>암호화 허용</value>
+    <comment>Mac key: Allow encryption</comment>
+  </data>
+  <data name="AllowUnencryptedConnection" xml:space="preserve">
+    <value>암호화되지 않은 연결 허용</value>
+    <comment>Mac key: Allow Unencrypted Connection</comment>
+  </data>
+  <data name="AllowUnencryptedConnectionAnyway" xml:space="preserve">
+    <value>그래도 암호화되지 않은 연결 허용</value>
+    <comment>Mac key: Allow unencrypted connection anyway</comment>
+  </data>
+  <data name="AlsoFollowTheServersGlobalLimits" xml:space="preserve">
+    <value>서버의 전체 제한도 따르기</value>
+    <comment>Mac key: Also follow the server's global limits</comment>
+  </data>
+  <data name="AlternateBandwidthSettings" xml:space="preserve">
+    <value>대체 대역폭 설정</value>
+    <comment>Mac key: Alternate bandwidth settings</comment>
+  </data>
+  <data name="AlternativeSpeedLimitsAreOn" xml:space="preserve">
+    <value>대체 속도 제한 켜짐</value>
+    <comment>Mac key: Alternative speed limits are on</comment>
+  </data>
+  <data name="AlternativeSpeedLimits_392B4B" xml:space="preserve">
+    <value>대체 속도 제한</value>
+    <comment>Mac key: Alternative speed limits</comment>
+  </data>
+  <data name="AlternativeSpeedLimits_5A9C91" xml:space="preserve">
+    <value>대체 속도 제한</value>
+    <comment>Mac key: Alternative Speed Limits</comment>
+  </data>
+  <data name="ApplicationOptions" xml:space="preserve">
+    <value>앱 옵션</value>
+    <comment>Mac key: Application Options</comment>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>적용</value>
+    <comment>Mac key: Apply</comment>
+  </data>
+  <data name="ApplyAlternateBandwidthSettings" xml:space="preserve">
+    <value>대체 대역폭 설정 자동 적용</value>
+    <comment>Mac key: Apply alternate bandwidth settings automatically</comment>
+  </data>
+  <data name="AskForMorePeers" xml:space="preserve">
+    <value>피어 추가 요청</value>
+    <comment>Mac key: Ask for More Peers</comment>
+  </data>
+  <data name="AskTrackersForMorePeers" xml:space="preserve">
+    <value>트래커에 피어 추가 요청</value>
+    <comment>Mac key: Ask Trackers for More Peers</comment>
+  </data>
+  <data name="AsksGitHubForTheNewestReleaseNothingIs" xml:space="preserve">
+    <value>GitHub에서 최신 릴리스를 확인합니다. 자동으로 다운로드하거나 설치하는 항목은 없습니다.</value>
+    <comment>Mac key: Asks GitHub for the newest release. Nothing is downloaded or installed automatically.</comment>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>인증</value>
+    <comment>Mac key: Authentication</comment>
+  </data>
+  <data name="AuthenticationRequired" xml:space="preserve">
+    <value>인증 필요</value>
+    <comment>Mac key: Authentication required</comment>
+  </data>
+  <data name="Automatic" xml:space="preserve">
+    <value>자동</value>
+    <comment>Mac key: Automatic</comment>
+  </data>
+  <data name="AutomaticUsesJSONRPC20OnTransmission41" xml:space="preserve">
+    <value>‘자동’은 Transmission 4.1 이상에서는 JSON-RPC 2.0을, 3.00 등 이전 버전에서는 레거시 프로토콜을 사용합니다.</value>
+    <comment>Mac key: Automatic uses JSON-RPC 2.0 on Transmission 4.1 and later, and the legacy protocol on older versions such as 3.00.</comment>
+  </data>
+  <data name="Backup" xml:space="preserve">
+    <value>백업</value>
+    <comment>Mac key: Backup</comment>
+  </data>
+  <data name="Bandwidth" xml:space="preserve">
+    <value>대역폭</value>
+    <comment>Mac key: Bandwidth</comment>
+  </data>
+  <data name="BandwidthGroup_319062" xml:space="preserve">
+    <value>대역폭 그룹</value>
+    <comment>Mac key: Bandwidth Group</comment>
+  </data>
+  <data name="BandwidthGroup_71D067" xml:space="preserve">
+    <value>대역폭 그룹</value>
+    <comment>Mac key: Bandwidth group</comment>
+  </data>
+  <data name="BandwidthGroups" xml:space="preserve">
+    <value>대역폭 그룹</value>
+    <comment>Mac key: Bandwidth groups</comment>
+  </data>
+  <data name="BandwidthGroupsNeedTransmission40OrLater" xml:space="preserve">
+    <value>대역폭 그룹을 사용하려면 Transmission 4.0 이상이 필요합니다.</value>
+    <comment>Mac key: Bandwidth groups need Transmission 4.0 or later.</comment>
+  </data>
+  <data name="BandwidthPriority_33C88A" xml:space="preserve">
+    <value>대역폭 우선순위</value>
+    <comment>Mac key: Bandwidth priority</comment>
+  </data>
+  <data name="BandwidthPriority_5262E0" xml:space="preserve">
+    <value>대역폭 우선순위</value>
+    <comment>Mac key: Bandwidth Priority</comment>
+  </data>
+  <data name="BlocklistURL" xml:space="preserve">
+    <value>차단 목록 URL</value>
+    <comment>Mac key: Blocklist URL</comment>
+  </data>
+  <data name="BrowseFoldersOnTheServer" xml:space="preserve">
+    <value>서버의 폴더 탐색</value>
+    <comment>Mac key: Browse folders on the server</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>취소</value>
+    <comment>Mac key: Cancel</comment>
+  </data>
+  <data name="CannotReachTheServer" xml:space="preserve">
+    <value>서버에 접속할 수 없음</value>
+    <comment>Mac key: Can't Reach the Server</comment>
+  </data>
+  <data name="CertificatePassword" xml:space="preserve">
+    <value>인증서 암호</value>
+    <comment>Mac key: Certificate Password</comment>
+  </data>
+  <data name="ChangesAreSentToTheServerWhenYouClick" xml:space="preserve">
+    <value>적용을 클릭하면 변경 사항이 서버로 전송됩니다.</value>
+    <comment>Mac key: Changes are sent to the server when you click Apply.</comment>
+  </data>
+  <data name="CheckForUpdatesEllipsis" xml:space="preserve">
+    <value>업데이트 확인…</value>
+    <comment>Mac key: Check for Updates…</comment>
+  </data>
+  <data name="CheckForUpdatesOnceADay" xml:space="preserve">
+    <value>하루에 한 번 업데이트 확인</value>
+    <comment>Mac key: Check for updates once a day</comment>
+  </data>
+  <data name="CheckNow" xml:space="preserve">
+    <value>지금 확인</value>
+    <comment>Mac key: Check Now</comment>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>선택</value>
+    <comment>Mac key: Choose</comment>
+  </data>
+  <data name="ChooseEllipsis" xml:space="preserve">
+    <value>선택…</value>
+    <comment>Mac key: Choose…</comment>
+  </data>
+  <data name="ChooseTransguiIniTransmissionRemoteGUI" xml:space="preserve">
+    <value>transgui.ini를 선택하십시오. Transmission Remote GUI는 이 파일을 ~/.config에 보관합니다.</value>
+    <comment>Mac key: Choose transgui.ini. Transmission Remote GUI keeps it in ~/.config.</comment>
+  </data>
+  <data name="ClearHistory" xml:space="preserve">
+    <value>기록 지우기</value>
+    <comment>Mac key: Clear History</comment>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>클라이언트</value>
+    <comment>Mac key: Client</comment>
+  </data>
+  <data name="ClientCertificate" xml:space="preserve">
+    <value>클라이언트 인증서</value>
+    <comment>Mac key: Client certificate</comment>
+  </data>
+  <data name="ClientCertificatesWereNotImportedChoose" xml:space="preserve">
+    <value>클라이언트 인증서는 가져오지 않았습니다. 설정 → Transmission에서 선택하십시오.</value>
+    <comment>Mac key: Client certificates weren't imported. Choose them in Settings → Transmission.</comment>
+  </data>
+  <data name="CollectingSpeedData" xml:space="preserve">
+    <value>속도 데이터 수집 중</value>
+    <comment>Mac key: Collecting Speed Data</comment>
+  </data>
+  <data name="CommaSeparatedSpeedsForTheSpeedLimit" xml:space="preserve">
+    <value>토렌트 메뉴와 서버 메뉴의 속도 제한 메뉴에 표시할 속도이며, 쉼표로 구분합니다. ‘제한 없음’은 항상 제공됩니다.</value>
+    <comment>Mac key: Comma-separated speeds for the Speed Limit menus in the torrent menu and the Server menu. Unlimited is always offered.</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>설명</value>
+    <comment>Mac key: Comment</comment>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>완료됨</value>
+    <comment>Mac key: Completed</comment>
+  </data>
+  <data name="ConfigFolder" xml:space="preserve">
+    <value>구성 폴더</value>
+    <comment>Mac key: Config folder</comment>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>연결</value>
+    <comment>Mac key: Connect</comment>
+  </data>
+  <data name="ConnectToATransmissionServerToChangeIts" xml:space="preserve">
+    <value>옵션을 변경하려면 Transmission 서버에 연결하십시오.</value>
+    <comment>Mac key: Connect to a Transmission server to change its options.</comment>
+  </data>
+  <data name="ConnectToTransmissionUsingProxyServer" xml:space="preserve">
+    <value>프록시 서버를 사용하여 Transmission에 연결</value>
+    <comment>Mac key: Connect to Transmission using proxy server</comment>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>연결됨</value>
+    <comment>Mac key: Connected</comment>
+  </data>
+  <data name="ConnectedOverUTP" xml:space="preserve">
+    <value>µTP로 연결됨</value>
+    <comment>Mac key: Connected over µTP</comment>
+  </data>
+  <data name="ConnectedToTransmissionUsing" xml:space="preserve">
+    <value>{1}을(를) 사용하여 Transmission {0}에 연결되었습니다.</value>
+    <comment>Mac key: Connected to Transmission %@ using %@.</comment>
+  </data>
+  <data name="ConnectingToEllipsis" xml:space="preserve">
+    <value>{0}에 연결 중…</value>
+    <comment>Mac key: Connecting to %@…</comment>
+  </data>
+  <data name="Connection" xml:space="preserve">
+    <value>연결</value>
+    <comment>Mac key: Connection</comment>
+  </data>
+  <data name="ConnectionToThisMac" xml:space="preserve">
+    <value>이 Mac에 대한 연결입니다.</value>
+    <comment>Mac key: Connection to this Mac.</comment>
+  </data>
+  <data name="ConsiderActiveTorrentsAsStalledWhenIdle" xml:space="preserve">
+    <value>다음 시간 동안 유휴 상태인 활성 토렌트를 정체로 간주</value>
+    <comment>Mac key: Consider active torrents as stalled when idle for</comment>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>계속</value>
+    <comment>Mac key: Continue</comment>
+  </data>
+  <data name="CopyMagnetLink" xml:space="preserve">
+    <value>마그넷 링크 복사</value>
+    <comment>Mac key: Copy Magnet Link</comment>
+  </data>
+  <data name="CopyPath" xml:space="preserve">
+    <value>경로 복사</value>
+    <comment>Mac key: Copy Path</comment>
+  </data>
+  <data name="Corrupt" xml:space="preserve">
+    <value>손상됨</value>
+    <comment>Mac key: Corrupt</comment>
+  </data>
+  <data name="CouldNotAddTorrent" xml:space="preserve">
+    <value>토렌트를 추가할 수 없음</value>
+    <comment>Mac key: Couldn't Add Torrent</comment>
+  </data>
+  <data name="CouldNotBeOpenedAsATorrentFile" xml:space="preserve">
+    <value>“{0}”을(를) 토렌트 파일로 열 수 없습니다.</value>
+    <comment>Mac key: “%@” couldn't be opened as a torrent file.</comment>
+  </data>
+  <data name="CouldNotCheckForUpdates" xml:space="preserve">
+    <value>업데이트를 확인할 수 없음</value>
+    <comment>Mac key: Couldn't Check for Updates</comment>
+  </data>
+  <data name="CouldNotConnect" xml:space="preserve">
+    <value>연결할 수 없음</value>
+    <comment>Mac key: Couldn't Connect</comment>
+  </data>
+  <data name="CouldNotImport" xml:space="preserve">
+    <value>가져올 수 없음</value>
+    <comment>Mac key: Couldn't Import</comment>
+  </data>
+  <data name="CouldNotLoadOptions" xml:space="preserve">
+    <value>옵션을 불러올 수 없음</value>
+    <comment>Mac key: Couldn't Load Options</comment>
+  </data>
+  <data name="CouldNotOpenCheckThatTheShareIsMounted" xml:space="preserve">
+    <value>{0}을(를) 열 수 없습니다. 공유가 마운트되어 있는지 확인한 다음, 설정 → 경로에서 해당 폴더를 다시 선택하십시오.</value>
+    <comment>Mac key: Couldn't open %@. Check that the share is mounted, and choose its folder again in Settings → Paths.</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>국가</value>
+    <comment>Mac key: Country</comment>
+  </data>
+  <data name="CountryDatabase" xml:space="preserve">
+    <value>국가 데이터베이스</value>
+    <comment>Mac key: Country database</comment>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>생성자</value>
+    <comment>Mac key: Created by</comment>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>생성 날짜</value>
+    <comment>Mac key: Created on</comment>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>사용자 지정</value>
+    <comment>Mac key: Custom</comment>
+  </data>
+  <data name="DataDisplay" xml:space="preserve">
+    <value>데이터 표시</value>
+    <comment>Mac key: Data display</comment>
+  </data>
+  <data name="DataRefreshInterval" xml:space="preserve">
+    <value>데이터 갱신 주기</value>
+    <comment>Mac key: Data refresh interval</comment>
+  </data>
+  <data name="DataRefreshIntervalInTheBackground" xml:space="preserve">
+    <value>백그라운드 데이터 갱신 주기</value>
+    <comment>Mac key: Data refresh interval in the background</comment>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>요일</value>
+    <comment>Mac key: Days</comment>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>기본</value>
+    <comment>Mac key: Default</comment>
+  </data>
+  <data name="DefaultDownloadFolderOnRemoteHost" xml:space="preserve">
+    <value>원격 호스트의 기본 다운로드 폴더</value>
+    <comment>Mac key: Default download folder on remote host</comment>
+  </data>
+  <data name="DeleteTorrentFilesFromTheWatchFolder" xml:space="preserve">
+    <value>추가 후 감시 폴더에서 .torrent 파일 삭제</value>
+    <comment>Mac key: Delete .torrent files from the watch folder after adding</comment>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>세부 정보</value>
+    <comment>Mac key: Detail</comment>
+  </data>
+  <data name="Direction" xml:space="preserve">
+    <value>방향</value>
+    <comment>Mac key: Direction</comment>
+  </data>
+  <data name="DirectoryForIncompleteFiles" xml:space="preserve">
+    <value>미완료 파일 디렉터리</value>
+    <comment>Mac key: Directory for incomplete files</comment>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>연결 해제</value>
+    <comment>Mac key: Disconnect</comment>
+  </data>
+  <data name="DiskCacheSize" xml:space="preserve">
+    <value>디스크 캐시 크기</value>
+    <comment>Mac key: Disk cache size</comment>
+  </data>
+  <data name="DoNotDownloadSelected" xml:space="preserve">
+    <value>선택 항목 다운로드 안 함</value>
+    <comment>Mac key: Don't Download Selected</comment>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>완료</value>
+    <comment>Mac key: Done</comment>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>다운 속도</value>
+    <comment>Mac key: Down</comment>
+  </data>
+  <data name="DownKBS" xml:space="preserve">
+    <value>↓ {0} kB/s</value>
+    <comment>Mac key: ↓ %@ kB/s</comment>
+  </data>
+  <data name="DownUnlimited" xml:space="preserve">
+    <value>↓ 제한 없음</value>
+    <comment>Mac key: ↓ unlimited</comment>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>다운로드</value>
+    <comment>Mac key: Download</comment>
+  </data>
+  <data name="DownloadComplete" xml:space="preserve">
+    <value>다운로드 완료</value>
+    <comment>Mac key: Download complete</comment>
+  </data>
+  <data name="DownloadDatabase" xml:space="preserve">
+    <value>데이터베이스 다운로드</value>
+    <comment>Mac key: Download Database</comment>
+  </data>
+  <data name="DownloadFailed_EAE34C" xml:space="preserve">
+    <value>다운로드 실패</value>
+    <comment>Mac key: Download failed</comment>
+  </data>
+  <data name="DownloadFailed_F37242" xml:space="preserve">
+    <value>다운로드 실패: {0}</value>
+    <comment>Mac key: Download failed: %@</comment>
+  </data>
+  <data name="DownloadInOrder" xml:space="preserve">
+    <value>순서대로 다운로드</value>
+    <comment>Mac key: Download in order</comment>
+  </data>
+  <data name="DownloadNow" xml:space="preserve">
+    <value>지금 다운로드</value>
+    <comment>Mac key: Download Now</comment>
+  </data>
+  <data name="DownloadPiecesInOrderByDefault" xml:space="preserve">
+    <value>기본적으로 조각을 순서대로 다운로드</value>
+    <comment>Mac key: Download pieces in order by default</comment>
+  </data>
+  <data name="DownloadQueueSize" xml:space="preserve">
+    <value>다운로드 큐 크기</value>
+    <comment>Mac key: Download queue size</comment>
+  </data>
+  <data name="DownloadSelected" xml:space="preserve">
+    <value>선택 항목 다운로드</value>
+    <comment>Mac key: Download Selected</comment>
+  </data>
+  <data name="DownloadSpeedLimit" xml:space="preserve">
+    <value>다운로드 속도 제한</value>
+    <comment>Mac key: Download Speed Limit</comment>
+  </data>
+  <data name="DownloadSpeedsKBS" xml:space="preserve">
+    <value>다운로드 속도(kB/s)</value>
+    <comment>Mac key: Download speeds (kB/s)</comment>
+  </data>
+  <data name="DownloadUpdate" xml:space="preserve">
+    <value>업데이트 다운로드</value>
+    <comment>Mac key: Download Update</comment>
+  </data>
+  <data name="Downloaded" xml:space="preserve">
+    <value>다운로드됨</value>
+    <comment>Mac key: Downloaded</comment>
+  </data>
+  <data name="DownloadedFilesStayOnTheServer" xml:space="preserve">
+    <value>다운로드한 파일은 서버에 남아 있습니다.</value>
+    <comment>Mac key: Downloaded files stay on the server.</comment>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>다운로드 중</value>
+    <comment>Mac key: Downloading</comment>
+  </data>
+  <data name="DownloadingEllipsis" xml:space="preserve">
+    <value>다운로드 중…</value>
+    <comment>Mac key: Downloading…</comment>
+  </data>
+  <data name="DownloadingFor" xml:space="preserve">
+    <value>다운로드 시간</value>
+    <comment>Mac key: Downloading for</comment>
+  </data>
+  <data name="DownloadingFromThisPeer" xml:space="preserve">
+    <value>이 피어에서 다운로드 중</value>
+    <comment>Mac key: Downloading from this peer</comment>
+  </data>
+  <data name="DownloadingTheCountryDatabaseEllipsis" xml:space="preserve">
+    <value>국가 데이터베이스 다운로드 중…</value>
+    <comment>Mac key: Downloading the country database…</comment>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>다운로드 수</value>
+    <comment>Mac key: Downloads</comment>
+  </data>
+  <data name="DropTorrentFilesOrMagnetLinksHereOrUse" xml:space="preserve">
+    <value>.torrent 파일이나 마그넷 링크를 여기에 놓거나 토렌트 추가를 사용하십시오.</value>
+    <comment>Mac key: Drop .torrent files or magnet links here, or use Add Torrent.</comment>
+  </data>
+  <data name="ETA" xml:space="preserve">
+    <value>남은 시간</value>
+    <comment>Mac key: ETA</comment>
+  </data>
+  <data name="EditEllipsis" xml:space="preserve">
+    <value>편집…</value>
+    <comment>Mac key: Edit…</comment>
+  </data>
+  <data name="EditServerEllipsis" xml:space="preserve">
+    <value>서버 편집…</value>
+    <comment>Mac key: Edit Server…</comment>
+  </data>
+  <data name="EditTrackers" xml:space="preserve">
+    <value>트래커 편집</value>
+    <comment>Mac key: Edit Trackers</comment>
+  </data>
+  <data name="EditTrackersEllipsis" xml:space="preserve">
+    <value>트래커 편집…</value>
+    <comment>Mac key: Edit Trackers…</comment>
+  </data>
+  <data name="EnableBlocklist" xml:space="preserve">
+    <value>차단 목록 사용</value>
+    <comment>Mac key: Enable blocklist</comment>
+  </data>
+  <data name="EnableDHT" xml:space="preserve">
+    <value>DHT 사용</value>
+    <comment>Mac key: Enable DHT</comment>
+  </data>
+  <data name="EnableLocalPeerDiscovery" xml:space="preserve">
+    <value>로컬 피어 발견 사용</value>
+    <comment>Mac key: Enable Local Peer Discovery</comment>
+  </data>
+  <data name="EnablePeerExchange" xml:space="preserve">
+    <value>피어 교환 사용</value>
+    <comment>Mac key: Enable Peer Exchange</comment>
+  </data>
+  <data name="EnablePortForwarding" xml:space="preserve">
+    <value>포트 포워딩 사용</value>
+    <comment>Mac key: Enable port forwarding</comment>
+  </data>
+  <data name="EnableUTP" xml:space="preserve">
+    <value>µTP 사용</value>
+    <comment>Mac key: Enable µTP</comment>
+  </data>
+  <data name="Encrypted" xml:space="preserve">
+    <value>암호화됨</value>
+    <comment>Mac key: Encrypted</comment>
+  </data>
+  <data name="EncryptedConnection" xml:space="preserve">
+    <value>암호화된 연결</value>
+    <comment>Mac key: Encrypted connection</comment>
+  </data>
+  <data name="EncryptedWithHTTPS" xml:space="preserve">
+    <value>HTTPS로 암호화되어 있습니다.</value>
+    <comment>Mac key: Encrypted with HTTPS.</comment>
+  </data>
+  <data name="Encryption" xml:space="preserve">
+    <value>암호화</value>
+    <comment>Mac key: Encryption</comment>
+  </data>
+  <data name="EnterJustTheHostNameOrIPAddressWithout" xml:space="preserve">
+    <value>“http://” 없이 호스트 이름이나 IP 주소만 입력하십시오.</value>
+    <comment>Mac key: enter just the host name or IP address, without “http://”.</comment>
+  </data>
+  <data name="EnterThePasswordThatProtects" xml:space="preserve">
+    <value>{0}을(를) 보호하는 암호를 입력하십시오.</value>
+    <comment>Mac key: Enter the password that protects %@.</comment>
+  </data>
+  <data name="EnterTheProxyServersAddress" xml:space="preserve">
+    <value>프록시 서버의 주소를 입력하십시오.</value>
+    <comment>Mac key: Enter the proxy server's address.</comment>
+  </data>
+  <data name="Error_1100F4" xml:space="preserve">
+    <value>오류: {0}</value>
+    <comment>Mac key: Error: %@</comment>
+  </data>
+  <data name="Error_54A0E8" xml:space="preserve">
+    <value>오류</value>
+    <comment>Mac key: Error</comment>
+  </data>
+  <data name="EveryS" xml:space="preserve">
+    <value>{0}초마다</value>
+    <comment>Mac key: Every %lld s</comment>
+  </data>
+  <data name="EveryServerInTransguiIniIsAlreadySetUp" xml:space="preserve">
+    <value>transgui.ini의 모든 서버가 이미 여기에 설정되어 있습니다.</value>
+    <comment>Mac key: Every server in transgui.ini is already set up here.</comment>
+  </data>
+  <data name="ExistingLabels" xml:space="preserve">
+    <value>기존 라벨</value>
+    <comment>Mac key: Existing labels</comment>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>파일</value>
+    <comment>Mac key: Files</comment>
+  </data>
+  <data name="Files_Other" xml:space="preserve">
+    <value>파일 {0}개</value>
+    <comment>Mac key: %lld files</comment>
+  </data>
+  <data name="FilterByName" xml:space="preserve">
+    <value>이름으로 필터링</value>
+    <comment>Mac key: Filter by name</comment>
+  </data>
+  <data name="Finished" xml:space="preserve">
+    <value>완료됨</value>
+    <comment>Mac key: Finished</comment>
+  </data>
+  <data name="Flags" xml:space="preserve">
+    <value>플래그</value>
+    <comment>Mac key: Flags</comment>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>폴더</value>
+    <comment>Mac key: Folder</comment>
+  </data>
+  <data name="FolderOnTheServer" xml:space="preserve">
+    <value>서버의 폴더</value>
+    <comment>Mac key: Folder on the server</comment>
+  </data>
+  <data name="FolderOnThisMac" xml:space="preserve">
+    <value>이 Mac의 폴더</value>
+    <comment>Mac key: Folder on this Mac</comment>
+  </data>
+  <data name="FoldersAppearHereOnceTorrentsAreSavedOn" xml:space="preserve">
+    <value>이 서버에 토렌트가 저장되면 여기에 폴더가 표시됩니다.</value>
+    <comment>Mac key: Folders appear here once torrents are saved on this server.</comment>
+  </data>
+  <data name="Folders_63B853" xml:space="preserve">
+    <value>개</value>
+    <comment>Mac key: folders</comment>
+  </data>
+  <data name="Folders_C4D6BB" xml:space="preserve">
+    <value>폴더</value>
+    <comment>Mac key: Folders</comment>
+  </data>
+  <data name="FollowTheServersGlobalLimits" xml:space="preserve">
+    <value>서버의 전체 제한 따르기</value>
+    <comment>Mac key: Follow the server's global limits</comment>
+  </data>
+  <data name="ForExampleMntHDHDA2OnTheServerIsVolumes" xml:space="preserve">
+    <value>예를 들어, NAS 공유가 /Volumes/HD_a2에 마운트되어 있으면 서버의 /mnt/HD/HD_a2는 이 Mac의 /Volumes/HD_a2입니다. 열기 및 Finder에서 보기는 이 매핑을 사용합니다.</value>
+    <comment>Mac key: For example, /mnt/HD/HD_a2 on the server is /Volumes/HD_a2 on this Mac when the NAS share is mounted there. Open and Show in Finder use these.</comment>
+  </data>
+  <data name="Forget" xml:space="preserve">
+    <value>지우기</value>
+    <comment>Mac key: Forget</comment>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>{0} 사용 가능</value>
+    <comment>Mac key: %@ free</comment>
+  </data>
+  <data name="FreeOnTheServer" xml:space="preserve">
+    <value>서버에 {0} 사용 가능</value>
+    <comment>Mac key: %@ free on the server</comment>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>시작</value>
+    <comment>Mac key: From</comment>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>일반</value>
+    <comment>Mac key: General</comment>
+  </data>
+  <data name="GettingMetadata" xml:space="preserve">
+    <value>메타데이터 가져오는 중</value>
+    <comment>Mac key: Getting metadata</comment>
+  </data>
+  <data name="GlobalBandwidthSettings" xml:space="preserve">
+    <value>전체 대역폭 설정</value>
+    <comment>Mac key: Global bandwidth settings</comment>
+  </data>
+  <data name="GlobalPeerLimit" xml:space="preserve">
+    <value>전체 피어 제한</value>
+    <comment>Mac key: Global peer limit</comment>
+  </data>
+  <data name="Hash" xml:space="preserve">
+    <value>해시</value>
+    <comment>Mac key: Hash</comment>
+  </data>
+  <data name="HideCountries" xml:space="preserve">
+    <value>국가 숨기기</value>
+    <comment>Mac key: Hide Countries</comment>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>높음</value>
+    <comment>Mac key: High</comment>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>호스트</value>
+    <comment>Mac key: Host</comment>
+  </data>
+  <data name="HowManyDownloadFoldersEachServer" xml:space="preserve">
+    <value>각 서버가 ‘저장 위치’용으로 기억하는 다운로드 폴더 수입니다.</value>
+    <comment>Mac key: How many download folders each server remembers for “Save to”.</comment>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+    <comment>Mac key: ID</comment>
+  </data>
+  <data name="IdleMinutes" xml:space="preserve">
+    <value>유휴 시간(분)</value>
+    <comment>Mac key: Idle minutes</comment>
+  </data>
+  <data name="IfYourMacReachesTheServerOtherwiseCheck" xml:space="preserve">
+    <value>다른 방법으로는 Mac이 서버에 연결된다면, 시스템 설정 → 개인정보 보호 및 보안 → 로컬 네트워크에서 Transmission Remote가 켜져 있는지 확인하십시오.</value>
+    <comment>Mac key: If your Mac reaches the server otherwise, check that Transmission Remote is turned on in System Settings → Privacy &amp; Security → Local Network.</comment>
+  </data>
+  <data name="IgnoresGlobalLimits" xml:space="preserve">
+    <value>전체 제한 무시</value>
+    <comment>Mac key: ignores global limits</comment>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>가져오기</value>
+    <comment>Mac key: Import</comment>
+  </data>
+  <data name="ImportFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Transmission Remote GUI에서 가져오기</value>
+    <comment>Mac key: Import from Transmission Remote GUI</comment>
+  </data>
+  <data name="ImportFromTransmissionRemoteGUIEllipsis" xml:space="preserve">
+    <value>Transmission Remote GUI에서 가져오기…</value>
+    <comment>Mac key: Import from Transmission Remote GUI…</comment>
+  </data>
+  <data name="ImportServersFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Transmission Remote GUI에서 서버 가져오기</value>
+    <comment>Mac key: Import servers from Transmission Remote GUI</comment>
+  </data>
+  <data name="ImportedFromTransmissionRemoteGUI" xml:space="preserve">
+    <value>Transmission Remote GUI에서 가져옴</value>
+    <comment>Mac key: Imported from Transmission Remote GUI</comment>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>비활성</value>
+    <comment>Mac key: Inactive</comment>
+  </data>
+  <data name="IncomingConnection" xml:space="preserve">
+    <value>들어오는 연결</value>
+    <comment>Mac key: Incoming connection</comment>
+  </data>
+  <data name="IncomingPort" xml:space="preserve">
+    <value>들어오는 포트</value>
+    <comment>Mac key: Incoming port</comment>
+  </data>
+  <data name="IncompleteFilesFolder" xml:space="preserve">
+    <value>미완료 파일 폴더</value>
+    <comment>Mac key: Incomplete files folder</comment>
+  </data>
+  <data name="IsAnAppOrScript" xml:space="preserve">
+    <value>‘{0}’은(는) 앱 또는 스크립트입니다</value>
+    <comment>Mac key: “%@” is an app or script</comment>
+  </data>
+  <data name="IsNotAMagnetLinkOrATorrentURL" xml:space="preserve">
+    <value>“{0}”은(는) 마그넷 링크나 토렌트 URL이 아닙니다.</value>
+    <comment>Mac key: “%@” isn't a magnet link or a torrent URL.</comment>
+  </data>
+  <data name="IsNotAValidTrackerURL" xml:space="preserve">
+    <value>“{0}”은(는) 올바른 트래커 URL이 아닙니다.</value>
+    <comment>Mac key: “%@” isn't a valid tracker URL.</comment>
+  </data>
+  <data name="IsTooLargeToBeATorrentFile" xml:space="preserve">
+    <value>“{0}”은(는) 너무 커서 토렌트 파일일 수 없습니다.</value>
+    <comment>Mac key: “%@” is too large to be a torrent file.</comment>
+  </data>
+  <data name="ItCameFromATorrentAndMacOSHasNotChecked" xml:space="preserve">
+    <value>토렌트에서 받은 파일이며, macOS가 다운로드 파일처럼 검사하지 않았습니다. 출처를 신뢰하는 경우에만 여십시오.</value>
+    <comment>Mac key: It came from a torrent, and macOS hasn't checked it the way it checks downloads. Open it only if you trust where it came from.</comment>
+  </data>
+  <data name="KBS_22B85B" xml:space="preserve">
+    <value>{0} kB/s</value>
+    <comment>Mac key: %lld kB/s</comment>
+  </data>
+  <data name="KBS_56B829" xml:space="preserve">
+    <value>kB/s</value>
+    <comment>Mac key: kB/s</comment>
+  </data>
+  <data name="Labels" xml:space="preserve">
+    <value>라벨</value>
+    <comment>Mac key: Labels</comment>
+  </data>
+  <data name="LabelsCommaSeparated" xml:space="preserve">
+    <value>라벨(쉼표로 구분)</value>
+    <comment>Mac key: Labels, comma-separated</comment>
+  </data>
+  <data name="LabelsEllipsis" xml:space="preserve">
+    <value>라벨…</value>
+    <comment>Mac key: Labels…</comment>
+  </data>
+  <data name="LastActive" xml:space="preserve">
+    <value>최근 활성</value>
+    <comment>Mac key: Last Active</comment>
+  </data>
+  <data name="LastAnnounce" xml:space="preserve">
+    <value>마지막 알림</value>
+    <comment>Mac key: Last Announce</comment>
+  </data>
+  <data name="Later" xml:space="preserve">
+    <value>나중에</value>
+    <comment>Mac key: Later</comment>
+  </data>
+  <data name="Leechers" xml:space="preserve">
+    <value>리처</value>
+    <comment>Mac key: Leechers</comment>
+  </data>
+  <data name="LegacyRPCOnly" xml:space="preserve">
+    <value>레거시 RPC만</value>
+    <comment>Mac key: Legacy RPC only</comment>
+  </data>
+  <data name="LegacyRPC_CE8968" xml:space="preserve">
+    <value>레거시 RPC</value>
+    <comment>Mac key: Legacy RPC</comment>
+  </data>
+  <data name="LegacyRPC_FB73DE" xml:space="preserve">
+    <value>레거시 RPC</value>
+    <comment>Mac key: legacy RPC</comment>
+  </data>
+  <data name="LimitDownloadSpeed" xml:space="preserve">
+    <value>다운로드 속도 제한</value>
+    <comment>Mac key: Limit download speed</comment>
+  </data>
+  <data name="LimitUploadSpeed" xml:space="preserve">
+    <value>업로드 속도 제한</value>
+    <comment>Mac key: Limit upload speed</comment>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>위치</value>
+    <comment>Mac key: Location</comment>
+  </data>
+  <data name="Low" xml:space="preserve">
+    <value>낮음</value>
+    <comment>Mac key: Low</comment>
+  </data>
+  <data name="MB" xml:space="preserve">
+    <value>MB</value>
+    <comment>Mac key: MB</comment>
+  </data>
+  <data name="MagnetLink" xml:space="preserve">
+    <value>마그넷 링크</value>
+    <comment>Mac key: Magnet link</comment>
+  </data>
+  <data name="ManageServersEllipsis" xml:space="preserve">
+    <value>서버 관리…</value>
+    <comment>Mac key: Manage Servers…</comment>
+  </data>
+  <data name="MaximumDownloadSpeed" xml:space="preserve">
+    <value>최대 다운로드 속도</value>
+    <comment>Mac key: Maximum download speed</comment>
+  </data>
+  <data name="MaximumFolderHistory" xml:space="preserve">
+    <value>최대 폴더 기록 수</value>
+    <comment>Mac key: Maximum folder history</comment>
+  </data>
+  <data name="MaximumPeers" xml:space="preserve">
+    <value>최대 피어 수</value>
+    <comment>Mac key: Maximum peers</comment>
+  </data>
+  <data name="MaximumUploadSpeed" xml:space="preserve">
+    <value>최대 업로드 속도</value>
+    <comment>Mac key: Maximum upload speed</comment>
+  </data>
+  <data name="MenuBarIcon" xml:space="preserve">
+    <value>메뉴 막대 아이콘</value>
+    <comment>Mac key: Menu bar icon</comment>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>분</value>
+    <comment>Mac key: minutes</comment>
+  </data>
+  <data name="Misc" xml:space="preserve">
+    <value>기타</value>
+    <comment>Mac key: Misc</comment>
+  </data>
+  <data name="Mixed" xml:space="preserve">
+    <value>혼합</value>
+    <comment>Mac key: Mixed</comment>
+  </data>
+  <data name="MntHDHDA2" xml:space="preserve">
+    <value>/mnt/HD/HD_a2</value>
+    <comment>Mac key: /mnt/HD/HD_a2</comment>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>이동</value>
+    <comment>Mac key: Move</comment>
+  </data>
+  <data name="MoveData" xml:space="preserve">
+    <value>데이터 이동</value>
+    <comment>Mac key: Move Data</comment>
+  </data>
+  <data name="MoveDataEllipsis" xml:space="preserve">
+    <value>데이터 이동…</value>
+    <comment>Mac key: Move Data…</comment>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>아래로 이동</value>
+    <comment>Mac key: Move Down</comment>
+  </data>
+  <data name="MoveTheDownloadedFilesToTheNewFolder" xml:space="preserve">
+    <value>다운로드한 파일을 새 폴더로 이동</value>
+    <comment>Mac key: Move the downloaded files to the new folder</comment>
+  </data>
+  <data name="MoveToBottom" xml:space="preserve">
+    <value>맨 아래로 이동</value>
+    <comment>Mac key: Move to Bottom</comment>
+  </data>
+  <data name="MoveToTop" xml:space="preserve">
+    <value>맨 위로 이동</value>
+    <comment>Mac key: Move to Top</comment>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>위로 이동</value>
+    <comment>Mac key: Move Up</comment>
+  </data>
+  <data name="MyNAS" xml:space="preserve">
+    <value>내 NAS</value>
+    <comment>Mac key: My NAS</comment>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>이름</value>
+    <comment>Mac key: Name</comment>
+  </data>
+  <data name="NetworkWAN" xml:space="preserve">
+    <value>네트워크(WAN)</value>
+    <comment>Mac key: Network (WAN)</comment>
+  </data>
+  <data name="Never" xml:space="preserve">
+    <value>안 함</value>
+    <comment>Mac key: Never</comment>
+  </data>
+  <data name="NewServer" xml:space="preserve">
+    <value>새 서버</value>
+    <comment>Mac key: New Server</comment>
+  </data>
+  <data name="NextAnnounce" xml:space="preserve">
+    <value>다음 알림</value>
+    <comment>Mac key: Next Announce</comment>
+  </data>
+  <data name="NoConnectedPeers" xml:space="preserve">
+    <value>연결된 피어 없음</value>
+    <comment>Mac key: No Connected Peers</comment>
+  </data>
+  <data name="NoFiles" xml:space="preserve">
+    <value>파일 없음</value>
+    <comment>Mac key: No Files</comment>
+  </data>
+  <data name="NoGroupsYet" xml:space="preserve">
+    <value>아직 그룹이 없습니다.</value>
+    <comment>Mac key: No groups yet.</comment>
+  </data>
+  <data name="NoKnownFolders" xml:space="preserve">
+    <value>알려진 폴더 없음</value>
+    <comment>Mac key: No Known Folders</comment>
+  </data>
+  <data name="NoServer" xml:space="preserve">
+    <value>서버 없음</value>
+    <comment>Mac key: No Server</comment>
+  </data>
+  <data name="NoServerSelected" xml:space="preserve">
+    <value>선택된 서버 없음</value>
+    <comment>Mac key: No Server Selected</comment>
+  </data>
+  <data name="NoServersWereFoundInThisFileChoose" xml:space="preserve">
+    <value>이 파일에서 서버를 찾을 수 없습니다. Transmission Remote GUI의 transgui.ini를 선택하십시오.</value>
+    <comment>Mac key: No servers were found in this file. Choose transgui.ini from Transmission Remote GUI.</comment>
+  </data>
+  <data name="NoTorrentSelected" xml:space="preserve">
+    <value>선택된 토렌트 없음</value>
+    <comment>Mac key: No Torrent Selected</comment>
+  </data>
+  <data name="NoTorrents" xml:space="preserve">
+    <value>토렌트 없음</value>
+    <comment>Mac key: No Torrents</comment>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>없음</value>
+    <comment>Mac key: None</comment>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>보통</value>
+    <comment>Mac key: Normal</comment>
+  </data>
+  <data name="NotChosen" xml:space="preserve">
+    <value>선택 안 됨</value>
+    <comment>Mac key: Not chosen</comment>
+  </data>
+  <data name="NotConnected_0303E1" xml:space="preserve">
+    <value>연결 안 됨</value>
+    <comment>Mac key: Not connected</comment>
+  </data>
+  <data name="NotConnected_3B3D27" xml:space="preserve">
+    <value>연결되어 있지 않습니다.</value>
+    <comment>Mac key: Not connected.</comment>
+  </data>
+  <data name="NotConnected_87D82C" xml:space="preserve">
+    <value>연결 안 됨</value>
+    <comment>Mac key: Not Connected</comment>
+  </data>
+  <data name="NotDownloaded" xml:space="preserve">
+    <value>다운로드 안 됨</value>
+    <comment>Mac key: Not downloaded</comment>
+  </data>
+  <data name="NotDownloading" xml:space="preserve">
+    <value>다운로드 안 함</value>
+    <comment>Mac key: Not downloading</comment>
+  </data>
+  <data name="NotYetAnnounced" xml:space="preserve">
+    <value>아직 알리지 않음</value>
+    <comment>Mac key: Not yet announced</comment>
+  </data>
+  <data name="NotifyWhenADownloadCompletes" xml:space="preserve">
+    <value>다운로드 완료 시 알림</value>
+    <comment>Mac key: Notify when a download completes</comment>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>확인</value>
+    <comment>Mac key: OK</comment>
+  </data>
+  <data name="OneAnnounceURLPerLineSeparateTiersWithA" xml:space="preserve">
+    <value>한 줄에 알림 URL을 하나씩 입력합니다. 계층은 빈 줄로 구분합니다.</value>
+    <comment>Mac key: One announce URL per line. Separate tiers with a blank line.</comment>
+  </data>
+  <data name="OnlyFoldersAlreadyUsedOnThisServerAre" xml:space="preserve">
+    <value>이 서버에서 이미 사용한 폴더만 표시됩니다. 새 폴더를 사용하려면 경로를 입력하십시오.</value>
+    <comment>Mac key: Only folders already used on this server are listed. To use a new one, type its path.</comment>
+  </data>
+  <data name="OnlyForHTTPSReverseProxiesThatAskForOne" xml:space="preserve">
+    <value>클라이언트 인증서를 요구하는 HTTPS 리버스 프록시에만 해당합니다. 인증서와 해당 키가 포함된 .p12 파일을 선택하십시오.</value>
+    <comment>Mac key: Only for HTTPS reverse proxies that ask for one. Choose a .p12 file with the certificate and its key.</comment>
+  </data>
+  <data name="OnlyTrustItIfItMatchesTheCertificateYou" xml:space="preserve">
+    <value>서버에 설치한 인증서와 일치하는 경우에만 신뢰하십시오.</value>
+    <comment>Mac key: Only trust it if it matches the certificate you installed on your server.</comment>
+  </data>
+  <data name="OnlyWithAReverseProxyInFrontOfTheDaemon" xml:space="preserve">
+    <value>데몬 앞에 리버스 프록시가 있는 경우에만 사용하십시오. Transmission 자체는 일반 HTTP만 제공합니다.</value>
+    <comment>Mac key: Only with a reverse proxy in front of the daemon. Transmission itself serves plain HTTP.</comment>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>열기</value>
+    <comment>Mac key: Open</comment>
+  </data>
+  <data name="OpenAnyway" xml:space="preserve">
+    <value>그래도 열기</value>
+    <comment>Mac key: Open Anyway</comment>
+  </data>
+  <data name="OptimisticUnchoke" xml:space="preserve">
+    <value>낙관적 언초크</value>
+    <comment>Mac key: Optimistic unchoke</comment>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>암호</value>
+    <comment>Mac key: Password</comment>
+  </data>
+  <data name="PasteMagnetLinksOrTorrentURLsOnePerLine" xml:space="preserve">
+    <value>마그넷 링크나 .torrent URL을 한 줄에 하나씩 붙여 넣으십시오.</value>
+    <comment>Mac key: Paste magnet links or .torrent URLs, one per line.</comment>
+  </data>
+  <data name="Paths" xml:space="preserve">
+    <value>경로</value>
+    <comment>Mac key: Paths</comment>
+  </data>
+  <data name="PeerFoundThroughDHT" xml:space="preserve">
+    <value>DHT로 찾은 피어</value>
+    <comment>Mac key: Peer found through DHT</comment>
+  </data>
+  <data name="PeerFoundThroughPeerExchangePEX" xml:space="preserve">
+    <value>피어 교환(PEX)으로 찾은 피어</value>
+    <comment>Mac key: Peer found through peer exchange (PEX)</comment>
+  </data>
+  <data name="PeerHasUnchokedUsButWeAreNotInterested" xml:space="preserve">
+    <value>피어가 초크를 해제했지만 관심 없음</value>
+    <comment>Mac key: Peer has unchoked us, but we're not interested</comment>
+  </data>
+  <data name="Peers" xml:space="preserve">
+    <value>피어</value>
+    <comment>Mac key: Peers</comment>
+  </data>
+  <data name="Peers_Other" xml:space="preserve">
+    <value>피어 {0}개</value>
+    <comment>Mac key: %lld peers</comment>
+  </data>
+  <data name="PerTorrentPeerLimit" xml:space="preserve">
+    <value>토렌트당 피어 제한</value>
+    <comment>Mac key: Per torrent peer limit</comment>
+  </data>
+  <data name="PickRandomPortOnTransmissionLaunch" xml:space="preserve">
+    <value>Transmission 시작 시 임의 포트 선택</value>
+    <comment>Mac key: Pick random port on Transmission launch</comment>
+  </data>
+  <data name="PieceAvailability" xml:space="preserve">
+    <value>조각 가용성</value>
+    <comment>Mac key: Piece availability</comment>
+  </data>
+  <data name="Pieces" xml:space="preserve">
+    <value>조각</value>
+    <comment>Mac key: Pieces</comment>
+  </data>
+  <data name="PlainHTTPInsideATailscaleTunnelWhich" xml:space="preserve">
+    <value>Tailscale 터널 내부의 일반 HTTP이며, 트래픽은 터널이 암호화합니다.</value>
+    <comment>Mac key: Plain HTTP inside a Tailscale tunnel, which encrypts the traffic.</comment>
+  </data>
+  <data name="PlainHTTPOnAPrivateNetworkDevicesOnThe" xml:space="preserve">
+    <value>사설 네트워크의 일반 HTTP입니다. 같은 네트워크의 기기가 암호를 읽을 수 있습니다.</value>
+    <comment>Mac key: Plain HTTP on a private network. Devices on the same network could read the password.</comment>
+  </data>
+  <data name="PlainHTTPOverTheInternetIsBlockedForThis" xml:space="preserve">
+    <value>이 서버에서는 인터넷을 통한 일반 HTTP가 차단되어 있습니다.</value>
+    <comment>Mac key: Plain HTTP over the internet is blocked for this server.</comment>
+  </data>
+  <data name="PlainHTTPOverTheInternetThePasswordAnd" xml:space="preserve">
+    <value>인터넷을 통한 일반 HTTP입니다. 경로상의 누구나 암호와 모든 트래픽을 읽을 수 있습니다.</value>
+    <comment>Mac key: Plain HTTP over the internet. The password and all traffic can be read by anyone along the way.</comment>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>포트</value>
+    <comment>Mac key: Port</comment>
+  </data>
+  <data name="PortIsClosed" xml:space="preserve">
+    <value>포트 닫힘</value>
+    <comment>Mac key: Port is closed</comment>
+  </data>
+  <data name="PortIsOpen" xml:space="preserve">
+    <value>포트 열림</value>
+    <comment>Mac key: Port is open</comment>
+  </data>
+  <data name="PreferEncryption" xml:space="preserve">
+    <value>암호화 선호</value>
+    <comment>Mac key: Prefer encryption</comment>
+  </data>
+  <data name="Priority_D60DBB" xml:space="preserve">
+    <value>우선순위</value>
+    <comment>Mac key: Priority</comment>
+  </data>
+  <data name="Priority_DD3948" xml:space="preserve">
+    <value>우선순위 {0}</value>
+    <comment>Mac key: %@ Priority</comment>
+  </data>
+  <data name="Private" xml:space="preserve">
+    <value>비공개</value>
+    <comment>Mac key: Private</comment>
+  </data>
+  <data name="PrivateTrackers" xml:space="preserve">
+    <value>비공개 트래커</value>
+    <comment>Mac key: Private trackers</comment>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>진행률</value>
+    <comment>Mac key: Progress</comment>
+  </data>
+  <data name="PromptForDownloadOptionsWhenAddingANew" xml:space="preserve">
+    <value>새 토렌트 추가 시 다운로드 옵션 묻기</value>
+    <comment>Mac key: Prompt for download options when adding a new torrent</comment>
+  </data>
+  <data name="Protocol" xml:space="preserve">
+    <value>프로토콜</value>
+    <comment>Mac key: Protocol</comment>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>프록시</value>
+    <comment>Mac key: Proxy</comment>
+  </data>
+  <data name="ProxyExampleCom" xml:space="preserve">
+    <value>proxy.example.com</value>
+    <comment>Mac key: proxy.example.com</comment>
+  </data>
+  <data name="ProxyPassword" xml:space="preserve">
+    <value>프록시 암호</value>
+    <comment>Mac key: Proxy password</comment>
+  </data>
+  <data name="ProxyPort" xml:space="preserve">
+    <value>프록시 포트</value>
+    <comment>Mac key: Proxy port</comment>
+  </data>
+  <data name="ProxyServer" xml:space="preserve">
+    <value>프록시 서버</value>
+    <comment>Mac key: Proxy server</comment>
+  </data>
+  <data name="ProxyUserName" xml:space="preserve">
+    <value>프록시 사용자 이름</value>
+    <comment>Mac key: Proxy user name</comment>
+  </data>
+  <data name="Queue" xml:space="preserve">
+    <value>큐</value>
+    <comment>Mac key: Queue</comment>
+  </data>
+  <data name="Queued" xml:space="preserve">
+    <value>큐 대기 중</value>
+    <comment>Mac key: Queued</comment>
+  </data>
+  <data name="QueuedToSeed" xml:space="preserve">
+    <value>시딩 대기 중</value>
+    <comment>Mac key: Queued to seed</comment>
+  </data>
+  <data name="QueuedToVerify" xml:space="preserve">
+    <value>검증 대기 중</value>
+    <comment>Mac key: Queued to verify</comment>
+  </data>
+  <data name="QuitTransmissionRemote" xml:space="preserve">
+    <value>Transmission Remote 종료</value>
+    <comment>Mac key: Quit Transmission Remote</comment>
+  </data>
+  <data name="RPCPath" xml:space="preserve">
+    <value>RPC 경로</value>
+    <comment>Mac key: RPC path</comment>
+  </data>
+  <data name="RPCVersion" xml:space="preserve">
+    <value>RPC 버전</value>
+    <comment>Mac key: RPC version</comment>
+  </data>
+  <data name="Ratio" xml:space="preserve">
+    <value>비율</value>
+    <comment>Mac key: Ratio</comment>
+  </data>
+  <data name="RecentFolders" xml:space="preserve">
+    <value>최근 폴더</value>
+    <comment>Mac key: Recent folders</comment>
+  </data>
+  <data name="Reconnect" xml:space="preserve">
+    <value>다시 연결</value>
+    <comment>Mac key: Reconnect</comment>
+  </data>
+  <data name="Remaining" xml:space="preserve">
+    <value>남은 시간</value>
+    <comment>Mac key: Remaining</comment>
+  </data>
+  <data name="RemoteToLocalPathMappings" xml:space="preserve">
+    <value>원격-로컬 경로 매핑</value>
+    <comment>Mac key: Remote to local path mappings</comment>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>제거</value>
+    <comment>Mac key: Remove</comment>
+  </data>
+  <data name="RemoveAndDeleteData" xml:space="preserve">
+    <value>제거 및 데이터 삭제</value>
+    <comment>Mac key: Remove and Delete Data</comment>
+  </data>
+  <data name="RemoveAndDeleteDataEllipsis" xml:space="preserve">
+    <value>제거 및 데이터 삭제…</value>
+    <comment>Mac key: Remove and Delete Data…</comment>
+  </data>
+  <data name="RemoveEllipsis" xml:space="preserve">
+    <value>제거…</value>
+    <comment>Mac key: Remove…</comment>
+  </data>
+  <data name="RemoveMapping" xml:space="preserve">
+    <value>매핑 제거</value>
+    <comment>Mac key: Remove Mapping</comment>
+  </data>
+  <data name="RemoveServer" xml:space="preserve">
+    <value>서버 제거</value>
+    <comment>Mac key: Remove Server</comment>
+  </data>
+  <data name="RemoveTheSelectedTorrents" xml:space="preserve">
+    <value>선택한 토렌트 제거</value>
+    <comment>Mac key: Remove the selected torrents</comment>
+  </data>
+  <data name="RemoveTorrent_Other" xml:space="preserve">
+    <value>토렌트 {0}개를 제거하겠습니까?</value>
+    <comment>Mac key: Remove ^[%lld torrent](inflect: true)?</comment>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>이름 변경</value>
+    <comment>Mac key: Rename</comment>
+  </data>
+  <data name="RenameEllipsis" xml:space="preserve">
+    <value>이름 변경…</value>
+    <comment>Mac key: Rename…</comment>
+  </data>
+  <data name="RenameTorrent" xml:space="preserve">
+    <value>토렌트 이름 변경</value>
+    <comment>Mac key: Rename Torrent</comment>
+  </data>
+  <data name="RenamesTheFileOrFolderOnTheServer" xml:space="preserve">
+    <value>서버에 있는 파일 또는 폴더의 이름을 변경합니다.</value>
+    <comment>Mac key: Renames the file or folder on the server.</comment>
+  </data>
+  <data name="RenamesTheTorrentsTopLevelFileOrFolderOn" xml:space="preserve">
+    <value>서버에 있는 토렌트의 최상위 파일 또는 폴더의 이름을 변경합니다.</value>
+    <comment>Mac key: Renames the torrent's top-level file or folder on the server.</comment>
+  </data>
+  <data name="RequireEncryption" xml:space="preserve">
+    <value>암호화 필수</value>
+    <comment>Mac key: Require encryption</comment>
+  </data>
+  <data name="ResolveHostNames" xml:space="preserve">
+    <value>호스트 이름 확인</value>
+    <comment>Mac key: Resolve Host Names</comment>
+  </data>
+  <data name="Revert" xml:space="preserve">
+    <value>되돌리기</value>
+    <comment>Mac key: Revert</comment>
+  </data>
+  <data name="RightClickThePeerListToTurnHostNamesAnd" xml:space="preserve">
+    <value>피어 목록을 오른쪽 클릭하여 호스트 이름 및 국가 표시를 켜거나 끌 수 있습니다. 국가 데이터는 [DB-IP의 IP to Country Lite](https://db-ip.com)이며, CC BY 4.0 라이선스로 제공되고 매월 업데이트됩니다.</value>
+    <comment>Mac key: Right-click the peer list to turn host names and countries on or off. Country data is [IP to Country Lite by DB-IP](https://db-ip.com), licensed under CC BY 4.0, and updates monthly.</comment>
+  </data>
+  <data name="Rules" xml:space="preserve">
+    <value>규칙</value>
+    <comment>Mac key: Rules</comment>
+  </data>
+  <data name="SHA256FingerprintPresentedByTheServer" xml:space="preserve">
+    <value>서버가 제시한 SHA-256 지문:</value>
+    <comment>Mac key: SHA-256 fingerprint presented by the server:</comment>
+  </data>
+  <data name="SOCKS5" xml:space="preserve">
+    <value>SOCKS 5</value>
+    <comment>Mac key: SOCKS 5</comment>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>저장</value>
+    <comment>Mac key: Save</comment>
+  </data>
+  <data name="SaveAndConnect" xml:space="preserve">
+    <value>저장 후 연결</value>
+    <comment>Mac key: Save and Connect</comment>
+  </data>
+  <data name="SaveTheURLFirstIfYouChangedItTheServer" xml:space="preserve">
+    <value>URL을 변경했다면 먼저 저장하십시오. 목록은 서버가 직접 다운로드합니다.</value>
+    <comment>Mac key: Save the URL first if you changed it; the server downloads the list itself.</comment>
+  </data>
+  <data name="SaveTo" xml:space="preserve">
+    <value>저장 위치</value>
+    <comment>Mac key: Save to</comment>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>보안</value>
+    <comment>Mac key: Security</comment>
+  </data>
+  <data name="SeedRatio" xml:space="preserve">
+    <value>시드 비율</value>
+    <comment>Mac key: Seed ratio</comment>
+  </data>
+  <data name="Seeding" xml:space="preserve">
+    <value>시딩 중</value>
+    <comment>Mac key: Seeding</comment>
+  </data>
+  <data name="SeedingFor" xml:space="preserve">
+    <value>시딩 시간</value>
+    <comment>Mac key: Seeding for</comment>
+  </data>
+  <data name="SeedingTime" xml:space="preserve">
+    <value>시딩 시간</value>
+    <comment>Mac key: Seeding Time</comment>
+  </data>
+  <data name="Seeds" xml:space="preserve">
+    <value>시드</value>
+    <comment>Mac key: Seeds</comment>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>{0} 선택됨</value>
+    <comment>Mac key: %@ selected</comment>
+  </data>
+  <data name="SequentialDownloadUsefulForPreviewing" xml:space="preserve">
+    <value>순차 다운로드. 다운로드 중 미디어를 미리 볼 때 유용함</value>
+    <comment>Mac key: Sequential download, useful for previewing media while it downloads</comment>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>서버</value>
+    <comment>Mac key: Server</comment>
+  </data>
+  <data name="ServerDefault" xml:space="preserve">
+    <value>서버 기본값</value>
+    <comment>Mac key: Server default</comment>
+  </data>
+  <data name="ServerSettingsEllipsis" xml:space="preserve">
+    <value>서버 설정…</value>
+    <comment>Mac key: Server Settings…</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>설정</value>
+    <comment>Mac key: Settings</comment>
+  </data>
+  <data name="SettingsEllipsis" xml:space="preserve">
+    <value>설정…</value>
+    <comment>Mac key: Settings…</comment>
+  </data>
+  <data name="SettingsForThisAppAndTheConnected" xml:space="preserve">
+    <value>이 앱과 연결된 Transmission 서버의 설정</value>
+    <comment>Mac key: Settings for this app and the connected Transmission server</comment>
+  </data>
+  <data name="ShowCountries" xml:space="preserve">
+    <value>국가 보기</value>
+    <comment>Mac key: Show Countries</comment>
+  </data>
+  <data name="ShowInFinder" xml:space="preserve">
+    <value>Finder에서 보기</value>
+    <comment>Mac key: Show in Finder</comment>
+  </data>
+  <data name="ShowInMenuBar" xml:space="preserve">
+    <value>메뉴 막대에 표시</value>
+    <comment>Mac key: Show in menu bar</comment>
+  </data>
+  <data name="ShowInfoPane" xml:space="preserve">
+    <value>정보 패널 보기</value>
+    <comment>Mac key: Show Info Pane</comment>
+  </data>
+  <data name="ShowLogFiles" xml:space="preserve">
+    <value>로그 파일 보기</value>
+    <comment>Mac key: Show Log Files</comment>
+  </data>
+  <data name="ShowTransferSpeedsInTheMenuBar" xml:space="preserve">
+    <value>메뉴 막대에 전송 속도 표시</value>
+    <comment>Mac key: Show transfer speeds in the menu bar</comment>
+  </data>
+  <data name="ShowTransmissionRemote" xml:space="preserve">
+    <value>Transmission Remote 보기</value>
+    <comment>Mac key: Show Transmission Remote</comment>
+  </data>
+  <data name="ShowWherePeersAreFromWithDBIPsFree" xml:space="preserve">
+    <value>DB-IP의 무료 국가 데이터베이스(약 5MB)를 사용하여 피어의 위치를 표시합니다.</value>
+    <comment>Mac key: Show where peers are from with DB-IP's free country database, about 5 MB.</comment>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>크기</value>
+    <comment>Mac key: Size</comment>
+  </data>
+  <data name="SizeLeft" xml:space="preserve">
+    <value>남은 크기</value>
+    <comment>Mac key: Size Left</comment>
+  </data>
+  <data name="SkipThisVersion" xml:space="preserve">
+    <value>이 버전 건너뛰기</value>
+    <comment>Mac key: Skip This Version</comment>
+  </data>
+  <data name="SkippedAlreadySetUpHere" xml:space="preserve">
+    <value>{0}은(는) 이미 설정되어 있어 건너뛰었습니다.</value>
+    <comment>Mac key: Skipped %@, already set up here.</comment>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>속도</value>
+    <comment>Mac key: Speed</comment>
+  </data>
+  <data name="SpeedLimitMenuItems" xml:space="preserve">
+    <value>속도 제한 메뉴 항목</value>
+    <comment>Mac key: Speed limit menu items</comment>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>시작</value>
+    <comment>Mac key: Start</comment>
+  </data>
+  <data name="StartAll" xml:space="preserve">
+    <value>모두 시작</value>
+    <comment>Mac key: Start All</comment>
+  </data>
+  <data name="StartNow" xml:space="preserve">
+    <value>지금 시작</value>
+    <comment>Mac key: Start Now</comment>
+  </data>
+  <data name="StartTheSelectedTorrents" xml:space="preserve">
+    <value>선택한 토렌트 시작</value>
+    <comment>Mac key: Start the selected torrents</comment>
+  </data>
+  <data name="StartTorrentsWhenAdded" xml:space="preserve">
+    <value>토렌트 추가 시 시작</value>
+    <comment>Mac key: Start torrents when added</comment>
+  </data>
+  <data name="StartWhenAdded" xml:space="preserve">
+    <value>추가 시 시작</value>
+    <comment>Mac key: Start when added</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>상태</value>
+    <comment>Mac key: Status</comment>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>정지</value>
+    <comment>Mac key: Stop</comment>
+  </data>
+  <data name="StopAll" xml:space="preserve">
+    <value>모두 정지</value>
+    <comment>Mac key: Stop All</comment>
+  </data>
+  <data name="StopAtRatio" xml:space="preserve">
+    <value>비율 도달 시 정지</value>
+    <comment>Mac key: Stop at ratio</comment>
+  </data>
+  <data name="StopSeedingWhenInactiveFor" xml:space="preserve">
+    <value>다음 시간 동안 비활성 시 시딩 정지</value>
+    <comment>Mac key: Stop seeding when inactive for</comment>
+  </data>
+  <data name="StopTheSelectedTorrents" xml:space="preserve">
+    <value>선택한 토렌트 정지</value>
+    <comment>Mac key: Stop the selected torrents</comment>
+  </data>
+  <data name="StopTrying" xml:space="preserve">
+    <value>시도 중단</value>
+    <comment>Mac key: Stop Trying</comment>
+  </data>
+  <data name="StopWhenIdle" xml:space="preserve">
+    <value>유휴 시 정지</value>
+    <comment>Mac key: Stop when idle</comment>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>정지됨</value>
+    <comment>Mac key: Stopped</comment>
+  </data>
+  <data name="SwitchServer" xml:space="preserve">
+    <value>서버 전환</value>
+    <comment>Mac key: Switch server</comment>
+  </data>
+  <data name="TestConnection" xml:space="preserve">
+    <value>연결 테스트</value>
+    <comment>Mac key: Test Connection</comment>
+  </data>
+  <data name="TestPort" xml:space="preserve">
+    <value>포트 테스트</value>
+    <comment>Mac key: Test Port</comment>
+  </data>
+  <data name="Text192168110OrNasTailnetTsNet" xml:space="preserve">
+    <value>192.168.1.10 또는 nas.tailnet.ts.net</value>
+    <comment>Mac key: 192.168.1.10 or nas.tailnet.ts.net</comment>
+  </data>
+  <data name="Text_DAEA45" xml:space="preserve">
+    <value>{0}</value>
+    <comment>Mac key: %lld</comment>
+  </data>
+  <data name="TheAddressCouldNotBeTurnedIntoAURL" xml:space="preserve">
+    <value>주소를 URL로 변환할 수 없습니다.</value>
+    <comment>Mac key: the address couldn't be turned into a URL.</comment>
+  </data>
+  <data name="TheCertificateFilesPasswordIsWrong" xml:space="preserve">
+    <value>인증서 파일의 암호가 올바르지 않습니다.</value>
+    <comment>Mac key: The certificate file's password is wrong.</comment>
+  </data>
+  <data name="TheDownloadedFilesWillBeDeletedFromThe" xml:space="preserve">
+    <value>다운로드한 파일이 서버에서 삭제됩니다. 이 작업은 되돌릴 수 없습니다.</value>
+    <comment>Mac key: The downloaded files will be deleted from the server. This can't be undone.</comment>
+  </data>
+  <data name="TheFileHasNoPrivateKeyExportThe" xml:space="preserve">
+    <value>파일에 개인 키가 없습니다. 인증서를 해당 키와 함께 내보내십시오.</value>
+    <comment>Mac key: The file has no private key. Export the certificate together with its key.</comment>
+  </data>
+  <data name="TheHostContainsCharactersThatAreNot" xml:space="preserve">
+    <value>호스트에 허용되지 않는 문자가 포함되어 있습니다.</value>
+    <comment>Mac key: the host contains characters that aren't allowed.</comment>
+  </data>
+  <data name="TheHostIsEmpty" xml:space="preserve">
+    <value>호스트가 비어 있습니다.</value>
+    <comment>Mac key: the host is empty.</comment>
+  </data>
+  <data name="TheNameOfTheTorrentsFolderOrOfTheFileFor" xml:space="preserve">
+    <value>토렌트 폴더의 이름 또는 단일 파일 토렌트의 경우 파일 이름</value>
+    <comment>Mac key: The name of the torrent's folder, or of the file for a single-file torrent</comment>
+  </data>
+  <data name="ThePortMustBeBetween1And65535" xml:space="preserve">
+    <value>포트는 1에서 65535 사이여야 합니다.</value>
+    <comment>Mac key: the port must be between 1 and 65535.</comment>
+  </data>
+  <data name="TheProxyPortMustBeBetween1And65535" xml:space="preserve">
+    <value>프록시 포트는 1에서 65535 사이여야 합니다.</value>
+    <comment>Mac key: The proxy port must be between 1 and 65535.</comment>
+  </data>
+  <data name="TheRPCPathMustStartWith" xml:space="preserve">
+    <value>RPC 경로는 “/”로 시작해야 합니다.</value>
+    <comment>Mac key: the RPC path must start with “/”.</comment>
+  </data>
+  <data name="TheServerAddressIsInvalid" xml:space="preserve">
+    <value>서버 주소가 올바르지 않습니다: {0}</value>
+    <comment>Mac key: The server address is invalid: %@</comment>
+  </data>
+  <data name="TheServerAnsweredWithAWebPageInsteadOf" xml:space="preserve">
+    <value>서버가 Transmission 대신 웹 페이지로 응답했습니다. 포트와 RPC 경로(보통 /transmission/rpc)를 확인하십시오.</value>
+    <comment>Mac key: The server answered with a web page instead of Transmission. Check the port and the RPC path, usually /transmission/rpc.</comment>
+  </data>
+  <data name="TheServerDidNotAcceptASecureHTTPS" xml:space="preserve">
+    <value>서버가 보안(HTTPS) 연결을 허용하지 않았습니다. Transmission의 내장 서버는 일반 HTTP만 지원하므로, 데몬 앞의 리버스 프록시가 HTTPS를 제공하는 경우가 아니라면 이 서버의 HTTPS를 끄십시오. Tailscale을 통해 연결하면 일반 HTTP도 이미 터널에 의해 암호화됩니다.</value>
+    <comment>Mac key: The server didn't accept a secure (HTTPS) connection. Transmission's built-in server only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel.</comment>
+  </data>
+  <data name="TheServerDoesNotAcceptThisHostname" xml:space="preserve">
+    <value>서버가 이 호스트 이름을 허용하지 않습니다. IP 주소로 연결하거나 데몬의 settings.json에 있는 “rpc-host-whitelist”에 호스트 이름을 추가하십시오.</value>
+    <comment>Mac key: The server doesn't accept this hostname. Connect by IP address, or add the hostname to “rpc-host-whitelist” in the daemon's settings.json.</comment>
+  </data>
+  <data name="TheServerLooksForTheFilesInTheNewFolder" xml:space="preserve">
+    <value>서버가 파일을 이동하지 않고 새 폴더에서 파일을 찾습니다.</value>
+    <comment>Mac key: The server looks for the files in the new folder instead of moving them.</comment>
+  </data>
+  <data name="TheServerMovesExistingFiles" xml:space="preserve">
+    <value>서버가 기존 파일을 이동합니다.</value>
+    <comment>Mac key: The server moves existing files.</comment>
+  </data>
+  <data name="TheServerRefusedThisComputersIPAddress" xml:space="preserve">
+    <value>서버가 이 컴퓨터의 IP 주소를 거부했습니다. 데몬의 settings.json에 있는 “rpc-whitelist”에 추가하거나 화이트리스트를 비활성화하십시오.</value>
+    <comment>Mac key: The server refused this computer's IP address. Add it to “rpc-whitelist” in the daemon's settings.json, or disable the whitelist.</comment>
+  </data>
+  <data name="TheServerRejectedTheUsernameOrPassword" xml:space="preserve">
+    <value>서버가 사용자 이름 또는 암호를 거부했습니다.</value>
+    <comment>Mac key: The server rejected the username or password.</comment>
+  </data>
+  <data name="TheServerRespondedWithHTTPCheckTheRPC" xml:space="preserve">
+    <value>서버가 HTTP {0}(으)로 응답했습니다. RPC 경로와 포트를 확인하십시오.</value>
+    <comment>Mac key: The server responded with HTTP %lld. Check the RPC path and port.</comment>
+  </data>
+  <data name="TheServerSentAResponseThatCouldNotBeRead" xml:space="preserve">
+    <value>서버가 읽을 수 없는 응답을 보냈습니다({0}).</value>
+    <comment>Mac key: The server sent a response that couldn't be read (%@).</comment>
+  </data>
+  <data name="TheServerTriedToRedirectTheConnectionToA" xml:space="preserve">
+    <value>서버가 연결을 다른 주소로 리디렉션하려고 했습니다. 자격 증명을 보호하기 위해 요청이 차단되었습니다.</value>
+    <comment>Mac key: The server tried to redirect the connection to a different address. The request was blocked to protect your credentials.</comment>
+  </data>
+  <data name="TheServersTLSCertificateIsNotTrusted" xml:space="preserve">
+    <value>서버의 TLS 인증서를 신뢰할 수 없습니다.</value>
+    <comment>Mac key: The server's TLS certificate isn't trusted.</comment>
+  </data>
+  <data name="ThisIsNotACertificateFileInPKCS12P12" xml:space="preserve">
+    <value>PKCS #12(.p12) 형식의 인증서 파일이 아닙니다.</value>
+    <comment>Mac key: This isn't a certificate file in PKCS #12 (.p12) format.</comment>
+  </data>
+  <data name="ThisServerUsesPlainHTTPOverTheInternetSo" xml:space="preserve">
+    <value>이 서버는 인터넷을 통해 일반 HTTP를 사용하므로 암호가 암호화되지 않은 상태로 전송됩니다. HTTPS 또는 Tailscale 같은 VPN을 사용하거나 이 서버에 대해 암호화되지 않은 연결을 허용하십시오.</value>
+    <comment>Mac key: This server uses plain HTTP over the internet, so your password would be sent unencrypted. Use HTTPS, a VPN such as Tailscale, or allow the unencrypted connection for this server.</comment>
+  </data>
+  <data name="ThisServersClientCertificateIsMissing" xml:space="preserve">
+    <value>키체인에 이 서버의 클라이언트 인증서가 없습니다. 설정 → Transmission에서 다시 선택하십시오.</value>
+    <comment>Mac key: This server's client certificate is missing from the Keychain. Choose it again in Settings → Transmission.</comment>
+  </data>
+  <data name="ThisTorrentIsAlreadyOnTheServer" xml:space="preserve">
+    <value>이 토렌트는 이미 서버에 있습니다.</value>
+    <comment>Mac key: This torrent is already on the server.</comment>
+  </data>
+  <data name="ThisTorrentIsNoLongerOnTheServer" xml:space="preserve">
+    <value>이 토렌트는 더 이상 서버에 없습니다.</value>
+    <comment>Mac key: This torrent is no longer on the server.</comment>
+  </data>
+  <data name="Tier" xml:space="preserve">
+    <value>계층</value>
+    <comment>Mac key: Tier</comment>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>시간</value>
+    <comment>Mac key: Time</comment>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>종료</value>
+    <comment>Mac key: To</comment>
+  </data>
+  <data name="ToOpenDownloadedFilesChooseEachLocal" xml:space="preserve">
+    <value>다운로드한 파일을 열려면 설정 → 경로에서 각 로컬 폴더를 한 번씩 선택하여 macOS가 앱에서 해당 폴더를 열 수 있도록 허용하십시오.</value>
+    <comment>Mac key: To open downloaded files, choose each local folder once in Settings → Paths, so macOS lets the app open it.</comment>
+  </data>
+  <data name="Torrent" xml:space="preserve">
+    <value>토렌트</value>
+    <comment>Mac key: Torrent</comment>
+  </data>
+  <data name="TorrentOptionsEllipsis" xml:space="preserve">
+    <value>토렌트 옵션…</value>
+    <comment>Mac key: Torrent Options…</comment>
+  </data>
+  <data name="Torrents" xml:space="preserve">
+    <value>개</value>
+    <comment>Mac key: torrents</comment>
+  </data>
+  <data name="TorrentsInAGroupShareItsLimitsChooseA" xml:space="preserve">
+    <value>그룹에 속한 토렌트는 그룹의 제한을 공유합니다. 토렌트의 그룹은 토렌트 옵션에서 선택하십시오. Transmission에서는 원격 앱이 그룹을 삭제할 수 없습니다.</value>
+    <comment>Mac key: Torrents in a group share its limits. Choose a torrent's group in Torrent Options. Transmission doesn't let remote apps delete groups.</comment>
+  </data>
+  <data name="TorrentsSavedInThisFolder" xml:space="preserve">
+    <value>이 폴더에 저장된 토렌트: {0}</value>
+    <comment>Mac key: Torrents saved in this folder: %lld</comment>
+  </data>
+  <data name="TorrentsSelected_Other" xml:space="preserve">
+    <value>토렌트 {0}개 선택됨</value>
+    <comment>Mac key: %lld Torrents Selected</comment>
+  </data>
+  <data name="Torrents_Other" xml:space="preserve">
+    <value>토렌트 {0}개</value>
+    <comment>Mac key: %lld torrents</comment>
+  </data>
+  <data name="TotalSize_51CDF6" xml:space="preserve">
+    <value>전체 크기</value>
+    <comment>Mac key: Total size</comment>
+  </data>
+  <data name="TotalSize_9AC7DE" xml:space="preserve">
+    <value>전체 크기</value>
+    <comment>Mac key: Total Size</comment>
+  </data>
+  <data name="Tracker" xml:space="preserve">
+    <value>트래커</value>
+    <comment>Mac key: Tracker</comment>
+  </data>
+  <data name="TrackerError" xml:space="preserve">
+    <value>트래커 오류</value>
+    <comment>Mac key: Tracker error</comment>
+  </data>
+  <data name="TrackerStatus" xml:space="preserve">
+    <value>트래커 상태</value>
+    <comment>Mac key: Tracker Status</comment>
+  </data>
+  <data name="Trackers" xml:space="preserve">
+    <value>트래커</value>
+    <comment>Mac key: Trackers</comment>
+  </data>
+  <data name="Transmission" xml:space="preserve">
+    <value>Transmission</value>
+    <comment>Mac key: Transmission</comment>
+  </data>
+  <data name="TransmissionIsTooOldVersion240OrNewerIs" xml:space="preserve">
+    <value>Transmission {0}은(는) 너무 오래되었습니다. 버전 2.40 이상이 필요합니다.</value>
+    <comment>Mac key: Transmission %@ is too old. Version 2.40 or newer is required.</comment>
+  </data>
+  <data name="TransmissionOptions" xml:space="preserve">
+    <value>Transmission 옵션</value>
+    <comment>Mac key: Transmission Options</comment>
+  </data>
+  <data name="TransmissionRemote" xml:space="preserve">
+    <value>Transmission Remote</value>
+    <comment>Mac key: Transmission Remote</comment>
+  </data>
+  <data name="TransmissionRemoteIsAvailable" xml:space="preserve">
+    <value>Transmission Remote {0} 사용 가능</value>
+    <comment>Mac key: Transmission Remote %@ Is Available</comment>
+  </data>
+  <data name="TransmissionRemoteIsTheNewestVersion" xml:space="preserve">
+    <value>Transmission Remote {0}은(는) 최신 버전입니다.</value>
+    <comment>Mac key: Transmission Remote %@ is the newest version.</comment>
+  </data>
+  <data name="TransmissionRemoteRanIntoAProblemAndHas" xml:space="preserve">
+    <value>Transmission Remote에 문제가 발생하여 종료해야 합니다. 로그 파일 폴더를 열어 무엇이 잘못되었는지 확인하시겠습니까?</value>
+    <comment>Mac key: Transmission Remote ran into a problem and has to close. Open the logs folder to see what went wrong?
+Mac comment: Windows only. Message box after an error nothing else caught; the app exits after it. Yes opens the logs folder.</comment>
+  </data>
+  <data name="TransmissionRemoteRanIntoAProblemInThe" xml:space="preserve">
+    <value>Transmission Remote의 백그라운드 작업에서 문제가 발생했습니다. 로그 파일 폴더를 열어 무엇이 잘못되었는지 확인하시겠습니까?</value>
+    <comment>Mac key: Transmission Remote ran into a problem in the background. Open the logs folder to see what went wrong?
+Mac comment: Windows only. Message box after an error in background work nothing else caught; the app keeps running. Yes opens the logs folder.</comment>
+  </data>
+  <data name="TrustThisCertificate" xml:space="preserve">
+    <value>이 인증서 신뢰</value>
+    <comment>Mac key: Trust This Certificate</comment>
+  </data>
+  <data name="TrustedCertificate" xml:space="preserve">
+    <value>신뢰하는 인증서</value>
+    <comment>Mac key: Trusted certificate</comment>
+  </data>
+  <data name="TryAgain" xml:space="preserve">
+    <value>다시 시도</value>
+    <comment>Mac key: Try Again</comment>
+  </data>
+  <data name="TryNow" xml:space="preserve">
+    <value>지금 시도</value>
+    <comment>Mac key: Try Now</comment>
+  </data>
+  <data name="TryingAgainEllipsis" xml:space="preserve">
+    <value>다시 시도하는 중…</value>
+    <comment>Mac key: Trying again…</comment>
+  </data>
+  <data name="TryingAgainIn" xml:space="preserve">
+    <value>{0} 후 다시 시도</value>
+    <comment>Mac key: Trying again in %@</comment>
+  </data>
+  <data name="TurnOnAlternativeSpeedLimits" xml:space="preserve">
+    <value>대체 속도 제한 켜기</value>
+    <comment>Mac key: Turn on alternative speed limits</comment>
+  </data>
+  <data name="UTP" xml:space="preserve">
+    <value>µTP</value>
+    <comment>Mac key: µTP</comment>
+  </data>
+  <data name="UnencryptedConnectionBlocked" xml:space="preserve">
+    <value>암호화되지 않은 연결 차단됨</value>
+    <comment>Mac key: Unencrypted Connection Blocked</comment>
+  </data>
+  <data name="Unlimited" xml:space="preserve">
+    <value>제한 없음</value>
+    <comment>Mac key: Unlimited</comment>
+  </data>
+  <data name="UntrustedCertificate" xml:space="preserve">
+    <value>신뢰할 수 없는 인증서</value>
+    <comment>Mac key: Untrusted Certificate</comment>
+  </data>
+  <data name="UntrustedCertificateConnectFromTheMain" xml:space="preserve">
+    <value>신뢰할 수 없는 인증서입니다. 메인 윈도우에서 연결하여 검토한 후 신뢰하십시오({0}…).</value>
+    <comment>Mac key: Untrusted certificate. Connect from the main window to review and trust it (%@…).</comment>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>업 속도</value>
+    <comment>Mac key: Up</comment>
+  </data>
+  <data name="UpKBS" xml:space="preserve">
+    <value>↑ {0} kB/s</value>
+    <comment>Mac key: ↑ %@ kB/s</comment>
+  </data>
+  <data name="UpUnlimited" xml:space="preserve">
+    <value>↑ 제한 없음</value>
+    <comment>Mac key: ↑ unlimited</comment>
+  </data>
+  <data name="UpdateNow" xml:space="preserve">
+    <value>지금 업데이트</value>
+    <comment>Mac key: Update Now</comment>
+  </data>
+  <data name="Updated" xml:space="preserve">
+    <value>마지막 업데이트: {0}</value>
+    <comment>Mac key: Updated %@</comment>
+  </data>
+  <data name="UpdatedRules_Other" xml:space="preserve">
+    <value>업데이트됨: 규칙 {0}개</value>
+    <comment>Mac key: Updated: %lld rules</comment>
+  </data>
+  <data name="Updates" xml:space="preserve">
+    <value>업데이트</value>
+    <comment>Mac key: Updates</comment>
+  </data>
+  <data name="UpdatingEllipsis" xml:space="preserve">
+    <value>업데이트 중…</value>
+    <comment>Mac key: Updating…</comment>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>업로드</value>
+    <comment>Mac key: Upload</comment>
+  </data>
+  <data name="UploadQueueSize" xml:space="preserve">
+    <value>업로드 큐 크기</value>
+    <comment>Mac key: Upload queue size</comment>
+  </data>
+  <data name="UploadSpeedLimit" xml:space="preserve">
+    <value>업로드 속도 제한</value>
+    <comment>Mac key: Upload Speed Limit</comment>
+  </data>
+  <data name="UploadSpeedsKBS" xml:space="preserve">
+    <value>업로드 속도(kB/s)</value>
+    <comment>Mac key: Upload speeds (kB/s)</comment>
+  </data>
+  <data name="Uploaded" xml:space="preserve">
+    <value>업로드됨</value>
+    <comment>Mac key: Uploaded</comment>
+  </data>
+  <data name="UploadingToPeer" xml:space="preserve">
+    <value>피어로 업로드 중</value>
+    <comment>Mac key: Uploading to peer</comment>
+  </data>
+  <data name="UseAlternateBandwidthSettings" xml:space="preserve">
+    <value>대체 대역폭 설정 사용</value>
+    <comment>Mac key: Use alternate bandwidth settings</comment>
+  </data>
+  <data name="UseCertificate" xml:space="preserve">
+    <value>인증서 사용</value>
+    <comment>Mac key: Use Certificate</comment>
+  </data>
+  <data name="UseHTTPS" xml:space="preserve">
+    <value>HTTPS 사용</value>
+    <comment>Mac key: Use HTTPS</comment>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>사용자 이름</value>
+    <comment>Mac key: Username</comment>
+  </data>
+  <data name="VerifyLocalData" xml:space="preserve">
+    <value>로컬 데이터 검증</value>
+    <comment>Mac key: Verify Local Data</comment>
+  </data>
+  <data name="Verifying_9A7FA7" xml:space="preserve">
+    <value>검증 중 {0}</value>
+    <comment>Mac key: Verifying %@</comment>
+  </data>
+  <data name="Verifying_A7D4A9" xml:space="preserve">
+    <value>검증 중</value>
+    <comment>Mac key: Verifying</comment>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>버전 {0}</value>
+    <comment>Mac key: Version %@</comment>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>대기 중</value>
+    <comment>Mac key: Waiting</comment>
+  </data>
+  <data name="WaitingForMetadata" xml:space="preserve">
+    <value>메타데이터 대기 중</value>
+    <comment>Mac key: Waiting for Metadata</comment>
+  </data>
+  <data name="WeUnchokedThisPeerButTheyAreNot" xml:space="preserve">
+    <value>이 피어의 초크를 해제했지만 피어가 관심 없음</value>
+    <comment>Mac key: We unchoked this peer, but they're not interested</comment>
+  </data>
+  <data name="WeWouldDownloadFromThisPeerIfTheyWould" xml:space="preserve">
+    <value>피어가 허용하면 이 피어에서 다운로드함</value>
+    <comment>Mac key: We would download from this peer if they'd let us</comment>
+  </data>
+  <data name="WeWouldUploadToThisPeerIfTheyWouldAsk" xml:space="preserve">
+    <value>피어가 요청하면 이 피어로 업로드함</value>
+    <comment>Mac key: We would upload to this peer if they'd ask</comment>
+  </data>
+  <data name="Working" xml:space="preserve">
+    <value>작동 중</value>
+    <comment>Mac key: Working</comment>
+  </data>
+  <data name="YesDHTAndPEXDisabled" xml:space="preserve">
+    <value>예(DHT 및 PEX 비활성화됨)</value>
+    <comment>Mac key: Yes (DHT and PEX disabled)</comment>
+  </data>
+  <data name="YouAreUpToDate" xml:space="preserve">
+    <value>최신 버전 사용 중</value>
+    <comment>Mac key: You're Up to Date</comment>
+  </data>
+  <data name="YouHaveVersionDownloadTheNewDiskImage" xml:space="preserve">
+    <value>현재 버전은 {0}입니다. GitHub에서 새 디스크 이미지를 다운로드한 다음, 앱을 응용 프로그램 폴더로 드래그하여 이 버전을 대체하십시오.</value>
+    <comment>Mac key: You have version %@. Download the new disk image from GitHub and drag the app into Applications to replace this one.</comment>
+  </data>
+</root>

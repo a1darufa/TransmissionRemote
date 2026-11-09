@@ -10,6 +10,8 @@ public sealed partial class MainWindow : Window
     {
         InitializeComponent();
 
+        // The name in the taskbar and Alt+Tab.
+        Title = Strings.TransmissionRemote;
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(AppTitleBar);
         // Tall caption buttons match the 48 epx TitleBar control.
