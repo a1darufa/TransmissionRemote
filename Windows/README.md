@@ -9,10 +9,10 @@ oldest version the Windows App SDK supports.
 | Part | State |
 |---|---|
 | `TransmissionKit`: the UI-free core (RPC client, models, .torrent parsing, helpers) | Done, ported from the Mac app's Swift package, 288 tests |
-| `TransmissionRemote.ViewModels`: the app's logic without its interface | Done, ported from the Mac app's models, 195 tests. See [below](#the-apps-logic-srctransmissionremoteviewmodels) |
-| `tools/StringCatalogConverter`: the Mac app's translations as `.resw` files | Done, 109 tests. See [Strings](#strings) |
+| `TransmissionRemote.ViewModels`: the app's logic without its interface | Done, ported from the Mac app's models, 200 tests. See [below](#the-apps-logic-srctransmissionremoteviewmodels) |
+| `tools/StringCatalogConverter`: the Mac app's translations as `.resw` files | Done, 124 tests. See [Strings](#strings) |
 | App icon: `assets/AppIcon/` (`AppIcon.ico` with 9 sizes, and PNGs) | Done, exported from the Mac build |
-| `TransmissionRemote.App`: the WinUI 3 app | Not started. Planned below |
+| `TransmissionRemote.App`: the WinUI 3 app | In progress: the skeleton (startup, logging, single instance, strings, an empty window). Planned below |
 | Installers for x64 and ARM64 | Not started |
 
 The core builds and tests on any OS, so it was written on a Mac. The app needs Windows: the XAML
@@ -33,6 +33,20 @@ dotnet format TransmissionRemote.slnx --verify-no-changes
 Warnings are errors, with the recommended .NET analyzers on (`Directory.Build.props`). The style
 rules are in `.editorconfig`. CI runs the same three commands on x64 and ARM64 Windows runners
 (`.github/workflows/windows-core.yml`).
+
+The solution builds the app for the PC's own architecture. `-p:Platform=ARM64` or `-p:Platform=x64`
+builds it for the other one; the libraries are architecture-neutral either way. On macOS or Linux, use
+`TransmissionRemote.Core.slnf` instead of the solution: it leaves out the app and keeps everything else.
+
+### Running the app during development
+
+Never point a development build at a real server or a real installation's data. Two environment
+variables help:
+
+- `TRANSMISSIONREMOTE_DATA_DIR`: the folder for servers, settings and logs, instead of
+  `%LOCALAPPDATA%\TransmissionRemote`. Use a throwaway folder, outside the repository.
+- `TRANSMISSIONREMOTE_THEME` (`Light` or `Dark`, Debug builds only): overrides the Windows theme, for
+  screenshots in both themes.
 
 ### Integration tests against a real daemon
 
@@ -152,43 +166,50 @@ Anyone should be able to tell from the log which part of the app failed and why.
 | 2100s | | The connection: connecting, server unreachable (with the retry delay), stopped, refresh and action failures |
 | 2200s | | Adding torrents: unreadable files, refused torrents |
 | 2300s | | Other services: update check, country database, opening local files |
+| 3000s | | `TransmissionRemote.App`: startup and exit, errors nothing else caught, hand-overs between copies of the app |
 
 Never log passwords, the `Authorization` header or request bodies (they can hold whole .torrent files).
 `Credentials`, `TransmissionClientOptions` and `AddTorrentRequest` hide those when printed, and
 `LoggingTests` check it.
 
-**In the app** (to do), following common practice for desktop .NET apps:
+**In the app**, following common practice for desktop .NET apps (done unless marked):
 
 - Serilog behind `ILoggerFactory`: `Serilog.Extensions.Logging`, `Serilog.Sinks.File` and
-  `Serilog.Sinks.Async`. Daily files `TransmissionRemote-<date>.log` in
-  `%LOCALAPPDATA%\TransmissionRemote\Logs`, 14 days kept, 10 MB per file, the same as the Mac app.
-- Information level by default; a **Detailed logging** switch in Settings turns on Debug, which adds
-  every call (event 1100).
-- At startup, log the app version, Windows version and build, architecture and .NET version.
-- Catch what nothing else catches, log it as Critical with the exception, then show a dialog that
-  offers to open the logs folder: `Application.UnhandledException` (UI thread),
-  `AppDomain.CurrentDomain.UnhandledException` and `TaskScheduler.UnobservedTaskException`. Call
-  `Log.CloseAndFlush()` on exit.
-- **Help → Open Logs Folder**, like the Mac app's Help → Show Log Files.
-- Write folder paths with `%LOCALAPPDATA%` or `~` rather than the full user folder, so shared logs
-  don't reveal the user's name.
+  `Serilog.Sinks.Async`. Daily files `TransmissionRemote-<yyyyMMdd>.log` in
+  `%LOCALAPPDATA%\TransmissionRemote\Logs`, 14 days kept, at most 10 MB a day (then logging pauses
+  until the next day), the same as the Mac app. Each line carries the event ID after the category.
+- Information level by default; the **Detailed logging** setting turns on Debug, which adds every call
+  (event 1100). The switch in Settings is to do.
+- At startup, log the app version and commit, Windows release and build, architecture (including x64
+  emulation on ARM64) and .NET version.
+- Catch what nothing else catches, log it as Critical with the exception, then offer to open the logs
+  folder in a Windows message box (XAML may be what failed): `Application.UnhandledException` (UI
+  thread) and `AppDomain.CurrentDomain.UnhandledException` end the app,
+  `TaskScheduler.UnobservedTaskException` doesn't. `Log.CloseAndFlush()` on exit.
+- **Help → Open Logs Folder**, like the Mac app's Help → Show Log Files (to do).
+- Write folder paths with `LogPath.Display`, which writes the user folder as `%USERPROFILE%`, so
+  shared logs don't reveal the user's name.
 
 ## Strings
 
 The Windows app uses the Mac app's translations, all 28 languages. `tools/StringCatalogConverter` turns
-the Mac String Catalogs into `.resw` files. Run it from `Windows/` whenever the Mac strings change:
+the Mac String Catalogs, plus the Windows-only `src/TransmissionRemote.App/Strings/Windows.xcstrings`,
+into `.resw` files. Run it from `Windows/` whenever a catalog changes:
 
 ```bash
 dotnet run --project tools/StringCatalogConverter -- \
   --catalog ../macOS/TransmissionRemote/Localizable.xcstrings \
   --catalog ../macOS/Packages/TransmissionKit/Sources/TransmissionKit/Resources/Localizable.xcstrings \
-  --output src/TransmissionRemote.App/Strings
+  --catalog src/TransmissionRemote.App/Strings/Windows.xcstrings \
+  --output src/TransmissionRemote.App/Strings \
+  --code src/TransmissionRemote.App/Strings/Strings.g.cs
 ```
 
 It writes `Strings/<language>/Resources.resw`: `en-US`, the app's default language, and the catalogs'
 own codes for the rest (`ru`, `pt-BR`, `zh-Hans`, ...), which MRT accepts as language folders.
 `InfoPlist.xcstrings` is Mac-only. Entries are sorted by name, so a rerun shows only real changes. The
-files are generated: a rerun overwrites them, so change the catalogs instead of the `.resw` files.
+files are generated and committed: a rerun overwrites them, so change the catalogs instead.
+`AppStringsTests` fails when the committed files no longer match the catalogs.
 
 - **Names.** A `.resw` name can't be a sentence (MRT gives `.` and `/` a meaning), so it's the English
   text's words in PascalCase: `Show Log Files` is `ShowLogFiles`, and
@@ -207,29 +228,22 @@ files are generated: a rerun overwrites them, so change the catalogs instead of 
   `{0:F1}`.
 - **Plurals.** `.resw` has no plurals, so each form is a resource named `<name>_<category>`: `%lld files`
   is `Files_One` and `Files_Other` in English, and `Files_One`, `Files_Few`, `Files_Many` and
-  `Files_Other` in Russian. `PluralRules` in TransmissionKit picks the form. If that comes back empty,
-  which happens while a language's translation is missing, use the `_Other` form, which English always
-  has:
-
-  ```csharp
-  string Plural(ResourceLoader loader, string name, string uiLanguage, long count)
-  {
-      var category = PluralRules.CategoryFor(uiLanguage, count);
-      var form = loader.GetString(PluralRules.ResourceName(name, category));
-      if (form.Length == 0)
-      {
-          form = loader.GetString(PluralRules.ResourceName(name, PluralCategory.Other));
-      }
-      return string.Format(CultureInfo.CurrentCulture, form, count.ToString("N0", CultureInfo.CurrentCulture));
-  }
-  ```
-
+  `Files_Other` in Russian. MRT wants every name in the default language, so `en-US` also gets the forms
+  only other languages use (`Files_Few`), with English's "other" text; English never reads them.
+  `StringResources.PluralForm` picks the form with `PluralRules` from TransmissionKit, using the rules of
+  the language the string actually came from, so a string that falls back to English uses English forms.
+  Format the count before inserting it: `string.Format(CultureInfo.CurrentCulture, Strings.FilesFor(n),
+  n.ToString("N0", CultureInfo.CurrentCulture))`.
 - **Missing translations.** Only finished translations (`"state": "translated"`) are written. A string a
   language lacks is left out of that language's file, and MRT falls back to `en-US` for that string
   alone, the way macOS falls back to English. A plural string is written only once all its forms are
   finished. Strings marked `shouldTranslate: false`, such as `%@ %@`, are only in `en-US`.
-- **Code, not `x:Uid`.** The names have no property part (`ShowLogFiles.Text`), so load them from code
-  with `ResourceLoader.GetString` or through a small markup extension.
+- **Code, not `x:Uid`.** The names have no property part (`ShowLogFiles.Text`). `--code` writes
+  `Strings.g.cs`, a `Strings` class with a property per string and a method per plural string
+  (`Strings.ShowLogFiles`, `Strings.FilesFor(count)`). Use it from C# and from XAML with
+  `{x:Bind app:Strings.ShowLogFiles}`, so a renamed or removed string breaks the build instead of
+  showing an empty label. `StringResources` loads the values through MRT Core; a name no language has
+  gives an empty string.
 - **Markdown.** SwiftUI renders Markdown in strings, and one string has a link to DB-IP in Markdown:
   `RightClickThePeerListToTurnHostNamesAnd`. It's kept as it is, so show the link with a `Hyperlink`.
 
@@ -239,9 +253,9 @@ English text doesn't. `MacCatalogTests` convert the real catalogs, so CI catches
 every language has each plural form `PluralRules` can ask for.
 
 **New strings** need all 28 languages, on Windows as on the Mac. A string both apps show goes into the
-Mac catalog and then through the converter. Strings only the Windows app needs go into a Windows-only
-String Catalog, for example `src/TransmissionRemote.App/Strings/Windows.xcstrings`, passed as one more
-`--catalog`, so that one tool and one format keep every translation.
+Mac catalog and then through the converter. Strings only the Windows app needs go into
+`src/TransmissionRemote.App/Strings/Windows.xcstrings`, passed as one more `--catalog`, so that one tool
+and one format keep every translation.
 
 ## The app: plan
 

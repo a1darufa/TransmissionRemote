@@ -20,8 +20,8 @@ xcodebuild -project TransmissionRemote.xcodeproj -scheme TransmissionRemote \
   -destination 'generic/platform=macOS' -skipPackagePluginValidation build   # runs SwiftLint
 cd Packages/TransmissionKit && swift test
 
-# Windows core (from Windows/)
-dotnet build TransmissionRemote.slnx      # warnings are errors
+# Windows (from Windows/). The app needs Windows; on macOS use TransmissionRemote.Core.slnf instead.
+dotnet build TransmissionRemote.slnx      # warnings are errors; -p:Platform=ARM64 for the other architecture
 dotnet test TransmissionRemote.slnx
 dotnet format TransmissionRemote.slnx --verify-no-changes
 ```
