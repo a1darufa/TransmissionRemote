@@ -8,7 +8,8 @@ namespace TransmissionRemote.ViewModels.Tests;
 public sealed class DisplayFormatterTests
 {
     private static readonly CultureInfo English = CultureInfo.GetCultureInfo("en-US");
-    private static readonly DisplayFormatter Format = new(English, timeZone: TimeZoneInfo.Utc);
+    private static readonly DisplayFormatter Format = new(English, timeZone: TimeZoneInfo.Utc, unitBase: ByteUnitBase.Base1024);
+    private static readonly DisplayFormatter DecimalFormat = new(English, timeZone: TimeZoneInfo.Utc);
 
     [TestMethod]
     [DataRow(0L, "0 bytes")]
@@ -30,11 +31,28 @@ public sealed class DisplayFormatterTests
     }
 
     [TestMethod]
+    [DataRow(999L, "999 bytes")]
+    [DataRow(1_000L, "1.00 KB")]
+    [DataRow(1_340L, "1.34 KB")]
+    [DataRow(999_999L, "999 KB")]
+    [DataRow(1_048_576L, "1.04 MB")]
+    [DataRow(2_400_000_000L, "2.40 GB")]
+    public void UsesTransmissionsDecimalUnitsByDefault(long bytes, string expected)
+    {
+        Assert.AreEqual(expected, DecimalFormat.Bytes(bytes));
+    }
+
+    [TestMethod]
+    public void ALimitAndTheSameSpeedReadTheSameInDecimalUnits() =>
+        Assert.AreEqual(DecimalFormat.SpeedLimit(500), DecimalFormat.Speed(500_000).Replace(".00", "", StringComparison.Ordinal));
+
+    [TestMethod]
     public void UsesTheCulturesDigitsAndTheAppsUnitLabels()
     {
         var german = new DisplayFormatter(
             CultureInfo.GetCultureInfo("de-DE"),
-            new ByteUnitLabels { Bytes = "Bytes", Kilobytes = "KB", Megabytes = "MB", PerSecond = "/s" });
+            new ByteUnitLabels { Bytes = "Bytes", Kilobytes = "KB", Megabytes = "MB", PerSecond = "/s" },
+            unitBase: ByteUnitBase.Base1024);
 
         Assert.AreEqual("1,30 KB", german.Bytes(1_340));
         Assert.AreEqual("532 Bytes", german.Bytes(532));

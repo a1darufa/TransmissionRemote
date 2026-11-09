@@ -40,12 +40,17 @@ public sealed record DurationUnitLabels
 /// unit labels. Free of words itself, so it's tested without resources.
 /// </summary>
 /// <remarks>
-/// Sizes use binary units with KB, MB, GB and TB, like File Explorer, while the Mac app shows Transmission's own
-/// decimal units the way Finder does: each app looks like its platform.
+/// Sizes use decimal units by default (1 KB = 1000 bytes), the units Transmission reports and its speed limits
+/// are set in, and the ones the Mac app shows, so a 500 KB/s limit and a 500 KB/s speed are the same thing.
+/// <see cref="ByteUnitBase.Base1024"/> writes them like File Explorer instead (1 KB = 1024 bytes); which one the
+/// Windows app uses is the user's decision.
 /// </remarks>
 public sealed class DisplayFormatter
 {
-    private static readonly long[] UnitSizes = [1L << 10, 1L << 20, 1L << 30, 1L << 40];
+    private static readonly long[] DecimalUnitSizes = [1_000L, 1_000_000L, 1_000_000_000L, 1_000_000_000_000L];
+    private static readonly long[] BinaryUnitSizes = [1L << 10, 1L << 20, 1L << 30, 1L << 40];
+
+    private readonly long[] _unitSizes;
 
     private readonly ByteUnitLabels _byteUnits;
     private readonly string _separator;
@@ -57,14 +62,17 @@ public sealed class DisplayFormatter
 
     /// <param name="culture">For digits, separators and dates; usually the app's UI culture.</param>
     /// <param name="timeZone">Where dates are shown; the PC's own by default.</param>
+    /// <param name="unitBase">Whether a kilobyte is 1000 bytes (Transmission's units) or 1024 (File Explorer's).</param>
     /// <exception cref="FormatException">A duration label isn't a format with at most <c>{0}</c> in it.</exception>
     public DisplayFormatter(
         CultureInfo culture,
         ByteUnitLabels? byteUnits = null,
         DurationUnitLabels? durationUnits = null,
-        TimeZoneInfo? timeZone = null)
+        TimeZoneInfo? timeZone = null,
+        ByteUnitBase unitBase = ByteUnitBase.Base1000)
     {
         Culture = culture ?? throw new ArgumentNullException(nameof(culture));
+        _unitSizes = unitBase == ByteUnitBase.Base1024 ? BinaryUnitSizes : DecimalUnitSizes;
         _byteUnits = byteUnits ?? new ByteUnitLabels();
         var durations = durationUnits ?? new DurationUnitLabels();
         // Parsed here, so a broken translation fails once at startup rather than on every row.
@@ -80,7 +88,7 @@ public sealed class DisplayFormatter
 
     /// <summary>
     /// A size the way File Explorer writes it: three significant digits, cut rather than rounded, switching to the
-    /// next unit at 1000 so a number never has four digits: "532 bytes", "1.30 KB", "22.9 KB", "0.97 MB".
+    /// next unit at 1000 so a number never has four digits: "532 bytes", "1.34 KB", "22.9 KB", "1.04 MB".
     /// </summary>
     public string Bytes(long bytes)
     {
@@ -89,11 +97,11 @@ public sealed class DisplayFormatter
             return $"{Math.Max(bytes, 0).ToString("N0", Culture)} {_byteUnits.Bytes}";
         }
         var unit = 0;
-        while (unit < UnitSizes.Length - 1 && (decimal)bytes / UnitSizes[unit] >= 1000)
+        while (unit < _unitSizes.Length - 1 && (decimal)bytes / _unitSizes[unit] >= 1000)
         {
             unit++;
         }
-        var value = (decimal)bytes / UnitSizes[unit];
+        var value = (decimal)bytes / _unitSizes[unit];
         var (decimals, scale) = value switch
         {
             < 10 => (2, 100m),
@@ -111,8 +119,8 @@ public sealed class DisplayFormatter
     public string SpeedOrBlank(long bytesPerSecond) => bytesPerSecond > 0 ? Speed(bytesPerSecond) : "";
 
     /// <summary>
-    /// A speed limit as typed: Transmission's limits are in its kB/s (1000 bytes), and converting them to binary
-    /// units would turn a typed 100 into 97.6. The label is the same KB/s, as in Transmission Remote GUI.
+    /// A speed limit as typed: Transmission's limits are in its kB/s (1000 bytes). With binary units, converting
+    /// them would turn a typed 100 into 97.6, so the number is always shown as typed, with the same KB/s label.
     /// </summary>
     public string SpeedLimit(int kilobytesPerSecond) =>
         $"{kilobytesPerSecond.ToString("N0", Culture)} {_byteUnits.Kilobytes}{_byteUnits.PerSecond}";
@@ -215,4 +223,14 @@ public sealed class DisplayFormatter
             ? parsed
             : throw new FormatException($"The duration format \"{format}\" uses more than {{0}}.");
     }
+}
+
+/// <summary>How many bytes a kilobyte has in <see cref="DisplayFormatter"/>.</summary>
+public enum ByteUnitBase
+{
+    /// <summary>1 KB = 1000 bytes: Transmission's own units, as the Mac app shows them.</summary>
+    Base1000,
+
+    /// <summary>1 KB = 1024 bytes, like File Explorer.</summary>
+    Base1024,
 }
