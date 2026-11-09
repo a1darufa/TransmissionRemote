@@ -220,6 +220,9 @@ public sealed partial class MainWindow : Window
         var width = Sidebar.OpenPaneLength;
         var placement = MainWindowPlacement.Capture(AppWindow) ?? ViewModel.Settings.Current.MainWindowPlacement;
         ViewModel.Settings.Update(settings => settings with { SidebarWidth = width, MainWindowPlacement = placement });
+        // Disconnect while the controls still exist: they follow the emptied list and selection now, and the
+        // services' disposal at exit then has nothing left to change in a window that's gone.
+        ViewModel.Connection.Disconnect();
     }
 
     /// <summary>Keeps the minimum window size right when the window moves to a display with another scale.</summary>

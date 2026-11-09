@@ -38,7 +38,7 @@ public static class Program
             Application.Start(callbackParameters =>
             {
                 // Awaits in the view models resume on the UI thread through this context.
-                var context = new DispatcherQueueSynchronizationContext(DispatcherQueue.GetForCurrentThread());
+                var context = new UiThreadSynchronizationContext(DispatcherQueue.GetForCurrentThread());
                 SynchronizationContext.SetSynchronizationContext(context);
                 _ = new App(services);
             });
