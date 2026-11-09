@@ -14,6 +14,9 @@ internal static class Strings
     /// <summary>About</summary>
     public static string About => StringResources.Get("About");
 
+    /// <summary>About Transmission Remote</summary>
+    public static string AboutTransmissionRemote => StringResources.Get("AboutTransmissionRemote");
+
     /// <summary>Action Failed</summary>
     public static string ActionFailed => StringResources.Get("ActionFailed");
 
@@ -44,7 +47,7 @@ internal static class Strings
     /// <summary>Add Group…</summary>
     public static string AddGroupEllipsis => StringResources.Get("AddGroupEllipsis");
 
-    /// <summary>Add Link</summary>
+    /// <summary>Add link</summary>
     public static string AddLink => StringResources.Get("AddLink");
 
     /// <summary>Add Mapping</summary>
@@ -56,7 +59,7 @@ internal static class Strings
     /// <summary>Add Server</summary>
     public static string AddServer => StringResources.Get("AddServer");
 
-    /// <summary>Add Server…</summary>
+    /// <summary>Add server…</summary>
     public static string AddServerEllipsis => StringResources.Get("AddServerEllipsis");
 
     /// <summary>Add the address of your Transmission daemon to get started.</summary>
@@ -65,16 +68,16 @@ internal static class Strings
     /// <summary>Add torrent</summary>
     public static string AddTorrent => StringResources.Get("AddTorrent");
 
-    /// <summary>Add Torrent File</summary>
+    /// <summary>Add torrent file</summary>
     public static string AddTorrentFile => StringResources.Get("AddTorrentFile");
 
-    /// <summary>Add Torrent File…</summary>
+    /// <summary>Add torrent file…</summary>
     public static string AddTorrentFileEllipsis => StringResources.Get("AddTorrentFileEllipsis");
 
     /// <summary>Add Torrent Link</summary>
     public static string AddTorrentLink => StringResources.Get("AddTorrentLink");
 
-    /// <summary>Add Torrent Link…</summary>
+    /// <summary>Add torrent link…</summary>
     public static string AddTorrentLinkEllipsis => StringResources.Get("AddTorrentLinkEllipsis");
 
     /// <summary>Added</summary>
@@ -98,7 +101,7 @@ internal static class Strings
     /// <summary>Allow encryption</summary>
     public static string AllowEncryption => StringResources.Get("AllowEncryption");
 
-    /// <summary>Allow Unencrypted Connection</summary>
+    /// <summary>Allow unencrypted connection</summary>
     public static string AllowUnencryptedConnection => StringResources.Get("AllowUnencryptedConnection");
 
     /// <summary>Allow unencrypted connection anyway</summary>
@@ -116,7 +119,7 @@ internal static class Strings
     /// <summary>Alternative speed limits</summary>
     public static string AlternativeSpeedLimits_392B4B => StringResources.Get("AlternativeSpeedLimits_392B4B");
 
-    /// <summary>Alternative Speed Limits</summary>
+    /// <summary>Alternative speed limits</summary>
     public static string AlternativeSpeedLimits_5A9C91 => StringResources.Get("AlternativeSpeedLimits_5A9C91");
 
     /// <summary>Application Options</summary>
@@ -131,7 +134,7 @@ internal static class Strings
     /// <summary>Ask for More Peers</summary>
     public static string AskForMorePeers => StringResources.Get("AskForMorePeers");
 
-    /// <summary>Ask Trackers for More Peers</summary>
+    /// <summary>Ask trackers for more peers</summary>
     public static string AskTrackersForMorePeers => StringResources.Get("AskTrackersForMorePeers");
 
     /// <summary>Asks GitHub for the newest release. Nothing is downloaded or installed automatically.</summary>
@@ -170,7 +173,7 @@ internal static class Strings
     /// <summary>Bandwidth priority</summary>
     public static string BandwidthPriority_33C88A => StringResources.Get("BandwidthPriority_33C88A");
 
-    /// <summary>Bandwidth Priority</summary>
+    /// <summary>Bandwidth priority</summary>
     public static string BandwidthPriority_5262E0 => StringResources.Get("BandwidthPriority_5262E0");
 
     /// <summary>Blocklist URL</summary>
@@ -182,7 +185,7 @@ internal static class Strings
     /// <summary>Cancel</summary>
     public static string Cancel => StringResources.Get("Cancel");
 
-    /// <summary>Can&apos;t Reach the Server</summary>
+    /// <summary>Can&apos;t reach the server</summary>
     public static string CannotReachTheServer => StringResources.Get("CannotReachTheServer");
 
     /// <summary>Certificate Password</summary>
@@ -191,7 +194,7 @@ internal static class Strings
     /// <summary>Changes are sent to the server when you click Apply.</summary>
     public static string ChangesAreSentToTheServerWhenYouClick => StringResources.Get("ChangesAreSentToTheServerWhenYouClick");
 
-    /// <summary>Check for Updates…</summary>
+    /// <summary>Check for updates…</summary>
     public static string CheckForUpdatesEllipsis => StringResources.Get("CheckForUpdatesEllipsis");
 
     /// <summary>Check for updates once a day</summary>
@@ -269,7 +272,7 @@ internal static class Strings
     /// <summary>Continue</summary>
     public static string Continue => StringResources.Get("Continue");
 
-    /// <summary>Copy Magnet Link</summary>
+    /// <summary>Copy magnet link</summary>
     public static string CopyMagnetLink => StringResources.Get("CopyMagnetLink");
 
     /// <summary>Copy Path</summary>
@@ -287,8 +290,14 @@ internal static class Strings
     /// <summary>Couldn&apos;t Check for Updates</summary>
     public static string CouldNotCheckForUpdates => StringResources.Get("CouldNotCheckForUpdates");
 
-    /// <summary>Couldn&apos;t Connect</summary>
+    /// <summary>Couldn&apos;t connect</summary>
     public static string CouldNotConnect => StringResources.Get("CouldNotConnect");
+
+    /// <summary>Couldn&apos;t connect through the proxy server. Check its address and port.</summary>
+    public static string CouldNotConnectThroughTheProxyServer => StringResources.Get("CouldNotConnectThroughTheProxyServer");
+
+    /// <summary>Couldn&apos;t connect to the server. Check that Transmission is running and that the address and port are right.</summary>
+    public static string CouldNotConnectToTheServerCheckThat => StringResources.Get("CouldNotConnectToTheServerCheckThat");
 
     /// <summary>Couldn&apos;t Import</summary>
     public static string CouldNotImport => StringResources.Get("CouldNotImport");
@@ -401,7 +410,7 @@ internal static class Strings
     /// <summary>Download Selected</summary>
     public static string DownloadSelected => StringResources.Get("DownloadSelected");
 
-    /// <summary>Download Speed Limit</summary>
+    /// <summary>Download speed limit</summary>
     public static string DownloadSpeedLimit => StringResources.Get("DownloadSpeedLimit");
 
     /// <summary>Download speeds (kB/s)</summary>
@@ -443,13 +452,13 @@ internal static class Strings
     /// <summary>Edit…</summary>
     public static string EditEllipsis => StringResources.Get("EditEllipsis");
 
-    /// <summary>Edit Server…</summary>
+    /// <summary>Edit server…</summary>
     public static string EditServerEllipsis => StringResources.Get("EditServerEllipsis");
 
     /// <summary>Edit Trackers</summary>
     public static string EditTrackers => StringResources.Get("EditTrackers");
 
-    /// <summary>Edit Trackers…</summary>
+    /// <summary>Edit trackers…</summary>
     public static string EditTrackersEllipsis => StringResources.Get("EditTrackersEllipsis");
 
     /// <summary>Enable blocklist</summary>
@@ -505,6 +514,15 @@ internal static class Strings
 
     /// <summary>Existing labels</summary>
     public static string ExistingLabels => StringResources.Get("ExistingLabels");
+
+    /// <summary>Exit</summary>
+    public static string Exit => StringResources.Get("Exit");
+
+    /// <summary>File</summary>
+    public static string File => StringResources.Get("File");
+
+    /// <summary>F</summary>
+    public static string FileMenuAccessKey => StringResources.Get("FileMenuAccessKey");
 
     /// <summary>Files</summary>
     public static string Files => StringResources.Get("Files");
@@ -571,6 +589,12 @@ internal static class Strings
 
     /// <summary>Hash</summary>
     public static string Hash => StringResources.Get("Hash");
+
+    /// <summary>Help</summary>
+    public static string Help => StringResources.Get("Help");
+
+    /// <summary>H</summary>
+    public static string HelpMenuAccessKey => StringResources.Get("HelpMenuAccessKey");
 
     /// <summary>Hide Countries</summary>
     public static string HideCountries => StringResources.Get("HideCountries");
@@ -692,7 +716,7 @@ internal static class Strings
     /// <summary>Magnet link</summary>
     public static string MagnetLink => StringResources.Get("MagnetLink");
 
-    /// <summary>Manage Servers…</summary>
+    /// <summary>Manage servers…</summary>
     public static string ManageServersEllipsis => StringResources.Get("ManageServersEllipsis");
 
     /// <summary>Maximum download speed</summary>
@@ -728,22 +752,22 @@ internal static class Strings
     /// <summary>Move Data</summary>
     public static string MoveData => StringResources.Get("MoveData");
 
-    /// <summary>Move Data…</summary>
+    /// <summary>Move data…</summary>
     public static string MoveDataEllipsis => StringResources.Get("MoveDataEllipsis");
 
-    /// <summary>Move Down</summary>
+    /// <summary>Move down</summary>
     public static string MoveDown => StringResources.Get("MoveDown");
 
     /// <summary>Move the downloaded files to the new folder</summary>
     public static string MoveTheDownloadedFilesToTheNewFolder => StringResources.Get("MoveTheDownloadedFilesToTheNewFolder");
 
-    /// <summary>Move to Bottom</summary>
+    /// <summary>Move to bottom</summary>
     public static string MoveToBottom => StringResources.Get("MoveToBottom");
 
-    /// <summary>Move to Top</summary>
+    /// <summary>Move to top</summary>
     public static string MoveToTop => StringResources.Get("MoveToTop");
 
-    /// <summary>Move Up</summary>
+    /// <summary>Move up</summary>
     public static string MoveUp => StringResources.Get("MoveUp");
 
     /// <summary>My NAS</summary>
@@ -776,7 +800,7 @@ internal static class Strings
     /// <summary>No Known Folders</summary>
     public static string NoKnownFolders => StringResources.Get("NoKnownFolders");
 
-    /// <summary>No Server</summary>
+    /// <summary>No server</summary>
     public static string NoServer => StringResources.Get("NoServer");
 
     /// <summary>No Server Selected</summary>
@@ -788,7 +812,7 @@ internal static class Strings
     /// <summary>No Torrent Selected</summary>
     public static string NoTorrentSelected => StringResources.Get("NoTorrentSelected");
 
-    /// <summary>No Torrents</summary>
+    /// <summary>No torrents</summary>
     public static string NoTorrents => StringResources.Get("NoTorrents");
 
     /// <summary>None</summary>
@@ -806,7 +830,7 @@ internal static class Strings
     /// <summary>Not connected.</summary>
     public static string NotConnected_3B3D27 => StringResources.Get("NotConnected_3B3D27");
 
-    /// <summary>Not Connected</summary>
+    /// <summary>Not connected</summary>
     public static string NotConnected_87D82C => StringResources.Get("NotConnected_87D82C");
 
     /// <summary>Not downloaded</summary>
@@ -844,6 +868,9 @@ internal static class Strings
 
     /// <summary>Open Anyway</summary>
     public static string OpenAnyway => StringResources.Get("OpenAnyway");
+
+    /// <summary>Open logs folder</summary>
+    public static string OpenLogsFolder => StringResources.Get("OpenLogsFolder");
 
     /// <summary>Optimistic unchoke</summary>
     public static string OptimisticUnchoke => StringResources.Get("OptimisticUnchoke");
@@ -989,7 +1016,7 @@ internal static class Strings
     /// <summary>Remove and Delete Data</summary>
     public static string RemoveAndDeleteData => StringResources.Get("RemoveAndDeleteData");
 
-    /// <summary>Remove and Delete Data…</summary>
+    /// <summary>Remove and delete data…</summary>
     public static string RemoveAndDeleteDataEllipsis => StringResources.Get("RemoveAndDeleteDataEllipsis");
 
     /// <summary>Remove…</summary>
@@ -1085,7 +1112,10 @@ internal static class Strings
     /// <summary>Server default</summary>
     public static string ServerDefault => StringResources.Get("ServerDefault");
 
-    /// <summary>Server Settings…</summary>
+    /// <summary>S</summary>
+    public static string ServerMenuAccessKey => StringResources.Get("ServerMenuAccessKey");
+
+    /// <summary>Server settings…</summary>
     public static string ServerSettingsEllipsis => StringResources.Get("ServerSettingsEllipsis");
 
     /// <summary>Settings</summary>
@@ -1103,14 +1133,20 @@ internal static class Strings
     /// <summary>Show in Finder</summary>
     public static string ShowInFinder => StringResources.Get("ShowInFinder");
 
+    /// <summary>Show in folder</summary>
+    public static string ShowInFolder => StringResources.Get("ShowInFolder");
+
     /// <summary>Show in menu bar</summary>
     public static string ShowInMenuBar => StringResources.Get("ShowInMenuBar");
 
-    /// <summary>Show Info Pane</summary>
+    /// <summary>Show info pane</summary>
     public static string ShowInfoPane => StringResources.Get("ShowInfoPane");
 
     /// <summary>Show Log Files</summary>
     public static string ShowLogFiles => StringResources.Get("ShowLogFiles");
+
+    /// <summary>Show sidebar</summary>
+    public static string ShowSidebar => StringResources.Get("ShowSidebar");
 
     /// <summary>Show transfer speeds in the menu bar</summary>
     public static string ShowTransferSpeedsInTheMenuBar => StringResources.Get("ShowTransferSpeedsInTheMenuBar");
@@ -1120,6 +1156,9 @@ internal static class Strings
 
     /// <summary>Show where peers are from with DB-IP&apos;s free country database, about 5 MB.</summary>
     public static string ShowWherePeersAreFromWithDBIPsFree => StringResources.Get("ShowWherePeersAreFromWithDBIPsFree");
+
+    /// <summary>{0}, {1}</summary>
+    public static string SidebarItemNameCount => StringResources.Get("SidebarItemNameCount");
 
     /// <summary>Size</summary>
     public static string Size => StringResources.Get("Size");
@@ -1133,6 +1172,9 @@ internal static class Strings
     /// <summary>Skipped {0}, already set up here.</summary>
     public static string SkippedAlreadySetUpHere => StringResources.Get("SkippedAlreadySetUpHere");
 
+    /// <summary>Something unexpected went wrong. The log files have the details.</summary>
+    public static string SomethingUnexpectedWentWrongTheLogFiles => StringResources.Get("SomethingUnexpectedWentWrongTheLogFiles");
+
     /// <summary>Speed</summary>
     public static string Speed => StringResources.Get("Speed");
 
@@ -1142,10 +1184,10 @@ internal static class Strings
     /// <summary>Start</summary>
     public static string Start => StringResources.Get("Start");
 
-    /// <summary>Start All</summary>
+    /// <summary>Start all</summary>
     public static string StartAll => StringResources.Get("StartAll");
 
-    /// <summary>Start Now</summary>
+    /// <summary>Start now</summary>
     public static string StartNow => StringResources.Get("StartNow");
 
     /// <summary>Start the selected torrents</summary>
@@ -1163,7 +1205,7 @@ internal static class Strings
     /// <summary>Stop</summary>
     public static string Stop => StringResources.Get("Stop");
 
-    /// <summary>Stop All</summary>
+    /// <summary>Stop all</summary>
     public static string StopAll => StringResources.Get("StopAll");
 
     /// <summary>Stop at ratio</summary>
@@ -1175,7 +1217,7 @@ internal static class Strings
     /// <summary>Stop the selected torrents</summary>
     public static string StopTheSelectedTorrents => StringResources.Get("StopTheSelectedTorrents");
 
-    /// <summary>Stop Trying</summary>
+    /// <summary>Stop trying</summary>
     public static string StopTrying => StringResources.Get("StopTrying");
 
     /// <summary>Stop when idle</summary>
@@ -1214,6 +1256,12 @@ internal static class Strings
     /// <summary>The certificate file&apos;s password is wrong.</summary>
     public static string TheCertificateFilesPasswordIsWrong => StringResources.Get("TheCertificateFilesPasswordIsWrong");
 
+    /// <summary>The connection to the server failed.</summary>
+    public static string TheConnectionToTheServerFailed => StringResources.Get("TheConnectionToTheServerFailed");
+
+    /// <summary>The connection to the server was lost.</summary>
+    public static string TheConnectionToTheServerWasLost => StringResources.Get("TheConnectionToTheServerWasLost");
+
     /// <summary>The downloaded files will be deleted from the server. This can&apos;t be undone.</summary>
     public static string TheDownloadedFilesWillBeDeletedFromThe => StringResources.Get("TheDownloadedFilesWillBeDeletedFromThe");
 
@@ -1235,6 +1283,9 @@ internal static class Strings
     /// <summary>The proxy port must be between 1 and 65535.</summary>
     public static string TheProxyPortMustBeBetween1And65535 => StringResources.Get("TheProxyPortMustBeBetween1And65535");
 
+    /// <summary>The proxy rejected the username or password.</summary>
+    public static string TheProxyRejectedTheUsernameOrPassword => StringResources.Get("TheProxyRejectedTheUsernameOrPassword");
+
     /// <summary>the RPC path must start with “/”.</summary>
     public static string TheRPCPathMustStartWith => StringResources.Get("TheRPCPathMustStartWith");
 
@@ -1246,6 +1297,9 @@ internal static class Strings
 
     /// <summary>The server didn&apos;t accept a secure (HTTPS) connection. Transmission&apos;s built-in server only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel.</summary>
     public static string TheServerDidNotAcceptASecureHTTPS => StringResources.Get("TheServerDidNotAcceptASecureHTTPS");
+
+    /// <summary>The server didn&apos;t answer in time.</summary>
+    public static string TheServerDidNotAnswerInTime => StringResources.Get("TheServerDidNotAnswerInTime");
 
     /// <summary>The server doesn&apos;t accept this hostname. Connect by IP address, or add the hostname to “rpc-host-whitelist” in the daemon&apos;s settings.json.</summary>
     public static string TheServerDoesNotAcceptThisHostname => StringResources.Get("TheServerDoesNotAcceptThisHostname");
@@ -1270,6 +1324,9 @@ internal static class Strings
 
     /// <summary>The server tried to redirect the connection to a different address. The request was blocked to protect your credentials.</summary>
     public static string TheServerTriedToRedirectTheConnectionToA => StringResources.Get("TheServerTriedToRedirectTheConnectionToA");
+
+    /// <summary>The server&apos;s name couldn&apos;t be found. Check the address.</summary>
+    public static string TheServersNameCouldNotBeFoundCheckThe => StringResources.Get("TheServersNameCouldNotBeFoundCheckThe");
 
     /// <summary>The server&apos;s TLS certificate isn&apos;t trusted.</summary>
     public static string TheServersTLSCertificateIsNotTrusted => StringResources.Get("TheServersTLSCertificateIsNotTrusted");
@@ -1304,7 +1361,10 @@ internal static class Strings
     /// <summary>Torrent</summary>
     public static string Torrent => StringResources.Get("Torrent");
 
-    /// <summary>Torrent Options…</summary>
+    /// <summary>T</summary>
+    public static string TorrentMenuAccessKey => StringResources.Get("TorrentMenuAccessKey");
+
+    /// <summary>Torrent options…</summary>
     public static string TorrentOptionsEllipsis => StringResources.Get("TorrentOptionsEllipsis");
 
     /// <summary>torrents</summary>
@@ -1364,16 +1424,19 @@ internal static class Strings
     /// <summary>Transmission Remote ran into a problem in the background. Open the logs folder to see what went wrong?</summary>
     public static string TransmissionRemoteRanIntoAProblemInThe => StringResources.Get("TransmissionRemoteRanIntoAProblemInThe");
 
-    /// <summary>Trust This Certificate</summary>
+    /// <summary>{0} – Transmission Remote</summary>
+    public static string TransmissionRemoteWindowTitle => StringResources.Get("TransmissionRemoteWindowTitle");
+
+    /// <summary>Trust this certificate</summary>
     public static string TrustThisCertificate => StringResources.Get("TrustThisCertificate");
 
     /// <summary>Trusted certificate</summary>
     public static string TrustedCertificate => StringResources.Get("TrustedCertificate");
 
-    /// <summary>Try Again</summary>
+    /// <summary>Try again</summary>
     public static string TryAgain => StringResources.Get("TryAgain");
 
-    /// <summary>Try Now</summary>
+    /// <summary>Try now</summary>
     public static string TryNow => StringResources.Get("TryNow");
 
     /// <summary>Trying again…</summary>
@@ -1388,13 +1451,13 @@ internal static class Strings
     /// <summary>µTP</summary>
     public static string UTP => StringResources.Get("UTP");
 
-    /// <summary>Unencrypted Connection Blocked</summary>
+    /// <summary>Unencrypted connection blocked</summary>
     public static string UnencryptedConnectionBlocked => StringResources.Get("UnencryptedConnectionBlocked");
 
     /// <summary>Unlimited</summary>
     public static string Unlimited => StringResources.Get("Unlimited");
 
-    /// <summary>Untrusted Certificate</summary>
+    /// <summary>Untrusted certificate</summary>
     public static string UntrustedCertificate => StringResources.Get("UntrustedCertificate");
 
     /// <summary>Untrusted certificate. Connect from the main window to review and trust it ({0}…).</summary>
@@ -1430,7 +1493,7 @@ internal static class Strings
     /// <summary>Upload queue size</summary>
     public static string UploadQueueSize => StringResources.Get("UploadQueueSize");
 
-    /// <summary>Upload Speed Limit</summary>
+    /// <summary>Upload speed limit</summary>
     public static string UploadSpeedLimit => StringResources.Get("UploadSpeedLimit");
 
     /// <summary>Upload speeds (kB/s)</summary>
@@ -1454,7 +1517,7 @@ internal static class Strings
     /// <summary>Username</summary>
     public static string Username => StringResources.Get("Username");
 
-    /// <summary>Verify Local Data</summary>
+    /// <summary>Verify local data</summary>
     public static string VerifyLocalData => StringResources.Get("VerifyLocalData");
 
     /// <summary>Verifying {0}</summary>
@@ -1465,6 +1528,12 @@ internal static class Strings
 
     /// <summary>Version {0}</summary>
     public static string Version => StringResources.Get("Version");
+
+    /// <summary>View</summary>
+    public static string View => StringResources.Get("View");
+
+    /// <summary>V</summary>
+    public static string ViewMenuAccessKey => StringResources.Get("ViewMenuAccessKey");
 
     /// <summary>Waiting</summary>
     public static string Waiting => StringResources.Get("Waiting");

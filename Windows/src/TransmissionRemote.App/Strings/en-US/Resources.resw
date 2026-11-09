@@ -20,6 +20,11 @@
     <value>About</value>
     <comment>Mac key: About</comment>
   </data>
+  <data name="AboutTransmissionRemote" xml:space="preserve">
+    <value>About Transmission Remote</value>
+    <comment>Mac key: About Transmission Remote
+Mac comment: Windows only. Help menu: the dialog with the version, licence and credits.</comment>
+  </data>
   <data name="ActionFailed" xml:space="preserve">
     <value>Action Failed</value>
     <comment>Mac key: Action Failed</comment>
@@ -61,8 +66,9 @@
     <comment>Mac key: Add Group…</comment>
   </data>
   <data name="AddLink" xml:space="preserve">
-    <value>Add Link</value>
-    <comment>Mac key: Add Link</comment>
+    <value>Add link</value>
+    <comment>Mac key: Add Link
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="AddMapping" xml:space="preserve">
     <value>Add Mapping</value>
@@ -77,8 +83,9 @@
     <comment>Mac key: Add Server</comment>
   </data>
   <data name="AddServerEllipsis" xml:space="preserve">
-    <value>Add Server…</value>
-    <comment>Mac key: Add Server…</comment>
+    <value>Add server…</value>
+    <comment>Mac key: Add Server…
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="AddTheAddressOfYourTransmissionDaemonTo" xml:space="preserve">
     <value>Add the address of your Transmission daemon to get started.</value>
@@ -89,20 +96,23 @@
     <comment>Mac key: Add torrent</comment>
   </data>
   <data name="AddTorrentFile" xml:space="preserve">
-    <value>Add Torrent File</value>
-    <comment>Mac key: Add Torrent File</comment>
+    <value>Add torrent file</value>
+    <comment>Mac key: Add Torrent File
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="AddTorrentFileEllipsis" xml:space="preserve">
-    <value>Add Torrent File…</value>
-    <comment>Mac key: Add Torrent File…</comment>
+    <value>Add torrent file…</value>
+    <comment>Mac key: Add Torrent File…
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="AddTorrentLink" xml:space="preserve">
     <value>Add Torrent Link</value>
     <comment>Mac key: Add Torrent Link</comment>
   </data>
   <data name="AddTorrentLinkEllipsis" xml:space="preserve">
-    <value>Add Torrent Link…</value>
-    <comment>Mac key: Add Torrent Link…</comment>
+    <value>Add torrent link…</value>
+    <comment>Mac key: Add Torrent Link…
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="Added" xml:space="preserve">
     <value>Added</value>
@@ -133,8 +143,9 @@
     <comment>Mac key: Allow encryption</comment>
   </data>
   <data name="AllowUnencryptedConnection" xml:space="preserve">
-    <value>Allow Unencrypted Connection</value>
-    <comment>Mac key: Allow Unencrypted Connection</comment>
+    <value>Allow unencrypted connection</value>
+    <comment>Mac key: Allow Unencrypted Connection
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="AllowUnencryptedConnectionAnyway" xml:space="preserve">
     <value>Allow unencrypted connection anyway</value>
@@ -157,8 +168,9 @@
     <comment>Mac key: Alternative speed limits</comment>
   </data>
   <data name="AlternativeSpeedLimits_5A9C91" xml:space="preserve">
-    <value>Alternative Speed Limits</value>
-    <comment>Mac key: Alternative Speed Limits</comment>
+    <value>Alternative speed limits</value>
+    <comment>Mac key: Alternative Speed Limits
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="ApplicationOptions" xml:space="preserve">
     <value>Application Options</value>
@@ -177,8 +189,9 @@
     <comment>Mac key: Ask for More Peers</comment>
   </data>
   <data name="AskTrackersForMorePeers" xml:space="preserve">
-    <value>Ask Trackers for More Peers</value>
-    <comment>Mac key: Ask Trackers for More Peers</comment>
+    <value>Ask trackers for more peers</value>
+    <comment>Mac key: Ask Trackers for More Peers
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="AsksGitHubForTheNewestReleaseNothingIs" xml:space="preserve">
     <value>Asks GitHub for the newest release. Nothing is downloaded or installed automatically.</value>
@@ -229,8 +242,9 @@
     <comment>Mac key: Bandwidth priority</comment>
   </data>
   <data name="BandwidthPriority_5262E0" xml:space="preserve">
-    <value>Bandwidth Priority</value>
-    <comment>Mac key: Bandwidth Priority</comment>
+    <value>Bandwidth priority</value>
+    <comment>Mac key: Bandwidth Priority
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="BlocklistURL" xml:space="preserve">
     <value>Blocklist URL</value>
@@ -245,8 +259,9 @@
     <comment>Mac key: Cancel</comment>
   </data>
   <data name="CannotReachTheServer" xml:space="preserve">
-    <value>Can't Reach the Server</value>
-    <comment>Mac key: Can't Reach the Server</comment>
+    <value>Can't reach the server</value>
+    <comment>Mac key: Can't Reach the Server
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="CertificatePassword" xml:space="preserve">
     <value>Certificate Password</value>
@@ -257,8 +272,9 @@
     <comment>Mac key: Changes are sent to the server when you click Apply.</comment>
   </data>
   <data name="CheckForUpdatesEllipsis" xml:space="preserve">
-    <value>Check for Updates…</value>
-    <comment>Mac key: Check for Updates…</comment>
+    <value>Check for updates…</value>
+    <comment>Mac key: Check for Updates…
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="CheckForUpdatesOnceADay" xml:space="preserve">
     <value>Check for updates once a day</value>
@@ -361,8 +377,9 @@
     <comment>Mac key: Continue</comment>
   </data>
   <data name="CopyMagnetLink" xml:space="preserve">
-    <value>Copy Magnet Link</value>
-    <comment>Mac key: Copy Magnet Link</comment>
+    <value>Copy magnet link</value>
+    <comment>Mac key: Copy Magnet Link
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="CopyPath" xml:space="preserve">
     <value>Copy Path</value>
@@ -385,8 +402,19 @@
     <comment>Mac key: Couldn't Check for Updates</comment>
   </data>
   <data name="CouldNotConnect" xml:space="preserve">
-    <value>Couldn't Connect</value>
-    <comment>Mac key: Couldn't Connect</comment>
+    <value>Couldn't connect</value>
+    <comment>Mac key: Couldn't Connect
+English worded for Windows by the English overrides catalog.</comment>
+  </data>
+  <data name="CouldNotConnectThroughTheProxyServer" xml:space="preserve">
+    <value>Couldn't connect through the proxy server. Check its address and port.</value>
+    <comment>Mac key: Couldn't connect through the proxy server. Check its address and port.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
+  </data>
+  <data name="CouldNotConnectToTheServerCheckThat" xml:space="preserve">
+    <value>Couldn't connect to the server. Check that Transmission is running and that the address and port are right.</value>
+    <comment>Mac key: Couldn't connect to the server. Check that Transmission is running and that the address and port are right.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
   </data>
   <data name="CouldNotImport" xml:space="preserve">
     <value>Couldn't Import</value>
@@ -539,8 +567,9 @@ Not translated: the Mac catalog marks it shouldTranslate = false.</comment>
     <comment>Mac key: Download Selected</comment>
   </data>
   <data name="DownloadSpeedLimit" xml:space="preserve">
-    <value>Download Speed Limit</value>
-    <comment>Mac key: Download Speed Limit</comment>
+    <value>Download speed limit</value>
+    <comment>Mac key: Download Speed Limit
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="DownloadSpeedsKBS" xml:space="preserve">
     <value>Download speeds (kB/s)</value>
@@ -595,16 +624,18 @@ Not translated: the Mac catalog marks it shouldTranslate = false.</comment>
     <comment>Mac key: Edit…</comment>
   </data>
   <data name="EditServerEllipsis" xml:space="preserve">
-    <value>Edit Server…</value>
-    <comment>Mac key: Edit Server…</comment>
+    <value>Edit server…</value>
+    <comment>Mac key: Edit Server…
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="EditTrackers" xml:space="preserve">
     <value>Edit Trackers</value>
     <comment>Mac key: Edit Trackers</comment>
   </data>
   <data name="EditTrackersEllipsis" xml:space="preserve">
-    <value>Edit Trackers…</value>
-    <comment>Mac key: Edit Trackers…</comment>
+    <value>Edit trackers…</value>
+    <comment>Mac key: Edit Trackers…
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="EnableBlocklist" xml:space="preserve">
     <value>Enable blocklist</value>
@@ -677,6 +708,21 @@ Not translated: the Mac catalog marks it shouldTranslate = false.</comment>
   <data name="ExistingLabels" xml:space="preserve">
     <value>Existing labels</value>
     <comment>Mac key: Existing labels</comment>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+    <comment>Mac key: Exit
+Mac comment: Windows only. File menu and tray menu: quits the app, even when closing the window would keep it in the tray. Windows apps say Exit where Mac apps say Quit.</comment>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+    <comment>Mac key: File
+Mac comment: Windows only. The File menu in the menu bar.</comment>
+  </data>
+  <data name="FileMenuAccessKey" xml:space="preserve">
+    <value>F</value>
+    <comment>Mac key: File menu access key
+Mac comment: Windows only. The letter that opens this menu with Alt, one character. It must differ from the other four menus' letters (File, Torrent, Server, View, Help) in the same language, and should be a letter of the menu's name. Chinese and Korean use Latin letters, as Windows does.</comment>
   </data>
   <data name="Files" xml:space="preserve">
     <value>Files</value>
@@ -784,6 +830,16 @@ Only a default for MRT: English never uses this plural form.</comment>
   <data name="Hash" xml:space="preserve">
     <value>Hash</value>
     <comment>Mac key: Hash</comment>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+    <comment>Mac key: Help
+Mac comment: Windows only. The Help menu in the menu bar.</comment>
+  </data>
+  <data name="HelpMenuAccessKey" xml:space="preserve">
+    <value>H</value>
+    <comment>Mac key: Help menu access key
+Mac comment: Windows only. The letter that opens this menu with Alt, one character. It must differ from the other four menus' letters (File, Torrent, Server, View, Help) in the same language, and should be a letter of the menu's name. Chinese and Korean use Latin letters, as Windows does.</comment>
   </data>
   <data name="HideCountries" xml:space="preserve">
     <value>Hide Countries</value>
@@ -946,8 +1002,9 @@ Only a default for MRT: English never uses this plural form.</comment>
     <comment>Mac key: Magnet link</comment>
   </data>
   <data name="ManageServersEllipsis" xml:space="preserve">
-    <value>Manage Servers…</value>
-    <comment>Mac key: Manage Servers…</comment>
+    <value>Manage servers…</value>
+    <comment>Mac key: Manage Servers…
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="MaximumDownloadSpeed" xml:space="preserve">
     <value>Maximum download speed</value>
@@ -994,28 +1051,33 @@ Only a default for MRT: English never uses this plural form.</comment>
     <comment>Mac key: Move Data</comment>
   </data>
   <data name="MoveDataEllipsis" xml:space="preserve">
-    <value>Move Data…</value>
-    <comment>Mac key: Move Data…</comment>
+    <value>Move data…</value>
+    <comment>Mac key: Move Data…
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="MoveDown" xml:space="preserve">
-    <value>Move Down</value>
-    <comment>Mac key: Move Down</comment>
+    <value>Move down</value>
+    <comment>Mac key: Move Down
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="MoveTheDownloadedFilesToTheNewFolder" xml:space="preserve">
     <value>Move the downloaded files to the new folder</value>
     <comment>Mac key: Move the downloaded files to the new folder</comment>
   </data>
   <data name="MoveToBottom" xml:space="preserve">
-    <value>Move to Bottom</value>
-    <comment>Mac key: Move to Bottom</comment>
+    <value>Move to bottom</value>
+    <comment>Mac key: Move to Bottom
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="MoveToTop" xml:space="preserve">
-    <value>Move to Top</value>
-    <comment>Mac key: Move to Top</comment>
+    <value>Move to top</value>
+    <comment>Mac key: Move to Top
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="MoveUp" xml:space="preserve">
-    <value>Move Up</value>
-    <comment>Mac key: Move Up</comment>
+    <value>Move up</value>
+    <comment>Mac key: Move Up
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="MyNAS" xml:space="preserve">
     <value>My NAS</value>
@@ -1058,8 +1120,9 @@ Only a default for MRT: English never uses this plural form.</comment>
     <comment>Mac key: No Known Folders</comment>
   </data>
   <data name="NoServer" xml:space="preserve">
-    <value>No Server</value>
-    <comment>Mac key: No Server</comment>
+    <value>No server</value>
+    <comment>Mac key: No Server
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="NoServerSelected" xml:space="preserve">
     <value>No Server Selected</value>
@@ -1074,8 +1137,9 @@ Only a default for MRT: English never uses this plural form.</comment>
     <comment>Mac key: No Torrent Selected</comment>
   </data>
   <data name="NoTorrents" xml:space="preserve">
-    <value>No Torrents</value>
-    <comment>Mac key: No Torrents</comment>
+    <value>No torrents</value>
+    <comment>Mac key: No Torrents
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="None" xml:space="preserve">
     <value>None</value>
@@ -1098,8 +1162,9 @@ Only a default for MRT: English never uses this plural form.</comment>
     <comment>Mac key: Not connected.</comment>
   </data>
   <data name="NotConnected_87D82C" xml:space="preserve">
-    <value>Not Connected</value>
-    <comment>Mac key: Not Connected</comment>
+    <value>Not connected</value>
+    <comment>Mac key: Not Connected
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="NotDownloaded" xml:space="preserve">
     <value>Not downloaded</value>
@@ -1148,6 +1213,11 @@ Only a default for MRT: English never uses this plural form.</comment>
   <data name="OpenAnyway" xml:space="preserve">
     <value>Open Anyway</value>
     <comment>Mac key: Open Anyway</comment>
+  </data>
+  <data name="OpenLogsFolder" xml:space="preserve">
+    <value>Open logs folder</value>
+    <comment>Mac key: Open logs folder
+Mac comment: Windows only. Help menu: opens the folder with the app's log files in File Explorer (the Mac says Show Log Files).</comment>
   </data>
   <data name="OptimisticUnchoke" xml:space="preserve">
     <value>Optimistic unchoke</value>
@@ -1361,8 +1431,9 @@ Only a default for MRT: English never uses this plural form.</comment>
     <comment>Mac key: Remove and Delete Data</comment>
   </data>
   <data name="RemoveAndDeleteDataEllipsis" xml:space="preserve">
-    <value>Remove and Delete Data…</value>
-    <comment>Mac key: Remove and Delete Data…</comment>
+    <value>Remove and delete data…</value>
+    <comment>Mac key: Remove and Delete Data…
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="RemoveEllipsis" xml:space="preserve">
     <value>Remove…</value>
@@ -1507,9 +1578,15 @@ Only a default for MRT: English never uses this plural form.</comment>
     <value>Server default</value>
     <comment>Mac key: Server default</comment>
   </data>
+  <data name="ServerMenuAccessKey" xml:space="preserve">
+    <value>S</value>
+    <comment>Mac key: Server menu access key
+Mac comment: Windows only. The letter that opens this menu with Alt, one character. It must differ from the other four menus' letters (File, Torrent, Server, View, Help) in the same language, and should be a letter of the menu's name. Chinese and Korean use Latin letters, as Windows does.</comment>
+  </data>
   <data name="ServerSettingsEllipsis" xml:space="preserve">
-    <value>Server Settings…</value>
-    <comment>Mac key: Server Settings…</comment>
+    <value>Server settings…</value>
+    <comment>Mac key: Server Settings…
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
@@ -1531,17 +1608,28 @@ Only a default for MRT: English never uses this plural form.</comment>
     <value>Show in Finder</value>
     <comment>Mac key: Show in Finder</comment>
   </data>
+  <data name="ShowInFolder" xml:space="preserve">
+    <value>Show in folder</value>
+    <comment>Mac key: Show in folder
+Mac comment: Windows only. Torrent menu and Files tab: opens File Explorer with the item selected (the Mac says Show in Finder).</comment>
+  </data>
   <data name="ShowInMenuBar" xml:space="preserve">
     <value>Show in menu bar</value>
     <comment>Mac key: Show in menu bar</comment>
   </data>
   <data name="ShowInfoPane" xml:space="preserve">
-    <value>Show Info Pane</value>
-    <comment>Mac key: Show Info Pane</comment>
+    <value>Show info pane</value>
+    <comment>Mac key: Show Info Pane
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="ShowLogFiles" xml:space="preserve">
     <value>Show Log Files</value>
     <comment>Mac key: Show Log Files</comment>
+  </data>
+  <data name="ShowSidebar" xml:space="preserve">
+    <value>Show sidebar</value>
+    <comment>Mac key: Show sidebar
+Mac comment: Windows only. View menu toggle: shows or hides the sidebar with the status filters (the Mac menu gets this item from macOS).</comment>
   </data>
   <data name="ShowTransferSpeedsInTheMenuBar" xml:space="preserve">
     <value>Show transfer speeds in the menu bar</value>
@@ -1554,6 +1642,11 @@ Only a default for MRT: English never uses this plural form.</comment>
   <data name="ShowWherePeersAreFromWithDBIPsFree" xml:space="preserve">
     <value>Show where peers are from with DB-IP's free country database, about 5 MB.</value>
     <comment>Mac key: Show where peers are from with DB-IP's free country database, about 5 MB.</comment>
+  </data>
+  <data name="SidebarItemNameCount" xml:space="preserve">
+    <value>{0}, {1}</value>
+    <comment>Mac key: %1$@, %2$@ (sidebar item name, count)
+Mac comment: Windows only. What Narrator reads for a sidebar item: its name, then how many torrents it has, such as "Downloading, 3". Use the list separator your language uses.</comment>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Size</value>
@@ -1571,6 +1664,11 @@ Only a default for MRT: English never uses this plural form.</comment>
     <value>Skipped {0}, already set up here.</value>
     <comment>Mac key: Skipped %@, already set up here.</comment>
   </data>
+  <data name="SomethingUnexpectedWentWrongTheLogFiles" xml:space="preserve">
+    <value>Something unexpected went wrong. The log files have the details.</value>
+    <comment>Mac key: Something unexpected went wrong. The log files have the details.
+Mac comment: Windows only. The connection stopped because of an error the app didn't expect.</comment>
+  </data>
   <data name="Speed" xml:space="preserve">
     <value>Speed</value>
     <comment>Mac key: Speed</comment>
@@ -1584,12 +1682,14 @@ Only a default for MRT: English never uses this plural form.</comment>
     <comment>Mac key: Start</comment>
   </data>
   <data name="StartAll" xml:space="preserve">
-    <value>Start All</value>
-    <comment>Mac key: Start All</comment>
+    <value>Start all</value>
+    <comment>Mac key: Start All
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="StartNow" xml:space="preserve">
-    <value>Start Now</value>
-    <comment>Mac key: Start Now</comment>
+    <value>Start now</value>
+    <comment>Mac key: Start Now
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="StartTheSelectedTorrents" xml:space="preserve">
     <value>Start the selected torrents</value>
@@ -1612,8 +1712,9 @@ Only a default for MRT: English never uses this plural form.</comment>
     <comment>Mac key: Stop</comment>
   </data>
   <data name="StopAll" xml:space="preserve">
-    <value>Stop All</value>
-    <comment>Mac key: Stop All</comment>
+    <value>Stop all</value>
+    <comment>Mac key: Stop All
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="StopAtRatio" xml:space="preserve">
     <value>Stop at ratio</value>
@@ -1628,8 +1729,9 @@ Only a default for MRT: English never uses this plural form.</comment>
     <comment>Mac key: Stop the selected torrents</comment>
   </data>
   <data name="StopTrying" xml:space="preserve">
-    <value>Stop Trying</value>
-    <comment>Mac key: Stop Trying</comment>
+    <value>Stop trying</value>
+    <comment>Mac key: Stop Trying
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="StopWhenIdle" xml:space="preserve">
     <value>Stop when idle</value>
@@ -1682,6 +1784,16 @@ Not translated: the Mac catalog marks it shouldTranslate = false.</comment>
     <value>The certificate file's password is wrong.</value>
     <comment>Mac key: The certificate file's password is wrong.</comment>
   </data>
+  <data name="TheConnectionToTheServerFailed" xml:space="preserve">
+    <value>The connection to the server failed.</value>
+    <comment>Mac key: The connection to the server failed.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
+  </data>
+  <data name="TheConnectionToTheServerWasLost" xml:space="preserve">
+    <value>The connection to the server was lost.</value>
+    <comment>Mac key: The connection to the server was lost.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
+  </data>
   <data name="TheDownloadedFilesWillBeDeletedFromThe" xml:space="preserve">
     <value>The downloaded files will be deleted from the server. This can't be undone.</value>
     <comment>Mac key: The downloaded files will be deleted from the server. This can't be undone.</comment>
@@ -1710,6 +1822,11 @@ Not translated: the Mac catalog marks it shouldTranslate = false.</comment>
     <value>The proxy port must be between 1 and 65535.</value>
     <comment>Mac key: The proxy port must be between 1 and 65535.</comment>
   </data>
+  <data name="TheProxyRejectedTheUsernameOrPassword" xml:space="preserve">
+    <value>The proxy rejected the username or password.</value>
+    <comment>Mac key: The proxy rejected the username or password.
+Mac comment: Windows only. The proxy server in the server's settings refused its login.</comment>
+  </data>
   <data name="TheRPCPathMustStartWith" xml:space="preserve">
     <value>the RPC path must start with “/”.</value>
     <comment>Mac key: the RPC path must start with “/”.</comment>
@@ -1725,6 +1842,11 @@ Not translated: the Mac catalog marks it shouldTranslate = false.</comment>
   <data name="TheServerDidNotAcceptASecureHTTPS" xml:space="preserve">
     <value>The server didn't accept a secure (HTTPS) connection. Transmission's built-in server only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel.</value>
     <comment>Mac key: The server didn't accept a secure (HTTPS) connection. Transmission's built-in server only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel.</comment>
+  </data>
+  <data name="TheServerDidNotAnswerInTime" xml:space="preserve">
+    <value>The server didn't answer in time.</value>
+    <comment>Mac key: The server didn't answer in time.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
   </data>
   <data name="TheServerDoesNotAcceptThisHostname" xml:space="preserve">
     <value>The server doesn't accept this hostname. Connect by IP address, or add the hostname to “rpc-host-whitelist” in the daemon's settings.json.</value>
@@ -1757,6 +1879,11 @@ Not translated: the Mac catalog marks it shouldTranslate = false.</comment>
   <data name="TheServerTriedToRedirectTheConnectionToA" xml:space="preserve">
     <value>The server tried to redirect the connection to a different address. The request was blocked to protect your credentials.</value>
     <comment>Mac key: The server tried to redirect the connection to a different address. The request was blocked to protect your credentials.</comment>
+  </data>
+  <data name="TheServersNameCouldNotBeFoundCheckThe" xml:space="preserve">
+    <value>The server's name couldn't be found. Check the address.</value>
+    <comment>Mac key: The server's name couldn't be found. Check the address.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
   </data>
   <data name="TheServersTLSCertificateIsNotTrusted" xml:space="preserve">
     <value>The server's TLS certificate isn't trusted.</value>
@@ -1802,9 +1929,15 @@ Not translated: the Mac catalog marks it shouldTranslate = false.</comment>
     <value>Torrent</value>
     <comment>Mac key: Torrent</comment>
   </data>
+  <data name="TorrentMenuAccessKey" xml:space="preserve">
+    <value>T</value>
+    <comment>Mac key: Torrent menu access key
+Mac comment: Windows only. The letter that opens this menu with Alt, one character. It must differ from the other four menus' letters (File, Torrent, Server, View, Help) in the same language, and should be a letter of the menu's name. Chinese and Korean use Latin letters, as Windows does.</comment>
+  </data>
   <data name="TorrentOptionsEllipsis" xml:space="preserve">
-    <value>Torrent Options…</value>
-    <comment>Mac key: Torrent Options…</comment>
+    <value>Torrent options…</value>
+    <comment>Mac key: Torrent Options…
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="Torrents" xml:space="preserve">
     <value>torrents</value>
@@ -1922,21 +2055,30 @@ Mac comment: Windows only. Message box after an error nothing else caught; the a
     <comment>Mac key: Transmission Remote ran into a problem in the background. Open the logs folder to see what went wrong?
 Mac comment: Windows only. Message box after an error in background work nothing else caught; the app keeps running. Yes opens the logs folder.</comment>
   </data>
+  <data name="TransmissionRemoteWindowTitle" xml:space="preserve">
+    <value>{0} – Transmission Remote</value>
+    <comment>Mac key: %@ – Transmission Remote (window title)
+Not translated: the Mac catalog marks it shouldTranslate = false.
+Mac comment: Windows only. The window title on the taskbar and in Alt+Tab while a server is set: the server's name, then the app's. The same in every language, as Windows titles are.</comment>
+  </data>
   <data name="TrustThisCertificate" xml:space="preserve">
-    <value>Trust This Certificate</value>
-    <comment>Mac key: Trust This Certificate</comment>
+    <value>Trust this certificate</value>
+    <comment>Mac key: Trust This Certificate
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="TrustedCertificate" xml:space="preserve">
     <value>Trusted certificate</value>
     <comment>Mac key: Trusted certificate</comment>
   </data>
   <data name="TryAgain" xml:space="preserve">
-    <value>Try Again</value>
-    <comment>Mac key: Try Again</comment>
+    <value>Try again</value>
+    <comment>Mac key: Try Again
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="TryNow" xml:space="preserve">
-    <value>Try Now</value>
-    <comment>Mac key: Try Now</comment>
+    <value>Try now</value>
+    <comment>Mac key: Try Now
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="TryingAgainEllipsis" xml:space="preserve">
     <value>Trying again…</value>
@@ -1955,16 +2097,18 @@ Mac comment: Windows only. Message box after an error in background work nothing
     <comment>Mac key: µTP</comment>
   </data>
   <data name="UnencryptedConnectionBlocked" xml:space="preserve">
-    <value>Unencrypted Connection Blocked</value>
-    <comment>Mac key: Unencrypted Connection Blocked</comment>
+    <value>Unencrypted connection blocked</value>
+    <comment>Mac key: Unencrypted Connection Blocked
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="Unlimited" xml:space="preserve">
     <value>Unlimited</value>
     <comment>Mac key: Unlimited</comment>
   </data>
   <data name="UntrustedCertificate" xml:space="preserve">
-    <value>Untrusted Certificate</value>
-    <comment>Mac key: Untrusted Certificate</comment>
+    <value>Untrusted certificate</value>
+    <comment>Mac key: Untrusted Certificate
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="UntrustedCertificateConnectFromTheMain" xml:space="preserve">
     <value>Untrusted certificate. Connect from the main window to review and trust it ({0}…).</value>
@@ -2030,8 +2174,9 @@ Only a default for MRT: English never uses this plural form.</comment>
     <comment>Mac key: Upload queue size</comment>
   </data>
   <data name="UploadSpeedLimit" xml:space="preserve">
-    <value>Upload Speed Limit</value>
-    <comment>Mac key: Upload Speed Limit</comment>
+    <value>Upload speed limit</value>
+    <comment>Mac key: Upload Speed Limit
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="UploadSpeedsKBS" xml:space="preserve">
     <value>Upload speeds (kB/s)</value>
@@ -2062,8 +2207,9 @@ Only a default for MRT: English never uses this plural form.</comment>
     <comment>Mac key: Username</comment>
   </data>
   <data name="VerifyLocalData" xml:space="preserve">
-    <value>Verify Local Data</value>
-    <comment>Mac key: Verify Local Data</comment>
+    <value>Verify local data</value>
+    <comment>Mac key: Verify Local Data
+English worded for Windows by the English overrides catalog.</comment>
   </data>
   <data name="Verifying_9A7FA7" xml:space="preserve">
     <value>Verifying {0}</value>
@@ -2076,6 +2222,16 @@ Only a default for MRT: English never uses this plural form.</comment>
   <data name="Version" xml:space="preserve">
     <value>Version {0}</value>
     <comment>Mac key: Version %@</comment>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
+    <comment>Mac key: View
+Mac comment: Windows only. The View menu in the menu bar: show or hide the sidebar and the info pane.</comment>
+  </data>
+  <data name="ViewMenuAccessKey" xml:space="preserve">
+    <value>V</value>
+    <comment>Mac key: View menu access key
+Mac comment: Windows only. The letter that opens this menu with Alt, one character. It must differ from the other four menus' letters (File, Torrent, Server, View, Help) in the same language, and should be a letter of the menu's name. Chinese and Korean use Latin letters, as Windows does.</comment>
   </data>
   <data name="Waiting" xml:space="preserve">
     <value>Waiting</value>

@@ -201,6 +201,7 @@ dotnet run --project tools/StringCatalogConverter -- \
   --catalog ../macOS/TransmissionRemote/Localizable.xcstrings \
   --catalog ../macOS/Packages/TransmissionKit/Sources/TransmissionKit/Resources/Localizable.xcstrings \
   --catalog src/TransmissionRemote.App/Strings/Windows.xcstrings \
+  --english-overrides src/TransmissionRemote.App/Strings/EnglishOverrides.xcstrings \
   --output src/TransmissionRemote.App/Strings \
   --code src/TransmissionRemote.App/Strings/Strings.g.cs
 ```
@@ -246,6 +247,15 @@ files are generated and committed: a rerun overwrites them, so change the catalo
   gives an empty string.
 - **Markdown.** SwiftUI renders Markdown in strings, and one string has a link to DB-IP in Markdown:
   `RightClickThePeerListToTurnHostNamesAnd`. It's kept as it is, so show the link with a `Hyperlink`.
+- **Sentence case.** Windows writes its interface in sentence case ("Add torrent file…"), the Mac in title
+  case. `Strings/EnglishOverrides.xcstrings` changes the English text of Mac strings for Windows; the
+  translations stay. An override must keep the original's placeholders and plural forms. Add one whenever
+  the Windows app starts showing a title-case Mac string, and keep proper nouns (Transmission, GitHub, File
+  Explorer, HTTPS). The resource name stays the one from the Mac key.
+- **Windows-only keys.** In `Windows.xcstrings` a key may say what the string is for when the English text
+  alone would be ambiguous or clash, with the English as its `en` value: `File menu access key` is "F", and
+  `%@ – Transmission Remote (window title)` keeps the name `TransmissionRemoteWindowTitle` apart from
+  `TransmissionRemote`.
 
 Anything the converter can't carry over faithfully stops it with the catalog, key and language: plural
 substitutions, device variations, specifier widths and flags, or a translation that uses an argument the

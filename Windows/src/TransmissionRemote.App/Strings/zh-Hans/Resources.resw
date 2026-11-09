@@ -20,6 +20,11 @@
     <value>关于</value>
     <comment>Mac key: About</comment>
   </data>
+  <data name="AboutTransmissionRemote" xml:space="preserve">
+    <value>关于 Transmission Remote</value>
+    <comment>Mac key: About Transmission Remote
+Mac comment: Windows only. Help menu: the dialog with the version, licence and credits.</comment>
+  </data>
   <data name="ActionFailed" xml:space="preserve">
     <value>操作失败</value>
     <comment>Mac key: Action Failed</comment>
@@ -388,6 +393,16 @@
     <value>无法连接</value>
     <comment>Mac key: Couldn't Connect</comment>
   </data>
+  <data name="CouldNotConnectThroughTheProxyServer" xml:space="preserve">
+    <value>无法通过代理服务器连接。请检查其地址和端口。</value>
+    <comment>Mac key: Couldn't connect through the proxy server. Check its address and port.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
+  </data>
+  <data name="CouldNotConnectToTheServerCheckThat" xml:space="preserve">
+    <value>无法连接到服务器。请检查 Transmission 是否正在运行，以及地址和端口是否正确。</value>
+    <comment>Mac key: Couldn't connect to the server. Check that Transmission is running and that the address and port are right.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
+  </data>
   <data name="CouldNotImport" xml:space="preserve">
     <value>无法导入</value>
     <comment>Mac key: Couldn't Import</comment>
@@ -668,6 +683,21 @@
     <value>现有标签</value>
     <comment>Mac key: Existing labels</comment>
   </data>
+  <data name="Exit" xml:space="preserve">
+    <value>退出</value>
+    <comment>Mac key: Exit
+Mac comment: Windows only. File menu and tray menu: quits the app, even when closing the window would keep it in the tray. Windows apps say Exit where Mac apps say Quit.</comment>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>文件</value>
+    <comment>Mac key: File
+Mac comment: Windows only. The File menu in the menu bar.</comment>
+  </data>
+  <data name="FileMenuAccessKey" xml:space="preserve">
+    <value>F</value>
+    <comment>Mac key: File menu access key
+Mac comment: Windows only. The letter that opens this menu with Alt, one character. It must differ from the other four menus' letters (File, Torrent, Server, View, Help) in the same language, and should be a letter of the menu's name. Chinese and Korean use Latin letters, as Windows does.</comment>
+  </data>
   <data name="Files" xml:space="preserve">
     <value>文件</value>
     <comment>Mac key: Files</comment>
@@ -755,6 +785,16 @@
   <data name="Hash" xml:space="preserve">
     <value>哈希值</value>
     <comment>Mac key: Hash</comment>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>帮助</value>
+    <comment>Mac key: Help
+Mac comment: Windows only. The Help menu in the menu bar.</comment>
+  </data>
+  <data name="HelpMenuAccessKey" xml:space="preserve">
+    <value>H</value>
+    <comment>Mac key: Help menu access key
+Mac comment: Windows only. The letter that opens this menu with Alt, one character. It must differ from the other four menus' letters (File, Torrent, Server, View, Help) in the same language, and should be a letter of the menu's name. Chinese and Korean use Latin letters, as Windows does.</comment>
   </data>
   <data name="HideCountries" xml:space="preserve">
     <value>隐藏国家/地区</value>
@@ -1120,6 +1160,11 @@
     <value>仍要打开</value>
     <comment>Mac key: Open Anyway</comment>
   </data>
+  <data name="OpenLogsFolder" xml:space="preserve">
+    <value>打开日志文件夹</value>
+    <comment>Mac key: Open logs folder
+Mac comment: Windows only. Help menu: opens the folder with the app's log files in File Explorer (the Mac says Show Log Files).</comment>
+  </data>
   <data name="OptimisticUnchoke" xml:space="preserve">
     <value>乐观解除阻塞</value>
     <comment>Mac key: Optimistic unchoke</comment>
@@ -1440,6 +1485,11 @@
     <value>服务器默认值</value>
     <comment>Mac key: Server default</comment>
   </data>
+  <data name="ServerMenuAccessKey" xml:space="preserve">
+    <value>S</value>
+    <comment>Mac key: Server menu access key
+Mac comment: Windows only. The letter that opens this menu with Alt, one character. It must differ from the other four menus' letters (File, Torrent, Server, View, Help) in the same language, and should be a letter of the menu's name. Chinese and Korean use Latin letters, as Windows does.</comment>
+  </data>
   <data name="ServerSettingsEllipsis" xml:space="preserve">
     <value>服务器设置…</value>
     <comment>Mac key: Server Settings…</comment>
@@ -1464,6 +1514,11 @@
     <value>在“访达”中显示</value>
     <comment>Mac key: Show in Finder</comment>
   </data>
+  <data name="ShowInFolder" xml:space="preserve">
+    <value>在文件夹中显示</value>
+    <comment>Mac key: Show in folder
+Mac comment: Windows only. Torrent menu and Files tab: opens File Explorer with the item selected (the Mac says Show in Finder).</comment>
+  </data>
   <data name="ShowInMenuBar" xml:space="preserve">
     <value>在菜单栏中显示</value>
     <comment>Mac key: Show in menu bar</comment>
@@ -1476,6 +1531,11 @@
     <value>显示日志文件</value>
     <comment>Mac key: Show Log Files</comment>
   </data>
+  <data name="ShowSidebar" xml:space="preserve">
+    <value>显示边栏</value>
+    <comment>Mac key: Show sidebar
+Mac comment: Windows only. View menu toggle: shows or hides the sidebar with the status filters (the Mac menu gets this item from macOS).</comment>
+  </data>
   <data name="ShowTransferSpeedsInTheMenuBar" xml:space="preserve">
     <value>在菜单栏中显示传输速度</value>
     <comment>Mac key: Show transfer speeds in the menu bar</comment>
@@ -1487,6 +1547,11 @@
   <data name="ShowWherePeersAreFromWithDBIPsFree" xml:space="preserve">
     <value>使用 DB-IP 的免费国家/地区数据库（约 5 MB）显示节点所在地。</value>
     <comment>Mac key: Show where peers are from with DB-IP's free country database, about 5 MB.</comment>
+  </data>
+  <data name="SidebarItemNameCount" xml:space="preserve">
+    <value>{0}，{1}</value>
+    <comment>Mac key: %1$@, %2$@ (sidebar item name, count)
+Mac comment: Windows only. What Narrator reads for a sidebar item: its name, then how many torrents it has, such as "Downloading, 3". Use the list separator your language uses.</comment>
   </data>
   <data name="Size" xml:space="preserve">
     <value>大小</value>
@@ -1503,6 +1568,11 @@
   <data name="SkippedAlreadySetUpHere" xml:space="preserve">
     <value>已跳过 {0}（已在此设置）。</value>
     <comment>Mac key: Skipped %@, already set up here.</comment>
+  </data>
+  <data name="SomethingUnexpectedWentWrongTheLogFiles" xml:space="preserve">
+    <value>发生了意外错误。详细信息请查看日志文件。</value>
+    <comment>Mac key: Something unexpected went wrong. The log files have the details.
+Mac comment: Windows only. The connection stopped because of an error the app didn't expect.</comment>
   </data>
   <data name="Speed" xml:space="preserve">
     <value>速度</value>
@@ -1600,6 +1670,16 @@
     <value>证书文件的密码不正确。</value>
     <comment>Mac key: The certificate file's password is wrong.</comment>
   </data>
+  <data name="TheConnectionToTheServerFailed" xml:space="preserve">
+    <value>连接服务器失败。</value>
+    <comment>Mac key: The connection to the server failed.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
+  </data>
+  <data name="TheConnectionToTheServerWasLost" xml:space="preserve">
+    <value>与服务器的连接已断开。</value>
+    <comment>Mac key: The connection to the server was lost.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
+  </data>
   <data name="TheDownloadedFilesWillBeDeletedFromThe" xml:space="preserve">
     <value>已下载的文件将从服务器上删除。此操作无法撤销。</value>
     <comment>Mac key: The downloaded files will be deleted from the server. This can't be undone.</comment>
@@ -1628,6 +1708,11 @@
     <value>代理端口必须介于 1 到 65535 之间。</value>
     <comment>Mac key: The proxy port must be between 1 and 65535.</comment>
   </data>
+  <data name="TheProxyRejectedTheUsernameOrPassword" xml:space="preserve">
+    <value>代理服务器拒绝了用户名或密码。</value>
+    <comment>Mac key: The proxy rejected the username or password.
+Mac comment: Windows only. The proxy server in the server's settings refused its login.</comment>
+  </data>
   <data name="TheRPCPathMustStartWith" xml:space="preserve">
     <value>RPC 路径必须以“/”开头。</value>
     <comment>Mac key: the RPC path must start with “/”.</comment>
@@ -1643,6 +1728,11 @@
   <data name="TheServerDidNotAcceptASecureHTTPS" xml:space="preserve">
     <value>服务器未接受安全（HTTPS）连接。Transmission 的内置服务器只支持普通 HTTP，因此除非守护进程前设有提供 HTTPS 的反向代理，否则请为此服务器关闭 HTTPS。通过 Tailscale 连接时，普通 HTTP 已由隧道加密。</value>
     <comment>Mac key: The server didn't accept a secure (HTTPS) connection. Transmission's built-in server only speaks plain HTTP, so turn off HTTPS for this server unless a reverse proxy in front of the daemon provides it. Over Tailscale, plain HTTP is already encrypted by the tunnel.</comment>
+  </data>
+  <data name="TheServerDidNotAnswerInTime" xml:space="preserve">
+    <value>服务器未及时响应。</value>
+    <comment>Mac key: The server didn't answer in time.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
   </data>
   <data name="TheServerDoesNotAcceptThisHostname" xml:space="preserve">
     <value>服务器不接受此主机名。请通过 IP 地址连接，或将该主机名添加到守护进程 settings.json 中的“rpc-host-whitelist”。</value>
@@ -1675,6 +1765,11 @@
   <data name="TheServerTriedToRedirectTheConnectionToA" xml:space="preserve">
     <value>服务器试图将连接重定向到其他地址。为保护你的凭据，该请求已被阻止。</value>
     <comment>Mac key: The server tried to redirect the connection to a different address. The request was blocked to protect your credentials.</comment>
+  </data>
+  <data name="TheServersNameCouldNotBeFoundCheckThe" xml:space="preserve">
+    <value>找不到服务器的名称。请检查地址。</value>
+    <comment>Mac key: The server's name couldn't be found. Check the address.
+Mac comment: Windows only. Shown when the server can't be reached (the Mac shows macOS's own text for these).</comment>
   </data>
   <data name="TheServersTLSCertificateIsNotTrusted" xml:space="preserve">
     <value>服务器的 TLS 证书不受信任。</value>
@@ -1719,6 +1814,11 @@
   <data name="Torrent" xml:space="preserve">
     <value>Torrent</value>
     <comment>Mac key: Torrent</comment>
+  </data>
+  <data name="TorrentMenuAccessKey" xml:space="preserve">
+    <value>T</value>
+    <comment>Mac key: Torrent menu access key
+Mac comment: Windows only. The letter that opens this menu with Alt, one character. It must differ from the other four menus' letters (File, Torrent, Server, View, Help) in the same language, and should be a letter of the menu's name. Chinese and Korean use Latin letters, as Windows does.</comment>
   </data>
   <data name="TorrentOptionsEllipsis" xml:space="preserve">
     <value>Torrent 选项…</value>
@@ -1937,6 +2037,16 @@ Mac comment: Windows only. Message box after an error in background work nothing
   <data name="Version" xml:space="preserve">
     <value>版本 {0}</value>
     <comment>Mac key: Version %@</comment>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>查看</value>
+    <comment>Mac key: View
+Mac comment: Windows only. The View menu in the menu bar: show or hide the sidebar and the info pane.</comment>
+  </data>
+  <data name="ViewMenuAccessKey" xml:space="preserve">
+    <value>V</value>
+    <comment>Mac key: View menu access key
+Mac comment: Windows only. The letter that opens this menu with Alt, one character. It must differ from the other four menus' letters (File, Torrent, Server, View, Help) in the same language, and should be a letter of the menu's name. Chinese and Korean use Latin letters, as Windows does.</comment>
   </data>
   <data name="Waiting" xml:space="preserve">
     <value>等待中</value>

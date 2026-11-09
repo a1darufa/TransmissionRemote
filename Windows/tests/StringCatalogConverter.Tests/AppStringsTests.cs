@@ -9,6 +9,7 @@ public sealed class AppStringsTests
 {
     private const string StringsFolder = "Windows/src/TransmissionRemote.App/Strings";
     private const string WindowsCatalog = StringsFolder + "/Windows.xcstrings";
+    private const string EnglishOverrides = StringsFolder + "/EnglishOverrides.xcstrings";
     private const string CodeFile = StringsFolder + "/Strings.g.cs";
 
     private const string HowToFix =
@@ -59,9 +60,11 @@ public sealed class AppStringsTests
             $"Strings.g.cs is stale. {HowToFix}");
     }
 
-    private static IReadOnlyDictionary<string, IReadOnlyList<ResourceString>> Convert(string root) =>
-        CatalogConverter.Convert(CatalogPaths.Select(path =>
-            StringCatalogReader.Parse(File.ReadAllText(Path.Combine(root, path)), path)));
+    private static IReadOnlyDictionary<string, IReadOnlyList<ResourceString>> Convert(string root)
+    {
+        StringCatalog Read(string path) => StringCatalogReader.Parse(File.ReadAllText(Path.Combine(root, path)), path);
+        return CatalogConverter.Convert(CatalogPaths.Select(Read), Read(EnglishOverrides));
+    }
 
     /// <summary>Git may check text files out with CRLF on Windows; the converter writes LF.</summary>
     private static string ReadNormalized(string path) => File.ReadAllText(path).ReplaceLineEndings("\n");
