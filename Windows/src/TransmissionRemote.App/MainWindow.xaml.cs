@@ -36,6 +36,8 @@ public sealed partial class MainWindow : Window
         // The taskbar and Alt+Tab icon; the .exe's own icon only covers File Explorer and shortcuts.
         AppWindow.SetIcon(Path.Combine(AppContext.BaseDirectory, "Assets", "AppIcon.ico"));
         UpdateTitle();
+        MainWindowPlacement.Restore(AppWindow, viewModel.Settings.Current.MainWindowPlacement);
+        Root.Loaded += (_, _) => FollowDisplayScale();
 
         Sidebar.OpenPaneLength = viewModel.Settings.Current.EffectiveSidebarWidth;
         Sidebar.IsPaneOpen = viewModel.ShowSidebar;
@@ -103,7 +105,15 @@ public sealed partial class MainWindow : Window
     private void OnClosed(object sender, WindowEventArgs args)
     {
         var width = Sidebar.OpenPaneLength;
-        ViewModel.Settings.Update(settings => settings with { SidebarWidth = width });
+        var placement = MainWindowPlacement.Capture(AppWindow) ?? ViewModel.Settings.Current.MainWindowPlacement;
+        ViewModel.Settings.Update(settings => settings with { SidebarWidth = width, MainWindowPlacement = placement });
+    }
+
+    /// <summary>Keeps the minimum window size right when the window moves to a display with another scale.</summary>
+    private void FollowDisplayScale()
+    {
+        MainWindowPlacement.ApplyMinimumSize(AppWindow, Root.XamlRoot.RasterizationScale);
+        Root.XamlRoot.Changed += (root, _) => MainWindowPlacement.ApplyMinimumSize(AppWindow, root.RasterizationScale);
     }
 
     private void OnExit(object sender, RoutedEventArgs e) => Close();
