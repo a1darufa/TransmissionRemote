@@ -9,10 +9,10 @@ oldest version the Windows App SDK supports.
 | Part | State |
 |---|---|
 | `TransmissionKit`: the UI-free core (RPC client, models, .torrent parsing, helpers) | Done, ported from the Mac app's Swift package, 288 tests |
-| `TransmissionRemote.ViewModels`: the app's logic without its interface | Done, ported from the Mac app's models, 229 tests. See [below](#the-apps-logic-srctransmissionremoteviewmodels) |
+| `TransmissionRemote.ViewModels`: the app's logic without its interface | Done, ported from the Mac app's models, 283 tests. See [below](#the-apps-logic-srctransmissionremoteviewmodels) |
 | `tools/StringCatalogConverter`: the Mac app's translations as `.resw` files | Done, 133 tests. See [Strings](#strings) |
 | App icon: `assets/AppIcon/` (`AppIcon.ico` with 9 sizes, and PNGs) | Done, exported from the Mac build |
-| `TransmissionRemote.App`: the WinUI 3 app | In progress: the skeleton and the shell (menus, command row, sidebar status filters, connection pages, window placement, keyboard shortcuts). Planned below |
+| `TransmissionRemote.App`: the WinUI 3 app | In progress: the shell (menus, command row, connection pages, window placement, keyboard shortcuts) and the torrent list (all columns, sorting, the column chooser, the actions menus, paste and drop, the sidebar's folders, labels and trackers, the status bar). See [the plan](#the-app-plan) and [the torrent list](#the-torrent-list) |
 | Installers for x64 and ARM64 | Not started |
 
 The core builds and tests on any OS, so it was written on a Mac. The app needs Windows: the XAML
@@ -47,6 +47,8 @@ variables help:
   `%LOCALAPPDATA%\TransmissionRemote`. Use a throwaway folder, outside the repository.
 - `TRANSMISSIONREMOTE_THEME` (`Light` or `Dark`, Debug builds only): overrides the Windows theme, for
   screenshots in both themes.
+- `TRANSMISSIONREMOTE_LANGUAGE` (such as `ru`, Debug builds only): overrides the display language and
+  the formats, for screenshots in other languages.
 
 ### Integration tests against a real daemon
 
@@ -292,7 +294,7 @@ default background on Windows 10.
 | Mac app | Windows app |
 |---|---|
 | Sidebar filters (status, folders, labels, trackers) | `NavigationView`, left pane |
-| Torrent list with sortable, reorderable columns | [WinUI.TableView](https://github.com/w-ahmad/WinUI.TableView) (community package, evaluate first) or a `ListView` with a header row |
+| Torrent list with sortable, reorderable columns | A `ListView` with its own header row (see [the torrent list](#the-torrent-list) for why not WinUI.TableView) |
 | Info pane tabs: General, Trackers, Peers, Files, Speed | `SelectorBar` or `TabView` under the list, in a resizable split |
 | Toolbar | `CommandBar` in the custom title bar |
 | Status bar: speeds, limits, free space | A bottom bar in the main window |
@@ -311,13 +313,17 @@ implementations of the interfaces in `Abstractions/`, startup (dependency inject
 single instance, activation) and the tray icon:
 
 ```
-Startup/        Program's helpers: folders, services, single instance, errors nothing else caught
-Platform/       ICredentialStore (Credential Manager), IClientCertificateProvider (certificate store)
+Startup/        Program's helpers: folders, services, single instance, errors nothing else caught, the
+                UI thread's synchronization context, the Debug-only theme and language overrides
+Platform/       ICredentialStore (Credential Manager), IClientCertificateProvider (certificate store),
+                IShell (opening files, File Explorer, the clipboard)
 Presentation/   states into words and pictures for x:Bind: error messages, sidebar labels and glyphs,
-                the two Fluent UI System Icons Segoe lacks (turtle, server; MIT)
+                column titles, status glyphs and colours, the formatter with localized units, the two
+                Fluent UI System Icons Segoe lacks (turtle, server; MIT)
 Shell/          the main window's plumbing: placement, keyboard shortcuts, the sidebar's templates,
-                the logs folder
-Controls/       EmptyStateView, the centred message used for every empty or connection page
+                the torrent actions menu, the Remove confirmation, one dialog at a time, the logs folder
+Controls/       the torrent list (TorrentTable, its header row, rows and cells), the status bar, and
+                EmptyStateView, the centred message used for every empty or connection page
 Views/          ConnectionStateView, the pages shown while not connected
 Strings/        the catalogs, the generated .resw files and Strings.g.cs
 ```
@@ -325,6 +331,38 @@ Strings/        the catalogs, the generated .resw files and Strings.g.cs
 Keyboard shortcuts come from `KeyboardShortcuts` in the view model library, where tests check that no
 key does two things and none uses Ctrl+Alt (AltGr on many layouts). Each command's keys sit on its menu
 item, so they work with the menu closed and the menu shows the first one in the user's language.
+
+### The torrent list
+
+**Why not WinUI.TableView.** The community control (version 1.5.1, MIT) was tried first, in November
+2026, against the list's requirements. Ctrl and Shift clicks, Ctrl+A, the Grid and Table automation
+patterns and an accessible header row worked. It failed on three: Tab stayed trapped inside the table,
+the arrow keys didn't move the selection, and UI Automation exposed no column headers. So the list is a
+`ListView` with its own header row, as planned for that case.
+
+**How it works.**
+- `TorrentTable` holds the header row and the `ListView`. The view model sorts, filters and remembers
+  the columns; the control only reports clicks, drags and resizes (`MainViewModel.SortBy`,
+  `MoveColumn`, `SetColumnWidth`, `SetColumnVisible`). A new sort column starts ascending.
+- Rows are 32 epx and recycle their cells (`ContainerContentChanging`); each column has a cell type in
+  `TorrentCells.cs`, and the words come from `TorrentCellText` in the view model library.
+- The selection belongs to `ServerConnection.Selection`, by torrent ID. The `ListView` may drop the
+  selection of rows that move, so the table ignores its own selection events while the view model
+  updates the rows (`RowsUpdating`, `RowsUpdated`) and selects the IDs again afterwards, in index ranges.
+- `TorrentRowSync` keeps the longest run of rows already in order and moves only the others. When more
+  than 32 changes would be needed (a new sort order, the first load), it replaces all rows with one reset:
+  the `ListView` handles every move on its own. With 1,015 torrents a re-sort takes 5 to 30 ms instead of
+  2.5 to 4.5 s, and an idle refresh about 0.2 s of CPU every 5 seconds.
+- The Torrent menu and the list's context menu are the same items (`TorrentActionsMenu`). The menu bar's
+  copy owns the keys; the context menu shows them with its accelerators switched off.
+
+**Known gaps.**
+- Narrator reads each row as a list item named "name, status, progress"; it doesn't get the columns as
+  a table. A custom automation peer with the Grid and Table patterns could add them (M7).
+- The header row works only with the mouse: there's no keyboard way to sort, move or choose columns yet.
+- When the daemon restarts, it numbers its torrents anew. Until the next full list (at most 60 seconds),
+  the list can show a removed torrent, and the selection can point at other torrents. The Mac app does
+  the same; neither notices the restart yet.
 
 ### Packaging
 
