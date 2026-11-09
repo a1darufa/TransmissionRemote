@@ -1,3 +1,4 @@
+using System.Globalization;
 using TransmissionKit;
 
 namespace TransmissionRemote.ViewModels;
@@ -75,6 +76,25 @@ public sealed record LabelSidebarFilter(string Label) : SidebarFilter
     {
         ArgumentNullException.ThrowIfNull(torrent);
         return torrent.Labels.Contains(Label);
+    }
+}
+
+/// <summary>"Filter by name", matching the way the Mac app's search field does.</summary>
+public static class NameSearch
+{
+    private const CompareOptions Options = CompareOptions.IgnoreCase | CompareOptions.IgnoreNonSpace;
+
+    /// <summary>
+    /// Whether the name contains the query, ignoring case and accents in the user's language, so "cafe" finds
+    /// "Café". A blank query matches everything; surrounding spaces don't count.
+    /// </summary>
+    public static bool Matches(string name, string query, CultureInfo culture)
+    {
+        ArgumentNullException.ThrowIfNull(name);
+        ArgumentNullException.ThrowIfNull(query);
+        ArgumentNullException.ThrowIfNull(culture);
+        var trimmed = query.Trim();
+        return trimmed.Length == 0 || culture.CompareInfo.IndexOf(name, trimmed, Options) >= 0;
     }
 }
 

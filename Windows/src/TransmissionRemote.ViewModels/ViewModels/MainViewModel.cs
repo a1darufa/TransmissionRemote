@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using TransmissionKit;
@@ -196,10 +197,9 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
 
     private void UpdateRows()
     {
-        var query = SearchText.Trim();
         var visible = Connection.Torrents
             .Where(SelectedFilter.Matches)
-            .Where(torrent => query.Length == 0 || torrent.Name.Contains(query, StringComparison.CurrentCultureIgnoreCase))
+            .Where(torrent => NameSearch.Matches(torrent.Name, SearchText, CultureInfo.CurrentCulture))
             .Order(TorrentSorting.Comparer(SortColumn, SortAscending))
             .ToList();
         TorrentRowSync.Apply(Rows, visible);

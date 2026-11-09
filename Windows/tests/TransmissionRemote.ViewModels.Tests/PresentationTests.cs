@@ -1,3 +1,4 @@
+using System.Globalization;
 using TransmissionKit;
 
 namespace TransmissionRemote.ViewModels.Tests;
@@ -53,6 +54,27 @@ public sealed class SidebarTests
         Assert.IsTrue(new LabelSidebarFilter("x").Matches(torrent));
         Assert.IsTrue(new TrackerSidebarFilter("t").Matches(torrent));
         Assert.IsFalse(new StatusSidebarFilter(StatusFilter.Stopped).Matches(torrent));
+    }
+}
+
+[TestClass]
+public sealed class NameSearchTests
+{
+    private static readonly CultureInfo French = CultureInfo.GetCultureInfo("fr-FR");
+
+    [TestMethod]
+    public void IgnoresCaseAndAccents()
+    {
+        Assert.IsTrue(NameSearch.Matches("Café Society 1080p", "cafe soc", French));
+        Assert.IsTrue(NameSearch.Matches("cafe society", "CAFÉ", French));
+        Assert.IsFalse(NameSearch.Matches("Café Society", "tea", French));
+    }
+
+    [TestMethod]
+    public void ABlankQueryMatchesEverythingAndSpacesAroundItDoNotCount()
+    {
+        Assert.IsTrue(NameSearch.Matches("anything", "   ", French));
+        Assert.IsTrue(NameSearch.Matches("Season 10", " 10 ", French));
     }
 }
 
