@@ -109,6 +109,19 @@ public sealed class DisplayFormatterTests
     }
 
     [TestMethod]
+    public void WritesTimesAgoInTheSameUnits()
+    {
+        Assert.AreEqual("5m ago", Format.Ago(TimeSpan.FromMinutes(5)));
+        Assert.AreEqual("1h 14m ago", Format.Ago(TimeSpan.FromMinutes(74.5)));
+        Assert.AreEqual("0s ago", Format.Ago(TimeSpan.FromSeconds(-3)), "a clock that went back");
+
+        var russian = new DisplayFormatter(
+            CultureInfo.GetCultureInfo("ru-RU"),
+            durationUnits: new DurationUnitLabels { Minutes = "{0} мин", Ago = "{0} назад" });
+        Assert.AreEqual("5 мин назад", russian.Ago(TimeSpan.FromMinutes(5)));
+    }
+
+    [TestMethod]
     public void PlacesDurationUnitsTheWayTheLanguageDoes()
     {
         var units = new DurationUnitLabels { Days = "{0} д", Hours = "{0} ч", Minutes = "{0} мин", Seconds = "{0} с" };

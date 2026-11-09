@@ -33,6 +33,9 @@ public sealed record DurationUnitLabels
 
     /// <summary>Between the two units of "2h 5m".</summary>
     public string Separator { get; init; } = " ";
+
+    /// <summary>A time in the past, with the duration as <c>{0}</c>: "{0} ago" makes "5m ago".</summary>
+    public string Ago { get; init; } = "{0} ago";
 }
 
 /// <summary>
@@ -58,6 +61,7 @@ public sealed class DisplayFormatter
     private readonly CompositeFormat _hours;
     private readonly CompositeFormat _minutes;
     private readonly CompositeFormat _seconds;
+    private readonly CompositeFormat _ago;
     private readonly TimeZoneInfo _timeZone;
 
     /// <param name="culture">For digits, separators and dates; usually the app's UI culture.</param>
@@ -80,6 +84,7 @@ public sealed class DisplayFormatter
         _hours = DurationFormat(durations.Hours);
         _minutes = DurationFormat(durations.Minutes);
         _seconds = DurationFormat(durations.Seconds);
+        _ago = DurationFormat(durations.Ago);
         _separator = durations.Separator;
         _timeZone = timeZone ?? TimeZoneInfo.Local;
     }
@@ -171,6 +176,13 @@ public sealed class DisplayFormatter
         }
         return text;
     }
+
+    /// <summary>
+    /// How long ago something happened, in the same two units as durations: "5m ago", "1h 14m ago". The relative
+    /// times the Mac app shows ("Updated 5 minutes ago"), in the list's narrow style.
+    /// </summary>
+    public string Ago(TimeSpan elapsed) =>
+        string.Format(Culture, _ago, Duration((long)Math.Max(elapsed.TotalSeconds, 0)));
 
     /// <summary>
     /// A countdown like a clock's, as the Mac app shows "Trying again in 0:12": minutes and seconds, with hours

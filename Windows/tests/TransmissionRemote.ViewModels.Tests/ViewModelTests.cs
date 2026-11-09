@@ -21,12 +21,13 @@ internal sealed class TestApp : IDisposable
         Servers = new ServerStore(environment, new FakeCredentialStore());
         Servers.Save(new ServerProfile { Name = "Test", Endpoint = new ServerEndpoint("127.0.0.1", 19091) });
         Connection = new ServerConnection(
-            Settings, new NoClientCertificates(), new FakeNotifications(), null, new FakeTimeProvider(), Daemon.CreateClient);
+            Settings, new NoClientCertificates(), new FakeNotifications(), null, Time, Daemon.CreateClient);
         AddFlow = new AddTorrentFlow(Connection, Settings);
-        Main = new MainViewModel(Servers, Settings, Connection, AddFlow);
+        Main = new MainViewModel(Servers, Settings, Connection, AddFlow, Time);
     }
 
     public FakeDaemon Daemon { get; } = new();
+    public FakeTimeProvider Time { get; } = new(new DateTimeOffset(2026, 11, 8, 12, 0, 0, TimeSpan.Zero));
     public SettingsStore Settings { get; }
     public ServerStore Servers { get; }
     public ServerConnection Connection { get; }

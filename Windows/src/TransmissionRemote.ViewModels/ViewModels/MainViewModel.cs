@@ -25,6 +25,7 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         Connection = connection ?? throw new ArgumentNullException(nameof(connection));
         AddQueue = addQueue ?? throw new ArgumentNullException(nameof(addQueue));
         ConnectionState = new ConnectionStateViewModel(connection, servers, time);
+        StatusBar = new StatusBarViewModel(connection, time);
         Sidebar = new SidebarSummary([]);
         var current = settings.Current;
         // Until the user picks a column, the newest torrents come first, as in the Mac app.
@@ -43,6 +44,9 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
 
     /// <summary>The page shown instead of the list while not connected.</summary>
     public ConnectionStateViewModel ConnectionState { get; }
+
+    /// <summary>The strip under the list while connected.</summary>
+    public StatusBarViewModel StatusBar { get; }
 
     /// <summary>The torrents the list shows: filtered, searched and sorted, updated in place.</summary>
     public ObservableCollection<TorrentRow> Rows { get; } = [];
@@ -273,6 +277,7 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         Connection.PropertyChanged -= OnConnectionChanged;
         Servers.Changed -= OnServersChanged;
         ConnectionState.Dispose();
+        StatusBar.Dispose();
     }
 
     partial void OnSelectedFilterChanged(SidebarFilter value)
