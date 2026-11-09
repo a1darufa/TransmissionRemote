@@ -1,4 +1,6 @@
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using TransmissionKit;
 
@@ -81,12 +83,58 @@ public static class TorrentSorting
         (left, right) => Comparer<TKey>.Default.Compare(key(left), key(right));
 }
 
-/// <summary>Brings an observable collection of rows in line with a new list, moving and updating rather than resetting.</summary>
+/// <summary>
+/// The torrent list's rows. Besides the usual one-at-a-time changes, it can replace everything with a single reset:
+/// a list control handles each move or insert on its own, which took seconds for a thousand rows.
+/// </summary>
+public sealed class TorrentRowCollection : ObservableCollection<TorrentRow>
+{
+    internal void ReplaceAll(IEnumerable<TorrentRow> rows)
+    {
+        CheckReentrancy();
+        Items.Clear();
+        foreach (var row in rows)
+        {
+            Items.Add(row);
+        }
+        OnPropertyChanged(new PropertyChangedEventArgs(nameof(Count)));
+        OnPropertyChanged(new PropertyChangedEventArgs("Item[]"));
+        OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+    }
+}
+
+/// <summary>
+/// Brings the rows in line with a new list. Small changes (a refresh, a torrent that sorts elsewhere now) update rows
+/// in place and move as few as possible, so the selection, focus and scroll position stay put. Big ones (another sort
+/// order, the first load) replace the rows at once, which is far quicker than hundreds of moves.
+/// </summary>
 internal static class TorrentRowSync
 {
-    public static void Apply(ObservableCollection<TorrentRow> rows, IReadOnlyList<Torrent> desired)
+    /// <summary>
+    /// The most row changes made one at a time. Each costs the list control a few milliseconds with a thousand rows.
+    /// </summary>
+    internal const int MaxSingleChanges = 32;
+
+    public static void Apply(TorrentRowCollection rows, IReadOnlyList<Torrent> desired)
     {
         var existing = rows.ToDictionary(row => row.Id);
+        var staying = RowsAlreadyInOrder(rows, desired);
+        // Each row out of place is taken out and put back; gone rows are taken out, new ones put in.
+        var changes = (rows.Count - staying.Count) + (desired.Count - staying.Count);
+        if (changes > MaxSingleChanges)
+        {
+            rows.ReplaceAll(desired.Select(torrent => RowFor(torrent, existing)));
+            return;
+        }
+
+        // What's left is in the right order; everything else then goes in at its place.
+        for (var index = rows.Count - 1; index >= 0; index--)
+        {
+            if (!staying.Contains(rows[index].Id))
+            {
+                rows.RemoveAt(index);
+            }
+        }
         for (var index = 0; index < desired.Count; index++)
         {
             var torrent = desired[index];
@@ -94,21 +142,82 @@ internal static class TorrentRowSync
             {
                 rows[index].Update(torrent);
             }
-            else if (existing.TryGetValue(torrent.Id, out var row))
+            else
             {
-                rows.Move(rows.IndexOf(row), index);
-                row.Update(torrent);
+                rows.Insert(index, RowFor(torrent, existing));
+            }
+        }
+    }
+
+    /// <summary>The existing row for a torrent, brought up to date, or a new one: rows keep their identity.</summary>
+    private static TorrentRow RowFor(Torrent torrent, Dictionary<int, TorrentRow> existing)
+    {
+        if (existing.TryGetValue(torrent.Id, out var row))
+        {
+            row.Update(torrent);
+            return row;
+        }
+        return new TorrentRow(torrent);
+    }
+
+    /// <summary>
+    /// The IDs of the most rows that can keep their place: the longest run of current rows that the new list has in
+    /// the same order (a longest increasing subsequence of their current positions, found in O(n log n)).
+    /// </summary>
+    internal static HashSet<int> RowsAlreadyInOrder(IReadOnlyList<TorrentRow> rows, IReadOnlyList<Torrent> desired)
+    {
+        var currentIndex = new Dictionary<int, int>(rows.Count);
+        for (var index = 0; index < rows.Count; index++)
+        {
+            currentIndex[rows[index].Id] = index;
+        }
+        var positions = desired
+            .Where(torrent => currentIndex.ContainsKey(torrent.Id))
+            .Select(torrent => currentIndex[torrent.Id])
+            .ToList();
+
+        // tails[k]: index into positions of the smallest last element of an increasing run of length k + 1.
+        var tails = new List<int>();
+        var previous = new int[positions.Count];
+        for (var i = 0; i < positions.Count; i++)
+        {
+            var length = LowerBound(tails, positions, positions[i]);
+            previous[i] = length > 0 ? tails[length - 1] : -1;
+            if (length == tails.Count)
+            {
+                tails.Add(i);
             }
             else
             {
-                var newRow = new TorrentRow(torrent);
-                existing[torrent.Id] = newRow;
-                rows.Insert(index, newRow);
+                tails[length] = i;
             }
         }
-        while (rows.Count > desired.Count)
+
+        var staying = new HashSet<int>();
+        for (var i = tails.Count > 0 ? tails[^1] : -1; i >= 0; i = previous[i])
         {
-            rows.RemoveAt(rows.Count - 1);
+            staying.Add(rows[positions[i]].Id);
         }
+        return staying;
+    }
+
+    /// <summary>The first run length whose last element isn't smaller than <paramref name="value"/>.</summary>
+    private static int LowerBound(List<int> tails, List<int> positions, int value)
+    {
+        var low = 0;
+        var high = tails.Count;
+        while (low < high)
+        {
+            var middle = (low + high) / 2;
+            if (positions[tails[middle]] < value)
+            {
+                low = middle + 1;
+            }
+            else
+            {
+                high = middle;
+            }
+        }
+        return low;
     }
 }

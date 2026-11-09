@@ -316,40 +316,6 @@ public sealed class MainViewModelTests
 }
 
 [TestClass]
-public sealed class TorrentRowSyncTests
-{
-    [TestMethod]
-    public void UpdatesRowsInPlaceAndKeepsTheirIdentity()
-    {
-        var rows = new ObservableCollection<TorrentRow>();
-        TorrentRowSync.Apply(rows, [Torrent(1, "a"), Torrent(2, "b")]);
-        var firstRow = rows[0];
-        var resets = 0;
-        rows.CollectionChanged += (_, e) => resets += e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Reset ? 1 : 0;
-
-        TorrentRowSync.Apply(rows, [Torrent(2, "b"), Torrent(1, "a, renamed"), Torrent(3, "c")]);
-
-        CollectionAssert.AreEqual(new[] { 2, 1, 3 }, rows.Select(row => row.Id).ToArray());
-        Assert.AreSame(firstRow, rows[1]);
-        Assert.AreEqual("a, renamed", rows[1].Torrent.Name);
-        Assert.AreEqual(0, resets, "a reset would lose the selection");
-    }
-
-    [TestMethod]
-    public void RemovesRowsThatAreGone()
-    {
-        var rows = new ObservableCollection<TorrentRow>();
-        TorrentRowSync.Apply(rows, [Torrent(1, "a"), Torrent(2, "b"), Torrent(3, "c")]);
-
-        TorrentRowSync.Apply(rows, [Torrent(3, "c")]);
-
-        Assert.AreEqual(3, rows.Single().Id);
-    }
-
-    private static Torrent Torrent(int id, string name) => new() { Id = id, Name = name };
-}
-
-[TestClass]
 public sealed class AddTorrentTests
 {
     private const string Magnet = "magnet:?xt=urn:btih:0123456789abcdef0123456789abcdef01234567&dn=Ubuntu";

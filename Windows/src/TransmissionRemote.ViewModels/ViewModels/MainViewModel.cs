@@ -49,7 +49,7 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
     public StatusBarViewModel StatusBar { get; }
 
     /// <summary>The torrents the list shows: filtered, searched and sorted, updated in place.</summary>
-    public ObservableCollection<TorrentRow> Rows { get; } = [];
+    public TorrentRowCollection Rows { get; } = [];
 
     /// <summary>
     /// Raised before and after <see cref="Rows"/> is brought up to date. A list control may drop the selection of
