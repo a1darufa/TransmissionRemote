@@ -308,26 +308,20 @@
                     x:Name="ConnectionPages"
                     Visibility="{x:Bind presentation:Visible.Unless(ViewModel.IsConnected), Mode=OneWay}" />
 
-                <!-- The torrent list arrives in M2; until then, the names stand in for it. -->
+                <!-- Connected (brief 3.1): the torrent list. -->
                 <Grid x:Name="TorrentListHost" Visibility="{x:Bind presentation:Visible.When(ViewModel.IsConnected), Mode=OneWay}">
-                    <controls:EmptyStateView
-                        Title="{x:Bind app:Strings.NoTorrents}"
-                        Description="{x:Bind app:Strings.DropTorrentFilesOrMagnetLinksHereOrUse}"
-                        Visibility="{x:Bind presentation:Visible.WhenNone(ViewModel.Rows.Count), Mode=OneWay}">
-                        <controls:EmptyStateView.Icon>
-                            <FontIcon FontSize="48" Glyph="&#xE896;" />
-                        </controls:EmptyStateView.Icon>
-                    </controls:EmptyStateView>
-                    <ListView
-                        ItemsSource="{x:Bind ViewModel.Rows}"
-                        SelectionMode="None"
-                        Visibility="{x:Bind presentation:Visible.WhenAny(ViewModel.Rows.Count), Mode=OneWay}">
-                        <ListView.ItemTemplate>
-                            <DataTemplate x:DataType="viewmodels:TorrentRow">
-                                <TextBlock Text="{x:Bind Torrent.Name, Mode=OneWay}" TextTrimming="CharacterEllipsis" />
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                    <Grid>
+                        <controls:TorrentTable x:Name="Torrents" />
+                        <controls:EmptyStateView
+                            Title="{x:Bind app:Strings.NoTorrents}"
+                            Margin="0,33,0,0"
+                            Description="{x:Bind app:Strings.DropTorrentFilesOrMagnetLinksHereOrUse}"
+                            Visibility="{x:Bind presentation:Visible.WhenNone(ViewModel.Rows.Count), Mode=OneWay}">
+                            <controls:EmptyStateView.Icon>
+                                <FontIcon FontSize="48" Glyph="&#xE896;" />
+                            </controls:EmptyStateView.Icon>
+                        </controls:EmptyStateView>
+                    </Grid>
                 </Grid>
 
                 <!-- Drag the sidebar's edge: between the Mac's 180 and 340 epx. A pointer affordance, as on the Mac: off the

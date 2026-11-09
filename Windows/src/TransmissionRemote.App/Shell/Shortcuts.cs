@@ -30,12 +30,15 @@ internal static class Shortcuts
         }
     }
 
-    /// <summary>Keys with no menu item to show them, such as Ctrl+F for the filter box, on an element of the window.</summary>
-    public static void AttachHidden(UIElement owner, AppCommand command, Action action)
+    /// <summary>
+    /// Keys with no menu item to show them, such as Ctrl+F for the filter box, on an element of the window. Keys a
+    /// text field uses only work inside <paramref name="listScope"/>.
+    /// </summary>
+    public static void AttachHidden(UIElement owner, AppCommand command, Action action, UIElement listScope)
     {
         foreach (var chord in KeyboardShortcuts.For(command).All)
         {
-            var accelerator = Accelerator(chord, listScope: null);
+            var accelerator = Accelerator(chord, listScope);
             accelerator.Invoked += (_, args) =>
             {
                 action();
@@ -43,6 +46,8 @@ internal static class Shortcuts
             };
             owner.KeyboardAccelerators.Add(accelerator);
         }
+        // Otherwise WinUI shows the first key in a tooltip whenever the pointer rests on the owner (the window, the list).
+        owner.KeyboardAcceleratorPlacementMode = KeyboardAcceleratorPlacementMode.Hidden;
     }
 
     private static KeyboardAccelerator Accelerator(KeyChord chord, UIElement? listScope) => new()

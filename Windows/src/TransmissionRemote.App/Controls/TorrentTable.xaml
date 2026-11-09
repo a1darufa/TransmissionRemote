@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The torrent list (brief 4.3): a ListView with a header row of our own. The spike in M2 found WinUI.TableView
+     traps Tab, doesn't move the selection with the arrow keys and exposes no column headers to Narrator, so the
+     brief's fallback is used: the platform's ListView for selection, keyboard and virtualization, and our own
+     sorting, resizing, reordering and column chooser. -->
+<UserControl
+    x:Class="TransmissionRemote.App.Controls.TorrentTable"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:TransmissionRemote.App.Controls">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Scrolled sideways with the list; clipped to the visible width. -->
+        <Grid
+            x:Name="HeaderViewport"
+            BorderBrush="{ThemeResource DividerStrokeColorDefaultBrush}"
+            BorderThickness="0,0,0,1"
+            SizeChanged="OnHeaderViewportSizeChanged">
+            <controls:TorrentHeaderRow x:Name="Header" HorizontalAlignment="Left" />
+        </Grid>
+
+        <ListView
+            x:Name="TorrentList"
+            Grid.Row="1"
+            ContainerContentChanging="OnContainerContentChanging"
+            ContextRequested="OnContextRequested"
+            DoubleTapped="OnDoubleTapped"
+            IsMultiSelectCheckBoxEnabled="False"
+            Loaded="OnListLoaded"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+            ScrollViewer.HorizontalScrollMode="Enabled"
+            ScrollViewer.IsHorizontalRailEnabled="True"
+            SelectionChanged="OnSelectionChanged"
+            SelectionMode="Extended">
+            <ListView.ItemContainerStyle>
+                <Style BasedOn="{StaticResource DefaultListViewItemStyle}" TargetType="ListViewItem">
+                    <Setter Property="MinHeight" Value="32" />
+                    <Setter Property="Height" Value="32" />
+                    <Setter Property="Padding" Value="0" />
+                    <Setter Property="Margin" Value="0" />
+                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <controls:TorrentRowView />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>

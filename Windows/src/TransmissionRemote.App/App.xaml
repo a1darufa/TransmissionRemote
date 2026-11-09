@@ -8,6 +8,24 @@
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
             </ResourceDictionary.MergedDictionaries>
+
+            <!-- The app's own status colours (brief 6.4). Downloading is Windows' default blue, not the accent, which
+                 may be green and clash with Seeding; verifying is a muted purple. Contrast themes use the system's
+                 highlight colour. -->
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <SolidColorBrush x:Key="StatusDownloadingBrush" Color="#4CC2FF" />
+                    <SolidColorBrush x:Key="StatusVerifyingBrush" Color="#B4A0FF" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="StatusDownloadingBrush" Color="#0067C0" />
+                    <SolidColorBrush x:Key="StatusVerifyingBrush" Color="#7356B1" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="HighContrast">
+                    <SolidColorBrush x:Key="StatusDownloadingBrush" Color="{ThemeResource SystemColorHighlightColor}" />
+                    <SolidColorBrush x:Key="StatusVerifyingBrush" Color="{ThemeResource SystemColorHighlightColor}" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

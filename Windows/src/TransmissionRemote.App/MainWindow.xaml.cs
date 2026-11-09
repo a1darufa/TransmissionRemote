@@ -5,6 +5,7 @@ using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using TransmissionKit;
+using TransmissionRemote.App.Controls;
 using TransmissionRemote.App.Presentation;
 using TransmissionRemote.App.Shell;
 using TransmissionRemote.ViewModels;
@@ -21,13 +22,14 @@ public sealed partial class MainWindow : Window
     private IReadOnlyList<SpeedLimitChoice> _downloadChoices = [];
     private IReadOnlyList<SpeedLimitChoice> _uploadChoices = [];
 
-    public MainWindow(MainViewModel viewModel, ILogger<MainWindow> logger)
+    public MainWindow(MainViewModel viewModel, TorrentCellText cellText, ILogger<MainWindow> logger)
     {
         ViewModel = viewModel;
         _logger = logger;
         SidebarItems = [new SidebarHeader(Strings.Status), .. viewModel.StatusItems];
         InitializeComponent();
         ConnectionPages.ViewModel = viewModel;
+        Torrents.Bind(viewModel, cellText);
 
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(AppTitleBar);
@@ -160,8 +162,8 @@ public sealed partial class MainWindow : Window
     // Keyboard shortcuts ----------------------------------------------------------------------------------------
 
     /// <summary>
-    /// The menu items carry their keys (brief 3.5). The list's own keys (Enter, Ctrl+A, Ctrl+V) come with the list
-    /// in M2; until then, the keys that only work in the list are scoped to the area it will fill.
+    /// The menu items carry their keys (brief 3.5). The list has a few keys of its own with no menu item: Enter
+    /// and Ctrl+A.
     /// </summary>
     private void AttachShortcuts()
     {
@@ -196,10 +198,12 @@ public sealed partial class MainWindow : Window
         ];
         foreach (var (item, command) in menuItems)
         {
-            Shortcuts.Attach(item, command, TorrentListHost);
+            Shortcuts.Attach(item, command, Torrents.List);
         }
-        Shortcuts.AttachHidden(Root, AppCommand.FilterByName, () => FilterBox.Focus(FocusState.Keyboard));
-        Shortcuts.AttachHidden(Root, AppCommand.Exit, Close);
+        Shortcuts.AttachHidden(Root, AppCommand.FilterByName, () => FilterBox.Focus(FocusState.Keyboard), Torrents.List);
+        Shortcuts.AttachHidden(Root, AppCommand.Exit, Close, Torrents.List);
+        Shortcuts.AttachHidden(Torrents.List, AppCommand.ShowInfoForRow, ViewModel.ShowInfoForSelection, Torrents.List);
+        Shortcuts.AttachHidden(Torrents.List, AppCommand.SelectAllTorrents, Torrents.List.SelectAll, Torrents.List);
     }
 
     // Menus built from data -------------------------------------------------------------------------------------

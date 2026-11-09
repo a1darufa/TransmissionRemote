@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog.Extensions.Logging;
 using TransmissionRemote.App.Platform;
+using TransmissionRemote.App.Presentation;
 using TransmissionRemote.ViewModels;
 
 namespace TransmissionRemote.App.Startup;
@@ -48,6 +49,10 @@ internal static class AppServices
             provider.GetRequiredService<ServerConnection>(),
             provider.GetRequiredService<AddTorrentFlow>(),
             provider.GetRequiredService<TimeProvider>()));
+
+        // Sizes, speeds and durations in the regional format, with unit names in the display language.
+        services.AddSingleton(_ => AppFormatting.CreateFormatter());
+        services.AddSingleton(provider => new TorrentCellText(provider.GetRequiredService<DisplayFormatter>(), new TorrentListWords()));
 
         services.AddSingleton<MainWindow>();
 
