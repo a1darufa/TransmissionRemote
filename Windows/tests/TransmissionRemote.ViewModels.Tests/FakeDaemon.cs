@@ -45,6 +45,12 @@ internal sealed class FakeDaemon : HttpMessageHandler
     /// <summary>The name torrent-add reports for a newly added torrent.</summary>
     public string AddedName { get; set; } = "added";
 
+    /// <summary>
+    /// While set, RPC answers wait for this task, so a test can look at the state before they arrive. Without it the
+    /// in-memory answers often arrive before the calling code's next line.
+    /// </summary>
+    public Task? HoldAnswers { get; set; }
+
     public IReadOnlyList<string> Methods
     {
         get
@@ -96,6 +102,10 @@ internal sealed class FakeDaemon : HttpMessageHandler
         {
             _methods.Add(method);
             LastArguments[method] = arguments;
+        }
+        if (HoldAnswers is { } hold)
+        {
+            await hold;
         }
         return Answer(method, arguments);
     }

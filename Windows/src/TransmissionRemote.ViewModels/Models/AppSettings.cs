@@ -32,6 +32,9 @@ public sealed record AppSettings
     /// <summary>The sidebar's width in effective pixels; see <see cref="EffectiveSidebarWidth"/>.</summary>
     public double SidebarWidth { get; set; } = DefaultSidebarWidth;
 
+    /// <summary>The info pane's height in effective pixels; see <see cref="EffectiveInfoPaneHeight"/>.</summary>
+    public double InfoPaneHeight { get; set; } = DefaultInfoPaneHeight;
+
     /// <summary>Where the main window was when it last closed; null until then.</summary>
     public WindowPlacement? MainWindowPlacement { get; set; }
 
@@ -78,6 +81,14 @@ public sealed record AppSettings
     /// <summary>The saved width within the allowed range, so an edited or old file can't hide the list.</summary>
     public double EffectiveSidebarWidth =>
         double.IsFinite(SidebarWidth) ? Math.Clamp(SidebarWidth, MinimumSidebarWidth, MaximumSidebarWidth) : DefaultSidebarWidth;
+
+    /// <summary>The brief's info pane sizes: 280 to start with, at least 180. The window limits how tall it can get.</summary>
+    public const double DefaultInfoPaneHeight = 280;
+    public const double MinimumInfoPaneHeight = 180;
+
+    /// <summary>The saved height, at least the minimum, so an edited or old file can't hide the tabs.</summary>
+    public double EffectiveInfoPaneHeight =>
+        double.IsFinite(InfoPaneHeight) ? Math.Max(InfoPaneHeight, MinimumInfoPaneHeight) : DefaultInfoPaneHeight;
 }
 
 /// <summary>
