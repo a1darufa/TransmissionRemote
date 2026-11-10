@@ -88,7 +88,7 @@ struct AddTorrentSheet: View {
             }
             .controlSize(.small)
 
-            FileTreeTable(nodes: fileTree, onToggleWanted: toggle)
+            FileTreeTable(nodes: fileTree, onToggleWanted: toggle, onSetWanted: setWanted)
                 .frame(minHeight: 180)
         }
     }
@@ -175,6 +175,15 @@ struct AddTorrentSheet: View {
             unwantedFiles.formUnion(node.fileIDs)
         } else {
             unwantedFiles.subtract(node.fileIDs)
+        }
+    }
+
+    private func setWanted(_ wanted: Bool, nodes: [FileNode]) {
+        let files = nodes.flatMap(\.fileIDs)
+        if wanted {
+            unwantedFiles.subtract(files)
+        } else {
+            unwantedFiles.formUnion(files)
         }
     }
 

@@ -19,7 +19,12 @@ struct FileActions {
 struct FileTreeTable: View {
     let nodes: [FileNode]
     var showsProgress = false
+    /// The checkbox: flips one file or folder, wanting all of a folder that's only partly wanted.
     let onToggleWanted: (FileNode) -> Void
+    /// Download Selected and Don't Download Selected: every file of the given nodes becomes wanted
+    /// or unwanted, whatever its state. A toggle can't do this: on a partly wanted folder it would
+    /// download everything even for "Don't Download".
+    let onSetWanted: (Bool, [FileNode]) -> Void
     var onSetPriority: ((Priority, [Int]) -> Void)?
     var fileActions: FileActions?
 
@@ -79,8 +84,10 @@ struct FileTreeTable: View {
             Divider()
         }
         // Not just "Download": that word is also the Download pane's name, a noun in many languages.
-        Button("Download Selected") { selected.filter { $0.wantedState != .all }.forEach(onToggleWanted) }
-        Button("Don't Download Selected") { selected.filter { $0.wantedState != .none }.forEach(onToggleWanted) }
+        Button("Download Selected") { onSetWanted(true, selected) }
+            .disabled(selected.allSatisfy { $0.wantedState == .all })
+        Button("Don't Download Selected") { onSetWanted(false, selected) }
+            .disabled(selected.allSatisfy { $0.wantedState == .none })
         if let onSetPriority {
             Divider()
             ForEach(Priority.allCases.reversed(), id: \.self) { priority in

@@ -18,6 +18,7 @@ struct FilesTab: View {
                     nodes: FileTree.build(from: files),
                     showsProgress: true,
                     onToggleWanted: toggle,
+                    onSetWanted: setWanted,
                     onSetPriority: setPriority,
                     fileActions: fileActions
                 )
@@ -30,6 +31,14 @@ struct FilesTab: View {
     private func toggle(_ node: FileNode) {
         let wanted = node.wantedState != .all
         model.connection.apply(.wanted(wanted, files: node.fileIDs, in: torrent.id))
+    }
+
+    /// One request for the whole selection. A folder and a file inside it can both be selected,
+    /// so the file numbers are collected into a set.
+    private func setWanted(_ wanted: Bool, nodes: [FileNode]) {
+        let files = Set(nodes.flatMap(\.fileIDs)).sorted()
+        guard !files.isEmpty else { return }
+        model.connection.apply(.wanted(wanted, files: files, in: torrent.id))
     }
 
     private func setPriority(_ priority: Priority, files: [Int]) {
