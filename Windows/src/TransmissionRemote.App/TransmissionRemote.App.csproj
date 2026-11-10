@@ -73,6 +73,9 @@
     <Content Include="..\..\assets\AppIcon\AppIcon-40.png" Link="Assets\TitleBarIcon.scale-250.png" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\..\assets\AppIcon\AppIcon-48.png" Link="Assets\TitleBarIcon.scale-300.png" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\..\assets\AppIcon\AppIcon-64.png" Link="Assets\TitleBarIcon.scale-400.png" CopyToOutputDirectory="PreserveNewest" />
+    <!-- The Peers tab's country flags (flag-icons, MIT; see assets/Flags/README.md). -->
+    <Content Include="..\..\assets\Flags\*.svg" Link="Assets\Flags\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\assets\Flags\LICENSE" Link="Assets\Flags\LICENSE" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>
