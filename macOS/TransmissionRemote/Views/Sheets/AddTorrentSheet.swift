@@ -169,8 +169,10 @@ struct AddTorrentSheet: View {
         !realFiles.isEmpty && realFiles.allSatisfy { unwantedFiles.contains($0.id) }
     }
 
+    /// Whether the server had this torrent before it was added from this sheet. Once adding has
+    /// started, the server's list soon includes the new torrent, which isn't a duplicate.
     private var isDuplicate: Bool {
-        guard let hash = pending.infoHash?.lowercased() else { return false }
+        guard !isAdding, added == nil, let hash = pending.infoHash?.lowercased() else { return false }
         return connection.torrents.contains { $0.hashString.lowercased() == hash }
     }
 
