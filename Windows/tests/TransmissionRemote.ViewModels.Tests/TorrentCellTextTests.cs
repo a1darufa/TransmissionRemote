@@ -59,7 +59,11 @@ public sealed class TorrentCellTextTests
     [DataRow(TorrentColumn.Id, "1234")]
     public void EachColumnShowsWhatTheMacAppShows(TorrentColumn column, string expected)
     {
-        Assert.AreEqual(expected, Cells.Text(Downloading, column));
+        // Before AM/PM, .NET on macOS and Linux writes ICU's narrow no-break space, Windows a plain space;
+        // both are right for their platform, and these tests also run on a Mac.
+        var text = Cells.Text(Downloading, column).Replace(' ', ' ');
+
+        Assert.AreEqual(expected, text);
     }
 
     [TestMethod]
