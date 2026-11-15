@@ -101,6 +101,14 @@ make_disk_image() {
   hdiutil verify -quiet "$destination"
 }
 
+# Building registers the app with Launch Services, and every copy it knows shows up in Finder's
+# Open With menu, so a build left registered appears there beside the installed app. Only the
+# installed copy should be offered.
+unregister_build_copy() {
+  /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister \
+    -u "$1" 2>/dev/null || true
+}
+
 version=$(read_version)
 if [[ -z "$version" ]]; then
   echo "Couldn't read MARKETING_VERSION from the project." >&2
@@ -114,4 +122,7 @@ codesign --verify --deep --strict "$app"
 prepare_staging "$app"
 disk_image="$output_dir/TransmissionRemote-$version.dmg"
 make_disk_image "$disk_image"
+unregister_build_copy "$app"
+unregister_build_copy "$staging/$app_name"
+unregister_build_copy "/Volumes/$volume_name/$app_name"  # the disk image, mounted while it was laid out
 echo "$disk_image"
