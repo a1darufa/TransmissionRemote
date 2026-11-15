@@ -67020,6 +67020,172 @@
         }
       }
     },
+    "The torrent was added, but it couldn't be renamed: %@" : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Торэнт дададзены, але перайменаваць яго не ўдалося: %@"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S'ha afegit el torrent, però no s'ha pogut canviar el nom: %@"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent byl přidán, ale nepodařilo se ho přejmenovat: %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrenten blev tilføjet, men den kunne ikke omdøbes: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Torrent wurde hinzugefügt, konnte aber nicht umbenannt werden: %@"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το torrent προστέθηκε, αλλά δεν ήταν δυνατή η μετονομασία του: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se añadió el torrent, pero no se pudo cambiar su nombre: %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent lisättiin, mutta sitä ei voitu nimetä uudelleen: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le torrent a été ajouté, mais il n’a pas pu être renommé : %@"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent je dodan, ali ga nije bilo moguće preimenovati: %@"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A torrent hozzáadva, de nem sikerült átnevezni: %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il torrent è stato aggiunto, ma non è stato possibile rinominarlo: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "토렌트를 추가했지만 이름을 변경하지 못했습니다: %@"
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrentas pridėtas, bet jo nepavyko pervadinti: %@"
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrents pievienots, bet to neizdevās pārdēvēt: %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrenten ble lagt til, men kunne ikke gis nytt navn: %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De torrent is toegevoegd, maar kon niet worden hernoemd: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent został dodany, ale nie udało się zmienić jego nazwy: %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O torrent foi adicionado, mas não foi possível renomeá-lo: %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O torrent foi adicionado, mas não foi possível mudar-lhe o nome: %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrentul a fost adăugat, dar nu a putut fi redenumit: %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Торрент добавлен, но переименовать его не удалось: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrenten lades till, men den kunde inte byta namn: %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent eklendi ama yeniden adlandırılamadı: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Торрент додано, але перейменувати його не вдалося: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已添加 Torrent，但无法重新命名：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已新增 Torrent，但無法重新命名：%@"
+          }
+        }
+      }
+    },
     "This isn't a certificate file in PKCS #12 (.p12) format." : {
       "localizations" : {
         "be" : {

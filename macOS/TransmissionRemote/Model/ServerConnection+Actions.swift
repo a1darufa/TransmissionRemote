@@ -33,7 +33,7 @@ extension ServerConnection {
         renameTorrent(id: torrent.id, currentName: torrent.name, to: newName)
     }
 
-    /// Renames a torrent's top-level file or folder, also right after adding it.
+    /// Renames a torrent's top-level file or folder.
     func renameTorrent(id: Torrent.ID, currentName: String, to newName: String) {
         run { try await $0.rename(torrentID: id, path: currentName, to: newName) }
     }
@@ -81,6 +81,23 @@ extension ServerConnection {
         let result = try await requireClient().add(request)
         await refresh()
         return result
+    }
+
+    /// Renames a torrent right after adding it, and waits for the answer, so the Add Torrent sheet
+    /// can say when it failed. A failure reported later as an alert could be hidden by the next
+    /// torrent's sheet.
+    ///
+    /// The rename goes by the folder the torrent's files are really under, which isn't always the
+    /// name the daemon reports: a daemon on Windows drops trailing spaces and replaces characters
+    /// such as ":" in folder names (transgui issue #1317).
+    func renameAddedTorrent(_ torrent: AddedTorrent, to newName: String) async throws {
+        let client = try requireClient()
+        let files = try await client.details(of: torrent.id, fields: [.id, .files])?.files ?? []
+        let topLevelName = files.first?.path.split(separator: "/").first.map(String.init) ?? torrent.name
+        guard topLevelName != newName else { return }
+        try await client.rename(torrentID: torrent.id, path: topLevelName, to: newName)
+        Self.log.info("Renamed the new torrent \(torrent.id) from \(topLevelName) to \(newName)")
+        await refresh()
     }
 
     func updateSession(_ changes: SessionSettings) async throws {

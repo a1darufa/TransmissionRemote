@@ -16,6 +16,8 @@ struct AddTorrentSheet: View {
     @State private var unwantedFiles: Set<Int> = []
     @State private var hasServerDefaults = false
     @State private var isAdding = false
+    /// Set once the server has the torrent, so the sheet no longer offers to add it.
+    @State private var added: AddTorrentResult?
     @State private var errorMessage: String?
 
     private var connection: ServerConnection { model.connection }
@@ -120,12 +122,18 @@ struct AddTorrentSheet: View {
     private var buttons: some View {
         HStack {
             Spacer()
-            Button("Cancel", role: .cancel) { dismiss() }
-                .keyboardShortcut(.cancelAction)
-            Button("Add") { add() }
-                .keyboardShortcut(.defaultAction)
-                .disabled(isAdding || destination.trimmingCharacters(in: .whitespaces).isEmpty || allFilesSkipped
-                          || (canRename && TorrentName.validated(name) == nil))
+            if added != nil {
+                // Only after the torrent was added but the rename failed: adding again would do nothing.
+                Button("Done") { dismiss() }
+                    .keyboardShortcut(.defaultAction)
+            } else {
+                Button("Cancel", role: .cancel) { dismiss() }
+                    .keyboardShortcut(.cancelAction)
+                Button("Add") { add() }
+                    .keyboardShortcut(.defaultAction)
+                    .disabled(isAdding || destination.trimmingCharacters(in: .whitespaces).isEmpty
+                              || allFilesSkipped || (canRename && TorrentName.validated(name) == nil))
+            }
         }
     }
 
@@ -222,9 +230,10 @@ struct AddTorrentSheet: View {
             do {
                 let request = AddTorrentRequest(pending, options: options, serverInfo: serverInfo)
                 let result = try await connection.add(request)
+                added = result
                 model.recordFolderUse(options.downloadDir ?? "")
                 applyLabelsIfNeeded(to: result)
-                renameIfNeeded(result, to: newName)
+                guard await renameIfNeeded(result, to: newName) else { return }
                 dismiss()
             } catch {
                 errorMessage = error.localizedDescription
@@ -232,11 +241,19 @@ struct AddTorrentSheet: View {
         }
     }
 
-    /// Transmission can't name a torrent while adding it, so rename its top-level item right after.
-    /// A duplicate keeps its name: it's the torrent already on the server.
-    private func renameIfNeeded(_ result: AddTorrentResult, to newName: String?) {
-        guard let newName, let torrent = result.torrentAdded, torrent.name != newName else { return }
-        connection.renameTorrent(id: torrent.id, currentName: torrent.name, to: newName)
+    /// Transmission can't name a torrent while adding it, so its top-level item is renamed right
+    /// after. A duplicate keeps its name: it's the torrent already on the server. Returns false when
+    /// the rename failed; the sheet then stays open and says why.
+    private func renameIfNeeded(_ result: AddTorrentResult, to newName: String?) async -> Bool {
+        guard let newName, let torrent = result.torrentAdded, torrent.name != newName else { return true }
+        do {
+            try await connection.renameAddedTorrent(torrent, to: newName)
+            return true
+        } catch {
+            let reason = error.localizedDescription
+            errorMessage = String(localized: "The torrent was added, but it couldn't be renamed: \(reason)")
+            return false
+        }
     }
 
     /// Transmission 3.00 can label torrents but not while adding them, so label right after.
