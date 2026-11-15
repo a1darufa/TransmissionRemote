@@ -2,11 +2,13 @@
 # Builds a universal (Apple silicon + Intel) Release of TransmissionRemote and packs it into a
 # disk image: open it, drag the app onto the Applications folder next to it.
 #
-# The app is ad-hoc signed rather than signed with a developer certificate, so anyone can build
-# the same thing; people approve the first launch in System Settings. Styling the disk image
-# window goes through Finder, so macOS asks once to let your terminal control Finder.
+# The app isn't signed with an Apple Developer ID or notarized, so people approve the first launch
+# in System Settings. It's signed with a self-signed certificate when one is in the keychain (see
+# signing_identity below), otherwise ad hoc, so anyone can build it. Styling the disk image window
+# goes through Finder, so macOS asks once to let your terminal control Finder.
 #
 # Usage: Scripts/build-release.sh
+#        TRANSMISSIONREMOTE_SIGNING_IDENTITY="Other name" Scripts/build-release.sh
 # Output: build/release/TransmissionRemote-<version>.dmg
 set -euo pipefail
 
@@ -35,11 +37,24 @@ read_version() {
     | awk -F' = ' '/ MARKETING_VERSION /{ if (!found) { print $2; found = 1 } }'
 }
 
+# macOS knows an ad-hoc signed app only by a fingerprint of that one build, so after every update
+# the keychain asks for the login password before the app may read its saved passwords. Signed
+# with the same certificate every time, new builds count as the same app and nothing asks. The
+# certificate is self-signed and lives only in the maintainer's keychain; without it, builds are
+# signed ad hoc as before.
+signing_identity="${TRANSMISSIONREMOTE_SIGNING_IDENTITY:-TransmissionRemote Local Signing}"
+choose_signing_identity() {
+  if ! security find-identity -p codesigning | grep -qF "\"$signing_identity\""; then
+    echo "No \"$signing_identity\" certificate in the keychain; signing ad hoc." >&2
+    signing_identity="-"
+  fi
+}
+
 build_app() {
   xcodebuild -project "$project" -scheme "$scheme" -configuration Release \
     -destination 'generic/platform=macOS' -derivedDataPath "$derived_data" \
     -skipPackagePluginValidation -quiet \
-    CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= \
+    CODE_SIGN_IDENTITY="$signing_identity" CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= \
     build
 }
 
@@ -115,6 +130,7 @@ if [[ -z "$version" ]]; then
   exit 1
 fi
 
+choose_signing_identity
 build_app
 app="$derived_data/Build/Products/Release/$app_name"
 codesign --verify --deep --strict "$app"

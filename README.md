@@ -32,8 +32,9 @@ If you prefer Terminal, this removes the download flag instead of steps 2–3:
 xattr -dr com.apple.quarantine /Applications/TransmissionRemote.app
 ```
 
-After you update to a new version, macOS may ask once whether the app can use the server passwords it
-saved in your Keychain. Choose **Always Allow**.
+When you update from version 1.2 or earlier, macOS asks once whether the app can use the server passwords
+it saved in your Keychain. Choose **Always Allow**. Later releases are signed with the same certificate, so
+macOS recognizes them as the same app and updates don't ask again.
 
 ## Features
 
@@ -167,15 +168,17 @@ ditto build/DerivedData/Build/Products/Release/TransmissionRemote.app /Applicati
 
 A copy built and installed this way opens normally on that Mac.
 
-To make a release download, run `macOS/Scripts/build-release.sh`. It builds a universal Release app that is
-ad-hoc signed instead of signed with a developer certificate, and packs it into a disk image in
+To make a release download, run `macOS/Scripts/build-release.sh`. It builds a universal Release app, signs
+it with the maintainer's self-signed certificate ("TransmissionRemote Local Signing", or the name in
+`TRANSMISSIONREMOTE_SIGNING_IDENTITY`) or ad hoc when that isn't in the keychain, and packs it into a disk image in
 `macOS/build/release/` with a drag-to-Applications window (`macOS/Scripts/dmg/`). Laying out that window goes through
 Finder, so macOS asks once to let your terminal control Finder. Downloads aren't notarized, so people
 approve the first launch themselves (see [Download and install](#download-and-install)).
 
 Signing uses development team `B48N6YBGWS` and bundle ID `com.a1dar.TransmissionRemote`. Change both under
-*Signing & Capabilities* if needed. Keychain items are tied to the signing identity, so a different
-team means re-entering server passwords.
+*Signing & Capabilities* if needed. Keychain items are tied to the signing identity: an ad-hoc signed app is
+known only by that one build, so macOS asks for the login password after each update, while builds signed
+with the same certificate count as the same app.
 
 ## Code style
 

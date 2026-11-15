@@ -55,4 +55,6 @@ daemon, enabled by `TRANSMISSION_IT_*` environment variables (see `README.md` an
   tag or publish a release unless asked.
 - **Releases** (Mac): bump `MARKETING_VERSION`, run `macOS/Scripts/build-release.sh`, then
   `gh release create vX.Y <dmg> --target <full commit SHA>` (GitHub rejects short SHAs). Releases are
-  ad-hoc signed and not notarized, on purpose.
+  signed with the maintainer's self-signed certificate "TransmissionRemote Local Signing" (in the login
+  keychain; the script falls back to ad hoc without it) and not notarized, on purpose. Builds installed
+  for testing use the same certificate, so the keychain doesn't ask for the login password after updates.
