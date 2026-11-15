@@ -12,6 +12,20 @@ One repository, two apps:
 The user-facing overview is `README.md`. transgui's open issues, checked against the Mac app, are in
 `docs/transgui-audit.md`.
 
+## Who works where
+
+Two Claude sessions work on this repository, one on each platform. Each stays in its own app:
+
+- **On the Mac:** edit only `macOS/`, and commit on `main`.
+- **On Windows:** edit only `Windows/`, and commit on the `windows-ui` branch. That session merges
+  `windows-ui` into `main` when its work is ready, and merges `main` into `windows-ui` to pick up the
+  Mac side's changes.
+- **Changes the other app needs:** don't edit the other app's folder. Write the user a short note for
+  the other session to act on instead: a protocol fix to port to the other core, or new Mac strings for
+  the Windows side to regenerate with its converter.
+- **Shared files** (`README.md`, `CLAUDE.md`, `docs/`, `.github/`): change them only when needed, and say
+  in the note what the other session should know.
+
 ## Commands
 
 ```bash
@@ -36,7 +50,8 @@ daemon, enabled by `TRANSMISSION_IT_*` environment variables (see `README.md` an
   `transgui.ini`. On macOS run `transmission-daemon --foreground`: forked into the background, it
   crashes on its first `torrent-add`.
 - **Keep the two cores in step.** A protocol fix or quirk found in one (Transmission versions differ
-  in key spelling, types and error handling) goes into the other, with a test in both.
+  in key spelling, types and error handling) goes into the other, with a test in both; the session that
+  owns the other core ports it (see "Who works where").
 - **Log failures so they can be diagnosed from the log alone**: which operation, against what, how
   long it took and the error with its cause. Never log passwords, `Authorization` headers or request
   bodies. Mac: `DiagnosticLog` (unified log plus daily files, Help → Show Log Files). Windows core:
