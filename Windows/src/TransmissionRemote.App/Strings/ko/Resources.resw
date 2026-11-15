@@ -996,6 +996,14 @@ Mac comment: Windows only. A size unit in the torrent list and status bar, after
     <value>마그넷 링크</value>
     <comment>Mac key: Magnet link</comment>
   </data>
+  <data name="MakeDefault" xml:space="preserve">
+    <value>기본값으로 설정</value>
+    <comment>Mac key: Make Default</comment>
+  </data>
+  <data name="MakesTransmissionRemoteOpenTorrentFiles" xml:space="preserve">
+    <value>TransmissionRemote가 .torrent 파일과 마그넷 링크를 열고, Finder에서 .torrent 파일에 TransmissionRemote 아이콘이 표시됩니다.</value>
+    <comment>Mac key: Makes TransmissionRemote open .torrent files and magnet links, and gives .torrent files its icon in Finder.</comment>
+  </data>
   <data name="ManageServersEllipsis" xml:space="preserve">
     <value>서버 관리…</value>
     <comment>Mac key: Manage Servers…</comment>
@@ -1840,6 +1848,10 @@ Mac comment: Windows only. Shown when the server can't be reached (the Mac shows
     <value>서버의 TLS 인증서를 신뢰할 수 없습니다.</value>
     <comment>Mac key: The server's TLS certificate isn't trusted.</comment>
   </data>
+  <data name="TheTorrentWasAddedButItCouldNotBeRenamed" xml:space="preserve">
+    <value>토렌트를 추가했지만 이름을 변경하지 못했습니다: {0}</value>
+    <comment>Mac key: The torrent was added, but it couldn't be renamed: %@</comment>
+  </data>
   <data name="ThisIsNotACertificateFileInPKCS12P12" xml:space="preserve">
     <value>PKCS #12(.p12) 형식의 인증서 파일이 아닙니다.</value>
     <comment>Mac key: This isn't a certificate file in PKCS #12 (.p12) format.</comment>
@@ -1884,6 +1896,10 @@ Mac comment: Windows only. How long ago something happened, with a short duratio
   <data name="Torrent" xml:space="preserve">
     <value>토렌트</value>
     <comment>Mac key: Torrent</comment>
+  </data>
+  <data name="TorrentFilesAndMagnetLinks" xml:space="preserve">
+    <value>토렌트 파일 및 마그넷 링크</value>
+    <comment>Mac key: Torrent files and magnet links</comment>
   </data>
   <data name="TorrentMenuAccessKey" xml:space="preserve">
     <value>T</value>

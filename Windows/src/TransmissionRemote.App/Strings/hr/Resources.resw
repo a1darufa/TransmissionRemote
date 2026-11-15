@@ -1004,6 +1004,14 @@ Mac comment: Windows only. A size unit in the torrent list and status bar, after
     <value>Magnet poveznica</value>
     <comment>Mac key: Magnet link</comment>
   </data>
+  <data name="MakeDefault" xml:space="preserve">
+    <value>Postavi kao zadano</value>
+    <comment>Mac key: Make Default</comment>
+  </data>
+  <data name="MakesTransmissionRemoteOpenTorrentFiles" xml:space="preserve">
+    <value>TransmissionRemote će otvarati .torrent datoteke i magnet poveznice, a .torrent datoteke dobit će njegovu ikonu u Finderu.</value>
+    <comment>Mac key: Makes TransmissionRemote open .torrent files and magnet links, and gives .torrent files its icon in Finder.</comment>
+  </data>
   <data name="ManageServersEllipsis" xml:space="preserve">
     <value>Upravljaj poslužiteljima…</value>
     <comment>Mac key: Manage Servers…</comment>
@@ -1864,6 +1872,10 @@ Mac comment: Windows only. Shown when the server can't be reached (the Mac shows
     <value>TLS certifikat poslužitelja nije pouzdan.</value>
     <comment>Mac key: The server's TLS certificate isn't trusted.</comment>
   </data>
+  <data name="TheTorrentWasAddedButItCouldNotBeRenamed" xml:space="preserve">
+    <value>Torrent je dodan, ali ga nije bilo moguće preimenovati: {0}</value>
+    <comment>Mac key: The torrent was added, but it couldn't be renamed: %@</comment>
+  </data>
   <data name="ThisIsNotACertificateFileInPKCS12P12" xml:space="preserve">
     <value>Ovo nije datoteka certifikata u formatu PKCS #12 (.p12).</value>
     <comment>Mac key: This isn't a certificate file in PKCS #12 (.p12) format.</comment>
@@ -1908,6 +1920,10 @@ Mac comment: Windows only. How long ago something happened, with a short duratio
   <data name="Torrent" xml:space="preserve">
     <value>Torrent</value>
     <comment>Mac key: Torrent</comment>
+  </data>
+  <data name="TorrentFilesAndMagnetLinks" xml:space="preserve">
+    <value>Torrent datoteke i magnet poveznice</value>
+    <comment>Mac key: Torrent files and magnet links</comment>
   </data>
   <data name="TorrentMenuAccessKey" xml:space="preserve">
     <value>T</value>

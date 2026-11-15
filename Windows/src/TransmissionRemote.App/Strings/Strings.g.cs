@@ -740,6 +740,12 @@ internal static class Strings
     /// <summary>Magnet link</summary>
     public static string MagnetLink => StringResources.Get("MagnetLink");
 
+    /// <summary>Make Default</summary>
+    public static string MakeDefault => StringResources.Get("MakeDefault");
+
+    /// <summary>Makes TransmissionRemote open .torrent files and magnet links, and gives .torrent files its icon in Finder.</summary>
+    public static string MakesTransmissionRemoteOpenTorrentFiles => StringResources.Get("MakesTransmissionRemoteOpenTorrentFiles");
+
     /// <summary>Manage servers…</summary>
     public static string ManageServersEllipsis => StringResources.Get("ManageServersEllipsis");
 
@@ -1370,6 +1376,9 @@ internal static class Strings
     /// <summary>The server&apos;s TLS certificate isn&apos;t trusted.</summary>
     public static string TheServersTLSCertificateIsNotTrusted => StringResources.Get("TheServersTLSCertificateIsNotTrusted");
 
+    /// <summary>The torrent was added, but it couldn&apos;t be renamed: {0}</summary>
+    public static string TheTorrentWasAddedButItCouldNotBeRenamed => StringResources.Get("TheTorrentWasAddedButItCouldNotBeRenamed");
+
     /// <summary>This isn&apos;t a certificate file in PKCS #12 (.p12) format.</summary>
     public static string ThisIsNotACertificateFileInPKCS12P12 => StringResources.Get("ThisIsNotACertificateFileInPKCS12P12");
 
@@ -1402,6 +1411,9 @@ internal static class Strings
 
     /// <summary>Torrent</summary>
     public static string Torrent => StringResources.Get("Torrent");
+
+    /// <summary>Torrent files and magnet links</summary>
+    public static string TorrentFilesAndMagnetLinks => StringResources.Get("TorrentFilesAndMagnetLinks");
 
     /// <summary>T</summary>
     public static string TorrentMenuAccessKey => StringResources.Get("TorrentMenuAccessKey");
