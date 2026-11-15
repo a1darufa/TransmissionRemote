@@ -9,10 +9,14 @@
 		<dict>
 			<key>CFBundleTypeName</key>
 			<string>BitTorrent Document</string>
+			<!-- No icon file of its own: macOS draws .torrent files as a document with the app's icon. -->
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<integer>1</integer>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
+			<!-- Default rather than Alternate, so macOS may pick this app when nothing else claims the type. -->
 			<key>LSHandlerRank</key>
-			<string>Alternate</string>
+			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>org.bittorrent.torrent</string>

@@ -38350,6 +38350,338 @@
         }
       }
     },
+    "Make Default" : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выкарыстоўваць па змаўчанні"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estableix per defecte"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavit jako výchozí"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gør til standard"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als Standard festlegen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ορισμός ως προεπιλογή"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Establecer como predeterminada"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aseta oletukseksi"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Définir par défaut"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Postavi kao zadano"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beállítás alapértelmezettként"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imposta come predefinita"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기본값으로 설정"
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nustatyti kaip numatytąją"
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iestatīt kā noklusējumu"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gjør til standard"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stel in als standaard"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustaw jako domyślną"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definir como Padrão"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definir como predefinida"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Setează ca implicită"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Использовать по умолчанию"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gör till standard"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varsayılan Yap"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовувати типово"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设为默认"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設為預設"
+          }
+        }
+      }
+    },
+    "Makes TransmissionRemote open .torrent files and magnet links, and gives .torrent files its icon in Finder." : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote будзе адкрываць .torrent-файлы і magnet-спасылкі, а .torrent-файлы атрымаюць яго значок у Finder."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote obrirà els fitxers .torrent i els enllaços magnet, i els fitxers .torrent tindran la seva icona al Finder."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote bude otevírat soubory .torrent a magnet odkazy a soubory .torrent dostanou ve Finderu jeho ikonu."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote åbner .torrent-filer og magnet-links, og .torrent-filer får dets symbol i Finder."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote öffnet dann .torrent-Dateien und Magnet-Links, und .torrent-Dateien erhalten im Finder sein Symbol."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το TransmissionRemote θα ανοίγει τα αρχεία .torrent και τους συνδέσμους magnet, και τα αρχεία .torrent θα έχουν το εικονίδιό του στο Finder."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote abrirá los archivos .torrent y los enlaces magnet, y los archivos .torrent tendrán su icono en el Finder."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote avaa .torrent-tiedostot ja magnet-linkit, ja .torrent-tiedostot saavat sen kuvakkeen Finderissa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote ouvrira les fichiers .torrent et les liens magnet, et les fichiers .torrent prendront son icône dans le Finder."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote će otvarati .torrent datoteke i magnet poveznice, a .torrent datoteke dobit će njegovu ikonu u Finderu."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A TransmissionRemote nyitja meg a .torrent fájlokat és a magnet linkeket, a .torrent fájlok pedig az ikonját kapják a Finderben."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote aprirà i file .torrent e i link magnet, e i file .torrent avranno la sua icona nel Finder."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote가 .torrent 파일과 마그넷 링크를 열고, Finder에서 .torrent 파일에 TransmissionRemote 아이콘이 표시됩니다."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote atidarys .torrent failus ir magnet nuorodas, o .torrent failai „Finder“ gaus jo piktogramą."
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote atvērs .torrent failus un magnet saites, un .torrent faili Finder saņems tās ikonu."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote åpner .torrent-filer og magnet-lenker, og .torrent-filer får ikonet i Finder."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote opent dan .torrent-bestanden en magnetlinks, en .torrent-bestanden krijgen het symbool ervan in de Finder."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote będzie otwierać pliki .torrent i linki magnet, a pliki .torrent otrzymają w Finderze jego ikonę."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O TransmissionRemote abrirá arquivos .torrent e links magnet, e os arquivos .torrent terão o ícone dele no Finder."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O TransmissionRemote abrirá ficheiros .torrent e ligações magnet, e os ficheiros .torrent terão o seu ícone no Finder."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote va deschide fișierele .torrent și linkurile magnet, iar fișierele .torrent vor primi pictograma sa în Finder."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote будет открывать .torrent-файлы и magnet-ссылки, а .torrent-файлы получат его значок в Finder."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote öppnar .torrent-filer och magnetlänkar, och .torrent-filer får dess symbol i Finder."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote .torrent dosyalarını ve magnet bağlantılarını açar; .torrent dosyaları Finder’da onun simgesini alır."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransmissionRemote відкриватиме .torrent-файли та magnet-посилання, а .torrent-файли отримають його значок у Finder."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "让 TransmissionRemote 打开 .torrent 文件和磁力链接，并让 .torrent 文件在“访达”中显示它的图标。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讓 TransmissionRemote 打開 .torrent 檔案和磁力連結，並讓 .torrent 檔案在 Finder 中顯示它的圖像。"
+          }
+        }
+      }
+    },
     "MB" : {
       "localizations" : {
         "be" : {
@@ -68842,6 +69174,172 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Torrent"
+          }
+        }
+      }
+    },
+    "Torrent files and magnet links" : {
+      "localizations" : {
+        "be" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Торэнт-файлы і magnet-спасылкі"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fitxers torrent i enllaços magnet"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soubory torrent a magnet odkazy"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrentfiler og magnet-links"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent-Dateien und Magnet-Links"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αρχεία torrent και σύνδεσμοι magnet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivos torrent y enlaces magnet"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent-tiedostot ja magnet-linkit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fichiers torrent et liens magnet"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent datoteke i magnet poveznice"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrentfájlok és magnet linkek"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "File torrent e link magnet"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "토렌트 파일 및 마그넷 링크"
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent failai ir magnet nuorodos"
+          }
+        },
+        "lv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent faili un magnet saites"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrentfiler og magnet-lenker"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrentbestanden en magnetlinks"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pliki torrent i linki magnet"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arquivos torrent e links magnet"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ficheiros torrent e ligações magnet"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fișiere torrent și linkuri magnet"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Торрент-файлы и magnet-ссылки"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrentfiler och magnetlänkar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent dosyaları ve magnet bağlantıları"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Торрент-файли та magnet-посилання"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent 文件和磁力链接"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torrent 檔案和磁力連結"
           }
         }
       }

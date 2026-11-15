@@ -7,6 +7,7 @@ struct GeneralSettings: View {
     @AppStorage(AppSettings.showAddTorrentDialog) private var showsAddTorrentDialog = true
     @AppStorage(AppSettings.checkForUpdates) private var checksForUpdates = true
     @Environment(AppModel.self) private var model
+    @State private var defaultApp = DefaultTorrentApp()
 
     // Includes 20 s, the default background interval, so that picker never shows blank.
     private let intervals = [1, 2, 3, 5, 10, 15, 20, 30, 60]
@@ -21,8 +22,24 @@ struct GeneralSettings: View {
                     ForEach(intervals, id: \.self) { Text("Every \($0) s").tag($0) }
                 }
             }
-            Section("Add torrent") {
+            Section {
                 Toggle("Prompt for download options when adding a new torrent", isOn: $showsAddTorrentDialog)
+                LabeledContent("Torrent files and magnet links") {
+                    if defaultApp.isDefault {
+                        Text("Default").foregroundStyle(.secondary)
+                    } else {
+                        Button("Make Default") {
+                            Task { await defaultApp.makeDefault() }
+                        }
+                    }
+                }
+            } header: {
+                Text("Add torrent")
+            } footer: {
+                Text("""
+                    Makes TransmissionRemote open .torrent files and magnet links, \
+                    and gives .torrent files its icon in Finder.
+                    """)
             }
             Section {
                 Toggle("Check for updates once a day", isOn: $checksForUpdates)
@@ -39,6 +56,7 @@ struct GeneralSettings: View {
             }
         }
         .formStyle(.grouped)
+        .onAppear { defaultApp.refresh() }
     }
 }
 
